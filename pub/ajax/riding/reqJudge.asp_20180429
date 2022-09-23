@@ -1,0 +1,457 @@
+<!-- #include virtual = "/pub/header.RidingAdmin.asp" -->
+<!-- #include virtual = "/pub/fn/fn_bbs_select.asp" -->
+
+
+
+<script language="Javascript" runat="server">
+function hasown(obj,  prop){
+	if (obj.hasOwnProperty(prop) == true){
+		return "ok";
+	}
+	else{
+		return "notok";
+	}
+}
+</script>
+<%
+Dim intTotalCnt, intTotalPage '총갯수, 총페이지수
+
+    ' classHelp를 입력받아 orderUpdate의 OrderType을 반환한다.
+    Function GetOrderType(ByVal classHelp, ByVal teamgb)
+        Dim odrType
+
+		Select Case CStr(teamgb)
+		Case "20101"
+			odrType = "MM"
+		Case "20102"
+			Select Case  CStr(classHelp)
+				Case CONST_TYPEA1, CONST_TYPEA2
+						odrType = "A"
+				Case CONST_TYPEA_1
+						odrType = "A_1"
+				Case CONST_TYPEB
+						odrType = "B"
+				Case CONST_TYPEC
+						odrType = "C"
+				Case Else
+					orderType = classHelp
+			End Select
+		End Select
+
+        GetOrderType = odrType
+    End Function
+
+
+
+Sub orderUpdate( ByRef db, ByVal tidx, ByVal  gbidx, ByVal pubcode, ByVal rdno, ByVal orderType)
+	Dim wherestr,SQL , selecttbl, rs,arrP,pcode,bestsc,maxorder
+	
+	Select Case  orderType 
+	Case "MM" '마장마술
+
+		If CDbl(pubcode) = 0 Then '경기의 부서를 찾아서 각각 업데이트
+			SQL = "Select pubcode from SD_tennisMember where delYN = 'N' and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' group by pubcode"
+			Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+			If Not rs.EOF Then
+				arrP = rs.GetRows()
+				If IsArray(arrP)  Then
+					For ar = LBound(arrP, 2) To UBound(arrP, 2)
+						pcode = arrP(0, ar) '부서코드
+						'부별순위 업데이트 (pubcode) 부별업데이트   ROW_NUMBER 'score_total2 종합관찰점수 총합
+						wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pcode&"' and gubun < 100 and ( (tryoutresult  = '0' and score_total > 0) or  (tryoutresult in ('r','e') ) ) " 'and tryoutresult  in ( '0','r','e')
+						Selecttbl = "( SELECT boo_orderno,RANK() OVER (ORDER BY tryoutresult,score_total desc,score_total2 desc ) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+						SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+						Call db.execSQLRs(SQL , null, ConStr)
+					Next
+				End if
+			End If
+		else
+			'부별순위 업데이트 (pubcode) 부별업데이트   ROW_NUMBER
+			wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pubcode&"' and gubun < 100 and ( (tryoutresult  = '0' and score_total > 0) or  (tryoutresult in ('r','e') ) )  "
+			Selecttbl = "( SELECT boo_orderno,RANK() OVER (ORDER BY tryoutresult,score_total desc,score_total2 desc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+			SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+			Call db.execSQLRs(SQL , null, ConStr)
+		End If
+
+		'전체순위 업데이트 (각경기별) 전체업데이트 
+		wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and gubun < 100 and ( (tryoutresult  = '0' and score_total > 0) or  (tryoutresult in ('r','e') ) )   "
+		Selecttbl = "( SELECT total_order,RANK() OVER (ORDER BY tryoutresult,score_total desc,score_total2 desc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+		SQL = "UPDATE A  SET A.total_order = A.RowNum FROM " & selecttbl
+		Call db.execSQLRs(SQL , null, ConStr)
+
+	'##########################################################################################################################
+	Case "A"   '최고 라운드가 어떻게 되는지도 체크해야함.
+		If CDbl(pubcode) = 0 Then '경기의 부서를 찾아서 각각 업데이트
+			SQL = "Select pubcode from SD_tennisMember where delYN = 'N' and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' group by pubcode"
+			Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+			If Not rs.EOF Then
+				arrP = rs.GetRows()
+				If IsArray(arrP)  Then
+					For ar = LBound(arrP, 2) To UBound(arrP, 2)
+						pcode = arrP(0, ar) '부서코드
+
+						'부별순위 업데이트 (pubcode) 부별업데이트            (tryoutresult = '0' and score_1 > 0) or ( tryoutresult in ('r','e') )
+						wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode= '"&pcode&"' and round= "&rdno&" and gubun < 100 and ((tryoutresult = '0' and isnull(score_1,0) > 0) or ( tryoutresult in ('r','e') )) " 
+						'감점이 0일수 있으니 score_1 > 0
+						Selecttbl = "( SELECT boo_orderno,RANK() OVER (ORDER BY tryoutresult,score_total asc, score_1 asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+						SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+						Call db.execSQLRs(SQL , null, ConStr)
+					Next
+				End if
+			End If
+		else
+			'부별순위 업데이트 (pubcode) 부별업데이트 
+			wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode= '"&pubcode&"' and round= "&rdno&" and gubun < 100 and ((tryoutresult = '0' and isnull(score_1,0)  > 0) or ( tryoutresult in ('r','e') )) " 
+			'감점이 0일수 있으니 score_1 > 0
+			Selecttbl = "( SELECT boo_orderno,RANK() OVER (ORDER BY tryoutresult,score_total asc, score_1 asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+			SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+			Call db.execSQLRs(SQL , null, ConStr)
+		End if
+
+		'전체순위 업데이트 (각경기별) 전체업데이트 
+		wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and round= "&rdno&" and gubun < 100 and ((tryoutresult = '0' and isnull(score_1,0)  > 0) or ( tryoutresult in ('r','e') )) "
+		Selecttbl = "( SELECT total_order,RANK() OVER (ORDER BY tryoutresult,score_total asc, score_1 asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+		SQL = "UPDATE A  SET A.total_order = A.RowNum FROM " & selecttbl
+		Call db.execSQLRs(SQL , null, ConStr)
+
+	Case "A_1"
+
+		SQL = "select top 1 bestsc       from tblRGameLevel  where gametitleidx = '"&tidx&"' and Gbidx = '"&gbidx&"'  "
+		Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+		If Not rs.eof then
+		bestsc = rs(0)
+
+		If CDbl(pubcode) = 0 Then '경기의 부서를 찾아서 각각 업데이트
+			SQL = "Select pubcode from SD_tennisMember where delYN = 'N' and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' group by pubcode"
+			Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+			If Not rs.EOF Then
+				arrP = rs.GetRows()
+				If IsArray(arrP)  Then
+					For ar = LBound(arrP, 2) To UBound(arrP, 2)
+						pcode = arrP(0, ar) '부서코드
+
+						'부별순위 업데이트 (pubcode) 부별업데이트 
+						wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode= '"&pcode&"' and round= "&rdno&" and gubun < 100 and ((tryoutresult = '0' and score_1 > 0) or ( tryoutresult in ('r','e') )) " 
+						'감점이 0일수 있으니 score_1 > 0
+						Selecttbl = "( SELECT boo_orderno,RANK() OVER (ORDER BY tryoutresult,score_total asc, case when ("&bestsc&" - score_1) < 0 then (abs("&bestsc&" - score_1) * 100) + 1  else abs("&bestsc&" - score_1) * 100  end) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+						SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+						Call db.execSQLRs(SQL , null, ConStr)
+					Next
+				End if
+			End If
+		else
+			'부별순위 업데이트 (pubcode) 부별업데이트 
+			wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode= '"&pubcode&"' and round= "&rdno&" and gubun < 100 and ((tryoutresult = '0' and score_1 > 0) or ( tryoutresult in ('r','e') )) " 
+			'감점이 0일수 있으니 score_1 > 0
+			Selecttbl = "( SELECT boo_orderno,RANK() OVER (ORDER BY tryoutresult,score_total asc, case when ("&bestsc&" - score_1) < 0 then (abs("&bestsc&" - score_1) * 100) + 1  else abs("&bestsc&" - score_1) * 100  end) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+			SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+			Call db.execSQLRs(SQL , null, ConStr)
+		End if
+
+		'전체순위 업데이트 (각경기별) 전체업데이트 
+		wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and round= "&rdno&" and gubun < 100 and ((tryoutresult = '0' and score_1 > 0) or ( tryoutresult in ('r','e') )) "
+		Selecttbl = "( SELECT total_order,RANK() OVER (ORDER BY tryoutresult,score_total asc, case when ("&bestsc&" - score_1) < 0 then (abs("&bestsc&" - score_1) * 100) + 1  else abs("&bestsc&" - score_1) * 100  end) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+		SQL = "UPDATE A  SET A.total_order = A.RowNum FROM " & selecttbl
+		Call db.execSQLRs(SQL , null, ConStr)
+
+		End if
+
+	'##########################################################################################################################
+	Case "B"
+
+		If CDbl(pubcode) = 0 Then '경기의 부서를 찾아서 각각 업데이트 (통합 또는 체전 경기결과 합산에 사용)
+			SQL = "Select pubcode from SD_tennisMember where delYN = 'N' and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' group by pubcode"
+			Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+			If Not rs.EOF Then
+				arrP = rs.GetRows()
+				If IsArray(arrP)  Then
+					For ar = LBound(arrP, 2) To UBound(arrP, 2)
+						pcode = arrP(0, ar) '부서코드
+						'$$$$$$$$$$$$$$$$
+						'2단계 순위   tryoutresult  in ( '0','r','e') and  score_4 > 0
+						wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pcode&"' and gubun < 100 and ((tryoutresult = '0' and score_4 > 0) or ( tryoutresult in ('r','e') )) " 
+						'score_per 감점이 없을수도 있지....소요시간은 0일수 없지...
+						Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total + score_per asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+						SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+						Call db.execSQLRs(SQL , null, ConStr)
+
+						SQL = "select max(boo_orderno) from SD_tennisMember where DelYN = 'N' " & wherestr
+						Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+						maxorder = rs(0)
+
+						If isNull(rs(0)) = True Then
+							maxorder = 0	
+						Else
+							maxorder = rs(0)
+						End if
+
+						'1단계 순위  tryoutresult  in ( '0','r','e') and isNull(score_4,0) = 0
+						wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pcode&"' and gubun < 100 and ((tryoutresult = '0' and isNull(score_4,0) = 0) or ( tryoutresult in ('r','e') )) "
+						Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total + score_per asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+						SQL = "UPDATE A  SET A.boo_orderno = A.RowNum + "&maxorder&" FROM " & selecttbl
+						Call db.execSQLRs(SQL , null, ConStr)
+						'$$$$$$$$$$$$$$$$
+					Next
+				End if
+			End If
+		else
+			'$$$$$$$$$$$$$$$$
+			'2단계 순위
+			wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pubcode&"' and gubun < 100 and ((tryoutresult = '0' and score_4 > 0) or ( tryoutresult in ('r','e') )) " 
+			'score_per 감점이 없을수도 있지....소요시간은 0일수 없지...
+			Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total + score_per asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+			SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+			Call db.execSQLRs(SQL , null, ConStr)
+
+			SQL = "select max(boo_orderno) from SD_tennisMember where DelYN = 'N' " & wherestr
+			Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+			maxorder = rs(0)
+
+			If isNull(rs(0)) = True Then
+				maxorder = 0	
+			Else
+				maxorder = rs(0)
+			End if
+
+			'1단계 순위
+			wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pubcode&"' and gubun < 100 and ((tryoutresult = '0' and isNull(score_4,0) = 0) or ( tryoutresult in ('r','e') )) "
+			Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total + score_per asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+			SQL = "UPDATE A  SET A.boo_orderno = A.RowNum + "&maxorder&" FROM " & selecttbl
+			Call db.execSQLRs(SQL , null, ConStr)
+			'$$$$$$$$$$$$$$$$
+		End If
+
+
+		'###########################
+
+		'전체순위 업데이트 (각경기별) 전체업데이트 
+		'2단계 순위
+		wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and gubun < 100 and ((tryoutresult = '0' and score_4 > 0) or ( tryoutresult in ('r','e') ))  "
+		Selecttbl = "( SELECT total_order,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total + score_per asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+		SQL = "UPDATE A  SET A.total_order = A.RowNum FROM " & selecttbl
+		Call db.execSQLRs(SQL , null, ConStr)
+
+		SQL = "select max(boo_orderno) from SD_tennisMember where DelYN = 'N' " & wherestr
+		Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+		If isNull(rs(0)) = True Then
+			maxorder = 0	
+		Else
+			maxorder = rs(0)
+		End if
+
+		'1단계 순위
+		wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and gubun < 100 and ((tryoutresult = '0' and isNull(score_4,0) = 0) or ( tryoutresult in ('r','e') )) "
+		Selecttbl = "( SELECT total_order,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total + score_per asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+		SQL = "UPDATE A  SET A.total_order = A.RowNum + "&maxorder&"  FROM " & selecttbl
+		Call db.execSQLRs(SQL , null, ConStr)
+
+	'##########################################################################################################################
+	Case "C"
+
+		If CDbl(pubcode) = 0 Then '경기의 부서를 찾아서 각각 업데이트 (통합 또는 체전 경기결과 합산에 사용)
+			SQL = "Select pubcode from SD_tennisMember where delYN = 'N' and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' group by pubcode"
+			Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+			If Not rs.EOF Then
+				arrP = rs.GetRows()
+				If IsArray(arrP)  Then
+					For ar = LBound(arrP, 2) To UBound(arrP, 2)
+						pcode = arrP(0, ar) '부서코드
+						'$$$$$$$$$$$$$$$$
+						'부별순위 업데이트 (pubcode) 부별업데이트 
+						'부별 소팅해서 인덱스 순으로 가져온다.  tryoutresult  in ( '0','r','e') and score_total > 0 
+						wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pcode&"'  and gubun < 100 and ((tryoutresult = '0' and score_total > 0 ) or ( tryoutresult in ('r','e') ))  "
+						Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+						SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+						Call db.execSQLRs(SQL , null, ConStr)
+						'$$$$$$$$$$$$$$$$
+					Next
+				End if
+			End If
+		else
+			'$$$$$$$$$$$$$$$$
+			'부별순위 업데이트 (pubcode) 부별업데이트 
+			'부별 소팅해서 인덱스 순으로 가져온다. 
+			wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"' and pubcode = '"&pubcode&"'  and gubun < 100 and ((tryoutresult = '0' and score_total > 0 ) or ( tryoutresult in ('r','e') )) "
+			Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+			SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+			Call db.execSQLRs(SQL , null, ConStr)
+			'$$$$$$$$$$$$$$$$
+		End If
+
+		'전체순위 업데이트 (각경기별) 전체업데이트 
+		wherestr = " and gametitleidx =  '"&tidx&"' and gamekey3 = '"&gbidx&"'  and gubun < 100 and ((tryoutresult = '0' and score_total > 0 ) or ( tryoutresult in ('r','e') )) "
+		Selecttbl = "( SELECT total_order,ROW_NUMBER() OVER (ORDER BY tryoutresult,score_total asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+		SQL = "UPDATE A  SET A.total_order = A.RowNum FROM " & selecttbl
+		Call db.execSQLRs(SQL , null, ConStr)
+
+
+	End Select 
+End Sub
+
+'*** 소팅주의 tryoutresult가 앞에온이유는 이거에 순위를 부여해야해서...꼴지에다..
+
+
+' http://tennis.sportsdiary.co.kr/pub/ajax/riding/reqJudge.asp?test=t
+'############################################
+	If request("test") = "t" Then
+	'REQ = "{""CMD"":600,""RDNO"":1,""TIDX"":149,""GBIDX"":146,""MIDXS"":[],""KGAME"":""Y""}"
+	'REQ = "{""PARR"":[""693""],""CMD"":12000}"
+    REQ = "{""CMD"":510,""IDX"":543,""TIDX"":10,""GBIDX"":169,""RDNO"":1,""KGAME"":""N"",""GT"":""3.000"",""PT1"":""1"",""PT2"":""1"",""PTA"":""2"",""PUBCODE"":22}"
+	else
+		REQ = request("REQ")
+	End if
+
+	If REQ = "" Then
+		Response.End
+	End if
+
+	If InStr(REQ, "CMD") >0 then
+	Set oJSONoutput = JSON.Parse(REQ)
+		CMD = oJSONoutput.CMD
+	Else
+		CMD = REQ
+	End if
+
+
+	'define CMD
+	CMD_GAMEINPUT2 = 15001	'공지사항저장2
+	CMD_GAMEINPUTEDITOK = 15002	'수정
+	CMD_GAMEINPUTDEL = 15003	'삭제
+
+	CMD_SETRECORDINIT = 400	'심사지점 수 최고점수 저정
+	CMD_SETSIGN = 401
+	CMD_SETSHOW = 402
+	CMD_EXCEPTMAX = 403 '최고점제거
+	CMD_EXCEPTMIN = 404
+
+
+	CMD_RC01 = 20000	'기록입력시작 01
+	CMD_RC02 = 20010	
+	CMD_RC03 = 500	'저장후 reload
+	CMD_RCCLOSE= 501	'기록창에서 창닫음 (입력상태복구)
+
+
+	CMD_SETGIVEUP = 300	'기권사유선택
+	CMD_SETGIVEUPDOC = 301	'사유서제출
+	CMD_SETGAMESTATE = 620	'경기상태변경
+
+	CMD_JRCOK = 510	'장애물 A타입 저장
+	CMD_JRCOK2 = 520	'장애물 B타입 저장
+	CMD_JRCOK3 = 530	'장애물 C타입 저장
+	CMD_JRCOKA_1 = 540	'장애물 A_1타입 저장
+
+	CMD_JREGAME = 600 '재경기생성 
+	CMD_JREGAMEDEL = 610	'재경기 삭제
+
+    CMD_SUMBOO_INJUDGE = 11101        ' 수동 통합 - 심사기록입력
+    CMD_DIVBOO_INJUDGE  = 11102        ' 수동 분리 - 심사기록입력
+    CMD_REFRESHBOO_INJUDGE = 11103    ' 부 재조회 - 심사기록입력
+
+	Select Case CDbl(CMD)
+
+	case CMD_JREGAMEDEL
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.jReGameDel.asp" --><% 
+	Response.End
+
+	case CMD_JREGAME
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.jReGame.asp" --><% 
+	Response.End
+
+	case CMD_JRCOK3
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.jTypeAOK3.asp" --><% 
+	Response.End
+	case CMD_JRCOK2
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.jTypeAOK2.asp" --><% 
+	Response.End
+	case CMD_JRCOK
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.jTypeAOK.asp" --><% 
+	Response.End
+	case CMD_JRCOKA_1
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.jTypeAOKA_1.asp" --><% 
+	Response.End
+
+
+
+	case CMD_SETGAMESTATE
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.setgamestate.asp" --><% 
+	Response.End
+	case CMD_SETGIVEUP
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.setgiveup.asp" --><% 
+	Response.End
+
+	case CMD_SETGIVEUPDOC
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.setgiveupdoc.asp" --><% 
+	Response.End
+
+
+	case CMD_RCCLOSE
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.rcclose.asp" --><% 
+	Response.End
+
+	case CMD_RC01
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.rc01.asp" --><% 
+	Response.End
+	case CMD_RC02
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.rc02.asp" --><% 
+	Response.End
+	case CMD_RC03
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.rc03.asp" --><% 
+	Response.End
+
+
+	case CMD_SETSIGN
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.setsign.asp" --><% 
+	Response.End
+
+	case CMD_SETSHOW 
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.setshow.asp" --><% 
+	Response.End
+
+	case CMD_EXCEPTMAX 
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.exceptmax.asp" --><% 
+	Response.End
+	case CMD_EXCEPTMIN 
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.exceptmin.asp" --><% 
+	Response.End
+
+
+
+
+	case CMD_SETRECORDINIT
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.setrecordinit.asp" --><% 
+	Response.End
+
+	case CMD_GAMEINPUT2
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.scSavenotice2.asp" --><% 
+	Response.End
+
+	case CMD_GAMEINPUTEDITOK
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.orderNoticeEditOk.asp" --><% 
+	Response.End
+
+	case CMD_GAMEINPUTDEL
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.orderNoticeDel.asp" --><% 
+	Response.End
+
+    case CMD_SUMBOO_INJUDGE    
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.sumboo.asp" --><%
+	Response.End
+
+    case CMD_DIVBOO_INJUDGE    
+		%><!-- #include virtual = "/pub/api/RidingAdmin/api.divboo.asp" --><%
+	Response.End
+
+    case CMD_REFRESHBOO_INJUDGE		
+        %><!-- #include virtual = "/pub/api/RidingAdmin/api.refresh.boo.injudge.asp" --><%
+	Response.End
+
+
+
+	End Select
+%>

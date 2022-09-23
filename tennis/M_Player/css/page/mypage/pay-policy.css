@@ -1,0 +1,13 @@
+.pay .pay-title h3 {font-family: 'NanumGothicB'; text-align: center; color: #fff; padding-top: 10px; padding-bottom: 10px; }
+.pay .pay-title p {background-color: #fff; font-size: 0.81em; text-align: center;}
+.pay .pay-title p.user-name {color: #0072d2; padding-top: 20px;}
+.pay .pay-title .pay-guide {color: #666; border-bottom: 1px solid #ddd; line-height: 150%; padding-top: 10px; padding-bottom: 20px;}
+.sub.pay .user-pay-info {border: 2px solid #6f91ae; padding-bottom: 0;}
+
+/* 요금제 기한 */
+.pay .term-guide {padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 60px;}
+.pay .term-guide .icon-img {width: 47px; background-color: #9ba2aa; border-radius: 50%; margin-right: 5px; float: left;}
+.pay .term-guide .term {float: left;}
+.pay .term-guide .tit {font-family: 'NanumGothicB'; font-size: 0.75em;}
+.pay .term-guide .cont {font-size: 0.75em;}
+.pay .term-guide .cont span:first-child {color: #0072d2;}

@@ -1,0 +1,12 @@
+.basic_modal .modal-dialog {width: 445px;}
+.basic_modal .modal-content {border-radius: 0;}
+.basic_modal .modal-header {background-color: #004498;}
+.basic_modal .modal-header h2 {font-family: 'NanumGothicB';font-size: 16px;text-align: center;color: #fff;}
+.modal .modal-header .btn_close {position: absolute; top: 12px;right: 12px;}
+
+.modal .modal-body {padding: 0;}
+.modal .modal-body .write_doc {padding-top: 30px;padding-bottom: 30px;padding-left: 17px;padding-right: 17px;}
+.basic_modal .table_section {margin-top: 30px;}
+.basic_modal .table_section.first_table {margin-top: 0;}
+
+.modal .modal-body .guide {font-size: 13px;color: #333;}

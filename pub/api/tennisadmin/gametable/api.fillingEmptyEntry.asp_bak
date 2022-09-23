@@ -1,0 +1,144 @@
+
+<%
+  idx = oJSONoutput.IDX
+  tidx = oJSONoutput.TitleIDX
+  title = oJSONoutput.Title
+  teamnm = oJSONoutput.TeamNM
+  areanm = oJSONoutput.AreaNM
+
+  
+  Set db = new clsDBHelper
+  SQL = " Select EntryCnt,attmembercnt,courtcnt,level from   tblRGameLevel  where    DelYN = 'N' and  RGameLevelidx = " & idx
+  'Response.write "</br> " & SQL
+  Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+  If Not rs.eof then
+    entrycnt = rs("entrycnt") '참가제한인원수
+    attmembercnt = rs("attmembercnt") '참가신청자수
+    courtcnt = rs("courtcnt") '코트수
+    levelno = rs("level")
+    poptitle = poptitle & " <span style='color:red'>- 모집: " & entrycnt &" , - 신청 : " &  attmembercnt & " - 코트수 : " & courtcnt & "</span>"
+  End if
+
+  
+  strtable = "sd_TennisMember"
+  strtablesub =" sd_TennisMember_partner "
+  strtablesub2 = " tblGameRequest "
+  
+  strwhere = " a.GameTitleIDX = " & tidx & " and  a.gamekey3 = " & levelno & " and a.tryoutgroupno > 0  and a.gubun in ( 0, 1) and tryoutsortNo = 1 "
+  strsort = " order by a.tryoutsortno asc, a.tryoutgroupno asc" '조별
+  strAfield = " tryoutgroupno, tryoutsortno, gamememberIDX "
+  strfield = strAfield
+
+  SQL = "select " & strfield & " from  " & strtable & " as a " 
+  SQL = SQL & "where " & strwhere & strsort
+  'Response.write  SQL &"</br> " 
+
+  Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+  If Not rs.EOF Then 
+    arrRS = rs.getrows()
+  End If
+
+  'Response.write UBound(arrRS,2)  & "</br>"
+  'Response.write arrRS(0,0)  & "</br>"
+  strwhere = " a.GameTitleIDX = " & tidx & " and  a.gamekey3 = " & levelno & " and a.tryoutgroupno > 0  and a.gubun in ( 0, 1) and tryoutsortNo <> 1 "
+  strsort = " order by a.tryoutsortno asc, a.tryoutgroupno desc" '조별
+  SQL = "select " & strfield & " from  " & strtable & " as a " 
+  SQL = SQL & "where " & strwhere & strsort
+  'Response.write  SQL &"</br> " 
+
+  Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+  If Not rs.EOF Then 
+    arrRS2 = rs.getrows()
+  End If
+
+
+  SQL = " Select top 1 MAX(tryoutgroupNo) as GroupNo, Max(tryoutsortNo) as SortNo "
+  SQL = SQL & " from sd_TennisMember "
+  SQL = SQL & " where GameTitleIDX = " & tidx & " and gamekey3 = " & levelno &" and gubun in (0, 1) and DelYN = 'N'"
+
+  'Response.write  SQL &"</br> " 
+  'Response.End
+
+  '1. Arrange 
+  Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+  
+  If Not rs.eof Then
+    MaxGroupNo = rs("GroupNo")
+    MaxSortNo = rs("SortNo")
+  END IF
+
+  'Response.write  "MaxGroupNo : " & MaxGroupNo &"</br> " 
+  'Response.write  "MaxSortNo : " & MaxSortNo &"</br> " 
+
+  NewSortNo = 1
+  NewGroupNo = 0
+
+  '2. Act
+  If IsArray(arrRS) Then
+    For ar = LBound(arrRS, 2) To UBound(arrRS, 2) 
+      NewGroupNo = NewGroupNo + 1
+      ' 데이터 
+      rtryoutsortno = arrRS(1,ar)
+      rtryoutgroupno = arrRS(0,ar)
+      rgamememberIDX = arrRS(2,ar)
+
+      IF NewSortNo <> arrRS(1,ar) Or NewGroupNo <> arrRS(0,ar) Then
+        SQL = " UPDATE sd_TennisMember "
+        SQL = SQL & " SET tryoutsortNo = '" & NewSortNo & "',"
+        SQL = SQL & "     tryoutgroupno = '" & NewGroupNo & "'"
+        SQL = SQL & " WHERE gameMemberIDX = '" &  rgamememberIDX & "'"
+        Call db.execSQLRs(SQL , null, ConStr)
+      end if
+      
+      IF NewGroupNo = MaxGroupNo Then 
+        NewSortNo = NewSortNo + 1
+        NewGroupNo = MaxGroupNo + 1
+      End If
+      
+    
+    Next  
+  END IF
+
+  If IsArray(arrRS2) Then
+  For ar = LBound(arrRS2, 2) To UBound(arrRS2, 2) 
+    ' 데이터 
+    rtryoutsortno = arrRS2(1,ar)
+    rtryoutgroupno = arrRS2(0,ar)
+    rgamememberIDX = arrRS2(2,ar)
+
+    IF(NewSortNo = 1) then
+      NewGroupNo = NewGroupNo + 1
+    ELSE
+      NewGroupNo = NewGroupNo - 1
+    END IF
+
+    IF NewSortNo <> arrRS2(1,ar) Or NewGroupNo <> arrRS2(0,ar) Then
+        SQL = " UPDATE sd_TennisMember "
+        SQL = SQL & " SET tryoutsortNo = '" & NewSortNo & "',"
+        SQL = SQL & "     tryoutgroupno = '" & NewGroupNo & "'"
+        SQL = SQL & " WHERE gameMemberIDX = '" &  rgamememberIDX & "'"
+        Call db.execSQLRs(SQL , null, ConStr)
+    End If
+
+    '1번째 그룹이면서 첫번재 그룹이 꽉찬 경우
+    IF NewGroupNo = MaxGroupNo And NewSortNo = 1 Then 
+    NewSortNo = NewSortNo + 1
+    NewGroupNo = MaxGroupNo + 1
+    End If
+
+    '1번째 그룹이 아니면서 그룹이 꽉찬 경우
+    IF NewGroupNo = 1 And NewSortNo <> 1 Then 
+    NewSortNo = NewSortNo + 1
+    NewGroupNo = MaxGroupNo + 1
+    End If
+  Next  
+END IF
+
+ 	Call oJSONoutput.Set("resout", 0 )
+	strjson = JSON.stringify(oJSONoutput)
+	Response.Write strjson
+
+    db.Dispose
+  Set db = Nothing
+%>

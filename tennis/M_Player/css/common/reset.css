@@ -1,0 +1,20 @@
+body {-webkit-tap-highlight-color: none; position: relative;/*font-family:"NanumGothic";*/ font-family: 'NotoKR'; letter-spacing: -0.05em; margin: 0 auto; padding: 0; max-width: 767px;}
+html{ height:100%; }
+li {list-style: none;}
+a {display: block; text-decoration: none; color: inherit;}
+h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dt, dd {margin: 0;
+padding: 0;}
+fieldset {border:none; padding:0;}
+legend {position:absolute; top:-9999px; left:-9999px;}
+* > img {width: 100%; vertical-align: middle;}
+/*select {-webkit-appearance:none;}*/
+select {color: #000; width: 100%; padding-left: 10px;}
+table {border-collapse: collapse;}
+button:hover, button:focus, button:active {border: none; outline: none; -webkit-box-shadow: none; box-shadow: none;}
+textarea {resize: none}
+.well {border: none;}
+.container {max-width: 767px;} /* bootstrap 편집 */
+a:hover,
+a:focus,
+a:active,
+a:visited {text-decoration: none;}

@@ -1,0 +1,331 @@
+/* INTRODUCE 협회정보 > 인사말 */
+.introduce {color:#666; font-size:15px; font-family:"NanumBarunGothic"; line-height:1.5;}
+.introduce h4 {height:64px; margin:70px 0; font-weight:normal;}
+.introduce h4 strong {display:block; padding:0 0 0 75px; color:#0085d3; font-size:32px; font-family:"NanumBarunGothicB";}
+.introduce h4 span {display:block; padding:0 0 0 75px; color:#666; font-size:15px; font-family:"NanumBarunGothic";margin-top:10px;}
+.introduce p {width:593px; margin:0 0 25px;}
+.introduce p.sign {margin:20px 0 60px 0;}
+.introduce p.sign img {margin:0 0 0 7px; vertical-align:middle;}
+
+/* HISTORY 협회정보 > 연혁 */
+.history {padding:60px 0 80px 0;}
+.history h4 {margin:0 0 44px; text-align:center; color:#666; font-size:22px; font-family:"NanumBarunGothicB"; line-height:1.4;}
+.history h4 strong {color:#0085d3; font-weight:normal;}
+.history .bg_history_top {margin:25px 0 0 0; width:42px; height:3px; margin:0 auto; background:#0085d3;}
+
+.history_inner {overflow:hidden; width:100%; margin:44px 0 0 0;}
+.history table {width:100%;}
+.history table th {color:#333; font-size:25px; line-height:100%; padding:20px 0 0 0; vertical-align: middle; background-repeat:no-repeat; background-position:100% 100%, 0 22px;}
+.history .history_inner table th {vertical-align: top;padding-top:25px;}
+.history table th span {display: block;}
+.history table td {padding:10px 0 10px 22px; color:#666; font-size:15px; font-family:"NanumBarunGothic"; vertical-align:top; line-height:100%; border-bottom:1px solid #ddd;}
+.history table td.date {padding:10px 0; color:#0085d3; text-align:center; vertical-align:top; line-height:100%;}
+.history table td.last {border-bottom:2px solid #ccc;}
+
+
+
+
+/* MAP 협회정보 > 오시는 길 */
+.map {margin:30px 0 0 0;}
+.map table {font-size: 15px;width:100%; margin:20px 0 41px 0; border-top:2px solid #0085d3;}
+.map table th {height:39px; line-height:39px; color:#333; font-weight:normal; font-family:"NanumBarunGothicB"; border-bottom:1px solid #ccc;}
+.map table td {height:39px; line-height:39px; color:#666; border-bottom:1px solid #ccc;}
+.way {overflow:hidden; width:100%; color:#777; font-size:16px; line-height:1.8;margin-bottom:50px;}
+.way h4 {display:inline-block; margin:0 0 6px; padding:7px 12px 5px; color:#fff; font-size:16px; font-family:"NanumBarunGothicB"; font-weight:normal; background:#607a89; vertical-align:top; line-height:100%;}
+.way01 {float:left; width:320px; padding:0 0 0 120px;margin-right:50px;line-height:25px;font-size:14px;letter-spacing:-1px;}
+.way02 {float:left; width:320px; padding:0 0 0 120px;line-height:25px;font-size:14px;letter-spacing:-1px;}
+
+/* SUBDIVISION 협회정보 > 협회소개 > 시도지부 */
+.subdivision {margin:70px 0 0 0;}
+.subdivision h4 {margin:0 0 20px; color:#333; font-size:24px; font-weight:normal; font-family:"NanumBarunGothicB";}
+.subdivision_wrap {overflow:hidden; width:100%;}
+.subdivision_list {float:left; width: 460px; height:111px; margin:0 20px 50px 0;}
+.subdivision_list h5.federation {text-align:center; color:#4e8f00; font-size:18px; font-weight:normal; font-family:"NanumBarunGothicB";}
+.subdivision_list h5 {display: inline-block;vertical-align: middle;float:none;  text-align:center; color:#0085d3; font-size:18px; font-weight:normal; font-family:"NanumBarunGothicB";position:relative;margin-right: 11px;}
+.subdivision_list h5 span{position:absolute;left:0;top:30px;width:100%;}
+.subdivision_list ul {display: inline-block;vertical-align: middle;}
+.subdivision_list ul li {overflow:hidden; color:#666; font-size:14px; line-height:1.6;}
+.subdivision_list ul li strong {font-family: 'NanumBarunGothicB'; float:left; color:#333; padding:0 5px 0 10px;}
+.subdivision_list ul li span {float:left; width:295px;letter-spacing: -0.0125em;}
+
+
+/* MANAGEMENT 협회정보 > 협회소개 > 임원현황 */
+.staff_list {padding: 70px 0 62px 0; }
+.staff_list ul{ margin-bottom: 0; }
+.staff_list .staff_tbale { width: 100%; }
+.staff_list .staff_tbale ul { display: inline-block;vertical-align: top;}
+.staff_list .staff_tbale .t_block {height: 30px;}
+.staff_list .staff_tbale .t_border { border: 1px solid #cccccc; padding: 14px;  width: 440px; vertical-align: top;}
+.staff_list .staff_tbale tr td:nth-child(2) {width: 20px;}
+.staff_list .staff_tbale .first {border-top:2px solid #0085d3; margin: 0 auto;}
+.staff_list .staff_tbale .t_border li {line-height: 17px; font-size: 13px; color:#666; }
+.staff_list .staff_tbale .t_border .txt_1{font-family:'NanumBarunGothicB'; font-size: 16px;}
+.staff_list .staff_tbale .t_border .txt_2{line-height: 46px; height: 46px;}
+.staff_list .staff_tbale li span {display: inline-block; background:#2abefb; vertical-align: middle; padding: 7px 15px; color:#fff; font-size: 13px; margin-right:9px;}
+.staff_list .staff_tbale li span.blue {background:#0085d3;}
+.staff_list .staff_tbale li span.dark-green {background: #447700;}
+.staff_list .staff_tbale li span.green {background:#76b423;}
+.staff_list .staff_tbale li span.orange {background:#fa8e2e;}
+.staff_list .list_second {margin-top:30px;}
+.staff_list .list_second li {float:left;width:460px;border: 1px solid #cccccc;padding: 14px; margin-bottom:20px; }
+.staff_list .list_second li:nth-child(2n) {margin-left:20px;}
+.staff_list .staff_img {width:117px;height: 150px;display: inline-block;margin-bottom: -2px;margin-right: 5px;}
+
+
+
+/* MANAGEMENT 협회정보 > 협회소개 > 경영공시 */
+.management {margin:30px 0 0 0;}
+.management .panel {margin:0 0 12px; background-color: #fff; border: 1px solid transparent;}
+.management .panel-body {padding:15px; line-height:1.5; background:#f2f2f2;}
+.management .panel-heading > .dropdown .dropdown-toggle {color: inherit;}
+.management .panel-heading {overflow:hidden; margin-top: 0; margin-bottom: 0; color:#333; font-size: 18px; color: inherit;}
+.management .panel-title a {overflow:hidden; display:block; width:100%; padding:9px 20px 5px 12px; box-sizing: border-box;}
+.management .panel-title a p {color:#fff;}
+.management .panel-title a.collapsed p {font-family: 'NanumGothicB'; color:#666; }
+.management .panel-title a p .QuestionSubject {font-size: 18px; background:#ddd; padding:5px 8px; border-radius:30px; margin-right:5px; color:#4e5557;}
+.management .panel-title a p.QuestionSubject {color:#333;}
+.management .panel-collapse .panel-body {position: relative;}
+.FAQ_list .management .panel-collapse .panel-body .txt_management {position: absolute; top: 9px; display: inline-block; font-size: 17px; font-weight: bold; background:#0085d3; padding:1px 8px; color:#fff; border-radius:30px;}
+.management .panel-collapse .panel-body p:nth-child(2) {padding-left: 37px;}
+.management .panel-group {margin-bottom: 20px;}
+.management .panel-group .panel {margin-bottom: 0 0 20px;border-radius:0;}
+.management .panel-group .panel + .panel {margin-top: 5px;}
+.management .panel-group .panel-heading {border-bottom: 0;border-radius:0;padding:0;}
+.management .panel-group .panel-heading + .panel-collapse > .panel-body,
+.management .panel-group .panel-heading + .panel-collapse > .list-group {border-top: 1px solid #ddd;}
+.management .panel-default {border-color: #ddd;}
+
+.management .tit_management {font-family: 'NanumGothicB'; float:left; vertical-align:middle; line-height:33px;margin:auto;font-weight:600;font-size:16px;}
+.management .btn_file {display:block; text-decoration:underline; padding:0 0 7px 27px; color:#4f83a1; font-size:13px; font-family:"NanumGothicB";}
+.management .txt_management {color:#333; margin:0 0 10px; line-height:1.5;}
+.management .txt_management a:nth-child(1) {margin-top:15px;}
+.management .txt_management a {margin-top:5px;}
+.management .icon_caret {transition: all .3s ease; float:right; width: 23px; height:23px; line-height:20px; text-align:center; color:#ddd; border:3px solid #ddd; border-radius:50%;}
+.management .caret {     transform: rotate(180deg);display: inline-block;vertical-align: middle; border-top:6px solid #ddd; border-right:6px solid transparent; border-left:6px solid transparent; border-bottom: none; margin:8px 0;}
+.management .collapsed .icon_caret {transform: rotate(180deg); color:#ddd;}
+.management .collapsed .icon_caret .caret {transition: all .3s ease;border-top: 6px solid #ddd;margin: 8px 0;}
+
+.management .panel-title {color:#fff; background:#788286;}
+.management .panel-title .collapsed {color:#333; background:#fff;}
+.panel-title .collapsed p:nth-child(1),.panel-title .collapsed p:nth-child(2) {font-family:"NanumBarunGothic"; color:#666;}
+.panel-title p.tit_management:first-child {width: 210px;}
+.panel-title p.tit_management:nth-child(2) {width: 240px;}
+.panel-title p.tit_management:nth-child(3) {width: 380px;}
+.management .panel-title p.tit_management {width: 95%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+.management .panel-default>.panel-heading{background:#fff;}
+
+
+/* MANAGEMENT 협회정보 > 협회소개 > 각종규정 */
+.articles {padding: 20px 0 100px 0;}
+/**
+ * 2017.09.04 _article_ver.text.asp 로 백업
+ */
+/*#content .articles.main {margin-right: 190px;}
+.articles div.title {padding: 0 0 0 20px; margin-top:20px; height: 30px;display: inline-block;}
+.articles div.title p {padding: 9px 20px 12px 0;color: #fff; font-size: 16px; font-family: "NanumBarunGothicB"}
+.articles dl {padding: 0 0 0 9px; margin-bottom: 10px;}
+.articles dl dt {padding-top:18px;padding-bottom: 4px; font-size: 16px; font-family:"NanumBarunGothicB";}
+.articles dl dd {line-height: 175%;color:#666;}
+.articles dl dd ul { padding: 15px 0 15px 0 }
+.articles .pdr15 { padding: 0 0 0 15px }*/
+.articles .rule_btn_list {text-align: center;width: 100%;margin-top: 40px;}
+.articles .rule_btn_list .btn_box {position: relative;border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; width: 300px; height: 190px; margin-right: 30px; margin-bottom: 30px; float: left;}
+.articles .rule_btn_list .btn_box:before,
+.articles .rule_btn_list .btn_box:after {position: absolute; top: 33px; content: ''; width: 21px; height: 5px;}
+.articles .rule_btn_list .btn_box:before {left: 129px;background-color: #0085d3;}
+.articles .rule_btn_list .btn_box:after {left: 150px;background-color: #76b423;}
+.articles .rule_btn_list .btn_box.no_mr {margin-right: 0;}
+.articles .rule_btn_list .expl {font-size: 17px; font-weight: bold; color: #333;margin-top: 70px;}
+.articles .rule_btn_list .expl .txt {display: inline-block;vertical-align: top;text-align: center;line-height: 125%; font-family:"NanumBarunGothicB"; font-size:16px;}
+.articles .rule_btn_list .btn_txt {display: inline-block;font-size: 14px; font-family:"NanumBarunGothicB"; background-color: #788286;color: #fff;border-radius: 40px;margin-top: 30px;width: 128px;height: 37px;line-height: 39px;}
+.articles .rule_btn_list .btn_txt:hover,
+.articles .rule_btn_list .btn_txt:focus,
+.articles .rule_btn_list .btn_txt:active {background-color: #0085d3;}
+.articles .rule_btn_list .btn_txt .ic_deco {position: relative;top: 1px;margin-left: 7px;}
+.articles .rule_btn_list .line_2 .expl {margin-top: 60px;}
+.articles .rule_btn_list .line_2 .btn_txt {margin-top: 20px;}
+
+
+
+/* MANAGEMENT 협회정보 > 유도소개 > 유도역사 */
+
+.info_history { padding: 50px 0 70px 0; }
+.info_history .info_timg { text-align: center; margin-bottom: 40px; }
+.info_history .nav-tabs{border-bottom:1px solid #ccc;border-top:2px solid #0085d3; font-family:"NanumBarunGothicB";}
+.info_history .nav-tabs>li {width:319px; border-right: 1px solid #ccc; }
+.info_history .nav-tabs>li:last-child {border-right: none; width: 320px;}
+.info_history .nav-tabs>li>a {display:inline-block;width:100%;height:45px;line-height:45px; color: #333;}
+.info_history .nav-tabs>li:last-child a {margin-right: 0;}
+
+.info_history .tab-content { margin-top:32px; }
+.info_history .tab-content dt { padding: 0 0 0 22px; font-size: 17px; font-family:"NanumBarunGothicB"; color: #333;}
+.info_history .tab-content dd {color: #777; padding: 16px 0 0 0; font-size: 15px; line-height:150%;}
+.info_history .tab-content .blockquote {font-size: 12px;color:#bbb;}
+.info_history .tab-content .pd40 { padding: 40px 0;}
+.info_history .tab-content .tab_3 { padding-right: 200px;}
+
+/* MANAGEMENT 협회정보 > 유도소개 > 유도기술 */
+.jundo_skill { padding: 50px 0 70px 0; }
+.jundo_skill .info_timg { text-align: center; margin-bottom: 40px; }
+.jundo_skill .nav-tabs{border-bottom:1px solid #ccc; border-top:2px solid #0085d3; font-family:"NanumBarunGothicB";}
+.jundo_skill .nav-tabs>li {width:479px; border-right: 1px solid #ccc; }
+.jundo_skill .nav-tabs>li:last-child {border-right: none; width: 480px;}
+.jundo_skill .nav-tabs>li>a {display:inline-block;width:100%;height:45px;line-height:45px; color: #333;}
+
+.jundo_skill .tab-content { margin-top:32px;  line-height: 21px; font-size: 15px;}
+.jundo_skill .tab-content .text1 { margin: 10px 0 40px 0; line-height:150%; color:#777;}
+.jundo_skill .tab-content .text1 span { color:#0085d3; }
+.jundo_skill .tab-content table { border:2px solid #cccccc; width: 100%;  margin-bottom: 35px; }
+.jundo_skill .tab-content table th { border-right :1px solid #cccccc; padding: 14px 0; background:#788286; color: #fff;}
+.jundo_skill .tab-content table th:first-child { width: 30%; }
+.jundo_skill .tab-content table th:last-child { width: 70%; border-right: 0;}
+.jundo_skill .tab-content table td { border-top:1px solid #cccccc; border-right:1px solid #cccccc; padding: 10px 0; text-align: center; color: #333;}
+.jundo_skill .tab-content table tr:nth-child(even) { background: #f2f2f2; }
+.jundo_skill .tab-content table td:last-child { border-right: 0; padding-left: 25px; text-align: left; }
+
+.jundo_skill .tab-content h4 { padding: 0 0 10px  25px;height: 25px;  font-family:"NanumBarunGothicB"; font-size:17px; margin-top:40px;}
+.jundo_skill .tab-content .mbt15 {margin-bottom: 15px;}
+.jundo_skill .tab-content p {color: #666;}
+.jundo_skill .tab-content .text2 { margin-bottom: 20px; }
+.jundo_skill .tab-content .text2 span {display: inline-block; width: 100%; padding-bottom: 4px; font-family:"NanumBarunGothicB"; color:#0085d3;  }
+.jundo_skill .tab-content li:before { content: "•"; color:#0085d3;  }
+.judo_skill_content {margin-right:110px;}
+/* MANAGEMENT 협회정보 > 유도소개 > 유도용어 */
+.word { padding: 50px 0 70px 0; }
+.word .info_timg { text-align: center; margin-bottom: 40px; }
+.word .nav-tabs{border-bottom:1px solid #ccc; border-top:2px solid #0085d3; margin-bottom:40px; font-family:"NanumBarunGothicB";}
+.word .nav-tabs>li {width:479px; border-right: 1px solid #ccc; }
+.word .nav-tabs>li:last-child {border-right: none; width: 480px;}
+.word .nav-tabs>li>a {display:inline-block;width:100%;height:45px;line-height:45px; color: #333;}
+
+.word .table_item { width: 100%; border:3px solid #ddd;  margin-bottom:30px; font-family:"NanumBarunGothicB";}
+.word .table_item tr:first-child th,.word .table_item tr:first-child td { border-top: 0; }
+.word .table_item th { background: #eeeeee;  padding: 15px 0; width: 127px; font-size:15px;}
+.word .table_item td {font-size: 12px; padding-left:15px;}
+.word .table_item th, .word .table_item td { border-top:1px solid #bbbbbb;  }
+.word .table_item a { border: 1px solid #b7b7b7; line-height: 25px; text-align: center;  width:21px; height: 21px; display: inline-block; margin-right: 3px;  color: #666666; border-radius: 2px;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#efefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+.word .table_item a:hover, .word .table_item a.over{  border: 1px solid #006cab;  color: #fff; font-weight: bold; border-radius: 2px;
+background: #00aaec; /* Old browsers */
+background: -moz-linear-gradient(top, #00aaec 1%, #006ed8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #00aaec 1%,#006ed8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #00aaec 1%,#006ed8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aaec', endColorstr='#006ed8',GradientType=0 ); /* IE6-9 */
+}
+
+.word .table_rsult { width: 100%; border-top: 1px solid #0085d3; border-bottom:1px solid #bbbbbb; text-align: center;}
+.word .table_rsult th {width:320px; background: #f2f2f2; padding: 15px 0; font-family:"NanumBarunGothicB"; font-size:15px;}
+.word .table_rsult td { padding: 15px 0; border-top:1px solid #bbbbbb; }
+
+.word .search_board select { width: 218px; }
+
+.word2 {margin:30px 0 0 0;}
+.word h3 {background-color: #eee;font-size: 16px;height: 45px;line-height: 45px; border-top:1px solid #0085d3; border-bottom:1px solid #bbb;}
+.word h3 span {display: inline-block;text-align: center; font-family:"NanumBarunGothicB"; font-size:15px;}
+.word h3 span:nth-child(1) {width:40%;}
+.word h3 span:nth-child(2) {width:60%;}
+.word2 .panel-group > div:first-child {background-color: #fff; /*border-top: 1px solid #0085d3;*/ margin-top:1px solid #bbb;}
+.word2 .panel {background-color: #fff; border: 1px solid transparent; border-top:0;}
+.word2 .panel-body {padding:15px; line-height:1.5; background:#f2f2f2;}
+.word2 .panel-heading > .dropdown .dropdown-toggle {color: inherit;}
+.word2 .panel-heading {overflow:hidden; margin-top: 0; margin-bottom: 0; color:#333; font-size: 18px; color: inherit;}
+.word2 .panel-title a {overflow:hidden; display:block; width:100%; padding:9px 20px 5px; color: inherit; box-sizing: border-box;}
+
+.word2 .panel-group {margin-bottom: 20px;}
+.word2 .panel-group .panel {margin-bottom: 0 0 20px;border-radius:0;}
+/*.word2 .panel-group .panel + .panel {margin-top: 5px;}*/
+.word2 .panel-group .panel-heading {border-bottom: 0;border-radius:0;padding:0;}
+.word2 .panel-group .panel-heading + .panel-collapse > .panel-body,
+.word2 .panel-group .panel-heading + .panel-collapse > .list-group {border-top: 1px solid #ddd;}
+.word2 .panel-default {border-color: #ddd;}
+
+.word2 .tit_management {font-family: 'NanumBarunGothicB'; float:left; vertical-align:middle; line-height:33px;margin:auto; font-size:14px; margin-right: 5px; }
+.word2 .btn_file {display:block; text-decoration:underline; padding:0 0 7px 27px; color:#4f83a1; font-size:13px; font-family:"NanumGothicB";}
+.word2 .txt_management {color:#333; margin:0 0 10px; line-height:1.5;}
+
+.word2 .icon_caret {transition: all .3s ease; float:right; width: 23px; height:23px; line-height:23px; text-align:center; color:#ddd; border:3px solid #ddd; border-radius:50%;}
+.word2 .caret { display: inline-block;vertical-align: middle; border-top:6px solid #ddd; border-right:6px solid transparent; border-left:6px solid transparent; border-bottom: none; margin:0;}
+.word2 .collapsed .icon_caret {transform: rotate(180deg); color:#ddd;}
+#profile .word2 .collapsed .icon_caret {transform: rotate(0deg);}
+.spanIndexGuidance {margin-top:40px; display:inline-block; color: #3c93c5; font-size:13px;}
+.word2 .collapsed .icon_caret .caret {transition: all .3s ease;border-top: 6px solid #ddd;margin: 0px;}
+
+.word2 .panel-title {color:#fff; background:#788286;}
+.word2 .panel-title .collapsed {color:#333; background:#fff;}
+
+.word2 .panel-default>.panel-heading{background:#fff;}
+
+
+
+
+/* MANAGEMENT 협회정보 > 유도소개 > 유도규정 */
+.judo_rule { padding: 50px 0 70px 0; }
+.judo_rule .info_timg { text-align: center; margin-bottom: 40px; }
+.judo_rule .nav-tabs{border-bottom:0;border-top:2px solid #0085d3; border-bottom:1px solid #ccc; font-family:"NanumBarunGothicB";}
+.judo_rule .nav-tabs>li {width:319px; border-right: 1px solid #ccc; }
+.judo_rule .nav-tabs>li:last-child {border-right: none; width: 320px;}
+.judo_rule .nav-tabs>li>a {display:inline-block;width:100%;height:45px;line-height:45px; color: #333;}
+
+.judo_rule .tab-content { margin-top:32px;  line-height: 21px; font-size: 15px;}
+.judo_rule .tab-content h4 { padding: 0 0 10px  25px;height: 25px;  font-family:"NanumBarunGothicB"; font-size:17px; margin-top:40px;}
+.judo_rule .tab-content .text2 { margin-bottom: 20px; line-height:150%; color:#777;}
+.judo_rule .tab-content .text2 span {display: inline-block; width: 100%; padding-bottom: 4px; font-family:"NanumBarunGothicB"; color:#0085d3; font-size:16px; }
+.judo_rule .tab-content .text2 span.color_red { color:#da0000; font-weight: normal; }
+.judo_rule .tab-content .text2 img {margin-top:20px;}
+.judo_rule .tab-content .text2.motion {margin-top:20px;}
+.judo_rule .table_time { width: 520px; border: 2px solid #cccccc; margin-bottom:35px; }
+.judo_rule .table_time td, .judo_rule .table_time th { padding: 10px 0; border-bottom: 1px solid #ccc; text-align:center; font-family:"NanumBarunGothicB";}
+.judo_rule .table_time tr:nth-child(odd) { background:#f2f2f2;  }
+.judo_rule .table_time th { background: #788286; color: #fff; width: 60%; }
+.judo_rule .table_time tfoot td:last-child { border-bottom:0; background: #fff;}
+
+.judo_rule .table_belt_rule {width: 100%; border:2px solid #ccc; margin-bottom: 30px; }
+.judo_rule .table_belt_rule th { background: #788286; width:16%;  padding: 10px 0; border-right: 1px solid #ccc;  color:#fff; font-family:"NanumBarunGothicB";}
+.judo_rule .table_belt_rule th:last-child { border-right:0; }
+.judo_rule .table_belt_rule td { border-top:1px solid #ccc;  border-right: 1px solid #ccc; text-align: center; padding: 5px;}
+.judo_rule .table_belt_rule td:last-child { border-right: 0;}
+.judo_rule .table_belt_rule td:nth-child(1),.judo_rule .table_belt_rule td:nth-child(4) { background: #f2f2f2; font-family:"NanumBarunGothicB"; }
+.judo_rule .table_belt_rule td span { display:block; height: 29px; padding: 2px; }
+.judo_rule .table_belt_rule td span span { background: #fff;  width: 52px; height: 25px; margin: 0 auto; }
+
+/* 유도규정 2차탭 */
+.judo_rule #container {margin:0 auto;text-align:center;}
+.judo_rule .tab {list-style: none;margin: 0;padding: 0;overflow: hidden; border-bottom:2px solid #ccc;}
+.judo_rule .tab li {float: left;background:none; width:240px; margin:0;}
+.judo_rule .tab li a {border:1px solid #ccc; border-right: 0; border-top:2px solid #ccc; font-size:16px;}
+.judo_rule .tab li:last-child a {border-right:2px solid #ccc;}
+.judo_rule .tab li:first-child a {border-left:2px solid #ccc;}
+.judo_rule .tab li.active a { background: #fff; color: #0085d3; }
+.judo_rule .tabcontent {display: none;}
+.judo_rule ul.tab li.current{color: #222;}
+.judo_rule .tabcontent.current {display: block;text-align:left;}
+
+.judo_rule .table_receiver.Rwidth { width: 720px; }
+.judo_rule .table_receiver { border: 2px solid #ddd; margin-bottom:30px; }
+.judo_rule .table_receiver tr:first-child td { text-align:center; }
+.judo_rule .table_receiver td, .judo_rule .table_receiver th { border-right: 1px solid #ddd; font-family:"NanumBarunGothicB"; }
+.judo_rule .table_receiver td:last-child, .judo_rule .table_receiver th:last-child { border-right: 0; }
+.judo_rule .table_receiver th { background:#788286; padding: 12px 0; color:#fff;  width:25%; }
+.judo_rule .table_receiver tr:last-child td { padding:18px 10px; font-size:14px; color:#777;}
+
+.judo_rule .table_receiver2 { border: 2px solid #ddd; margin-top:60px;}
+.judo_rule .table_receiver2 th { background: #788286; color: #fff; width: 20%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;  padding: 10px 0; font-family:"NanumBarunGothicB";}
+.judo_rule .table_receiver2 td { border-bottom: 1px solid #ddd; padding: 10px 0 10px 15px ; }
+.judo_rule .table_receiver2 tr:last-child td,.judo_rule .table_receiver2 tr:last-child th { border-bottom:0; }
+.judo_rule .table_receiver2 tr:nth-child(odd) { background: #f2f2f2; }
+
+.judo_rule .tbale_beltNum { width: 100%; border: 2px solid #ccc; margin-bottom:30px; }
+.judo_rule .tbale_beltNum th { background: #788286; color:#fff; border-right:1px solid #ccc; padding: 10px 0; font-family:"NanumBarunGothicB"; }
+.judo_rule .tbale_beltNum th:last-child {border-right:0; line-height: 15px; }
+.judo_rule .tbale_beltNum td { border-right:1px solid #ccc; border-top:1px solid #ccc; text-align:center; padding: 10px 0; }
+.judo_rule .tbale_beltNum td:last-child { border-right: 0; }
+.judo_rule .fl_left {float: left;}
+.judo_rule .fl_right {float: right; padding-top:50px;}
+
+

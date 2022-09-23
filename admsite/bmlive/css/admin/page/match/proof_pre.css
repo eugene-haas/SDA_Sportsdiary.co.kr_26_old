@@ -1,0 +1,10 @@
+.issued_box ul li input{width:auto;}
+.issued_box ul li select{width:auto;}
+.issued_box ul li input.radio_in{width:20px;height:20px;margin-top:0;    vertical-align: -6px;}
+.issued_box ul li span{margin-right:30px;}
+.issued_box ul li a{min-width:80px;padding:0 20px;height:35px;line-height:33px;margin-right:30px;}
+.issued_box ul li .l_con{margin-right:0;min-width:133px;display:inline-block;}
+.issued_box_table input{width:auto;}
+.issued_box_table select{width:auto;}
+.issued_box_table .in_1{width:150px;}
+.issued_box_table .in_2{width:350px;}

@@ -1,0 +1,40 @@
+.strength .datepicker-wrap {margin-bottom: 0;}
+.strength .navyline-top-list {border-top: #ddd; margin-bottom: 0px;}
+.strength .navyline-top-list.guide-tip {background-color: #edf0f4; border-bottom: 1px solid #4c6f8c; padding-top: 0; padding-bottom: 0;}
+.strength .navyline-top-list label {margin-right: 3%;}
+.strength .navyline-top-list select {font-size:0.85em; color: #000; width: 79%; padding-left: 5px; margin-right: 0;}
+
+.strength .date input {color: #000;}
+.strength .tip-title {position: relative; background-color: #edf0f4; padding-top: 0.71em; padding-bottom: 0.71em; margin-left: -10px; margin-right: -10px;}
+.strength .tip-title a {float: none;}
+.strength .tip-title .img-round {position: absolute; top: 35%; right: 20px; border: 2px solid #fff; border-radius: 50%; text-align: center; width: 20px; height: 20px; line-height: 18px;}
+.strength .tip-title .caret {float: none; margin:-4px 0 0 0; transition: all .3s ease;}
+.strength .tip-title .on .caret {transform: rotate(180deg);}
+.strength .tip-title h3 {font-size: .94em; background-color: #ff7200; border-radius: 30px; height: 2.75em; line-height: 2.75em; padding-left: 15px; padding-right: 15px; margin-left: 10px; margin-right: 10px;}
+.strength .tip-title h3 .deco-icon {display: inline-block; width: 15px; margin-right: 5px;}
+.strength .tip-title h3 .more-a, .strength .tip-title h3 .close-a {padding: 4px 5px; margin-top: 9px;}
+
+.strength .exc-list ul {background-color: #fff;margin-bottom: 20px;}
+.strength .exc-list li { border-bottom: 1px solid #ddd; padding-left: 10px; padding-right: 10px; padding-top: 0.71em; padding-bottom: .71em;}
+.strength .exc-list li div {float: left; margin-right: 10px;}
+.strength .exc-list li div.exc-count {padding-top: 15px; float: right;}
+.strength .exc-list li div:last-child {margin-right: 0;}
+.strength .exc-list .event-img {width: 60px;}
+.strength .exc-list .exc-cont {width: 55%;padding-top: 9px;}
+.strength .exc-list .exc-title {font-size: 0.93em; font-weight: bold; letter-spacing: -.025em; color: #222;}
+.strength .exc-list .exc-exp {font-size: 0.75em;color: #666;letter-spacing: -0.06em;line-height: 1.23em;}
+.strength .exc-list .exc-count {width: 20%;}
+.strength .exc-list .exc-count label {font-size:13px; letter-spacing:-1px; margin-right: 0;}
+.strength .exc-list .exc-count input {width: 60%; margin-right: 2px; color: #000; text-align: center;}
+.strength .exc-list .exc-count input[readonly="readonly"] {background-color: #ddd; color: #666;}
+
+/* 자세하게 알아볼까요 */
+.strength .know-detail h4 {background-color: #164369; color: #fff; padding-top: 5px; padding-bottom: 5px; margin-left: 0; margin-right: 0; margin-bottom: 0;}
+.strength .know-detail .cont-box {background-color: #f2f2f2;}
+.strength .know-detail h4 .tit {vertical-align: middle;}
+.strength .know-detail h4 .deco-icon {display: inline-block; width: 25px; margin-right: 5px; }
+.strength .know-detail dl {font-size: .84em; padding-top: 10px; padding-left: 10px; padding-right: 10px;}
+.strength .know-detail dt {color: #164369;/* margin-bottom: 8px; */}
+.strength .know-detail dd {position: relative;padding-left: 4px;text-indent: -10px;color: #666;margin-left: 10px;/* margin-bottom: 8px; */}
+.strength .know-detail dd .dot {display: inline-block; width: 6px; height: 6px; background-color: #164369; vertical-align: middle; margin-right: 8px; margin-top: -2px;}
+.strength .know-detail .examp {font-size: .84em;color: #666;padding-left: 10px;padding-right: 10px;margin-top: 20px;/* text-indent: -25px; *//* margin-left: 25px; */padding-bottom: 20px;line-height: 1.5em;}

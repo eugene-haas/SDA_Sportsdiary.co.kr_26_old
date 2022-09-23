@@ -1,0 +1,9 @@
+.exc-match .match-group {text-align: center;}
+.exc-match h3 {display: inline-block;/* font-size: 1.14em; */font-weight: bold;background-color: #fff;border: 2px solid #ccc;border-radius: 20px;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px;margin-bottom: 12px;margin-top: 4px;}
+.exc-match h3 .avg {/* font-size: 0.84em; */color: #2c6ea6;padding-left: 5px;letter-spacing: -0.05em;}
+.exc-match .match-list {text-align: left;border-top: 1px solid #4c6f8c;width: 100%;font-size: 0.8em;font-family: 'nanumGothicB';}
+.exc-match li {background-color: #fff;border-bottom: 1px solid #ddd;padding: 6px 10px;}
+.exc-match li p {/* line-height: 30px; */float: left;}
+.exc-match li a {font-size: 0.85em;padding: 0px 5px;background-color: #ff7200;color: #fff;border: 1px solid #e06400;float: right;/* padding: 0 5px; */}
+.stat-chart .chart-guide {border: 1px solid #000; width: 160px; margin: 0 auto; margin-bottom: 20px; }
+.stat-chart .point-chart {padding-left: 10px; padding-right: 10px;}

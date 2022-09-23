@@ -1,0 +1,7 @@
+.MajorGame_Write .edit_box{}
+.MajorGame_Write .edit_box h2{font-size:18px;font-family: 'NanumGothicB';margin-top:30px;}
+.MajorGame_Write .edit_box .text_box{margin-top:10px;}
+
+.MajorGame_Write .btn-right-list{text-align:right;margin-top:10px;}
+.MajorGame_Write .btn-right-list a{width:80px;}
+.MajorGame_Write iframe{height:400px;}

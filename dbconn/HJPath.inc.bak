@@ -1,0 +1,3 @@
+<% 
+strOraConnect = "DSN=HDDWEB;UID=HANDOL;PWD=HANDOL0729;"
+%>

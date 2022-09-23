@@ -1,0 +1,112 @@
+<!-- #include file="../include/config.asp" -->
+  <body>
+    <!-- S: container_body -->
+    <div class="part_main tennis_part">
+      <!-- S: header -->
+      <!-- #include file = '../include/header_sub_left.asp' -->
+      <h1>SD 뉴스</h1>
+      <!-- #include file = '../include/header_sub_right.asp' -->
+      <!-- E: header -->
+
+      <!-- S: main -->
+      <div class="main gray_bg">
+        <!-- S: include gnb -->
+        <!--
+        <span class="srch_box">
+        <input type="text" class="search_box" placeholder="검색어를 입력해 주세요">
+        </span>
+        -->
+        <!-- #include file = "../include/gnbType/player_gnb.asp" -->
+        <!-- E: include gnb -->
+        <!-- s: select box -->
+        <div class="top_select">
+          <select name="" id="">
+            <option value="">전체</option>
+          </select>
+          <select name="" id="">
+            <option value="">최신순</option>
+          </select>
+        </div>
+        <!-- e: select box -->
+        <!-- s: list 시작 -->
+        <div class="news_list_page">
+          <div class="list_box">
+            <ul>
+              <li>
+                <a href="view.asp">
+                  <div class="img">
+                    <img src="../images/media/list_img1.png" alt="" />
+                  </div>
+                  <div class="r_con">
+                    <p class="list_name">
+                      정현, ASB클래식 1회전서 에드먼드와 또 만나
+                    </p>
+                    <p class="bt_con">
+                      <span class="date">2018.01.05</span>
+                      <span class="line"></span>
+                      <span class="companny_name">한국테니스연맹</span>
+                    </p>
+                  </div>
+              </li>
+              <li class="no_img">
+                <a href="view.asp">
+                  <div class="r_con">
+                    <p class="list_name">
+                      <span class="name">정현, ASB클래식 1회전서 에드먼드와 또 만나</span>
+                      <span class="division">-</span>
+                      <span class="txt_con">한국테니스진흥협회(회장 성기춘, 이하K...</span>
+                    </p>
+                    <p class="bt_con">
+                      <span class="date">2018.01.05</span>
+                      <span class="line"></span>
+                      <span class="companny_name">한국테니스연맹</span>
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="view.asp">
+                  <div class="img">
+                    <div class="mv_box">
+                      <img src="../images/media/list_img1.png" alt="" class="photo"/>
+                      <img src="../images/media/mv_icon.png" alt="" class="mv_icon"/>
+                    </div>
+                  </div>
+                  <div class="r_con">
+                    <p class="list_name">
+                      정현, ASB클래식 1회전서 에드먼드와 또 만나
+                    </p>
+                    <p class="bt_con">
+                      <span class="date">2018.01.05</span>
+                      <span class="line"></span>
+                      <span class="companny_name">한국테니스연맹</span>
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="mored_btn">
+              <a href="#">
+                <span class="txt">더보기</span>
+                <span class="icon_more"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- e: list 끝 -->
+      </div>
+      <!-- E: main -->
+
+
+      <!-- S: main_footer -->
+      <!-- #include file = '../include/main_footer.asp' -->
+      <!-- E: main_footer -->
+
+    </div>
+    <!-- E: container_body -->
+
+    <!-- S: bot_config -->
+    <!-- #include file = "../include/bot_config.asp" -->
+    <!-- E: bot_config -->
+  </body>
+</html>

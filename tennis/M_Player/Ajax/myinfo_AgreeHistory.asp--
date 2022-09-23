@@ -1,0 +1,132 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+  dim PlayerIDX   : PlayerIDX = fInject(Request("PlayerIDX"))
+  dim Team    : Team    = fInject(Request("Team"))
+
+  dim PlayerRelnNm  '보호자명 변환
+  dim txtParents  '보호자 HTML정보
+  dim txtManage '팀매니저 HTML정보
+  dim cntP : cntP = 0 '선수데이터 열람동의 카운트:부모, 기타
+  dim cntM : cntM = 0 '선수데이터 열람동의 카운트:팀매니저 
+  dim LeaderType  '지도자 구분[ 2:감독, 3:코치]
+  
+  If PlayerIDX = "" Then 
+    response.Write "<li><p style='center'>공유대상이 없습니다.</p></li>"
+    Response.End
+  Else
+    ChkSQL =  " SELECT [PlayerReln] " &_  
+          "   , [PlayerRelnMemo] " &_
+          "   , [UserName] " &_
+          "   , [UserPhone] " &_
+          "   , [SrtDate] "&_
+          "   , [SrtSvcDate] "&_
+          "   , [Team] "&_
+          "   , [LeaderType] "&_
+          " FROM [SportsDiary].[dbo].[tblMember] " &_
+          " WHERE DelYN='N' " &_
+          "   AND PlayerIDX = '"&PlayerIDX&"' " &_
+          "     AND PlayerReln <> '' " &_
+          "     AND PlayerReln <> 'T' " &_
+          "     AND EdSvcReqTp = 'A' " &_
+          " UNION ALL "&_
+          " SELECT [PlayerReln] " &_
+          "   , [PlayerRelnMemo] " &_
+          "   , [UserName] " &_
+          "   , [UserPhone] " &_
+          "   , [SrtDate] "&_
+          "   , [SrtSvcDate] "&_
+          "   , [Team] "&_
+          "   , [LeaderType] "&_
+          " FROM [SportsDiary].[dbo].[tblMember] " &_
+          " WHERE DelYN = 'N' " &_
+          "   AND Team = '"&Team&"' " &_
+          "     AND PlayerReln = 'T' " &_
+          "     AND EdSvcReqTp = 'A' " &_
+          " ORDER BY SrtDate DESC "
+
+    SET CRs = Dbcon.Execute(ChkSQL)
+    IF Not(CRs.Eof Or CRs.Bof) Then 
+      Do Until CRs.eof
+
+        SELECT CASE CRs("PlayerReln")
+          CASE "A" : PlayerRelnNm = "부"
+          CASE "B" : PlayerRelnNm = "모"
+          CASE "Z" : PlayerRelnNm = ReplaceTagReText(CRs("PlayerRelnMemo"))
+          CASE "T" 
+            PlayerRelnNm = "지도자"
+          IF CRs("LeaderType")=2 Then
+              LeaderType = "감독"
+          ElseIF CRs("LeaderType")=3 Then
+              LeaderType = "코치" 
+          Else
+          End IF            
+          CASE ELSE 
+          
+        END SELECT
+        
+        SELECT CASE CRs("PlayerReln")
+          CASE "T"  '팀매니저
+                      
+            txtManage = txtManage &"<li>"
+            txtManage = txtManage &"  <p>"&ReplaceTagReText(CRs("UserName"))&" "&LeaderType&"("&CRs("UserPhone")&")</p>"
+              txtManage = txtManage &"  <p>관리 시작일 : "&left(CRs("SrtSvcDate"), 4)&"."&mid(CRs("SrtSvcDate"), 5, 2)&"."&right(CRs("SrtSvcDate"), 2)&"</p>"
+            txtManage = txtManage &"</li>"
+            
+            cntM = cntM + 1
+            
+          CASE "A", "B", "Z"  '부모, 기타     
+            txtParents = txtParents &"<li>"
+            txtParents = txtParents &"  <p>("&PlayerRelnNm&")"&ReplaceTagReText(CRs("UserName"))&"님("&CRs("UserPhone")&")</p>"
+              txtParents = txtParents &"  <p>공유 시작일 : "&left(CRs("SrtDate"), 4)&"."&mid(CRs("SrtDate"), 5, 2)&"."&right(CRs("SrtDate"), 2)&"</p>"
+            txtParents = txtParents &"</li>"
+            
+            cntP = cntP + 1
+          CASE ELSE
+            
+        END SELECT
+        
+        CRs.movenext
+      Loop  
+      
+      '보호자 정보 출력
+      IF cntP > 0 Then
+        response.Write "<h3>보호자 정보</h3>"
+        response.Write txtParents
+      End IF
+      
+      '팀매니저 정보 출력
+      IF cntM > 0 Then
+        response.Write "<h3>팀매니저 정보</h3>"
+        response.Write txtManage
+      End IF
+      
+      response.Write "<p class='graybox'> 위의 보호자 및 지도자는 본인의 일부 데이터를 함께 공유하도록 되어 있습니다. "
+      response.Write "본인의 실제 보호자와 지도자의 정보가 일치하지 않을 경우 스포츠 다이어리로 연락바랍니다.</p>"
+      
+      IF cntP > 0 Then
+        response.Write "<p class='data-cut'>보호자 : 공유차단 되는 데이터</p>"
+        response.Write "<ul class='cut'>"
+        response.Write "  <li>- <span class='point'>훈련일지</span>의 모든 메모리 내용</li>"
+        response.Write "  <li>- <span class='point'>대회일지</span>의 모든 메모리 내용</li>"
+        response.Write "</ul>"
+      End IF
+    
+      IF cntM > 0 Then
+        response.Write "<p class='data-cut'>지도자 : 공유차단 되는 데이터</p>"
+        response.Write "<ul class='cut'>"
+        response.Write "  <li>- <span class='point'>훈련일지</span>의 나의 일기 내용</li>"
+        response.Write "  <li>- <span class='point'>대회일지</span>의 나의 일기 내용</li>"
+        response.Write "</ul>"
+      End IF
+    ELSE      
+      response.Write "<li><p style='center'>공유대상이 없습니다.</p></li>"
+      Response.End
+    End If 
+    
+      CRs.Close
+    SET CRs = Nothing
+            
+    DBClose()
+
+  End If 
+%>

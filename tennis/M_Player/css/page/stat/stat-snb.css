@@ -1,0 +1,5 @@
+/*.stat-menu .mid-cat {height: 0; transition: all .3s ease;}
+.stat-menu .mid-cat.on {height: 42px; overflow-y: hidden;}
+
+.stat-menu .mid-cat .mid-menu-list {opacity: 0; transition: all .3s ease ;}
+.stat-menu .mid-cat .mid-menu-list.on {opacity: 1;}*/

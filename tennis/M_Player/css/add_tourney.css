@@ -1,0 +1,44 @@
+.sub.tourney .tourney {transform-origin: left top; zoom: 0.31; transform: scale(.29); width: 1113px; margin-left: 20px; }
+.sub.tourney .tourney.t-2 {zoom: 0.31; transform: scale(.29) translateY(-210%);}
+.sub.tourney .tourney.t-3 {zoom: 0.31; transform: scale(.29) translateY(-690%);}
+.sub.tourney .tourney.t-4 {zoom: 0.31; transform: scale(.29) translateY(-870%);}
+.sub.tourney .tourney.t-5 {zoom: 0.31; transform: scale(.29) translateY(-1060%);}
+
+.sub.tourney .tourney .player-school {position: relative; top: -90%; line-height: 125%; overflow: hidden; white-space: nowrap; -ms-text-overflow: clip; text-overflow: clip; width: 154px; height: 35px;}
+.sub.tourney .tourney .player-name { position: relative; top: -8px; }
+.sub.tourney .tourney .left-side .round-1,
+.sub.tourney .tourney .right-side .round-1 {margin-top: -0.535%;}
+/*.sub.tourney .tourney .left-side .round-1 .line-div img,
+.sub.tourney .tourney .right-side .round-1 .line-div img {transform: scaleY(1.2);}*/
+.sub.tourney .tourney .left-side .round-1 .line-div,
+.sub.tourney .tourney .right-side .round-1 .line-div {height: 140.5px;}
+.sub.tourney .tourney .left-side .match-list .no-match,
+.sub.tourney .tourney .right-side .match-list .no-match {padding-top: 30px;}
+
+
+
+/*.sub.tourney .tourney .left-side .round-2,
+.sub.tourney .tourney .left-side .round-3,
+.sub.tourney .tourney .left-side .round-4,
+.sub.tourney .tourney .left-side .round-5,
+.sub.tourney .tourney .left-side .round-6,
+.sub.tourney .tourney .final-match,
+.sub.tourney .tourney .right-side .round-1,
+.sub.tourney .tourney .right-side .round-2,
+.sub.tourney .tourney .right-side .round-3,
+.sub.tourney .tourney .right-side .round-4,
+.sub.tourney .tourney .right-side .round-5,
+.sub.tourney .tourney .right-side .round-6 {margin-top: -20px;}*/
+
+.sub.tourney .tourney .round_02_left {}
+.sub.tourney .tourney .round_03_left {}
+.sub.tourney .tourney .round_04_left {}
+.sub.tourney .tourney .round_05_left {}
+.sub.tourney .tourney .round_06_left {}
+.sub.tourney .tourney .final-match {}
+.sub.tourney .tourney .round_01_right {}
+.sub.tourney .tourney .round_02_right {}
+.sub.tourney .tourney .round_03_right {}
+.sub.tourney .tourney .round_04_right {}
+.sub.tourney .tourney .round_05_right {}
+.sub.tourney .tourney .round_06_right {}

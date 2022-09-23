@@ -1,0 +1,89 @@
+/* clearfix 클리어픽스 */
+.clearfix:after {display: block; clear: both; content: '';}
+
+/* float */
+.fl {float: left;}
+.fr {float: right;}
+
+/* a 태그에 text와 img가 함께 있을때,
+ .link-deco width 값 개별적으로 조절 
+ main header에만 사용중... 2017.01.16
+  */
+a .link-deco {margin: 0 auto; display: block;}
+a .link-deco + span {font-weight: bold; font-size: 12px;}
+.login-btn a .link-deco img {width:23px;}
+
+
+/* 
+ * display flex
+ */
+.flex {display: -webkit-flex;display: -webkit-box; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-direction: row; flex-flow: row wrap; justify-content: space-around;}
+.flex > * {flex: 1;  -webkit-box-flex: 1;-webkit-flex: 1;-moz-flex: 1;-ms-flex: 1;-o-flex: 1;flex: 1; -webkit-flex-grow: 1;-moz-flex-grow: 1;-ms-flex-grow: 1;flex-grow: 1;}
+/* tit */
+h2 {font-family:"NotoKR-md"; padding:10px; color:#164369; font-size:1em;}
+h3 {font-family:"NotoKR-md"; color:#333; font-size:1em;}
+h3 strong {font-family:"NotoKR-md"; color:#333; font-size:1em;}
+
+/* img-round-border */
+.img-round {border-radius: 50%; overflow: hidden;}
+/* img-css 삽입 */
+.img-replace {position: relative; background-repeat: no-repeat; -webkit-background-size: 18px 18px; background-size: 18px 18px; background-position: left top; padding-left: 25px;}
+.img-replace.right {background-position: right center; padding-left: 0; padding-right: 21px;}
+.img-replace + input {width: 0!important; height: 0!important; clip: rect(0,0,0,0); border: none; margin-left: 21px; overflow: hidden;}
+
+/* 이미지 replace */
+.img-lay {background-repeat: no-repeat; -webkit-background-size: cover; background-size: cover; background-position: center center;}
+
+/* 짧은 컨텐츠에 배경 대응 */
+body.lack-bg {background-color: #edf0f4;}
+
+/* input 태그 체크 이미지 변경 */
+label.img-replace input {position: absolute; top: 0; width: 0!important; height: 0!important; clip: rect(0,0,0,0); border: none; margin-left: 21px; overflow: hidden;}
+label.img-replace.right input {margin-left: 0; margin: -1px;}
+#now-ready label.img-replace {padding-left: 0;}
+#now-ready label.img-replace.on input {width: 0 !important;height: 0 !important; margin-left: 18px;}
+#now-ready label.img-replace.on {-webkit-background-size: 18px 18px; background-size: 18px 18px;}
+#now-ready label.img-replace input {width: 18px!important; height: 18px!important; margin-left: 0; margin-top: 0; position: relative; vertical-align: middle; }
+
+
+/* h태그에 border 처리, 높이값 별도 조절 - top, height */
+.l-bar {position: relative; padding-left: 8px;}
+.l-bar:after {position: absolute; top: 0; left: 0; content: ''; width: 4px; height: 100%; background-color: #123651; }
+
+.r-bar {position: relative; padding-right: 8px;}
+.r-bar:after {position: absolute; top: 1px; right: 0px; content: ''; width: 1px; height: 14px; background-color: #ccc;}
+
+/* gnb N 버튼 */
+.ic-new {border-radius: 50%; background-color: #f00; position: absolute; color: #fff; text-align: center; width: 18px; height: 18px; line-height: 20px; margin-left:5px;}
+
+/* re 버튼 */
+.ic-re {border-radius: 50%; background-color: #ffd200; position: absolute; top: 0; right: 0; color: #333; font-family: 'NotoKR'; font-size: 0.74em; text-align: center; width: 20px; height: 20px; line-height: 20px;}
+
+/**
+ * --------------------------------
+ * custom public
+ * --------------------------------
+ */
+.mt20 {margin-top: 20px;}
+.mt15 {margin-top: 15px;}
+.mt10 {margin-top: 10px;}
+.mt5 {margin-top: 5px;}
+.mb70 {margin-bottom: 70px;}
+/*padding*/
+.pt13 {padding-top:13px;}
+.pb20 {padding-bottom: 20px;}
+/*height*/
+.h05 {height: 5px;} .h10 {height: 10px;} .h15 {height: 15px;} .h20 {height: 20px;} .h25{height: 25px;} .h30 {height: 30px;}
+/* font-color */
+.orangi {color: #ff7e00;}
+
+.ic-fav.on {
+    color: #ffd200;
+    font-size: 50px;
+}
+.ic-fav {
+    display: inline-block;
+    color: #dddddd;
+    font-size: 50px;
+}
+.no-bdb { border-bottom: none!important; }

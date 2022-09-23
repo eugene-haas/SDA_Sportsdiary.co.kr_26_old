@@ -1,0 +1,253 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	Check_Login()
+
+	dim MemberIDX	: MemberIDX		= decode(request.Cookies("MemberIDX"), 0)
+	dim BlockPage   : BlockPage 	= 5	'페이지
+	dim B_PSize   	: B_PSize 		= 10	'페이지내 보여지는 목록카운트
+
+	dim TotCount, TotPage
+	dim CSearch, CSearch2
+	
+	dim currPage   	: currPage  	= fInject(Request("currPage"))
+	dim SDate   	: SDate 		= fInject(Request("SDate"))
+	dim EDate   	: EDate 		= fInject(Request("EDate"))	
+	dim fnd_user	: fnd_user 		= fInject(Request("fnd_user"))
+	dim search_date : search_date 	= fInject(Request("search_date"))
+	
+	dim fnd_DateNm 		'검색 날짜구분
+	dim cnt				'카운트			
+	
+	
+	'답변 읽기권한 체크
+  	FUNCTION CHK_AUTH_REPLAY(IDX)
+			
+		RSQL =  "   	SELECT COUNT(*)"
+		RSQL = RSQL & " FROM [Sportsdiary].[dbo].[tblSvcQnA] Q "
+		RSQL = RSQL & " WHERE Q.SportsGb = '"&SportsGb&"' "
+		RSQL = RSQL & "		AND Q.DelYN = 'N' "
+		RSQL = RSQL & "		AND QnAType = 'P' "
+		RSQL = RSQL & "     AND QnAIDX =  "&IDX
+		RSQL = RSQL & "     AND MemberIDX =  "&MemberIDX
+'		response.Write RSQL
+		SET RRs = Dbcon.Execute(RSQL)
+		IF RRs(0) > 0 Then
+			CHK_AUTH_REPLAY = TRUE
+		ELSE
+			CHK_AUTH_REPLAY = FALSE	
+		End IF
+			RRs.Close
+		SET RRs = Nothing
+		
+  	END FUNCTION
+  
+	'답변정보 조회
+  	FUNCTION RE_CONTENTS(IDX)
+  	
+		LSQL =  "   SELECT QnAIDX  "
+		LSQL = LSQL & "     ,ReQnAIDX  "
+		LSQL = LSQL & "     ,UserName  "
+		LSQL = LSQL & "     ,Title  "
+		LSQL = LSQL & "     ,Contents  "
+		LSQL = LSQL & "     ,WriteDate  " 
+		LSQL = LSQL & "     ,CONVERT(CHAR(10), WriteDate, 102) WDate  " 
+		LSQL = LSQL & "     ,ViewCnt  "
+		LSQL = LSQL & "   FROM [Sportsdiary].[dbo].[tblSvcQnA] "
+		LSQL = LSQL & "   WHERE SportsGb = '"&SportsGb&"' "
+		LSQL = LSQL & "     AND DelYN = 'N' "
+		LSQL = LSQL & "     AND QnAType = 'P' "
+		LSQL = LSQL & "     AND ReQnAIDX =  "&IDX
+		
+'		response.Write LSQL
+		
+		SET LRs = Dbcon.Execute(LSQL)
+		IF not(LRs.eof or LRs.bof) Then
+			
+			ReFndData = ""
+		
+			ReFndData = ReFndData & "<li class='re-cont reply-1'>"
+			ReFndData = ReFndData & "	<div class='counsel-tit-wrap'>"
+			ReFndData = ReFndData & "		<div class='counsel-row'>"
+			
+			IF CHK_AUTH_REPLAY(IDX) = TRUE Then
+				ReFndData = ReFndData & "<div class='counsel-tit' onclick=""chk_Submit('VIEW','"&LRs("QnAIDX")&"','"&currPage&"');"">"
+			ELSE
+				ReFndData = ReFndData & "<div class='counsel-tit' onclick=""alert('읽기 권한이 없는 답변정보입니다.');"">"
+			END IF
+				
+			ReFndData = ReFndData & "  <span class='icon'><img src='../images/board/ic_reply@3x.png' alt></span>"
+			ReFndData = ReFndData & "  	<span class='icon-gray'>답변</span>"
+			ReFndData = ReFndData & "	<span class='txt'>"&ReplaceTagReText(LRs("Title"))&"</span>"
+			
+			If DateDiff("H", LRs("WriteDate"), Now())<24 Then 	ReFndData = ReFndData & "&nbsp;<span class='ic-new'>N</span>"
+	
+			ReFndData = ReFndData & "			</div>"
+			ReFndData = ReFndData & "		</div>"
+			ReFndData = ReFndData & "		<p class='write-info clearfix'>"
+			ReFndData = ReFndData & "			<span>"&LRs("UserName")&"</span>"
+			ReFndData = ReFndData & "			<span>"&LRs("WDate")&"</span>"
+			ReFndData = ReFndData & "		</p>"
+			ReFndData = ReFndData & "	</div>"
+			ReFndData = ReFndData & "</li>"
+			
+		End IF
+			LRs.Close
+		SET LRs = Nothing
+		
+		RE_CONTENTS = ReFndData	 
+	
+  
+  	END FUNCTION
+  
+	  
+	IF search_date<>"" Then
+		SELECT CASE search_date
+			CASE "week" : fnd_DateNm = "최근 1주일"
+			CASE "month" : fnd_DateNm = "최근 1개월"
+			CASE "month3" : fnd_DateNm = "최근 3개월"
+			CASE "month6" : fnd_DateNm = "최근 6개월"
+			CASE "year" : fnd_DateNm = "최근 1년"
+			CASE "year2" : fnd_DateNm = "최근 2년"
+			CASE "year3" : fnd_DateNm = "최근 3년"
+			CASE "year5" : fnd_DateNm = "최근 5년"
+			CASE "year10" : fnd_DateNm = "최근 10년"
+		END SELECT	
+	End IF
+	
+	IF Len(currPage) = 0 Then currPage = 1
+	
+	'기간선택
+	IF SDate <> "" and EDate <> "" Then
+		CSearch = " And DateDiff(d, '"&SDate&"', WriteDate)>=0 And DateDiff(d, WriteDate, '"&EDate&"')>=0 "
+	ElseIF SDate <> "" and EDate = "" Then
+		CSearch = " And DateDiff(d, WriteDate, '"&EDate&"')=0 "
+	ElseIF SDate = "" and EDate <> "" Then
+		CSearch = " And DateDiff(d, '"&SDate&"', WriteDate)=0 "
+	Else
+	End IF
+
+	'작성자 조회
+	IF fnd_user <> "" Then
+		CSearch2 = " And UserName Like '%"&fnd_user&"%' "
+	End IF
+
+	
+	CSQL = 	" 		SELECT COUNT(*) "
+	CSQL = CSQL & "		,CEILING(CAST(COUNT(*) AS FLOAT)/"&B_PSize&") " 
+	CSQL = CSQL & " FROM [Sportsdiary].[dbo].[tblSvcQnA]" 
+	CSQL = CSQL & "	WHERE DelYN = 'N' " 
+	CSQL = CSQL & "		AND QnAType = 'P' " 
+	CSQL = CSQL & "		AND ReQnAIDX = 0 " 
+	CSQL = CSQL & "		AND SportsGb = '"&SportsGb&"' "&CSearch&CSearch2
+	
+	SET CRs = Dbcon.Execute(CSQL)	
+		TotalCount = CRs(0)
+		TotalPage = CRs(1)
+
+	
+	CSQL =  "   	SELECT TOP "&currPage * B_PSize
+	CSQL = CSQL & "		QnAIDX  "
+	CSQL = CSQL & "     ,ReQnAIDX  "
+	CSQL = CSQL & "     ,UserName  "
+	CSQL = CSQL & "     ,Title  "
+	CSQL = CSQL & "     ,Contents  "
+	CSQL = CSQL & "     ,WriteDate  " 
+	CSQL = CSQL & "     ,CONVERT(CHAR(10), WriteDate, 102) WDate  " 
+	CSQL = CSQL & "     ,ViewCnt  "
+	CSQL = CSQL & " FROM [Sportsdiary].[dbo].[tblSvcQnA] "
+	CSQL = CSQL & " WHERE SportsGb = '"&SportsGb&"' "
+	CSQL = CSQL & "     AND DelYN = 'N' "
+	CSQL = CSQL & "     AND QnAType = 'P' "
+	CSQL = CSQL & "     AND ReQnAIDX = 0 "&CSearch&CSearch2
+	CSQL = CSQL & " ORDER BY WriteDate DESC "
+			
+'	response.Write "ChkSQL="&CSQL&"<br>"
+				
+	SET CRs = Dbcon.Execute(CSQL)
+	
+	FndData = FndData & "<div class='container'>"
+    FndData = FndData & "  <ul class='qa-pack'>"
+	
+	If Not(CRs.Eof Or CRs.Bof) Then 
+		CRs.Move (currPage - 1) * B_PSize
+		
+		Do Until CRs.eof
+			cnt = cnt + 1
+			
+			
+			FndData = FndData & "<li class='word-list' onclick=""chk_Submit('VIEW','"&CRs("QnAIDX")&"','"&currPage&"');"">"
+			FndData = FndData & "  <a href='#' class='tit' data-parent='board-contents'><span class='txt'>"&ReplaceTagReText(CRs("Title"))&"</span>"
+			
+			If DateDiff("H", CRs("WriteDate"), Now())<24 Then 	FndData = FndData & "<span class='ic-new'>N</span>"
+			
+			FndData = FndData & "  </a>"
+			FndData = FndData & "	<p class='write-info clearfix'>"
+			FndData = FndData & "	<span>"&CRs("UserName")&"</span>"
+			FndData = FndData & "	<span>"&CRs("WDate")&"</span>"
+			FndData = FndData & "	<span class='seen'>조회수</span>"
+			FndData = FndData & "	<span>"&formatnumber(CRs("ViewCnt"), 0)&"</span>"
+			FndData = FndData & "	</p>"
+			FndData = FndData & "</li>"
+			
+		'답변있을 경우 출력
+			IF RE_CONTENTS(CRs("QnAIDX"))<> "" Then
+				FndData = FndData & RE_CONTENTS(CRs("QnAIDX"))
+			End IF
+			
+			CRs.movenext
+		Loop	
+	Else	
+		
+		FndData = FndData & "	<li class='word-list'>등록된 정보가 없습니다</li>"
+
+	End IF	
+	
+	FndData = FndData & "	</ul>"
+    FndData = FndData & "</div>"
+	
+		CRs.Close
+	SET CRs = Nothing
+	
+	
+	response.Write FndData
+	
+	
+	dim intTemp
+
+	CStrPG = CStrPG & " <div class='pagination'>"
+	
+	intTemp = Int((currPage - 1) / BlockPage) * BlockPage + 1
+	If intTemp = 1 Then
+		
+	Else 
+		CStrPG = CStrPG & " <a href=""javascript:chk_Submit('LIST','','"&intTemp - BlockPage&"');""><img src='../images/board/board-l-arrow@3x.png' alt='이전페이지'></a> "
+	End If	
+	
+	dim intLoop : intLoop = 1
+	
+	Do Until intLoop > BlockPage Or intTemp > TotalPage
+		If intTemp = CInt(currPage) Then
+			CStrPG = CStrPG & " <a href='#' class='on'>"&intTemp&"</a> " 
+		Else
+			CStrPG = CStrPG & " <a href=""javascript:chk_Submit('LIST','','"&intTemp&"');"">"&intTemp&"</a> "
+		End If
+		
+		intTemp = intTemp + 1
+		intLoop = intLoop + 1
+	Loop
+	
+	IF intTemp > TotalPage Then
+
+	Else
+		CStrPG = CStrPG & " <a href=""javascript:chk_Submit('LIST','','"&intTemp&"');""><img src='../images/board/board-r-arrow@3x.png' alt='다음페이지'></a> "
+	End IF	
+  
+    CStrPG = CStrPG & "</div>"
+	
+	response.Write CStrPG
+
+	
+	DBClose()
+
+	
+%>

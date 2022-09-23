@@ -1,0 +1,25 @@
+.state-cont .state-select {margin-bottom: 20px;}
+.state-cont .state-select h3 {position: relative; font-size: 1em; font-weight: bold; line-height: 30px; -webkit-flex: 1; flex: 1; padding-left: 5px;}
+.state-cont .state-select h3:before {position: absolute; top: 5px; left: -5px; content: ''; background-color: #123651; width: 6px; height: 19px;}
+.state-cont .state-select select {font-weight: bold; color: #333; width: 100%; overflow: hidden;}
+.state-select #sub_table {flex:3; width: 100%;}
+
+.state-cont .chart-tab, .stat-chart .chart-tab {font-weight: bold; background-color: #b6bac0; color: #fff; height: 2.5em; line-height: 2.1em;}
+.state-cont .chart-tab {background-color: transparent; text-align: center; font-size:0.9em;}
+.state-cont .chart-tab a {background-color: #b6bac0; border-top:4px solid #b6bac0; float: left; width: 33.33%; height: 36px;}
+.state-cont .chart-tab.tab-2 a { width: 50%; }
+.state-cont .chart-tab a.on, .stat-chart .chart-tab a.on {background-color: #fff; border-top: 4px solid #164369; color: #164369;}
+.state-cont .chart-tab a:hover, .state-cont .chart-tab a:focus, .stat-chart .chart-tab a:hover, .stat-chart .chart-tab a:focus {color: #fff;}
+.state-cont .chart-tab a.on:hover, .state-cont .chart-tab a.on:focus, .stat-chart .chart-tab a.on:hover ,.stat-chart .chart-tab a.on:focus {color: #164369;}
+.state-cont .chart-tab a:first-child {border-left: 1px solid #ccc;}
+.state-cont .chart-tab a:last-child {border-right: 1px solid #ccc;}
+.stat-chart .muscle-type { width: 200px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px; }
+.stat-chart .muscle-type a {background-color: #fff; color: #666; border: 2px solid #666; margin-right: 10px; padding-left: .5em; padding-right: .5em; padding-top: 0.25em; padding-bottom: 0.25em;}
+.stat-chart .muscle-type a:last-child {margin-right: 0;}
+.stat-chart .muscle-type a.on {background-color: #3899e4; color: #fff; border: 2px solid transparent;}
+
+/* 체력측정결과 > 체력 랭킹 */
+.rank-chart {border: 2px solid #b6bac0; margin-left: 10px; margin-right: 10px;}
+.rank-chart h4 {font-size: 1.07em; font-weight: bold; margin-top: 20px; margin-bottom: 20px;}
+.rank-chart h4 .redy {color: #b70000;}
+.rank-chart .chart-exp {font-size: 0.93em; font-weight: bold; text-align: left; padding-left: 20px;}

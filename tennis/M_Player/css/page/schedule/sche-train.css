@@ -1,0 +1,33 @@
+/* 기본정보 */
+.sche.train h2.date {font-size: 0.9em; letter-spacing: -.025em; border-top: 1px solid #ccc; border-bottom: 1px solid #ddd; background-color: #6293ba; color: #fff;}
+.sche.train .basic-info {background-color: #fff; border-bottom: 1px solid #ddd;}
+.sche.train .basic-info ul {font-size: 0.85em;font-family: 'nanumGothicB';}
+.sche.train .sub-title {padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; line-height: 20px; font-size:0.88em;}
+.sche.train .basic-info .sub-title {background-color: #edf0f4; color: #164369; border-bottom: 1px solid #4c6f8c; }
+.sche.train .basic-info li {border-bottom: 1px solid #ddd; padding: 10px;}
+.sche.train .basic-info select {width:80%; margin-left:10px; float:right; margin-top:-4px;}
+#sub-title .injury span.title {float:left; width:22%;}
+#sub-title .injury span.txt {float:left; width:72%;}
+#sub-title li.train_goal span.title {float: left; width: 65px;}
+#sub-title li.train_goal span.txt {float: left;}
+#sub-title li.train_goal span.txt {padding-left: 65px;}
+#sub-title li.train_goal span.title + span.txt {padding-left: 0%;}
+
+/* 공식훈련 내용 */
+.sche.train .public-train {background-color: #fff;}
+.public-train .sub-title {background-color: #26577f; color: #fff;}
+.sche.train .train-list  {border-bottom: 1px solid #ddd;padding-bottom: 7px;}
+.sche.train .train-list h4 {display: inline-block;position: relative;font-size: .85em;font-weight: bold;color: #164369;padding-left: 20px;margin-bottom: 5px;}
+.public-train .train-list h4:before, .sche.train .train-list h4:before {position: absolute; top: 40%; left: 10px; content: ''; background-color: #164369; width: 4px; height: 4px;}
+.sche.train .train-list {margin-top: 10px;}
+.sche.train .train-list dl {overflow:hidden; padding-left: 10px;font-size: 0.85em;}
+.sche.train .train-list dt {/* width: 22%; */float: left;}
+.sche.train .train-list dd {width: 72%;}
+.sche.train .train-list dd {float: left;font-weight: normal;margin-bottom: 2px;/* font-size: 0.85em; */}
+
+/* 개인훈련 내용 */
+.sche.train .private-train h3.sub-title {background-color: #ff7200; color: #fff; padding-left: 10px; padding-right: 10px;}
+.sche.train .private-train {background-color: #fff;}
+
+.btn-list.train-btn a {width: 48%; margin-right: 10px; float: left;}
+.btn-list.train-btn a:last-child {margin-right: 0;}

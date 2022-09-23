@@ -1,0 +1,81 @@
+hr {display:none;}
+body {margin:0; padding:0; font-family:verdana; font-size:11px; font-style:italic; color:#333;}
+p {margin:0; padding:0;}
+table {margin-bottom:10px; border:1px solid #666; border-right:0; border-collapse:collapse;}
+table th,
+table td {height:20px; padding:0 10px; border-right:1px solid #666; border-top:1px solid #666;}
+table th {font-weight:normal;}
+h1 {text-align:right; padding:0; margin:0; font-size:12px;}
+
+.match_number {float:left;}
+.match_number th {height:32px; text-align:left;}
+.match_number td {height:32px;}
+
+.box {position:relative; overflow:hidden; width:100%; height:70px; padding-bottom:22px;}
+h2 {text-align:center; margin:0; padding:0;}
+h2 img {width:71px; margin-left:-1px; padding:0; margin:0;}
+.box .judge_number {position:absolute; top:0; right:0;}
+.judge_number {width:180px; float:right;}
+.judge_number th {text-align:left; height:22px;}
+.judge_number td {height:22px;}
+
+.match_info {width:100%; text-align:center;}
+.match_info th {font-size:11px; letter-spacing:-1px; font-style:normal;}
+.match_info td {height:38px; font-family:궁서체; font-weight:bold; font-style:normal; font-size:16px; color:#333;}
+
+.player {width:100%; text-align:center; border-top:0; border-bottom:0; margin-bottom:0;}
+.player thead th {position:relative; overflow:hidden; height:30px; padding:0; margin:0; font-size:16px; font-weight:bold; font-style:normal; color:#fff;}
+.player thead th .bg {position:absolute; top:-1px; left:-1px; margin:0; padding:0; vertical-align:top; line-height:100%;}
+.player thead th .tit {position:absolute; top:9px; left:50%; margin-left:-40px; width:80px;}
+.player thead th.red .tit img {width:35px;}
+.player thead th.blue .tit img {width:44px;}
+.player thead th p {margin:0; padding:0; font-size:0;}
+.player thead th img {margin:0; padding:0; font-size:0;}
+
+.player thead td {position:relative; overflow:hidden; height:20px;}
+.player thead td .bg {position:absolute; top:-1px; left:-1px; padding:0; height:20px;}
+.player thead td .tit {position:absolute; top:3px; left:50%; margin-left:-35px; width:70px;}
+
+.player tbody td {height:50px; font-family:궁서체; font-style:normal; font-weight:bold; font-size:16px; color:#333;}
+.player .none {border-top:0;}
+
+.match {width:100%; text-align:center; border-top:0; margin-bottom:15px;}
+.match thead th {position:relative; overflow:hidden; font-weight:normal; height:20px;}
+.match thead .bg {position:absolute; top:-1px; left:-1px; padding:0; height:20px;}
+.match thead .tit {position:absolute; top:3px; left:50%; margin-left:-75px; width:150px;}
+.match tbody td {height:45px; font-weight:bold; font-size:12px;}
+
+.match .break {position:relative; overflow:hidden; font-weight:normal; height:16px;}
+.match .break .bg {position:absolute; top:-1px; left:-1px; padding:0; height:16px;}
+.match .break .tit {position:absolute; top:0; left:50%; margin-left:-35px; width:70px;}
+.match .none {border-top:0;}
+
+.red_tech {float:left;}
+.red_tech p {float:left;}
+.red_tech p.txt {margin-top:8px;}
+.red_tech p.txt strong {font-size:16px; color:#ff1e00; font-style:normal;}
+.blue_tech {float:right;}
+.blue_tech p {float:right; text-align:right;}
+.blue_tech p.txt {margin-top:8px;}
+.blue_tech p.txt strong {font-size:16px; color:#0054ff; font-style:normal;}
+.score_box {border:2px solid #333; width:80px; height:45px;}
+.red_tech .score_box {margin-right:10px;}
+.blue_tech .score_box {margin-left:10px;}
+
+.classification_point {overflow:hidden; width:100%; margin-top:10px; margin-bottom:10px; text-align:center;}
+.classification_point h3 {font-weight:normal; font-style:italic; padding:0; margin:0 0 8px;}
+.red_box {display:inline-block; border:2px solid #ff1e00; width:100px; height:55px; margin:0 20px;}
+.blue_box {display:inline-block; border:2px solid #0054ff; width:100px; height:55px; margin:0 20px;}
+
+.winner {width:100%;}
+.winner th {position:relative; overflow:hidden; height:30px; text-align:left;}
+.winner th .bg {position:absolute; top:0; left:0;}
+.winner th .tit {position:absolute; top:1px; left:10px;}
+.winner th .tit.win {margin-top:7px;}
+.winner td {height:50px;}
+
+.info {width:100%;}
+.info th {font-weight:bold; font-style:normal;}
+
+.signwrap {overflow:hidden; width:100%; padding-top:20px;}
+.sign {font-style:normal; float:right; width:280px; border-bottom:1px solid #666;}

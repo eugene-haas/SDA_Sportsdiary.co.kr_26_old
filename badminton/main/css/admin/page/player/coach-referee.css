@@ -1,0 +1,12 @@
+.referee-table .ipt-word {width: 80px;margin-right: 10px;}
+.referee-table .user-birth {width: 200px;}
+/*.referee-table td:first-child {width: 80px;}
+.referee-table td:nth-child(3) {width: 100px;}
+.referee-table td:nth-child(4) {width: 160px;} */
+.referee-table .popup-table tr td {width: 100px;padding:0 10px;}
+.referee-table .popup-table tr td:last-child {width: 200px;}
+.referee-table .popup-table tr td .textarea-txt{width:250px;overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;}
+
+.referee-table td .btn {width: 80px;height: 26px;line-height: 26px;padding: 0;}

@@ -1,0 +1,99 @@
+<!-- #include file='./include/config.asp' -->
+<%
+	'로그인 되었다면 index.asp로 이동
+	Check_Login()
+%>
+<style>
+.pw-modify{font-size:0.85em;margin:10px 0;background:#fff;border-top:0px solid #d4d4d4;}
+.pw-modify li{overflow:hidden;padding:0 10px;border-bottom:1px solid #d4d4d4;font-size:16px;}
+.pw-modify p{float:left;vertical-align:middle;letter-spacing:-0.5px;padding:5px 0;line-height:38px;color:#333;font-weight:bold;font-size:0.8em;}
+.pw-modify p:first-child{width:44%;}
+.pw-modify p:last-child{width:56%;}
+</style>
+<script type="text/javascript">
+
+		console.log(navigator.userAgent.indexOf("isAppVer=2.0"));
+
+		function PushAgreeYN(str){
+
+			if(navigator.userAgent.indexOf("isAppVer=2.0") == -1){
+				alert('APP 업데이트 후, 이용 가능합니다.');
+				return;
+			}
+
+			console.log(str);
+
+			var strAjaxUrl = "./Ajax/PushAgreeYN.asp";
+			var strmessage = "";
+			var strtype = "";
+			
+			$.ajax({
+				url: strAjaxUrl,
+				type: 'POST',
+				dataType: 'html',    
+				data: {
+						UserID : '<%=Request.Cookies("SD")("UserID")%>',
+						AgreeYN  : str
+
+					},    
+				success: function(retDATA) {
+					var retarr = retDATA.split('|');
+
+					console.log(retDATA);
+
+					if(retarr[0] == "TRUE"){
+						alert(retarr[3].replace(/n/gi,"\n"));
+					}
+					
+				}, 
+				error: function (xhr, status, error) {
+						if(error!=""){
+							alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+						return;
+					}
+							
+				}
+			}); 			
+			
+		}
+</script>
+</head>
+<body>
+  <!-- S: header -->
+  <div class="header">
+  <!-- #include file='./include/header.asp' -->
+    <h1 class="title">푸쉬 설정</h1>
+  </div>
+  <!-- E: header -->
+
+  <!-- S: main -->
+    <fieldset>
+			<ul class="pw-modify">
+				<li>
+					<p style="width:30%;"><label for="pw-01">항목</label></p>
+					<p style="width:65%;">모바일 앱 PUSH 알림 동의</p>
+				</li>
+				<li>
+					<p style="width:30%;"><label for="pw-01">이용목적</label></p>
+					<p style="width:65%;">대회정보, 선수정보, 훈련정보나 새로운 서비스 및 이벤트, 광고 등에 대한 PUSH 안내</p>
+				</li>
+				<li>
+					<p style="width:30%;"><label for="pw-01">보유기간</label></p>
+					<p style="width:65%;">별도 동의 철회 시까지 또는 약관 철회 후 1주일 까지</p>
+				</li>
+				<li>
+					<p style="width:30%;"><label for="pw-01">동의여부</label></p>
+					<p style="width:65%;">
+						<input type="radio" name="PushAgree" value="Y" onclick="PushAgreeYN('Y')"> 수신
+						&nbsp; &nbsp; &nbsp;
+						<input type="radio" name="PushAgree" value="N" onclick="PushAgreeYN('N')"> 거부
+					</p>
+				</li>
+			</ul>
+
+    </fieldset>
+  <!-- E: main -->
+
+  <!-- #include file='./include/footer.asp' -->
+</body>
+</html>

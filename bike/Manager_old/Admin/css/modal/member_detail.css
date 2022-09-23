@@ -1,0 +1,11 @@
+.modal.member_detail .modal-lg {width: 600px;}
+.modal.member_detail .modal-body {padding-left: 17px;padding-right: 17px;padding-top: 30px;padding-bottom: 30px;}
+.modal.member_detail .table_section {margin-top: 0;}
+.modal.member_detail .table_section .table {margin-bottom: 0;}
+.modal.member_detail .profile_line .img_box {width: 90px;height: 120px;overflow: hidden;}
+.modal.member_detail .grade_line td span {display: inline-block;vertical-align: middle;padding-left: 6px;padding-right: 12px;position: relative;}
+.modal.member_detail .grade_line td span:first-child {padding-left: 0;}
+.modal.member_detail .grade_line td span:after {content: '';position: absolute;top: 5px;right: 0;background-color: #bbb;width: 1px;height: 12px;}
+.modal.member_detail .grade_line td span:last-child:after {width: 0;height: 0;}
+.modal.member_detail .belong_club .under_line span:nth-child(3):after {width: 0;height: 0;}
+.modal.member_detail .belong_club .under_line .addr {display: block;padding-left: 23px;}

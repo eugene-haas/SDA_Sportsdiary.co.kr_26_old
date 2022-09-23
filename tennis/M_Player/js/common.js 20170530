@@ -1,0 +1,160 @@
+
+
+//숫자입력체크
+function chk_Number(){
+	if ((event.keyCode<48)||(event.keyCode>57)) event.returnValue=false;
+}
+
+ function autoHypenPhone(str,elem){	
+	str = str.replace(/[^0-9]/g, '');
+	var tmp = '';
+	var f = document.getElementById(elem);
+	if( str.length < 4){
+		f.value =  str; 
+	}else if(str.length < 7){
+		tmp += str.substr(0, 3);
+		tmp += '-';
+		tmp += str.substr(3);
+		f.value =  tmp;
+	}else if(str.length < 11){
+		tmp += str.substr(0, 3);
+		tmp += '-';
+		tmp += str.substr(3, 3);
+		tmp += '-';
+		tmp += str.substr(6);
+		f.value =  tmp; 
+	}else{              
+		tmp += str.substr(0, 3);
+		tmp += '-';
+		tmp += str.substr(3, 4);
+		tmp += '-';
+		tmp += str.substr(7);
+		f.value =  tmp;
+	}	
+}
+
+function chk_logout(){
+	//alert("a");
+  var expdate = new Date();
+	expdate.setTime(expdate.getTime() - 1); // 쿠키 삭제조건
+	setCookie("sd_saveid", "", expdate);
+	setCookie("sd_savepass", "", expdate);
+
+	var strAjaxUrl = "/M_Player/Ajax/logout.asp";
+	$.ajax({
+		url: strAjaxUrl,
+		type: 'POST',
+		dataType: 'html',			
+		data: { 
+		},		
+		success: function(retDATA) {
+			if(retDATA){
+				if (retDATA=="TRUE") {
+					alink = "/M_Player/Main/login.asp"
+					$(location).attr('href',alink);   //a href						
+				}else{
+					alert('로그아웃중에 오류가 발생하였습니다.');								
+				}
+			}
+		}, error: function(xhr, status, error){						
+			alert ("오류발생! - 시스템관리자에게 문의하십시오!");			
+		}
+	});
+}
+//쿠키정보 저장
+function setCookie (name, value, expires) {
+  document.cookie = name + "=" + escape (value) + "; path=/; expires=" + expires.toGMTString();
+}
+// 쿠키 가져오기
+function getCookie(cName) {
+    cName = cName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cName);
+    var cValue = '';
+    if (start != -1) {
+        start += cName.length;
+        var end = cookieData.indexOf(';', start);
+        if (end == -1) end = cookieData.length;
+        cValue = cookieData.substring(start, end);
+    }
+    return unescape(cValue);
+}
+
+/*Select Box 생성*/
+function make_box(element,attname,code,action_type){
+
+	//alert(action_type)
+	if(action_type=="TeamGb"){
+		var strAjaxUrl = "/M_Player/Select/TeamGb_Select.asp";		
+	}else if(action_type=="AreaGb"){
+		var strAjaxUrl = "/M_Player/Select/AreaGb_Select.asp";			
+	}else if(action_type=="TeamCode"){
+		var strAjaxUrl = "/M_Player/Select/TeamCode_Select.asp";					
+		//make_box("sel_TeamCode","TeamCode",inputdata,"TeamCode")     
+	}else	if(action_type=="Join_TeamGb"){
+		var strAjaxUrl = "/M_Player/Select/Join_TeamGb_Select.asp";		
+	}else if(action_type=="Join_AreaGb"){
+		var strAjaxUrl = "/M_Player/Select/Join_AreaGb_Select.asp";			
+	}else if(action_type=="Join_TeamCode"){
+	    var strAjaxUrl = "/M_Player/Select/Join_TeamCode_Select.asp";					
+		//make_box("sel_TeamCode","TeamCode",inputdata,"TeamCode")  
+	//직업	
+	}else if(action_type=="Join_Job"){
+	    var strAjaxUrl = "/M_Player/Select/Join_Job_Select.asp";	
+	}else if(action_type=="Join_PlayerLevel"){
+	    var strAjaxUrl = "/M_Player/Select/Join_PlayerLevel_Select.asp";					
+		var SEX = $('input:radio[name="SEX"]:checked').val();	
+		var TeamGb = $("#TeamGb").val();	
+					
+	//선수체급조회(myinfo.asp)		
+	}else if(action_type=="myinfo_PlayerLevel"){
+	    var strAjaxUrl = "/M_Player/Select/myinfo_PlayerLevel_Select.asp";					
+		var SEX = $('SEX').val();	
+		var TeamGb = $("#TeamGb").val();		
+    } else if (action_type == "train_Code") {
+        var strAjaxUrl = "/M_Player/Select/train_Select.asp";
+    } else if (action_type == "PPUB_Code") {
+        var strAjaxUrl = "/M_Player/Select/Pub_Select.asp";
+    } else if (action_type == "StimFistCd") {
+        var strAjaxUrl = "/M_Player/Select/Strength_FistInfo.asp";
+	} else if (action_type == "Info_MapGb") {
+        var strAjaxUrl = "/M_Player/Select/Info_Map_Select.asp";	
+    }
+	else{
+	}
+	
+	$.ajax({
+		url: strAjaxUrl,
+		type: 'POST',
+		dataType: 'html',
+		data: { 
+			element		: element
+			,attname	: attname
+			,code		: code 
+			,SEX		: SEX 
+			,TeamGb		: TeamGb 
+		},
+		success: function(retDATA) {
+			if(retDATA){					
+				$("#"+element).html(retDATA);
+			}			
+			
+			if (retDATA == null) {
+				//조회종료 효과
+				alert ("조회 데이타가 없습니다!");				
+			}
+		}, error: function(xhr, status, error){
+			//조회종료 효과
+			//parent.fBottom.popupClose("","","");
+			alert ("조회중 에러발생 - 시스템관리자에게 문의하십시오!");
+			setseq = "";
+		}
+	});
+}
+
+//전화걸기
+function callNumber(num){
+location.href="tel:"+num;
+}
+
+

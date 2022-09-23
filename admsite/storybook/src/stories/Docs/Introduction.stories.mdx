@@ -1,0 +1,108 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import Code from '@/stories/assets/code-brackets.svg';
+import Flow from '@/stories/assets/flow.svg';
+import Plugin from '@/stories/assets/plugin.svg';
+import StackAlt from '@/stories/assets/stackalt.svg';
+
+<Meta title="Docs/Introduction" />
+
+import '@/stories/assets/mdx_style.css';
+
+
+# Welcome to 위드라인 developers
+
+본문서는 개발 업무 인수인계와 효율적인 개발환경을 목표로 2021-01-08에 처음 작성되었습니다.
+
+지속적인 관심과 관리가 필요한 사이트입니다:)
+- 2021-01-08 by 찬수 주임
+
+
+<div className="tip-wrapper">
+  <span className="tip">Tip</span>처음 오셨다면 <a href="/?path=/story/docs-coderule--page#welcome-to-coderule-of-위드라인">코드 규칙</a>부터 보세요.
+</div>
+
+<div className="tip-wrapper">
+  <span className="tip t_2">Tip</span>퍼블리싱 전 <a href="/?path=/story/docs-checklist--page">체크리스트</a> 확인하세요!
+</div>
+
+<!-- <div className="tip-wrapper">
+  <span className="tip">Tip</span>Edit the Markdown in{' '}
+  <code>src/stories/Introduction.stories.mdx</code>
+</div> -->
+
+<div className="subheading">Configure</div>
+
+<div className="link-list">
+  <a className="link-item" href="/?path=/story/docs-organization--page">
+    <img src={Plugin} alt="" />
+    <span>
+      <strong>조직구성</strong>
+      위드라인의 조직도
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="/?path=/story/docs-storybook--page"
+  >
+    <img src={StackAlt} alt="" />
+    <span>
+      <strong>storybook</strong>
+      해당 앱 작성방법
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
+    target="_blank"
+  >
+    <img src={Flow} alt="" />
+    <span>
+      <strong>기술 스택</strong>
+      위드라인의 사용 기술
+    </span>
+  </a>
+  <a
+  className="link-item"
+  href="/?path=/story/docs-coderule--page#welcome-to-coderule-of-위드라인"
+  >
+  <img src={Code} alt="" />
+  <span>
+  <strong>코드 규칙</strong>
+  위드라인의 코드 규칙
+  </span>
+  </a>
+</div>
+<div className="subheading">Projects - 2021</div>
+<div className="link-list">
+  <a className="link-item" href="/?path=/story/sportsdiary-app-introduction--page#스포츠-다이어리-앱">
+    <img src="http://img.sportsdiary.co.kr//images/SD/logo/logo_@3x.png" alt="" />
+    <span>
+      <strong>sportsdiary</strong>
+      스포츠 다이어리 앱
+    </span>
+  </a>
+  <a className="link-item" href="/?path=/story/sportsdiary-app-introduction--page#스포츠-다이어리-앱">
+    <img src="http://img.sportsdiary.co.kr//images/SD/logo/logo_@3x.png" alt="" />
+    <span>
+      <strong>이천훈련원</strong>
+      이천훈련원 리뉴얼
+    </span>
+  </a>
+  <a className="link-item" href="/?path=/story/aws-introduction--page#아마존-웹-서비스">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAABPCAMAAADRLKcJAAAApVBMVEX/////mQAjLz7/kQD/lAD/lgAfLDsbKTn/jgAAFSv/8+gWJTYAGC0AGi5la3MAAB3l5ucACiUAABYAACC1uLvr7O3/59MAAA7MztC9v8IJHTBLUlzZ2tzy8vP/9+81P0yDhoyanqJdYmumqa1CSlX/tGb/t27/4sj/2bb/797/pD7/p0f/xY3/0KVwdXyMj5QAAAD/oS//hQD/yZf/rlf/vX3/mx7pgjXhAAAEwElEQVRoge2W6ZaqRhSFoQqqoBkEAUUGQUFxNsbh/R8t5zBp53Zy091wk5XF/tNdQMHnGfYpQRg0aNCgQYMGDRo06JOK3TSxp1MnSf3qgu+6s/au5bqu165mrhtVm7KlMZ2qeToT+pF1GqkaIyCmOYmFl0JbHZ+b+2NVtZNmcR6rjon/ZKOAV3tstR+yJICXB6quIxy3MTTngPCwvh2p8HUtrlc5I7oLf1MHnjVUXYVd7aPdimhqYi7cGSQzAIIlssBXNau6ncFFotchsSBGI2B0R4QEYeb7PpZA3gtXaPpNNE4aIQ7yJIzYNYqpEUaCRbWY2YQjuPa8hCXXC9erECGDv6lGtLS6pBGet6mC6wbc98aEsd5hXtTw+A5hFUqkQ+R0wqqQQnmNvDLPjPxKLjcgGrZbDN/VywJzDYjVmBilg1h1P0C8SOD/Si6D8NIGoNJUt/pHO0N6y+wKrlqXFWAz0pdxvciLoLUgPrOGCwi0U0Vg+5Desk2RdlRFEfqR6fk56pXKDQn4l8FJaPKaywNTw/aHzE2RkqGzxgljtSecHPTUIEjOvaXTy1UOzgriHOyp4hKWvHSMmY5EUE9BVFqs1oyBhW3wEk3P+yGLCZiWqplpeoLx03ItjLLAUq0kIQwXmU6cNnNxFo51RONO1gfXCfw8aJwRzL3msuyywBJWTj+ofliYnCXxy1YY3SOcBuMeyiyekrrzUG0/whgACMHjZIwkGaYTyqsx2+f2M4RYM7vngsnyEoRnvHB2jyy/KnjBGsO8BDd1fqwlSC5Ru+fKDMKecxeMoOGKbDg5LII6QlBgs8xgJP7hBR442bQHLpgx7enKM0h7wCmztuR1jqHA0hOvLO3PXL3ECyZhO1K8HPsrqO/g4QJqujqqQliTpD1jeC/phMYtjxhdCxqKJfCd2MuIhgam110AlUfa8RyhwROtPk8vfssXUQw5ja0UysvpYyJl8HlmJ2EORqn6cGDgdVqxcEibuXLR9F0WsMAJ8jBMbDS/D7LbgU42fJJxxlQImz/mdlrfWAac241nmrBoDTTS0VEZ5wjbPt+1sty2VdvOF9hsi+dY8cPlchk/F6HZdqO3CLkDI1V1uNnjeSfyXd/65B4vcrPM9b2fPzlo0P9Nb5vrfbVaHzbzLt9aHL+3f3OhkiSDJEmZdINUvff3R/H13QVVaClJFEXpmz/xvTaKsv/yD70ejptist1ONju5Yy5hAhm4fTsFb5JIvxH4D1+5k2Rlv/ny/jnyzGVR6bTwUXcqivRxePvK3mJNlQNGXRS7xoIie8BrJXo7fvInbw8XKkvyVhCOknTonkuYryVZFGUqrY7/NGrzyWGPfSitcMdNVrY9cEE+dpBMRKP7e/Eztvl2s7oopTk8ysKcy/KtFyzQEZOJkqi0W12L7YdJnW+Lw+1CqVw+Kd2rhzZST+EqP3l9ULGWDHCP/W19RYMqVWyOh/Vt/4Abcs0vrRuYPe2jup5kxwuVxadwvNBWOHCet6j8bOAt3feJhYK+f4f2oWSw4tc5fd/1jSVg0FZ/iyZTZX993xmdO+pfqbjvFOU1bU1aqXK5d3ui+bQmx/tNVF4k7u/H4t9letFbrf8M0KBBgwYNGjRo0KBP6Q+oyFriLSo6HgAAAABJRU5ErkJggg==" alt="" />
+    <span>
+      <strong>AWS</strong>
+      아마존 웹 서비스
+    </span>
+  </a>
+</div>
+<div className="subheading">Projects - 2020</div>
+<div className="link-list">
+  <a className="link-item" href="/?path=/story/knsu-introduction--page#한국체육대학교-경기력향상-시스템">
+    <img src="http://knsu.sportsdiary.co.kr/main/images/common/include/logo_KNSU.svg" alt="" />
+    <span>
+      <strong>KNSU</strong>
+      한국체육대학교 경기력향상 시스템
+    </span>
+  </a>
+</div>

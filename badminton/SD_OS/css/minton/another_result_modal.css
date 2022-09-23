@@ -1,0 +1,23 @@
+.modal.another_result .modal-body,
+.modal.another_result .modal-footer {background-color: #fff;}
+
+.modal.another_result .modal-body {padding-top: 30px;padding-bottom: 0px;padding-left: 20px;padding-right: 20px;}
+.modal.another_result h4 {font-family: 'NotoKR-md';font-size: 16px;color: #333;margin: 0;margin-bottom: 15px;}
+.modal.another_result h4 span {font-size: 17px;}
+.modal.another_result h4 .sub {font-size: 14px;vertical-align: middle;line-height: 1}
+.modal.another_result h4 span,
+.modal.another_result h4 .sub {display: inline-block;vertical-align: middle;}
+.modal.another_result .btn {font-family: 'NotoKR-md';font-size: 16px;text-align: left;width: 100%;margin-bottom: 10px;}
+.modal.another_result .btn:hover,
+.modal.another_result .btn:focus,
+.modal.another_result .btn:active {color: #333;}
+.modal.another_result .btn.on {background-color: #04101f;color: #fff;border: 3px solid #fbab00;}
+.modal.another_result .btn:last-child {margin-bottom: 20px;}
+.modal.another_result .btn_default {border: 2px solid #ccc;}
+.modal.another_result .btn .img_box {width: 20px;height: 20px;float: right;}
+
+.modal.another_result .modal-footer {border-top: none;padding-top: 0;padding-bottom: 20px;}
+.modal.another_result .modal-footer .btn_list {margin-left: 20px;margin-right: 20px;margin-bottom: 0px;}
+.modal.another_result .modal-footer li {width: calc(50% - 5px); float: left;}
+.modal.another_result .modal-footer li:first-child {margin-right: 10px;}
+.modal.another_result .modal-footer .btn {text-align: center;width: 100%;height: 50px;line-height: 50px;margin: 0;padding-top: 0;padding-bottom: 0;}

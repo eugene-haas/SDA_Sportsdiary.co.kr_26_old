@@ -1,0 +1,18 @@
+.page_title{border-bottom:2px solid #9bb3d7;padding-bottom:15px;}
+.page_title h2 {display: inline-block;vertical-align: middle;font-family: 'Malgun Gothic';font-size: 17px;position: relative;color: #3e4e68;line-height: 125%;padding-left: 26px;}
+.page_title h2:before,
+.page_title h2:after {position: absolute;content: '';display: inline-block;width: 6px;height: 6px;}
+.page_title h2:before {background-color: #d72e31;top: 5px;left: 0;}
+.page_title h2:after {background-color: #0e51a0;top: 11px;left: 6px;}
+.page_title .btn-back {position: relative;top: 5px;height: 30px;line-height: 21px;margin-top: -10px;margin-left: 10px;padding: 4px 10px;}
+.page_title .btn-back .ic_deco {margin-right: 5px;}
+
+.page_title .navigation_box {display: inline-block;vertical-align: middle;float: right;}
+.page_title .navigation_box .ic_deco .fas {font-size: 10px;background-color: #f2f3f7;color: #3e4e68;border-color: #b0bed3;width: 13px;height: 13px;}
+.page_title .navigation_box .ic_deco,
+.page_title .navigation_box ul {display: inline-block;vertical-align: middle;}
+.page_title .navigation_box .ic_deco {margin-right: 6px;}
+.page_title .navigation_box li {display: inline-block;font-size: 13px;vertical-align: middle;color: #3e4e68;position: relative;padding-right: 12px;margin-right: 4px;}
+.page_title .navigation_box li:after {font-size: 10px;position: absolute;right: 0;content: '>';color: #3e4e68;}
+.page_title .navigation_box li:last-child {margin-right: 0;padding-right: 0;}
+.page_title .navigation_box li:last-child:after {content: '';}

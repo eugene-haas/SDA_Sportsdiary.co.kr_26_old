@@ -1,0 +1,10 @@
+.player_video .table-box{margin-top:10px;}
+.player_video .table-box  tr td:nth-child(1){width:60px}
+.player_video .table-box  tr td:nth-child(2){width:300px}
+.player_video .table-box  tr td:nth-child(3){width:300px}
+.player_video .table-box  tr td:nth-child(4){width:300px}
+.player_video .table-box  tr td:nth-child(5){width:120px}
+.player_video .table-box  tr td:nth-child(6){width:120px}
+.player_video .table-box  tr td:nth-child(7){width:120px}
+.player_video .table-box  tr td:nth-child(8){width:120px}
+.player_video .bt-btn-box a{width:100px;height:40px;line-height:40px;}

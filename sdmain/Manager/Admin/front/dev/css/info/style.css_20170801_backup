@@ -1,0 +1,79 @@
+/* INTRODUCE 협회정보 > 인사말 */
+.introduce {color:#666; font-size:16px; font-family:"NanumBarunGothic"; line-height:1.5;}
+.introduce h4 {height:64px; margin:70px 0; font-weight:normal;}
+.introduce h4 strong {display:block; padding:0 0 0 75px; color:#0085d3; font-size:32px; font-family:"NanumBarunGothicB";}
+.introduce h4 span {display:block; padding:0 0 0 75px; color:#666; font-size:18px; font-family:"NanumBarunGothic";margin-top:10px;}
+.introduce p {width:593px; margin:0 0 25px;}
+.introduce p.sign {margin:20px 0 60px 0;}
+.introduce p.sign img {margin:0 0 0 7px; vertical-align:middle;}
+
+/* HISTORY 협회정보 > 연혁 */
+.history {padding:60px 0 80px 0;}
+.history h4 {margin:0 0 44px; text-align:center; color:#666; font-size:22px; font-family:"NanumBarunGothicB"; line-height:1.4;}
+.history h4 strong {color:#0085d3; font-weight:normal;}
+.history .bg_history_top {margin:25px 0 0 0; width:42px; height:3px; margin:0 auto; background:#0085d3;}
+
+.history_inner {overflow:hidden; width:100%; margin:44px 0 0 0; background:url(../../dist/imgs/sub/bg_history.png) repeat-y 10px 0;}
+.history table {width:100%;}
+.history table th {color:#333; font-size:28px; vertical-align:top; line-height:100%; padding:20px 0 0 0; vertical-align:top; background-image:url(../../dist/imgs/sub/line_history.png), url(../../dist/imgs/sub/icon_history.png); background-repeat:no-repeat; background-position:100% 100%, 0 22px;}
+.history table td {padding:10px 0 10px 22px; color:#666; font-size:15px; font-family:"NanumBarunGothicB"; vertical-align:top; line-height:100%; border-bottom:1px solid #ddd;}
+.history table td.date {padding:10px 0; color:#0085d3; text-align:center; vertical-align:top; line-height:100%;}
+.history table td.last {border-bottom:2px solid #ccc;}
+
+
+
+
+/* MAP 협회정보 > 오시는 길 */
+.map {margin:30px 0 0 0;}
+.map table {width:100%; margin:20px 0 41px 0; border-top:2px solid #0085d3;}
+.map table th {height:39px; line-height:39px; color:#333; font-size:16px; font-weight:normal; font-family:"NanumBarunGothicB"; border-bottom:1px solid #ccc;}
+.map table td {height:39px; line-height:39px; color:#666; font-size:16px; border-bottom:1px solid #ccc;}
+.way {overflow:hidden; width:100%; padding:0 0 38px; color:#333; font-size:16px; line-height:1.8;}
+.way h4 {display:inline-block; margin:0 0 6px; padding:7px 12px 5px; color:#fff; font-size:16px; font-family:"NanumBarunGothicB"; font-weight:normal; background:#607a89; vertical-align:top; line-height:100%;}
+.way01 {float:left; width:378px; padding:0 0 0 120px; height:115px; background:url(../../dist/imgs/sub/icon_subway.png) no-repeat 0 14px;}
+.way02 {float:left; width:378px; padding:0 0 0 120px; height:115px; background:url(../../dist/imgs/sub/icon_car.png) no-repeat 0 14px;}
+
+/* SUBDIVISION 협회정보 > 협회소개 > 시도지부 */
+.subdivision {margin:70px 0 0 0;}
+.subdivision h4 {margin:0 0 30px; color:#333; font-size:24px; font-weight:normal; font-family:"NanumBarunGothicB";}
+.subdivision_wrap {overflow:hidden; width:100%;}
+.subdivision_list {float:left; width:480px; height:111px; margin:0 20px 50px 0;}
+.subdivision_list h5.federation {float:left;text-align:center; color:#4e8f00; font-size:18px; font-weight:normal; font-family:"NanumBarunGothicB"; }
+.subdivision_list h5 {float:left;  text-align:center; color:#0085d3; font-size:18px; font-weight:normal; font-family:"NanumBarunGothicB";position:relative;}
+.subdivision_list h5 span{position:absolute;left:0;top:30px;width:100%;}
+.subdivision_list ul {float:left; width:350px; margin:16px 0 0 0;}
+.subdivision_list ul li {overflow:hidden; width:350px; color:#666; font-size:15px; line-height:1.6; background:url(../../dist/imgs/sub/icon_sqaure.png) no-repeat 0 9px;}
+.subdivision_list ul li strong {float:left; color:#333; padding:0 6px 0 15px;}
+.subdivision_list ul li span {float:left; width:290px;}
+
+
+
+/* MANAGEMENT 협회정보 > 협회소개 > 경영공시 */
+.management {margin:30px 0 0 0;}
+.management .panel {margin:0 0 20px; background-color: #fff; border: 1px solid transparent;}
+.management .panel-body {padding:15px; line-height:1.5; background:#f2f2f2;}
+.management .panel-heading > .dropdown .dropdown-toggle {color: inherit;}
+.management .panel-heading {overflow:hidden; margin-top: 0; margin-bottom: 0; color:#333; font-size: 18px; color: inherit;}
+.management .panel-title a {overflow:hidden; display:block; width:960px; padding:9px 20px 5px; color: inherit;}
+
+.management .panel-group {margin-bottom: 20px;}
+.management .panel-group .panel {margin-bottom: 0 0 20px;border-radius:0;}
+.management .panel-group .panel + .panel {margin-top: 5px;}
+.management .panel-group .panel-heading {border-bottom: 0;border-radius:0;padding:0;}
+.management .panel-group .panel-heading + .panel-collapse > .panel-body,
+.management .panel-group .panel-heading + .panel-collapse > .list-group {border-top: 1px solid #ddd;}
+.management .panel-default {border-color: #ddd;}
+
+.management .tit_management {float:left; width:900px; vertical-align:middle; line-height:33px;margin:auto;font-weight:600;font-size:18px;}
+.management .btn_file {display:block; text-decoration:underline; padding:0 0 7px 27px; color:#4f83a1; font-size:14px; font-family:"NanumBarunGothic"; font-weight:bold;}
+.management .txt_management {color:#333; margin:0 0 10px; line-height:1.5;}
+
+.management .icon_caret {transition: all .3s ease; float:right; padding:0 6px; height:23px; line-height:23px; text-align:center; color:#ddd; border:3px solid #ddd; border-radius:50%;margin:auto;line-height:1em;}
+.management .caret {transform: rotate(180deg); display: inline-block; width: 0; height: 0; margin:0; vertical-align: middle; border-top:6px dashed; border-right:6px solid transparent; border-left:6px solid transparent;margin-top:4px;}
+.management .collapsed .icon_caret {transform: rotate(180deg); color:#ddd; border:3px solid #ddd;}
+.management .collapsed .icon_caret .caret {transition: all .3s ease;margin-top:4px;}
+
+.management .panel-title {color:#fff; background:#788286;}
+.management .panel-title .collapsed {color:#333; background:#fff;}
+
+.management .panel-default>.panel-heading{background:#fff;}

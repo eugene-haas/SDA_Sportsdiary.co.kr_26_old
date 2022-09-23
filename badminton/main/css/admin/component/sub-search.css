@@ -1,0 +1,27 @@
+.sub_search{position: relative;background:#eff2f6;width:100%;border:1px solid #ced5e3;margin-top:20px;}
+.sub_search label{text-align: center;}
+.sub_search .l_con{display: inline-block;vertical-align: middle;width: 100%;line-height: 56px;padding-right: 120px;}
+.sub_search .l_con ul li{display: inline-block;vertical-align: middle;margin-right:20px;}
+.sub_search .l_con ul li:nth-child(4n){margin-right:0;}
+.sub_search .l_con .l_txt{font-family: 'NanumGothicB';font-size:13px;color:#3e4e68;margin-right:5px;}
+.sub_search .l_con li select{height:28px;border:1px solid #ced5e3;min-width:137px;width: auto;}
+.sub_search .r_search_btn{position: absolute;top: 0;right: 0;display: inline-block;vertical-align: middle;}
+.sub_search .r_search_btn .btn{width: 99px;height: 58px;line-height: 58px;padding: 0;border-radius: 0;}
+
+.sub_search .radio_btn{cursor:pointer;border-radius:4px;width:100px;height:30px;line-height:30px;background:#7e868f;}
+.sub_search .radio_btn.on{background:#2f6fc1;}
+.sub_search .radio_btn input{display:none;overflow:hidden;width:0px;}
+.sub_search .radio_btn span{color:#ffff; font-family: 'Malgun Gothic';}
+
+
+.sub_search .radio_btn1{cursor:pointer;border-radius:4px;width:100px;height:30px;line-height:30px;background:#7e868f;}
+.sub_search .radio_btn1.on{background:#2f6fc1;}
+.sub_search .radio_btn1 input{display:none;overflow:hidden;width:0px;}
+.sub_search .radio_btn1 span{color:#ffff;    font-family: 'Malgun Gothic';}
+
+.sub_search .radio_btn2{cursor:pointer;border-radius:4px;width:100px;height:30px;line-height:30px;background:#7e868f;}
+.sub_search .radio_btn2.on{background:#2f6fc1;}
+.sub_search .radio_btn2 input{display:none;overflow:hidden;width:0px;}
+.sub_search .radio_btn2 span{color:#ffff;    font-family: 'Malgun Gothic';}
+
+.sub_search .ipt-word {width: 300px;height: 30px;padding-left: 5px;}

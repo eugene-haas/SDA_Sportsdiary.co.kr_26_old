@@ -1,0 +1,94 @@
+.ParticipateUpdate .top-input-warp{display:table;width:100%;padding:15px;background:#f0f0f0;}
+.ParticipateUpdate .top-input-warp ul li{float:left;width:24.25%;margin-right:1%;}
+.ParticipateUpdate .top-input-warp ul li:nth-child(4n){margin-right:0;}
+.ParticipateUpdate .top-input-warp ul li .l-txt{float:left;width:80px;line-height:40px;font-family: "NanumGothicB";}
+.ParticipateUpdate .top-input-warp ul li .r-con{float:left;width: calc(100% - 80px);}
+.ParticipateUpdate .top-input-warp ul li .r-con .phone-select{width:30%;padding:0;margin-right:2%;float:left;}
+.ParticipateUpdate .top-input-warp ul li .r-con .phone-input{width:68%;float:left;}
+.ParticipateUpdate .top-input-warp ul li .r-con input{font-size:0.9em;}
+.ParticipateUpdate .top-input-warp ul li a{width:80px;height:40px;line-height:40px;}
+.ParticipateUpdate .tab-btn{display:table;width:100%;margin-top:30px;}
+.ParticipateUpdate .tab-btn ul li{float:left;width:50%;height:50px;line-height:50px;}
+.ParticipateUpdate .tab-btn ul li a{background:#888;text-align:center;font-family: "NanumGothicB";color:#fff;display: block;}
+.ParticipateUpdate .tab-btn ul li a.on{background:#2882c1;}
+.ParticipateUpdate .list-warp{font-size:0.8em;}
+.ParticipateUpdate .list-warp table tr th{vertical-align:middle;}
+.ParticipateUpdate .list-warp table tr th span{display:block;}
+.ParticipateUpdate .list-warp table tr td{height:30px;border-bottom:1px solid #ddd;}
+.ParticipateUpdate .list-warp table tr td span{text-align:center;}
+
+
+.ParticipateUpdate .select-warp{margin-top:10px;display:table;width:100%;padding:15px 15px 5px 15px;background:#f0f0f0;}
+.ParticipateUpdate .select-warp ul{width:100%;}
+.ParticipateUpdate .select-warp ul li{width:24.25%;margin-right:1%;float:left;margin-bottom:10px;}
+.ParticipateUpdate .select-warp ul li:nth-child(4n){margin-right:0;}
+.ParticipateUpdate .select-warp ul li select, .ParticipateUpdate .select-warp ul li input{width:100%;}
+.ParticipateUpdate .select-warp ul li .l-txt{float:left;width:30%;margin-right:2%;line-height:40px;text-align:center;}
+.ParticipateUpdate .select-warp ul li .r-con{float:left;width:68%;}
+.ParticipateUpdate .select-warp ul li .r-con label{font-family: "NanumGothicB";margin-bottom:0;width:48%;text-align:center;
+height: 40px;
+line-height:38px;
+background: #888;color:#fff;}
+.ParticipateUpdate .select-warp ul{display:table;width:100%;}
+.ParticipateUpdate .select-warp ul li .r-con label.on{background:#2882c1;}
+.ParticipateUpdate .select-warp ul li .r-con label input{width:0px;vertical-align: -5px;height:auto;}
+.ParticipateUpdate .select-warp ul li .phone-select{width:30%;margin-right:2%;float:left;}
+.ParticipateUpdate .select-warp ul li .phone-input{width:68%;float:left;}
+.ParticipateUpdate .btn-box{text-align:right;float:none;display:table;width:100%;margin-top:30px;}
+.ParticipateUpdate .btn-box a{font-family: "NanumGothicB";margin-left:10px;float:none;min-width:80px;padding:0 15px;height:40px;line-height:40px;}
+.ParticipateUpdate .ment-box{line-height:24px;color:#888;margin:30px 0;padding:15px;background:#f0f0f0;}
+.ParticipateUpdate .info-th{background:#82a4bb;}
+.ParticipateUpdate .btn-box a {
+    font-family: "NanumGothicB";
+    margin-left: 10px;
+    float: none;
+    min-width: 80px;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+	    background-color: #2882c1;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+}
+.samll-title {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.samll-title span:before {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 6px;
+    top: 5px;
+    left: 0;
+    background-color: #d72e31;
+}
+.samll-title span:after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 6px;
+    bottom: 5px;
+    left: 6px;
+    background-color: #0e51a0;
+}
+.samll-title span {
+    padding-left: 15px;
+    font-size: 1.06em;
+    font-family: "NanumGothicB";
+}
+
+.ParticipateUpdate select {
+    width: 200px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #e9ecf2;
+}
+.ParticipateUpdate input {
+    width: 200px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #e9ecf2;
+}

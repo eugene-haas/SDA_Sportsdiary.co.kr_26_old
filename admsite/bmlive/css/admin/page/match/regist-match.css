@@ -1,0 +1,30 @@
+.registration_box{background:#f2f3f7;padding:30px;}
+.registration_box.fold_box {display: none;}
+.registration_box table{width:100%;}
+.registration_box .l_con{width:3px;height:3px;background-color:#8496b4;display:inline-block;vertical-align:4px;margin-right:5px;}
+.registration_box th{font-family: 'NanumGothicB';font-size: 13px;color: #3e4e68;width:100px;}
+.registration_box td {padding-top: 8px;padding-bottom: 8px;padding-left: 10px;padding-right: 35px;}
+.registration_box td:nth-child(3n) {padding-right: 0;}
+.registration_box td input{border:1px solid #ced5e3;height: 35px;line-height:33px;padding: 0px 4px;}
+.registration_box td select{border:1px solid #ced5e3;height: 35px;padding: 8px 4px;}
+.registration_box .table_btn{margin-top:20px;padding-top:20px;border-top:1px solid #cedbef;}
+.registration_box .table_btn a {width:80px;height:30px;line-height:30px;text-align:center;color:#fff;font-family: 'NanumGothicB';font-size:13px;margin-right: 6px;padding: 0;}
+.registration_box .table_btn a:last-child {margin-right: 0px;}
+
+.registration_btn{text-align:right;margin-top:10px;}
+.registration_btn a {display:inline-block;text-align:center;font-family: 'Malgun Gothic';font-size:12px;font-weight: bold;;width:100px;margin-right: 6px;}
+.registration_btn a:last-child {margin-right: 0;}
+.registration_btn a.btn-fold{display:none;}
+.registration_btn a .ic_deco {margin-left: 4px;}
+
+/**
+ * 대회 등록 버튼 상태
+ */
+.gameTitle.index .table-list.match_info .list-btn {font-size: 13px; width: 80px; height: 26px;line-height: 26px;color: #fff;}
+.gameTitle.index .table-list.match_info .btn-blue:hover,
+.gameTitle.index .table-list.match_info .btn-blue:focus,
+.gameTitle.index .table-list.match_info .btn-blue:active {background-color: #00479b;}
+.gameTitle.index .table-list.match_info .btn-blue-empty {color: #00479b;}
+.gameTitle.index .table-list.match_info .btn-red {background-color: #ec0a2e;border: 1px solid #ec0a2e;}
+.gameTitle.index .table-list.match_info .btn-red-empty {color: #ec0a2e;border: 1px solid #ec0a2e;}
+/* 대회 등록 버튼 상태 */

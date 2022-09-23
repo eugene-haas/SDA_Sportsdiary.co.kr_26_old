@@ -1,0 +1,20 @@
+.sub.live-score .tourney-title h3 {font-family: 'NotoKR';font-weight: bold;font-size: 1.075em;}
+.sub.live-score .tourney-sel li select {-webkit-appearance: menulist;-moz-appearance: menulist;appearance: menulist;}
+.tn_live_tab .btn {font-size: 1em;letter-spacing: -0.02em;}
+.live-score .bg_court {background-repeat: no-repeat;-webkit-background-size: cover; background-size: cover;padding-left: 10px;padding-right: 10px;}
+
+.live-score .court {padding-bottom: 15px;}
+/* score board */
+.live-score .tn_board_table .board_header {width: 51%;}
+.live-score .tn_board_table .board_header .player {width: 25%;}
+.live-score .tn_board_table .board_header .team {width: 55%;}
+.live-score .tn_board_table .board_header .serve {display: inline-block;vertical-align: middle;width: 7%; margin-left: 2px;}
+
+.live-score .court_header {display: block;background-color: #558100;border-radius: 20px;height: 22px;line-height: 22px;padding-left: 10px;padding-right: 10px;margin-top: 11px;}
+.live-score .court_header .play_divn span {display: inline-block;border-left: 1px solid #98a1ad;height: 12px;line-height: 12px;padding-left: 5px;margin-left: 5px;}
+.live-score .court_header .play_divn span:first-child {border-left: none;}
+.live-score .court_header h3,
+.live-score .court_header .play_divn {display: inline-block;}
+.live-score .court_header h3 {font-size: 0.93em;color: #fff;}
+.live-score .court_header .round {color: #e6db25;}
+.live-score .court_header .play_divn {font-size: 0.92em;color: #fff;margin-top: 2px;float: right;}

@@ -1,0 +1,34 @@
+/**
+ * 배드민턴 경기입력
+ */
+body {font-family: 'NotoKR';width: auto;max-width: 360px;margin: 0 auto;} /* 세팅 리셋 */
+/* 공통 */
+.sel_box {position: relative;}
+.sel_box select {-webkit-appearance: none;-moz-appearance: none;appearance: none;width: 100%;}
+.sel_box:after {content: '';position: absolute;top: 40%;right: 7px;border-top: 6px solid #fff;border-left: 4px solid transparent;border-right: 4px solid transparent;border-bottom: none;}
+.img_box {display: inline-block;}
+.img_box > img {width: 100%;}
+.btn_white {background-color: #fff;}
+a.btn_white:hover,
+a.btn_white:focus,
+a.btn_white:active {color: inherit;}
+
+a.btn_gray,
+a.btn_gray:hover,
+a.btn_gray:focus,
+a.btn_gray:active {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#737a86+0,12151e+100 */
+background: #737a86; /* Old browsers */
+background: -moz-linear-gradient(top, #737a86 0%, #12151e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #737a86 0%,#12151e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #737a86 0%,#12151e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#737a86', endColorstr='#12151e',GradientType=0 ); /* IE6-9 */ border: 1px solid #151e31; color: #fff; padding-top: 0;padding-bottom: 0;}
+
+a.btn_orangy,
+a.btn_orangy:hover,
+a.btn_orangy:focus,
+a.btn_orangy:active {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6400+0,ff3800+100 */
+background: #ff6400; /* Old browsers */
+background: -moz-linear-gradient(top, #ff6400 0%, #ff3800 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ff6400 0%,#ff3800 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ff6400 0%,#ff3800 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6400', endColorstr='#ff3800',GradientType=0 ); /* IE6-9 */ color: #fff; border: 1px solid #ff530d;}

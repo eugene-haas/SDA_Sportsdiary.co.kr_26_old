@@ -1,0 +1,168 @@
+.main {position: relative;}
+.main .number-box .round {display: inline-block; float: left; margin-bottom: 0;}
+.main .number-box .round td {display: block; text-align: center;}
+.main .left_side .print_player tr td {padding-right: 45px; text-align: right;}
+.main .right_side .print_player tr td {padding-left: 45px;}
+.main .left_side table.round tr,
+.main .right_side table.round tr {border: none;}
+.main .number-box {position: absolute; top: 20px;}
+/**
+ * S: 128강 
+ */
+.match128 .number-box {left: 240px;}
+.match128 .left_side .print_player {font-size: 13px; text-align: right;}
+.match128 .right_side .print_player {font-size: 13px;}
+.match128 .right_side .number-box {left: auto; right: 240px;}
+.main .round {width: auto;}
+.main .right_side .number-box .round {float: right;}
+.main .number-box .round td:last-child {margin-bottom: 0;}
+
+/* 128강 번호 가로 배치 */
+.match128 .number-box .round-1 {margin-left: -10px;}
+.match128 .number-box .round-2 {margin-top: 20px; margin-left: 55px;}
+.match128 .number-box .round-3 {margin-top: 50px; margin-left: 60px;}
+.match128 .number-box .round-4 {margin-top: 121px; margin-left: 65px;}
+.match128 .number-box .round-5 {margin-top: 256px; margin-left: 60px;}
+.match128 .number-box .round-6 {margin-top: 530px; margin-left: 60px;}
+.match128 .right_side .number-box .round-1 {margin-top: 5px; margin-right: -10px;}
+.match128 .right_side .number-box .round-2 {margin-top: 20px; margin-right: 65px;}
+.match128 .right_side .number-box .round-3 {margin-right: 5px;}
+.match128 .right_side .number-box .round-4 {margin-right: 0px;}
+.match128 .right_side .number-box .round-5 {margin-right: -2px;}
+.match128 .right_side .number-box .round-6 {margin-right: 0px;}
+/* 128강 번호 세로 배치 */
+.match128 .number-box .round-1 td {margin-bottom: 15.15px;}
+.match128 .number-box .round-2 td {margin-bottom: 49.2px;}
+.match128 .number-box .round-3 td {margin-bottom: 118.2px;}
+.match128 .number-box .round-4 td {margin-bottom: 252px;}
+.match128 .number-box .round-5 td {margin-bottom: 524px;}
+.match128 .right_side .number-box .round-1 td {margin-bottom: 15.05px;}
+.match128 .right_side .number-box .round-2 td {margin-bottom: 49.4px;}
+.match128 .right_side .number-box .round-3 td {margin-bottom: 118px;}
+.match128 .right_side .number-box .round-4 td {margin-bottom: 254px;}
+.match128 .right_side .number-box .round-5 td {margin-bottom: 528px;}
+.match128 .right_side .number-box .round td:last-child {margin-bottom: 0;}
+/* E: 128강 */
+
+
+/**
+ * S: 64강 
+ */
+.match64 .number-box {left: 348px;}
+.main.match64 .print_player {margin-bottom: 29px;}
+.match64 .right_side .number-box {left: auto; right: 348px;}
+/* 64강 번호 가로 배치 */
+.match64 .number-box .round-2 {margin-top: 35px; margin-left: 60px;}
+.match64 .number-box .round-3 {margin-top: 102px; margin-left: 62px;}
+.match64 .number-box .round-4 {margin-top: 235px; margin-left: 60px;}
+.match64 .number-box .round-5 {margin-top: 503px; margin-left: 60px;}
+.match64 .right_side .number-box .round-2 {margin-right: 60px;}
+/* 64강 번호 세로 배치 */
+.match64 .number-box .round-1 td {margin-bottom: 48px;}
+.match64 .number-box .round-2 td {margin-bottom: 115px;}
+.match64 .number-box .round-3 td {margin-bottom: 248px;}
+.match64 .number-box .round-4 td {margin-bottom: 517px;}
+/* E: 64강 */
+
+
+/**
+ * S: 32강 
+ */
+.main.match32 .left_side,
+.main.match32 .right_side {padding-top: 60px;}
+.main.match32 .print_player {margin-bottom: 96.5px;}
+.main.match32 .left_side .print_player:last-of-type,
+.main.match32 .right_side .print_player:last-of-type {margin-bottom: 0;}
+.match32 .number-box {top: 70px;}
+.match32 .left_side .number-box {left: 355px;}
+.match32 .right_side .number-box {right: 355px;}
+/* 32강 번호 가로 배치 */
+.match32 .number-box .round-2 {margin-top: 68px; margin-left: 90px;}
+.match32 .number-box .round-3 {margin-top: 200px; margin-left: 85px;}
+.match32 .number-box .round-4 {margin-top: 468px; margin-left: 85px;}
+.match32 .right_side .number-box .round-1,
+.match32 .right_side .number-box .round-2,
+.match32 .right_side .number-box .round-3,
+.match32 .right_side .number-box .round-4 {margin-left: 85px;}
+/* 32강 번호 세로 배치 */
+.match32 .number-box .round-1 td {margin-bottom: 115px;}
+.match32 .number-box .round-2 td {margin-bottom: 248px;}
+.match32 .number-box .round-3 td {margin-bottom: 518px;}
+/* E: 32강 */
+
+/**
+ * S: 16강 
+ */
+.main.match16 .left_side,
+.main.match16 .right_side {padding-top: 75px;}
+.main.match16 .left_side .print_player,
+.main.match16 .right_side .print_player {margin-bottom: 282px;}
+.main.match16 .left_side .print_player:last-of-type,
+.main.match16 .right_side .print_player:last-of-type {margin-bottom: 0;}
+.main.match16 .left_side .round,
+.main.match16 .right_side .round {margin-bottom: 0;}
+.match16 .number-box {top: 85px;}
+.match16 .left_side .number-box {left: 240px;}
+.match16 .right_side .number-box {right: 240px;}
+/* 16강 번호 가로 배치 */
+.match16 .number-box .round-2 {margin-top: 160px; margin-left: 165px;}
+.match16 .number-box .round-3 {margin-top: 480px; margin-left: 165px;}
+.match16 .right_side .number-box .round-1 {margin-left: 165px;}
+/* 16강 번호 세로 배치 */
+.match16 .number-box .round-1 td {margin-bottom: 300px;}
+.match16 .number-box .round-2 td {margin-bottom: 620px;}
+/* E: 16강 */
+
+/**
+ * S: 8강 
+ */
+.main.match8 .left_side,
+.main.match8 .right_side {padding-top: 235px;}
+.main.match8 .left_side .print_player:first-child,
+.main.match8 .right_side .print_player:first-child {margin-bottom: 600px;}
+.match8 .number-box {top: 245px;}
+.match8 .left_side .number-box {left: 240px;}
+.match8 .right_side .number-box {right: 240px;}
+.main.match8 .left_side .round,
+.main.match8 .right_side .round {margin-bottom: 0;}
+/* 8강 번호 가로 배치 */
+.match8 .number-box .round-2 {margin-top: 318px; margin-left: 270px;}
+.match8 .right_side .number-box .round-1 {margin-left: 270px;}
+/* 8강 번호 세로 배치 */
+.match8 .number-box .round-1 td {margin-bottom: 618px;}
+/* E: 8강 */
+
+/**
+ * S: 4강 
+ */
+.main.match4 {padding-top: 100px; padding-bottom: 100px;}
+.main.match4 .print_player {font-size: 22px;}
+.main.match4 .left_side .print_player:first-child,
+.main.match4 .right_side .print_player:first-child {margin-bottom: 510px;}
+.main.match4 .left_side .print_player:nth-child(2),
+.main.match4 .right_side .print_player:nth-child(2) {margin-bottom: 200px;}
+.main.match4 .number-box {top: 538px;}
+.main.match4 .left_side .number-box {left: 620px;}
+.main.match4 .right_side .number-box {right: 620px;}
+.main.match4 .number-box .round {margin-bottom: 0;}
+/* E: 4강 */
+
+/**
+ * S: 2강 
+ */
+.main.match2 .print_player {font-size: 22px;}
+.main.match2 .number-box {top: 565px; left: 980px;}
+/* E: 2강 */
+
+/**
+ * S: round-final 
+ */
+.number-box .round-final {position: absolute; width: 70px;}
+/*.match2 .number-box .round-final {top: 320px; left: 740px;}*/
+.match4 .number-box .round-final {top: 0px; left: 355px;}
+.match8 .number-box .round-final {top: 320px; left: 740px;}
+.match16 .number-box .round-final {top: 480px; left: 740px;}
+.match32 .number-box .round-final {top: 470px; left: 635px;}
+.match64 .number-box .round-final {top: 505px; left: 635px;}
+.match128 .number-box .round-final {top: 532px; left: 740px;}
+/* E: round-final */ 

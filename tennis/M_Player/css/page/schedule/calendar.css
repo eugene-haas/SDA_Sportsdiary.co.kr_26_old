@@ -1,0 +1,91 @@
+.calendar-header .year {font-size: 0.94em; font-family: 'NotoKR-md'}
+
+/* 2017-02-22 modal */
+.modal-schedule .modal-body {text-align:left;}
+.modal-schedule .modal-footer {margin:0; padding:0 0 15px;}
+
+.tit-blue-radius {display:inline-block; font-size:0.94em; padding:5px 15px; margin-bottom:10px; border-radius:30px; color:#fff; background-color:#428adb;}
+.tit-green-radius {display:inline-block; font-size:0.94em; padding:5px 15px; margin-top:20px; margin-bottom:10px; border-radius:30px; color:#fff; background-color:#5db900;}
+.tit-line-through {display:inline-block; font-size:0.94em; padding:5px 15px; 
+margin-bottom:10px; border-radius:30px; color:#428adb; background-color:#fff;border:1px solid #428adb;
+/*background-image: url(../../../images/schedule/img-line-though.png);*/
+background-repeat:repeat-x;
+background-position:0 50%;}
+.tit-orange-radius {display:inline-block; font-size:0.94em; padding:5px 15px; margin-top:20px; margin-bottom:10px; border-radius:30px; color:#fff; background-color:#e08400;}
+.tit-marine-radius {display:inline-block; font-size:0.94em; padding:5px 15px; margin-bottom:10px; border-radius:30px; color:#fff; background-color:#64b636;}
+
+.tit-graybox {margin-bottom:10px; padding:3px 3px; color:#333; font-size:0.85em; background-color:#eee;}
+.tit-graybox i {font-size:1.4em; padding:5px; color:#e74e3b; vertical-align:middle;}
+.tit-graybox strong {padding:5px 0;}
+.tit-graybox span {display:block; color:#e74e3b; padding:5px; background-color:#fff; border:1px solid #eee;}
+
+dl.modal-train-list {display: flex; align-items: center; justify-content: center; overflow:hidden; width:100%; margin-bottom:10px; background-color:#737f8c; border:1px solid #aaa;}
+dl.modal-train-list:last-child {margin-bottom:0;}
+dl.modal-train-list dt {float:left; width:20%; text-align:center; color:#fff; font-size:0.85em;}
+dl.modal-train-list dd {float:left; width:80%;}
+dl.modal-train-list dd li {overflow:hidden; padding:5px 10px; font-size:0.75em; color:#333; background-color:#fff; border-bottom:1px solid #ddd;}
+dl.modal-train-list dd li:first-child {color:#fff; border-bottom:1px solid #fff; background-color:#aaa;}
+dl.modal-train-list dd li:last-child {border-bottom:0;}
+dl.modal-train-list dd li.bg-blue {color:#fff; background-color:#86acd7; border-bottom:0;}
+dl.modal-train-list dd li.bg-red {color:#fff; background-color:#ec9b9b; border-bottom:0;}
+dl.modal-train-list dd li p:first-child {float:left;}
+dl.modal-train-list dd li p:last-child {float:right;}
+
+dl.modal-train-list.disabled {background-color:#7d7d7d;}
+dl.modal-train-list.disabled dd {background-color:#aaa;}
+dl.modal-train-list.disabled dd li {color:#a7a7a7;}
+dl.modal-train-list.disabled dd li:first-child {color:#fff;}
+dl.modal-train-list.disabled dd li.bg-blue {color:#fff; background-color:#aaa;}
+dl.modal-train-list.disabled dd li.bg-red {color:#fff; background-color:#aaa;}
+
+dl.modal-strength-list dt {color:#448700; font-size:0.85em; padding-left:10px; /*background-image: url(../../../images/sub/icon-square-gray@3x.png); */background-repeat: no-repeat; background-position: 0 6px; background-size: 5px 5px;}
+dl.modal-strength-list dd {padding-left:10px; margin-bottom:8px; margin-top:2px; color:#333; font-size:0.8em; line-height: 18px;}
+
+.modal-schedule .tourney-info {padding-bottom:10px; background: #f2f2f2;}
+.modal-schedule .tourney-info .sche-title {background:#737f8d; color:#fff;}
+.modal-schedule .tourney-info .sche-title h2 {color:#fff; line-height: 20px;}
+.modal-schedule .tourney-info h6 {background-color: #737f8d; color:#fff; margin-bottom:10px; font-size:0.90em; padding-top: 10px; padding-left: 15px; padding-right:10px; padding-bottom: 10px; line-height:20px;}
+.modal-schedule .tourney-info p {color:#333; /*background-color:#eee;*/ /*font-size:0.75em;*/ font-size: 0.9em; margin-bottom:5px; letter-spacing: -1px;}
+.modal-schedule .tourney-info p span {position: relative; padding:3px 0; color: #68717e; margin-right: 8px; display: inline-block; vertical-align: middle;}
+.modal-schedule .tourney-info p span:after {position: absolute; top:11px; right: -6px; content: ''; width: 1px; height: 12px; background-color: #68717e;}
+.modal-schedule .tourney-info p span:last-child:after {width:0;}
+.modal-schedule .tourney-info p span.medal {background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-color:#919faf; background-position:8px -2px; 
+color:#fff; display: inline-block; vertical-align: middle; text-align: center; margin-right:2px; margin-left:6px; border-radius:25px; width:75px; padding-left:2px;}
+.modal-schedule .tourney-info p span.medal:after {width:0;}
+.modal-schedule .tourney-info p span.medal.gold {background-image: url(../../../images/record/golden-medal@3x.png); background-size:17px; background-position:4px 0;}
+.modal-schedule .tourney-info p span.medal.silver {background-image: url(../../../images/record/silver-medal@3x.png); background-size:17px; background-position:4px 0;}
+.modal-schedule .tourney-info p span.medal.bronze {background-image: url(../../../images/record/bronze-medal@3x.png); background-size:17px; background-position:4px 0;}
+.modal-schedule > .game-sche {background:none;}
+.btn-modal-train {width:100%; margin:10px 0 10px; padding:10px 0; color:#fff; text-align:center; background-color:#428adb; border-radius:50px;}
+.btn-modal-train:hover, .btn-modal-train:focus, .btn-modal-train:active {color: #fff;}
+.btn-modal-strength {width:100%; margin:10px 0 10px; padding:10px 0; color:#fff; text-align:center; background-color:#5db900; border-radius:50px;}
+.btn-modal-match {width:100%; margin:10px 0 10px; padding:10px 0; color:#fff; text-align:center; background-color:#64b636; border-radius:50px;}
+
+.ic-modal-train {display:inline-block; width:30px; height:26px; margin-right:5px; background-size:30px 26px; background-repeat:0 0; vertical-align:middle; background-position:0 0; background-image: url(../../../images/schedule/btn-modal-train@3x.png);}
+.ic-modal-strength {display:inline-block; width:28px; height:28px; margin-right:5px; background-size:28px 28px; background-repeat:0 0; vertical-align:middle; background-position:0 0; background-image: url(../../../images/schedule/btn-modal-strength@3x.png);}
+.ic-modal-match {display:inline-block; width:31px; height:25px; margin-right:5px; background-size:31px 25px; background-repeat:0 0; vertical-align:middle; background-position:0 0; background-image: url(../../../images/schedule/btn-modal-match@3x.png);}
+
+.mk-sqare {display:inline-block; width:19px; height:19px; color:#fff; font-family:dotum; font-size:12px; text-align:center;}
+.mk-sqare:hover,
+.mk-sqare:active,
+.mk-sqare:focus {text-decoration:none; color:#fff;}
+span.mk-though:hover,
+span.mk-though:active,
+span.mk-though:focus {color:#0072d5;}
+
+
+.mk-blue {background:#318ebc; line-height:21px;}
+.mk-green {background:#64b636; line-height:21px;}
+.mk-orange {background:#d38b1a; line-height:21px;}
+/*.mk-gray {background:#646464; line-height:17px;}*/
+.mk-red {background:#e53636; line-height:21px;}
+
+/* 2017-02-22 add */
+.mk-skyblue {background:#0072d5; line-height:21px;}
+.mk-yellowgreen {background:#01a916; line-height:21px;}
+.mk-marine {background:#42c7da; line-height:21px;}
+.mk-gray {background:#939393; line-height:21px;}
+.mk-brown {background:#df8400; line-height:21px;}
+.mk-skyblue-line {color:#0072d5; width:16px; height:16px; border:1px solid #0072d5; line-height:21px;}
+.mk-though {text-decoration:line-through; color:#0072d5; width:19px; height:19px; border:1px solid #0072d5; line-height:19px; background-repeat:repeat-x;
+background-position:0 50%;}

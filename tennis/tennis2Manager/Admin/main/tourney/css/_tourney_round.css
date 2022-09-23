@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+
+/* 라운드 선택 */
+.tourn .game_number {background-color: #1b3445;padding: 10px;}
+.tourn .game_number li {float: left;margin-right: 5px;}
+.tourn .game_number li:last-child {margin-right: 0;}
+.tourn .game_number .btn {font-size: 14px;background-color: #fff; color: #333; border-radius: 0;border: none;width: 100px;}
+.tourn .game_number .btn.on {background-color: #0089e8;color: #fff;}
+
+.tourn .left_side,
+.tourn .right_side {float: left;}
+.tourn .game_tourn {margin-top: 20px;}
+.tourn .game_tourn .player {font-size: 12px;text-align: left;width: 200px;line-height: 150%}
+.tourn .game_tourn .seed,
+.tourn .game_tourn .point {vertical-align: middle;}
+.tourn .game_tourn .point {text-align: center;border-left: 2px solid #dedede;width: 60px;}
+.tourn .game_tourn .seed {width: 200px;}
+.tourn .game_tourn .seed select {height: 24px;line-height: 24px;}
+.tourn .game_tourn .match,
+.tourn .game_tourn .no_match {background-color: #dedede;height: auto;padding: 5px;margin-bottom: 20px;}
+.tourn .game_tourn .table {background-color: #fff;margin-bottom: 0;}
+/*.tourn .game_tourn .table tr {border-bottom: 2px solid #dedede;}*/
+.tourn .game_tourn .table .win {color: #005895; border: 2px solid #ff9227;}
+.tourn .game_tourn .table .win .point {border-left: 2px solid #ff9227;}
+
+.tourn .game_tourn .down_line,
+.tourn .game_tourn .up_line {position: relative;}
+.tourn .game_tourn .down_line:before,
+.tourn .game_tourn .down_line:after,
+.tourn .game_tourn .up_line:before,
+.tourn .game_tourn .up_line:after {content: '';position: absolute;top: 52px;right: -30px;background-color: #ff9227;width: 30px;height: 2px;}
+.tourn .game_tourn .down_line:after {top: 50%;right: -30px;width: 2px;height: 70px;}
+.tourn .game_tourn .up_line:before {top: 52.5px;}
+.tourn .game_tourn .up_line:after {top: -17px;right: -30px;width: 2px;height: 70px;}
+.tourn .game_tourn .no_match .down_line:before {top: 52px;}
+.tourn .game_tourn .no_match .up_line:after {top: -17px;}
+.tourn .game_tourn .no_match {position: relative;background: none;padding: 0;}
+.tourn .game_tourn .no_match .team_list {background-color: #dedede;padding: 5px;}
+.tourn .game_tourn .no_match .player {padding-top: 33px;padding-bottom: 33px;}
+
+.tourn .game_tourn .right_side {margin-top: 70px;margin-left: 50px;}
+.tourn .game_tourn .right_side .match {position: relative;margin-bottom: 155px;}
+.tourn .game_tourn .right_side .match:before {content: '';position: absolute;top: 49%;left: -26px;background-color: #ff9227;width: 28px;height: 2px;}
+.tourn .game_tourn .right_side .player {width: 320px;}
+.tourn .game_tourn .right_side .team:first-child .player {border-top: none;}
+.tourn .game_tourn .right_side .down_line:before,
+.tourn .game_tourn .right_side .down_line:after,
+.tourn .game_tourn .right_side .up_line:before,
+.tourn .game_tourn .right_side .up_line:after {width: 0;height: 0;}

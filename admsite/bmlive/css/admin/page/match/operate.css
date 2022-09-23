@@ -1,0 +1,209 @@
+.setup-body.operate .stair .sel-ctr {width: 320px;}
+.setup-body.operate .stair .sel-ctr.big-sel {width: 600px;}
+.setup-body.operate .stair label {font-size: 16px;}
+.setup-body.operate .stair label .txt {display: inline-block;vertical-align: middle;margin: 0;margin-left: -4px;float: none;}
+.setup-body.operate .stair label input {display: inline-block;vertical-align: middle;width: 20px;height: 20px;margin: 0;}
+
+.setup-body.operate .sel_box input {width: 100px;}
+
+.content-wrap.operate .ctr-box {width: 25%;float: left;}
+.content-wrap.operate .ctr-box:first-child {margin-right: 10px;}
+.content-wrap.operate .ctr-box .scroll-box {overflow-y: scroll;height: auto;line-height: 1}
+.content-wrap.operate .table-fix-body {height: 100%}
+.operate .tourney-container .scroll_box {overflow-y: scroll;}
+
+
+.operate .sel-match td .txt {display: block;font-size: 16px;width: 90%;line-height: 125%;margin: 0 auto;font-family: 'NanumGothicB';}
+.operate .sel-match td .txt .l-btn-box{width:48px;height:19px;line-height:17px;border-radius:19px;text-align:center;display:inline-block;border:1px solid #ec0a2e;color:#ec0a2e;font-size:12px;}
+.operate .sel-match td {padding:10px 0;vertical-align: middle;}
+.operate td .btn-league-sel,
+.operate td .btn-player-sel {background-color: #387cb0; width: 60%;margin: 0 auto;margin-top: 5px;margin-right:2%;}
+.operate td .btn-player-sel {height: 50px;line-height: 150%;margin-top: 0;padding-top: 5px;}
+.operate td .ps-btn-box a{float:left;}
+
+.operate td .ps-btn-box a.gray-btn{background:#aaaaaa;}
+.operate td .ps-btn-box a.gray-btn.on{background-color: #ea7c0b;}
+
+.operate td .ps-btn-box a.pin-btn{background:#aaaaaa;}
+.operate td .print-btn{width: 38%;margin: 0 auto;margin-top: 5px;color:#fff;font-family: 'NanumGothicB';height: 30px;line-height: 28px; min-width: 20px;padding: 0;border: 1px solid transparent;border-radius: 4px;
+border:1px solid #999;color:#2a2a2a;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,fafafa+54,f3f3f3+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #fafafa 54%, #f3f3f3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#fafafa 54%,#f3f3f3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#fafafa 54%,#f3f3f3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+}
+.operate td .btn-player-sel.on,
+.operate td .btn-league-sel.on {background-color: #ea7c0b;}
+#DP_RequestGroup .btn-player-sel {background-color: #7e868f;height:50px;line-height:50px;padding:0;}
+.operate .ctr-box .table-head th:first-child,
+.operate .sel-match td:first-child {width: 38px;}
+
+
+
+
+.operate .league_table_box .print-btn{width:120px;}
+.operate .league_table_box table td {text-align: center;vertical-align: middle;padding-top: 8px;padding-bottom: 8px;}
+.operate .league_table_box .player-btn {width: 174px;;}
+
+
+
+
+.operate .league_table_box .p_name {font-size:16px; display: block;vertical-align: middle;text-align: center;}
+.operate .league_table_box .ipt-point {display: inline-block;vertical-align: middle; text-align: center; border-radius: 6px; width: 30px; margin-left:10px;}
+.operate .league_table_box .vs {display: block;font-size: 16px;}
+.operate .league_table_box td .btn-chk-win {background-color: #0f335b;}
+.operate .league_table_box td .btn-chk-win.btn-right {background-color: #b72424;}
+.operate .league_table_box td .btn.win {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#28a8f1+0,1558e4+100 */
+background: #28a8f1; /* Old browsers */
+background: -moz-linear-gradient(top, #28a8f1 0%, #1558e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #28a8f1 0%,#1558e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #28a8f1 0%,#1558e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28a8f1', endColorstr='#1558e4',GradientType=0 ); /* IE6-9 */ color: #fff;}
+.operate .league_table_box td .btn-chk-draw {background-color: #ddd;color: #333;margin-top: 5px;}
+.operate .league_table_box td.write {font-size: 14px;height: 129px;}
+.operate .league_table_box td.win {background-color: #f30;}
+.operate .league_table_box td.match-self {background-color: #b4b9c0;height: 127px;}
+.operate .league_table_box td.not-yet {background-color: #fff;}
+.operate .league_table_box td.write .chk-draw {margin-left: 7px;}
+.operate .league_table_box td.write .chk-draw a {color: #fff;}
+.operate .league_table_box td:first-child {border-left: 1px solid #ddd;}
+.operate .league_table_box tr {border-bottom: 1px solid #ddd;}
+
+
+.operate .league_table_box .point-diff>span{display:flex;align-items:center;justify-content:center;min-height:44px;font-size:16px;}
+.operate .league_table_box .point-diff>span + span{border-top:1px solid #ccc;}
+/* 단체전 */
+/* .operate .league_table_box .group_box .player-btn{line-height:150%;padding-top:3px;padding-right:30px;vertical-align:top;} */
+
+.operate .league_table_box .group_box .player-wrap{font-size:0;}
+.operate .league_table_box .group_box .player-btn{vertical-align:top;overflow:hidden;}
+.operate .league_table_box .group_box .player-btn>p{width:110px;height:100%;display:flex;flex-direction:column;justify-content:center;margin:0;}
+
+.operate .league_table_box .group_box .player-btn .p_name {font-size: 16px;line-height:18px;font-weight:700;}
+.operate .league_table_box .group_box .ctr-player {width:60px;padding-top:0;padding-bottom:0;}
+.operate .league_table_box .group_box .ctr-player li {height:48px;line-height:47px;}
+.operate .league_table_box .group_box .ctr-player .btn {height:40px;line-height:40px;}
+.operate .league_table_box .group_box .game-time{text-align:left;margin:0 10px;}
+
+
+
+.content-wrap.operate .table-list {margin-top: 0;}
+.content-wrap.operate .table-list th {font-family: 'NanumGothicB';font-size: 16px;background-color: #0f335b;color: #fff;vertical-align: middle;height: 36px;border-bottom:0;border-right:0;}
+.content-wrap.operate .table-head {width: 100%;margin-bottom: 0;}
+.content-wrap.operate .table-head th {text-align: center;}
+.content-wrap.operate .table-head th .all-print{width:71px;color:#fff;margin-left:5px;font-family: 'NanumGothicB';height: 23px;line-height: 21px; min-width: 20px;padding: 0;border: 1px solid transparent;border-radius: 4px;
+border:1px solid #999;color:#2a2a2a;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,fafafa+54,f3f3f3+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #fafafa 54%, #f3f3f3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#fafafa 54%,#f3f3f3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#fafafa 54%,#f3f3f3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */}
+.content-wrap.operate .scroll-box .table-list {width: 100%;margin-bottom: 0;}
+.content-wrap.operate .table-fix-head {border: 1px solid #ced5e3;margin-bottom: 0;}
+.content-wrap.operate .remote-arr td {font-size: 14px;}
+
+.content-wrap.operate .tourney-container {width: 74%;padding-left: 10px;float: left;}
+.content-wrap.operate .tourney-container .table-fix-head #DP_GangBtn {display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;align-items: center;}
+.content-wrap.operate .tourney-container .table-fix-head th {flex: 1;width:200px;}
+/*.content-wrap.operate .tourney_admin thead th {display: table;}
+.content-wrap.operate .tourney_admin .btn_a {display: table-cell;}*/
+/*.content-wrap.operate .table-fix-head,*/
+.content-wrap.operate .table-fix-body {border-left:1px solid #888;border-bottom:1px solid #888;background: url(../../../../imgs/table-bg-border.png);background-position: 1px;}
+.content-wrap.operate .table-fix-head {}
+.content-wrap.operate .table-fix-body #DP_Tr {display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;justify-content: center;}
+.content-wrap.operate .table-fix-body #DP_Tr > td {flex: 1;width:200px;}
+.content-wrap.operate .table-fix-body #DP_Tr td > .player:nth-child(2n) {}
+.content-wrap.operate .tourney-container .table-fix-head th {/*display: table;width: 100%;*/height: 35px;}
+.content-wrap.operate .tourney-container .table-fix-head .btn_a {font-size:16px;display: block;/*display: table-cell;*/text-align: center;vertical-align: middle;/*border-left: 10px solid #ced5e3;border-right: 10px solid #ced5e3;border-top: 5px solid #ced5e3;border-bottom: 5px solid #ced5e3;*/width: 100%; margin: 0;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#415d7d+0,2b4767+50,122e4d+100 */
+background: #415d7d; /* Old browsers */
+background: -moz-linear-gradient(top, #415d7d 0%, #2b4767 50%, #122e4d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #415d7d 0%,#2b4767 50%,#122e4d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #415d7d 0%,#2b4767 50%,#122e4d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#415d7d', endColorstr='#122e4d',GradientType=0 ); /* IE6-9 */
+border:0;
+border-right:1px solid #999;
+height:35px;line-height:35px;
+padding:0;
+}
+
+/* bmtourney overwrite */
+.content-wrap.operate #tourney_admin.tourney_admin {top: 0;left:0;border-right:0;border-left:1px solid #999;border-top:1px solid #999;}
+
+
+/**
+ * 대진표
+ */
+/*.tourney_admin thead tr {border-left:8px solid #ced5e3; border-right:11px solid #ced5e3;}*/
+/*.content-wrap.operate .tourney-container .table-fix-head .btn_a {border-left:6px solid #ced5e3; border-right:9px solid #ced5e3;}*/
+
+.tourney-container table td div.player {border-right:1px solid #888;width:100%;padding:0px;margin:0px;/*border-bottom:4px solid #000;*/}
+.tourney-container table .player .pre-num {display: block;text-align: center;font-size:16px;background:#f2f2f2;}
+
+.tourney-container table td div.player .tourney_ctr_btn {background-color: #c3cad4;width: 100%;display:table;width:100%;}
+.tourney-container table td div.player .tourney_ctr_btn ul li .btn-box{margin-top:5px;}
+.tourney-container table td div.player .tourney_ctr_btn {}
+.tourney-container table td div.player .stair {display: block;font-family: 'NanumGothicB';}
+.tourney-container table td div.player .stair span{display:block;}
+.tourney-container table td div.player .stair.winner {color:#;}
+.tourney-container table td div.player .LPlayer1,
+.tourney-container table td div.player .LPlayer2,
+.tourney-container table td div.player .RPlayer1,
+.tourney-container table td div.player .RPlayer2 {display: inline-block;vertical-align: middle;overflow: hidden;-ms-text-overflow: ellipsis;white-space:nowrap;text-overflow: ellipsis;margin-right: 5px; font-size:16px;}
+.tourney-container table td div.player .chk-win {color: #fff;}
+.tourney-container table td div.player .btn {background-color: #a9a9a9;font-size: 13px;width: 50px;height: 32px;line-height: 32px;padding: 0;}
+.tourney-container table td div.player .chk-win.winner {background:#387cb0;}
+.tourney-container table td div.player .ipt-point {display: inline-block;vertical-align: middle;text-align: center;width: 30px;margin-left: 8px;}
+
+.tourney-container .league_table_box .player {border: none;}
+/* 대진표 */
+
+.tourney-container .league_table_box {display: block;width: 100%;border: 1px solid #ddd;overflow-y: scroll;}
+.tourney-container .league_table_box table {width: 100%;}
+.tourney-container .league_table_box table td {font-size:16px; position: relative;border-right: 1px solid #ddd;}
+.tourney-container .league_table_box table td span.num {margin:auto;display: inline-block;background-color: #0f335b;color: #fff;width: 22px;height: 22px;display:block; margin-bottom:6px;}
+.tourney-container .league_table_box table tr:first-child td,
+.tourney-container .league_table_box table tbody td:first-child {font-family: "NanumGothicB";font-size: 16px;}
+.tourney-container .league_table_box table tr:first-child td {background-color: #e1e7f0;border-right: 1px solid #ced5e3;height: 80px;}
+.tourney-container .league_table_box table tr:first-child td:last-child {border-right: none;}
+.tourney-container .league_table_box table tbody td:first-child {background-color: #e1e7f0;}
+
+.tourney-container .league_table_box table tr:first-child td {width: 200px;}
+.tourney-container .league_table_box table tr:first-child td.score {width: 100px;}
+.tourney-container .league_table_box table tr:first-child td.rank {width: 100px;}
+
+
+/*  */
+.tourney-container .league_table_box table tr:first-child td:first-child{min-width:200px;}
+.tourney-container .league_table_box table tr:first-child td{min-width:238px;}
+
+
+
+.tourney-container .league_table_box .stair:first-of-type {margin-bottom: 6px;}
+.tourney-container .league_table_box .player-btn {position: relative;display: inline-block;vertical-align: middle;border: 2px solid #ccc;border-radius: 6px;height: 52px;margin-bottom: 4px;}
+.tourney-container .league_table_box .player-btn:last-child {margin-bottom: 0;}
+.tourney-container .league_table_box .ctr-player {position: absolute;top: 0;right: 0;background-color: #7e868f;width: 35%; max-width: 100px; height: 48px;line-height: 48px;padding: 2px 5px;}
+.tourney-container .league_table_box .ctr-player li {height: 44px;line-height: 44px;}
+.tourney-container .league_table_box .ctr-player .btn {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,e7e7e7+100 */
+background: #fefefe; /* Old browsers */
+background: -moz-linear-gradient(top, #fefefe 0%, #e7e7e7 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #fefefe 0%,#e7e7e7 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #fefefe 0%,#e7e7e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */ border: 1px solid #666; color: #333; width: 100%; height: 20px;line-height: 20px;padding: 0;}
+.tourney-container .league_table_box .ipt-point {font-size: 16px;text-align: center;border: 2px solid #ccc;width: 34px;height: 52px;}
+
+.league_table_box .ctr-player .btn.win {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#28a8f1+0,1558e4+100 */
+background: #28a8f1; /* Old browsers */
+background: -moz-linear-gradient(top, #28a8f1 0%, #1558e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #28a8f1 0%,#1558e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #28a8f1 0%,#1558e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28a8f1', endColorstr='#1558e4',GradientType=0 ); /* IE6-9 */ color: #fff;}
+.league_table_box .ctr-player .btn.draw {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f70f48+35,e20516+100 */
+background: #f70f48; /* Old browsers */
+background: -moz-linear-gradient(top, #f70f48 35%, #e20516 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f70f48 35%,#e20516 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f70f48 35%,#e20516 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f70f48', endColorstr='#e20516',GradientType=0 ); /* IE6-9 */ color: #fff;}

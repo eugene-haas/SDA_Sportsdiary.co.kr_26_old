@@ -1,0 +1,35 @@
+/* ���������  ��ǰ���� ����*/
+.GameGift .t_title{height:50px;line-height:50px;color:#fff;font-size:20px;font-family: 'NanumGothicB';background:#0f335b;text-align:center;}
+.GameGift input{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;}
+.GameGift select{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;}
+.GameGift .competition_select{padding:15px 0;background:#e6e9ee;text-align:center;}
+.GameGift .competition_select select{width:730px;}
+.GameGift .tab{background:#c3cad4;width:100%;height:45px;line-height:45px;}
+.GameGift .tab ul{width:730px;margin:auto;display:table;}
+.GameGift .tab ul li{float:left;width:20%;}
+.GameGift .tab ul li a{border-right:1px solid #c3cad4;background:#8b97a9;color:#fff;font-size:16px;font-family: 'NanumGothicB';display:block;text-align:center;}
+.GameGift .tab ul li.on a{background:#fff;color:#333;}
+.GameGift .ranking_result{width:836px;margin:auto;padding:20px 0;background:#fff;display:table;}
+.GameGift .ranking_result label{float:left;margin-bottom:0;margin-top:5px;margin-right:20px;}
+.GameGift .ranking_result select{float:left;width:170px;margin-right:5px;}
+.GameGift .ranking_result a{float:left;width:156px;height:35px;line-height:35px;background:#ec0a2e;color:#fff;text-align:center;border-radius:3px;}
+.GameGift .ranking_result a i{vertical-align: -1px;margin-left:5px;}
+.GameGift .ranking_result input{height:auto;width:15px;height:15px;vertical-align: -3px;}
+.GameGift .ranking_result span{font-weight:normal;}
+.GameGift .search_box{width:1260px;margin:auto;border:3px solid #e1e7f0;padding:15px 0;text-align:center;background:#f7f9fb;margin-top:20px;}
+.GameGift .search_box select{width:170px;}
+.GameGift .search_box input{width:250px;}
+.GameGift .search_box a{width:70px;height:35px;line-height:35px;background:#7e868f;color:#fff;text-align:center;border-radius:3px;}
+.GameGift .top_btn_list{width:1260px;margin:auto;padding:20px 0;}
+.GameGift .top_btn_list a{width:150px;height:35px;line-height:35px;background:#7e868f;color:#fff;text-align:center;border-radius:3px;border:1px solid #0f335b;background:url(../../../../images/btn_bg1.jpg);color:#0f335b;font-size:13px;font-family: 'NanumGothicB';}
+.GameGift table{width:1260px;margin:auto;text-align:center;border-top:1px solid #ced5e3;border-right:1px solid #ced5e3;}
+.GameGift table tr th{height:40px;background:#e1e7f0;text-align:center;border-left:1px solid #ced5e3;border-bottom:1px solid #ced5e3;font-family: 'NanumGothicB';color:#333;}
+.GameGift table tr td{height:40px;width:150px;border-left:1px solid #ced5e3;border-bottom:1px solid #ced5e3;}
+.GameGift table tr:nth-child(2n) td{background:#f7f9fb;}
+.GameGift table tr td a{height:26px;line-height:26px;display:block;color:#fff;background:#7e868f;font-size:12px;width:75px;margin:auto;text-align:center;border-radius:3px;}
+.GameGift table tr td a.blue_btn{background:#00479b;width:75px;}
+.GameGift table tr td a.red_btn{background:#ec0a2e;}
+.GameGift .h-30{height:30px;}
+
+.GameGift .final_ranking_box {width:1260px;margin:auto;margin-bottom:10px;text-align:right;}
+.GameGift .final_ranking_box a.red_btn{width: 136px;height: 35px;line-height: 35px;background: #ec0a2e;color: #fff;text-align: center;border-radius: 3px;}

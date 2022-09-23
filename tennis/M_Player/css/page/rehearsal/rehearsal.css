@@ -1,0 +1,209 @@
+/* 연습경기 */
+.rehearsal {background:#edf0f4;}
+.top-icon-menu {padding:20px 10px; color:#666; font-size:18px; text-align:center; background-size:70% 70%; border-bottom: 1px solid #4c6f8c;}
+.top-icon-menu p {padding-top:10px;font-size: 0.73em;letter-spacing: -0.5px; font-family: 'nanumGothicB';line-height: 1.3em;}
+.top-icon-menu p span {color:#0059a5;}
+.top-icon-menu ul li {margin:0 2%;}
+
+.datepicker-wrap {display:flex; padding:12px 0 8px 10px; /* margin-bottom:10px; */ background:#fff; border-bottom:1px solid #ddd;}
+.datepicker-wrap label {font-size: 0.84em; margin-right:2%; line-height:33px; padding:2px 0 0 0;}
+/*.datepicker-wrap .input-group {width:60%; margin-right:1%;}*/
+.btn-navy {color:#fff; padding:0 13px; height:33px; line-height:33px; border-radius:3px; background:#3f505d;}
+.btn-navy:hover, .btn-navy:focus, .btn-navy:active {color: #fff;}
+
+.list-bu-navy-wrap {padding:0 10px;}
+.list-bu-navy-wrap h3 {overflow:hidden; display:block; padding:0 10px; height:38px; /* font-size:18px; */ line-height:38px; color:#fff; background:#6293ba;}
+.list-bu-navy-wrap span {float:left;}
+.list-bu-navy-wrap a {float:right;}
+.list-bu-navy-wrap .more-a, 
+.list-bu-navy-wrap .close-a {padding: 6px 7px; color: #fff; font-size: 10px; line-height: 10px; border:2px solid #fff; border-radius: 50%; text-align: center;
+margin-top:6px;}
+.list-bu-navy-wrap .close-a {display: none;}
+.list-bu-navy {background:#fff;padding:10px 0;font-size: 0.85em;line-height: 1.4em;}
+.list-bu-navy li {font-family:"NanumGothic"; color:#666; margin:0 10px 0 15px; padding:0 0 0 15px;}
+.list-bu-navy li li {margin-left:-15px; padding:0;background:none;}
+
+.list-bu-navy-wrap.bg-gray {padding:0;}
+.list-bu-navy-wrap.bg-gray .list-bu-navy {background:#f2f2f2;}
+.list-bu-navy-wrap.bg-gray .list-bu-navy li {border-bottom:none;}
+.list-bu-navy-wrap.bg-gray .list-bu-navy li > ul {padding-left: 5px;}
+
+.list-rehearsal-wrap {margin-top:20px;}
+.top-list-rehearsal {overflow:hidden; padding-bottom:5px;}
+.top-list-rehearsal h3 {float:left; padding:0 0 0 10px; font-size:18px; color:#164369;}
+.top-list-rehearsal .btn-del-x {float:right; margin:0 10px;}
+.btn-del-x {display:inline-block; color:#fff; padding:0 8px; font-size:14px; border-radius:50%; background:#999999;}
+
+.list-rehearsal {border-top:1px solid #4c6f8c; background:#fff;}
+.list-rehearsal li {padding:10px 10px 5px 10px; border-bottom:1px solid #ddd;}
+.list-rehearsal li p {padding-bottom:5px;}
+.list-rehearsal li select { width:60.5%; height:38px; vertical-align:top; line-height:100%;}
+
+.btn-plus {text-align:center; padding:20px 0;}
+
+/* 연습경기 > 상세내역 */
+.top-practice-video { }
+.practice-video {width:100%;}
+.top-practice-video {overflow:hidden; width:100%; padding:10px 10px 5px;}
+.btn-slow-motion {float:right;}
+.btn-slow-motion span { float:right; margin-right:5px; margin-top:2px; font-size:0.75em;}
+.flipswitch { float:right;}
+
+.btn-practice-video {display:flex; margin:10px;}
+.btn-practice-video li {width:19.2%; margin-right:1%; text-align:center; color:#222; border:1px solid #ccc; border-radius:3px; background:#fff;}
+.btn-practice-video li:last-child {margin-right:0;}
+
+.practice-select {margin:0 10px 10px; padding:10px; border:1px solid #ddd; border-top:1px solid #4c6f8c; background:#fff;}
+.practice-radio strong {display:inline-block; margin-top:1px; margin-right:10px; color:#164369; vertical-align:top;}
+.practice-radio input {vertical-align:top; line-height:100%;}
+.practice-radio label {line-height:25px;}
+.practice-select select:first-child {margin-right:10px;}
+
+.full {width:100%; text-align:center;}
+
+.pracice-wrap {display:flex; padding:0 10px 10px;}
+.pracice-score {width:70%; background:#04101f;}
+.pracice-time {width:30%; font-family:"NanumGothicB"; color:#222;}
+.pracice-time li {margin-bottom:2px; font-size:14px; text-align:center;}
+.pracice-time li:last-child {margin-bottom:0;}
+.pracice-time li input {width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);}
+.pracice-time li label { display:block; padding:1px 0; margin-bottom:0; border:2px solid #c0cdde; background:#c0cdde;}
+.pracice-time li label.on {color:#fff; background:#004ed0; border:2px solid #003691;}
+
+.plactice-txt {font-family:"NanumGothic"; font-size:13px; padding-top:5px;}
+.plactice-txt li {font-family:"NanumGothic"; color:#666; background:#fff; margin:0; padding:0 0 0 10px;}
+.plactice-txt li.mine {color: #004ed0;}
+.plactice-txt li.pratice-txt-white {color:#666;}
+.plactice-txt li.pratice-txt-blue {color:#004ed0;}
+
+/* 연습경기 > on/off Flipswitch */
+.flipswitch {
+  position: relative;
+  width: 89px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select: none;
+}
+.flipswitch input[type=checkbox] {
+  display: none;
+}
+.flipswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  /*border: 1px solid #999999;*/
+  border-radius: 50px;
+}
+.flipswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -ms-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s;
+}
+.flipswitch-inner:before, .flipswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 28px;
+  padding: 0;
+  line-height: 28px;
+  font-size: 12px;
+  color: white;
+  font-family:'NanumGothicB';
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.flipswitch-inner:before {
+  content: "ON";
+  padding-left: 22px;
+  background-color: #7fbff1;
+  color: #FFFFFF;
+}
+.flipswitch-inner:after {
+  content: "OFF";
+  padding-right: 22px;
+  background-color: #b2b2b2;
+  color: #888888;
+  text-align: right;
+}
+.flipswitch-switch {
+  width: 20px; height:20px;
+  background: #fff;
+  /*border: 1px solid #999999;*/
+  box-shadow: 1px 1px 1px #888;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  bottom: 0;
+  right: 60px;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -moz-transition: all 0.3s ease-in 0s;
+  -ms-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
+}
+.flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
+  margin-left: 0;
+}
+.flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
+  right: 5px;
+}
+
+/* 연습경기 > 스코어 보드 score board */
+.display-board {background-color: #04101f; color: #c6d3e6;}
+.display-board ul {font-size: 14px; font-family:"NanumGothicB"; /*padding: 0;padding-left: 25px; padding-right: 25px; margin-bottom: 0;*/}
+.display-board ul li {text-align: center; float: left; width:20%;}
+/*.display-board ul[class^="player-"] {border-top: 1px solid #1e2836;}*/
+/*.display-board ul:not(.point-title) li {margin:5px 0;}*/
+.display-board ul span {display: inline-block;}
+ul[class^="player-"] .player-name {display: table-cell; font-size: 15px; letter-spacing: -0.05em; border-radius: 10px; line-height: 150%; vertical-align: middle; padding: 0px;}
+.display-board .score {position: relative; /*font-family: 'Noto KR Bold';*/ font-family:"NanumGothicB"; background: #222e42; 
+background: -moz-linear-gradient(top,  #222e42 0%, #000206 100%);
+background: -webkit-linear-gradient(top,  #222e42 0%,#000206 100%);
+background: linear-gradient(to bottom,  #222e42 0%,#000206 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e42', endColorstr='#000206',GradientType=0 );
+font-size: 32px; color: #c6d3e6; border: 2px solid #2d3847; border-radius: 5px; 
+/*padding: 32px 5px 16px;*/ padding:18px 8px; margin:5px 0;}
+.display-board .score:not(.player-name):after {position: absolute; top: 50%; left: 0; content: ''; background-color: #242d3c; width: 100%; height: 2px;}
+.display-board .on .score { background: #001150; background: -moz-linear-gradient(top, #001150 0%, #004d8f 100%); background: -webkit-linear-gradient(top, #001150 0%,#004d8f 100%); background: linear-gradient(to bottom, #001150 0%,#004d8f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001150', endColorstr='#004d8f',GradientType=0 ); border: 2px solid #b2ccee;}
+.display-board .score.player-name {background: #1d2c3d; border: 2px solid transparent;}
+.display-board .on .score.player-name {background: #001150; background: -moz-linear-gradient(top, #001150 0%, #004d8f 100%); background: -webkit-linear-gradient(top, #001150 0%,#004d8f 100%); background: linear-gradient(to bottom, #001150 0%,#004d8f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001150', endColorstr='#004d8f',GradientType=0 ); border: 2px solid #b2ccee;}
+.point-display { position:relative;}
+.point-display a {display: inline-block;}
+/*.player-2-point {border-bottom: 1px solid #1e2836;}*/
+.point-display .player-match-option { position:absolute; top:51px; right:0; width:88px; height:192px; text-align:center; background:#a4abb3;}
+/*.point-display .player-match-option label:first-child { margin-top:13px; margin-bottom:25px; background-image: url('../images/tournerment/enter/player-match-option_01_off_3x.png'); background-repeat: no-repeat;background-position: 0 center; -webkit-background-size: 59px 69px; background-size: 59px 69px; width:59px; height:69px;}
+.point-display .player-match-option label:first-child.on { background-image: url('../images/tournerment/enter/player-match-option_01_on_3x.png');}
+.point-display .player-match-option label:last-child { background-image: url('../images/tournerment/enter/player-match-option_02_off_3x.png'); background-repeat: no-repeat;background-position: 0 center; -webkit-background-size: 59px 69px; background-size: 59px 69px; width:59px; height:69px;}
+.point-display .player-match-option label:last-child.on { background-image: url('../images/tournerment/enter/player-match-option_02_on_3x.png');}*/
+.point-display .player-match-option input { width:0; height:0; margin-right: 21px; clip: rect(0,0,0,0);}
+.point-display .player-match-option span { position:absolute; top:-9999px; left:-9999px; width:0; height:0;}
+.display-board .player-1-point {background-color: #fff; margin:0 7px;}
+.display-board .player-2-point {background-color: #004ed0; margin:0 7px;}
+
+.point-display .select-win { color:#fff; font-size:22px; width:125px; padding:0 10px; height:69px; text-align:center; border-radius:5px; border:none; background: #222e43; /* Old browsers */
+background: -moz-linear-gradient(top, #222e43 0%, #000206 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #222e43 0%,#000206 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #222e43 0%,#000206 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e43', endColorstr='#000206',GradientType=0 ); /* IE6-9 */}
+.point-display .select-win.on { background: #ff6e00;
+background: -moz-linear-gradient(top,  #ff6e00 0%, #ff2b00 100%); background: -webkit-linear-gradient(top,  #ff6e00 0%,#ff2b00 100%); background: linear-gradient(to bottom,  #ff6e00 0%,#ff2b00 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6e00', endColorstr='#ff2b00',GradientType=0 ); border-radius: 5px; border: 2px solid #ffa668; outline: none}
+.point-display .select-win option {color: #000;}
+
+.round-res .display-board .disp-win {color: #15dbff; font-size: 24px; font-family: 'Noto KR Bold';}
+.pop-point-display .vs {position:absolute;top: calc(81%);/* top:118px; */left: calc(50% - 21.5px);width:43px;height:26px;line-height:22px;text-align:center;color:#fff;font-size:20px;font-weight:bold;border-radius:20px;background:#04101f;}
+.player-point p.player-school {font-size: 12px; margin-top: -5px;}
+.player-1-point p.player-school {color: #000; margin-bottom: 5px;}
+.player-2-point p.player-school {color: #fff;}
+
+.point-title {padding:6px 7px; color:#fff;}
+.display-board ul.player-1-point li:first-child { color:#333; margin-top:25px;}
+.display-board ul.player-2-point li:first-child { color:#fff; margin-top:22px;}
+
+.txt-orange {color:#ff7200 !important;}
+
+.display-board .on .score,
+.round-res .point-display .on .score { background: #007fec; background: -moz-linear-gradient(top, #007fec 0%, #000526 100%); background: -webkit-linear-gradient(top, #007fec 0%,#000526 100%); background: linear-gradient(to bottom, #007fec 0%,#000526 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007fec', endColorstr='#000526',GradientType=0 ); border: 2px solid #b2ccee;} /* merge */

@@ -1,0 +1,78 @@
+<%If CDbl(ADGRADE) > 500 then%>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta charset="utf-8">
+  <title>Frameset</title>
+
+
+  <!--[if IE]>
+  <script type="text/javascript">
+  document.createElement('header');document.createElement('aside');document.createElement('article');document.createElement('footer');</script>
+  <![endif]-->
+
+  <%'<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />%>
+  <link href="/pub/js/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+  <script src="/pub/js/jquery-1.11.1.min.js"></script>
+  <script src="/pub/js/jquery-ui.min.js"></script>
+
+  <link href="/pub/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="/pub/bootstrap/js/bootstrap.min.js"></script>
+  <style>
+  [draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }
+  </style>
+  <link rel="stylesheet" href="/pub/css/tennisAdmin.css?ver=8.1.5">
+<%'  <script src="/ckeditor/ckeditor.js"></script>%>
+<script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/pub/css/tennis/normalize-4.1.1.css">
+  <link rel="stylesheet" type="text/css" href="/pub/css/tennis/style.css?v=2.1.1">
+
+<%else%>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>KATA</title>
+  <link href="/pub/js/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+  <script src="/pub/js/jquery-1.11.1.min.js"></script>
+  <script src="/pub/js/jquery-ui.min.js"></script>
+
+  <link href="/pub/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="/pub/bootstrap/js/bootstrap.min.js"></script>
+
+<%If USER_IP = "118.33.86.240" then%>
+  <link rel="stylesheet" href="/pub/css/tennisAdminTest.css?ver=8.1.5">
+<%else%>
+  <link rel="stylesheet" href="/pub/css/tennisAdmin.css?ver=8.1.5">
+<%end if%>
+
+  <link rel="stylesheet" type="text/css" href="/pub/css/tennis/normalize-4.1.1.css">
+
+<%If USER_IP = "118.33.86.240" then%>
+  <link rel="stylesheet" type="text/css" href="/pub/css/tennis/styleTest.css?v=2">
+<%else%>
+  <link rel="stylesheet" type="text/css" href="/pub/css/tennis/style.css?v=2">
+<%end if%>
+
+
+  
+  <link rel="stylesheet" href="/pub/css/library/font-awesome.css">
+</head>
+<%End if%>
+
+
+
+
+
+
+

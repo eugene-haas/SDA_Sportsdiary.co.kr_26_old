@@ -1,0 +1,20 @@
+.modal .modal-header {position: relative;background-color: #0f335b;border-radius: 0;border-top-left-radius: 5px;border-top-right-radius: 5px;text-align: center;border-bottom: none;}
+.modal .modal-header h3 {font-size: 17px;color: #fff;}
+.modal .modal-header button.btn-close {position: absolute;top: 10px;right: 10px;font-size: 30px;width: 30px;height: 30px;border: none;background: none;color: #fff;}
+
+.modal .content-title {position: relative;font-family: "NanumGothicB";font-size: 15px;color: #333;padding-left: 21px;}
+.modal .content-title:before,
+.modal .content-title:after {position: absolute;content: '';width: 6px;height: 6px;}
+.modal .content-title:before {background-color: #d72e31;top: 3px;left: 0px;}
+.modal .content-title:after {background-color: #0e51a0;top: 9px;left: 6px;}
+.modal .content-title .redy {color: #ec0a2e;}
+.modal .content-title span {position: relative;padding-right: 6px;}
+.modal .content-title span:last-child {padding-right: 0;}
+.modal .content-title span:before {position: absolute;top: 3px;right: 0px;content: '';width: 1px;height: 13px;background-color: #bbb;}
+.modal .content-title span:first-child {padding-left: 8px;}
+.modal .content-title span:first-child:before {content: '[';top:1px;left: 2px;width: 0;height: 0;}
+.modal .content-title span:last-child:before {content: ']';top:1px;right: -2px;width: 0;height: 0;}
+
+.modal .modal-body .btn_list {text-align: center;margin-top: 20px;}
+.modal .modal-body .scroll-box {max-height: 520px;overflow-y: scroll;}
+.modal .modal-body .btn_list .btn-close {background-color: #333;color: #fff;width: 120px;height: 40px;line-height: 40px;padding: 0;}

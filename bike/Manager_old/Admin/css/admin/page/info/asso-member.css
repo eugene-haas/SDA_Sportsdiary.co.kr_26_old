@@ -1,0 +1,6 @@
+.asso-member td img {width: auto;height: 50px;}
+.asso-member td {padding-top: 8px;padding-bottom: 8px;}
+
+.asso-member td:nth-child(4),
+.asso-member td:nth-child(6) {text-align: left;padding-left: 10px;}
+.asso-member td:last-child {width: 90px;}

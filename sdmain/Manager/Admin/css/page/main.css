@@ -1,0 +1,29 @@
+.main .main-line-one{display:table;width:100%;}
+.main .chart-1{width:49%;margin-right:2%;float:left;}
+.main .chart-2{width:49%;float:left;}
+.main .main-line-tow{margin-top:30px;}
+.main .chart-3{display:table;width:100%;}
+.main .chart-3 ul li{float: left;width:23.5%;margin-right:2%;text-align:center;position:relative;}
+.main .chart-3 ul li:last-child{margin-right:0;}
+.main .chart-3 ul li .p-title{text-align:left;}
+.main .chart-3 ul li .middle{position:absolute;left:50%;margin-left:-65px;top:30px;width:130px;height:130px;text-align:center;display:block;display:table;}
+.main .chart-3 ul li .middle span{display:table-cell;vertical-align:middle;font-size:2em;}
+.main .main-line-three{margin-top:30px;}
+.main .main-line-three table{width:100%;}
+.main .main-line-three .new-user-list .box-shadow{padding:0;}
+.main .main-line-three table tr th{font-family:'NotoKR-md';font-weight:300;text-align:center;width:100px;padding:15px 0;background:#36a2eb;color:#fff;}
+.main .main-line-three table tr td{padding:15px 10px;border-bottom:1px solid #e9ecf2;text-align:center;border-right:1px solid #e9ecf2;}
+.main .main-line-three table tr:last-child td{border-bottom:0;}
+.main .main-line-four{margin-top:30px;}
+.main .main-line-four table{width:100%;}
+.main .main-line-four .new-user-list .box-shadow{padding:0;}
+.main .main-line-four table tr th{font-family:'NotoKR-md';font-weight:300;text-align:center;width:100px;padding:15px 0;background:#36a2eb;color:#fff;}
+.main .main-line-four table tr td{padding:15px 10px;border-bottom:1px solid #e9ecf2;text-align:center;border-right:1px solid #e9ecf2;}
+.main .main-line-four table tr:last-child td{border-bottom:0;}
+.main .main-line-five{margin-top:30px;}
+.main .main-line-five table{width:100%;}
+.main .main-line-five .new-user-list .box-shadow{padding:0;}
+.main .main-line-five table tr th{font-family:'NotoKR-md';font-weight:300;text-align:center;width:100px;padding:15px 0;background:#36a2eb;color:#fff;}
+.main .main-line-five table tr td{width:120px;padding:15px 10px;border-bottom:1px solid #e9ecf2;text-align:center;border-right:1px solid #e9ecf2;}
+.main .main-line-five table tr td:nth-child(3){width:400px;text-align:left;}
+.main .main-line-five table tr:last-child td{border-bottom:0;}

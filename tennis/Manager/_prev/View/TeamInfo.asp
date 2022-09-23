@@ -1,0 +1,970 @@
+<!--#include virtual="/Manager/Common/common_header.asp"-->
+<!--#include virtual="/Manager/Library/config.asp"-->
+<%
+Search_tp       = fInject(request("Search_tp"))
+Search_SportsGb = fInject(request("Search_SportsGb"))
+Search_Area     = fInject(request("Search_Area"))
+Search_Entertype= fInject(request("Search_Entertype"))
+Search_PTeamGb   = fInject(request("Search_PTeamGb"))
+Search_TeamNm   = fInject(request("Search_TeamNm"))
+Search_Seq   = fInject(request("Search_Seq"))
+
+if Search_SportsGb="" then
+    Search_SportsGb="judo"
+end if 
+if Search_Entertype="" then
+    Search_Entertype="E"
+end if 
+if Search_Seq="" then
+    Search_Seq="50"
+end if 
+%>
+<link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+<script src="../js/library/bootstrap.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript">
+    /*등록창열고 닫기S*/
+    function input_view() {
+        if (document.getElementById("input_area").offsetHeight > 0) {
+            document.getElementById("input_area").style.display = "none";
+            document.getElementById("input_button_type").className = "btn-top-sdr open";
+            document.getElementById("input_button_type").title = "프로필열기";
+        } else {
+            document.getElementById("input_area").style.display = "block";
+            document.getElementById("input_button_type").className = "btn-top-sdr close";
+            document.getElementById("input_button_type").title = "프로필닫기";
+        }
+    }
+    /*등록창열고 닫기E*/
+
+    function view_frm(tp) {
+        var sf = document.search_frm;
+        var Search_NumF = sf.Search_NumF.value
+        var Search_NumT = sf.Search_NumT.value
+        var Search_SportsGb = sf.Search_SportsGb.value
+        var Search_Area = sf.Search_Area.value
+        var Search_Entertype = sf.Search_Entertype.value
+        var Search_PTeamGb = sf.Search_PTeamGb.value
+        var Search_TeamNm = sf.Search_TeamNm.value
+        var Search_Seq = sf.Search_Seq.value
+
+        if (tp=="S") {
+            tp = "F";
+        } else {
+            TeamDataClear();
+            $("#TeamCheck").val("N");
+            select_data("종목", 0);
+            select_data("타입", 0);
+            select_data("지역", 0);
+            select_data("종별", 0);
+
+            document.getElementById("input_area").style.display = "none";
+            document.getElementById("input_button_type").className = "btn-top-sdr open";
+            document.getElementById("input_button_type").title = "열기";
+            document.getElementById("loaction").style = "margin-bottom:170px";
+        }
+
+        if (tp == "F") {
+            $("#list").html("");
+      
+            if (Search_SportsGb == "") { Search_SportsGb = "<%=Search_SportsGb %>"; }
+            if (Search_Entertype == "") { Search_Entertype = "<%=Search_Entertype %>"; }
+            if (Search_Seq == "") { Search_Seq = "<%=Search_Seq %>" ;}
+
+            $("#Search_SportsGb").html("");
+            $("#Search_Entertype").html("");
+            $("#Search_Area").html("<option value='' selected >전체</option>");
+            $("#Search_PTeamGb").html("<option value='' selected >전체</option>");
+
+            Search_NumF = 0;
+            Search_NumT = Number(Search_Seq);
+ 
+            var strAjaxUrl = "/Manager/ajax/TeamInfo_Control.asp";
+            $.ajax({
+                url: strAjaxUrl,
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    tp: tp,
+                    Search_SportsGb: Search_SportsGb,
+                    Search_Area: Search_Area,
+                    Search_Entertype: Search_Entertype,
+                    Search_PTeamGb: Search_PTeamGb,
+                    Search_TeamNm: Search_TeamNm,
+                    Search_NumF: Search_NumF,
+                    Search_NumT: Search_NumT
+                },
+                success: function (retDATA) {
+                    if (retDATA) {
+                        retDATA = trim(retDATA);
+                        DATAobj = eval(retDATA)
+
+                        for (var i = 0; i < DATAobj.length; i++) {
+                            var OptionStr = "";
+                            var OptionChek = "";
+                            if (DATAobj[i].chek == "Y") {
+                                OptionChek = "selected"
+                            }
+                            OptionStr = "<option value='" + DATAobj[i].code + "' " + OptionChek + ">" + DATAobj[i].name + "</option>";
+
+                            switch (DATAobj[i].keyNm) {
+                                case "종목":
+                                    $("#Search_SportsGb").append(OptionStr);
+                                    break;
+                                case "지역":
+                                    $("#Search_Area").append(OptionStr);
+                                    break;
+                                case "타입":
+                                    $("#Search_Entertype").append(OptionStr);
+                                    break;
+                                case "종별":
+                                    $("#Search_PTeamGb").append(OptionStr);
+                                    break;
+                            }
+                        }
+
+                        if (Search_TeamNm != "") {
+                            $("#Search_TeamNm").text(Search_TeamNm);
+                        }
+
+                        if (Search_TeamNm != "") {
+                            $("#Search_Seq").val(Search_Seq);
+                        }
+                    }
+                }, error: function (xhr, status, error) {
+                    if(error!=""){
+						alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+						return;
+					}
+                }
+            });
+             
+            //전체 행수 // 현재 행수
+            var strAjaxUrl = "/Manager/ajax/TeamInfo_View.asp";
+            $.ajax({
+                url: strAjaxUrl,
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    tp: "C",
+                    Search_SportsGb: Search_SportsGb,
+                    Search_Area: Search_Area,
+                    Search_Entertype: Search_Entertype,
+                    Search_PTeamGb: Search_PTeamGb,
+                    Search_TeamNm: Search_TeamNm,
+                    Search_NumF: Search_NumF,
+                    Search_NumT: Search_NumT
+                },
+                success: function (retDATA) {
+                    $("#totcnt").text(retDATA);
+                }, error: function (xhr, status, error) {
+                    if(error!=""){
+						alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+						return;
+					}
+                }
+            });
+        }
+
+
+        //리스트
+        var strAjaxUrl = "/Manager/ajax/TeamInfo_View.asp";
+        $.ajax({
+            url: strAjaxUrl,
+            type: 'POST',
+            dataType: 'html',
+            data: {
+                tp: tp,
+                Search_SportsGb: Search_SportsGb,
+                Search_Area: Search_Area,
+                Search_Entertype: Search_Entertype,
+                Search_PTeamGb: Search_PTeamGb,
+                Search_TeamNm: Search_TeamNm,
+                Search_NumF: Search_NumF,
+                Search_NumT: Search_NumT
+            },
+            success: function (retDATA) {
+                if (retDATA == "" || retDATA == "null") {
+                    if (tp == "F") {
+                        $("#list").html("");
+                    }
+                } else {
+                    $("#list").append(retDATA);
+                    if (Number(Search_NumF) > 0) {
+                        $("#nowcnt").text(Number(Search_NumF) + Number(Search_Seq) - 1);
+                    } else {
+                        $("#nowcnt").text(Number(Search_NumF) + Number(Search_Seq));
+                    }
+                    if (Number($("#totcnt").text()) < Number($("#nowcnt").text())) {
+                        $("#nowcnt").text(Number($("#totcnt").text()));
+                    }
+                    //더보기 셋팅
+                    Search_NumF = Number(Search_NumT) + 1;
+                    Search_NumT = Number(Search_NumF) + Number(Search_Seq) - 1;
+                    $("#Search_NumF").val(Search_NumF);
+                    $("#Search_NumT").val(Search_NumT);
+                }
+            }, error: function (xhr, status, error) {
+                if(error!=""){
+					alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+					return;
+				}
+            }
+        });
+
+    }
+
+    function select_Sports_change(seq) {
+        select_data("타입", seq);
+        select_data("종별", seq);
+    }
+
+    function select_data(KeyValue, seq) {
+        var strAjaxUrl = "/Manager/ajax/TeamInfo_Control.asp";
+        var f = document.frm;
+        var Search_SportsGb = f.SportsGb.value;
+        var Search_Entertype =  f.EnterType.value;
+        var Search_Area = f.Sido.value;
+        var Search_PTeamGb = f.PTeamGb.value;
+        var Search_Sex = f.Sex.value;
+        //f.TeamCheck.value = "Y";
+
+
+        if (seq==1) {
+            f = document.search_frm;
+            Search_SportsGb = f.Search_SportsGb.value;
+            Search_Area = f.Search_Area.value;
+            Search_Entertype = f.Search_Entertype.value;
+            Search_PTeamGb = f.Search_PTeamGb.value;
+            Search_TeamNm = f.Search_TeamNm.value;
+            Search_Seq = f.Search_Seq.value;
+        }
+
+        $.ajax({
+            url: strAjaxUrl,
+            type: 'POST',
+            dataType: 'html',
+            data: {
+                keyNm: KeyValue,
+                Search_SportsGb: Search_SportsGb,
+                Search_Entertype: Search_Entertype,
+                Search_Area: Search_Area,
+                Search_PTeamGb: Search_PTeamGb
+            },
+            success: function (retDATA) {
+                if (retDATA) {
+                    var OptionStr = "";
+                    var OptionChek = "";
+
+                    if (retDATA == "]" || retDATA == null || retDATA == "null") {
+
+                    } else {
+                        retDATA = trim(retDATA);
+                        DATAobj = eval(retDATA);
+
+                        for (var i = 0; i < DATAobj.length; i++) {
+                            if (DATAobj[i].chek == "Y") {
+                                OptionChek = "selected"
+                            } else {
+                                OptionChek = ""
+                            }
+                            OptionStr += "<option value='" + DATAobj[i].code + "' " + OptionChek + ">" + DATAobj[i].name + "</option>";
+                        }
+                    }
+                    if (seq == 1) {
+                        switch (KeyValue) {
+                            case "종목":
+                                $("#Search_SportsGb").html(OptionStr);
+                                break;
+                            case "타입":
+                                $("#Search_Entertype").html(OptionStr);
+                                break;
+                            case "종별":
+                                OptionStr = "<option value=''>전체</option>" + OptionStr;
+                                $("#Search_PTeamGb").html(OptionStr);
+                                break;
+                            case "지역":
+                                $("#Search_Area").html(OptionStr);
+                                break;
+                        }
+                    } else {
+                        switch (KeyValue) {
+                            case "종목":
+                                $("#SportsGb").html(OptionStr);
+                                break;
+                            case "타입":
+                                $("#EnterType").html(OptionStr);
+                                break;
+                            case "지역":
+                                $("#Sido").html(OptionStr);
+                                break;
+                            case "종별":
+                                $("#PTeamGb").html(OptionStr);
+                                break;
+                        }
+                    }
+                }
+            }, error: function (xhr, status, error) {
+                if(error!=""){
+					alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+					return;
+				}
+            }
+        });
+
+
+    }
+
+    function input_data(seq) {
+        var strAjaxUrl = "/Manager/Ajax/TeamInfo_Info.asp";
+        TeamDataClear();
+        if (document.getElementById("input_area").offsetHeight > 0) {
+        } else {
+            $("#input_button_type").click();
+            document.getElementById("loaction").style = "margin-bottom:430px";
+        }
+        $.ajax({
+            url: strAjaxUrl,
+            type: 'POST',
+            dataType: 'html',
+            data: { Search_Seq: seq },
+            success: function (retDATA) {
+                if (retDATA) {
+                    retDATA = trim(retDATA);
+                    DATAobj = eval(retDATA);
+                    var f = document.frm;
+                    for (var i = 0; i < DATAobj.length; i++) {
+                        f.Team.value = DATAobj[i].Team;
+                        f.TeamNm.value = DATAobj[i].TeamNm;
+                        f.SportsGb.value = DATAobj[i].SportsGb;
+                        f.EnterType.value = DATAobj[i].EnterType;
+                        f.PTeamGb.value = DATAobj[i].PTeamGb;
+                        f.Sex.value = DATAobj[i].Sex;
+                        f.ZipCode.value = DATAobj[i].ZipCode;
+                        f.Sido.value = DATAobj[i].Sido;
+                        f.Address.value = DATAobj[i].Address;
+                        f.AddrDtl.value = DATAobj[i].AddrDtl;
+                        f.TeamTel.value = DATAobj[i].TeamTel;
+                        f.TeamPass.value = DATAobj[i].TeamLoginPwd;
+                    }
+                    var f = document.frm;
+                    $("#L_Team").text(f.Team.value);
+                    $("#TeamPass").attr("readonly", true);
+                    $("#btnPassword").css("display", "");
+                    $("#TeamCheck").val("Y");
+                }
+
+                if (retDATA == null) {
+                    alert("조회 데이타가 없습니다!");
+                }
+            }, error: function (xhr, status, error) {
+                if(error!=""){
+					alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+					return;
+				}
+            }
+        });
+    }
+
+
+    function TeamDataSave() {
+        var f = document.frm;
+        //data Chek : S
+        if (f.SportsGb.value == "") {
+            alert("종목을 선택해 주세요");
+            f.SportsGb.focus();
+            return false;
+        }
+
+        if (f.TeamNm.value == "") {
+            alert("팀이름을 입력해 주세요");
+            f.TeamNm.focus();
+            return false;
+        }
+
+        if (f.Sido.value == "") {
+            alert("지역을 선택해 주세요");
+            f.Sido.focus();
+            return false;
+        }
+
+        if (f.EnterType.value == "") {
+            alert("타입을 선택해 주세요.");
+            f.EnterType.focus();
+            return false
+        }
+
+        if (f.PTeamGb.value == "") {
+            alert("종별을 선택해주세요");
+            f.PTeamGb.focus();
+            return false;
+        }
+
+        if (f.Sex.value == "") {
+            alert("성별을 입력해 주세요.");
+            f.Sex.focus();
+            return false;
+        }
+
+        if (f.ZipCode.value == "") {
+            alert("우편번호를 입력해 주세요.");
+            f.ZipCode.focus();
+            return false;
+        }
+
+        if (f.TeamTel.value == "") {
+            alert("전화번호를 입력해 주세요.");
+            f.TeamTel.focus();
+            return false;
+        } else {
+            var regExp = /^\d{2,3}-\d{3,4}-\d{4}$/;  // 일반 전화번호 정규식
+            //var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/; //휴대폰번호 체크 정규식
+
+            if (!regExp.test(f.TeamTel.value)) {
+                alert("잘못된 전화 번호입니다.\r\n 숫자 또는 구분자 - 를 포함한 숫자만 입력하세요.");
+                f.TeamTel.focus();
+                return false;
+            }
+
+            if (f.TeamTel.value.length <= 8 || f.TeamTel.value.length >= 14) {
+                alert("전화번호 입력 값이 잘못 되었습니다.");
+                f.TeamTel.focus();
+                return false;
+            }
+        }
+
+        var strAjaxUrl = "../ajax/TeamInfo_Insert.asp";
+        var SportsGb = f.SportsGb.value;
+        var Team = f.Team.value;
+        var TeamNm = f.TeamNm.value;
+        var Sido = f.Sido.value;
+        var EnterType = f.EnterType.value;
+        var PTeamGb = f.PTeamGb.value;
+        var Sex = f.Sex.value;
+        var ZipCode = f.ZipCode.value;
+        var Address = f.Address.value;
+        var AddrDtl = f.AddrDtl.value;
+        var TeamTel = f.TeamTel.value;
+        var TeamPass = f.TeamPass.value;
+        var TeamCheck = f.TeamCheck.value;
+
+        //팀중복체크
+        var search_frm = document.search_frm;
+        console.log(TeamCheck);
+        //검색
+        if (TeamCheck == "N" && f.Team.value == "") {
+            search_frm.Search_SportsGb.value = SportsGb;
+            search_frm.Search_Entertype.value = EnterType;
+            search_frm.Search_PTeamGb.value = "";
+            search_frm.Search_Area.value = "";
+            search_frm.Search_TeamNm.value = TeamNm;
+            view_frm("S");
+
+            $.ajax({
+                url: strAjaxUrl,
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    SportsGb: SportsGb
+                    , Team: Team
+                    , TeamNm: TeamNm
+                    , Sido: Sido
+                    , EnterType: EnterType
+                    , PTeamGb: PTeamGb
+                    , Sex: Sex
+                    , ZipCode: ZipCode
+                    , Address: Address
+                    , AddrDtl: AddrDtl
+                    , TeamTel: TeamTel
+                    , TeamPass: TeamPass
+                    , DelYn: "N"
+                    , Check: TeamCheck
+                },
+                success: function (retDATA) {
+                    console.log(retDATA);
+                    var dataSplit = retDATA.split("|");
+                    if (dataSplit[0]=="true") {
+                        alert("비슷한 팀이 있습니다. 확인 후 저장버튼을 다시 누르시기 바랍니다.");
+                        var dataSplit = retDATA.split("|");
+                        search_frm.Search_SportsGb.value = dataSplit[1];
+                        search_frm.Search_Entertype.value = EnterType;
+                        search_frm.Search_PTeamGb.value = "";
+                        search_frm.Search_Area.value = Sido;
+                        search_frm.Search_TeamNm.value = dataSplit[2];
+                        view_frm("S");
+                        $("#TeamCheck").val("C");
+                        return false;
+                    } else {
+                        TeamCheck = "Y";
+                        $("#TeamCheck").val("Y");
+                    }
+                }, error: function (xhr, status, error) {
+                    if (error != '') {
+                        alert("조회중 에러발생 - 시스템관리자에게 문의하십시오!" + ' [' + xhr + ']' + ' [' + status + ']' + ' [' + error + ']');
+                    }
+                }
+            });
+        } else {
+            if (TeamCheck=="C") {
+                TeamCheck = "Y";
+                $("#TeamCheck").val("Y");
+            }
+        }
+        //data Chek : E
+
+        //저장 ajax : S
+        if ($("#TeamCheck").val() == "Y") {
+            var confirmStr = "팀등록을 진행하시겠습니까?";
+
+            if (Team != "") {
+                confirmStr = "팀정보를 수정하시겠습니까?";
+            }
+
+            if (confirm(confirmStr)) {
+                $.ajax({
+                    url: strAjaxUrl,
+                    type: 'POST',
+                    dataType: 'html',
+                    data: {
+                     SportsGb: SportsGb
+                    , Team: Team
+                    , TeamNm: TeamNm
+                    , Sido: Sido
+                    , EnterType: EnterType
+                    , PTeamGb: PTeamGb
+                    , Sex: Sex
+                    , ZipCode: ZipCode
+                    , Address: Address
+                    , AddrDtl: AddrDtl
+                    , TeamTel: TeamTel
+                    , TeamPass: TeamPass
+                    , DelYn: "N"
+                    , Check: TeamCheck
+                    },
+                    success: function (retDATA) {
+                        console.log(retDATA);
+                        if (retDATA) {
+                            if (retDATA == 'TRUE') {
+                                //조회
+                                alert('입력이 완료되었습니다!');
+                                search_frm.Search_SportsGb.value = SportsGb;
+                                search_frm.Search_Entertype.value = EnterType;
+                                search_frm.Search_PTeamGb.value = "";
+                                search_frm.Search_Area.value = "";
+                                search_frm.Search_TeamNm.value = TeamNm;
+                                view_frm("F");
+                            }
+                            else {
+                                alert('예외가 발생하여 입력이 실패하였습니다!');
+                            }
+                        }
+                    }, error: function (xhr, status, error) {
+                        if (error != '') {
+                            alert("조회중 에러발생 - 시스템관리자에게 문의하십시오!" + ' [' + xhr + ']' + ' [' + status + ']' + ' [' + error + ']');
+                        }
+                    }
+                });
+            }
+        }
+        //저장 ajax  : E
+        $("#TeamCheck").val("N");
+    }
+
+    function TeamDataClear() {
+        var f = document.frm;
+        f.SportsGb.value = "judo";
+        f.Team.value = "";
+        f.TeamNm.value = ""; 
+        f.Sido.value = "01";
+        select_Sports_change(0);
+        f.Sex.value = "1";
+        f.ZipCode.value = "";
+        f.Address.value = "";
+        f.AddrDtl.value = "";
+        f.TeamTel.value = "";
+        f.TeamPass.value = "";
+
+
+        $("#TeamPass").attr("readonly", true);
+        $("#btnPassword").css("display", "none");
+        $("#TrPassword").css("display", "none");
+        $("#L_Team").text("");
+    }
+
+    function TeamDataDel() {
+        var f = document.frm;
+        //data Chek : S
+        if (f.Team.value == "") {
+            alert("삭제 대상을 선택하십시오!.");
+            return false;
+        }
+        //비밀번호 체크 : E
+        //data Chek : E
+        if (confirm("팀삭제를 진행하시겠습니까?")) {
+            var strAjaxUrl = "../ajax/TeamInfo_Insert.asp";
+            var SportsGb = f.SportsGb.value;
+            var Team = f.Team.value;
+            var TeamNm = f.TeamNm.value;
+            var Sido = f.Sido.value;
+            var EnterType = f.EnterType.value;
+            var PTeamGb = f.PTeamGb.value;
+            var Sex = f.Sex.value;
+            var ZipCode = f.ZipCode.value;
+            var Address = f.Address.value;
+            var AddrDtl = f.AddrDtl.value;
+            var TeamTel = f.TeamTel.value;
+            var TeamPass = f.TeamPass.value;
+            var Check = f.TeamCheck.value;
+
+            var search_frm = document.search_frm;
+            search_frm.Search_SportsGb.value = SportsGb;
+            search_frm.Search_Entertype.value = EnterType;
+            search_frm.Search_PTeamGb.value = "";
+            search_frm.Search_Area.value = "";
+            search_frm.Search_TeamNm.value = TeamNm;
+
+            $.ajax({
+                url: strAjaxUrl,
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    SportsGb: SportsGb
+                    , Team: Team
+                    , TeamNm: TeamNm
+                    , Sido: Sido
+                    , EnterType: EnterType
+                    , PTeamGb: PTeamGb
+                    , Sex: Sex
+                    , ZipCode: ZipCode
+                    , Address: Address
+                    , AddrDtl: AddrDtl
+                    , TeamTel: TeamTel
+                    , TeamPass: TeamPass
+                    , DelYn: "Y"
+                    , Check: Check
+                },
+                success: function (retDATA) {
+                    console.log(retDATA);
+                    if (retDATA) {
+                        if (retDATA == 'TRUE') {
+                            //조회
+                            alert("삭제되었습니다.");
+                            view_frm("F");
+                        }
+                        else {
+                            alert('예외가 발생하여 입력이 실패하였습니다!');
+                        }
+                    }
+                }, error: function (xhr, status, error) {
+                   if(error!=""){
+						alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+						return;
+					}
+                }
+            });
+        }
+    }
+
+    function TeamCheck() {
+        var f = document.frm;
+        if (f.SportsGb.value == "") {
+            alert("종목을 선택해 주세요");
+            f.SportsGb.focus();
+            return false;
+        }
+        if (f.TeamNm.value == "") {
+            alert("팀이름을 입력해 주세요");
+            f.TeamNm.focus();
+            return false;
+        }
+
+
+        $("#TeamCheck").val("Y");
+    }
+    function TeamPassword() {
+        $("#TeamPass").attr("readonly", false);
+        $("#TrPassword").css("display", "");
+    }
+
+
+
+    function Postcode() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = data.address; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 기본 주소가 도로명 타입일때 조합한다.
+                if (data.addressType === 'R') {
+                    //법정동명이 있을 경우 추가한다.
+                    if (data.bname !== '') {
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if (data.buildingName !== '') {
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('ZipCode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('Address').value = fullAddr;
+                document.getElementById('AddrDtl').focus();
+
+                var DataSido = data.sido;
+
+                if (DataSido == "제주특별자치도") {
+                    DataSido = "제주";
+                } else if (DataSido == "세종특별자치시") {
+                    DataSido = "세종";
+                }
+
+                $("select[name='Sido'] option:contains('" + DataSido + "')").prop("selected", "selected");
+                window.close();
+            }
+        }).open();
+    }
+
+
+    $(window).ready(function () {
+
+
+    });
+</script>
+
+<body onLoad="view_frm('F');">
+	<!-- S : content -->
+	<section>
+		<div id="content">
+			<div class="loaction" id="loaction">
+				<strong>회원관리</strong> &gt; 팀코드관리
+			</div>
+			<!-- S : top-navi -->
+			
+			<div class="top-navi">
+				<div class="top-navi-inner">
+					<!-- S : top-navi-tp 접혔을 때-->
+					<div class="top-navi-tp">
+						<h3 class="top-navi-tit">
+							<i class="fa fa-th-large" aria-hidden="true"></i>
+							<strong>팀코드관리 조회</strong>
+						</h3>
+			                <!-- S : sch 검색조건 선택 및 입력 -->
+			                <form name="search_frm" method="post">
+			                <div class="sch">
+                                     <input type="hidden" name="Search_NumF" id="Search_NumF"  value=0 />
+                                     <input type="hidden" name="Search_NumT" id="Search_NumT"  value=20 />
+					                <table class="sch-table">
+						                <caption>검색조건 선택 및 입력</caption>
+						                <colgroup>
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+							                <col width="50px" />
+							                <col width="*" />
+						                </colgroup>						
+						                <tbody>
+							                <tr>
+								                <th scope="row">종목</th>
+								                <td id="sel_SportsGb"><select id="Search_SportsGb" name="Search_SportsGb" onChange="select_Sports_change(1);"></select></td>
+								                <th scope="row">타입</th>
+								                <td id="sel_Entertype"><select id="Search_Entertype" name="Search_Entertype" onChange="select_data('종별',1);"></select></td>
+                                                <th scope="row">종별</th>
+								                <td id="sel_PTeamGb"><select id="Search_PTeamGb" name="Search_PTeamGb"></select></td>
+								                <th scope="row">지역</th>
+								                <td id="sel_Area"><select id="Search_Area" name="Search_Area"></select></td>
+								                <th scope="row">소속명</th>
+								                <td id="sel_TeamNm"> <input type="text" name="Search_TeamNm" id="Search_TeamNm" /> </td>
+								                <th scope="row">조회수</th>
+								                <td id="sel_Seq">   
+                                                    <select id="Search_Seq" name="Search_Seq">
+                                                        <option  value=50 >50개</option>
+                                                        <option  value=100 >100개</option>
+                                                    </select> 
+                                                </td>
+                                                <th></th>
+                                                <td></td>
+                                                <th></th>
+                                                <td></td>
+							                </tr>
+						                </tbody>
+					                </table>
+			                </div>
+			                <div class="btn-right-list">
+				                <a href="javascript:view_frm('F');" class="btn" id="btnview" accesskey="s">검색(S)</a>
+			                </div>
+                            
+			                <div class="sch-result">
+				                <a href="javascript:view_frm('N');" class="btn-more-result"> 전체 (<strong id="totcnt">0</strong>)건 / <strong class="current" >현재(<span id="nowcnt">0</span>)</strong> </a>
+			                </div>
+			                </form>
+			                <!-- E : sch 검색조건 선택 및 입력 -->
+						<a id="input_button_type" class="btn-top-sdr close" title="닫기" onClick="input_view();"> </a>
+					</div>
+					<form name="frm" method="post">
+					<!-- E : top-navi-tp 접혔을 때 -->
+					<!-- S : top-navi-btm 펼쳤을 때 보이는 부분 -->
+					<div class="top-navi-btm" id="input_area">
+                        <div class="btn-right-list"> </div>
+						<div class="navi-tp-table-wrap">
+                        <h4 class="sub-tit">기본정보</h4>
+							<table class="navi-tp-table">
+								<caption>팀프로필 기본정보</caption>
+								<colgroup>
+									<col width="64px" />
+									<col width="250px" />
+									<col width="64px" />
+									<col width="*" />
+									<col width="94px" />
+									<col width="*" />
+								</colgroup>
+								<tbody>									
+									<tr>
+										<th scope="row"><label for="player-code">팀코드</th>
+										<td><label name="L_Team" id="L_Team"></label>
+                                            <input type=hidden name="Team" id="Team"  class="input-small" readonly />
+                                              <input type=hidden name="TeamCheck" id="TeamCheck"  class="input-small" readonly />
+                                        </td>
+										<!-- 종목구분S -->
+										<th scope="row"><label for="sports-kind">팀명칭</label></th>
+                                        <td>
+                                            <input type="text" name="TeamNm" id="TeamNm"/>
+                                        </td>
+										<!-- 종목구분E -->
+										<!-- 회원구분S -->
+										<th scope="row"><label for="player_type">종목</th>
+										<td>
+                                            <select  name="SportsGb" id="SportsGb" onChange="select_Sports_change(0)" > </select>
+                                        </td>
+										
+										<!-- 회원구분E -->
+									</tr>
+                                    <tr>
+										<th scope="row"><label for="player_type">타입</th>
+										<td>
+                                            <select  name="EnterType" id="EnterType" onChange="select_data('종별',0)" > </select>
+                                        </td>
+										<th scope="row"><label for="player_type">종별</th>
+										<td> 
+                                            <select  name="PTeamGb" id="PTeamGb"> </select>
+                                        </td>
+										<th scope="row"><label for="phone-num">성별</label></th>
+										<td><select name="Sex" id="Sex"><option value="1">남자</option><option value="2">여자</option><option value="3">혼합</option></select></td>
+                                    </tr>
+									<tr>
+										<!-- 선수코드S -->
+										<th scope="row"><label for="nowshcidx">우편번호</label>  </th>
+										<td>
+											<input type="text" id="ZipCode" name="ZipCode" class="input-small" readonly />
+                                            <a href="javascript:Postcode();"  class="btn-sch-pop" > 주소찾기</a>
+										</td>
+                                        <th scope="row"><label for="nowshcidx">주소</label></th>
+										<td> 
+                                            <input type="text" name="Address" id="Address" readonly/>  
+                                        </td>
+                                        <th scope="row"><label for="nowshcidx">상세주소</label></th>
+										<td> <input type="text" name="AddrDtl" id="AddrDtl"/> </td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="phone-num" >연락처</label></th>
+										<td> 
+                                             <input type="text" id="TeamTel" name="TeamTel"  class="input-small"/> 
+                                         </td> 
+                                         <th scope="row"><label for="player_type">지역</th>
+										<td>
+                                            <select name="Sido" id="Sido"></select>
+                                        </td>
+									</tr>
+                                    <tr id="TrPassword">
+										<th scope="row"><label for="user-pw">비밀번호</th>
+										<td><input type="password" id="TeamPass" name="TeamPass" readonly/></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- S : btn-right-list 버튼 -->
+						<div class="btn-right-list"> 
+                             <label name="L_Password" id="L_Password">※신규 등록시 비밀번호는 팀코드 입니다.</label>
+							<a href="#" id="btnPassword" class="btn " onClick="TeamPassword();" accesskey="p" style=" display:none;">비밀번호 변경창 활성화(p)</a>
+							<a href="#" id="btnClear" class="btn btn-delete" onClick="TeamDataClear();" accesskey="c">추가/초기화(C)</a>
+							<a href="#" id="btnsave" class="btn" onClick="TeamDataSave();" accesskey="i">저장(I)</a>
+							<a href="#" id="btndel" class="btn btn-delete" onClick="TeamDataDel();" accesskey="r">팀삭제(R)</a>
+							<!--<a href="#" class="btn">목록보기</a>-->
+						</div>
+						<!-- E : btn-right-list 버튼 -->
+					</div>
+					<!-- E : top-navi-btm 펼쳤을 때 보이는 부분 -->
+                    </form>
+				</div>
+			</div>
+			
+			<!-- E : top-navi -->
+			<!-- S : 리스트형 20개씩 노출 -->
+			<div class="table-list-wrap ">
+				<!-- S : table-list -->
+				<table class="table-list " id="table-list">
+					<caption>팀 리스트</caption>
+					<colgroup>
+						<col width="55px" />
+						<!--<col width="75px" />-->
+						<col width="75px" />
+						<col width="75px" />
+						<col width="75px" />
+						<col width="125px" />
+						<col width="175px" />
+						<col width="75px" />
+						<col width="125px" />
+						<col width="75px" />
+						<col width="*" />
+						<col width="225px" />
+						<col width="50px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="row">No.</th>
+							<!--<th scope="row">팀번호</th>-->
+							<th scope="row">종목</th>
+							<th scope="row">타입</th>
+							<th scope="row">지역</th>
+                            <th scope="row">팀코드</th>
+							<th scope="row">팀명</th>
+							<th scope="row">구분</th>
+							<th scope="row">연락처</th>
+							<th scope="row">우편번호</th>
+                            <th scope="row">주소</th>
+                            <th scope="row">상세주소</th>
+                            <th scope="row">가입인원</th>
+						</tr>
+					</thead>				
+					<!--리스트가 보여지는 부분-->
+					<tbody id="list"></tbody>
+					<!--리스트가 보여지는 부분-->
+				</table>
+				<!-- E : table-list -->
+				<a href="javascript:view_frm('N');" class="btn-more-list" ><span>더보기</span><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</section>
+	<!-- E : content -->
+
+<!-- E : container -->
+<script src="../js/js.js"></script>
+ 
+</body>

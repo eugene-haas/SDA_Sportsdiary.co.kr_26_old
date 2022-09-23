@@ -1,0 +1,99 @@
+.section_box {margin-bottom: 15px;}
+.section_box h3 {font-size: 1.14em;font-weight: 400;text-align: left;letter-spacing: -0.02em;background-color: #636e7c;color: #fff;padding-top: 4px;padding-bottom: 4px;padding-left: 10px;}
+.section_box.big_box h3 {text-align: center;background-color: #123651;padding-top: 10px;padding-bottom: 10px;}
+.section_box h3 .fa {color: #fff;}
+.section_box h3 {margin-bottom: 10px;}
+.section_box li {margin-bottom: 10px;}
+.section_box select {border: 1px solid #b4b4b4;border-radius: 4px;color: #666;}
+
+/**
+ * S: 사진 파일 첨부 
+ */
+/* 첨부하기 버튼 및 사진 최대 안내 */
+.file_attach {background-color: #f2f2f2;}
+.file_attach li div {display: inline-block;vertical-align: middle;}
+.file_attach li {border-bottom: 1px solid #ddd;width: 100%;padding-left: 10px;padding-right: 10px;padding-top: 8px;padding-bottom: 8px;}
+.file_attach .add_file .btn_group {float: left;}
+.file_attach .add_file .text_group {font-size: 0.93em;color: #666;float: right;margin-top: 5px;}
+
+/* 추가된 사진들 및 삭제 버튼 */
+.file_attach .pic {width: 35px; height: 35px; overflow: hidden; margin-right: 10px;}
+.file_attach .pic img {width: 100%;}
+.file_attach .file_name {width: 70%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.file_attach .del {text-align: right;width: 27px;height: 27px;float: right;margin-top: 6px;}
+.file_attach .del .btn {padding: 0;}
+/* E: 사진 파일 첨부 */
+
+/**
+ * S: 레슨비 
+ */
+.lesson_cost li div {display: inline-block;vertical-align: middle;}
+.lesson_cost .pay {width: 70%;}
+.lesson_cost .pay input {width: 80%;height: 35px;line-height: 35px;margin-right: 4px;}
+.lesson_cost .talk {width: 28%;}
+.lesson_cost .txt {letter-spacing: -0.02em;color: #333;}
+.lesson_cost .talk input {vertical-align: middle;margin-top: 0;-webkit-appearance: checkbox; -moz-appearance: checkbox; appearance: checkbox; background-color: #fff;}
+.lesson_cost .talk .txt {font-weight: normal;margin-top: 5px;}
+/* E: 레슨비 */
+
+/**
+ * S: 가로 스크롤 되는 big category 메뉴 
+ */
+.hori_gnb .big-cat {background-color: #264862;width: 100%;overflow-x: scroll;}
+.hori_gnb .big-cat .menu-list {margin: 0 auto;}
+.hori_gnb .big-cat li {float: left;}
+.hori_gnb .big-cat li a {position: relative;font-size: 0.95em;font-weight: bold;text-align: center;letter-spacing: -.02em;color: #fff;padding-top: .55em;padding-bottom: .55em;padding-left: 12px;padding-right: 12px;}
+.hori_gnb .big-cat li a.on {color: #6dbcff;}
+/* E: 가로 스크롤 되는 big category 메뉴 */
+
+/**
+ * S: 검색 박스 
+ */
+.srch_condi {background-color: #fff;border-top: 2px solid #ddd;margin-top: 10px;}
+.srch_condi .sel_2 dl {display: inline-block;width: 49%;}
+.srch_condi dl {border-bottom: none;}
+.srch_condi li {border-bottom: 1px solid #ddd;padding-top: 5px;padding-bottom: 3px;line-height: 0}
+.srch_condi dt {font-size: 1.125em;font-weight: normal;width: 40%;height: 35px;line-height: 35px;}
+.srch_condi dd {width: 60%;height: 35px;line-height: 35px;}
+.srch_condi dd select {height: 35px;line-height: 35px;margin-top: 0;}
+/* 희망일자 */
+.date_until dt {width: 19%;}
+.date_until dd {width: 36.5%;}
+.date_until dd.wave {text-align: center;width: 20px;}
+
+/* 희망지역 */
+.want_area dl {padding-left: 10px;}
+.want_area dt {display: inline-block; vertical-align: middle; width: 19%;.hori_gnb .big-cat li a}
+.want_area dd {display: inline-block; vertical-align: middle; width: 38%;}
+.want_area dd:nth-child(2) {margin-right: 10px;}
+
+/* 모집상태 */
+.recruit_stat dt {width: 19%;}
+.recruit_stat dd {width: 80%;}
+
+/* 하단 버튼 - 닫기, 조회 */
+.srch_condi .btn-list {text-align: center;padding-top: 0.71em;padding-bottom: 0.71em;}
+.srch_condi .btn-list .btn {width: 30%;height: 30px;line-height: 30px;padding-top: 0;padding-bottom: 0;}
+.srch_condi .btn-list .btn:first-child {margin-right: 10px;}
+
+/* E: 검색 박스 */
+
+/**
+ * S: datepicker 캘린더 ui 편집 
+ */
+.ui-datepicker-header .ui-datepicker-year,
+.ui-datepicker-header .ui-datepicker-month {height: 30px;line-height: 1}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-year {width: 42%;margin-right: 3px;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-month {width: 40%;margin-left: 5px;}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next {top: 6px}
+/* E: datepicker 캘린더 ui 편집 */
+
+/**
+ * S: 난타, 파트너, 레슨코트, 동호회 랜딩 모달 
+ */
+.guide_modal .modal-header {position: relative;background-color: #3f505d; color: #fff; height: 40px; line-height: 40px; padding-top: 0;padding-bottom: 0;}
+.guide_modal .modal-header h3 {font-size: 1.29em; letter-spacing: -0.05em; text-align: center;color: #fff; padding-top: 8px;padding-bottom: 3px;}
+.guide_modal .modal-header .btn-close {position: absolute; top: 5px; right: 10px; font-size: 26px; line-height: 1; padding: 0;}
+.guide_modal .modal-body {background-color: #fff; padding-left: 0;padding-right: 0; padding-top: 40px; padding-bottom: 40px;}
+/* E: 난타, 파트너, 레슨코트, 동호회 랜딩 모달 */

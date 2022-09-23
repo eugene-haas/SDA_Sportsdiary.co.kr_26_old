@@ -1,0 +1,231 @@
+@charset "utf-8";
+body{max-width:800px;margin:auto;font:16px 'NanumGothic', '나눔고딕', 'MalgunGothic', 'dotum', 'gulim', 'arial', sans-serif;color:#333;}
+input:disabled{ background-color:#ebebe4; opacity:1; border:1px solid #ddd;}
+
+/* loading */
+.wrap-loading{ /*ȭ�� ��ü�� ���Ӱ� �մϴ�.*/
+    position: fixed; left:0; right:0; top:0; margin:auto; text-align:center; bottom:0; z-index:99000;
+    background: rgba(0,0,0,0.5);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000');    /* ie */
+}
+.wrap-loading div{ /*�ε� �̹���*/
+    position: fixed; top:50%; left:50%; margin-left:-15px; margin-top:-15px;
+}
+
+
+
+.t_mg15{margin:15px;}
+.t_horizon{border-top:1px solid #ddd; height:1px; }
+
+.o_mg15{margin:15px;}
+.o_horizon{border-top:1px solid #ddd; height:1px; }
+
+
+.te_reqBtnWrap{display:flex;flex-wrap:wrap;margin:15px;font-size:0;line-height:0;}
+.te_reqBtnWrap__btn{display:block;width:calc(50% - 1.5px);height:30px;margin-right:3px;border-radius:3px;font-size:13px;line-height:30px;text-align:center;letter-spacing:-0.02em;color:#fff;font-weight:700;}
+.te_reqBtnWrap__btn:nth-of-type(2n){margin-right:0;}
+.te_reqBtnWrap__btn:hover, .te_reqBtnWrap__btn:active{color:#fff;}
+.te_reqBtnWrap__btn.s_schedule{background-color:#264862;}
+.te_reqBtnWrap__btn.s_apply{background-color:#d17317;}
+.te_reqBtnWrap__btn.s_apply2{background-color:#264862}
+.te_reqBtnWrap__btn.s_viewDetail{background-color:#6e6e6e;}
+.te_reqBtnWrap__btn.s_modify{background-color:#5c7e97;}
+.te_reqBtnWrap__btn.s_del{background-color:#444444;}
+.te_reqBtnWrap__btn.s_result{background-color:#264862;}
+
+.te_reqBtnWrap__btn2{display:block;width:calc(25% - 2.5px);height:30px;margin-right:3px;border-radius:3px;font-size:13px;line-height:30px;text-align:center;letter-spacing:-0.02em;color:#fff;font-weight:700;}
+.te_reqBtnWrap__btn2:nth-of-type(4n){margin-right:0;}
+.te_reqBtnWrap__btn2:hover, .te_reqBtnWrap__btn2:active{color:#fff;}
+
+.te_reqBtnWrap__btn2.s_schedule{background-color:#264862;}
+.te_reqBtnWrap__btn2.s_apply{background-color:#d17317;}
+.te_reqBtnWrap__btn2.s_apply2{background-color:#264862}
+.te_reqBtnWrap__btn2.s_viewDetail{background-color:#6e6e6e;}
+.te_reqBtnWrap__btn2.s_modify{background-color:#5c7e97;}
+.te_reqBtnWrap__btn2.s_del{background-color:#444444;}
+.te_reqBtnWrap__btn2.s_result{background-color:#264862;}
+
+.m_infoTxt{font-size:14px;margin:15px;line-height:17px;}
+.m_infoTxt__txt{margin:5px 15px 5px 24px; text-indent:-8px; letter-spacing:-0.05em;}
+.m_infoTxt__txt.s_empahsis{color:#d00;}
+.m_infoTxt__emphasisTxt{color:#d00;}
+
+
+.m_applicationForm{margin:15px 15px 0px 15px;}
+.m_applicationForm.s_outline{border:1px solid #264862;}
+.m_applicationForm__tit{padding:7px 0;border-bottom:1px solid #ddd;font-size:15px;font-weight:700;text-align:center;background:#eee;}
+.m_applicationForm__item{padding:5px;border-bottom:1px solid #ddd;font-size:0;}
+.m_applicationForm__label{display:inline-block;width:24%;font-weight:700;margin-left:1%;margin-right:1%;line-height:30px;font-size:13px;vertical-align:top;}
+.m_applicationForm__inputWrap{display:inline-block;width:74%;}
+.m_applicationForm__select{border:1px solid #ddd;height:30px;width:100%;padding:0 2%;background-color:#fff;letter-spacing:-0.05em;font-size:13px;}
+.m_applicationForm__input{border:1px solid #ddd;height:30px;width:100%;letter-spacing:-0.05em;font-size:13px;text-indent:5px;}
+.m_applicationForm__textarea{width:100%; padding:10px; border:1px solid #ddd;font-size:13px;resize:none;}
+.m_applicationForm__txt{display:inline-block;font-size:13px;line-height:110%;margin-top:8px;margin-left:1%;}
+.m_applicationForm__txt.s_empahsis{color:#d00;}
+/* .m_applicationForm__btn{border:0; font-size:13px; color:#337ab7; background:none;} */
+.m_applicationForm__btn{width:65px;height:30px;border:0;margin-left:7px;border-radius:3px;line-height:30px;color:#fff;font-size:13px;background-color:#3c76a3;vertical-align:bottom;padding:0;}
+
+.m_applicationForm__inputWrap.s_residence>select{width:35%; border:1px solid #ddd; height:30px; margin-right:5px; text-align-last:center;font-size:13px;background-color:#fff;}
+.m_applicationForm__select.s_date{width:35%;margin-right:5px;text-align-last:center; }
+.m_applicationForm__input.s_level{width:65%; }
+.m_applicationForm__select.s_phone{width:30%;}
+.m_applicationForm__input.s_phone{width:30%;}
+.m_applicationForm__txt.s_phone{width:5%; margin:0; text-align:center;}
+.m_applicationForm__input.s_refundInfo{width:35%; margin-right:5px;}
+
+
+.m_noticeDeposit{margin:13px 15px 0 15px;padding-bottom:15px;}
+.m_noticeDeposit__txt{margin-bottom:7px;font-size:12px;}
+.m_noticeDeposit__lable{display:inline-block;width:90px;margin-right:2px;border-radius:20px;font-size:10px;text-align:center;background-color:#666;color:#fff;}
+.m_noticeDeposit__emphasis{color:red;}
+
+
+/* list.asp */
+.entryCompetitionList .competitionList{}
+.entryCompetitionList .competitionList__tit{padding:0 10px;height:40px;line-height:40px;background:#76828a;color:#fff;font-size:14px;font-weight:700;}
+.entryCompetitionList .competitionList__btnWrap{display:flex; padding:0 8.5px; height:40px; font-size:0; line-height:0;}
+.entryCompetitionList .competitionList__btn{display:inline-block; width:calc(25% - 3px); height:30px; margin:5px 1.5px 0 1.5px; border-radius:3px; font-size:13px; line-height:30px; text-align:center; letter-spacing:-0.02em; color:#fff; font-weight:700; }
+.entryCompetitionList .competitionList__btn:hover,
+.entryCompetitionList .competitionList__btn:active{color:#fff;}
+.entryCompetitionList .competitionList__btn.s_apply{background-color:#264862;}
+.entryCompetitionList .competitionList__btn.s_result{background-color:#d17317;}
+.entryCompetitionList .competitionList__btn.s_modify{background-color:#5c7e97;}
+.entryCompetitionList .competitionList__btn.s_summary{background-color:#444444;}
+.entryCompetitionList .te_reqBtnWrap{margin:25px 10px 10px 10px;}
+.entryCompetitionList .entryInfo{background-color:#f2f2f2;margin-top:20px;padding:20px;}
+.entryCompetitionList .entryInfo__tit{font-size:16px;font-weight:700;text-align:center;margin:5px 0 11px 0;}
+.entryCompetitionList .entryInfo__txt{font-size:13px;line-height:150%;margin-bottom:7px;}
+.entryCompetitionList .entryInfo__txt.s_indent{text-indent:-8px;}
+
+
+/* write.asp */
+.applicationWrite{font-size:13px; box-sizing:border-box;}
+.applicationWrite .applyStep{border:2px solid #ddd;margin:20px 15px 17px 15px;background-color:#f2f2f2;}
+.applicationWrite .applyStep__tit{height:37px;margin:10px;font-size:14px;color:#fff;font-weight:700;text-align:center;line-height:37px;border-radius:37px;background-color:#264862;}
+.applicationWrite .applyStep__imgWrap{margin:20px 73px; line-height:0;}
+.applicationWrite .applyStep__img{width:100%;}
+
+
+/* write_ok.asp */
+.application .guideTxt{margin:20px 0;text-align:center;font-size:17px;letter-spacing:-0.03em;line-height:20px;}
+.application .guideTxt__competitionName{color:#333333;}
+.application .guideTxt__competitionName::before{content:'';display:block;width:30px;height:26px;margin:0 auto 5px auto;background:url('../imgs/write/ic_check_ok@3x.png') no-repeat center/30px 26px;}
+.application .guideTxt__emphasis{color:#d80c0c;}
+.application .guideTxt__date{color:#6c6c6c;font-size:12px;}
+
+
+/* info_list.asp */
+.entry .entrySearching{position:relative;box-sizing:border-box;padding:10px 10px 20px 10px;font-size:13px;overflow:hidden;}
+.entry .entrySearching__item{position:relative;margin-bottom:10px;}
+.entry .entrySearching__select{width:100%;height:40px;border:1px solid #ddd;padding:0 5px;font-weight:700;}
+.entry .entrySearching__input{float:left;width:54%;height:40px;margin-right:1%;padding-left:25px;text-indent:5px;border:1px solid #ddd;}
+.entry .entrySearching__btn{float:left;width:20%;height:40px;margin-left:5px;border-radius:3px;text-align:center;line-height:40px;font-weight:700;}
+.entry .entrySearching__btn.s_searching{background:#6e6e6e;color:#fff;}
+.entry .entrySearching__btn.s_apply{background:#264862;color:#fff;}
+.entry .entrySearching .ic_deco{position:absolute;left:13px;top:9px;}
+
+.entry .entryList{width:100%;overflow:hidden;border-top:1px solid #ddd;}
+.entry .entryList__inner{overflow-x:scroll;}
+.entry .entryList__list{font-size:11px;color:#333;width:800px;overflow-x:scroll;}
+.entry .entryList__row{border-bottom:1px solid #758288; padding:8px 0;}
+.entry .entryList__row.s_header{height:35px;padding:11px 0;line-height:35px;border-bottom:1px solid #ddd;background:#f2f2f2;color:#333;font-weight:700;}
+.entry .entryList__cell{display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:top;line-height:120%;}
+.entry .entryList__cell.s_number{width:50px;text-align:center;}
+.entry .entryList__cell.s_gameTitle{width:150px;}
+.entry .entryList__cell.s_level{width:120px;height:auto;;white-space:normal;}
+.entry .entryList__cell.s_team1{width:215px;}
+.entry .entryList__cell.s_team2{width:215px;}
+.entry .entryList__status{display:inline-block;width:60px;border-radius:5%;text-align:center;padding:1px 0;margin-top:2px;}
+.entry .entryList__status.s_nonDeposit{background-color:#f00;color:#fff;}
+.entry .entryList__status.s_deposit{background-color:#009328;color:#fff;}
+.entry .entryList__status.s_depositStandby{background:#ff8315;color:#fff;}
+.entry .entryList__name{color:#333;}
+.entry .entryList__club{color:#999;font-weight:300;}
+.entry .entryList__moreBtn{display:block;width:143px;height:35px;margin:12px auto 10px auto;line-height:35px;background-color:#264862;color:#fff;text-align:center;border-radius:3px;}
+
+
+/* te request modal */
+.te_reqModal{}
+.te_reqModal .modal-content{border:0;border-radius:0;box-shadow:none;background:none;}
+.te_reqModal .modal-header{padding:0;border-bottom:0;}
+.te_reqModal .modal-body{padding:0;}
+.te_reqModal__header{text-align:center;overflow:hidden;}
+.te_reqModal__tit{padding:13px 0;font-size:16px;letter-spacing:-0.075em;font-family:'NanumGothic', sans-serif;font-weight:700;background-color:#264862;color:#fff;}
+.te_reqModal__close{float:none;position:absolute;right:0px;opacity:1;color:#fff;width:37px;height:37px;margin-top:3px;background:url('http://img.sportsdiary.co.kr/sdapp/public/close-x@3x.png') center/15px no-repeat;font-size:0;border:0;}
+
+.te_reqModal__btnWrap{}
+.te_reqModal__btnWrap{display:flex;margin:15px auto 15px auto;background-color:#fff;justify-content:center;}
+.te_reqModal__btn:nth-last-of-type(1){margin-right:0;}
+.te_reqModal__btn{display:inline-block;width:120px;margin-right:3px;height:35px;border-radius:3px;text-align:center;color:#fff;background:#eee;font-size:13px;line-height:35px;}
+.te_reqModal__btn.s_confirm{background-color:#264862; color:#fff; }
+.te_reqModal__btn.s_close{background-color:#dddddd; color:#333; }
+.te_reqModal__btn.s_apply{background:#264862;}
+.te_reqModal__btn.s_del{background:#ca7c00;}
+.te_reqModal__btn.s_modify{background:#264862;}
+
+
+/* write.asp 레벨 선택 모달  */
+.levelModal{background-color:#fff;overflow:hidden;}
+.levelModal .levelGuide{display:flex;justify-content:center;padding:15px 0px 17px 0px;font-size:12px;letter-spacing:-0.1em;line-height:150%;text-align:left;color:#393939;background-color:#fff;}
+.levelModal .levelGuide__emphasis{color:#fb7a7a;}
+
+.levelModal .levelTbl{}
+.levelModal .levelTbl__cap{font-size:13px;font-family:'NanumGothicB';color:#fff;text-align:center;background-color:#e79340;padding:9px 0;}
+.levelModal .levelTbl__cap.s_1star{background-color:#e79340;}
+.levelModal .levelTbl__cap.s_2star{background-color:#d77d25;}
+.levelModal .levelTbl table{width:100%;}
+.levelModal .levelTbl th{height:30px;background-color:#767676;color:#fff;border-right:1px solid #ddd;text-align:center;font-family:'NanumGothic', sans-serif;font-weight:700;font-size:12px;}
+.levelModal .levelTbl th:last-child{border-right:0;}
+.levelModal .levelTbl td{height:46px;border-right:1px solid #ddd;border-top:1px solid #ddd;font-size:14px;background-color:#f3f3f3;}
+.levelModal .levelTbl td:last-child{border-right:0;}
+.levelModal .levelTbl td.s_level{width:36px;background-color:#a6a6a6;color:#fff;letter-spacing:-0.075em;text-align:center;font-family:'NanumGothic', sans-serif;font-weight:900;}
+.levelModal .levelTbl td.s_content{padding:10px 8px;line-height:140%;color:#333333;letter-spacing:-0.075em;}
+.levelModal .levelTbl td.s_category{width:58px;text-align:center;letter-spacing:-0.1em;}
+.levelModal .levelTbl td.s_check{position:relative;width:40px;text-align:center;}
+.levelModal .levelTbl__contentLabel{display:inline-block;width:100%;font-weight:normal;}
+
+.levelModal .levelTbl__lableCheck{vertical-align:middle;margin:auto;display:inline-block;}
+.levelModal .levelTbl__check{}
+.levelModal .levelTbl__check+span{position:relative;display:block;width:25px;height:25px;border:1px solid #ddd;background-color:#fff;border-radius:6px;}
+.levelModal .levelTbl__check:checked+span{}
+.levelModal .levelTbl__check:checked+span::before{content:'';display:block;position:absolute;top:9px;left:5px;width:3px;height:10px;background-color:#767676;transform:rotate(-45deg);}
+.levelModal .levelTbl__check:checked+span::after{content:'';display:block;position:absolute;top:0;right:5px;width:3px;height:21px;background-color:#767676;transform:rotate(45deg);}
+
+
+/* write.asp 대회신청 정보 모달  */
+.reqInfoModal{background-color:#fff;padding:15px;overflow:hidden;}
+.reqInfoModal .etcTxt{margin:0 15px;}
+.reqInfoModal .etcTxt__tit{padding:10px;font-weight:700;font-size:15px;color:#4e4f4f;background:#eeeeee;text-align:center;}
+.reqInfoModal .etcTxt__textarea{width:100%;padding:10px;border:1px solid #ddd;resize:none;}
+.reqInfoModal .applicationForm{margin:0 15px;}
+.reqInfoModal .applicationForm:nth-of-type(1){margin-top:15px;}
+.reqInfoModal .applicationForm__label{margin-left:0px;}
+
+
+/* list.asp write.asp 선수변경요청 모달  */
+.infoModifyModal{background-color:#fff;overflow:hidden;}
+.infoModifyModal .infoModify{font-size:13px;margin:15px;line-height:120%;}
+.infoModifyModal .infoModify__textarea{ display:block;width:100%;height:265px;margin:15px 0 20px 0;padding:10px 15px; border:2px solid #264862;overflow-y:scroll;line-height:30px; resize:none;}
+
+
+/* list.asp 대회요강 모달  */
+.competitionSummaryModal{}
+.competitionSummaryModal .summaryContent{width:100%;max-width:800px;left:0;right:0;margin:auto;overflow-x:scroll;height:400px;}
+
+
+/* info_list.asp 비밀번호 확인 모달 */
+.confirmPasswordModal{background:#fff;overflow:hidden;}
+.confirmPasswordModal .confirmPassword{padding:15px;}
+.confirmPasswordModal .confirmPassword__input{width:78%;margin-right:2%;float:left;height:40px;border:1px solid #ddd;text-indent:5px;}
+.confirmPasswordModal .confirmPassword__btn{width:20%;background:#333;color:#fff;float:left;text-align:center;border-radius:3px;height:40px;line-height:40px;}
+.confirmPasswordModal .confirmPassword__txt{text-align:center;margin-top:10px;font-size:13px;}
+
+/* 수영 list.asp 대회일정 모달 */
+.scheduleModal{background-color:#fff;overflow:hidden;}
+.scheduleModal .schedule__header{font-size:18px;font-weight:800;letter-spacing:-0.05em;color:#333;text-align:center;}
+.scheduleModal .schedule__headerTxt{padding:20px 0 23px 45px;display:inline-block;background:url('http://img.sportsdiary.co.kr/images/SD/img/swim_info_popup_@3x.png') no-repeat left top 12px/40px;}
+.scheduleModal .schedule__list{margin:0 15px;}
+.scheduleModal .schedule__item{margin-bottom:10px;border-radius:4px;overflow:hidden;}
+.scheduleModal .schedule__itemTit{height:36px;text-indent:11px;background-color:#51738c;color:#fff;font-weight:700;font-size:16px;letter-spacing:-0.05em;line-height:36px;}
+.scheduleModal .schedule__itemTxtWrap{padding:15px 11px 15px 11px;background-color:#f2f2f2;color:#333;font-size:15px;letter-spacing:-0.05em;}
+.scheduleModal .schedule__itemTxt{margin-bottom:4px;margin-left:9px;line-height:20px;text-indent:-8px;}

@@ -1,0 +1,466 @@
+ @charset "UTF-8";
+/*@import url("http://fonts.googleapis.com/css?family=Roboto");*/
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/s/roboto/v16/5YB-ifwqHP20Yn46l_BDhA.eot);
+}
+
+/*@import url("/pub/css/font-awesome.css");*/
+
+/*  http://fontawesome.io/icons/  부스트트렙 아이콘 찾기  */
+/*  http://astronautweb.co/snippet/font-awesome/   */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{margin:0;height:100%;overflow:hidden;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+ol, ul { list-style: none }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after {  content: '';  content: none}
+
+a:link {
+	text-decoration:none;
+}
+a:visited {
+	text-decoration:none;
+}
+
+a:active {
+	text-decoration:none;
+}
+
+
+
+#leftside {width:40px;height:100%;overflow:hidden;background-color:#1E2744;}
+header{position:absolute;top:0;left:40px;right:0;height:80px;background-color:#ccc;min-width:900px;background: linear-gradient( to bottom, #1E2744 95%, black 5%, gray, white );}
+aside{position:absolute;top:80px;bottom:40px;left:40px;right:200px;width:200px;overflow:auto;background-color:#151515;margin-top:-3px;}
+article{position:absolute;top:80px;bottom:40px;left:240px;right:0;overflow:auto;min-width:500px;padding:0px 5px 0px 5px;}
+footer{position:absolute;bottom:0;left:40px;right:0;height:40px;background-color:#ccc;background: linear-gradient( to top, #1E2744 95%, #1E2744 5%, gray, #1E2744 );}
+
+
+/*menu*/
+#menutop { list-style-type: none; margin: 0;padding: 0;overflow: hidden;	font-size:12px;background-color:#;}
+#menutop li { float: left;}
+
+#menubar {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;	font-size:11px;style="margin-top:30px;"}
+#menubar li { float: left;}
+#menubar li a {display: block;color: white;text-align: center;padding: 8px 10px 6px 10px;text-decoration: none;}
+#menubar li a:hover:not(.active) {background-color: #111;}
+#menubar .active {background-color: #151515;  border-radius: 5px;margin-top:1px;padding: 7px 10px 6px 10px;}
+
+
+#menufooter { list-style-type: none; margin: 0;padding: 0;overflow: hidden;	font-size:12px;background-color:#1E2744;}
+#menufooter li { float: left;}
+
+
+
+
+article h2 {
+	position: relative;
+	text-shadow: 0 -1px rgba(0,0,0,0.6);
+	font-size: 15px;
+	line-height: 25px;
+	background: #355681;
+	background: rgba(53,86,129, 0.8);
+	border: 1px solid #000;
+	padding: 5px 10px;
+	color: white;
+	border-radius: 0 10px 0 10px;
+	box-shadow: inset 0 0 5px rgba(53,86,129, 0.5);
+	width:100%;
+}
+
+
+
+
+
+
+
+/*어코디언메뉴*/
+.nav a, .nav label {
+  font-size:12px;
+  display: block;
+  padding: .65rem;
+  color: #fff;
+  background-color: #151515;
+  box-shadow: inset 0 -1px #1d1d1d;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.nav a:focus, .nav a:hover, .nav label:focus, .nav label:hover {
+  color: rgba(255, 255, 255, 0.5);
+  background: #030303;
+}
+
+.nav label { cursor: pointer; }
+
+/**
+ * Styling first level lists items
+ */
+
+.group-list a, .group-list label {
+  padding-left: 1rem;
+  background: #252525;
+  box-shadow: inset 0 -1px #373737;
+}
+
+.group-list a:focus, .group-list a:hover, .group-list label:focus, .group-list label:hover { background: #131313; }
+
+/**
+ * Styling second level list items
+ */
+
+.sub-group-list a, .sub-group-list label {
+  padding-left: 4rem;
+  background: #353535;
+  box-shadow: inset 0 -1px #474747;
+}
+
+.sub-group-list a:focus, .sub-group-list a:hover, .sub-group-list label:focus, .sub-group-list label:hover { background: #232323; }
+
+/**
+ * Styling third level list items
+ */
+
+.sub-sub-group-list a, .sub-sub-group-list label {
+  padding-left: 6rem;
+  background: #454545;
+  box-shadow: inset 0 -1px #575757;
+}
+
+.sub-sub-group-list a:focus, .sub-sub-group-list a:hover, .sub-sub-group-list label:focus, .sub-sub-group-list label:hover { background: #333333; }
+
+/**
+ * Hide nested lists
+ */
+
+.group-list, .sub-group-list, .sub-sub-group-list {
+  height: 100%;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height .5s ease-in-out;
+  transition: max-height .5s ease-in-out;
+}
+
+.nav__list input[type=checkbox]:checked + label + ul { /* reset the height when checkbox is checked */
+max-height: 1000px; }
+
+/**
+ * Rotating chevron icon
+ */
+
+label > span {
+  float: right;
+  -webkit-transition: -webkit-transform .65s ease;
+  transition: transform .65s ease;
+}
+
+.nav__list input[type=checkbox]:checked + label > span {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+/*button*****************************************************/
+
+.btn {
+  display: inline-block;
+  min-width: 110px;
+  margin: 3px 5px;
+  padding: 10px 15px 12px;
+  font: 700 12px/1 'Open Sans', sans-serif;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn.sec {
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: #fff;
+}
+
+.btn.sec:hover {
+  background: #f5f5f5;
+}
+
+.btn.pri {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.set.blue .btn.pri, .set.find .btn.pri {
+  background: #59d;
+}
+
+.set.blue .btn.pri:hover, .set.find .btn.pri:hover {
+  background: #48c;
+}
+
+.btn.sec.ico,
+.btn.pri.ico {
+  position: relative;
+  padding-left: 40px;
+  text-align: left;
+}
+
+/*fa fa-chevron-up*/
+.btn.sec.ico:before,
+.btn.pri.ico:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 30px;
+  padding: 10px 0 12px;
+  font-family: fontawesome;
+  text-align: center;
+  border-radius: 3px 0 0 3px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+
+.btn.sec.ico:before {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.set.blue .btn.sec.ico:before {
+  content: "";
+}
+
+.set.blue .btn.pri.ico:before {
+  content: "\f077";
+}
+
+.set.find .btn.pri.ico:before {
+  /*content: "\f002";*/
+  content: "\f078" ;
+}
+
+.divbox {
+
+width:100%; height:50px;
+padding-left:5px;border: none;border:solid 1px #ccc;border-radius: 5px;margin-top:5px;
+/* Opera */
+box-shadow:10px 10px 10px silver;
+/* Firefox */
+-moz-box-shadow:10px 10px 10px silver;
+/* Safiri, Chrome */
+-webkit-box-shadow:10px 10px 10px silver;
+/* IE */
+filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20);
+}
+
+
+
+/*table*/
+table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+
+}
+table.type09 thead th {
+    padding: 5px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+}
+table.type09 tbody th {
+    width: 150px;
+    padding: 5px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    font-size:12px;
+	width: 350px;
+    padding: 5px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*모달*/
+.modal {
+		width: 90%;
+		margin-left:-45%;
+		width: 90%;
+        height: 85%;
+}
+
+
+.modal-body {
+	max-height: 90%;
+	background:#geeeeee;
+	flex: 0 1 auto;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+/*로그인*/
+
+#login-modal .modal-dialog {
+    width: 350px;
+}
+
+#login-modal input[type=text], input[type=password] {
+	margin-top: 10px;
+}
+
+#div-login-msg,
+#div-lost-msg,
+#div-register-msg {
+    border: 1px solid #dadfe1;
+    height: 30px;
+    line-height: 28px;
+    transition: all ease-in-out 500ms;
+}
+
+#div-login-msg.success,
+#div-lost-msg.success,
+#div-register-msg.success {
+    border: 1px solid #68c3a3;
+    background-color: #c8f7c5;
+}
+
+#div-login-msg.error,
+#div-lost-msg.error,
+#div-register-msg.error {
+    border: 1px solid #eb575b;
+    background-color: #ffcad1;
+}
+
+#icon-login-msg,
+#icon-lost-msg,
+#icon-register-msg {
+    width: 30px;
+    float: left;
+    line-height: 28px;
+    text-align: center;
+    background-color: #dadfe1;
+    margin-right: 5px;
+    transition: all ease-in-out 500ms;
+}
+
+#icon-login-msg.success,
+#icon-lost-msg.success,
+#icon-register-msg.success {
+    background-color: #68c3a3 !important;
+}
+
+#icon-login-msg.error,
+#icon-lost-msg.error,
+#icon-register-msg.error {
+    background-color: #eb575b !important;
+}
+
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+/* #########################################
+   #    override the bootstrap configs     #
+   ######################################### */
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .8;
+}
+
+.modal-content {
+   /*
+	background-color: #ececec;
+    border: 1px solid #bdc3c7;
+    border-radius: 0px;
+    outline: 0;
+	*/
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px 15px 15px 15px;
+    border-bottom: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-footer {
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    border-top: 0px;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+    border-radius: 0px;
+}
+
+.btn-link {
+    /*padding: 5px 10px 0px 0px;*/
+    color: #95a5a6;
+	padding: 0;border:none;background: none;
+}
+
+
+.btn-link:hover, .btn-link:focus {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.glyphicon {
+    top: 0px;
+}
+

@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/*
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+*/
+
+/*  http://fontawesome.io/icons/  부스트트렙 아이콘 찾기  */
+/*  http://astronautweb.co/snippet/font-awesome/   */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{margin:0;height:100%;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+img, embed, object, video {
+  max-width: 100%;
+}
+
+
+		  
+		  #jb-container {
+			text-align:center;
+			width: 100%;
+			margin: 1px auto;
+			padding: 0px;
+			border: 0px solid #bcbcbc;
+		  }
+
+
+			#jb-topbanner{
+				background-color:#A9E3F9;
+				padding: 0px;
+				margin-bottom: 2px;
+				border: 1px solid #bcbcbc;
+			}
+
+			#jb-userinfo{
+				padding: 2px;
+				margin-bottom: 2px;
+				border: 1px solid green;
+			}
+
+			#jb-search{
+				padding: 2px;
+				margin-bottom: 2px;
+				border: 1px solid red;
+			}
+
+		  #jb-header {
+				padding: 20px;
+				margin-bottom: 20px;
+				border: 1px solid #bcbcbc;
+			  }
+
+
+		   /*####################*/
+		   #jb-contentframe{
+				width:900px;margin:0 auto;
+		   }
+
+		  #jb-leftsidebar {
+			width: 150px;
+			padding: 20px;
+			margin-bottom: 20px;
+			float: left;
+			border: 1px solid #bcbcbc;
+		  }
+
+
+		  #jb-content {
+			width: 500px;
+			padding: 20px;
+			margin-bottom: 20px;
+			float: left;
+			border: 1px solid #bcbcbc;
+		  }
+
+		  #jb-sidebar {
+			width: 150px;
+			padding: 20px;
+			margin-bottom: 20px;
+			float: left;
+			border: 1px solid #bcbcbc;
+		  }
+		   /*####################*/
+
+		  #jb-footer {
+			clear: both;
+			padding: 20px;
+			border: 1px solid #bcbcbc;
+		  }
+		 
+		  @media ( max-width: 650px ) {
+			#jb-container {
+			  width: auto;
+			}
+			#jb-contentframe{
+				width: auto;
+			}
+
+			#jb-leftsidebar {
+			  width: 100%;
+			}
+
+			#jb-sidebar {
+			  width: auto;
+			}
+
+			#jb-content {
+			  width: auto;
+			}
+
+			#jb-sidebar {
+			  float: none;
+			  clear:both;
+			  width: auto;
+			}
+
+		  }
+
+
+		  @media ( max-width: 480px ) {
+			#jb-container {
+			  width: auto;
+			}
+
+			#jb-topbanner{
+				margin-top:61px;
+			}
+
+			#jb-userinfo {
+			  display:none;
+			}
+
+			#jb-header{
+			  width: 100%;
+			  background-color:green;
+				position:fixed;
+				display: -webkit-flex;
+				top:0px;
+				left : 0px;
+			}
+
+			
+			#jb-contentframe{
+				width: auto;
+			}
+			
+			#jb-content {
+			  float: none;
+			  width: auto;
+			}
+			#jb-leftsidebar {
+			  float: none;
+			  width: auto;
+			}
+			#jb-sidebar {
+			  float: none;
+			  width: auto;
+			}
+		  }
+

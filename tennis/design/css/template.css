@@ -1,0 +1,189 @@
+body {font-size: 14px;}
+ul {border: none;}
+h1, h2, h3, h4, h5, h6 {margin: 0;padding: 0;}
+select {background-color: #fff;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.sel_box {position: relative;display: block;}
+.sel_box:after {position: absolute;top: 45%;right: 8px;content: '';border-top: 4px solid #333;border-left: 4px solid transparent; border-right: 4px solid transparent;}
+input {-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.list {border: none;}
+.pack {display: block;width: 100%;padding-left: 10px;padding-right: 10px;}
+.margin_pack {display: block;width: 100%;margin-top: 11px;margin-bottom: 11px;}
+.cut_ellip {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.lazy_spinner {display: none;position: fixed;top: 45%;left: 45%;}
+.lazy_spinner:before {position: fixed;top: 0;bottom: 0;left: 0; right: 0;content: '';background-color: hsla(0, 0%, 0%, .5);}
+.gray_bg {background-color: #f2f2f2;}
+
+/* 버튼 */
+.btn.btn_srch {background-color: #039be5;color: #fff;transition: all .3s ease;}
+.btn.btn_srch:hover,
+.btn.btn_srch:foucs,
+.btn.btn_srch:active {color: #fff;}
+
+/**
+ * S: header 
+ */
+.header {background-color: #005895;padding-top: 8px;}
+.header .pack {position: relative;}
+.header .top_cont {height: 34px;}
+.header .left_arrow,
+.header .menu {display: inline-block;position: absolute;}
+.header .left_arrow {top: 0px;line-height: 30px}
+.header .left_arrow .ic_deco {display: inline-block;height: 30px;line-height: 30px;}
+.header .left_arrow .fa {color: #fff;}
+.header .left_arrow .fa:before {display: inline-block;line-height: 30px;}
+.header .logo {text-align: center;}
+.header .logo img {width: 140px;}
+.header .menu {top: 0px; right: 10px}
+.header .menu .nav {background-color: #fff;}
+.header .menu .nav:before,
+.header .menu .nav:after {background-color: #fff;}
+
+.header .bot_cont {padding-top: 3px;}
+.header .srch_box {padding-bottom: 12px;}
+.header .srch_box input {border-radius: 0;height: 36px;line-height: 36px;padding-left: 5px;}
+.header .srch_box .ic_deco {top: 4px;left: auto;right: 15px;}
+.header .srch_box .fa {font-size: 1.25em;}
+/* E: header */
+
+/**
+ * S: main 
+ */
+
+/* main_menu */
+.main {padding: 0;}
+.main_menu ul {margin: 0;}
+.main_menu li {float: left;width: 25%;}
+.main_menu li a {font-size: 15px;font-weight: bold;color: #999;height: 42px;line-height: 42px;}
+.main_menu li a.on {color: #333;}
+.main_menu li a.on span {border-bottom: 3px solid #0288d1;padding-left: 8px;padding-right: 8px;padding-bottom: 8px;}
+
+/* carousel 메인 광고 */
+.main_carousel {width: 100%; height: 200px;padding-left: 0;padding-right: 0;}
+.main_carousel p {background-color: #cccccc;font-size: 20px;text-align: center;height: 200px;line-height: 200px;margin: 0;}
+
+/* list 더보기 */
+.list {position: relative;background-color: #fff;padding-left: 10px;padding-right: 10px;padding-top: 8px;}
+.btn_more {position: absolute;right: 10px;font-family: 'NotoKR';font-size: 0.93em;letter-spacing: -0.015em;color: #999;}
+.btn_more span {display: inline-block;vertical-align: middle;}
+.btn_more .ic_deco {position: relative;top: 1px;}
+.btn_more .fa {font-size: 1.5em;margin-left: 4px;}
+
+/* list 스타일 */
+.list ul {border: none;margin: 0;}
+.list .list_tit {font-size: 1.07em;border-bottom: 1px solid #aaa;width: 100%;padding-bottom: 9px;}
+.list li {font-size: 1em;letter-spacing: -0.024em;border-bottom: 1px solid #eee;padding-top: 5px;padding-bottom: 6px;margin-left: 0;}
+.list ul li:last-child {border-bottom: none;}
+.list li span {display: inline-block; vertical-align: middle;}
+.list .classify {display: inline-block;border: none;width: auto;}
+.list .media_news li:last-child {border-bottom: 1px solid #eee;}
+
+/* .match_list 대회일정/결과 */
+.main .match_list {background-color: #fff;}
+.match_list {padding-bottom: 8px;}
+.match_list .list_tit {padding-top: 0;padding-bottom: 11px;}
+
+.d_day {font-size: 0.86em;letter-spacing: -0.02em;display: inline-block;background-color: #78909c;color: #fff;text-align: center;width: 42px;height: 19px;line-height: 19px;margin-right: 5px;}
+
+.match_list li span:nth-child(2) {width: calc(100% - 55px);overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.match_list li:last-child {padding-bottom: 0;}
+
+/* .news_list 미디어 소식 (뉴스, 칼럼리스트) */
+.classify span {display: inline-block;background-color: #5cbab2;color: #fff;height: 19px;line-height: 19px;padding-left: 8px;padding-right: 8px;} /* 분류 */
+.news_list .btn_more {top: 12px;}
+.news_list .list_tit {padding-top: 1px;padding-bottom: 9px;margin-bottom: 5px;}
+.news_list li span {width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+.news_list li {padding-top: 5px;padding-bottom: 6px;}
+.news_list .classify {padding-top: 4px;padding-bottom: 0;}
+
+/* 영상 리스트 */
+.main .film_list {border-bottom: 1px solid #eee;padding-bottom: 13px;margin-top: 16px;margin-bottom: 3px;}
+.film_list {border-bottom: 1px solid #eee;padding-bottom: 10px;}
+.news_film {margin-top: 2px;}
+.film_list li {border: none;width: 48%;margin: 0;padding-bottom: 0;float: left;}
+.film_list li:nth-child(2n+1) {margin-right: 10px;}
+.film_list li a {font-size: .933em;color:#333;letter-spacing: -0.02em;line-height: 150%;}
+.film_list .figcaption {display: block;margin-top: 9px;}
+.film_list .figcaption b {font-weight: normal;color: #0288d1;margin-right: 4px;}
+.film_list strong {display: -webkit-box;font-weight: normal;letter-spacing: -0.03em;overflow: hidden;text-overflow: ellipsis;white-space: normal;padding-right: 1px;word-wrap: break-word;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+
+/* 칼럼 리스트 */
+.main .column_list {margin-bottom: 12px;}
+.column_list .classify {padding-bottom: 2px;}
+.column_list li span {width: auto;letter-spacing: -0.024em;}
+.list li b {font-weight: normal;color: #089bce;margin-right: 4px;}
+.column_list li {padding-top: 6px;padding-bottom: 5px;}
+.column_list li span:first-child {width: calc(100% - 83%);overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.column_list li span:nth-child(2) {width: calc(100% - 55px);overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.column_list li.classify span {width: auto;}
+
+/* 선수 분석 */
+.main .player_stat {position: relative;background-color: #d7e6ee;border-top: 1px solid #c9dfea;border-bottom: 1px solid #c9dfea;padding-left: 10px; padding-right: 10px;}
+.player_stat .btn_more {top: 16px;}
+.player_stat h3 {font-size: 1.07em;text-align: center;padding-top: 14px;padding-bottom: 10px;}
+
+.sel_list li {padding-bottom: 11px;}
+.sel_list li:last-child {padding-bottom: 6px;}
+.sel_list .sel_2 .sel_box {display: inline-block;width: 48%;}
+.sel_list .sel_2 .sel_box:first-child {margin-right: 8px;}
+.sel_list .srch_player .srch_ipt {position: relative;display: inline-block;vertical-align: middle;width: 73%;margin-right: 10px;}
+.sel_list .srch_player .srch_ipt input {width: 100%;line-height: 35px;padding-left: 5px;}
+.sel_list .srch_player .srch_ipt .del {position: absolute;top: 8px;right: 5px;font-size: 20px;}
+.sel_list .btn_srch {border-radius: 4px;width: 22%;height: 33px;}
+
+/* 애널리스트 */
+.main .ana_list {margin-top: 10px;}
+.ana_list .film_list li.list_tit {padding-bottom: 8px;margin-top: 0;margin-right: 0;}
+.ana_list .btn_more {top: 10px;}
+.ana_list .film_list {border-bottom: none;padding-bottom: 20px;margin-top: 0;}
+.ana_list .film_list .list_tit {padding-top: 0;}
+.ana_list .film_list li {margin-top: 10px;padding-top: 0;}
+.ana_list .film_list li .figcaption {font-size: 1em;letter-spacing: -0.02em;text-align: left;line-height: 160%;margin-top: 10px;}
+.ana_list .film_list li:nth-child(2n) {margin-right: 10px;}
+.ana_list .film_list li:nth-child(2n+1) {margin-right: 0;}
+.ana_list li a {position: relative;}
+.ana_list .classify {position: absolute;top: 0;left: 0;display: inline-block;font-size: .933em;background-color: #5bc1b9;color: #fff;width: 58px;height: 20px;}
+
+/* 경기 기록실 */
+.main .tap_list {background-color: #fff;margin-top: 11px;margin-bottom: 11px;margin-left: 10px;margin-right: 10px;padding-top: 11px;padding-left: 20px;padding-right: 20px;}
+.match_record {position: relative;}
+.match_record h3 {font-family: 'NotoKR-bd';font-size: 1.07em;padding-bottom: 6px;}
+.match_record h3 .ic_deco {float: right;}
+.match_record h3 .fa {font-size: 22px;font-weight: bolder;vertical-align: top;color: #666;}
+.match_record p {line-height: 135%;padding-bottom: 20px;}
+.match_record .ic_chart {position: absolute;bottom: 11px;right: 0px;font-size: 22px;}
+
+/* 배너 */
+.main .banner_md {background-color: #fff;margin-top: 11px;}
+.banner h3 {font-size: 1.07em;padding-top: 9px;padding-bottom: 8px;padding-left: 10px;padding-right: 10px;}
+.banner h3 .ic_deco {font-size: 0.93em;color: #999;margin-top: 2px;float: right;}
+.banner h3 .ic_deco .fa {vertical-align: top;font-size: 22px;margin-left: 7px;}
+
+/* 공지사항 */
+.main .notice_list {padding-top: 2px;margin-top: 9px;}
+.notice_list ul li {width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding-top: 6px;padding-bottom: 7px;}
+.main .notice_list .btn_more {top: 10px}
+
+/* tap_list */
+.tennis_taps {margin-bottom: 13px;}
+.tap_list .tap h3 {font-size: 1em;font-weight: bold;letter-spacing: -0.02em;color: #333;text-align: left;}
+.tap_list .tap h3 span {display: inline-block;vertical-align: middle;}
+.tap_list .tap h3 .img_deco {position: relative;top: -2px;margin-right: 3px;}
+/*.tap_list .tap h3 .img_deco img {width: 100%;}*/
+.tap_list .tap p {text-align: left;letter-spacing: -0.02em;padding-top: 3px;}
+.tap_list .tap {position: relative;margin-bottom: 11px;}
+.tap_list .tap a {padding-bottom: 4px;}
+.tap_list .tap .ic_deco {position: absolute;top: 13px; right: 0;}
+.tap_list .tap .ic_deco .fa {font-size: 24px;}
+
+/* E: main */
+
+/**
+ * S: footer 
+ */
+.footer {padding-top: 20px;padding-bottom: 20px;}
+.footer .powered {text-align: center;}
+.footer .powered h3 {display: inline-block;font-size: 0.86em;text-align: center;background-color: #cbcbcb;color: #333;border-radius: 10px;width: 81px;height: 23px;line-height: 23px}
+.footer .powered ul {display: inline-block;}
+/* E: footer */

@@ -1,0 +1,15 @@
+@media (min-width: 360px) {
+  /* 선수선택, 서브 선택 */
+  .enter_score .sel_player .btn_white {width: 76%;}
+  .enter_score .sel_player .team .name {max-width: 55px;}
+  .enter_score .sel_player .team .club {max-width: 55px;}
+  /* 스코어 입력 */
+  .scoreboard {padding-top: 10px;padding-bottom: 15px;}
+  .enter_score .point_btn {padding-top: 20px;}
+  .enter_score .point_btn .show_point {font-size: 62px;font-weight: bold;text-align: center;height: 85px;line-height: 80px;}
+  .enter_score .point_btn .up,
+  .enter_score .point_btn .down {height: 37px;line-height: 35px;}
+  /* 경기종료 버튼 */
+  .point_btn .btn_list {padding-top: 20px;}
+  .point_btn .btn_list .btn_end {margin-bottom: 10px;}
+}

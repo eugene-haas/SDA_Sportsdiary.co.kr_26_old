@@ -1,0 +1,29 @@
+.hori_gnb.rally_menu li a {letter-spacing: -0.075em;padding-left: 18px;padding-right: 18px;}
+
+/* 신규 모집 등록 버튼 */
+.rally .write_recruit {width: 100%;margin-top: 10px;}
+.rally .write_recruit .total_info_txt {margin-top: 12px;float: left;}
+.rally .write_recruit .btn {letter-spacing: -0.02em;float: right;}
+.rally .write_recruit .btn .fa {margin-right: 2px;}
+
+/* 검색 결과 리스트 */
+.rally .srch_result_list {border-top: 2px solid #1e4a6e;margin-top: 10px;}
+.rally .srch_result_list .total_info_txt {font-size: 0.93em;border-bottom: 1px solid #bbb;padding-top: 7px;padding-bottom: 7px;}
+.rally .srch_result_list .player_info .orangy {font-weight: bold;color: #ff7e00;}
+.rally .srch_result_list .player_info .show_info p {display: inline-block;font-size: 0.93em;font-weight: normal;}
+.rally .srch_result_list .player_info .want_date {padding-top: 4px;}
+.rally .srch_result_list .player_info .want_date .title {display: inline-block;font-size: 0.86em;text-align: center;border: 1px solid #bbb;border-radius: 20px;width: 56px;height: 20px;line-height: 20px;margin-right: 2px;}
+.rally .srch_result_list .player_info .want_date p {font-size: 0.93em;font-weight: normal;letter-spacing: -0.02em;color: #999;}
+
+/* 내가 작성한 모집글 */
+.rally .ctr_list .player_info {float: none;}
+.rally .ctr_list .ctr_btn {border-top: 1px dotted #bbb;}
+.rally .ctr_list .btn_box {padding-top: 6px;padding-bottom: 5px;float: none;}
+.rally .ctr_list .btn_mod_del {float: left;}
+.rally .ctr_list .switch_box {float: right;}
+.rally .ctr_list .btn_empty {width: 42px; height: 25px; line-height: 25px;}
+.rally .ctr_list .btn_mod_del .btn_empty:first-child {margin-right: 4px;}
+
+/* 세로 정렬 버튼 */
+.rally .v_ctr_btn .btn_empty {width: 40px;height: 25px;line-height: 25px;}
+.rally .v_ctr_btn .switch_box {padding-top: 10px;}

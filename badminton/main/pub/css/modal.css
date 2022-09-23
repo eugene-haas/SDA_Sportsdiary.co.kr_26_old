@@ -1,0 +1,16 @@
+/* basic-modal */
+.basic-modal .modal-header{background:#2882c1;color:#fff;text-align:center;}
+.basic-modal .modal-header .modal-title{font-size:1.125em;}
+.basic-modal .modal-body{padding:30px;}
+.basic-modal .modal-body .list-table{display:table;width:100%;border:1px solid #f1f4f7;border-bottom:0;}
+.basic-modal .modal-body .list-table ul li{display:table;width:100%;border-bottom:1px solid #f1f4f7;}
+.basic-modal .modal-body .list-table .l-name{width:150px;float:left;background:#e0e4ec;padding:15px;}
+.basic-modal .modal-body .list-table .r-con{float:left;padding:15px;color:#666;}
+.basic-modal .modal-footer{text-align:center;border-top:0;padding:0;padding-bottom:30px;}
+.basic-modal .modal-footer a{height:40px;line-height:38px;width:80px;}
+.basic-modal .modal-footer a.navy-btn{border:1px solid #28618a;line-height:39px;}
+.basic-modal .modal-content{ border-radius:0; -webkit-border-radius:0; -moz-border-radius:0; -ms-border-radius:0; -o-border-radius:0; }
+
+.dbhelp_modal .modal-dialog{width:900px;}
+.dbhelp_modal .modal-body{overflow-y:scroll;height:483px;}
+.dbhelp_modal .modal-footer{padding-top:30px;}

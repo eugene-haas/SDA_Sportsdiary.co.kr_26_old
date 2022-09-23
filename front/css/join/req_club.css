@@ -1,0 +1,42 @@
+/**
+ * S: 신규소속 생성요청 
+ */
+.join-body .req_club .srch_box {margin-top: 10px;margin-left: 10px;margin-right: 10px;}
+.join-body .main.req_club {font-size: 1em;height: auto;-webkit-box-shadow: none;box-shadow: none;}
+
+/* 상단 control */
+.join-body .req_club .srch_box li {text-align: right;}
+.join-body .req_club .srch_box .btn-org {display: inline-block;vertical-align: middle;font-size: .82em;background-color: #fff;border: 1px solid #f58a2f;color: #f58a2f;width: 65px;height: 33px;line-height: 33px;padding: 0;float: left;} /* 전체목록 버튼 */
+.join-body .req_club .srch_box input {display: inline-block;vertical-align: middle;border: 1px solid #bbb;width: 140px;padding-left: 5px;}
+.join-body .req_club .srch_box #fnd_KeyWord {font-size: .88em;height: 33px;line-height: 34px;}
+.join-body .req_club .srch_box .btn-gray {display: inline-block;vertical-align: middle;font-size: .82em;background-color: #bbb;color: #fff;width: 50px;height: 33px;line-height: 33px;padding: 0;margin-left: 4px;} /* 검색 버튼 */
+
+/* 요청 list */
+.join-body .req_club .view_list {font-family: "NotoKR-dl";letter-spacing: -0.05em;margin: 10px;margin-bottom: 0;border-top: 1px solid #bbb;}
+.join-body .req_club .view_list .top_line {padding-top: 10px;}
+.join-body .req_club .view_list .top_line span {display: inline-block;vertical-align: middle;}
+.join-body .req_club .view_list .top_line .fa {font-size: 1.5em;color: #f58a2f;margin-right: 2px;}
+.join-body .req_club .view_list li {border-bottom: 1px solid #bbb;padding-bottom: 10px;}
+.join-body .req_club .view_list .mid_line {color: #999; font-size:0.92em;}
+.join-body .req_club .view_list .mid_line span {display: inline-block;vertical-align: middle;position: relative;line-height: 100%;padding-right: 10px;margin-right: 4px;}
+.join-body .req_club .view_list .mid_line span:after {position: absolute;top: 2px;right: 0;content: '';background-color: #999;width: 1px;height: 10px;}
+.join-body .req_club .view_list .mid_line span:last-child:after {width:0; height:0;}
+.join-body .req_club .view_list .maked {font-size:0.92em; color:#f58a2f;}
+
+/* 더보기 버튼 */
+.req_club .view_list li[id^="more"] {border: none;margin-top: 10px;} 
+.req_club .view_list li[id^="more"] .more {background-color: #b7bec3;color: #fff;text-align: center;border: none;padding-top: 0px;padding-bottom: 0px;height: 40px;line-height: 40px;}
+.join-body .req_club .view_list a.more .ic-deco {display: inline-block;vertical-align: middle;}
+.join-body .req_club .view_list a.more .ic-deco .fa-plus {background: none;color: #fff;}
+/* E: 신규소속 생성요청 */
+
+/**
+ * S: 신규소속 요청 작성 
+ */
+.join-body .req_club_write .form-group {font-size: .96em;margin-top: 40px;margin-left: 10px;margin-right: 10px;}
+.join-body .req_club_write .form-group li {border-bottom: 1px solid #bbb;padding-top: 6px;margin-top: 10px;padding-bottom: 6px;}
+.join-body .req_club_write .form-group select {border: none;}
+.join-body .req_club_write .form-group input {font-size: 1.1em;border: none;padding-bottom: 6px;}
+.req_club .cta {padding-left: 10px;padding-right: 10px;}
+.req_club .cta .btn-ok {font-size: 1em;height: 50px;line-height: 50px}
+/* E: 신규소속 요청 작성 */

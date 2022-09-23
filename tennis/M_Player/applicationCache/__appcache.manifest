@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# 2017-11-30 v1.4.4
+
+
+# 캐쉬될 파일들을 지정하는 곳
+CACHE:
+/tennis/m_player/css/d.style.css
+
+
+# 언제나 네트웍을 통해 받아와야만 하는 파일 리스트
+NETWORK:
+*
+
+# 네트웍에서 파일을 받아올 수 없을 때 보여줄 파일
+FALLBACK:

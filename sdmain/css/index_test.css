@@ -1,0 +1,85 @@
+body{transform-origin:left top;min-width:360px;}
+body, .l, .sports_category{background:#F4F7FB;}
+.l{overflow:hidden;position:absolute;max-width:none;width:100%;height:100%;}
+
+.l_preview{position:relative;width:100%;height:100%;}
+.l_preview>img{width:100%;height:auto;}
+.l_preview__btn-close{position:absolute;top:7px;right:7px;padding:0;background:transparent;border:0;}
+.l_preview__btn-close>img{width:30px;height:auto;}
+
+.l_side-modal-layer{pointer-events:none;position:fixed;top:0;left:0;display:block;width:100%;height:100%;background:transparent;}
+.l_side-modal-layer.s_open{pointer-events:auto;}
+.l_side-modal{overflow-y:auto;transition:transform .4s cubic-bezier(.51, .01, .35, 1.0);width:100%;height:100%;min-height:640px;background:#fff;transform:translate(100%,0);}
+.l_side-modal-layer.s_open>.l_side-modal{transform:translate(0,0);}
+
+.l_banner{position:fixed;bottom:0;width:100%;height:80px;background:#fff;display:flex;justify-content:center;}
+.l_banner>a>img{height:80px;width:320px;}
+.m_banner_wrap{transition:all .3s;position:relative;top:0;display:flex;justify-content:center;align-items:center;height:86px;width:100%;min-width:360px;background:linear-gradient(90deg, #E7EAF0 0 50%, #EDF2F6 50% 100%);}
+.m_banner_wrap.s_setting{opacity:0;top:-40px;}
+.m_banner{}
+.m_banner>a>img{backface-visibility:hidden;display:block;width:auto;height:86px;}
+.aside_wrap{transition:all .3s;position:relative;top:0;width:100%;height:auto;min-height:88px;background:#fff;}
+.aside_wrap.s_setting{opacity:0;top:-40px;}
+
+
+
+.logo_wrap__logo{transition:all .3s;position:relative;top:0;transform:scale(1.25);}
+.logo_wrap__logo.s_setting{opacity:0;top:-40px;}
+.sports_category{padding:0 0 80px;height:100%;text-align:center;line-height:100%;min-height:640px;}
+.sports_category.t_flex{overflow:hidden;display:flex;flex-direction:column;}
+.sports_category__main{flex:1;display:flex;flex-direction:column;}
+.sports_category__main>.link_wrap-box{flex:1;}
+.sports_category>.logo_wrap {position:relative;margin:0 auto;padding:25px 0;display:flex;align-items:center;justify-content:center;width:100%;height:16%;min-height:88px;box-sizing:border-box;}
+.sports_category>.logo_wrap__logo{width:100px;}
+.sports_category>.indicate{ font-size:16px; letter-spacing:-0.02em; font-weight:300; color:#999; margin-top:21px; margin-bottom:24px; }
+.sports_category__btn{padding:0;position:absolute;top:4px;right:4px;display:flex;justify-content:center;align-items:center;width:42px;height:42px;border:0;background:transparent;}
+.sports_category__btn-noti{position:absolute;top:25px;right:29px;display:block;width:calc(100% - 60px);line-height:50px;border:1px solid #707070;border-radius:25px 0px 25px 25px;box-shadow:0px 3px 6px #00000029;background:#fff;font-size:14px;font-weight:bold;color:#FF8B3D;text-align:center;transition:all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);transform:scale(0);transform-origin:top right;}
+.sports_category__btn-noti.s_show{z-index:99;transform:scale(1);}
+
+.link_wrap-box{padding:20px 5px 5px;display:flex;align-items:center;height:68%;min-height:360px;box-sizing:border-box;}
+.link_wrap{margin:0 auto;position:relative;top:0;display:flex;align-items:center;justify-content:center;width:calc(100% - 40px);height:100%;text-align:left;transition:top .3s ease-in-out;}
+.link_wrap:after{content:"";display:block;clear:both;}
+.link_wrap.s_selected{top:calc(100% / 4);}
+.link_wrap.s_setting{top:-30px;}
+/* .link_wrap.s_selected>ul{height:80} */
+.link_wrap.s_setting>.link_sel,
+.link_wrap.s_selected>.link_sel{pointer-events:auto;opacity:1;}
+.link_wrap.s_selected>.link_sel>span{display:none;}
+.link_wrap.s_setting .link_medium.t_none{pointer-events:auto;opacity:1!important;}
+.link_wrap.s_disabled .link_medium{pointer-events:none !important;}
+.link_wrap>ul{width:100%;height:100%;}
+.link_wrap>ul>li{position:absolute;top:0;left:0;width:calc(50% - 10px);height:calc(100% / 4 - 15px);}
+
+
+.link_sel{pointer-events:none;opacity:0;position:absolute;bottom:calc(100% + 15px);width:100%;height:calc(100% / 4 - 15px);background:#fff;border-radius:12px;box-shadow:0px 2px 6px #A4ABB54D;line-height:1;cursor:pointer;box-sizing:border-box;}
+.link_sel>ul{height:100%;}
+.link_sel>ul>li{height:100%;transition:all .3s;transform:scale(0);transform-origin:50% 50%;}
+.link_sel>ul>li.s_selected{transform:scale(1);}
+.link_sel>ul>li>.link_medium{text-align:center;}
+.link_sel>span{position:absolute;top:0;left:0;display:flex;align-items:center;justify-content:center;width:100%;height:100%;border:2px solid #4995EF;border-radius:12px;font-size:16px;font-weight:400;color:#4995EF;white-space:nowrap;}
+
+.link_medium{animation:opa .5s forwards;float:left;margin:0 0 15px 0;width:100%;height:100%;background:#fff;border:1px solid #D8E1E6;border-radius:12px;box-shadow:0px 2px 6px #A4ABB54D;overflow:hidden;text-align:center;font-size:14px;font-family:'NanumSquare';font-weight:900;color:#667B94;line-height:1;cursor:pointer;box-sizing:border-box;transition:all .3s;}
+.link_medium.t_none{pointer-events:none;opacity:0;animation:none;display:flex;justify-content:center;align-items:center;}
+.link_medium.t_none>.logo_wrap{display:none;}
+.link_medium.t_none>.txt{font-size:14px;font-weight:bold;color:#707070;}
+.link_medium:hover{border:1px solid #97A7E5;color:#8398B1;}
+.link_medium>.logo_wrap{position:relative;display:block;height:63%;}
+.link_medium>.logo_wrap img{position:absolute;top:60%;left:50%;transform:translate(-50%,-50%) scale(1);max-width:90px;width:60%;height:auto;}
+.link_medium.t_riding>.logo_wrap img{transform:translate(-50%,-50%) scale(.8);}
+
+li.s_selected .link_medium{z-index:99;position:relative;width:100%;height:100%;box-shadow:none;}
+li.s_selected .link_medium>.logo_wrap{position:relative;display:flex;justify-content:center;align-items:center;width:60%;height:100%;}
+li.s_selected .link_medium>.logo_wrap:before{content:"";position:absolute;top:50%;right:0;transform:translate(0,-50%);display:block;width:1px;height:80%;background:#D9E0E7;}
+li.s_selected .link_medium>.logo_wrap>img{top:50%;max-width:170px;width:77%;height:auto;}
+li.s_selected .link_medium>.txt{position:absolute;top:50%;right:0;transform:translate(0,-50%);width:40%;}
+
+@keyframes opa {
+   0%{opacity:0;}
+   100%{opacity:1;}
+}
+
+@media (orientation:landscape){
+   .l{overflow-y:auto;}
+   .sports_category{padding-bottom:0;}
+   .l_banner{position:static;}
+}

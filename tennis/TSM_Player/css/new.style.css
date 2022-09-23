@@ -1,0 +1,416 @@
+@charset 'utf-8';
+/* 공통 부분 */
+html{height:100%;}
+body{position:relative;box-sizing:border-box;-webkit-box-sizing:border-box;max-width:767px;font-size:16px;font-family:'NotoKR', sans-serif;color:#333;}
+
+/* gnb */
+.dim{display:none;position:absolute;top:0;left:0;content:'';z-index:999;width:100%;height:100%;background-color:hsla(0, 0%, 0%, .3);}
+
+.gnb{position:fixed;top:0;right:-102%;z-index:1200;font-family:'NotoKR';font-size:16px;width:100%;-webkit-box-shadow:0px 0px 8px #333;box-shadow:0px 0px 8px #333;background-color:#fff;overflow-y:scroll;transition:all .4s cubic-bezier(.51, .01, .35, 1.0);}
+
+.gnb.on{right:0px;}
+
+.gnb-icon .id_change{font-size:20px;}
+
+.gnb .cate-list dl dd a{background-repeat:no-repeat;background-position:center right 6px;-webkit-background-size:6px;background-size:6px;margin-right:5px;}
+
+.gnb .cate-list dd a .menu-txt{position:relative;}
+
+.gnb .cate-list dl dd a .ic-new{font-size:.86em;font-weight:bold;right:-22px;width:18px;height:18px;line-height:18px;}
+
+.gnb .gnb-box{position:relative;}
+
+.gnb-header{padding-left:10px;padding-top:22px;padding-bottom:12px;}
+
+.gnb-header .no-member{padding-left:10px;padding-right:20px;padding-bottom:10px;}
+
+.gnb-header .no-member h2{font-family:'NotoKR', sans-serif;font-weight:500;font-size:1.13em;color:#333;padding-bottom:15px;line-height:130%;}
+
+.gnb-header .no-member h2 .bluy{font-family:'NotoKR', sans-serif;font-weight:500;}
+
+.gnb-header .no-member ul{max-width:100%;}
+
+.gnb-header .no-member ul li{text-align:center;border:1px solid #ddd;margin:0;}
+
+.gnb-header .no-member ul li:last-child{border-left:none;}
+
+.gnb-header .no-member ul li:first-child{border-left:1px solid #ddd;}
+
+.gnb-header .no-member li a{font-size:.88em;padding-top:5px;padding-bottom:5px;}
+
+.gnb-header .no-member .ic-deco{display:inline-block;vertical-align:middle;line-height:125%;}
+
+.gnb-header .no-member .txt{display:inline-block;vertical-align:middle;letter-spacing:-.05em;line-height:125%;}
+
+.gnb-header .no-member .ic-deco .fa{font-size:20px;color:#bbb;}
+
+.circle-deco{border-radius:50%;}
+
+.gnb-header .no-member .circle-deco{position:relative;background-color:#bbb;text-align:center;width:21px;height:21px;line-height:25px;}
+
+.gnb-header .no-member .circle-deco .fa{position:absolute;top:5px;left:6px;font-size:12px;color:#fff;}
+
+.profile{text-align:center;border:1px solid #ddd;border-radius:50%;width:46px;height:46px;line-height:46px;margin-right:3%;float:left;overflow:hidden;}
+
+.profile img{min-width:46px;min-height:46px;line-height:46px;margin-left:-1px;margin-top:-3px;}
+
+.welcome{width:74%;padding-bottom:10px;float:left;}
+
+.welcome h2{display:block;font-family:'NotoKR';font-size:1.1em;line-height:1;letter-spacing:-.1em;color:#333;padding:8px 0 0;margin:0;}
+
+.welcome .user_type{font-size:.87em;color:#005895;line-height:14px;max-width:210px;}
+
+.welcome .user_type .affiliation{display:inline-block;}
+
+
+.gnb-header .gnb-icon a{border-right:none;width:37px;margin-right:10px;}
+
+.gnb-header .gnb-icon .id_change{position:relative;border-right:none;width:24px;padding-right:0;}
+
+.gnb-icon .id_change .fa{color:#005895;font-size:22px;}
+
+.gnb-icon .ic_mypage{position:relative;top:-3px;}
+
+.gnb-icon .tg_pop{position:absolute;top:35px;right:56px;z-index:2000;display:inline-block;font-family:'NotoKR';font-size:.78em;border-radius:6px;line-height:150%;letter-spacing:-.05em;text-align:center;background-color:#1f6ca2;color:#fff;width:120px;height:60px;padding-top:13px;padding-left:13px;padding-right:13px;}
+
+.gnb-icon .tg_pop:before{position:absolute;top:-8px;right:10px;content:'';border-top:none;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:8px solid #1f6ca2;}
+
+.gnb-icon .tg_pop.hidden{animation:pop_hidden 4s;}
+
+@keyframes pop_hidden{
+  from{background:#fff;}
+  to{background:#f00;}
+}
+
+.welcome h2 span{font-size:1.3em;color:#333;}
+
+.welcome a{display:inline-block;border:2px solid #82c1f4;border-radius:20px;font-size:11px;text-align:center;color:#82c1f4;padding:0 .8em;}
+
+.welcome .login{background-color:transparent;}
+
+.gnb-icon{position:absolute;top:30px;right:10px;}
+
+.gnb-icon a{border-right:2px solid #517390;width:35px;padding-right:9px;margin-right:9px;float:left;}
+
+.gnb-icon a:last-child{border-right:none;margin-right:0;}
+
+.gnb-icon a img{vertical-align:middle;width:100%;}
+
+.gnb-icon .close-btn{background-color:transparent;width:16px;padding:0;}
+
+.gnb-header ul{max-width:310px;}
+
+.gnb-header .top_list{max-width:100%;margin:55px auto 10px;font-size:.88em;}
+
+.gnb-header .top_list:after{content:'';display:table;clear:both;}
+
+.gnb-header .top_list li{float:left;padding:0 14px;text-align:center;}
+
+.gnb-header .top_list li:nth-child(2) a{text-align:right;}
+
+.gnb-header .top_list li:nth-child(3) a{text-align:right;}
+
+.gnb-header .top_list a{font-size:.94em;letter-spacing:-.025em;color:#333;}
+
+.gnb-header .top_list a span{display:inline-block;vertical-align:middle;}
+
+.gnb-header .top_list a .ic_deco{margin-right:2px;}
+
+.gnb-header .gnb-icon-list{margin-left:-10px;}
+
+.gnb-icon-list{padding-bottom:20px;}
+
+.gnb-list h2, .gnb-icon-list h2{font-family:'NotoKR', sans-serif;font-weight:500;letter-spacing:-.5px;font-size:.94em;background-color:#f2f2f2;color:#333;padding-top:7px;padding-bottom:5px;padding-left:13px;}
+
+.gnb-icon-list ul{margin:0 auto;padding-top:15px;}
+
+.gnb-icon-list.list-4 ul{max-width:280px;}
+
+.gnb-icon-list.list-3 ul{max-width:280px;}
+
+.gnb-icon-list .img_box{display:block;width:45px;height:45px;margin:0 auto;}
+.gnb-icon-list .img_box img{width:100%;}
+.flex{display:-webkit-flex;display:-webkit-box;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;flex-direction:row;flex-flow:row wrap;justify-content:space-around;}
+.flex>*{flex:1;-webkit-box-flex:1;-webkit-flex:1;-moz-flex:1;-ms-flex:1;-o-flex:1;flex:1;-webkit-flex-grow:1;-moz-flex-grow:1;-ms-flex-grow:1;flex-grow:1;}
+
+.gnb-icon-list .txt{display:block;font-size:.9em;letter-spacing:-.02em;text-align:center;margin-top:5px;}
+
+.gnb-list ul{padding-top:20px;padding-bottom:15px;padding-left:15px;padding-right:15px;}
+
+.gnb-list li{float:left;width:50%;padding-right:7%;padding-bottom:10px;}
+
+.gnb-list li:nth-child(even){padding-left:7%;padding-right:0;}
+
+.gnb-list a{font-size:.94em;letter-spacing:-.05em;}
+
+.gnb a.btn_not_yet{color:#bbb;}
+
+.gnb-list .r_arr{display:inline-block;vertical-align:middle;width:8px;float:right;}
+
+.gnb-list .r_arr img{display:inline-block;width:100%;}
+
+/* gnb footer */
+.gnb-footer{text-align:center;background-color:#e6edf4;padding-top:24px;padding-bottom:60px;}
+
+.gnb-footer li{display:inline-block;padding-right:9px;margin-right:3px;}
+
+.gnb-footer li.r-bar:after{top:6px;}
+
+.gnb-footer li.r-bar:last-child:after{background:none;}
+
+.gnb-footer li.r-bar:last-child{margin-right:0;padding-right:0;}
+
+.gnb-footer li a{font-size:.75em;}
+
+.gnb-footer h3{width:50%;padding-top:25px;margin:0 auto;}
+
+.gnb-footer{background-color:#f2f2f2;}
+
+.gnb-footer ul li a{font-size:.86em;letter-spacing:-.05em;color:#999;line-height:1;}
+
+.gnb-footer li.r-bar:after{top:0px;height:12px;}
+
+.gnb-footer .bot_info{font-family:'NotoKR', sans-serif;font-weight:300;font-size:.8em;color:#999;margin-top:20px;line-height:150%;}
+
+.gnb-footer .bot_info .bluy{color:#005895;}
+
+.gnb .gnb_ctr{position:fixed;bottom:0;right:-100%;width:100%;transition:all .4s cubic-bezier(.51, .01, .35, 1.0);}
+
+.gnb .gnb_ctr .idx_link{width:48px;}
+
+.gnb .gnb_ctr .idx_link a{background-color:#00365b;}
+
+.gnb .gnb_ctr .idx_link a img{width:27px;}
+
+.gnb.on .gnb_ctr{right:0;}
+
+.gnb_ctr li{display:inline-block;border-right:1px solid #608ead;float:left;width:calc(33% - 15px);}
+
+.gnb_ctr ul li:last-child{border-right:none;}
+
+.gnb_ctr li a{background-color:#005895;display:block;text-align:center;height:40px;padding-top:8px;}
+
+.gnb_ctr li a img{width:25px;}
+
+/* S:top-btn */
+
+.tops.btn-div{position:fixed;bottom:10px;right:10px;z-index:1000;font-family:'NotoKR', sans-serif;font-weight:500;font-size:14px;text-align:center;background-color:#fff;border:3px solid #164369;border-radius:50%;width:40px;height:40px;line-height:34px;padding:0;opacity:0;}
+
+.tops.btn-div .top_btn{color:#164369;font-size:13px;font-family:'NotoKR', sans-serif;font-weight:500;letter-spacing:-.02em;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 대회 정보 모달 */
+
+
+
+/* faq */
+
+.top-list.top-faq{/*background:#3f505d url(http://img.sportsdiary.co.kr/sdapp/sub/bg-faq@3x.png);*/
+  background-repeat:no-repeat;background-position:95% 100%;background-color:#f2f2f2;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 대회일정/결과 */
+.te-calendar-legend{font-size:0;text-align:center;text-align:justify;}
+.te-calendar-legend>span{font-size:10px;line-height:100%;margin-right:13px;white-space:nowrap;}
+.te-calendar-legend>span:before{position:relative;content:'';display:inline-block;width:7px;height:7px;top:0px;margin-right:5px;}
+.te-calendar-legend>span:nth-of-type(1){color:#3A87AD;margin-left:0;}
+.te-calendar-legend>span:nth-of-type(1):before{background:#3A87AD;}
+.te-calendar-legend>span:nth-of-type(2){color:#E46C0A;}
+.te-calendar-legend>span:nth-of-type(2):before{background:#E46C0A;}
+
+/* -------------------------------------------------------------------------- */
+.m_bg__lGray{background-color:#f2f2f2;}
+
+
+.m_subTabMenu{display:flex;height:38px;border-top:1px solid #d7d7d7;text-align:center;}
+.m_subTabMenu__btn{display:block;width:100%;background-color:#f2f2f2;color:#999999;font-size:18px;line-height:38px;}
+.m_subTabMenu__btn.s_active{border-top:2px solid #1390d4;background-color:#fff;color:#005895;}
+
+.m_folder{}
+.m_folder__con{overflow:hidden;height:auto;}
+.m_folder__con.s_fold{height:0;}
+.m_folder__btn{display:inline-flex;justify-content:center;position:relative;width:100%;height:40px;border-style:solid;border-color:#ddd;border-width:1px 0 0 0;background:none;font-size:13px;letter-spacing:-.02em;color:#444;}
+.m_folder__btnTxt{padding-right:28px;padding-bottom:1px;padding-top:2px;background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_up_circle_@3x.png') no-repeat right 1px center/18px;}
+.m_folder__btnTxt.s_fold{background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_down_circle_@3x.png') no-repeat right 1px center/18px;}
+.m_folder__btn:active, .m_folder__btn:hover{border-style:solid;border-color:#ddd;border-width:1px 0 0 0;}
+
+.m_board__txt{margin:3px 0;font-size:14px;color:#444;line-height:20px;font-weight:700;}
+.m_board__txt.s_bar{margin-left:8px;text-indent:-8px;}
+.m_board__txt.s_colon{margin-left:7px;text-indent:-7px;}
+.m_board__txt.s_emphasize{color:#cb1515;}
+
+.m_board__subTxt{font-size:13px;color:#444;line-height:16px;}
+.m_board__subTxt.s_x{margin:1px 0 1px 11px;margin-left:15px;text-indent:-13px;}
+.m_board__subTxt.s_star{margin:1px 0 1px 11px;text-indent:-9px;line-height:18px;}
+.m_board__subTxt.s_emphasize{color:#cb1515;}
+.m_board__subTxt.s_depress{color:#aaaaaa;}
+
+/*  */
+.competitionInfo .tit{margin-top:18px;font-size:20px;line-height:24px;font-weight:800;letter-spacing:-.02em;color:#333;text-align:center;font-size:0;line-height:0;margin:0;}
+.competitionInfo .addTxt{margin-top:8px;margin-bottom:16px;font-size:14px;font-weight:400;letter-spacing:-.02em;line-height:18px;color:#333;text-align:center;font-size:0;line-height:0;margin:0;}
+.competitionInfo .subHeader__img{width:100%;vertical-align:middle;}
+.competitionInfo .applyBtn{position:fixed;bottom:0;width:100%;max-width:767px;border:none;height:40px;font-size:16px;letter-spacing:.05em;line-height:40px;color:#fff;background-color:#264862;text-align:center;z-index:100;}
+/*  */
+
+.competitionInfo .scheduleTbl{width:100%;margin:10px 0 20px 0;text-align:center;}
+.competitionInfo .scheduleTbl th{background-color:#aaa;color:#fff;border-top:1px solid #aaa;border-left:1px solid #ddd;text-align:center;}
+.competitionInfo .scheduleTbl th:nth-child(1){width:27%;border-left:1px solid #aaa;}
+.competitionInfo .scheduleTbl th:nth-child(2){width:27%;}
+.competitionInfo .scheduleTbl th:nth-child(3){width:46%;border-right:1px solid #aaa;}
+.competitionInfo .scheduleTbl td{color:#444;border:1px solid #ddd;font-weight:700;}
+
+.competitionInfo .parkingMap{position:relative;height:185px;margin-bottom:10px;overflow:hidden;text-align:center;}
+.competitionInfo .parkingMap__img{height:100%;width:auto;position:relative;left:50%;transform:translateX(-50%);}
+.competitionInfo .map{margin-bottom:8px;height:175px;background-color:#999999;}
+.competitionInfo .detailBtn{position:absolute;bottom:3px;right:0;width:75px;height:30px;border:0;border-radius:3px;font-size:13px;letter-spacing:-.02em;color:#fff;background-color:#444;text-align:center;line-height:30px;}
+.competitionInfo .departmentTbl{width:100%;margin-top:6px;margin-bottom:4px;font-weight:700;font-size:14px;letter-spacing:-.02em;text-align:center;}
+.competitionInfo .departmentTbl td{border:1px solid #ddd;}
+.competitionInfo .departmentTbl td:nth-child(1){width:20%;}
+.competitionInfo .departmentTbl td:nth-child(2){width:40%;}
+.competitionInfo .departmentTbl td:nth-child(3){width:40%;}
+
+.competitionInfo .awardingTbl{width:100%;margin:10px 0 8px 0;}
+.competitionInfo .awardingTbl th{width:61px;min-width:61px;max-width:61px;border-bottom:1px solid #ddd;background-color:#aaaaaa;color:#fff;font-size:14px;letter-spacing:-.02em;text-align:center;}
+.competitionInfo .awardingTbl:last-child>th{border-bottom:0;}
+.competitionInfo .awardingTbl td{padding:7px 0 6px 0;border:1px solid #ddd;font-size:13px;letter-spacing:-.02em;line-height:18px;text-align:center;}
+.competitionInfo .awardingTbl__emphasize{color:#cb1515;}
+.competitionInfo .awardingTbl__bold{font-weight:700;}
+
+.competitionInfo .lankingAwarding{margin:10px 0 20px 0;text-align:center;}
+.competitionInfo .lankingAwarding__header{height:32px;line-height:32px;background-color:#555555;color:#fff;}
+.competitionInfo .lankingAwarding__star{position:relative;top:-2px;}
+
+.competitionInfo .lankingAwarding__tit{padding:9px 0;font-size:14px;font-weight:700;color:#fff;background-color:#aaa;line-height:20px;letter-spacing:-.05em;}
+.competitionInfo .lankingAwarding__titSubTxt{font-size:13px;}
+
+.competitionInfo .lankingAwarding__txt{padding:8px 0;border-width:0 1px 1px 1px;border-color:#ddd;border-style:solid;font-size:14px;color:#444;line-height:20px;letter-spacing:-.05em;font-weight:700;}
+.competitionInfo .lankingAwarding__subTxt{font-size:13px;font-weight:400;}
+
+.competitionInfo .sponserLogos{margin:10px 0 14px 0;overflow:hidden;}
+.competitionInfo .sponserLogos__logoWrap{position:relative;display:block;float:left;width:calc(33.3333% - 4px);margin-right:6px;margin-bottom:6px;padding-top:16.3333%;}
+.competitionInfo .sponserLogos__logoWrap:nth-of-type(3n){margin-right:0;}
+.competitionInfo .sponserLogos__logoWrap>img{position:absolute;width:100%;top:0;bottom:0;margin:auto;}
+
+.competitionInfo .leagueRankingTbl{width:100%;margin-top:10px;}
+.competitionInfo .leagueRankingTbl.s_pre{margin-bottom:10px;}
+.competitionInfo .leagueRankingTbl th{width:81px;max-width:81px;min-width:81px;padding-top:3px;border-bottom:1px solid #ddd;background-color:#aaaaaa;color:#fff;text-align:center;font-size:16px;letter-spacing:-.02em;vertical-align:top;}
+.competitionInfo .leagueRankingTbl tr:last-child>th{border-bottom:1px solid #aaaaaa;}
+.competitionInfo .leagueRankingTbl td{padding:5px 0 5px 10px;border:1px solid #ddd;letter-spacing:-.02em;color:#444444;font-size:14px;line-height:18px;}
+
+.competitionInfo .pointRankingTbl{width:100%;margin-top:10px;}
+.competitionInfo .pointRankingTbl thead th{height:28px;border:1px solid #ddd;background-color:#aaa;color:#fff;font-size:12px;line-height:12px;letter-spacing:-.05em;text-align:center;}
+.competitionInfo .pointRankingTbl thead th:first-child{border-left:0;}
+.competitionInfo .pointRankingTbl thead th:last-child{border-right:0;}
+
+.competitionInfo .pointRankingTbl tbody th{height:17px;background-color:#aaa;color:#fff;border-bottom:1px solid #ddd;border-right:1px solid #ddd;font-size:12px;letter-spacing:-.02em;text-align:center;}
+.competitionInfo .pointRankingTbl tbody tr:last-child>th{border-bottom:1px solid #aaaaaa;}
+.competitionInfo .pointRankingTbl tbody td{border:1px solid #ddd;letter-spacing:-.05em;color:#444;font-size:12px;text-align:center;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(1){width:8%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(2){width:17%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(3){width:12%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(4){width:12%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(5){width:12%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(6){width:12%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(7){width:13%;}
+.competitionInfo .pointRankingTbl tbody tr:first-child>:nth-child(8){width:14%;}
+
+.competitionInfo .pointRankingTbl2{width:100%;margin-top:10px;}
+.competitionInfo .pointRankingTbl2 th{height:26px;background-color:#bbbbbb;color:#fff;text-align:center;font-weight:400;border:1px solid #dddddd;font-size:14px;}
+.competitionInfo .pointRankingTbl2 td{height:26px;background-color:#fff;color:#444444;text-align:center;font-weight:400;border:1px solid #dddddd;font-size:14px;}
+.competitionInfo .pointRankingTbl2 thead th{border-top:1px solid #bbb;font-weight:500;}
+.competitionInfo .pointRankingTbl2 thead th:first-child{border-left:1px solid #bbb;}
+.competitionInfo .pointRankingTbl2 thead th:last-child{border-right:1px solid #bbb;}
+.competitionInfo .pointRankingTbl2 tbody th:first-child{border-left:1px solid #bbb;font-weight:500;}
+.competitionInfo .pointRankingTbl2 tbody tr:last-child th{border-bottom:1px solid #bbb;font-weight:500;}
+.competitionInfo .pointRankingTbl2 tbody tr:last-child th:last-child{border-right:1px solid #bbb;}

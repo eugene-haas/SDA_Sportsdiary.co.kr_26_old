@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <title>디자인 스케치</title>
+    <link rel="stylesheet" href="css/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="css/lib/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/template.css">
+    <script src="js/lib/jquery-1.10.2.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <script>var cateIdx = 4;</script>
+  </head>
+  <body>
+    <div class="container" id="header">
+      <div id="logo">
+        <h1> <a href="#">SD 디자인</a></h1>
+        <div id="menu">
+          <ul>
+            <li><a href="./index.html" accesskey="1" title="SD 디자인 홈">HOME</a></li>
+            <li><a href="./sketch.html" accesskey="2" title="Sketch">Sketch</a></li>
+            <li><a href="./component.html" accesskey="2" title="Component">Component</a></li>
+            <li><a href="./module.html" accesskey="2" title="Module">Module</a></li>
+            <li><a href="./template.html" accesskey="2" title="Template">Template</a></li>
+            <li><a href="../M_Player/main/main.asp" accesskey="2" title="Page">Page</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- S: container_body -->
+    <div class="container_body">
+      
+      <!-- S: tab load_temp -->
+      <div class="tab load_temp">
+      <!-- S: part_btn -->
+      <div class="part_btn">
+        <ul class="flex">
+          <li><a href="#" class="btn_normal ex_active on" data-load="partMain">종목 메인 template</a></li>
+          <li>
+            <a href="#" class="btn_normal ex_active" data-load="tennis">미디어 기사 template</a>
+            <ul class="sub_part depth_1">
+              <li><a href="./imgs/template/a_view.jpg" class="media_view">애널리스트 view</a></li>
+              <li><a href="./imgs/template/media_list.jpg" class="media_list">미디어 소식 list</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- E: part_btn -->
+
+      <!-- S: part_main temp_1 -->
+      <div class="part_main temp_1 module_list">
+        <h1>종목 메인 template</h1>
+
+      <!-- S: header -->
+      <div class="header">
+        <!-- S: pack -->
+        <div class="pack top_cont">
+          <a href="#" class="left_arrow">
+            <span class="ic_deco">
+              <i class="fa fa-angle-left"></i>
+            </span>
+          </a>
+          <div class="logo">
+            <img src="imgs/pub/logo@3x.png" alt="스포츠다이어리">
+          </div>
+          <a href="#" class="menu">
+            <span class="ic_deco nav"></span>
+          </a>
+        </div>
+        <!-- E: pack -->
+        <!-- S: pack -->
+        <div class="pack bot_cont">
+          <div class="srch_box">
+            <input type="text" class="search_box" placeholder="검색어를 입력해 주세요">
+            <a href="#" class="ic_deco">
+              <i class="fa fa-search"></i>
+            </a>
+          </div>
+        </div>
+        <!-- E: pack -->
+      </div>
+      <!-- E: header -->
+
+      <!-- S: main -->
+      <div class="main gray_bg pack">
+        <!-- S: main_menu -->
+        <div class="main_menu">
+          <ul class="clearfix">
+            <li><a href="#" class="on"><span>유도</span></a></li>
+            <li><a href="#"><span>레슬링</span></a></li>
+            <li><a href="#"><span>테니스</span></a></li>
+            <li><a href="#"><span>싸이클</span></a></li>
+          </ul>
+        </div>
+        <!-- E: main_menu -->
+
+        <!-- S: carousel -->
+        <div class="carousel main_carousel pack">
+          <p>광고영역</p>
+        </div>
+        <!-- E: carousel -->
+
+        <!-- S: margin_pack --> 
+        <div class="margin_pack">
+          <!-- S: main_list match_list list --> 
+          <div class="list main_list match_list">
+            <a href="#" class="btn_more">
+              <span>더보기</span>
+              <span class="ic_deco">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+            <ul>
+              <li class="list_tit">대회일정/결과</li>
+              <li>
+                <span class="d_day">D-5</span>
+                <span>추계 초,중,고 연맹전(강원/동해)</span>
+              </li>
+              <li>
+                <span class="d_day">D-21</span>
+                <span>추계 초,중,고 연맹전(강원/동해)</span>
+              </li>
+              <li>
+                <span class="d_day">D-100</span>
+                <span>추계 초,중,고 연맹전(강원/동해)</span>
+              </li>
+            </ul>
+          </div>
+          <!-- E: main_list match_list list -->
+        </div>
+        <!-- E: margin_pack -->
+
+        <!-- S: main_list news_list list --> 
+        <div class="main_list news_list list">
+          <a href="#" class="btn_more">
+            <span>더보기</span>
+            <span class="ic_deco">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+          
+          <!-- S: media_news -->
+          <ul class="media_news">
+            <li class="list_tit">미디어소식</li>
+            <li class="classify">
+              <span>뉴스</span>
+            </li>
+            <li>
+              <span>2017 고창고인돌배 전국생활체육 유도대회 성공적 개최</span>
+            </li>
+            <li>
+              <span>“우리동네 예체능”의 영향으로 생활체육인의 인구 측정 결과 250% 증가</span>
+            </li>
+            <li>
+              <span>2017 추계 초중고 연맹전에서 최우수 지도자상을 수상한 히딩크 감독</span>
+            </li>
+          </ul>
+          <!-- E: media_news -->
+
+          <!-- S: film_list -->
+          <ul class="film_list news_film clearfix">
+            <li>
+              <a href="#">
+                <span class="figure">
+                  <img src="imgs/pub/dummy_film.png" alt>
+                </span>
+                <span class="figcaption">
+                  <strong><b>유도</b>고창군 "2017 고창 고인돌배 생활체육 전국 체전"</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="figure">
+                  <img src="imgs/pub/dummy_film.png" alt>
+                </span>
+                <span class="figcaption">
+                  <strong><b>유도</b>고창군 "2017 고창 고인돌배 생활체육 전국 체전"</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- E: film_list -->
+
+          <!-- S: column_list --> 
+          <ul class="column_list">
+            <li class="classify">
+              <span>칼럼리스트</span>
+            </li>
+            <li>
+              <span><b>[전기영]</b></span>
+              <span>유도 국내 최강자를 찾아라!</span>
+            </li>
+            <li>
+              <span><b>[전기영]</b></span>
+              <span>명사가 알려주는 스포츠 노하우</span>
+            </li>
+            <li>
+              <span><b>[전기영]</b></span>
+              <span>랭킹 1위 비법 공개!</span>
+            </li>
+          </ul>
+          <!-- E: column_list -->
+        </div>
+        <!-- E: main_list news_list list -->
+
+        <!-- S: player_stat -->
+        <div class="player_stat">
+          <h3>선수분석</h3>
+          <a href="#" class="btn_more">
+            <span>더보기</span>
+            <span class="ic_deco">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+
+          <ul class="sel_list">
+            <li class="sel_2">
+              <span class="sel_box">
+                <select>
+                  <option>:: 년도 선택 ::</option>
+                  <option>2016</option>
+                  <option>2017</option>
+                </select>
+              </span>
+              <span class="sel_box">
+                <select>
+                  <option>:: 구분 선택 ::</option>
+                  <option>:: 구분 선택 ::</option>
+                </select>
+              </span>
+            </li>
+            <li>
+              <span class="sel_box">
+                <select>
+                  <option>:: 대회명 선택 ::</option>
+                  <option>:: 대회명 선택 ::</option>
+                </select>
+              </span>
+            </li>
+            <li class="srch_player">
+              <span class="srch_ipt">
+                <input type="text" placeholder="선수명 검색">
+                <a href="#" class="del">
+                  <i class="fa fa-times-circle"></i>
+                </a>
+              </span>
+              <a href="#" class="btn btn_srch">조회</a>
+            </li>
+          </ul>
+        </div>
+        <!-- E: player_stat -->
+
+        <!-- S: ana_list -->
+        <div class="ana_list list">
+          <a href="#" class="btn_more">
+            <span>더보기</span>
+            <span class="ic_deco">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+
+          <!-- S: film_list -->
+          <ul class="film_list clearfix">
+            <li class="list_tit">애널리스트</li>
+            <li>
+              <a href="#">
+                <span class="classify">경기분석</span>
+                <span class="figure">
+                  <img src="imgs/pub/dummy_film.png" alt>
+                </span>
+                <span class="figcaption">
+                  <strong>이형택과 함께하는 표핸드/백핸드 분석</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="classify">레슨</span>
+                <span class="figure">
+                  <img src="imgs/pub/dummy_film.png" alt>
+                </span>
+                <span class="figcaption">
+                  <strong>전미라의 쉽게 익히는 기 술의 흐름을 알아볼까요?</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="classify">경기분석</span>
+                <span class="figure">
+                  <img src="imgs/pub/dummy_film.png" alt>
+                </span>
+                <span class="figcaption">
+                  <strong>조은성의 리턴 기술의 집중 탐구</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="classify">레슨</span>
+                <span class="figure">
+                  <img src="imgs/pub/dummy_film.png" alt>
+                </span>
+                <span class="figcaption">
+                  <strong>유진선의 득점하기 좋은 서브 분석</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- E: film_list -->
+
+        </div>
+        <!-- E: ana_list -->
+
+        <!-- S: tap_list -->
+        <div class="tap_list">
+          <!-- S: match_record -->
+          <div class="match_record">
+            <h3 class="clearfix">경기기록실 <span class="ic_deco"><i class="fa fa-angle-right"></i></span></h3>
+            <p>궁금했던 경기 정보를<br>알기 힘들었다면?</p>
+            <span class="ic_deco ic_chart">
+              <i class="fa fa-bar-chart"></i>
+            </span>
+          </div>
+          <!-- E: match_record -->
+        </div>
+        <!-- E: tap_list -->
+
+        <!-- S: ban_md kk_mall -->
+        <div class="banner banner_md kk_mall">
+          <h3 class="clearfix">ㅋㅋ몰 <span class="ic_deco">바로가기<i class="fa fa-angle-right"></i></span></h3>
+          <span class="ad_img">
+            <img src="imgs/pub/dummy_ad_banner_md.png" alt>
+          </span>
+        </div>
+        <!-- E: ban_md kk_mall -->
+
+        <!-- S: notice_list -->
+        <div class="notice_list list">
+          <a href="#" class="btn_more">
+              <span>더보기</span>
+              <span class="ic_deco">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+            <ul>
+              <li class="list_tit">공지사항</li>
+              <li>
+                <span><b>[KATA]</b></span>
+                <span>KATA 유소년기금 현황</span>
+              </li>
+              <li>
+                <span><b>[KATA]</b></span>
+                <span>선수등급표(2016년 기준)</span>
+              </li>
+              <li>
+                <span><b>[스포츠다이어리]</b></span>
+                <span>2017.07.12 상임운영위원회 및 뭔가 개최 됨</span>
+              </li>
+            </ul>
+        </div>
+        <!-- E: notice_list -->
+
+        <!-- S: tennis_taps -->
+        <div class="tennis_taps">
+          <!-- S: tap_list -->
+          <div class="tap_list">
+            <!-- S: partner_tap -->
+            <div class="partner_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="imgs/main/ic_people@3x.png" alt width="16" height="16"></span>
+                  <span>파트너(pair)찾기</span>
+                </h3>
+                <p>대회 나갈 때 파트너가 없으세요?</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- E: partner_tap -->
+          </div>
+          <!-- E: tap_list -->
+            
+          <!-- S: tap_list -->
+          <div class="tap_list">
+            <!-- S: lesson_tap -->
+            <div class="lesson_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="imgs/main/ic_ball@3x.png" alt width="17" height="18"></span>
+                  <span>내 주변 레슨코트 찾기</span>
+                </h3>
+                <p>우리동네 코치 선생님을 찾고 싶어요.</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- E: lesson_tap -->
+          </div>
+          <!-- E: tap_list -->
+
+          <!-- S: tap_list -->
+          <div class="tap_list">
+            <!-- S: rally_tap -->
+            <div class="rally_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="imgs/main/ic_note@3x.png" alt width="17" height="18"></span>
+                  <span>난타(Rally) 모집</span>
+                </h3>
+                <p>함께 난타 치실 분을 찾습니다.</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- E: rally_tap -->
+          </div>
+          <!-- E: tap_list -->
+
+          <!-- S: tap_list -->
+          <div class="tap_list">
+            <!-- S: club_tap -->
+            <div class="club_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="imgs/main/ic_note@3x.png" alt width="17" height="18"></span>
+                  <span>동호회 소개</span>
+                </h3>
+                <p>우리 클럽 소개도 하고 친선 교류도 하세요.</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            <!-- E: club_tap -->
+          </div>
+          <!-- E: tap_list -->
+        </div>
+        <!-- E: tennis_taps -->
+
+        <!-- S: banner banner_md -->
+        <div class="banner banner_md">
+          <a href="#">
+            <img src="imgs/pub/dummy_ad_banner_md.png" alt>
+          </a>
+        </div>
+        <!-- E: banner banner_md -->
+
+      </div>
+      <!-- E: main -->
+
+
+      <!-- S: footer -->
+      <div class="footer">
+        <!-- S: powered -->
+        <div class="powered">
+          <h3>powered by</h3>
+          <ul>
+            <li><img src="imgs/pub/kata_logo@3x.png" alt="KATA Tennis" width="108"></li>
+          </ul>
+        </div>
+        <!-- E: powered -->
+      </div>
+      <!-- E: footer -->
+      </div>
+      <!-- E: part_main temp_1 module_list -->
+
+      <!-- S: module_list temp_2 -->
+      <div class="module_list temp_2">
+        <ul>
+          <li><img src="./imgs/template/media_list.jpg" alt></li>
+          <li><img src="./imgs/template/media_view.jpg" alt=""></li>
+          <li><img src="./imgs/template/ana_view.jpg" alt=""></li>
+        </ul>
+      </div>
+      <!-- E: module_list temp_2 -->
+
+      </div>
+      <!-- E: tab load_temp -->
+    </div>
+    <!-- E: container_body -->
+
+    <div class="lazy_spinner">
+      <img src="imgs/pub/loading.gif" alt="로딩중">
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

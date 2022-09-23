@@ -1,0 +1,25 @@
+/* 스코어 보드 */
+.scoreboard {background-color: #04101f;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 10px;}
+.scoreboard .table {margin-bottom: 0;}
+.scoreboard .table thead {border-top: none;border-bottom: none;}
+.scoreboard .table thead tr th {font-family: 'NotoKR-md';font-size: 13px;font-weight: normal;background: transparent;border-bottom: none;padding: 0;padding-bottom: 5px;}
+.scoreboard .table thead .now {color: #fbab00;}
+.scoreboard .team_a th {background-color: #003890;}
+.scoreboard .team_b th {background-color: #ff3c00;}
+.scoreboard .player {font-size: 13px;color: #fff;}
+.scoreboard .player span {display: block;line-height: 125%;margin-top: 0;}
+.scoreboard tbody th {border-right: 1px solid #333;}
+.scoreboard tbody td {background-color: #fff;border-right: 1px solid #333;}
+.scoreboard tbody tr th {vertical-align: middle;border-top: none;border-bottom: 1px solid #04101f;padding-top: 0;padding-bottom: 0;}
+.scoreboard tbody tr td {vertical-align: middle;border-top: none;border-bottom: 1px solid #04101f;padding: 0;}
+.scoreboard tbody tr:last-child th,
+.scoreboard tbody tr:last-child td {border-bottom: none;}
+.scoreboard tbody td:last-child {border-right: none;}
+.scoreboard tbody td {width: 35px;height: auto;}
+.scoreboard a {display: block;color: #000;padding: 0;}
+.scoreboard .table .btn {height: 40px;line-height: 35px;}
+.scoreboard .table a:hover,
+.scoreboard .table a:focus,
+.scoreboard .table a:active {color: inherit;}
+.scoreboard .table .now a {border: 3px solid #fbab00;border-radius: 0;}
+.scoreboard .table .win a {color: #ff5400;} /* 승자 표시 */

@@ -1,0 +1,200 @@
+/* 훈련일지 */
+#iframe {border: none;}
+.train {padding:0 0 50px; background:#edf0f4;}
+.train .top-icon-menu > ul { width:85%; margin: 0 auto;}
+.navyline-top-list {padding:10px; background:#fff; border-top:1px solid #4c6f8c; border-bottom:1px solid #ddd;}
+.navyline-top-list a:hover,
+.navyline-top-list a:focus,
+.navyline-top-list a:active {color: #fff;}
+.navyline-top-list label {font-size:0.84em; letter-spacing: -0.1em; margin-right:2%; margin-bottom: 0; line-height:30px;}
+.navyline-top-list select {/*position: relative;*/ vertical-align: middle; width: 76%;font-size: 0.95em; padding-left: 5px; letter-spacing: -0.07em; float:right; margin-top:-2px;}
+.sub.train .navyline-top-list select:after {position: absolute; top: 0; left: 0; content: ''; border-top: 6px solid #000; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: none;}
+
+ul.navyline-top-list {padding:0;/* margin-bottom:10px; */background:#fff; border-top:1px solid #4c6f8c; border-bottom:1px solid #ddd;}
+.navyline-top-list li {padding:0 10px; border-bottom:1px solid #ddd; line-height: 160%;}
+.navyline-top-list .list-info {font-size: 0.84em; padding-top:5px; padding-bottom: 5px;}
+.txt-disabled {color:#999999;}
+
+/* train-goal-list 훈련목표(중복선택가능)*/
+.train-goal-list {background:#fff; border-top:1px solid #4c6f8c;}
+.train-goal-list li {padding:3px 10px; border-bottom:1px solid #ddd;}
+.train-goal-list li label {font-size: .86em; margin-top:6px; margin-bottom:5px;}
+.train-goal-list li input {vertical-align:middle;}
+.train-goal-list li:nth-child(3) label {display:inline; margin-top:6px; margin-bottom:5px; letter-spacing: -1px;}
+
+/* train-header 훈련참석 체크시 참고하세요 */
+.train-header {overflow: hidden; display: block; padding: 0 10px; height: 38px; /* font-size: 18px; */ background: #6293ba;}
+.train-header h3 {float:left; color:#fff; line-height:38px;}
+.train-header .icon {float:right; padding: 6px 7px; margin-top:6px; color: #fff; line-height: 10px; font-size:0.85em; text-align: center; border: 2px solid #fff; border-radius: 50%; background-color:none;}
+
+/* btn-select 훈련참석, 훈련불참 */
+.btn-select {margin:10px 0;text-align:center;background:#fff;font-size: 0.85em;font-family:'nanumGothicB';}
+.btn-select li {padding:5px 0; color:#666; border:1px solid #c0c0c0;}
+.btn-select li:last-child {border-left:none;}
+.btn-select li a:hover,
+.btn-select li a:focus,
+.btn-select li a:active {color: #666;}
+.btn-select li.on {color:#fff; background:#164369; border:1px solid #0a2d4a;}
+.btn-select li.on a:hover,
+.btn-select li.on a:focus,
+.btn-select li.on a:active {color: #fff;}
+
+/* train-select 부상중, 일부참석 */
+.train-select {width:100% !important; margin-bottom:10px;}
+
+/* btn-or-pop 부상부위 선택 */
+.btn-or-pop {color:#fff; text-align:center; font-family:"NanumGothicB"; height:42px; line-height:42px; background:#ff7200; border-radius:3px;}
+.train-team-manager {display:flex;}
+.train-team-manager strong {width:60%; color:#ff7200; vertical-align:middle; height:42px; line-height:42px;}
+.train-team-manager .btn-or-pop {width:40%;}
+
+/* 공식훈련 내용 official-train */
+.public-train-tit h2 {background-color: #164369; color: #fff; font-size: 0.95em;}
+.public-train-tit .add-train-wrap {background-color: #fff; padding-top: 10px; padding-bottom: 10px; /* text-align: center; */}
+.public-train-tit .add-train-wrap p {display: inline-block; font-size: 0.8em; letter-spacing: -0.08em; float: left; padding-top: 4px; padding-left: 10px;}
+.public-train-tit .add-train-wrap a {display: inline-block; font-size: .72em; border: 1px solid #123651; border-radius: 4px; color: #123651; padding: 3px; float: right; margin-right: 10px;}
+.public-train-tit .add-train-wrap a img {width: 15px; height: 15px; margin-top: -2px;}
+
+.official-train {overflow:hidden; padding:10px 10px 2px 0; padding-top: 0;}
+.official-train h2 {float:left;}
+.official-train a { float:right; margin-left:10px; margin-top:3px; vertical-align:middle;}
+.official-train a.del-train-btn { width: 78px; text-align: center; background-color: #8ba6b9; color: #eee; font-size: 0.8em; border-radius: 20px; padding: 3px; font-family:'NanumGothicB';}
+/* #official-train-wrap2 .del-train-btn {display: none;} */
+#official-train-wrap1 .del-train-btn {width: 80px; margin-left: 0; margin-right: 5px;}
+/* #official-train-P1 {margin-left: 2px;} */
+/* #official-train-P1 {display: none; width: 85px; height: 35px; line-height: 28px; overflow: hidden;} */
+/* #official-train-P4 {display: none;} */
+#official-train-wrap .official-train-wrap {border-bottom: 1px solid #bbb; padding-bottom:0; padding-top: 10px;}
+#official-train-wrap .official-train-wrap .btn-center {padding-bottom:15px;}
+.official-train a.del-train-btn .fa {padding-right: 3px; vertical-align:middle;}
+.official-train .btn-navyline {margin-top:0; padding:3px 5px; color:#333; font-family:"NanumGothicB"; border:1px solid #123651; border-radius:3px; background:#fff; font-size: 0.78em;}
+#official-train-wrap .btn-navyline {display: block; width: 60%; margin: 0 auto;padding:7px 5px; color:#333; font-family:"NanumGothicB"; border:1px solid #123651; border-radius:3px; background:#fff; font-size: 0.85em; margin-bottom: 12px; margin-top: 10px; text-align:center;}
+#official-train-wrap .btn-navyline:first-child {margin-top: 13px;}
+/* .official-train-wrap.on:last-of-type .btn-navyline {display: block;} */
+.icon-fa-cog img {width:20px;}
+
+/* navy-top-table 훈련평가 */
+.navy-top-table {width:100%; margin-bottom:10px; background:#fff;}
+.navy-top-table thead th {color:#fff;text-align:center;border-right:1px solid #ddd;border-bottom:1px solid #ddd;background:#123651;font-size: 0.75em;}
+.navy-top-table tbody td {font-size: .8em;padding:5px 10px;text-align:center;vertical-align:middle;border-right:1px solid #ddd;border-bottom:1px solid #ddd;}
+.navy-top-table tbody td:first-child {text-align:left;text-indent: -12px;padding-left: 30px;padding-right: 0;width: 65%;line-height: 1.4em;}
+.navy-top-table tbody tr:nth-child(odd) {background:#f3f3f3;}
+.navy-top-table tbody td label {padding:0; margin:0;}
+
+/* 공식훈련 내용 */
+.bg-navy {padding:10px; background:#123651;}
+.official-train-select {overflow:hidden; padding:10px 10px 5px; background:#164369;}
+.official-train-select li:nth-child(odd) {float:left; width:68%; margin-right:2%; padding:0 0 5px;}
+.official-train-select li:nth-child(even) {float:left; width:30%; padding:0 0 5px;}
+.official-train-wrap .official-train-select li { width: 100%; }
+.official-train-select li.train-col-2 {margin-right: 0;}
+.official-train-select li.train-col-2 select,
+.official-train-select li.train-col-2 .btn-gray {float: left; width: 49%;}
+.official-train-select li.train-col-2 select {margin-right: 2%;}
+.official-train-select li.train-col-2 .btn-gray {float: left;}
+.official-train-select li.train-col-3 select {width: 32%; float: left;}
+.official-train-select li.train-col-3 select:nth-child(2) {margin-right: 2%;}
+.official-train-select li.train-time p {display: inline-block; font-family: 'NanumGothicB'; color: #fff; height: 33px; line-height: 33px; text-align: center; width: 27%; border-radius: 4px; margin-right: 1%; float: left;}
+.official-train-select li.train-time select {width: 35%;}
+.official-train-select li select {vertical-align:top; line-height:100%} 
+.official-train-select li select.lock {-webkit-appearance: none; appearance: none; background-color: #d4d4d4; color: #555;}
+.official-train-select li .btn-gray {margin-top:0; width:100%;}
+
+/* btn-train-list-wrap 훈련 종류 선택 */
+.btn-train-list-wrap {padding:0 10px;}
+.btn-train-list {overflow:hidden; width:100%; margin-bottom:10px;  margin-top:10px;}
+.btn-train-list li {float:left; width:33.3%; font-family:"NanumGothicB"; font-size:14px; color:#666; height:50px; line-height:50px; text-align:center; border:1px solid #edf0f4; background:#fff;}
+.btn-train-list li.on {color:#40678a; border:1px solid #40678a;}
+.btn-train-list li span {font-size:12px;}
+.btn-train-list li.row-2 {line-height:1; padding:10px 0;}
+
+/* train-select-list 선택한 공식훈련 */
+.train-select-list {/*margin-top:10px; margin-left:10px; margin-right:10px; */padding:10px;/*background:#fff;*/font-size: 0.85em;font-family: 'nanumGothicB'; background:#fff;}
+.train-select-list a.lock {color: #666;}
+.train-select-list a.lock span {position: relative; width: 0;height: 0; overflow: hidden; margin-right: 10px;}
+.train-select-list a.lock span:after {position: absolute; top: 42%; left: 0px; content: ''; width: 5px; height: 5px; background-color: #666; border-radius: 50%;}
+.train-select-list.bg-gray {background:#edf0f4;}
+.train-select-list .btn-del-x {display:inline-block;color:#fff;padding: 3px 5px 5px;font-size: 11px;border-radius:50%;background:#999999;line-height: 0.8em;/* vertical-align: middle; */}
+
+/* btn-or-select 선택완료 */
+.btn-or-select {margin:0 auto;display:inline-block;color:#fff;padding:0 20px;text-align:center;font-family:"NanumGothicB";/* height:42px; */line-height: 38px;background:#ff7200;border-radius:3px;}
+.btn-center.pb0 {padding-bottom:0;}
+
+/* 개인훈련 */
+.tit-individual-train {overflow:hidden; width:100%; display:block; padding:0 10px 0 10px; height:38px; font-size:18px; line-height:38px; background:#ff7200;}
+.tit-individual-train h2 {/*float:left;*/ color:#fff; height:auto; padding-left:0; margin-bottom:0;}
+.tit-individual-train .icon {float: right; /*margin-top:6px;*/ padding: 6px 7px; margin-top:-4px; color: #fff; line-height: 10px; font-size:0.85em; text-align: center; border: 2px solid #fff; border-radius: 50%; background-color:none;}
+.tit-individual-train .icon .caret {float: none; margin-left: 0; transition: all .3s ease;}
+.tit-individual-train.on .caret {transform: rotate(180deg);}
+.tit-individual-train span {float:left;}
+.tit-individual-train a {float:right;}
+.tit-individual-train .more-a,
+.tit-individual-train .close-a {padding: 6px 7px; color: #fff; font-size: 10px; line-height: 10px; border: 2px solid #fff; border-radius: 50%; text-align: center;}
+.bg-or {padding:0 10px 10px 10px; background:#ff7200;}
+
+.train-individual-header {overflow: hidden; display: block; padding: 0 10px 0 0; height: 38px; /* font-size: 18px; */ background:#ff7200;}
+.train-individual-header h2 {float:left; color:#fff;}
+.train-individual-header .icon {float:right; padding: 6px 7px; margin-top:6px; color: #fff; line-height: 10px; font-size:0.85em; text-align: center; border: 2px solid #fff; border-radius: 50%; background-color:none;}
+
+/* memory 메모리 */
+.memory {border-top:1px solid #4c6f8c; margin-bottom:20px; background:#fff;}
+.memory li {display:flex; padding:10px 10px 5px; margin:0; border-bottom:1px solid #ddd;}
+.memory li:nth-child(odd) {background:#f3f3f3;}
+.memory li a:first-child {position: relative; width:35%; height: 120px; line-height: 108px;}
+.memory li p:last-child {width:65%; height: 110px; margin:0; padding:0;}
+.memory li a:first-child span[class*="icon-"] {position: relative; top: 0px; z-index: 100; font-size: 22px; color: #ddd;}
+.memory li a:first-child span[class*="icon-on-"] {color: #ffd200;}
+.memory li a:first-child input {position: absolute; top: 45%; left: 8px; z-index: 10; width:0px; height: 0px; clip: rect(0,0,0,0); /*margin: -1px; clip: rect(0,0,0,0);*/}
+.memory li a:hover, .memory li a:active, .memory li a:focus {color: #333;}
+.memory li textarea,
+.memory li input {font-size: .84em; padding:1%; width: 100%; height: 100%; color:#333; border:1px solid #ddd; border-radius:3px;}
+.memory li label {padding:0;font-size: 0.93em;}
+.icon-favorite {color:#d4d4d4;}
+.icon-favorite.on {color:#ffd200;}
+
+/* tab type3 */
+.tab-menu.type3 {display: flex;text-align: center;}
+.tab-menu.type3 li {width: 50%; color:#fff; font-size: 18px; background: #a8acb0; border-top:3px solid #a8acb0; border-left:1px solid #a8acb0; border-right:1px solid #a8acb0; border-bottom:0;}
+.tab-menu.type3 li.on {width: 50%; color:#164369; font-size: 18px; background: #a8acb0; border-top: 3px solid #164369; border-left:1px solid #a8acb0; border-right:1px solid #a8acb0; border-bottom:0; background:#fff;}
+.tab-menu.type3 li.on a:hover,
+.tab-menu.type3 li.on a:focus,
+.tab-menu.type3 li.on a:active {color: #164369;}
+
+.tab-menu.type3 li a:hover,
+.tab-menu.type3 li a:focus,
+.tab-menu.type3 li a:active {color: #fff;}
+
+/* 달력 편집 */
+.ui-datepicker-inline.ui-datepicker {position: absolute; top: 36px; left: 0; z-index: 100; width: 100%;}
+
+/* 훈련일지 부상부위 모달 */
+#injury-chk .modal-dialog {width: 98%; margin-left: auto; margin-right: auto;}
+#injury-chk .modal-header {font-family:"nanumGothicB"; background-color: #3f505d; color: #fff; text-align: center; padding:10px 5px;}
+#injury-chk .modal-header .close {position: absolute; top: 11px; right: 10px; width: 20px; opacity: 1; color:#fff;}
+#injury-chk .tab-menu a:hover,
+#injury-chk .tab-menu a:focus,
+#injury-chk .tab-menu a:active {color: #fff;}
+#injury-chk .tab-menu li.on a:hover,
+#injury-chk .tab-menu li.on a:focus,
+#injury-chk .tab-menu li.on a:active {color: #164369;}
+
+#injury-chk .left_label input,
+#injury-chk .right_label input {vertical-align: middle; margin-top: 0;}
+#injury-chk .left_label span,
+#injury-chk .right_label span {color: #aaa;}
+#injury-chk .left_label input,
+#injury-chk .right_label input {width: 18px; height: 18px; margin: 0; overflow: auto; visibility: visible;}
+#injury-chk .table_02 .body-img {top: -2px}
+#ttd_sd003021,
+#ttd_sd003020,
+#ttd_sd00302021 {display: none; position: absolute; left: 20%; width: 60%;}
+#ttd_sd003020 {display: table-cell!important;}
+.official-train-wrap h2 {padding:10px 0 10px 10px;}
+.official-train-wrap .individual-train-item[class*="col"] {float:none;}
+.individual-train-item .official-train-select {background:#ffd9bb;}
+.individual-train-item .btn-center a {width:28%;}
+.ipt-injury .dist-cont .table_01 .body-img {top: -15px;}
+.ipt-injury .modal-footer {text-align: center;}
+.ipt-injury .modal-footer .btn {width: 47%; height: 40px; line-height: 40px; color: #fff; padding-top: 0; padding-bottom: 0;}
+.ipt-injury .modal-footer .btn-cancel {background-color: #999;}
+.ipt-injury .modal-footer .btn-save {background-color: #364354;}

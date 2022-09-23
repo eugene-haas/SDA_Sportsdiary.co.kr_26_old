@@ -1,0 +1,235 @@
+/* 마이페이지 > 메뉴 */
+.mypage {height: 100%;}
+.user-img-wrap {padding:17px 15px 20px; font-size:18px; color:#222; background:#eaf0f5;}
+.user-img-wrap p {display: inline-block;vertical-align: middle;font-size: 0.92em; font-family:'NotoKR-md';margin-top: 6px;margin-left: 4px;}
+.user-img-wrap p span {display: block;}
+.user-img-wrap p .player_belong {font-family:'NotoKR-dl'; font-size: 0.86em;color: #005895; max-width: 210px; line-height:130%; margin-top:3px;}
+.user-img-wrap p .player_belong .affiliation {}
+.user-img {display: inline-block;position: relative;vertical-align: middle;text-align: center; width: 61px; height: 61px; line-height: 61px; border:1px solid #035a96; border-radius: 50%; overflow: hidden;}
+.user-img img {min-width: 61px; min-height: 61px; line-height: 61px;margin-top: calc(-50% + 30px);}
+.user-img-wrap .prof_img {display: inline-block;position: relative;}
+.user-img-wrap .prof_img .img_deco {display: inline-block;position: absolute;bottom: -5px; right: 0px;width: 25px;height: 25px;}
+.mypage-menu {background:#eaf0f5;border-top: 1px solid #bfd0df;padding-top: 15px;padding-bottom: 15px;padding-left: 20px;padding-right: 20px;}
+.mypage-menu li {float: left; width: 33%;}
+.mypage-menu li a {font-size: 1em;}
+.mypage-menu li p {display: block;text-align: center;width: 100%;}
+.mypage-menu li p:first-child {width: auto;}
+.mypage-menu li p:first-child img {width: auto;height: 32px;}
+.mypage-menu li p:last-child {font-family: 'NotoKR-dl';font-size: 0.93em;padding-top: 6px;}
+.mypage-menu li p:last-child strong {letter-spacing: -0.13em;}
+.mypage-menu li p strong { display:block; font-size:0.95em; line-height: 1.24em; padding-bottom:3px;}
+.mypage-menu li p span { display:block; color:#666; font-size: 0.81em;  letter-spacing: -0.12em; font-family:'NanumGothic'; line-height:1.4em;}
+
+.mypage .my_list {background-color: #fff;padding-top: 15px;padding-bottom: 15px;margin-left: 20px;margin-right: 20px;}
+.mypage .my_list li {width: 100%; padding-top:8px; padding-bottom:8px; border-bottom:1px dotted #ddd;}
+.mypage .my_list li:last-child {border-bottom:none;}
+.mypage .my_list li:after {display: block;content: '';clear: both;}
+.mypage .my_list .txt {display: inline-block;vertical-align: middle;font-family: 'NotoKR';font-size: 0.95em;color: #333; padding-left:6px;}
+.mypage .my_list .ic_more {display: inline-block;width: 8px;height: 14px;float: right;}
+.mypage .my_list li a {/*font-size: 1.14em;*/}
+
+.mypage .out_list {border-top: 1px solid #bbb;margin-left: 20px;margin-right: 20px;padding-top: 15px;}
+.mypage .out_list .txt {font-size:0.9em;}
+.mypage .out_list li:last-child {border-bottom:none;}
+.mypage .out_list li {font-family: 'NotoKR'; color: #333; padding-top:8px; padding-bottom: 8px; border-bottom:1px dotted #ddd;}
+.mypage .out_list li .ic_deco {display: inline-block;vertical-align: middle;margin-right: 3px; font-size:15px;}
+.mypage .out_list li .ic_deco .fas {color: #8e8e93;}
+.mypage .my_list .ic_deco {color:#666; font-size:15px;}
+.mypage .my_list .ic_deco .fa-plus {background:none; padding:0; color:#666;}
+.mypage .out_list li .ic_deco .fa-sign-out {font-size:16px;}
+.mypage .my_list li .img_deco {display:inline-block; vertical-align: middle; width:20px; height:20px;}
+ 
+/* .modal.change_account {z-index: 20000;}
+.modal.change_account .modal-content {font-family: 'NotoKR';border-radius: 0;}
+.modal.change_account .modal-header {text-align: center;border-bottom: none;padding-bottom: 20px;}
+.modal.change_account .modal-header h2 {font-family:'NotoKR-md'; font-size: 1.13em; color: #005895; padding-bottom: 10px;}
+.modal.change_account .modal-header h2 span {display: inline-block;vertical-align: middle;}
+.modal.change_account .modal-header h2 .ic_deco {font-size: 1.25em;margin-right: 2px;}
+.modal.change_account .modal-header h2 .ic_deco .fa {color: #005895;}
+.modal.change_account .modal-header p {line-height: 125%}
+.modal.change_account .modal-header p span {display: block;}
+.modal.change_account .modal-header .now {font-size: 0.80em;color: #999;}
+.modal.change_account .modal-header .belong {font-size: 0.90em;color: #005895;}
+.modal.change_account .modal-body {border-bottom: none;padding-top: 0px;padding-left: 20px;padding-right: 20px;}
+
+.modal.change_account .count_list {border-top: 1px solid #ddd;}
+.modal.change_account .count_list li {border-bottom: none;padding-bottom: 10px; padding-top:10px; border-bottom:1px solid #ddd;}
+.modal.change_account .count_list div {display: inline-block;vertical-align: middle;}
+.modal.change_account .count_list .cont {width: 73%;}
+.modal.change_account .count_list .ctr_btn {text-align: center;width: 25%; height: 23px; margin:0; padding:0; text-align:right;}
+.modal.change_account .count_list .ctr_btn label {margin:0; padding:0;}
+.modal.change_account .count_list .ctr_btn input {visibility: hidden;width: 0;height: 0;margin: -1px;border: none;}
+.modal.change_account .sw_box {display: inline-block; position: relative; background-color: #c6c6c6;border-radius: 20px;width: 45px;height: 23px;-webkit-box-shadow: inset 1px 2px 4px #666;box-shadow: inset 1px 2px 4px #666;transition: all .3s ease;}
+.modal.change_account .sw_box:after {position: absolute; top: 2px;left: 2px;right: auto;content: '';z-index: 2000;background-color: #fff;border-radius: 50%;width: 19px;height: 19px;margin-left: 0;transition: all .3s ease;}
+.modal.change_account .cont {font-family: 'NotoKR';font-size: 0.93em;color: #666;letter-spacing: -0.025em;}
+.modal.change_account .on .cont {color: #005895;}
+.modal.change_account .on .sw_box {background-color: #0067a7;-webkit-box-shadow: inset 1px 2px 4px #00436D;box-shadow: inset 1px 2px 4px #00436D;}
+.modal.change_account .on .sw_box:after {margin-left: 50%;transition: all .3s ease ;}
+.modal.change_account .join_date {font-size: 0.82em;color: #999;}
+
+.modal.change_account .make_sub {text-align: center;color: #005895; margin-top:20px; padding-bottom: 15px;}
+.modal.change_account .make_sub a {display: inline-block;font-size: 0.92em;letter-spacing: -0.05em;border: 1px solid #bbb;border-radius: 20px;height: 30px;line-height: 30px;padding-top: 0;padding-bottom: 0;padding-left: 10px;padding-right: 10px;}
+.modal.change_account .make_sub span {display: inline-block;vertical-align: middle;line-height: 1;}
+.modal.change_account .make_sub .ic_deco {margin-right: 2px;}
+.modal.change_account .make_sub .txt {font-family: 'NotoKR-dl';font-size: 0.93em;margin-right: 10px;}
+.modal.change_account .make_sub .img_deco {position: relative;top:0px;width: 6px;height: 9px;line-height: 9px;}
+
+.modal.change_account .modal-footer {border-top: none;padding: 0;}
+.modal.change_account .modal-footer .modal-btn li {text-align: center;float: left;width: 50%;}
+.modal.change_account .modal-footer .btn-cancel {background-color: #ddd;color: #333;}
+.modal.change_account .modal-footer .btn {border-radius: 0;width: 100%;height: 40px;line-height: 40px;padding-top: 0;padding-bottom: 0;}
+.modal.change_account .cont p {font-size:13px; letter-spacing:-0.2px;}
+ */
+
+
+
+/* 마이페이지 > 내정보관리 */
+.join-form {position:relative;}
+.join-form .uniq_n p:first-child .tit-box {background-color: #ff7200; color: #fff; padding: 8px;}
+.join-form p label:first-child #LeaderType {margin-left:0;}
+.join-form p label #LeaderType {margin-left:6px;}
+.join-form li p.belong {width:68%;}
+.join-form li p.belong label {width:100%;}
+.join-form .uniq_n p:nth-child(2) {background-color: #fff; color: #ff7200;}
+.join-form .uniq_n p.un_iden .tit-box {background-color: #fff; color: #000;}
+.join-form .uniq_n p.un_iden a {display: inline-block; background-color: #999; color: #fff; font-size: 1em; font-weight: bold; padding-left: 15px; padding-right: 15px; border-radius: 4px; height: 35px; line-height: 35px;}
+.join-form .regist_a .btn {padding-top: 0; padding-bottom: 0;}
+.join-form .srch_res_list {display: none;position: absolute;background-color: #fff;border: 1px solid #bbb;width: 65%;height: 110px; overflow-y: scroll; z-index: 100; padding: 15px; padding-top: 10px; top:93px; right:10px; line-height:26px;}
+.join-form .srch_res_list li {border-bottom:none;}
+.mypage h2 {font-size: 0.9em;background-color: #edf0f4; color: #164369; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;}
+.h30 {height: 30px;}
+.myinfo {width:100%; padding:13px 0 11px; letter-spacing: -1px; border-top:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2; background:#fff;}
+.myinfo .img-myinfo {text-align: center; float:left;margin: 6px 5%;width: 80px; height: 80px; line-height: 80px; border:1px solid #c3c3c3;border-radius: 50%;overflow: hidden;}
+.myinfo .img-myinfo img {min-width: 80px; min-height: 80px; line-height: 78px; margin-top: calc(-50% + 35px);}
+.txt-myinfo {width: 60%;float:left;font-size: 0.9em;margin-bottom:10px;line-height: 125%;margin-top: 9px;}
+.txt-myinfo strong {display:block; font-size:1.1em; padding-bottom: 4px;}
+.btn-myinfo {margin-top:10px;}
+.txt-myinfo .btn-gray, .txt-myinfo .btn-skyblue {font-size: 0.92em;}
+.txt-myinfo-number {font-size: 0.78em; line-height: 1.4em; padding:0 10px 7px; color:#ff7200;}
+.sub.mypage .join-form li p.belong {width:65%;}
+
+
+/* 마이페이지 > 내정보관리 > 선수훈련 데이터 열람 동의 */
+.parent-data-wrap {padding:10px; background:#edf0f4;}
+.parent-data-wrap .tit-parent-data {overflow:hidden; background:#ff7200;}
+.parent-data-wrap .tit-parent-data h2 {color:#fff;}
+.parent-data-wrap .tit-parent-data .more-a,
+.parent-data-wrap .tit-parent-data .close-a {float:right; margin:5px 10px 0 0; padding: 6px 7px; color: #fff; font-size: 10px; line-height: 10px; border: 2px solid #fff; border-radius: 50%; text-align: center;}
+.parent-data {padding:10px; margin-bottom:10px; background:#fff;}
+.parent-data h3 {padding-left:10px; padding-bottom: 5px; font-size: 0.88em;}
+.parent-data h3:nth-child(4) {margin-top: 15px; padding-bottom: 0;}
+.parent-data h3.tit-manager {padding-top:10px; border-top:1px solid #ccc;  background-position: 0 15px;}
+.parent-data ul {margin-bottom:5px;}
+.parent-data li {display:flex; padding-bottom:5px;}
+.parent-data li p {font-size: 0.81em; width:60%; display: inline-block;}
+.parent-data li p:last-child {width: 37%; display:inline-block; text-align:center; color:#fff; background:#999; border-radius:3px; font-size: 0.75em;}
+.parent-data .graybox {padding:10px; background:#edf0f4; font-size: 0.75em; line-height: 1.5em;}
+.parent-data .graybox span {display:block; color:#ff7200;}
+.parent-data p.data-cut {background:#2a3c4a; font-size:0.9em; font-family:"NanumGothicB"; padding-left:10px; padding-top:2px; padding-bottom:2px; color:#fff; margin-top:10px; margin-bottom:10px;}
+.parent-data .cut li {font-size:0.82em; line-height:18px;}
+.parent-data .cut li .point {color:#ff7200; font-size:0.96em; font-family:"NanumGothicB";}
+.parent-data span {color:#ff7200; font-size:0.85em;}
+
+.parent-data-wrap .fold {width: 100%;}
+.parent-data-wrap h2 .icon {margin-top:-2px; float: right; border: 2px solid #fff; border-radius: 50%; width: 20px; height: 20px; line-height: 20px; text-align: center;}
+.parent-data-wrap .caret {margin-top: -3px; margin-left: 0px; transition: all .3s cubic-bezier(0.29,-0.55, 0.62, 1.93);}
+.parent-data-wrap .on .caret {transform: rotate(180deg);}
+.sub.mypage .btn-center {margin-top: 10px; padding-bottom: 60px;padding-left: 10px;padding-right: 10px;}
+.sub.mypage .btn-center a.btn-left:hover,
+.sub.mypage .btn-center a.btn-left:focus,
+.sub.mypage .btn-center a.btn-left:active {color: #3f505d;}
+.sub.mypage .btn-center a.btn-right:hover,
+.sub.mypage .btn-center a.btn-right:focus,
+.sub.mypage .btn-center a.btn-right:active {color: #fff;}
+
+/* 마이페이지 > 비밀번호 변경 */
+.top-list {text-indent: -6px; padding:18px 15px 13px; font-size: .94em; color:#fff; background:#3f505d;}
+.top-list li { padding:0 0 5px; letter-spacing: -0.05em; font-size: 0.97em; font-family: 'NotoKR-dl'; line-height: 1.9em; color:#3497dc;}
+.top-list li .txt-or {color:#666; font-family:'NotoKR-dl'; font-size:1em; font-weight: normal;}
+.top-list li span { display:block; color:#ff7e00; padding-left:5px;}
+
+.pw-modify { font-size:0.85em; margin:10px 0; background:#fff; border-top:1px solid #d4d4d4;}
+.pw-modify li {overflow:hidden; padding:0 10px; border-bottom:1px solid #d4d4d4; font-size: 16px;}
+.pw-modify p {float:left; vertical-align:middle; letter-spacing: -0.5px; padding:5px 0; line-height:38px; color:#333; font-weight:bold; font-size: 0.8em;}
+.pw-modify p:first-child {width:44%;}
+.pw-modify p:last-child {width:56%;}
+
+/* 마이페이지 > 소속변경 */
+.my-school-list {margin:10px; border:1px solid #d2d2d2; border-bottom:none; background:#fff; font-family: 'NanumGothicB';}
+.my-school-list li {font-size: 0.95em; overflow:hidden; width:100%; padding:4px 0; border-bottom:1px solid #d2d2d2;}
+.my-school-list li p { padding:0 10px; height:38px; line-height:38px; float: right;}
+.my-school-list li:last-child a { width: 80px; padding: 0 10px; letter-spacing: -0.02em;}
+.my-school-list li:last-child a:hover,
+.my-school-list li:last-child a:focus,
+.my-school-list li:last-child a:active {color: #fff; text-decoration: none;}
+.my-school-list li p:first-child { float:left;}
+.my-school-list li p:first-child .icon-now {margin-left: 5px; letter-spacing: -0.02em; padding: 0 6px;}
+.my-school-list li p:last-child { float:right; color:#999; font-size: 12px; letter-spacing: -1px;}
+
+/* 마이페이지 > 연습상대 관리*/
+.rival-list-wrap { margin:10px 10px 0 10px; padding:0 0 20px;}
+.rival-list {margin-top:20px; border:1px solid #d2d2d2; border-bottom:none; background:#fff;}
+.rival-list li {overflow:hidden; width:100%; padding:8px 0; font-size:0.85em; font-family: 'NanumGothicB'; /*height:38px;*/ /*line-height:38px;*/ border-bottom:1px solid #d2d2d2;}
+.rival-list li p:nth-child(1) {float:left; width:90%; padding-left:4%;}
+.rival-list li p:nth-child(2) {float:left; width:4%; padding:0 2%;}
+.rival-name {margin-right:1px;}
+.rival-list li p img {width:10px;}
+
+/* 마이페이지 > 연습상대 관리 > 팝업 */
+.rival-check-list {overflow:hidden; width:100%;}
+.rival-check-list li {float:left; width:50%; margin-bottom: 8px;}
+.rival-select-list {margin-top:10px; padding:10px 0; border-top:1px solid #ddd;}
+.txt-gray {width:96%; padding:2%; border:1px solid #d2d2d2; border-radius:3px; background:#f3f3f3;}
+
+/* 마이페이지 > 훈련종류 항목관리 */
+.tab-menu.type2 {display:flex; text-align:center;}
+.tab-menu.type2 li {width:50%;color:#85929c; font-size:1em; background:#dbe5f3; border-bottom:3px solid #dbe5f3;}
+.tab-menu.type2 li a {color:#85929c; display:block; padding:10px 0 7px 0; width:100%;}
+.tab-menu.type2 li.on {color:#fff; background:#26577f; border-bottom:3px solid #26577f; font-family: 'NanumGothicB';}
+.tab-menu.type2 li.on a {color: #fff; text-decoration: none;}
+.tabc.type2 { padding:0;}
+
+.training-add {padding:10px; background:#26577f;}
+.training-add input {width:80%; height:30px; border:1px solid #b4b4b4; border-radius:3px; color: #000; vertical-align:top; line-height:100%;}
+
+.training-add-list li {display:flex; padding: 7px 10px 6px 10px; border-bottom:1px solid #d4d4d4; background:#fff;}
+.training-add-list li p {width:68%; font-size:0.85em; margin-right:1%; line-height: 2em; font-family: 'NanumGothicB';}
+.training-add-list li a {margin:0 1% 0 0; width:15%; text-align: center; font-family: 'NanumGothicB'; font-size: 0.82em; line-height: 2.4em; height: 33px;}
+
+.training-fix-list li {padding:10px; color:#888; font-size:0.85em; border-bottom:1px solid #d4d4d4; background:#f2f2f2; font-family: 'NanumGothicB';}
+
+#confirm-del .modal-txt {font-size: 1.02em;text-align: center; margin-top:30px; margin-bottom:20px; font-family:"NanumGothicB";}
+#confirm-del .btn-center {padding-bottom:20px;}
+#confirm-del .btn-center a {padding:10px 15px; font-family:"NanumGothicB";}
+#confirm-del .btn-center a:first-child {padding:9px 13px;}
+#confirm-del .close,
+#confirm-del .close span {font-size:28px; color:#666; opacity:1;}
+.training-add-list li a:hover,
+.training-add-list li a:focus,
+.training-add-list li a:active {color: #fff;}
+
+#import-number .modal-header .close {top: 10px;}
+
+.confirm-modal .modal-txt-wrap.player-result .player-number {text-align: left; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; padding-top: 20px; margin-top: 20px; padding-bottom: 20px; margin-bottom: 10px;}
+.confirm-modal .modal-txt-wrap.player-result .player-number p {display: inline-block; color: #333;}
+.confirm-modal .modal-txt-wrap.player-result .player-number p.player-result-number,
+#import-number.confirm-modal .modal-txt-wrap.player-result .player-number p.player-result-no {width: 100%; margin-top: 10px;}
+#import-number.confirm-modal .modal-txt-wrap.player-result .player-number p.player-result-no {background: none; border: none;}
+.confirm-modal .modal-txt-wrap.player-result .player-number p:last-child {background-color: #e2e2e2; color: #888; border: 1px solid #b4b4b4; border-radius: 3px; width: 73%; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;}
+#import-number.confirm-modal .modal-footer {padding: 10px;}
+#import-number.confirm-modal .modal-footer .btn-modal-close {width: 42%; padding-top: 0.6em; padding-bottom: 0.6em; background-color: #999;}
+
+/* 마이페이지 > 내 정보 관리 */
+.mypage .warn-pha {font-size: 0.84em; font-weight: bold; letter-spacing: -0.075em; line-height: 150%; padding: 0 12px; }
+
+/* 마이페이지 > 국가대표 등록 모달 */
+.belong-change .modal-header .close {top: 8px;}
+.belong-change .join-form {border-bottom: 1px solid #d4d4d4; margin-top: 20px; padding-top: 10px; padding-bottom: 10px;}
+.belong-change .join-form p:first-child {text-align: left;}
+.belong-change .join-form li:first-child p:nth-child(2) input {width: 68%;}
+.belong-change .join-form li:last-child {border-bottom: none;}
+.belong-change .modal-footer .btn {width: 42%; padding: 8px 12px;}
+
+/* 자주하는 질문 */
+.top-list.top-faq .txt-side {color:#fff;}
+.panel-default a.panel-title {font-family:'NotoKR-dl'; letter-spacing:-0.3px; background:#fff !important;} 

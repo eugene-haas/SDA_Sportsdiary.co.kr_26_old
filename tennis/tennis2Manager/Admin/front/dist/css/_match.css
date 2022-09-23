@@ -1,0 +1,260 @@
+/**
+ * S: match_list 대회참가 
+ */
+/* 검색 영역 */
+.match_list {font-family:"NanumBarunGothic";}
+.match_list .srch_box {margin-top: 10px;}
+.main .srch_box li {height: 30px; line-height: 30px; margin-right: 10px; float: left;}
+.main .srch_box li > * {vertical-align: middle; width: 100%;}
+.main .srch_box li:first-child {font-size: 14px; color: #333; margin-top: 1px;}
+.main .srch_box li:nth-child(2) {width: 160px; margin-right: 6px;}
+.main .srch_box li:last-child {margin-right: 0;}
+.main .srch_box select {border-color: #ccc;width: 127px;height: 34px;line-height: 34px;}
+.main .srch_box .btn-srch {background-color: #0085d3; color: #fff; border-radius: 0; height: 34px; line-height: 35px; margin-left: 10px; padding: 0 20px;}
+
+.main {padding-top: 20px;} /* header와 상단 간격 */
+/* 대회신청 리스트 */
+.match_board {padding-top: 20px;}
+.match_board .redy {color: #d8261c;}
+.match_board .table {border: 1px solid #ccc;}
+.match_board .table thead th {font-family:"NanumBarunGothic"; font-size: 15px; font-weight:normal; text-align: center; background-color: #6f8294; color: #fff; border-top: 1px solid #ccc; border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: none; padding-top: 8px; padding-bottom: 8px;}
+tbody#list tr:nth-of-type(odd) {background-color: #fff;}
+
+.match_board .table tbody td {font-size: 14px; text-align: center; vertical-align: middle; border-right: 1px solid #ddd; padding-top: 8px; padding-bottom: 8px; color:#666;}
+.match_board .table tbody td:last-child {border-right: none; width: 80px; padding: 0;}
+.match_board .table tbody td .btn {font-size: 13px;}
+.match_board .table tbody td .btn_red {display: inline-block; border-radius: 4px; border: 1px solid #be1a11;}
+.match_board .table tbody td .btn_gray {color: #fff; border: 1px solid #848484; width: 90%; height: 25px; line-height: 25px; padding: 0;}
+.match_board .table tbody td .btn_darkblue {background-color: #354354; color: #fff; border: 1px solid #2a3543; width: 90%; height: 25px; line-height: 25px; padding: 0;}
+.match_board .table tbody .line_2 td {line-height: 1.3; padding-top: 2px; padding-bottom: 2px;}
+.match_board .table .match_tit {width: 360px;}
+.match_board .board_nav {text-align: center;}
+.match_board .board_nav a {color: #333;}
+.match_board .board_nav .pagination {margin: 0;}
+.match_board .board_nav .pagination .fa {font-size: 20px; color: #333;}
+.match_board .board_nav .active a {background-color: #6f8294; border: 1px solid transparent; color: #fff;}
+.match_board .table td.ta_l {text-align: left;}
+
+/* E: match_list 대회참가 */
+
+/**
+ * S: match_request 참가신청 
+ */
+.match_req .req_tit {text-align: center; padding-top: 8px;}
+.match_req .req_tit h2 {font-size: 22px; color: #333; font-family:"NanumBarunGothicB"; margin-top:20px;}
+.match_req .req_tit p {font-size: 16px; color: #666; padding-top: 15px;}
+.match_req .match_board {padding-top: 0;}
+.match_req .table {border: 1px solid #ddd;}
+.match_req .table thead th {text-align: center; border-right: 1px solid #ddd; font-family:"NanumBarunGothicB"; font-size:15px;}
+.match_req .table thead {background-color: #565f62; color: #fff;}
+.match_req .table thead th:last-child {border-right: none;}
+.match_req .table thead th.ta_l {text-align: left;}
+.match_req .table tbody td {text-align: center; border-right: 1px solid #ddd;}
+.match_req .table tbody td:last-child {border-right: none;}
+.match_req .table tbody td.ta_l {text-align: left;}
+
+/* 팀(소속) 정보 */
+.match_req .team_info {padding-top: 40px;}
+.match_req .req_step_title {font-size: 17px; font-family:"NanumBarunGothicB"; background-color: #e2e2e2;}
+.match_req .req_step_title .num-box {display: inline-block; background-color: #788286; text-align: center; color: #fff; width: 36px; height: 36px; line-height: 39px; margin-right: 10px;}
+.match_req .team_info .info_box {background-color: #fff; border: 3px solid #e2e2e2; border-top: none; font-weight: bold; padding: 21px 17px;}
+.match_req .team_info .info_box .team_name,
+.match_req .team_info .info_box .team_code {float: left; width: 48%;}
+
+.match_req .info_box span {font-size: 15px; float: left; font-weight:normal;}
+.team_info .info_box .half {display: inline-block; width: 440px;}
+.team_info .info_box .half:first-child {padding-left: 15px;}
+.match_req .team_info .tit{font-family:"NanumBarunGothicB"; border-left: 3px solid #0071aa; color: #0071aa; font-size: 16px; text-align: center; height: 11px; line-height: 11px; padding-top: 0; padding-left: 10px; margin-right: 40px;}
+/*.match_req .ic_deco {display: inline-block; font-weight: bold; color: #fff; border: 3px solid #0071aa; border-radius: 50%; vertical-align: middle; width: 14px; height: 14px; margin-right: 5px; overflow: hidden;}*/
+.match_req .ic_deco {display: inline-block; vertical-align: middle; width: 14px; height: 20px; line-height: 16px; margin-right: 5px; overflow: hidden;}
+.match_req .ic_deco .fa {display: inline-block; width: 100%; height: 100%;}
+
+/* 신청자 정보 */
+.match_req .req_info .coach_info {background: #fff; border: 2px solid #e2e2e2; border-top: none; padding: 12px 18px;}
+.match_req .req_info li {margin-bottom: 12px;}
+.match_req .req_info li.guide {padding-top: 6px; margin-bottom: 0px; margin-left: 100px;}
+.match_req .req_info .label_tit {position: relative; display: inline-block; vertical-align: middle; color: #0071aa; width: 100px; padding-left: 10px; font-family:"NanumBarunGothicB"; font-size:15px;}
+.match_req .req_info .coach_info li.guide .label_tit {background-color: #ef3737; color: #fff; border-radius: 10px; font-size: 11px; text-align: center; width\: 51px; padding: 0;}
+.match_req .req_info .coach_info li.guide .label_tit:before {width: 0;}
+.match_req .req_info .coach_info li.guide .txt {font-weight: normal; width: 700px;}
+.match_req .req_info label {width: 100%; margin-bottom: 0;}
+.match_req .req_info .label_tit:before {position: absolute; top: 0px; left: 0; content: ''; background-color: #0071aa; width: 3px; height: 11px; }
+.match_req .req_info .input_box {display: inline-block; vertical-align: middle; width: 800px; line-height: 100%;}
+.match_req .req_info .guide .input_box {width: 760px;}
+.match_req .req_info .input_box .txt {font-weight: normal;}
+.match_req .req_info .placeholder {position: absolute; top: 2px; left: 10px; z-index: 10; font-size: 13px; font-weight: normal; color: #999;}
+.match_req .req_info input {font-weight: normal; text-indent: 5px; border: 1px solid #ccc; width: 100%; height: 32px; padding: 0;}
+.coach_info .phone_line .input_box {width: 252px;} /* 휴대폰 번호 */
+.phone_line .divn_wave {display: inline-block; margin-left: 4px; margin-right: 4px;}
+.coach_info .phone_line select {border: 1px solid #ccc; font-weight: normal; width: 100%; height: 30px; padding: 0;}
+.mail_line.divn_3 .input_box {display: inline-block; width: 251px;}
+.mail_line.divn_3 .mail_domain {display: inline-block; width: 270px; margin-left: 6px; padding: 0;}
+.mail_line.divn_3 .mail_domain select {display: inline-block; vertical-align: middle; padding: 0px; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ededed+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #ededed 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */ width: 100%; height: 30px; line-height: 30px;}
+.confirm_file span {display: inline-block;}
+.confirm_file .file_name {position: relative; width: 676px;}
+.confirm_file .file_name .ic-deco {position: absolute; top: 5px; left: 10px; font-size: 22px;}
+.confirm_file .file_name input {text-indent: 33px; font-size: 16px;}
+.confirm_file .btn-add-file {font-size: 13px; background-color: #354354; color: #fff; border-radius: 0; width: 92px; margin-left: 7px;}
+
+/* init-guide modal */
+.init-guide {z-index: 10200;}
+.init-guide .modal-dialog {z-index: 10300;}
+.init-guide .modal-header {border-bottom: none; padding: 0;}
+.init-guide .modal-header .btn-close {position: absolute; top: 10px; right: 10px; z-index: 1080; font-size: 20px; font-weight: bold; background-color: #333; color: #fff; padding: 0 8px;}
+.init-guide .modal-body {padding: 0;}
+.init-guide .guide-img {text-align: center;}
+.init-guide .modal-footer {border-top: none; text-align: center; padding: 0; }
+.init-guide .modal-footer .btn {margin-bottom: 20px;}
+.init-guide .modal-footer .btn-close {background-color: #333; color: #fff;}
+
+/**
+ * 신청자 정보 > 안내
+ */
+.req_info li.request_guide {margin-bottom: 12px;}
+.req_info .request_guide .label_tit {font-size: 12px; text-align: center; background-color: #ef3737; color: #fff; border-radius: 20px; width: 51px; height: 22px; line-height: 22px; padding-left: 0;}
+.req_info .request_guide .label_tit:before {width: 0;}
+.req_info .request_guide .input_box {color: #666; width: 780px; margin-left: 10px; font-weight: normal; padding-top:3px; font-size:15px;}
+/* 신청자 정보 > 안내 */
+/**
+ * S: 신청자 정보 > 회비납부 안내 
+ */
+.req_info .pay_guide {background-color: #f2f2f2;}
+.req_info .pay_guide .label_tit {background-color: #6f8294; color: #fff; text-align: center; width: 137px; height: 100px; line-height: 100px; padding-left: 10px; padding-right: 10px; margin-right: 10px;}
+.req_info .pay_guide .label_tit:before {width: 0;}
+.req_info .pay_guide .input_box {font-weight: normal; width: 600px; line-height: 22px;}
+/* E: 신청자 정보 > 회비납부 안내 */
+
+/* 신청 테이블 */
+.req_type {padding-top: 30px;}
+.req_type ul.type {margin-top: 20px;}
+.req_type .type .tab_btn {display: block; font-size: 17px; text-align: center; background-color: #ddd; color: #777; border-radius: 0px; border-top-left-radius: 5px; -webkit-border-top-left-radius: 5px;-moz-border-top-left-radius: 5px; border-top-right-radius: 5px; width: 100%; height: 44px; line-height: 44px; padding-top: 0; border: 1px solid #ddd; border-right: 2px solid #bfbfbf; text-align: center;}
+.req_type .type.btn_show_2 li {width: 50%;}.req_type .type li:last-child .tab_btn,
+.req_type .type li:last-child .tab_btn.on {border-right: none;}
+.req_type .type .tab_btn.on {background-color: #0071aa; color: #fff; border: 1px solid #0071aa; /*border-right: 2px solid #005179; */height: 49px; line-height: 49px; margin-top: -5px;}
+.req_type .type li {border-bottom: 3px solid #0071aa; width: 33.33%; float: left;}
+.req_type .tab_panel {/*display: none;*/} /* tab_panel 세팅 */
+.req_type .tab_panel {border: 1px solid #0071aa;}
+/*.req_type .req_list td.select {padding: 2px;}*/
+.req_type .req_list input {width: 20px;height: 20px;}
+.req_type .req_list select {/*background-image: url(../imgs/match/select_bg.png); background-repeat: no-repeat; -webkit-background-size: 100% 25px; background-size: 100% 25px; border-radius: 4px; border: none;*/ width: 90%; height: 25px;}
+.req_type .req_list .dropdown .dropdown-menu {width: 90%; left: 5px;}
+.req_type .req_list {padding-top: 20px; margin-left: 20px; margin-right: 20px;}
+.req_type .req_list .private td:last-child,
+.req_type .req_list .group td:last-child {width: 60px;}
+.req_type .req_list .group td:nth-child(8) {padding-top: 4px; padding-bottom: 4px;}
+.req_type .req_list td {vertical-align: middle; padding-top: 5px; padding-bottom: 5px;}
+.req_type .req_list .btn {background-color: #888; border: 1px solid #767676; font-size: 14px; width: 40px; height: 25px; line-height: 25px; color: #fff; padding-top: 0; padding-bottom: 0;}
+.req_type .req_list .group .btn {width: 50px;}
+.req_type .req_list .btn.on {background-color: #16719f; border: 1px solid #0a4563;}
+
+.req_type h3 {font-size: 20px; text-align: center; color: #333;}
+.req_type h3 .blue {color: #0071aa;}
+.req_type .req_list .group tr.on {background-color: #ffeceb;}
+.req_type .req_list thead th.bg-gray {background-color: #788286;}
+
+/* 개인전 신청 표 */
+.req_type .req_list .private thead th {width: 115px;}
+.req_type .req_list .private thead th:first-child {width: 120px;}
+.req_type .req_list .private thead th:nth-child(2) {width: 140px;}
+.req_type .req_list .private thead th:nth-child(3) {width: 66px;}
+.req_type .req_list .private thead th:last-child {width: 94px;}
+
+/* 단체전 신청 표 */
+.req_type .req_list .group thead th:first-child {width: 110px;}
+.req_type .req_list .group thead th:nth-child(2) {width: 130px;}
+.req_type .req_list .group thead th:nth-child(3) {width: 66px;}
+.req_type .req_list .group thead th:nth-child(4) {width: 109px;}
+.req_type .req_list .group thead th:nth-child(5) {width: 148px;}
+.req_type .req_list .group thead th:nth-child(6) {width: 114px;}
+.req_type .req_list .group thead th:nth-child(7) {width: 114px;}
+.req_type .req_list .group thead th:nth-child(8) {width: 66px;}
+/*.req_type .req_list .group thead th:nth-child(9) {width: 66px;}*/
+.req_type .req_list .group thead th:last-child {width: 60px;}
+
+/* 단체전 생활체육 */
+.req_type .req_list .group2 thead th:first-child {width: 103px;}
+.req_type .req_list .group2 thead th:nth-child(2) {width: 74px;}
+.req_type .req_list .group2 thead th:nth-child(3) {width: 45px;}
+.req_type .req_list .group2 thead th:nth-child(4) {width: 85px;}
+.req_type .req_list .group2 thead th:nth-child(5) {width: 217px;}
+.req_type .req_list .group2 thead th:nth-child(6) {width: 86px;}
+.req_type .req_list .group2 thead th:nth-child(7) {width: 114px;}
+.req_type .req_list .group2 thead th:nth-child(8) {width: 100px;}
+.req_type .req_list .group2 thead th:nth-child(9) {width: 60px;}
+.req_type .req_list .group2 thead th:last-child {width: 45px;}
+
+.req_type .btn_list {text-align: center; margin-top: 40px; margin-bottom: 80px;}
+.req_type .btn_list .btn {font-size: 16px; width: 165px; height: 50px; line-height: 50px; border-radius: 0; padding-top: 0; padding-bottom: 0;}
+.req_type .btn_list .btn:hover,
+.req_type .btn_list .btn:focus,
+.req_type .btn_list .btn:active {color: #fff;}
+.req_type .btn_list .btn_gray {background-color: #9fa3a8; margin-right: 10px;}
+
+.req_type .user_warn {margin-top: 15px;}
+
+tbody#Grouplist tr:nth-of-type(odd) {background-color: #fff;}
+.table-hover > tbody > tr:hover {background-color: #eee;} /* table hover 편집 */
+/* E: match_request 참가신청 */
+
+/**
+ * S: 신청완료 
+ */
+.match_req.view {margin-top: 40px; padding: 0;}
+.match_req.view .req_tit {padding: 0; margin-bottom:40px;}
+.match_req.view .req_tit h2 {padding-top: 0;}
+.grid_cont.group_divn {padding-top: 30px;}
+.match_req.view .phone_line .input_box {width: 255px;}
+.match_req.view .req_type {margin-top: 35px;}
+.match_req.view .req_type .req_step_title {margin-bottom: 30px;}
+.req_comp .btn_list .btn_gray {background-color: #9fa3a8; color: #fff;}
+.req_comp .btn_list .btn_red {background-color: #d8261c; color: #fff;}
+
+.div_principal .input_box {position: relative; width: auto;}
+.div_principal .input_box .ic-deco {position: absolute; top: 3px; left: 10px; font-size: 18px; color: #4f83a1;}
+.div_principal .input_box input {padding-left: 30px; border: none; text-decoration: underline; color: #4f83a1; width: 600px;}
+.btn_list.btn_print {text-align: center; /*width: 480px;*/ height: 40px; line-height: 40px; float: right;}
+.btn_list.btn_print .btn {width: 156px; height: 40px; line-height: 40px; font-size:15px; margin-left:2px;}
+.btn_list.btn_print .btn.btn_red i {font-size:15px; vertical-align:middle;}
+.btn_list.btn_print .btn.btn_blue {background-color: #0071aa; color: #fff; text-align: center; padding: 0;}
+.btn_list.btn_print .btn.btn_gray {background-color: #999; color: #fff; text-align: center; padding: 0;}
+.btn_list.btn_print + .team_info {clear: both;}
+.btn_list.confirm_btn {margin-bottom: 80px;}
+.btn_list.confirm_btn .btn:first-child {margin-right: 10px;}
+
+/* 신청내역 표 */
+.req_comp .req_list {margin-left: 0; margin-right: 0;}
+
+/* 개인전 표 */
+.req_type.req_comp .req_list .private thead th {width: 100px;} 
+.req_type.req_comp .req_list .private thead th:first-child {width: 66px;} 
+.req_type.req_comp .req_list .private thead th:nth-child(2) {width: 180px;} 
+.req_type.req_comp .req_list .private thead th:nth-child(4) {width: 140px;} 
+.req_type.req_comp .req_list .private thead th:nth-child(5) {width: 66px;} 
+
+/* 단체전 표 */
+.req_type.req_comp .req_list .group thead th {width: 88px;} 
+.req_type.req_comp .req_list .group thead th:first-child {width: 66px;}
+.req_type.req_comp .req_list .group thead th:nth-child(2) {width: 188px;}
+.req_type.req_comp .req_list .group thead th:nth-child(3) {width: 108px;}
+.req_type.req_comp .req_list .group thead th:nth-child(4) {width: 160px;}
+.req_type.req_comp .req_list .group thead th:nth-child(5) {width: 68px;}
+.req_type.req_comp .req_list .group thead th:last-child {width: 50px;}
+
+/* 단체전 생활체육표*/
+.req_type.req_comp .req_list .group2 thead th {width: 76px;} 
+.req_type.req_comp .req_list .group2 thead th:first-child {width: 76px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(2) {width: 117px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(3) {width: 99px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(4) {width: 89px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(5) {width: 59px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(6) {width: 89px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(7) {width:129px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(8) {width:70px;}
+.req_type.req_comp .req_list .group2 thead th:nth-child(9) {width:59px;}
+.req_type.req_comp .req_list .group2 thead th:last-child {width: 93px;}
+/* E: 신청완료 */

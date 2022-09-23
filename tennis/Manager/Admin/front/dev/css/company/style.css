@@ -1,0 +1,18 @@
+/* 이용약관 */
+.no_lnb.container-fluid {padding-left: 20px;padding-right: 20px;}
+.company {padding: 50px 155px 100px 60px;}
+#content .main.company{margin-right: 190px;}
+.company div.title {padding: 0 0 0 20px; margin-top:20px; height: 30px;display: inline-block;}
+.company div.title p {padding: 9px 20px 12px 0;color: #fff; font-size: 16px; font-family: "NanumBarunGothicB"}
+.company dl {padding: 0 0 0 9px; margin-bottom: 10px;}
+.company dl dt {padding-top:18px;padding-bottom: 4px; font-size: 16px; font-family:"NanumBarunGothicB";}
+.company dl dd {line-height: 175%;color:#666;}
+.company dl dd ul { padding: 15px 0 15px 0 }
+.company .pdr15 { padding: 0 0 0 15px }
+
+.company h5 {font-size:19px;font-family:"NanumBarunGothicB"; margin-bottom: 40px;}
+.company .sub_title {font-size: 17px; font-family:"NanumBarunGothicB"; margin-bottom: 12px; margin-top:20px; margin-bottom:-10px; color:#0085d3;}
+.company .article {font-size: 14px; font-family:"NanumBarunGothicB"; margin-top:15px; margin-bottom:-15px; color:#666;}
+.company pre {font-family: 'NanumGothic';background-color: #fff; color:#666; font-size: 13px;letter-spacing: -0.02em;line-height: 175%;border: none;width: 100%;padding: 0;white-space: pre-wrap;}
+.indent {margin-left:15px; margin-top:10px; display:inline-block;}
+.indent2 {margin-left:15px; display:inline-block;}

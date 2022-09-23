@@ -1,0 +1,325 @@
+body {
+  font-family: 'NotoKR';
+  line-height: 150%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'NotoKR-md';
+  line-height: 150%;
+}
+
+#logo h1 {
+  padding-top: 70px;
+}
+
+#logo h1 a {
+  font-size: 1em;
+  padding-top: 10px;
+}
+
+section {
+  margin-bottom: 65px;
+}
+
+section.list {
+  border-top: none;
+}
+
+p a {
+  text-align: left;
+}
+
+.basic_style p {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.basic_style .boldy {
+  font-family: 'NotoKR-bd';
+  font-weight: bold;
+}
+
+.basic_style .italicy {
+  font-style: italic;
+}
+
+.basic_style .hypery {
+  color: #039be5;
+}
+
+.buttons .btn_group a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 18px;
+}
+
+.buttons .btn_list {
+  display: block;
+}
+
+.buttons .btn_list .btn_normal,.buttons .btn_list p {
+  display: inline-block;
+}
+
+.buttons .btn_list .btn_normal {
+  margin-bottom: 10px;
+  line-height: 125%;
+}
+
+.buttons .btn_list .btn_normal span {
+  display: block;
+}
+
+.buttons .btn_list .btn_normal:nth-child(2) {
+  color: #999;
+}
+
+.buttons .btn_list .btn_normal.btn_lg {
+  line-height: 150%;
+}
+
+.buttons .btn_list .btn_normal.btn_md {
+  line-height: 150%;
+}
+
+.buttons .btn_list p {
+  color: #999;
+  margin-left: 10px;
+}
+
+.buttons .btn_group.on_group .ex_hover {
+  background-color: #4fc3f7;
+  color: #fff;
+  -webkit-box-shadow: 0px 2px 8px gray;
+  box-shadow: 0px 2px 8px gray;
+}
+
+.buttons .btn_group.on_group .ex_active {
+  background-color: #039be5;
+  border: 2px solid transparent;
+  color: #fff;
+}
+
+.buttons .btn_group .ex_hover {
+  background-color: #78909c;
+  color: #fff;
+  -webkit-box-shadow: 0px 2px 8px gray;
+  box-shadow: 0px 2px 8px gray;
+  border: 2px solid transparent;
+}
+
+.buttons .btn_group .ex_active {
+  background-color: #455a64;
+  color: #fff;
+}
+
+ol {
+  padding-left: 15px;
+}
+
+.list .list_guide {
+  margin-top: 15px;
+}
+
+.list .list_guide .list {
+  margin-right: 50px;
+}
+
+section.list > ul li,section.list > ol li {
+  border: none;
+  padding: 0;
+}
+
+section.list > ul,section.list > ol {
+  border-bottom: none;
+}
+
+section.list .divn {
+  margin-top: 0px;
+}
+
+section.list div.divn {
+  padding-bottom: 65px;
+}
+
+section.form .form_box {display: inline-block;vertical-align: top;margin-right: 20px;}
+
+.form input,.form select,.form textarea,.form pre {
+  margin-bottom: 20px;
+}
+
+.table_area .table {
+  width: 420px;
+}
+
+.table_area .table th:first-child {
+  width: 60px;
+}
+
+.table_area .table th:nth-child(2) {
+  width: 230px;
+}
+
+.table_area .table th:nth-child(3) {
+  width: 125px;
+}
+
+.table_area .table td:first-child {
+  text-align: center;
+}
+
+.table_area .table td:nth-child(2) {
+  padding-left: 15px;
+}
+
+.table_area .table td:nth-child(3) {
+  text-align: center;
+}
+
+.colors .color_list {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.colors .color_list:first-child {
+  margin-left: 10px;
+}
+
+.colors p.divn {
+  margin-bottom: 62px;
+}
+
+.colors .color_list {
+  display: inline-block;
+  border: 3px solid #eee;
+}
+
+.colors .color_list .color_txt {
+  padding-left: 10px;
+}
+
+.colors .color_list .color_txt span.color_name {
+  display: block;
+  font-size: 12px;
+  color: #333;
+}
+
+.colors .color_list .color_txt span.color_val {
+  display: block;
+  font-size: 12px;
+  font-size-color: #999;
+}
+
+.colors .color_list.dark_gray .color_box {
+  display: inline-block;
+  width: 80px;
+  height: 45px;
+}
+
+.colors .color_list.dark_gray .color_box:nth-child(2) {
+  margin-left: -5px;
+}
+
+.colors .color_list.dark_gray .color_box:first-child {
+  background-color: #333;
+}
+
+.colors .color_list.dark_gray .color_box:nth-child(2) {
+  background-color: #666;
+  margin-left: -5px;
+}
+
+.colors .color_list.light_gray .color_box {
+  display: inline-block;
+  width: 80px;
+  height: 45px;
+}
+
+.colors .color_list.light_gray .color_box:nth-child(2) {
+  margin-left: -5px;
+}
+
+.colors .color_list.light_gray .color_box:first-child {
+  background-color: #f9f9f9;
+}
+
+.colors .color_list.light_gray .color_box:nth-child(2) {
+  background-color: #dddddd;
+}
+
+.colors .color_list.blue .color_box {
+  display: inline-block;
+  width: 80px;
+  height: 45px;
+}
+
+.colors .color_list.blue .color_box:nth-child(2) {
+  margin-left: -5px;
+}
+
+.colors .color_list.blue .color_box:first-child {
+  background-color: #039be5;
+}
+
+.colors .color_list.blue .color_box:nth-child(2) {
+  background-color: #4fc3f7;
+}
+
+.colors .color_list.blue_gray .color_box {
+  display: inline-block;
+  width: 80px;
+  height: 45px;
+}
+
+.colors .color_list.blue_gray .color_box:nth-child(2) {
+  margin-left: -5px;
+}
+
+.colors .color_list.blue_gray .color_box:first-child {
+  background-color: #455a64;
+}
+
+.colors .color_list.blue_gray .color_box:nth-child(2) {
+  background-color: #78909c;
+}
+
+.icon .ic_deco {
+  display: inline-block;
+}
+
+.icon_list span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30px;
+}
+
+.icon_list .logout span {
+  display: block;
+  font-size: 16px;
+  color: #333;
+}
+
+.icon_list .logout .txt {
+  font-size: 12px;
+  color: #686871;
+}
+
+.icon_list div {
+  margin-right: 50px;
+  font-size: 22px;
+}
+
+.icon_list .ic_star {
+  margin-right: 15px;
+}
+
+.carousel {
+  width: 350px;
+  height: 150px;
+}
+
+.carousel ul {
+  border-bottom: none;
+}
+
+/*# sourceMappingURL=../maps/sd_part/sketch.css.map */

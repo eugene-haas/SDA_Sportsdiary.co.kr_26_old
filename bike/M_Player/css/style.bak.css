@@ -1,0 +1,347 @@
+body{font-family:'NotoKR', sans-serif;}
+button{font-family: inherit;}
+pre{font-family:inherit;}
+input[disabled]{background-color:#fff;background-color:transparent;}
+input[hidden]{display:none;width:0;height:0;margin:0;padding:0;}
+[v-clock]{display:none;}
+.m_img>img{width:100%;}
+
+/*  */
+.m_subTitle{overflow:hidden;color:#fff;background-color:#005895;}
+.m_subTitle__title{margin:10px 0;font-size:16px;text-align:center;line-height:25px;letter-spacing:0.02em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400;}
+
+
+/* 버스신청, 참가종목선택(step2), 참가신청내역 */
+.m_vAccount{margin:10px;padding:5px 0;border-radius:5px;text-align:center;background-color:#FF8118;color:#fff;font-size:14px;letter-spacing:-0.02em;line-height:22px;}
+
+
+/* 메인, 참가종목선택(step2) */
+.m_borderBtns{display:flex;margin:10px;}
+.m_borderBtns__btn{display:block;width:100%;height:20px;border:1px solid #fff;border-radius:5px;font-size:14px;line-height:22px;text-align:center;color:#fff;}
+.m_borderBtns__btn+.m_borderBtns__btn{margin-left:5px;}
+
+
+/* 신청자등록, 버스신청 */
+.m_bottomBtns{margin:20px;display:flex;}
+.m_bottomBtns__btn{width:100%;height:50px;border-radius:3px;font-size:14px;line-height:50px;background-color:#005895;color:#fff;border:0;}
+.m_bottomBtns__btn.s_gray{background-color:#eee;color:#444;}
+.m_bottomBtns__btn.s_more{background-color:#B7BEC3;color:#fff;}
+.m_bottomBtns__btn+.m_bottomBtns__btn{margin-left:10px;}
+
+
+/* 참가종목선택(step2) */
+.m_faBtns{position:fixed;width:100%;max-width:767px;bottom:0;box-sizing:border-box;padding:10px 20px;background-color:#fff;}
+.m_faBtns__btn{width:100%;height:50px;border-radius:3px;font-size:14px;line-height:50px;background-color:#005895;color:#fff;border:0;}
+.m_faBtns__btn.s_gray{background-color:#aaa;color:#fff;}
+
+
+/* 신청자등록, 참가종목선택(step2) */
+.m_btns{display:flex;margin:10px 0;}
+.m_btns__btn{width:100%;height:38px;border-radius:3px;font-size:14px;line-height:38px;background-color:#005895;color:#fff;border:0;}
+.m_btns__btn.s_gray{background-color:#eee;color:#444;}
+.m_btns__btn+.m_btns__btn{margin-left:10px;}
+
+
+/* 버스 신청, 신청자 등록 */
+.m_cautionTxt{position:relative;margin:10px 20px;padding-left:15px;letter-spacing:-0.02em;line-height:22px;font-size:14px;color:#999999;}
+.m_cautionTxt.s_small{font-size:12px;}
+.m_cautionTxt.s_em{color:#FF8118;}
+.m_cautionTxt__refMark{position:absolute;left:0;}
+
+
+/* 신청자 등록, 버스신청, 참가종목선택(step2), 참가신청내역 */
+.m_formTitle{position:relative;padding:0 20px;height:40px;font-size:16px;line-height:40px;letter-spacing:-0.02em;color:#666;background-color:#f2f2f2;}
+.m_formTitle__status{position:absolute;display:inline-block;height:20px;top:0;bottom:0;right:20px;margin:auto;padding:0 10px;border-radius:20px;font-size:12px;line-height:21px;border:1px solid #ff8118;color:#ff8118;font-weight:400;}
+.m_formTitle__subText{float:right;font-size:14px;color:#999;font-weight:400;}
+
+
+/* 참가종목선택(step2) */
+.m_formSubTitle{position:relative;height:44px;padding-left:20px;line-height:44px;font-size:16px;letter-spacing:-0.02em;border-bottom:1px solid #DDDDDD;background-color:#fff;}
+.m_formSubTitle__lank{position:absolute;color:#005895;right:20px;}
+
+
+/*  */
+.m_formTitle+.m_formItem{margin-top:4px;}
+.m_formItem+.m_formSubTitle{border-top:10px solid #f2f2f2;}
+.m_formItem+.m_formTitle{margin-top:10px;}
+
+
+/* 신청자 등록, 버스신청, 참가 종목 선택(step2), 참가신청내역 */
+.m_formItem{position:relative;margin:0 20px;border-bottom:1px solid #eee;}
+.m_formItem.s_pointBorder{border-bottom:1px solid #005895;}
+.m_formItem__label{position:relative;display:block;height:40px;line-height:50px;color:#666;font-size:16px;}
+.m_formItem__labelBtn{position:absolute;width:21px;height:21px;right:0;top:0;bottom:0;margin:auto;border-radius:50%;border:0;font-size:0;}
+.m_formItem__labelBtn.s_subtract{background:url('http://img.sportsdiary.co.kr/images/SD/icon/minus_circle_@3x.png') no-repeat center/100%;}
+
+.m_formItem__text{font-size:16px;color:#333;line-height:40px;}
+.m_formItem__text.s_gray{color:#666;}
+.m_formItem__text.s_divider::after{content:'';display:inline-block;width:1px;height:12px;background-color:#aaa;margin:0 10px;}
+.m_formItem__text.s_subLabel{display:inline-block;color:#aaa;min-width:70px;margin-right:20px;padding-left:10px;box-sizing:border-box;}
+
+.m_formItem__status{display:inline-block;height:20px;top:0;bottom:0;left:0;margin:14px 0 0 0;padding:0 10px;border-radius:20px;font-size:12px;line-height:21px;border:1px solid #ff8118;color:#ff8118;}
+
+.m_formItem__inner{display:flex;align-items:center;margin:10px 0;}
+.m_formItem__inner.s_low{margin:5px 0;}
+.m_formItem__inner.s_highlow{margin:0;}
+.m_formItem__btn{display:inline-block;flex-shrink:0;height:28px;margin-left:auto;padding:4px 10px;border:0;border-radius:3px;background-color:#aaa;color:#fff;font-size:14px;line-height:20px;font-weight:500;}
+.m_formItem__btn.s_induce{background-color:#005895;color:#fff;}
+
+.m_formItem__select{width:100%;height:28px;padding-top:6px;box-sizing:border-box;border:0;color:#333;font-size:16px;background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_drop_down_solid_@3x.png') no-repeat right center/10px 5px;}
+.m_formItem__input{width:100%;height:28px;padding-top:6px;box-sizing:border-box;border:0;font-size:16px;color:#333;}
+
+
+
+/* 버스 신청, 신청자 등록, 참가 종목 선택(step2) */
+.m_formCheck{position:relative;display:block;font-size:0;text-align:right;}
+.m_formCheck+.m_formCheck{margin-top:12px;}
+.m_formCheck__checkWrap{position:absolute;display:inline-block;width:32px;height:32px;left:0;top:0;bottom:0;margin:auto;}
+.m_formCheck__checkbox+.m_formCheck__button{display:inline-block;width:100%;height:100%;background:url('http://img.sportsdiary.co.kr/images/SD/icon/check_off_s_@3x.png') no-repeat center/100%;}
+.m_formCheck__checkbox:checked+.m_formCheck__button{background:url('http://img.sportsdiary.co.kr/images/SD/icon/check_on_s_@3x.png') no-repeat center/100%;}
+.m_formCheck__checkbox:checked+.m_formCheck__button.s_applied{background:url('http://img.sportsdiary.co.kr/images/SD/icon/selected_check_@3x.png') no-repeat center/100%;}
+.m_formCheck__text{display:inline-block;width:calc(100% - 32px);box-sizing:border-box;padding-left:8px;font-size:16px;text-align:left;color:#333;line-height:52px;}
+.m_formCheck__text.s_applied{color:#FF8118;}
+
+
+/* 신청자등록 */
+.m_formRadios{display:flex;margin:10px 0;}
+.m_formRadios__item{display:inline-block;width:100%;}
+.m_formRadios__item+.m_formRadios__item{margin-left:5px;}
+.m_formRadios__radio+.m_formRadios__button{display:inline-block;width:100%;height:28px;box-sizing:border-box;border:1px solid #ddd;line-height:28px;background-color:#fff;color:#666;text-align:center;font-size:14px;}
+.m_formRadios__radio:checked+.m_formRadios__button{background-color:#005895;color:#fff;}
+
+
+/* 신청자등록 */
+.m_formPhone{display:flex;align-items:center;margin:10px 0;}
+.m_formPhone__select,
+.m_formPhone__input{width:100%;height:30px;font-size:16px;border:1px solid #ddd;color:#333;text-indent:10px;box-sizing:border-box;background-color:#fff;}
+.m_formPhone__select+.m_formPhone__input,
+.m_formPhone__input+.m_formPhone__input{margin-left:5px;}
+.m_formPhone__btn{width:48px;height:28px;margin-left:5px;flex-shrink:0;border-radius:3px;border:0;line-height:28px;color:#fff;background-color:#aaa;font-weight:500;}
+
+
+/* 신청자등록 */
+.m_formPhoneAuth{position:relative;margin:10px 0;}
+.m_formPhoneAuth__input{width:100%;height:30px;font-size:16px;line-height:30px;border:1px solid #ddd;color:#333;text-indent:10px;box-sizing:border-box;}
+.m_formPhoneAuth__count{position:absolute;right:9px;top:7px;font-size:16px;letter-spacing:-0.02em;line-height:16px;color:#005895;}
+
+
+/* 버스신청, 종목선택(setp2), 참가신청내역 */
+.m_apply{margin:0 10px;}
+.m_apply.s_board{position:relative;background-color:#fff;margin:10px;border-radius:5px;overflow:hidden;}
+.m_apply.s_cancel::before{content:'';position:absolute;width:100%;height:100%; background-color:rgba(0,0,0,0.45);}
+
+.m_apply__group{margin:14px 20px 6px 10px;}
+.m_apply__groupTitle{font-size:13px;color:#aaa;line-height:19px;letter-spacing:-0.02em;}
+.m_apply__list{font-size:16px;color:#666666;line-height:18px;letter-spacing:-0.02em;}
+.m_apply__item{position:relative;margin:4px 0;}
+.m_apply__text{position:relative;display:inline-block;padding-left:9px;}
+
+.m_apply__text.s_event{color:#005895;}
+.m_apply__text.s_event::before{content: '';position:absolute;width:3px;height:3px;top:-1px;bottom:0;left:0px;margin:auto;background-color:#005895;}
+.m_apply__text.s_unavailable{color:#666;}
+.m_apply__text.s_unavailable::before{background-color:#666;}
+.m_apply__text.s_discount{color:#DD0000;}
+
+.m_apply__cost{display:inline-block;position:absolute;right:0;}
+.m_apply__cost.s_event{color:#005895;}
+.m_apply__cost.s_unavailable{color:#666;}
+.m_apply__cost.s_discount{color:#DD0000;}
+
+.m_apply__total{margin:0 10px;border-top:1px solid #eee;font-size:16px;color:#005895;line-height:24px;}
+.m_apply__totalInner{position:relative;margin:8px 10px 12px 10px;}
+.m_apply__totalCost{position:absolute;right:0;}
+
+.m_apply__header{position:relative;margin:10px;}
+
+.m_apply__status{display:inline-block;height:20px;padding:0 10px;border-radius:20px;font-size:12px;line-height:22px;border:1px solid #ff8118;color:#ff8118;}
+.m_apply__status.s_success{background-color:#005895;border:1px solid #005895;color:#fff;}
+.m_apply__status.s_canceled{background-color:#aaa;color:#fff;border:1px solid #aaa;}
+
+.m_apply__cacnelBtn{position:absolute;width:15px;height:15px;right:0;top:0;bottom:0;margin:auto;font-size:0;border:0;background:url('http://img.sportsdiary.co.kr/images/SD/icon/bike_list_x_@3x.png') no-repeat center/100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메인 */
+.index .competition{background-color:#fff;}
+.index .competition.s_on{background-color:#005895;}
+
+.index .competition__header{padding:10px 0 8px 0;}
+.index .competition+.competition{margin-top:1px;}
+.index .competition__name{box-sizing:border-box;margin:0 10px;padding-right:20px;font-size:15px;letter-spacing:-0.02em;color:#444;line-height:22px;font-weight:400;background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_drop_down_solid_@3x.png') no-repeat right top 8px/10px 5px;}
+.index .competition__name.s_on{color:#fff;background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_up_solid_white_@3x.png') no-repeat right top 8px/10px 5px;}
+
+.index .competition__add{margin:3px 10px 0 10px;font-size:14px;letter-spacing:-0.02em;line-height:22px;}
+.index .competition__addTxt{color:#666;}
+.index .competition__addTxt.s_on{color:#fff;}
+
+.index .competition__addTxt::after{content:'';position:relative;display:inline-block;width:1px;height:12px;top:1px;margin:0 10px;background-color:#aaa;}
+.index .competition__addTxt.s_on::after{background-color:#fff;}
+
+.index .competition__busBtn{display:inline-block;width:67px;height:21px;line-height:20px;text-align:center;box-sizing:border-box;font-size:13px;letter-spacing:-0.02em;color:#fff;background-color:#005895;border:1px solid #005895;border-radius:10px;}
+.index .competition__busBtn.s_disable{background-color:#aaa;border:1px solid #aaa;}
+.index .competition__busBtn.s_on{border:1px solid #fff;background-color:#ff8118;}
+
+.index .competition__detail{border-top:1px solid rgba(255, 255, 255, 0.2);overflow:hidden;background-color:#005895;}
+
+.index .competition__btns{margin:10px 10px 12px 10px;font-size:0;text-align:center;}
+.index .competition__btn{position:relative;display:inline-block;width:calc(20% - 4px);height:56px;box-sizing:border-box;padding-top:35px;border-radius:5px;font-size:13px;line-height:14px;letter-spacing:-0.02em;background-color:#fff;vertical-align:top;color:rgba(83, 102, 115, 1);}
+.index .competition__btn::before{content:'';position:absolute;width:100%;height:37px;top:0;left:0;}
+.index .competition__btn.s_summary::before{background:url('http://img.sportsdiary.co.kr/images/SD/icon/contest_info_navy_@3x.png') no-repeat center/23px 24px;}
+.index .competition__btn.s_applicant::before{background:url('http://img.sportsdiary.co.kr/images/SD/icon/apply_navy_@3x.png') no-repeat center/24px 24px;}
+.index .competition__btn.s_result::before{background:url('http://img.sportsdiary.co.kr/images/SD/icon/result_navy_@3x.png') no-repeat center/21px 25px;}
+.index .competition__btn.s_video::before{background:url('http://img.sportsdiary.co.kr/images/SD/icon/video_navy_@3x.png') no-repeat center/25px 20px;}
+.index .competition__btn.s_picture::before{background:url('http://img.sportsdiary.co.kr/images/SD/icon/photo_navy_@3x.png') no-repeat center/27px 21px;}
+.index .competition__btn.s_tree::before{background:url('http://img.sportsdiary.co.kr/images/SD/icon/tournament_navy_@3x.png') no-repeat center/27px 21px;}
+.index .competition__btn.s_disable{opacity:.65;color:rgba(83, 102, 115, .45);}
+.index .competition__btn.s_disable::before{opacity:.4;}
+.index .competition__btn + .competition__btn{margin-left:5px;}
+
+.index .apply{}
+.index .apply__title{position:relative;margin:10px;font-size:14px;font-weight:500;color:#fff;letter-spacing:-0.02em;line-height:18px;}
+.index .apply__group{margin:10px;padding:10px 0;border-radius:5px;background-color:#fff;}
+.index .apply__groupTitle{margin:0 10px;padding-bottom:10px;border-bottom:1px solid #ddd;font-size:15px;line-height:20px;letter-spacing:-0.02em;color:#666;}
+.index .apply__groupItem{margin:10px 10px 0 10px;font-size:14px;line-height:18px;letter-spacing:-0.02em;color:#999;}
+.index .apply__groupItem+.apply__groupItem{margin-top:8px;}
+.index .apply__groupItemInner{position:relative;padding-left:9px;}
+.index .apply__event{position:relative;}
+.index .apply__event::before{content:'';position:absolute;width:3px;height:3px;top:0;bottom:0;left:-9px;margin:auto;background-color:#aaa;}
+.index .apply__eventDetail{padding-left:8px;margin-left:2px;background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_right_@3x.png') no-repeat left center/4px 8px;}
+.index .apply__statusBtn{position:absolute;display:inline-block;height:20px;top:0;bottom:0;right:0;margin:auto;padding:0 10px;border-radius:20px;font-size:12px;line-height:21px;border:1px solid #ff8118;color:#ff8118;}
+.index .apply__statusBtn.s_complete{border:1px solid #aaa;background-color:#aaa;color:#fff;}
+.index .apply__applicationBtn{height:40px;margin:7px 10px;border-radius:5px;background-color:#ff8118;color:#fff;font-size:14px;letter-spacing:-0.02em;text-align:center;line-height:40px;}
+
+
+/* 버스신청 */
+.applyBus .guide{margin:0 20px;border-bottom:1px solid #ddd;color:#999;}
+.applyBus .guide__txt{margin:12px 0 8px 0;font-size:15px;line-height:22px;}
+.applyBus .checkWrap{margin:0 20px;}
+.applyBus .busTxt{display:inline-block;width:calc(100% - 32px);box-sizing:border-box;padding-left:8px;font-size:14px;line-height:22px;letter-spacing:-0.02em;color:#666;text-align:left;}
+.applyBus .busTxt.s_blur{color:#aaa;}
+.applyBus .busTxt__count.s_normal{color:#005895;}
+.applyBus .busTxt__count.s_warning{color:#bc2121;}
+.applyBus .vAccountWrap{margin:0 10px;}
+
+
+/* 참가종목선택(step1 트랙, 로드) */
+.selectEventStep1 .summary{background-color:#f2f2f2;padding:10px;}
+.selectEventStep1 .summary__inner{display:flex;border-radius:3px;overflow:hidden;flex-wrap:wrap;background-color:#fff;}
+.selectEventStep1 .summary__days{width:100%;box-sizing:border-box;padding:20px;font-size:16px;line-height:22px;color:#333;letter-spacing:-0.02em;flex-shrink:0;background-color:#fff;}
+.selectEventStep1 .summary__btn{width:33.3333%;border:0;height:36px;line-height:37px;font-size:16px;letter-spacing:-0.02em;color:#fff;background-color:#005895;}
+.selectEventStep1 .summary__btn+.summary__btn{border-left:1px solid #fff;}
+
+.selectEventStep1 .eventBtns{margin:20px;display:flex;text-align:center;}
+.selectEventStep1 .eventBtns__btn{width:50%;height:130px;border-radius:5px;background-color:#005895;color:#fff;line-height:192px;font-size:16px;letter-spacing:-0.02em;}
+.selectEventStep1 .eventBtns__btn.s_track{background:#005895 url('http://img.sportsdiary.co.kr/images/SD/icon/track_white_@3x.png') no-repeat center top 25px/55px 54px;}
+.selectEventStep1 .eventBtns__btn.s_road{background:#005895 url('http://img.sportsdiary.co.kr/images/SD/icon/road_white_@3x.png') no-repeat center top 28px/64px 45px;}
+.selectEventStep1 .eventBtns__btn.s_disable{background-color:#ddd;}
+.selectEventStep1 .eventBtns__btn+.eventBtns__btn{margin-left:20px;}
+
+.selectEventStep1 .infoTxt{position:relative;margin:10px 20px;padding-left:8px;letter-spacing:-0.02em;line-height:22px;color:#999999;}
+.selectEventStep1 .infoTxt.s_title{font-size:16px;letter-spacing:-0.02em;line-height:22px;padding-left:0;}
+.selectEventStep1 .infoTxt__mark{position:absolute;left:0;}
+
+
+/* 참가종목선택(step2) */
+.selectEventStep2 .l_content.s_hasFAB{padding-bottom:70px;}
+.selectEventStep2 .teamMembers{margin:0 20px;color:#333;font-size:16px;line-height:34px;}
+.selectEventStep2 .teamMembers__item{height:34px;padding-left:11px;border-style:solid;border-color:#eee;border-width:0 1px 1px 1px;}
+
+
+/* 참가신청내역 */
+.applyHistory .l_content{overflow:hidden;}
+.applyHistory .additional{margin:-5px 10px 10px;}
+.applyHistory .additional>span:first-child{display:inline-block;height:20px;padding:1px 10px;margin-right:10px;background-color:#fff;color:#005895;border-radius:10px;text-align:center;line-height:22px;font-size:12px;}
+
+
+/* 경기영상 */
+.gamevideo .gamemovie{padding-bottom:1rem;}
+.gamevideo .gamemovie.s_noVideo{background-color:#f2f2f2;}
+.gamevideo .gamemovie.s_noVideo .m_dataEmpty img{width:100%;}
+.gamevideo .gamemovie a{}
+.gamevideo .gamemovie a~a{margin-top:1.1rem;}
+.gamevideo .gamemovie__img{min-height:11.2rem;background-color:#E2E2E2;overflow:hidden;}
+.gamevideo .gamemovie__img>img{width:100%;vertical-align:middle;}
+.gamevideo .gamemovie__info{padding:0.72rem 0.7rem 0.3rem;}
+.gamevideo .gamemovie__title{font-size:0.99rem;color:#666;letter-spacing:-0.02rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gamevideo .gamemovie__sno{margin-top:0.45rem;font-size:0.85rem;color:#aaa;font-weight:300;letter-spacing:-0.02rem;}
+.gamevideo .gamemovie__movie{height:12.6rem;background-color:#e2e2e2;}
+
+
+/* 현장스케치 */
+.stadiumSketch .photoList{ padding:0 10px; margin:10px 0;font-size:0; }
+.stadiumSketch .photoList__item{ position:relative; display:inline-block; width:calc(50% - 3px); vertical-align:top; margin-left:6px; margin-bottom:6px; font-size:0; line-height:0; }
+.stadiumSketch .photoList__img{ width:100%;vertical-align:middle; }
+.stadiumSketch .photoList__more{ display:none; font-size:14px; width:100%; height:34px; margin-top:3px; background-color:#005995; color:#fff; border:0;  }
+@media all and (orientation: portrait){
+  .stadiumSketch .photoList__item:nth-of-type(2n-1){ margin-left:0; }
+}
+@media all and (orientation: landscape){
+  .stadiumSketch .photoList__item{ width:calc(25% - 4.5px);}
+  .stadiumSketch .photoList__item:nth-of-type(4n-3){ margin-left:0; }
+}
+
+
+/* layer */
+.m_reqLayer{}
+.m_reqLayer__inner{box-sizing:border-box;}
+.m_reqLayer__header{position:relative;height:40px;margin:10px 10px 0 10px;background-color:#005895;color:#fff;text-align:center;}
+.m_reqLayer__headerTitle{line-height:40px;font-size:16px;font-weight:500;}
+.m_reqLayer__headerClose{position:absolute;width:40px;height:40px;top:0;right:0;border:0;font-size:0;background:url('http://img.sportsdiary.co.kr/images/SD/icon/popup_x_@3x.png') no-repeat center/14px;}
+.m_reqLayer__content{background-color:#fff;margin:0 10px 10px 10px;max-height:calc(100vh - 60px);}
+
+.m_reqLayerBtns{display:flex;height:65px;background-color:#fff;justify-content:center;}
+.m_reqLayerBtns__btn{width:100%;height:35px;margin:15px 10px;border-radius:3px;border:0;color:#fff;background-color:#005895;}
+.m_reqLayerBtns__btn+.m_reqLayerBtns__btn{margin-left:5px;}
+.m_reqLayerBtns__btn.s_gray{background-color:#aaa;color:#fff;}
+
+
+/* 신청자등록, 참가종목선택(step1), 참가종목선택(step2) */
+.m_guideLayer{}
+.m_guideLayer__backdrop{position:absolute;width:100%;height:100%;}
+.m_guideLayer__content{overflow-y:initial;}
+.m_guideLayer__contentWrap{position:relative;width:auto;margin:20px 10px;box-sizing:border-box;padding:20px;background-color:#fff;border-radius:3px;}
+.m_guideLayer__header{border-bottom:1px solid #DDDDDD;}
+.m_guideLayer__headerTitle{padding-left:31px;font-size:18px;line-height:27px;color:#005895;font-weight:400;margin-bottom:5px;background:url('http://img.sportsdiary.co.kr/images/SD/icon/popup_info_@3x.png') no-repeat left center/23px;}
+.m_guideLayer__headerTitle.s_caution{color:#FF8118;background:url('http://img.sportsdiary.co.kr/images/SD/icon/popup_warning_@3x.png') no-repeat left center/27px 23px;}
+.m_guideLayerBtns{display:flex;justify-content:center;margin-top:20px;}
+.m_guideLayerBtns__btn{width:120px;height:35px;border-radius:3px;border:0;background-color:#005895;color:#fff;font-size:14px;letter-spacing:-0.02em;line-height:35px;text-align:center;}
+.m_guideLayerBtns__btn.s_gray{background-color:#aaa;}
+.m_guideLayerBtns__btn+.m_guideLayerBtns__btn{margin-left:5px;}
+.m_guideLayer__mainText{margin:30px 10px 16px 10px;font-size:19px;font-weight:500;line-height:26px;color:#005895;text-align:center;}
+.m_guideLayer__mainText.s_caution{color:#FF8118;}
+.m_guideLayer__subText{margin:16px 20px;font-size:14px;line-height:20px;color:#AAAAAA;text-align:center;}
+
+
+/* 신청자등록 */
+.SCRPLayer .guideText{margin:15px 30px;font-size:14px;letter-spacing:-0.02em;line-height:22px;color:#333;}
+.SCRPLayer .guideText__mark{position:relative;top:3px;}
+.SCRPLayer .guideText__em{color:#DD0000;}
+.SCRPLayer .SCRPTableHeader{height:32px;line-height:32px;background-color:#8EA6B5;color:#fff;text-align:center;font-size:14px;letter-spacing:-0.02em;}
+.SCRPLayer .SCRPTable{width:100%;overflow:hidden;}
+.SCRPLayer .SCRPTable th{min-width:37px;max-width:37px;width:37px;background-color:#ddd;color:#666666;font-weight:400;border-bottom:1px solid #f2f2f2;border-left:0;}
+.SCRPLayer .SCRPTable td{font-size:14px;font-weight:300;line-height:16px;color:#666;}
+.SCRPLayer .SCRPTable__SCRPItem{width:58px;min-width:58px;max-width:58px;padding:9px 3px;text-align:center;border:1px solid #f2f2f2;}
+.SCRPLayer .SCRPTable__SCRPDescription{padding:9px 5px;text-align:left;line-height:22px;border:1px solid #f2f2f2;}
+.SCRPLayer .SCRPTable__check{min-width:36px;max-width:36px;width:36px;text-align:center;border:1px solid #f2f2f2;border-right:0;}
+.SCRPLayer .SCRPTable__radioBtn{display:inline-block;width:25px;height:25px;border-radius:3px;border:1px solid #005895;}
+.SCRPLayer .SCRPTable__radio:checked+.SCRPTable__radioBtn{background:#005895 url('http://img.sportsdiary.co.kr/images/SD/icon/checkbox_check_@3x.png') no-repeat center/17px 13px;}
+
+
+/* 참가종목선택(step2) */
+.priceLayer{}
+.priceLayer__close{width:100%;height:26px;border:0;background:#fff url('http://img.sportsdiary.co.kr/images/SD/icon/bike_arrow_down_l_@3x.png') no-repeat center top 9px/17.07px 9.75px;font-size:0;}
+.priceLayer__inner{background-color:#fff;border-radius:5px 5px 0 0;bottom:-100%;height:auto;overflow:hidden;}
+.priceLayer__inner._s_on{bottom:0;top:initial;}
+
+.priceLayer__btns{width:100%;box-sizing:border-box;border-top:1px solid #F2F2F2;padding:10px 20px;background-color:#fff;}
+.priceLayer__btn{width:100%;height:50px;border-radius:3px;font-size:14px;line-height:50px;background-color:#005895;color:#fff;border:0;}
+.priceLayer__btn.s_gray{background-color:#aaa;color:#fff;}

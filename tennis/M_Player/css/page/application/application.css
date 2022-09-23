@@ -1,0 +1,56 @@
+/* 대회참가신청 > 참가 신청하기, 신청내역 확인하기 */
+.application {padding-top:40px; padding-bottom: 40px; background:#edf0f4;}
+.application h2 {font-family: 'Noto KR Bold'; font-weight: bold;}
+.application > h2.sub-title {letter-spacing: -0.075em;}
+.application h2.txt-center span {display: inline-block; margin-top: 4px;}
+.application .tab-menu a:hover {color: #fff;}
+.clip-box {position:relative; margin-bottom: 10px; padding:30px 10px 20px; border-top:7px solid #123651; background:#fff; box-shadow:0 3px 3px #d9dbdf;}
+.enter .clip-box {-webkit-box-shadow: none; box-shadow: none; padding: 0; height: 35px; margin-bottom: 0;}
+.clip-box > p:nth-child(3) {font-size:0.85em; font-family:'nanumGothicB'; }
+.img-clip {position:absolute; top:-40px; left:30px;}
+.img-clip img { width:30%;}
+.enter .img-clip {position: relative; top: -30px; width: 40px;}
+.enter .img-clip img {width: 100%;}
+.gray-box {padding:10px 10px 0px 10px; background:#e9e9e9;}
+.gray-box h2 {padding-left:0; color: #123651;}
+.gray-box ul li {padding:0 0 10px; font-family:"NanumGothic"; font-size: 0.85em; letter-spacing: -0.04em; line-height: 1.75em;}
+.tab-menu {display:flex; text-align:center;}
+.tab-menu li {width:50%;color:#fff; font-size:1em; font-family: 'NanumGothicB'; background:#a8acb0; border-bottom:3px solid #a8acb0;}
+.tab-menu li.on {color:#6dbcff; background:#164369; border-bottom:3px solid #6dbcff;}
+.tab-menu li a {display:block; padding:7px 0; width:100%; font-size:0.85em;}
+.tab-menu li a:hover, .tab-menu li a:focus, .tab-menu li a:active {color: #6dbcff; text-decoration: none;}
+.tabc {padding-bottom:20px;}
+
+.application-list {margin-top:10px; border:1px solid #d2d2d2; border-bottom:0; background:#fff;}
+.enter .application-list {border: none; margin-top: 0;}
+.application-list li {padding:15px 10px 10px; border-bottom:1px solid #d2d2d2;}
+.application-list li p { margin-bottom:5px;}
+.application-list li .tit-application {color:#333333; font-size:1em;}
+.application-list li .day {color:#999; font-size: 0.85em; font-family: 'NanumGothicB';}
+.application-list li .btn-schedule {display: inline-block;}
+.application-list li .cta-btn a {width: 49%; font-size: 0.81em; text-align: center;}
+.application-list li .cta-btn a.btn-skyline:hover,
+.application-list li .cta-btn a.btn-skyline:active,
+.application-list li .cta-btn a.btn-skyline:focus {color:#3899e4;}
+.txt-application {padding:0 10px 10px; color:#ff7200; line-height: 1.5em; font-size: 0.85em;} 
+.application.req .sub-info {color: #ee0000;}
+
+/* 대회참가신청 > 신청 쓰기 */
+.application-form {margin-bottom:10px; border-top:1px solid #d4d4d4; background:#fff;}
+.application-form li {overflow:hidden; padding:0 10px; border-bottom:1px solid #d4d4d4;}
+.application-form p {float:left; vertical-align:middle; padding:5px 0; line-height:38px; color:#333; font-weight:bold; font-size: 0.8em;}
+.application-form p:first-child {width:32%;}
+.application-form p:last-child {width:68%;}
+.application-list li .tit-application {display: inline-block; font-size:1em; letter-spacing: -0.05em; }
+.enter .application-list li .tit-application {margin-right: 5px;}
+.application-list li .icon-red , .application-list li .btn-schedule {font-size: 1em;}
+.application-form select {color: #000;}
+
+.txt-or {color:#ff7200; font-size: 1.1em;}
+.enter .txt-or {letter-spacing: -0.075em;}
+.txt-skyblue {color:#3899e4;}
+.txt-center {text-align:center; line-height:1.3; font-size: 1.1em!important; letter-spacing: -0.09em;}
+a.btn-schedule:hover,
+a.btn-schedule:active,
+a.btn-schedule:focus {color:#333;}
+h2.pt0 {padding-top:0;}

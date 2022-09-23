@@ -1,0 +1,83 @@
+/* 상단 title */
+.join-body .header {position: relative;text-align: center;height: 50px;border-bottom: 1px solid #ddd;padding-top: 0;}
+.join-body .header .title {font-family: "NotoKR-md";font-size: 1.25em;letter-spacing: -0.05em;color: #005895;line-height: 50px;}
+
+/* 상단 back 버튼 */
+.join-body .header .top_cont {position: absolute;top: 8px;left: 10px;}
+.join-body .header .top_cont .left_arrow .fa {color: #005895;}
+
+/* 회원가입 공통 */
+.join {font-family: "NotoKR-dl";background-color: #edf0f4;}
+.join input[readonly] {border: none;}
+.point-or {color: #ff7200;}
+.compulsory {color: #ee0000;vertical-align: middle;}
+.join-body .main.user_divn {margin-top: 40px;padding-left: 20px;padding-right: 20px;padding-bottom: 0;}
+.user_divn .input-list {position: relative;}
+.join-body .user_divn .input-list li {background: none;border-top: none;border-bottom: 1px solid #bbb;padding-top: 5px;padding-bottom: 5px;}
+.join-body .user_divn .input-list p {font-family: "NotoKR";font-size: 1em;letter-spacing: -0.0125em;padding-bottom: 10px;}
+.join-body .user_divn .input-list label {font-size: 1em;width: 100%;margin-bottom: 0;padding-left: 10px;padding-right: 10px;}
+.join-body .user_divn .input-list input {font-family: "NotoKR-dl";font-size: 1em;letter-spacing: -0.1em;color: #999;border: none;line-height: 33px;padding-left: 10px;outline: none;}
+.join-order {background-color: #fff;border-top: 1px solid #d4d4d4;border-bottom: 1px solid #d4d4d4;margin-top: 10px;}
+.join-order li {display: inline-block;vertical-align: middle;}
+.join-order li:first-child {font-family: "NotoKR-md";font-size: 0.9em;background-image: url(/front/imgs/join/icon-bar.png);-webkit-background-size: 1px 22px;
+background-size: 1px 22px; background-repeat: no-repeat; background-position: 100% 50%;text-align: center;width: 70px;height: 40px;line-height: 40px;}
+.join-order li:last-child {padding-left: 15px; line-height:40px;}
+.join-form {background-color: #fff;}
+.join-form li {border-bottom: 1px solid #ddd;padding: 10px 10px 6px 10px;/*회원가입>회원정보*/}
+.join-form li p {display: inline-block;vertical-align: middle;font-family: "NotoKR-dl";font-size: 0.88em;}
+.join-form li p:first-child {width: 39%;}
+.join-form li p:last-child {width: 59%;margin-top: -2px;word-break: break-word;}
+.join-form li p input {font-size: 1em;}
+
+.join-form .manager-divn .manager-sel label {margin-bottom: 0; font-weight:normal; margin-right:6px;}
+.join-form .manager-divn .manager-sel input[type="radio"] {-webkit-appearance: radio;-moz-appearance: radio;appearance: radio; width: 22px; margin-top: 0;}
+
+/* input 유효성 경고 */
+.join-body .user_divn .input-list .text-warning {display: none;color: #df0000;padding-left: 10px;} 
+
+/* 안내 텍스트 */
+.join-body .user_agree_info .guide_txt {background-color: #f2f2f2;padding: 20px 30px; margin-top: 30px;} 
+.join-body .user_agree_info .guide_txt li {position: relative;font-family: "NotoKR-dl";font-size: 0.9em;color: #999;border-bottom: none;margin-bottom: 10px;}
+.join-body .user_agree_info .guide_txt li:before {position: absolute;top: 10px;left: -8px;content: '';width: 3px;height: 3px;background-color: #999;border-radius: 50%;}
+.join-body .user_agree_info .guide_txt p {color: #999;letter-spacing: -0.11em;line-height: 165%;}
+.join-body .user_agree_info .guide_txt p a {display: inline-block;vertical-align: top;color: #337ab7;text-decoration: underline;letter-spacing: -0.05em;}
+
+
+/* 회원구분 정보 안내 -일반회원 join1_type4_userInfo */
+.join-body .join-2 h2 {font-size:1em; padding:5px 0 5px 10px;}
+
+/* 자동 검색 기능 창 */
+.join-body .user_divn .input-list .srch_res_list {display: none;max-height: 140px;overflow-y: scroll;background-color: #f2f2f2;border: 1px solid #ddd;}
+.join-body .user_divn .input-list .srch_res_list li {border-bottom: 1px solid #bbb;padding-top: 6px;padding-bottom: 6px;padding-left: 10px;padding-right: 10px;}
+
+/* 하단 cta */
+.join-body .cta {padding-top: 20px;padding-bottom: 20px;z-index: 3000;padding-left: 20px;padding-right: 20px;}
+.join-body .cta .btn-ok {font-size: 1em;height: 50px;line-height: 50px;padding: 0;}
+.join-body .cta .btn-ok:hover,
+.join-body .cta .btn-ok:focus,
+.join-body .cta .btn-ok:active {color: #fff;}
+.sub.join .container .btn-center,
+.join-body .container .btn-center,
+.join-2 .container .btn-center {padding-top: 20px;}
+.sub.join .container .btn-center a,
+.join-body .container .btn-center a,
+.join-2 .container .btn-center a {display: inline-block;vertical-align: middle;width: 47%;float: none; height: 50px; padding:0; line-height:50px;}
+.sub.join .container .btn-center .btn-left,
+.join-body .container .btn-center .btn-left,
+.join-2 .container .btn-center .btn-left {background-color: #eee; margin-right: 10px; height: 50px; line-height: 50px;}
+
+.sub.join .container,
+.join-body .join-4 .container,
+.join-body .join-2 .container {background:#fff;}
+
+
+/**
+ * S: svg 체크 아이콘 
+ */
+.join-body .ic_check {position: relative;}
+.join-body .ic_check input {visibility: hidden;margin: 0;}
+.join-body .ic_check svg {position: absolute;top: 0;left: 5px;border: 1px solid #bbb;width: 20px;height: 20px;padding: 1px;}
+.user_divn.parents .check_agree svg {top: 3px;left: auto;right: -4px;}
+.join-body .ic_check svg path {stroke: #3899e4;stroke-width: 20px;fill: none;stroke-linejoin: round;stroke-linecap: round;stroke-dasharray: 0, 150;stroke-dashoffset: 1;}
+.join-body .ic_check.on svg path {visibility: visible;stroke-dasharray: 126, 126;stroke-dashoffset: 0;transition: all .3s ease-in-out 0s;}
+/* E: svg 체크 아이콘 */

@@ -1,0 +1,127 @@
+/* S: input 태그 체크 이미지 변경 */
+label.img-replace.on {background-image: url(../images/public/label-on@3x.png);}
+label.img-replace {background-image: url(../images/public/label-off@3x.png);}
+/* E: input 태그 체크 이미지 변경 */
+
+/* S: 배경 이미지 */
+.bg {min-height:728px; background-repeat: no-repeat; -webkit-background-size: cover; background-size: cover; background-position:center center; background-image:url(http://badmintonadmin.sportsdiary.co.kr/images/public/bg-gray.jpg);}
+/* E: 배경 이미지 */
+
+/* S: 지도 이미지 */
+.btn-map {display:inline-block; background-image: url(http://badmintonadmin.sportsdiary.co.kr/images/public/icon-loc-off@3x.png); background-repeat: no-repeat; background-position: right center; background-size: 20px; background-color:#9a9a9a; border-radius:4px;}
+/* E: 지도 이미지 */
+
+/**
+ * S: 단체정보조회 
+ */
+.map .srch-list .has-sub {background-image:url(http://badmintonadmin.sportsdiary.co.kr/images/public/ic-search@3x.png);}
+/* E: 단체정보조회 */
+
+/**
+ * S: company 회사정보 
+ */
+.box-list .tit-widline {background-image: url(http://badmintonadmin.sportsdiary.co.kr/images/map/logo-widline@3x.png);}
+.box-list .tit-sd {background-image: url(http://badmintonadmin.sportsdiary.co.kr/images/map/logo-sportsdiary@3x.png);}
+/* E: company 회사정보 */
+
+/**
+ * S: 자주하는 질문 
+ */
+.top-faq ul {background-image:url(http://badmintonadmin.sportsdiary.co.kr/images/map/bg-faq@3x.png);}
+/* E: 자주하는 질문 */
+
+/**
+ * S: 대진표, 토너먼트 
+ */
+.player-name.winner-golden {background-image: url('../../WebTournament/www/images/tournerment/tourney/golden-medal.png');}
+.player-name.winner-silver {background-image: url('../../WebTournament/www/images/tournerment/tourney/silver-medal.png');}
+.player-name.winner-bronze {background-image: url('../../WebTournament/www/images/tournerment/tourney/bronze-medal.png');}
+
+.final-div .line-div .btn-look.half,
+.final-div .line-div .btn-look.half:hover,
+.final-div .line-div .btn-look.half:focus,
+.final-div .line-div .btn-look.half:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-half.svg');}
+.final-div .line-div .btn-look.full,
+.final-div .line-div .btn-look.full:hover,
+.final-div .line-div .btn-look.full:focus,
+.final-div .line-div .btn-look.full:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-full.svg');}
+.final-div .line-div .btn-look.regist,
+.final-div .line-div .btn-look.regist:hover,
+.final-div .line-div .btn-look.regist:focus,
+.final-div .line-div .btn-look.regist:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-regist.svg');}
+.final-div .line-div .btn-look.handy,
+.final-div .line-div .btn-look.handy:hover,
+.final-div .line-div .btn-look.handy:focus,
+.final-div .line-div .btn-look.handy:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-handy.svg');}
+
+.final-div .line-div .btn-look.enroll,
+.final-div .line-div .btn-look.enroll:hover,
+.final-div .line-div .btn-look.enroll:focus,
+.final-div .line-div .btn-look.enroll:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-enroll.svg');}
+
+.final-div .line-div .btn-look.time-in,
+.final-div .line-div .btn-look.time-in:hover,
+.final-div .line-div .btn-look.time-in:focus,
+.final-div .line-div .btn-look.time-in:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-time-in.svg');}
+
+.final-div .line-div .btn-look.time-out,
+.final-div .line-div .btn-look.time-out:hover,
+.final-div .line-div .btn-look.time-out:focus,
+.final-div .line-div .btn-look.time-out:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look-time-out.svg');}
+.final-div .line-div .btn-look:hover, .final-div .line-div .btn-look:focus, .final-div .line-div .btn-look:active { background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look.svg');}
+.final-div .line-div .btn-look {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-F-look.svg');}
+
+/* 영상 미등록 버튼 */
+a.btn.btn-look.no-movie-clip, a.btn.btn-look.no-movie-clip:hover, a.btn.btn-look.no-movie-clip:focus, a.btn.btn-look.no-movie-clip:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/no-movie-clip-r.svg'); background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+.right-side a.btn.btn-look.no-movie-clip, .right-side a.btn.btn-look.no-movie-clip:hover, .right-side a.btn.btn-look.no-movie-clip:focus, .right-side a.btn.btn-look.no-movie-clip:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/no-movie-clip-l.svg'); padding-right: 0;}
+.final-div .line-div a.btn-look.no-movie-clip, .final-div .line-div a.btn-look.no-movie-clip:hover, .final-div .line-div a.btn-look .no-movie-clip:focus, .final-div .line-div a.btn-look.no-movie-clip:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/no-movie-clip-t.svg'); padding-right: 0;}
+/* .btn-guide .btn.btn-look.no-movie-clip {background-image: url('../../WebTournament/www/images/tournerment/tourney/no-movie-clip.svg'); padding-right: 0;} */
+
+.btn-look {color: #fff; position: relative; background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look.svg');}
+a.btn-look.enroll, a.btn-look.enroll:hover, a.btn-look.enroll:focus, a.btn-look.enroll:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-L-look-enroll.svg)};
+.right-side a.btn-look.enroll, .right-side a.btn-look.enroll:hover, .right-side a.btn-look.enroll:focus, .right-side a.btn-look.enroll:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-R-look-enroll.svg);}
+.right-side a.btn-look.handy, .right-side a.btn-look.handy:hover, .right-side a.btn-look.handy:focus, .right-side a.btn-look.handy:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-R-handy.svg);}
+a.btn-look.handy, a.btn-look.handy:hover, a.btn-look.handy:focus, a.btn-look.handy:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-L-handy.svg);}
+/* E: 대진표, 토너먼트 
+
+/**
+ * S: 대진표, 토너먼트 결과보기 모달 
+ */
+.left-side a.btn-look.half:hover, .left-side a.btn-look.half:focus, .left-side a.btn-look.half:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-half.svg');}
+.left-side a.btn-look.full:hover, .left-side a.btn-look.full:focus, .left-side a.btn-look.full:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-full.svg');}
+.left-side a.btn-look.regist:hover, .left-side a.btn-look.regist:focus, .left-side a.btn-look.regist:active {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-regist.svg');}
+.color-guide .btn-look.full {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-full.svg');}
+.left-side .btn-look.full {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-full.svg'); }
+.right-side .btn-look {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-R-look.svg');}
+.right-side .btn-look.full {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-R-look-full.svg'); }
+.btn-look.half {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-half.svg'); }
+.right-side .btn-look.half {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-R-look-half.svg');}
+.btn-look.regist {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-L-look-regist.svg'); }\
+.right-side .btn-look.regist {background-image: url('../../WebTournament/www/images/tournerment/tourney/btn-R-look-regist.svg'); }
+a.btn-look.time-in, a.btn-look.time-in:hover, a.btn-look.time-in:focus, a.btn-look.time-in:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-L-look-time-in.svg);}
+.right-side a.btn-look.time-in, .right-side a.btn-look.time-in:hover, .right-side a.btn-look.time-in:focus, .right-side a.btn-look.time-in:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-R-look-time-in.svg);}
+a.btn-look.time-out, a.btn-look.time-out:hover, a.btn-look.time-out:focus, a.btn-look.time-out:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-L-look-time-out.svg); }
+.right-side a.btn-look.time-out, .right-side a.btn-look.time-out:hover, .right-side a.btn-look.time-out:focus, .right-side a.btn-look.time-out:active {background-image: url(../../WebTournament/www/images/tournerment/tourney/btn-R-look-time-out.svg);}
+
+.display-board .on .win-type.score {background-image: url('../../WebTournament/www/images/tournerment/enter/win-type-orange@3x.png');}
+.point-display .player-match-option label.default { background-image: url('../../WebTournament/www/images/tournerment/enter/player-match-option_01_off_3x.png'); }
+.point-display .player-match-option label.default.on { background-image: url('../../WebTournament/www/images/tournerment/enter/player-match-option_01_on_3x.png');}
+.point-display .player-match-option label.draw { background-image: url('../../WebTournament/www/images/tournerment/enter/player-match-option_02_off_3x.png');}
+.point-display .player-match-option label.draw.on { background-image: url('../../WebTournament/www/images/tournerment/enter/player-match-option_02_on_3x.png');}
+.point-display .player-match-option label.no-attend {
+  background-image: url(../../WebTournament/www/images/tournerment/enter/no_attend_off@3x.png);}
+.point-display .player-match-option label.no-attend.on {
+  background-image: url(../../WebTournament/www/images/tournerment/enter/no_attend_on@3x.png);}
+.round-res .display-board .disp-win {background-image: url('../../WebTournament/www/images/tournerment/tourney/win@3x.png'); }
+.round-res .win-type .on .score {background-image: url('../../WebTournament/www/images/tournerment/tourney/win-type-chk@3x.png'); }
+.round-res-group .display-board .avengers:after { background-image: url('../../WebTournament/www/images/tournerment/tourney/display-win-big.png');}
+.round-res .display-board .disp-win {background-image: url('../../WebTournament/www/images/tournerment/tourney/win@3x.png'); }
+/* E: 대진표, 토너먼트 결과보기 모달 */
+
+/**
+ * S: 영상보기 모달
+ */
+.display-board .player-point .disp-win {background-image: url(http://badmintonadmin.sportsdiary.co.kr/images/include/win@3x.png);}
+.film-modal .modal-body h4 span:before {background-image: url(http://badmintonadmin.sportsdiary.co.kr/images/include/win-title-deco-left@3x.png);}
+.film-modal .modal-body h4 span:after {background-image: url(http://badmintonadmin.sportsdiary.co.kr/images/include/win-title-deco-right@3x.png)}
+/* E: 영상보기 모달 */

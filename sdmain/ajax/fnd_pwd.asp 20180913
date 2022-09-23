@@ -1,0 +1,93 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	'=============================================================================
+	'비밀번호 찾기 페이지
+	'=============================================================================
+	dim UserID 		: UserID    = fInject(Trim(Request("USerID")))
+	dim UserPhone 	: UserPhone = fInject(Trim(Request("UserPhone")))
+	dim UserName	: UserName  = fInject(Trim(Request("UserName")))
+	
+	dim CSQL, CRs, LSQL, InSQL
+	
+	IF UserID = "" Or UserPhone = "" Or UserName = "" Then 
+		Response.Write "FALSE|200"
+		Response.End
+	Else
+		dim TempPass
+		dim SMSMsg
+		
+		CSQL = 	"		SELECT UserID " 
+		CSQL = CSQL & "	FROM [SD_Member].[dbo].[tblMember] " 
+		CSQL = CSQL & "	WHERE DelYN = 'N'" 
+		CSQL = CSQL & "		AND UserID = '"&UserID&"'" 
+		CSQL = CSQL & "		AND UserName = '"&UserName&"'" 
+		CSQL = CSQL & " 	AND Replace(UserPhone,'-','') = '"&UserPhone&"'"
+					
+		SET CRs = DBcon3.Execute(CSQL)
+		IF Not(CRs.Eof Or CRs.Bof) Then
+			
+			'임시비밀번호 업데이트
+			TempPass = random_str()
+			
+			'스포츠다이어리 임시비밀번호****** 마이페이지에서 비밀번호 변경바랍니다.	
+			SMSMsg = "스포츠다이어리 임시비밀번호 ["&TempPass&"] 마이페이지에서 비밀번호 변경바랍니다."
+
+			'임시비밀번호[TempPass] 업데이트
+			LSQL = "		UPDATE [SD_Member].[dbo].[tblMember] " 
+			LSQL = LSQL & "	SET UserPass='"&TempPass&"'"
+			LSQL = LSQL & "		, WriteDate = GETDATE()" 
+			LSQL = LSQL & "	WHERE DelYN='N'" 
+			LSQL = LSQL & "		AND UserID = '"&UserID&"'" 
+			LSQL = LSQL & "		AND UserName = '"&UserName&"'" 
+			LSQL = LSQL & "	 	AND Replace(UserPhone,'-','') = '"&UserPhone&"'"
+
+			DBcon3.Execute(LSQL)				
+		
+			'==========================================================================================================
+			'임시비밀번호 SMS 발송	
+			'==========================================================================================================
+			Itemcenter_DBOpen()
+
+				InSQL = "		  INSERT INTO ITEMCENTER.DBO.T_SEND("
+				InSQL = InSQL & " 		SSUBJECT "
+				InSQL = InSQL & "		,NSVCTYPE "
+				InSQL = InSQL & "		,NADDRTYPE"
+				InSQL = InSQL & "		,SADDRS "
+				InSQL = InSQL & "		,NCONTSTYPE"
+				InSQL = InSQL & "		,SCONTS"
+				InSQL = InSQL & "		,SFROM"
+				InSQL = InSQL & "		,DTSTARTTIME"
+				InSQL = InSQL & " )"
+				InSQL = InSQL & " VALUES("
+				InSQL = InSQL & "	'"&SMSMsg&"'"
+				InSQL = InSQL & "	,3 " '--3:SMS, 5:LMS
+				InSQL = InSQL & "	,0 "
+				InSQL = InSQL & "	,'"&UserPhone&"'" '--수신번호
+				InSQL = InSQL & "	,0"
+				InSQL = InSQL & "	,'"&SMSMsg&"'"
+				InSQL = InSQL & "	,'027040282'" '--발신번호 (발신 확인번호 등록 유의)
+				InSQL = InSQL & "	,GETDATE()"
+				InSQL = InSQL & " )"
+				
+				DBCon2.Execute(InSQL)				
+
+			Itemcenter_DbClose()
+			'==========================================================================================================
+				
+			Response.Write "TRUE|"
+			Response.End
+			
+		Else
+		
+			Response.Write "FALSE|99"
+			Response.End
+			
+		End IF 
+		
+			CRs.Close
+		SET CRs = Nothing 
+		
+		DBClose3()
+		
+	End IF 
+%>

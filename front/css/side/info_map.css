@@ -1,0 +1,41 @@
+.sub.srch-list {border-bottom: 1px solid #d4d4d4; padding-top: 6px; padding-bottom: 6px;}
+.sub.srch-list > *, .sub.srch-list input[type=text] {border: 1px solid #b4b4b4; border-radius: 3px; height: 30px; line-height: 28px; margin-right: 5px; box-sizing: border-box;}
+.sub.srch-list li {position: relative; box-sizing: border-box; height: 35px; float: left;}
+.sub.srch-list li:first-child {width: 30%; margin-left: 10px;}
+.sub.srch-list li:nth-child(2) {width: 40%;}
+.sub.srch-list li:last-child {border: none; width: 23%; float: right;}
+.sub.srch-list select {height: 33px; line-height: 33px; background: #fff; color: #000; border: none;}
+.sub.srch-list input[type=text] {font-size: 0.88em; font-weight: bold; color: #000; border: none; background: #fff; height:33px;}
+#fnd_KeyWord {font-size:0.95em;}
+.sub.srch-list .srch-inpt {width: 100%; min-width: auto; min-height: 100px; overflow-y: scroll;}
+.sub.srch-list .srch-inpt:empty {min-height: 0; padding: 0; border: none;}
+/*input.has-sub + .srch-inpt {display: none;}*/
+.sub.srch-list .srch-inpt li {font-size: 0.88em; background-color: #fff; border: 1px solid #ddd; border-top: none; width: 100%; padding-left: 0px; margin-left: 0; float: none;}
+.sub.srch-list .srch-inpt li:last-child {border-bottom: none;}
+.sub.srch-list a.btn-gray {border: 1px solid #888; width: 100%; height: 100%; margin-top:0;line-height: 34px; border: none; padding: 0; }
+
+#map-box .panel {margin-bottom: 0;}
+.info-map {padding-top: 20px; font-size: 0.94em; border-bottom:1px solid #ddd; padding:15px 10px; background:#fff;}
+.info-map a .icon, .info-map .tel span {display: inline-block; width: 1.55em; padding-left: 5px;}
+.info-map h3 .map-btn {display: inline-block; border-radius: 4px; background-color: #999999; color: #fff; width: 90px; margin-left: 5px; padding-top: 3px; padding-bottom: 3px; padding-left: 0; text-align: center; float: none; transition: all .3s ease;}
+.info-map h3 .map-btn.on {background-color: #4780ab; color: #fff;}
+.info-map h3 .map-btn .deco-txt {vertical-align: middle;}
+.info-map h3 .map-btn .deco-img {font-size: 14px; vertical-align: middle; margin-left: 5px;}
+.info-map h3 {display: inline-block; font-size:1.05em;}
+.info-map .addr {font-size: .88em; color: #666; /* padding-top: 10px; */}
+.info-map .tel {font-size: 1.1em; font-weight: bold;}
+.info-map .tel span {padding-left: 0;dpadding-right: 5px;}
+.info-map .tel .icon-deco {width: 26px; margin-right: 5px;}
+.info-map .daum-map {float: none; margin-top:10px;}
+.side-main .map-list:last-of-type {padding-bottom: 50px;}
+.side-main .srch-list {background: #123651;}
+
+.daum-map div[id*="daumRoughmap"] {display: block; margin-top: 20px;}
+.map-slogan {font-size:13px; padding:0 38px; line-height:20px; text-align:center; margin-top:70px; color:#666; letter-spacing:-1px;}
+.map-slogan p {font-size:18px; color:#333; line-height:26px; margin-bottom:15px;}
+.map-slogan img {width:18%; margin-bottom:20px;}
+.daum-map div div div div div div {height: 50px;}
+.btn_customer {width:209px; height: 38px; line-height: 33px; font-size:14px; color:#354354; font-family: "NanumGothicB"; border:3px solid #354354; border-radius: 5px; background:#fff; text-decoration: none; text-align:center; margin:20px auto 0 auto;}
+.side-main .more_ar {text-align: center; padding-bottom: 60px;}
+.side-main .map-box a.more {display: inline-block; font-size: 0.84em; text-align: center; border: 2px solid #354354; background-color: #fff; color: #354354; border-radius: 4px; padding-bottom: 5px; padding-top: 5px; padding-left: 10px; padding-right: 10px; margin-top: 10px; }
+.side-main .map-box a.more .fa-plus { background-color: #354354; }

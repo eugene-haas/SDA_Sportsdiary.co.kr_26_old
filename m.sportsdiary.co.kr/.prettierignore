@@ -1,0 +1,13 @@
+default.js
+**/*.min.js
+**/*.html
+**/*.json
+**/*.css
+**/*.asp
+**/_*.js
+**/library/**/*.js
+library/**/*.js
+**/plugins/**/*.js
+plugins/**/*.js
+node_modules
+# npx prettier --write "{js,pages}/**/*.js"

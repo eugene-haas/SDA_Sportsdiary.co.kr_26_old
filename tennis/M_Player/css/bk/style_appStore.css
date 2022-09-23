@@ -1,0 +1,9 @@
+.hamBtn .btn, .hamBtn .btn:before, .hamBtn .btn:after {background:#123651;}
+.login-btn a span {color:#123651;}
+/*.gnb-header {background:#3b89cb;}
+.navi-list {background:#1f527d; border-bottom:1px solid #4078a8;}
+.navi-list li:nth-child(even) {border-left: 1px solid #4078a8;}*/
+.btn-full {background:#1d5077;}
+/*.gnb-icon a {border-right:2px solid #64acea;}*/
+.sub-header h1 {color:#4d4d4d;}
+.hamBtn.bluy .btn, .hamBtn.bluy .btn:before, .hamBtn.bluy .btn:after {background:#4d4d4d;}

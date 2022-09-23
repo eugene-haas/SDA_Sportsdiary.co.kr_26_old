@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<title>CKEditor 5 – classic editor build sample</title>
+
+
+<style>
+/**
+ * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+:root {
+	--ck-sample-base-spacing: 2em;
+	--ck-sample-color-white: #fff;
+	--ck-sample-color-green: #279863;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+
+	font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 16px;
+	line-height: 22px;
+}
+
+body {
+	height: 100%;
+	color: #2D3A4A;
+	background-image: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	background-size: 100% auto;
+}
+
+
+
+
+/* --------- MAIN ------------------------------------------------------------------------------- */
+
+main .message {
+	padding: 0 0 var(--ck-sample-base-spacing);
+	background: var(--ck-sample-color-green);
+	color: var(--ck-sample-color-white);
+}
+
+main .message::after {
+	content: "";
+	z-index: -1;
+	display: block;
+	height: 10em;
+	width: 100%;
+	background: var(--ck-sample-color-green);
+	position: absolute;
+	left: 0;
+}
+
+main .message h1 {
+	padding-top: var(--ck-sample-base-spacing);
+	margin: 0 0 1em;
+	font-size: 2.2em;
+}
+
+main .message p {
+	font-size: 1.1em;
+	line-height: 1.6em;
+}
+
+main .message p a {
+	color: var(--ck-sample-color-white);
+}
+
+main #editor {
+	background: var(--ck-sample-color-white);
+	box-shadow: 2px 2px 2px rgba(0,0,0,.1);
+	border: 1px solid #DFE4E6;			
+	border-bottom-color: #cdd0d2;
+	border-right-color: #cdd0d2;
+}
+
+main .ck.ck-editor {
+	box-shadow: 2px 2px 2px rgba(0,0,0,.1);
+}
+
+main .ck.ck-content {
+	font-size: 1em;
+	line-height: 1.6em;
+	margin-bottom: 0.8em;
+	min-height: 200px;
+	padding: 1.5em 2em;
+}
+
+main #references {
+	margin: 4em 0 var(--ck-sample-base-spacing);
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
+	grid-gap: var(--ck-sample-base-spacing);
+}
+
+main #references > section {
+	background: var(--ck-sample-color-white);
+	border-radius: 2px;
+	border: 1px solid #DFE4E6;			
+	padding: var(--ck-sample-base-spacing);
+	line-height: 1.8em;
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+main #references > section h2 {
+	margin: .5em 0;
+}
+
+main #references > section p:first-of-type {
+	flex: 1 0 auto;
+}
+
+main #references > section p:last-child {
+	margin: calc(.25*var(--ck-sample-base-spacing)) 0 0;
+}
+
+main #references > section p:last-child a {
+	background: #38A5EE;
+	border-radius: 5px;
+	padding: .4em 1em;
+	color: var(--ck-sample-color-white);
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+main #references > section p:last-child a:hover {
+	background: #218cd4;
+}
+
+/* --------- MAIN / DOCUMENT EDITOR --------------------------------------------------------------- */
+
+
+</style>
+
+</head>
+<body>
+
+
+<main>
+	<div class="centered">
+		<div id="editor">
+
+		</div>
+	</div>
+</main>
+
+
+
+<script src="ckeditor.js"></script>
+
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor' ), {
+			 toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+
+
+
+
+
+</script>
+
+</body>
+</html>

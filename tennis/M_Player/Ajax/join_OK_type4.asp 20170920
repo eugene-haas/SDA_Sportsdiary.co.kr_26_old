@@ -1,0 +1,117 @@
+﻿<!--#include file="../Library/ajax_config.asp"-->
+<%
+	'=================================================================
+	'엘리트 일반 회원가입
+		'PlayerReln --> [D]
+	'=================================================================
+	dim UserID 			: UserID 			= fInject(trim(Request("UserID")))
+	dim UserPass 		: UserPass 			= fInject(trim(Request("UserPass")))		
+	dim UserName 		: UserName 			= fInject(trim(Request("UserName")))
+	dim UserBirth 		: UserBirth 		= fInject(trim(Request("UserBirth")))
+	dim UserEnName 		: UserEnName   		= fInject(trim(Request("UserEnName")))
+	dim UserPhone 		: UserPhone 		= fInject(trim(Request("UserPhone")))
+	dim UserEmail 		: UserEmail 		= ReplaceTagText(fInject(trim(Request("UserEmail"))))
+	dim UserAddr 		: UserAddr 			= ReplaceTagText(fInject(trim(Request("UserAddr"))))
+	dim UserAddrDtl 	: UserAddrDtl 		= ReplaceTagText(fInject(trim(Request("UserAddrDtl"))))
+	dim SEX 			: SEX 				= fInject(Request("SEX"))	
+	dim ZipCode 		: ZipCode 			= fInject(Request("ZipCode"))	
+	dim SmsYn 			: SmsYn 			= fInject(Request("SmsYn"))				'휴대폰 수신동의
+	dim EmailYn 		: EmailYn 			= fInject(Request("EmailYn"))			'이메일 수신동의
+	dim SportsType	 	: SportsType 		= fInject(Request("SportsType"))		'스포츠종목
+	dim EnterType	 	: EnterType 		= fInject(Request("EnterType"))			'회원구분[E:엘리트 | A:아마추어 | K:국가대표]
+	dim PlayerReln 		: PlayerReln 		= fInject(Request("PlayerReln"))		'선수와의 관계[A:부 | B:모 | Z:기타 | T:팀매니저 | K:비등록선수 | D:일반]
+	dim Job	 			: Job 				= fInject(Request("Job"))				'직업
+	dim Interest	 	: Interest 			= fInject(Request("Interest"))			'관심분야
+	
+	dim CSQL, CRs
+
+	If UserID = "" OR UserPass = "" OR UserName = "" Then 	
+		Response.Write "FALSE"
+		Response.End
+	Else 
+		'tblMember 가입내역 조회		
+		CSQL =  	" 	SELECT MemberIDX " 
+		CSQL = CSQL & " FROM [Sportsdiary].[dbo].[tblMember] " 
+		CSQL = CSQL & " WHERE DelYN = 'N' " 
+		CSQL = CSQL & " 	AND SportsType = '"&SportsType&"' " 
+		CSQL = CSQL & " 	AND UserName = '"&UserName&"' " 
+		CSQL = CSQL & "		AND Birthday = '"&UserBirth&"' " 		
+		CSQL = CSQL & " 	AND PlayerReln = '"&PlayerReln&"' " 
+		
+		SET CRs = DBCon.Execute(CSQL)	
+		IF Not(CRs.eof or CRs.bof) Then
+			Response.Write "FALSE2"
+		Else
+			
+			JoinSQL =  "INSERT INTO [SportsDiary].[dbo].[tblMember] (" &_
+						"	 SportsType" &_ 
+						"	,UserID" &_ 
+						"	,UserPass" &_
+						"	,UserName" &_										
+						"	,UserEnName" &_
+						"	,UserPhone" &_
+						"	,Birthday" &_ 
+						"	,Email" &_
+						"	,Address" &_
+						"	,AddressDtl" &_
+						"	,Sex" &_
+						"	,Job" &_
+						"	,Interest" &_
+						"	,PlayerReln "&_
+						"	,ViewManage " &_
+						"	,EnterType " &_
+						"	,ZipCode" &_
+						"	,UserMinorYn" &_
+						"	,SrtDate" &_ 
+						"	,WriteDate" &_ 					
+						"	,Auth_YN" &_ 
+						"	,InfoYN" &_ 					
+						"	,EmailYn" &_ 					
+						"	,EmailYnDt" &_ 					
+						"	,SmsYn" &_ 					
+						"	,SmsYnDt" &_ 					
+						"	,DelYN " &_ 	
+						"	,EdSvcReqTp " &_ 				
+						") VALUES( " &_
+							"'"&SportsType&"', " &_
+							"'"&UserID&"', " &_
+							"'"&UserPass&"', " &_
+							"'"&UserName&"', " &_
+							"'"&UserEnName&"', " &_
+							"'"&UserPhone&"', " &_
+							"'"&UserBirth&"', " &_
+							"'"&UserEmail&"', " &_
+							"'"&UserAddr&"', " &_
+							"'"&UserAddrDtl&"', " &_
+							"'"&SEX&"', " &_
+							"'"&Job&"', " &_
+							"'"&Interest&"', " &_
+							"'"&PlayerReln&"', " &_
+							"'N', " &_
+							"'"&EnterType&"', " &_
+							"'"&ZipCode&"', " &_
+							"'N', " &_
+							"'"&replace(left(now(),10),"-","")&"', " &_
+							"GETDATE(), " &_
+							"'Y', " &_
+							"'Y', " &_
+							"'"&EmailYn&"', " &_
+							"'"&replace(left(now(),10),"-","")&"', " &_
+							"'"&SmsYn&"', " &_
+							"'"&replace(left(now(),10),"-","")&"', " &_
+							"'N', "	&_
+							"'A')"	
+			
+							DBCon.Execute(JoinSQL)	
+
+			Response.Write "TRUE"
+		
+		End IF
+			CRs.Close
+		SET CRs = Nothing
+		
+		DBClose()
+		
+	End If 
+
+%>

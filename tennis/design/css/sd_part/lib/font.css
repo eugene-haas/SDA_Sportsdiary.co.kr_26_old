@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family:'NotoKR';font-style:normal;font-weight:400;src:url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot);src:url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot?#iefix) format("embedded-opentype") url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff2) format("woff2") url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff) format("woff") url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.ttf) format("truetype");src:local(※) url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff) format("woff");
+}
+
+/*# sourceMappingURL=../../maps/sd_part/lib/font.css.map */

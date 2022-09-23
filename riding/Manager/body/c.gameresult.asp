@@ -1,0 +1,439 @@
+<!-- #include virtual = "/pub/fn/fn_bbs_select.asp" -->
+<!-- #include virtual = "/pub/fn/fn.paging.asp" -->
+
+<%
+ 'Controller ################################################################################################
+	Set db = new clsDBHelper
+
+	'소문자키 대문자 값
+	Set errdic = CreateObject("Scripting.Dictionary")
+	errdic.add "e","A"
+	errdic.add "r","B"
+	errdic.add "w","C"
+	errdic.add "d","D"
+
+
+
+
+	'등록된 최소년도
+	SQL = "Select min(GameYear) from sd_TennisTitle where delYN = 'N' "
+	Set rs = db.ExecSQLReturnRS(SQL, null, ConStr)
+	If  isNull(rs(0)) = true then
+	  minyear = year(date)
+	Else
+	  minyear = rs(0)
+	End If
+	rs.close
+
+  	'search
+	If chkBlank(F2) Then
+		strWhere = " DelYN = 'N'  and GameYear = '"&year(date)&"' "
+		findWhere = " DelYN = 'N'  and GameYear = '"&year(date)&"' "
+
+		nowgameyear = year(date)
+	Else
+		If InStr(F1, ",") > 0  Then
+			F1 = Split(F1, ",")
+			F2 = Split(F2, ",")
+		End If
+
+		If IsArray(F1) Then
+			fieldarr = array("GameYear","gametitleidx","gbidx")
+			F2_0 = F2(0)
+			F2_1 = F2(1)
+			F2_2 = F2(2)
+
+			tidx = F2_1
+			find_gbidx = F2_2
+			strWhere = " DelYN = 'N' and "&fieldarr(0)&" = '" & F2_0 &"' and "&fieldarr(1)&" = '"& F2_1 &"' "
+			findWhere = " DelYN = 'N'  and GameYear = '"&F2_0&"' "
+
+			nowgameyear = F2_0
+		Else
+			strWhere = " DelYN = 'N' and "&F1&" = '"& F2 &"' "
+
+			If LCase(F1) = "gameyear" Then
+				nowgameyear = F2
+			End if
+		End if
+	End if
+
+	'년도별 대회명검색
+	fieldstr =  "GameTitleIDX,GameTitleName,GameS,GameE,GameYear,GameArea,kgame, titlecode  "
+	SQL = "Select  "&fieldstr&" from sd_TennisTitle where " & findWhere & " order by GameS desc"
+	Set rss = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+
+
+	If Not rss.EOF Then
+		arrPub = rss.GetRows()
+		'Call GetRowsdrow(arrpub)
+		t_titlecode = arrPub(7,0)
+		t_gametitlename = arrPub(1,0)
+
+		If tidx = "" Then
+			If IsArray(arrPub)  Then
+				tidx = arrPub(0, 0)
+				kgame = arrPub(6, 0)
+			End If
+		Else
+
+		For ari = LBound(arrPUb, 2) To UBound(arrPUb, 2)
+			If CStr(tidx) = CStr(arrpub(0,ari)) Then
+			t_titlecode = arrPub(7,ari)
+			t_gametitlename = arrPub(1,ari)
+			End If
+		Next
+		
+
+		End if
+	End If
+
+
+	If tidx = "" Then
+		%>
+		<script>px.goSubmit( {'F1':[0,1,2],'F2':['<%=year(date)-1%>','',''],'F3':[]} , 'gameresult.asp');</script>
+		<%
+		'Response.write "대회가 존재하지 않습니다. 대회를 생성해 주십시오."
+		Response.end
+	End if
+
+
+
+	'Response.write "#######################"&kgame
+	
+	'년도별 대회별 각경기 리스트
+	strTableName2 = "  tblRGameLevel as a inner join tblTeamGbInfo as b  ON a.gbidx = b.teamgbidx and b.DelYN = 'N'  "
+	strfieldA = " a.RGameLevelidx,a.GbIDX " ',a.GameTitleIDX,a.GbIDX,b.useyear,b.levelno
+	strfieldB = " cast(a.gameno as varchar) + '경기 ('+ PTeamGbNm +') : ' + b.TeamGbNm + b.levelNm + ' ' + b.ridingclass + ' ' + b.ridingclasshelp ,a.GameDay,a.GameTime,a.gametimeend,b.TeamGbNm,isnull(a.judgecnt,0), a.judgemaxpt, judgesignYN,judgeshowYN    ,b.ridingclass , b.ridingclasshelp    ,judgeB,judgeE,judgeM,judgeC,judgeH,  teamgb,judgecnt,bestsc     ,a.maxChk,a.minChk , a.gameday2 "
+	strFieldName2 = strfieldA &  "," & strfieldB
+	strSort2 = "  ORDER BY gameno asc"
+	strWhere2 = " a.GameTitleIDX = '"&tidx&"' and a.DelYN = 'N' "
+
+	SQL = "Select "&strFieldName2&" ,PTeamGbNm    from "&strTableName2&" where " & strWhere2 & strSort2
+	
+	Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+	'Call rsdrow(rs)
+	'Response.end
+	'Response.write f_gbidx
+
+	If Not rs.EOF Then
+		arrNo = rs.GetRows()
+		If find_gbidx = "" Then
+			If IsArray(arrNo)  Then
+				find_gbidx = arrNo(1, 0)
+				'Response.write find_gbidx &"ddd"
+			End if
+		End if
+	End If
+	rs.close
+
+
+	If IsArray(arrNo)  Then
+		For ar = LBound(arrNo, 2) To UBound(arrNo, 2)
+			'f_ridx = arrNo(0,ar) 'tblRGameLevel.RGameLevelidx
+			f_gbidx = arrNo(1, ar)
+
+
+			If F2_2 = "" Then
+					select_f_ridx = arrNo(0,ar)
+					find_gbidx = arrNo(1, ar)
+					select_f_title =  arrNo(2, ar)
+					select_f_date = arrNo(3,ar)
+					select_f_stime = arrNo(4,ar)
+					select_f_etime = arrNo(5,ar)
+					Select_f_teamgbnm = arrNo(6,ar)
+					select_f_judgecnt = arrNo(7, ar)
+					select_f_judgemaxpt = arrNo(8, ar)
+					select_f_judgesignYN = arrNo(9, ar)
+					select_f_judgeshowYN = arrNo(10, ar)
+					select_f_class = arrNo(11, ar)
+					select_f_classhelp = arrNo(12, ar)
+
+					select_f_B = arrNo(13, ar)
+					select_f_E = arrNo(14, ar)
+					select_f_M = arrNo(15, ar)
+					select_f_C = arrNo(16, ar)
+					select_f_H = arrNo(17, ar)
+
+					select_f_teamgb = arrNO(18,ar)
+					select_f_boocnt = arrNo(19,ar)
+					select_f_bestsc = arrNo(20,ar)
+
+					select_f_MAX =  arrNo(21,ar) '최고점제외
+					select_f_MIN =  arrNo(22,ar)
+
+					select_f_date2 = arrNo(23,ar)
+					select_f_PTeamGbNm = arrNo(24,ar) '개인 단체 구분
+
+					Exit for
+			else
+				'If f_gbidx = "" Or CStr(f_gbidx) <> CStr(f_pregbidx) Then
+					If CStr(f_gbidx) = CStr(F2_2) Then
+						select_f_ridx = arrNo(0,ar)
+						find_gbidx = arrNo(1, ar)
+
+'sss =  f_ridx & "_" & find_gbidx
+
+						select_f_title =  arrNo(2, ar)
+						select_f_date = arrNo(3,ar)
+						select_f_stime = arrNo(4,ar)
+						select_f_etime = arrNo(5,ar)
+						Select_f_teamgbnm = arrNo(6,ar)
+						select_f_judgecnt = arrNo(7, ar)
+						select_f_judgemaxpt = arrNo(8, ar)
+						select_f_judgesignYN = arrNo(9, ar)
+						select_f_judgeshowYN = arrNo(10, ar)
+
+						select_f_class = arrNo(11, ar)
+						select_f_classhelp = arrNo(12, ar)
+
+						select_f_B = arrNo(13, ar)
+						select_f_E = arrNo(14, ar)
+						select_f_M = arrNo(15, ar)
+						select_f_C = arrNo(16, ar)
+						select_f_H = arrNo(17, ar)
+
+						select_f_teamgb = arrNO(18,ar)
+						select_f_boocnt = arrNo(19,ar)
+						select_f_bestsc = arrNo(20,ar)
+
+						select_f_MAX =  arrNo(21,ar)
+						select_f_MIN =  arrNo(22,ar)
+
+						select_f_date2 = arrNo(23,ar)
+						select_f_PTeamGbNm = arrNo(24,ar) '개인 단체 구분
+
+						Exit for
+					End If
+				'End If
+			End if
+		f_pregbidx = f_gbidx
+		Next
+	End if
+
+
+
+
+'장애물 A타입이 아닌 모든경우 기본값
+maxrndno = 1
+
+    ' ===============================================================================================
+    ' sub function
+    ' ===============================================================================================
+
+    ' ===============================================================================================
+    ' classHelp를 입력받아 orderUpdate의 OrderType을 반환한다.
+	'fnc >> GetOrderType >> fn_riding.asp
+
+    sel_orderType = GetOrderType(select_f_classhelp, select_f_teamgb, select_f_class)
+
+	If select_f_teamgb = "20103" Then '복합마술(마장마술)
+		sousoojerm = 1
+	Else
+		sousoojerm = 3
+	End if
+
+
+
+'sss =  f_ridx & "_" & find_gbidx & "A" & F2_2 &  "***"
+
+'Response.write "$$$$$$$$$$" & select_f_teamgb  & "<br>"
+'Response.write "$$$$$$$$$$" & select_f_classhelp
+'Response.write select_f_judgecnt & "##3"
+%>
+<!-- ###############<%=sel_orderType%><%=select_f_teamgb%>@@ -->
+
+
+
+<%'View ####################################################################################################%>
+<div class="admin_content">
+  <a name="contenttop"></a>
+
+  <div class="page_title"><h1>심사관리 > 결과조회</h1></div>
+
+  <%'If CDbl(ADGRADE) > 500 then%>
+
+
+	<!-- s: 정보 검색 -->
+	<div class="info_serch" id="gameinput_area">
+		<!-- #include virtual = "/pub/html/riding/resultFindform.asp" -->
+	</div>
+	<!-- e: 정보 검색 -->
+
+
+<%'<script type="text/javascript" src="/pub/js/sort/sortable-tables.min.js?v=1.1.2"></script>%>
+<%'<script type="text/javascript" src="/pub/js/print/printThis.js?v=1.1.2"></script>%>
+
+
+<script src="/pub/js/excel/xlsx.full.min.js"></script>
+<script src="/pub/js/excel/FileSaver.min.js"></script>
+
+
+<script>
+//공통
+// 참고 출처 : https://redstapler.co/sheetjs-tutorial-create-xlsx/
+function s2ab(s) { 
+    var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
+    var view = new Uint8Array(buf);  //create uint8array as viewer
+    for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
+    return buf;    
+}
+function exportExcel( xlsname, sheetname ){ 
+	excelHandler.tablename = xlsname;
+	excelHandler.sheetname = sheetname;
+
+    // step 1. workbook 생성
+    var wb = XLSX.utils.book_new();
+
+    // step 2. 시트 만들기 
+    var newWorksheet = excelHandler.getWorksheet();
+
+	//간격조정때 사용
+//      var wsrows =  [            
+//            {wch: 10}, // A Cell Width
+//            {wch: 50}, // B Cell Width
+//         ];
+//      newWorksheet['!cols'] = wsrows;
+
+
+    // step 3. workbook에 새로만든 워크시트에 이름을 주고 붙인다.  
+    XLSX.utils.book_append_sheet(wb, newWorksheet, excelHandler.getSheetName());
+
+    // step 4. 엑셀 파일 만들기 
+    var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
+
+    // step 5. 엑셀 파일 내보내기 
+    saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), excelHandler.getExcelFileName());
+}
+</script>
+
+
+<script>
+var excelHandler = {
+		tablename : 'gamename',
+		sheetname : 'sheetname',
+
+        getExcelFileName : function(){
+            return this.tablename+ '.xlsx';
+        },
+        getSheetName : function(){
+            return this.sheetname;
+        },
+        getExcelData : function(){
+            return document.getElementById('tblriding'); 
+        },
+        getWorksheet : function(){
+            return XLSX.utils.table_to_sheet(this.getExcelData());
+        }
+}
+</script>
+
+
+
+
+
+
+  <div class="table-responsive" id="printdiv">
+
+		<div class="btn-toggle" style="text-align: right;padding-top:10px;">
+			<div class="btn-group">
+				<a href="javascript:exportExcel('<%=t_gametitlename%>','<%=select_f_date%>')" title="액셀 다운로드" class="btn btn-primary flr"><span class="glyphicon glyphicon-save-file"></span>&nbsp;엑셀</a>
+				
+				&nbsp;&nbsp;&nbsp;
+			
+				<a href="javascript:mx.setPointWin('<%=tidx%>','<%=find_gbidx%>',<%=select_f_teamgb%>,'<%=sel_orderType%>','<%=kgame%>')" title="포인트생성" class="btn btn-primary"><span class="glyphicon glyphicon-save-file"></span>&nbsp;포인트적용</a>			
+			</div>
+		</div>
+
+		<table  cellspacing="0" cellpadding="0" class="table table-hover" id="tblriding">
+			<thead>
+
+				<tr>
+						<th>구분</th>
+						<th>종목</th>
+						<th>대회명</th>
+						<th>대회코드</th>
+						<th>선수명</th>
+						<th>마명</th>
+<%If sel_orderType <> "릴레이" Then%>
+						<th>소속</th>
+<%else%>
+						<th>경기방식</th>
+<%End if%>
+						<th>선수등록번호</th>
+						<th>체육인번호</th>
+						<th>Class</th>
+						<th>Class안내</th>
+<%If sel_orderType <> "릴레이" Then%>
+						<th>라운드</th>
+						<th>부별</th>
+						<th>성적</th>
+						<th>부별순위</th>
+<%End if%>
+						<th>전체순위</th>
+						<th>참가인원</th>
+						<th>포인트</th>
+						<th>실적</th>
+						<th>상금(만)</th>
+				</tr>
+			</thead>
+			<tbody id="listcontents">
+
+
+
+
+				<%
+
+
+	If select_f_teamgb <> "" Then '가져올 값이 있을때만
+
+				'#############################################
+				If select_f_teamgb <> "20103" then
+					If sel_orderType = "MM" Then
+					%><!-- #include virtual = "/pub/html/riding/resultlist.asp" --><%
+					
+					ElseIf sel_orderType = "릴레이" Then
+					%><!-- #include virtual = "/pub/html/riding/resultlistRelay.asp" --><%
+
+					ElseIf sel_orderType = "지구력" THEN
+					%><!-- #include virtual = "/pub/html/riding/resultlist.asp" --><%
+
+					Else '장애물
+						SQL = "Select max(round) from SD_tennisMember where gametitleidx = " & tidx & " and delYN = 'N' and gamekey3 = '" &find_gbidx & "'"
+						Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+						If isNull(rs(0)) = False  Then
+							maxrndno = rs(0)
+						End if	
+					
+						If kgame = "Y" then
+						%><!-- #include virtual = "/pub/html/riding/resultlist_JK.asp" --><%
+						else
+						%><!-- #include virtual = "/pub/html/riding/resultlist_J.asp" --><%
+						End if
+					End If
+
+				Else
+
+
+					rt_gbidx = find_gbidx
+					%><!-- #include virtual = "/pub/html/riding/resultlist_BM.asp" --><%
+				End if
+
+	end if
+				%>
+
+
+			</tbody>
+	  </table>
+	  <br><br>
+  </div>
+
+
+
+
+</div>
+
+
+<div id="ModallastRound" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

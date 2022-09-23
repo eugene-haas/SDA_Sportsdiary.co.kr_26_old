@@ -1,0 +1,20 @@
+.party_table {margin-top: 30px;}
+.party_table:after{display: table;content: '';clear: both;}
+.party_table .title_scroll {float: left;width: 49%;}
+.party_table .title_scroll:first-child {margin-right: 20px;}
+
+.party_table .sch-table {text-align: center;background-color: #eff2f6;border: 1px solid #ced5e3;width: 100%;margin-bottom: 10px;}
+.party_table .sch-table td {padding: 15px 18px;}
+.party_table .sch-table input,
+.party_table .sch-table label {display: inline-block;vertical-align: middle;margin: 0;}
+.party_table .sch-table .chk-ipt {width: 20px;height: 20px;margin-right: 4px;}
+.party_table .sch-table label {font-size: 13px;color: #3e4e68;margin-right: 10px;}
+.party_table .sch-table .ipt-word {width: 280px;height: 35px;padding-left: 10px;}
+.party_table .sch-table .btn {border-radius: 0;width: 75px;margin-left: 4px;}
+
+.party_table .table-list thead .btn {width:80%;height: 28px;line-height: 28px;}
+.party_table .table-list thead span {display: inline-block;vertical-align: middle;margin-right: 10px;}
+.party_table .table-list thead select {width: 180px;height: 28px;}
+.party_table .table-list thead th:last-child {width: 160px;}
+.party_table .table-list tbody .btn {height: 28px;line-height: 28px;}
+.party_table .table-list tbody .btn-blue-empty {width: 80%;}

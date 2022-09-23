@@ -1,0 +1,16 @@
+.sub.sche .date.match {padding-top: 10px; padding-left: 10px;padding-bottom: 10px; border-bottom: none;}
+.match-info .match-name {background-color: #26577f; color: #fff;}
+.match-info .match-result.sub-title {color: #164369; border-bottom: 1px solid #4c6f8c;}
+.match-info dl {border-bottom: 1px solid #ddd; padding-top:10px; background:#fff;}
+.match-info dl dt, .match-info dl dd {padding-top: 4px;/* padding-bottom: 4px; */margin-left: 10px;float: left;}
+.match-info dl dt {font-size: 0.75em;background-color: #6a7780;color: #fff;border-radius: 30px;padding-left: 8px;padding-right: 8px;padding-bottom: 2px;font-family: 'nanumGothicB';}
+.match-info dl dt .medal {display: inline-block;background-repeat: no-repeat;-webkit-background-size: cover;background-size: cover;background-position: center -2px;vertical-align: middle;width: 13px;height: 18px;margin-right: 5px;}
+.match-info dl dd.match-set {width: 160px;font-size: 0.75em;font-family: 'nanumGothicB';}
+.match-info dl dd.match-set span { position:relative; padding-right:5px;}
+.match-info dl dd.match-set span:after {position:absolute; top:2px; right:0; content:''; background-color:#cccccc; width:1px; height:11px; }
+.match-info dl dd.match-set span:last-child:after { background-color:initial;}
+.match-info dl dd.btn-film {float: right; margin-left: 0; margin-right: 10px; margin-top: -5px;}
+.match-info .show-film {display: inline-block;background-color: #ff7200;border: 1px solid #ff7200;/* padding-left: .5em; *//* padding-right: .5em; *//* padding-top: .32em; */padding-bottom: .32em;text-align: center;width: 40px;margin-bottom: 7px;float: right;}
+.match-info .show-film img { width: 43%;}
+
+.btn-list.train-btn {background-color: #edf0f4;}

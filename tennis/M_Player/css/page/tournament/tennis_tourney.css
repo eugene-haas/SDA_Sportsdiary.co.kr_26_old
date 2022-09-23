@@ -1,0 +1,89 @@
+.tennis-tourney-wrap {width: 320px; margin: 0 auto; text-align: center;}
+.tennis-tourney {transform: scale(0.29); transform-origin: left top; width: 1100px; margin: 0 auto;}
+.tennis-tourney .match {background: none; padding-top: 3px; padding-bottom: 3px;}
+.tennis-tourney .no-match {height: auto; padding-top: 56px; padding-bottom: 56px;}
+.tennis-tourney .right-side .no-match {padding-top: 57px; padding-bottom: 60px;}
+.tennis-tourney .player-info {width: 205px; height: auto; padding-top: 11px; padding-bottom: 12px;}
+.tennis-tourney .left-side .player-name,
+.tennis-tourney .left-side .player-school,
+.tennis-tourney .right-side .match-list {float: right}
+.tennis-tourney .right-side .player-name,
+.tennis-tourney .right-side .player-school,
+.tennis-tourney .left-side .match-list {float: left}
+/*.tennis-tourney .player-name,
+.tennis-tourney .player-school {width: 100px; white-space: nowrap; text-overflow: clip; overflow: hidden;}*/
+/*.tennis-tourney .player-name,
+.tennis-tourney .right-side .player-name {width: 80px;}*/
+
+.preli {margin-top:10px;}
+.preli .preli-table .result {font-size: 0.94em; padding:1px 3px 0px; background-color: #3e7c01;color: #fff;}
+.preli .preli-table .point {font-size: 0.94em;background-color: #2f9c9d;color: #fff;}
+
+.preli .btn-show-result {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8863f+0,893f1e+100 */
+background: #c8863f; /* Old browsers */
+background: -moz-linear-gradient(top,  #c8863f 0%, #893f1e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c8863f 0%,#893f1e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c8863f 0%,#893f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8863f', endColorstr='#893f1e',GradientType=0 ); /* IE6-9 */ border: 1px solid #a86c3f; color: #fff; font-weight: normal;font-size: 0.88em;margin-top: 4px;}
+
+.preli .preli-table {overflow-x: scroll;border: none;}
+.preli .preli-table table {font-size: 16px;width: 480px;border-left: 1px solid #bbb;border-right: 1px solid #bbb;}
+.preli .preli-table table th {font-family:'NotoKR-dl'; font-size: 0.78em;  display: table-cell; vertical-align: middle; padding:5px 8px 4px;}
+.preli .preli-table table th span{width:60px;display:block; line-height:13px;}
+.preli .preli-table table th:nth-child(2) span {width:80px;}
+.preli .preli-table table td {font-size: 0.82em;text-align: center;}
+.preli .preli-table .player {text-align: center;padding-bottom: 4px;}
+.preli .preli-table .belong {width: 65px;text-align: center;padding-bottom: 4px;} 
+
+/* 예선 결과 표 */
+.tourney-main .preli-league {overflow-x: scroll;padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 40px;}
+.tourney-main .preli-league table {font-size: 16px;width: 480px;}
+.preli-league table th p {line-height: 110%;}
+.preli-league table .player {font-size: 0.78em;}
+.preli-league table .belong {font-size: 0.78em;}
+.preli-league table .round {font-size: 0.948em;width: 14px;height: 14px;line-height: 14px;margin-top: 8px;margin-bottom: 8px;}
+.preli-league table thead .tit {font-size: 0.84em;}
+.preli-league table .win-lose .record-box,
+.preli-league table .win-lose .point {font-size: 0.88em;}
+.preli-league table tbody td:last-child {font-size: 0.94em;}
+.preli-league table tbody td p {font-size: 1.47em;}
+.preli-league table tbody td .btn {font-size: 1.4em;}
+.preli-league table thead th:first-child {font-size: 1em;}
+.preli-league table tbody th .round {margin-bottom: 4px;}
+.preli-league table .win-lose {font-size: initial;}
+
+.preli-league .btn-show-list {font-family: 'NotoKR';font-size: 1em; height: 40px;line-height: 40px; margin-top: 20px;}
+
+/**
+ * --------------------------------
+ * 입력하기 > 대진표 > 색상 안내
+ * --------------------------------
+ */
+.color-guide {display: block; font-family: 'Noto KR Bold'; font-size: 14px; width: 300px; margin: 10px auto 0; float: none;margin-bottom: 20px;}
+.color-guide h2 {background-color: #747b82; font-size: 0.92em; text-align: center; color: #fff; border-top: 1px solid #ccc; margin-bottom: 0;}
+.color-guide .guide-cont,
+.color-guide .guide-group-cont { background-color: #f3f3f3; text-align: center; padding-top: 15px; padding-bottom: 10px; }
+.color-guide li {display: inline-block; margin-right: 5px;}
+.color-guide li:last-child {margin-right: 0;}
+.color-guide a {vertical-align: top; float: left; margin-top: 0px;}
+.color-guide a.btn:hover, .color-guide a.btn:focus, .color-guide a.btn:active {background-position: center center; color: inherit;}
+.color-guide a.btn-look:hover, .color-guide a.btn-look:focus, .color-guide a.btn-look:active {background-image: url('../images/tournerment/tourney/btn-L-look.svg'); -webkit-box-shadow: none; box-shadow: none; }
+.color-guide a.btn-look.half:hover, .color-guide a.btn-look.half:focus, .color-guide a.btn-look.half:active {background-image: url('../images/tournerment/tourney/btn-L-look-half.svg'); color: #fff; }
+.color-guide a.btn-look.full:hover, .color-guide a.btn-look.full:focus, .color-guide a.btn-look.full:active {background-image: url('../images/tournerment/tourney/btn-L-look-full.svg'); color: #fff;}
+.color-guide a.btn-look.regist:hover, .color-guide a.btn-look.regist:focus, .color-guide a.btn-look.regist:active {background-image: url('../images/tournerment/tourney/btn-L-look-regist.svg'); color: #00991d;}
+.color-guide p {display: inline-block; font-size: 0.88em; font-weight: bold; color: inherit; margin-bottom: 0; float: left;}
+
+.tourney-main .preli-result-title {font-family: 'Noto KR Bold'; font-size: 22px; margin-left: 52px; margin-right: 50px; margin-top: 5px; margin-bottom: 10px; padding-left: 8px; border-left: 5px solid #0092ce;}
+
+.tourney .match .player-info {height: 30px;line-height: 1;padding-top: 0;padding-bottom: 0;}
+.tourney .match .player-info span {display: inline-block;vertical-align: middle;}
+.tourney .left-side .player-name {padding-left: 10px;}
+.player-info .player-school {max-width: 85px;}
+.tourney .player-info:after {display: block;clear: both;content: '';}
+.tourney .left-side .player-info .player-name,
+.tourney .left-side .player-info .player-school {float: right;}
+.tourney .right-side .player-info .player-name,
+.tourney .right-side .player-info .player-school {float: left;}
+
+.sub.tourney .match-list .match.no-player {border: 1px solid #bbb;padding-top: 11px;padding-bottom: 11px;margin-bottom: 10px;}
+.sub.tourney .match-list .match.no-player .player-info:nth-child(2) {display: none;}

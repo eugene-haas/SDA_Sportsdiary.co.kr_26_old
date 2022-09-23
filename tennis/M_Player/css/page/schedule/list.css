@@ -1,0 +1,42 @@
+.line-1.schedule {padding-bottom: 0px;}
+.day-list dt, .day-list dd {float: left;}
+.schedule .day-list dt {float:left; background-color: #fff;border: none;width: 66px;margin: 0;padding: 0;}
+/*.schedule .schedule-header.sche-title {margin-bottom: 20px;}*/
+.day-list {margin-bottom: 3px;}
+.day-list dd {width: calc(100% - 100px);}
+.day-list dt span.one-word {/*font-size: 0.64em;*/ font-size:0.82em; line-height:1; font-weight:normal; font-family:dotum; width: auto; padding:3px; color: #fff;vertical-align: middle;margin-right: 5px;}
+.day-list dd p {font-size: 0.94em;}
+.day-list dd p.detail {color: #999;}
+.day-list dd span {display: inline-block;position: relative;padding-right: 4px;margin-right: 4px;}
+.day-list dd span:after {position: absolute;top: 4px;right: -3px;content: '';width: 1px;height: 10px;background-color: #c6c6c6;}
+.day-list dd span:last-child:after {width: 0;}
+/*
+.day-list .train {color: #0072d5;}
+.day-list .train span.one-word {color:#fff; background-color: #0072d5;}
+.day-list .injury {color: #d81900;}
+.day-list .injury span.one-word {color:#fff; background-color: #d81900;}
+.day-list .period {color: #939393;}
+.day-list .period span.one-word {color:#fff; background-color: #939393;}
+.day-list .pract {color: #009b9b;}
+.day-list .pract span.one-word {color:#fff; background-color: #009b9b;}
+.day-list .physical {color: #5db900;}
+.day-list .physical span.one-word {color:#fff; background-color: #5db900;}
+.day-list .match {color: #b97a00;}
+.day-list .match span.one-word {background-color: #b97a00;}
+*/
+
+.custom-accord a {display:block;}
+.custom-accord [class*="col"] {float:none;}
+.custom-accord .caret {margin-left: 0; transition:all .3s ease;}
+.custom-accord .on .caret {transform:rotate(180deg)}
+.custom-accord .accord .hold {padding:10px;}
+/*.my-schedule-list .icon .caret {transform:rotate(180deg);transition:all .3s ease;}*/
+.custom-accord .icon .caret.on {transform:rotate(180deg);transition:all .3s ease;}
+
+.schedule-header {/*overflow:hidden;*/}
+.schedule-header h2 {float:left; margin-right:25px;}
+.schedule-header .mk-sqare {float:left; margin-top:10px; margin-right:4px;}
+.schedule-header .icon {float:right; margin-right:10px; padding: 6px 7px; margin-top:6px; color: #d4d4d4; line-height: 10px; font-size:0.85em; text-align: center; border: 2px solid #d4d4d4; border-radius: 50%; background-color:#fff;}
+.my-schedule-list .schedule-header .mk-sqare  {float: none;}
+.schedule-header span.one-word {font-family:dotum; line-height:1; font-size: 0.80em;width: auto;padding:3px; color: #fff;vertical-align: middle;}
+.schedule-header div {display:inline;}

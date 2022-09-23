@@ -1,0 +1,66 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	'===============================================================================================
+	'소속팀 정보 조회페이지
+	'===============================================================================================
+	dim Fnd_KeyWord   	: Fnd_KeyWord   = fInject(Request("Fnd_KeyWord"))
+	
+	dim SportsGb    	: SportsGb    	= "tennis"		'테니스
+	dim EnterType    	: EnterType    	= "A"			'생활체육
+	
+	dim FndData			
+	dim CSearch1, CSearch2, CSearch3, CSearch4
+	
+	 
+	IF Fnd_KeyWord <> "" Then
+		CSearch1 = " AND P1_TeamNm like '%"&Fnd_KeyWord&"%'"		
+		CSearch2 = " AND P1_TeamNm2 like '%"&Fnd_KeyWord&"%'"		
+		CSearch3 = " AND P2_TeamNm like '%"&Fnd_KeyWord&"%'"		
+		CSearch4 = " AND P2_TeamNm2 like '%"&Fnd_KeyWord&"%'"		
+		
+		CSQL =		  " SELECT DISTINCT A.TeamNm "
+		CSQL = CSQL & " FROM ( "
+		CSQL = CSQL & "		SELECT P1_TeamNm TeamNm "
+		CSQL = CSQL & "		FROM [SD_Tennis].[dbo].[tblGameRequest] "
+		CSQL = CSQL & "		WHERE DelYN = 'N' AND SportsGb = '"&SportsGb&"' AND EnterType = '"&EnterType&"' "&CSearch1
+		CSQL = CSQL & "		GROUP BY P1_TeamNm "		
+		CSQL = CSQL & "		UNION ALL "		
+		CSQL = CSQL & "		SELECT P1_TeamNm2 TeamNm "
+		CSQL = CSQL & "		FROM [SD_Tennis].[dbo].[tblGameRequest] "
+		CSQL = CSQL & "		WHERE DelYN = 'N' AND SportsGb = '"&SportsGb&"' AND EnterType = '"&EnterType&"' " &CSearch2
+		CSQL = CSQL & "		GROUP BY P1_TeamNm2	 "		
+		CSQL = CSQL & "		UNION ALL "		
+		CSQL = CSQL & "		SELECT P2_TeamNm TeamNm "
+		CSQL = CSQL & "		FROM [SD_Tennis].[dbo].[tblGameRequest] "
+		CSQL = CSQL & "		WHERE DelYN = 'N' AND SportsGb = '"&SportsGb&"' AND EnterType = '"&EnterType&"' " &CSearch3
+		CSQL = CSQL & "		GROUP BY P2_TeamNm "		
+		CSQL = CSQL & "		UNION ALL "		 
+		CSQL = CSQL & "		SELECT P2_TeamNm2 TeamNm "
+		CSQL = CSQL & "		FROM [SD_Tennis].[dbo].[tblGameRequest] "
+		CSQL = CSQL & "		WHERE DelYN = 'N' AND SportsGb = '"&SportsGb&"' AND EnterType = '"&EnterType&"' "&CSearch4
+		CSQL = CSQL & "		GROUP BY P2_TeamNm2 "
+		CSQL = CSQL & "	) A "
+		CSQL = CSQL & "	ORDER BY A.TeamNm " 
+		
+			
+		SET CRs = Dbcon.Execute(CSQL)
+		IF Not(CRs.Eof Or CRs.Bof) Then 
+			Do Until CRs.Eof
+
+				FndData = FndData & "<li><a href='#'>"&CRs("TeamNm")&"</a></li>"
+
+				CRs.Movenext
+			Loop
+		End IF
+		
+		
+			CRs.Close
+		SET CRs = Nothing 
+	
+		
+		response.Write FndData
+		
+		DBClose()
+		
+	End IF
+%>

@@ -1,0 +1,100 @@
+.orangy {color: #ff3c00;}
+
+/**
+ * S: comu_tab_menu 상단 탭 메뉴 
+ * 탭메뉴 형태로 카테고리 없이 구분
+ */
+
+/* type1 */
+
+.comu_tab_menu li {text-align: center;width: 50%;height: 41px;line-height: 41px;float: left;}
+.comu_tab_menu .btn {display: block;font-size: 1em;font-weight: bold;letter-spacing: -0.02em;border-radius: 0;background-color: #b6bac0;color: #fff;border: 2px solid transparent;border-bottom: 2px solid #164369;}
+.comu_tab_menu .btn.on {background-color: #fff;color: #164369;border: 2px solid #164369;border-bottom: 2px solid transparent;}
+.comu_tab_menu .btn:hover,
+.comu_tab_menu .btn:focus,
+.comu_tab_menu .btn:active {color: #fff;}
+.comu_tab_menu .btn.on:hover,
+.comu_tab_menu .btn.on:focus,
+.comu_tab_menu .btn.on:active {color: #164369;}
+
+
+/* type2 */
+/*.comu_tab_menu {border-bottom: 1px solid #c8c7cc;padding: 0;}
+.comu_tab_menu li {text-align: center;width: 50%;height: 41px;line-height: 41px;float: left;}
+.comu_tab_menu .btn {font-size: 1em;font-weight: bold;letter-spacing: -0.02em;color: #ccc;border-bottom: 3px solid transparent;}
+.comu_tab_menu .btn.on {color: #0288d1;border-bottom: 3px solid #0288d1;}*/
+
+/* E: comu_tab_menu 상단 탭 메뉴 */
+
+/**
+ * S: intro_modal 
+ */
+
+/* E: intro_modal */
+
+.main.partner .comu_tab_menu {margin-top: 10px;}
+.main.partner .comu_sel {margin-top: 15px;}
+
+/**
+ * S: comu_sel 리스트 
+ * chk_btn_list 공통
+ */
+.comu_sel,
+.chk_btn_list {margin-top: 20px;}
+.comu_sel h3,
+.chk_btn_list h3 {font-family: 'NotoKR-md';font-size: 1em;background-color: #636e7c;color: #fff;padding-left: 12px;padding-top: 5px;padding-bottom: 5px;}
+.comu_sel li {display: block;margin-top: 10px;}
+.comu_sel li select {width: 100%;}
+.comu_sel .guide {font-size: 0.93em;line-height: 150%;margin-top: 10px;}
+/* E: comu_sel 리스트 */
+
+/**
+ * S: 다득점 기술 
+ */
+.chk_btn_list h3 {margin-bottom: 10px;}
+.chk_btn_list ul {border: 2px solid #ddd;}
+.chk_btn_list li {width: 33.33%;float: left;}
+.chk_btn_list .chk_btn {letter-spacing: -0.02em;background-color: #fff;border-radius: 0;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;width: 100%;height: 40px;line-height: 40px;padding: 0;transition: all .3s ease;}
+.chk_btn_list li:nth-child(3n) .chk_btn {border-right: none;}
+.chk_btn_list li:nth-child(7) .chk_btn,
+.chk_btn_list li:nth-child(8) .chk_btn,
+.chk_btn_list li:nth-child(9) .chk_btn {border-bottom: none;}
+.chk_btn_list .chk_btn.on {background-color: #b6bac0;color: #fff;}
+/* E: 다득점 기술 */
+
+/**
+ * S: full_btn 조회 버튼 
+ */
+.full_btn {text-align: center;width: 100%;margin-top: 20px;}
+.call_btn {font-family: 'NotoKR-md';font-size: 1.125em;background-color: #ff7e00;color: #fff;height: 40px;line-height: 40px;padding: 0;}
+a.call_btn:hover,
+a.call_btn:focus,
+a.call_btn:active {color: #fff;}
+
+.btn_dark_blue {font-size: 0.93em;letter-spacing: -0.02em;background-color: #636e7c;color: #fff;border: none;text-align: center;width: 90px;height: 30px;line-height: 30px;padding: 0;}
+a.btn_dark_blue:hover,
+a.btn_dark_blue:focus,
+a.btn_dark_blue:active {background-color: #636e7c;color: #fff;}
+/* E: full_btn 조회 버튼 */
+
+/**
+ * S: 조회 결과 
+ */
+/* 조회 조건 */
+.srch_result {margin-top: 22px;}
+.srch_result .srch_info_box {border: 2px solid #ddd;}
+.srch_info_box {padding: 18px 12px;}
+.srch_info_box .ic_deco {margin-right: 3px;}
+
+/*조회된 회원*/
+.srch_result .srch_result_list {border-top: 2px solid #164369;margin-top: 15px;}
+.srch_result_list ul {margin-bottom: 40px;}
+.srch_result_list li {border-bottom: 1px solid #bbb;}
+.srch_result_list .player_info {font-weight: bold;padding-top: 11px;padding-bottom: 11px;float: left;}
+.srch_result_list .btn_box {padding-top: 15px;float: right;}
+.srch_result_list .name {font-weight: normal;letter-spacing: -0.02em;color: #666}
+.srch_result_list .name b {color: #333;}
+.srch_result_list .addr {color: #ff7e00;}
+
+/* E: 조회 결과 */
+

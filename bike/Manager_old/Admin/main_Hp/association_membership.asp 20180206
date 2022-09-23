@@ -1,0 +1,140 @@
+<!--#include file="../dev/dist/config.asp"-->
+<!--#include file="../include/head.asp"-->
+<%
+  dim fnd_KeyWord   : fnd_KeyWord   = fInject(Request("fnd_KeyWord"))  
+%>
+<script language="javascript">
+  //검색
+  function chk_Submit(valType, valIDX, chkPage){
+  
+    var strAjaxUrl = '../Ajax/User_List.asp';    
+    var SDate = $('#SDate').val();
+    var EDate = $('#EDate').val();
+    var fnd_KeyWord = $('#fnd_KeyWord').val();
+    
+    if(chkPage!='') $('#currPage').val(chkPage);
+    
+    var currPage = $('#currPage').val();
+    
+    if(valType=='VIEW'){
+      $('#CIDX').val(valIDX);   
+      
+      $('form[name=s_frm]').attr('action','./User_Mod.asp');
+      $('form[name=s_frm]').submit(); 
+    }
+    else{ 
+      //전체검색
+      if(valType=='ALL') {
+        currPage = '';
+        SDate = '';
+        EDate = '';
+        fnd_KeyWord = '';
+
+        $('#SDate').val('');
+        $('#EDate').val('');
+        $('#fnd_KeyWord').val('');        
+        $('#currPage').val('');
+      }
+    
+      $.ajax({
+        url: strAjaxUrl,
+        type: 'POST',
+        dataType: 'html',     
+        data: { 
+          currPage          : currPage     
+          ,SDate            : SDate
+          ,EDate          : EDate
+          ,fnd_KeyWord        : fnd_KeyWord           
+        },    
+        success: function(retDATA) {
+          $('#board-contents').html(retDATA);       
+        }, 
+        error: function(xhr, status, error){           
+          if(error!=''){
+            alert ('오류발생! - 시스템관리자에게 문의하십시오!');
+            return;
+          }
+        }
+      });
+    } 
+  }
+
+  $(document).ready(function(){
+    chk_Submit('ALL', '', '');    
+  });
+</script>
+<!-- S : content -->
+<section>
+  <div id="content">
+    <div class="navigation_box"> 홈페이지관리 &gt; 협회정보 &gt; 임원현황</div>
+    <!-- S : top-navi -->
+    <!-- E : top-navi -->
+    <!-- S : sch 검색조건 선택 및 입력 -->
+    <form name="s_frm" method="post">
+      <input type="hidden" id="currPage" name="currPage" value="<%=currPage%>" />
+    <input type="hidden" id="CIDX" name="CIDX" />
+      <div class="search_top community">
+        <div class="search_box">
+                <select name="" id="">
+          <option value="">:: 협회선택 ::</option>
+          </select>
+               <select name="" id="">
+          <option value="">:: 역대 임원선택 ::</option>
+          </select>
+              
+        <a href="#" class="btn" data-toggle="modal" data-target=".basic_modal">협회정보</a>
+        <a href="javascript:chk_Submit('FND','',1);" class="btn">역대타이틀정보</a>
+        <a href="javascript:chk_Submit('FND','',1);" class="btn">임원직책정보</a>
+        <a href="javascript:chk_Submit('FND','',1);" class="btn">임원등록</a> 
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- S : 리스트형 20개씩 노출 -->   
+        <div id="board-contents" class="table-list-wrap">
+          <!-- S : table-list -->
+          <!-- E : table-list -->
+        </div>
+        <!-- E : 리스트형 20개씩 노출 -->
+      </div>
+    </form>
+     <!-- E : sch 검색조건 선택 및 입력 -->
+
+
+
+      <!-- S: basic_modal -->
+      <div class="modal fade basic_modal">
+        <!-- S: modal-dialog -->
+        <div class="modal-dialog">
+          <!-- S: modal-content -->
+          <div class="modal-content">
+            <!-- S: modal-header -->
+            <div class="modal-header">
+              <h2>협회정보</h2>
+              <a href="#" class="btn btn_close" data-dismiss="modal">
+                <span class="img_box">
+                  <img src="../images/close_x.png" alt="닫기">
+                </span>
+              </a>
+            </div>
+            <!-- E: modal-header -->
+            <!-- S: modal-body -->
+            <div class="modal-body">
+              <!-- S: 여기에 layout 추가해 주세요 -->
+                
+              <!-- E: 여기에 layout 추가해 주세요 -->
+            </div>
+            <!-- E: modal-body -->
+          </div>
+          <!-- E: modal-content -->
+        </div>
+        <!-- E: modal-dialog -->
+      </div>
+      <!-- E: basic_modal -->
+
+  </div>
+</section>
+<!-- E : content -->
+<!-- E : container -->
+<!--#include file="../include/footer.asp"-->

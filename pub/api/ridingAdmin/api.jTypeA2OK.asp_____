@@ -1,0 +1,86 @@
+<%
+'#############################################
+'장애물 type A 저장
+'#############################################
+	Set db = new clsDBHelper
+
+	'request
+	If hasown(oJSONoutput, "KGAME") = "ok" Then '체전여부 A 두번복사여부
+		r_kgame= oJSONoutput.KGAME
+	End If
+
+	If hasown(oJSONoutput, "RDNO") = "ok" Then '장애물 A 라운드 별 계산에 필요
+		r_rdno= oJSONoutput.RDNO
+	End If
+
+
+	If hasown(oJSONoutput, "IDX") = "ok" then
+		r_idx= oJSONoutput.IDX
+	End If
+	If hasown(oJSONoutput, "TIDX") = "ok" then
+		r_tidx= oJSONoutput.TIDX
+	End If
+	If hasown(oJSONoutput, "GBIDX") = "ok" then
+		r_gbidx= oJSONoutput.GBIDX
+	End If
+	If hasown(oJSONoutput, "PUBCODE") = "ok" then
+		r_pubcode= oJSONoutput.PUBCODE
+	End If
+
+
+	If hasown(oJSONoutput, "GT") = "ok" then
+		r_gametime= oJSONoutput.GT '소요시간
+	End If
+
+
+	If hasown(oJSONoutput, "PT1") = "ok" then
+		r_pt1= oJSONoutput.PT1
+	End If
+
+	If hasown(oJSONoutput, "PT2") = "ok" then
+		r_pt2= oJSONoutput.PT2
+	End If
+
+	If hasown(oJSONoutput, "PTA") = "ok" then
+		r_pta= oJSONoutput.PTA
+	End If
+
+
+	'순위는 >> 감점합계가 적은선수, 소요시간 빠른 선수 
+	'라운드 값을 가져와야한다...
+
+
+	'#####################################
+	sgfstr = "A:" &  r_gametime & ":" & r_pt1 & ":" & r_pt2 & ";" 
+	totalquery = " ROUND( "&r_pta&"   ,3,3 ) " '감점합계
+
+	SQL = "Update SD_tennisMember Set score_1 =  "&r_gametime&" , score_2 = "&r_pt1&" , score_3 = "&r_pt2&" , score_sgf = '"&sgfstr&"' , score_total = "&totalquery&"  where gamememberidx = " & r_idx
+	Call db.execSQLRs(SQL , null, ConStr)
+
+
+	'부별순위 업데이트 (pubcode) 부별업데이트 
+	'부별 소팅해서 인덱스 순으로 가져온다. 
+	wherestr = " and gametitleidx =  '"&r_tidx&"' and gamekey3 = '"&r_gbidx&"' and pubcode = '"&r_pubcode&"' and round= "&r_rdno&" and score_1 > 0 " '감점이 0일수 있으니 score_1 > 0
+	Selecttbl = "( SELECT boo_orderno,ROW_NUMBER() OVER (ORDER BY score_total asc, score_1 asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+	SQL = "UPDATE A  SET A.boo_orderno = A.RowNum FROM " & selecttbl
+	Call db.execSQLRs(SQL , null, ConStr)
+
+	'감점합과 소요시간이 같은사람이 있다면 재경기가 일어나는데 이거 처리해줘야함..
+
+
+	'전체순위 업데이트 (각경기별) 전체업데이트 
+	wherestr = " and gametitleidx =  '"&r_tidx&"' and gamekey3 = '"&r_gbidx&"' and round= "&r_rdno&" and score_1 > 0 "
+	Selecttbl = "( SELECT total_order,ROW_NUMBER() OVER (ORDER BY score_total asc, score_1 asc) AS RowNum FROM SD_tennisMember where DelYN = 'N' "&wherestr&" ) AS A "
+	SQL = "UPDATE A  SET A.total_order = A.RowNum FROM " & selecttbl
+	Call db.execSQLRs(SQL , null, ConStr)
+
+
+
+  	Call oJSONoutput.Set("result", "0" )
+	strjson = JSON.stringify(oJSONoutput)
+	Response.Write strjson
+
+
+  db.Dispose
+  Set db = Nothing
+%>

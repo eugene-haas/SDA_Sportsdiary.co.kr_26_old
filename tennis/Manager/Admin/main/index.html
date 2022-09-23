@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+  <title>대한 유도회 관리자</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/normalize-4.1.1.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <script src="Js/jquery-1.12.2.min.js"></script>
+  <script src="js/jquery-migrate-1.4.1.min.js"></script>
+  <!--<script src="js/library/html5shiv.min.js"></script>-->
+  <script src="js/library/selectivizr-min.js"></script>
+  <!--상태바 관련-->
+  <!-- <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/popup.js"></script> -->
+  <!--상태바 관련-->
+  <!-- <script type="text/javascript" src="Js/js.js"></script> -->
+</head>
+<body>
+   <div class="wrap">
+      <!-- S : header -->
+      <header>
+        <div id="header">
+          <div class="top-tp">
+            <div class="logo">
+              <h1><a href="View/Main.asp"  target="fPage"><img src="../Images/sportsdiary_judo_B.png" alt="스포츠 다이어리" width="145" height="45"/></a></h1>
+            </div>
+            <div class="top-banner">
+              <!--배너가 들어갑니다. 771 x 64-->
+            </div>
+          </div>
+          <div class="top-btm">
+            <p class="home"><a href="/Manager/View/Main.asp" target="fPage"><i class="fa fa-home" aria-hidden="true"></i> Sports Diary HOME</a></p>
+            <ul class="btn-member-list">
+              <li><a href="javascript:logout();" class="btn-logout" title="Log Out">Log Out</a></li>
+              <li><a href="javascript:alert('회원정보수정');" class="btn-member" title="회원정보관리"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            </ul>
+            <p class="txt-member">안녕하세요. <%=Request.Cookies("UserName")%>님. 접속을 환영합니다.</p>
+          </div>
+        </div>
+      </header>
+      <!-- S : header -->
+
+      <!-- S : container -->
+      <div id="container">
+
+
+        <!-- S : navi left-navi 네비게이션 -->
+        <nav>
+          <div id="left-navi">
+            <div class="depth">
+              <h2><a href="#">대회관리</a></h2>
+              <ul>
+                <li class="depth-2"><a href="/Manager/View/ChampionshipInfo.asp" target="fPage">대회정보관리</a></li>
+                <!--<li class="depth-2"><a href="/Manager/View/ChampionshipLevel.asp" target="fPage">대회체급관리</a></li>-->
+                <!--<li class="depth-2"><a href="/Manager/View/MatchInfo.asp" target="fPage">대진표관리</a></li>-->
+                <!--<li class="depth-2"><a href="javascript:open_pop()">대진표추첨2</a></li>-->
+                <li class="depth-2"><a href="javascript:open_pop2()">대진표추첨</a></li>
+                <%
+                  '종목이 유도인 경우에만 노출
+                  If Request.Cookies("SportsGb") = "judo" Then 
+                %>
+                <li class="depth-2"><a href="/Manager/View/GameTeamInfo.asp" target="fPage">단체전명단</a></li>
+                <%
+                  '종목이 레슬링인 경우에만 노출
+                  ElseIf Request.Cookies("SportsGb") = "wres" Then 
+                %>
+                <li class="depth-2"><a href="/Manger/View/MatchGameList.asp">경기리스트</a></li>
+                <%
+                  Else
+                %>
+                <li class="depth-2"><a href="/Manager/View/GameTeamInfo.asp" target="fPage">단체전명단</a></li>
+                <%
+                  End If 
+                %>
+              </ul>             
+            </div>
+            <%
+              'HostCode가 없으면 최고관리자
+              If Request.Cookies("HostCode") = "" Then 
+            %>
+            <div class="depth">
+              <h2><a href="#">경기관리</a></h2>
+                <ul>
+
+                  <li class="depth-2"><a href="/Manager/View/DayListWres.asp" target="fPage">리그전순서등록</a></li>
+                  <li class="depth-2"><a href="/Manager/View/DayList.asp" target="fPage">대회순서등록</a></li>
+                  <li class="depth-2"><a href="/Manager/View/ChampionshipOperate.asp" target="fPage">대회진행현황</a></li>
+                  <li class="depth-2"><a href="/Manager/View/MatchUpload.asp" target="fPage">동영상관리</a></li>
+                  <li class="depth-2"><a href="/Manager/View/ChampionshipiNit.asp" target="fPage">경기초기화</a></li>
+                  <li class="depth-2"><a href="/Manager/View/ChampionshipGroupiNit.asp" target="fPage">단체전초기화</a></li>
+                  <li class="depth-2"><a href="/Manager/View/ChampionshipNotAttend.asp" target="fPage">불참처리</a></li>  
+                  <li class="depth-2"><a href="/Manager/View/ChampionshipWeightFail.asp" target="fPage">계체탈락</a></li>   
+                </ul>
+            </div>
+            <div class="depth">
+              <h2><a href="#">소속관리</a></h2>
+              <ul class="depth-2">
+                <li class="depth-2"><a href="#">회원관리</a></li>
+                <li class="depth-2">
+                  <a href="#">게시판관리</a>
+                  <ul class="depth-3">
+                    <li>
+                      <a href="/Manager/board/noticeBoard.asp" target="fPage">공지사항</a>
+                    </li>
+                    <li>
+                      <a href="/Manager/board/qnaBoard.asp" target="fPage">Q&amp;A 게시판</a>
+                    </li>
+                    <li>
+                      <a href="/Manager/board/faqBoard.asp" target="fPage">FAQ 게시판</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="depth-2"><a href="#">경기관리</a></li>
+              </ul>
+            </div>
+            <%
+              End If 
+            %>
+            <!--// 1 depth -->
+          </div>
+            <!-- 1 depth -->
+            <div class="depth">
+              <h2><a href="#">오프라인대회관리</a></h2>
+              <ul class="depth-2">
+                <li class="depth-2"><a href="/Manager/View/Offline_ChampionshipLevel.asp" target="fPage">대회체급관리</a></li>                
+              </ul>
+            </div>
+            <!--// 1 depth -->
+          </div>
+        </nav>
+        <!-- E : navi -->
+
+        <section>
+    <div id="content">
+    <!-- S : main-top -->
+
+    <div class="main-top">
+      <!--<a href="#" class="btn-top"><i><img src="../images/icon_main_calendar.png" alt="" /></i> 달력보기</a>
+      <a href="#" class="btn-top type2"><i><img src="../images/icon_main_list.png" alt="" /></i> 목록보기</a>
+      -->
+    </div>
+
+    <!-- E : main-top -->
+
+
+
+
+    <!-- 
+        S : 내용 시작
+     -->
+    <table class="table-list">
+      <caption>대회 리스트</caption>
+      <colgroup>
+        <col width="*" />
+        <col width="*" />
+        <col width="*" />
+        <col width="*" />
+        <col width="*" />
+        <col width="*" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">년도</th>         
+          <th scope="col">대회기간</th>
+          <th scope="col">주최</th>
+          <th scope="col">대회명</th>
+          <th scope="col">지역</th>
+          <th scope="col">장소</th>
+        </tr>
+      </thead>
+      <tbody id="gametitlelist">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- E : 내용 시작 -->
+
+
+
+    </div>
+  <section>
+</body>
+</html>

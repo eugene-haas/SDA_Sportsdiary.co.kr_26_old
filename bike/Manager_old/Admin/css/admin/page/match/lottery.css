@@ -1,0 +1,22 @@
+.setup-body.lottery .stair .sel-ctr {width: 280px;}
+.lottery .sel-match td {height: 90px;vertical-align: middle;}
+.lottery .sel-match td .txt {display: block;font-size: 14px;width: 90%;margin: 0 auto;}
+
+.lottery .player-order td {font-size: 16px;height: 90px;vertical-align: middle;}
+.lottery .player-order th:first-child,
+.lottery .player-order td:first-child {width: 38px;}
+.lottery .player-order td .btn-player-sel {margin: 0 auto;margin-top: 5px;}
+
+.lottery .league-set-table {border: 1px solid #7894be;width: 100%;}
+.lottery .league-set-table td {border-right: 1px solid #bfc8d5;width: 120px;height: 125px;vertical-align: middle;}
+.lottery .league-set-table .click-here {outline: 2px solid #66a2d1;}
+.lottery .league-set-table .placeholder {font-family: 'NanumGothicB';display: block;font-size: 20px;color: #a2aab6;}
+.lottery .league-set-table .placeholder i {display: inline-block;vertical-align: middle;}
+
+.lottery .league-set-table tr {border-bottom: 1px solid #bfc8d5;}
+.lottery .league-set-table tr:last-child {border-bottom: none;}
+.lottery .league-set-table tr:first-child td:first-child {background-color: #0f335b;color: #fff;}
+.lottery .league-set-table tr:first-child td {background-color: #e1e7f0;font-size: 16px;}
+.lottery .league-set-table tr:first-child td .player {display: inline-block;width: 90%;margin: 0 auto;}
+.lottery .league-set-table td:first-child {background-color: #e1e7f0;}
+.content-wrap.operate .lottery-50{width:49%;}

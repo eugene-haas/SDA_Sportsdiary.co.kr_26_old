@@ -1,0 +1,164 @@
+<!--#include file="../dev/dist/config.asp"-->
+<%
+	'====================================================================================
+	'등록현황(팀)
+	'====================================================================================
+	Check_AdminLogin()
+
+	dim fnd_Year      : fnd_Year      = fInject(Request("fnd_Year"))
+
+	dim CSQL, CRs, LRs
+	dim txtData, i, numcols, numrows
+	dim txtDataGb, j, numcolsGb, numrowsGb
+
+	IF fnd_Year = "" Then fnd_Year = Year(Date())
+	
+	CSQL = " 		SELECT A.PTeamGb"
+	CSQL = CSQL & "		,COUNT(A.PTeamGb) Cnt"
+	CSQL = CSQL & "		,CASE A.Sex WHEN 'Man' THEN '남자' ELSE '여자' END SexNm" 
+	CSQL = CSQL & "		,A.Sex"
+	CSQL = CSQL & "		,C.PTeamGbName"
+	CSQL = CSQL & "	FROM [KoreaBadminton].[dbo].[tblTeamInfoHistory] A"
+	CSQL = CSQL & "		inner join [KoreaBadminton].[dbo].[tblTeamGbInfo] C on A.PTeamGb = C.PTeamGbCode AND C.DelYN = 'N' AND C.EnterType = 'E'"
+	CSQL = CSQL & "	WHERE A.DelYN = 'N'"
+	CSQL = CSQL & "		AND A.EnterType = 'E'"	
+	CSQL = CSQL & "		AND A.EnterTypeSub NOT IN('K')"											 
+	CSQL = CSQL & "		AND A.RegYear = '"&fnd_Year&"'"	
+	CSQL = CSQL & "	GROUP BY A.PteamGb, A.Sex, C.PTeamGbName"	
+	CSQL = CSQL & "	ORDER BY A.PteamGb"													  
+
+	'response.Write CSQL
+
+	SET CRs = DBCon.Execute(CSQL)
+   	IF Not(CRs.Eof Or CRs.Bof) Then 
+   		'Do Until CRs.eof
+		 txtDataGb = CRs.getRows   	
+   		 numcolsGb = ubound(txtDataGb, 1)	'행
+		 numrowsGb = ubound(txtDataGb, 2)	'열
+			
+		FOR j = 0 to numrowsGb													 
+'  			response.write "<div><h3>"&fnd_Year&" "&CRs("SexNm")&" "&CRs("PTeamGbName")&" - ["&CRs("Cnt")&"팀]</h3></div>"
+			response.write "<div><h3>"&fnd_Year&" "&txtDataGb(2, j)&" "&txtDataGb(4, j)&" - ["&txtDataGb(1, j)&"팀]</h3></div>"   
+			response.write "<table class='table-list'>"
+			response.write " <thead>"
+			response.write "   <tr>"
+			response.write "     <th>번호</th>"
+   			response.write "     <th>팀명</th>"	
+			response.write "     <th>지도자</th>"                          
+			response.write "     <th>선수</th>"
+			response.write "     <th>우편번호</th>"  
+			response.write "     <th>주소</th>"
+			response.write "     <th>감독</th>"
+			response.write "     <th>코치</th>"  
+			response.write "     <th>전화번호</th>"  
+			response.write "     <th>팩스번호</th>"  
+			response.write "   </tr>"
+			response.write " </thead>"
+			response.write " <tbody>"
+
+	
+			CSQL = "		SELECt A.TeamNm"
+			CSQL = CSQL & "		,(SELECT COUNT(*) FROM [KoreaBadminton].[dbo].[tblLeaderInfoHistory] WHERE DelYN = 'N' AND RegistYear = '"&fnd_Year&"' AND Team = A.Team) LeaderCnt"
+			CSQL = CSQL & "		,(SELECT COUNT(*) FROM [KoreaBadminton].[dbo].[tblMemberHistory] WHERE DelYN = 'N' AND RegYear = '"&fnd_Year&"' AND Team = A.Team) PlayerCnt"
+			CSQL = CSQL & "		,A.ZipCode"
+			CSQL = CSQL & "		,A.Address"
+			CSQL = CSQL & "		,A.AddrDtl"
+'			CSQL = CSQL & "		,(SELECT TOP 1 UserName FROM [KoreaBadminton].[dbo].[tblLeaderInfoHistory] WHERE DelYN = 'N' AND RegistYear = '"&fnd_Year&"' AND Team = A.Team AND LeaderType = '2') LeaderName"
+			CSQL = CSQL & "	   	,STUFF((" 	'감독목록
+			CSQL = CSQL & "		 	SELECT ', ' + UserName"
+			CSQL = CSQL & "		 	FROM [KoreaBadminton].[dbo].[tblLeaderInfoHistory]" 
+			CSQL = CSQL & "		 	WHERE DelYN = 'N'"
+			CSQL = CSQL & "				AND RegistYear = '"&fnd_Year&"'"	
+			CSQL = CSQL & "				AND Team = A.Team"
+			CSQL = CSQL & "				AND LeaderType = '2'"		
+			CSQL = CSQL & "		 	ORDER BY UserName"  
+			CSQL = CSQL & "		 	FOR XML PATH('')), 1, 1, '') LeaderInfo"  
+			CSQL = CSQL & "	   	,STUFF((" 	'코치목록
+			CSQL = CSQL & "		 	SELECT ', ' + UserName"
+			CSQL = CSQL & "		 	FROM [KoreaBadminton].[dbo].[tblLeaderInfoHistory]" 
+			CSQL = CSQL & "		 	WHERE DelYN = 'N'"
+			CSQL = CSQL & "				AND RegistYear = '"&fnd_Year&"'"	
+			CSQL = CSQL & "				AND Team = A.Team"
+			CSQL = CSQL & "				AND LeaderType = '3'"		
+			CSQL = CSQL & "		 	ORDER BY UserName"  
+			CSQL = CSQL & "		 	FOR XML PATH('')), 1, 1, '') LeaderInfo"  
+			CSQL = CSQL & "		,A.TeamTel"
+			CSQL = CSQL & "		,A.TeamFax"
+			CSQL = CSQL & "	FROM [KoreaBadminton].[dbo].[tblTeamInfoHistory] A"
+			CSQL = CSQL & "	WHERE A.DelYN = 'N'"
+			CSQL = CSQL & "		AND A.EnterType = 'E'"
+			CSQL = CSQL & "		AND A.EnterTypeSub NOT IN('K')"	
+			CSQL = CSQL & "		AND A.RegYear = '"&fnd_Year&"'"	
+'  			CSQL = CSQL & "		AND A.PTeamGb = '"&CRs("PteamGb")&"'"
+'			CSQL = CSQL & "		AND A.SEX = '"&CRs("SEX")&"'"
+			CSQL = CSQL & "		AND A.PTeamGb = '"&txtDataGb(0, j)&"'"
+   			CSQL = CSQL & "		AND A.SEX = '"&txtDataGb(3, j)&"'"
+			CSQL = CSQL & "	ORDER BY A.PteamGb, A.TeamNm"
+			
+'			response.Write CSQL
+   
+			SET LRs = DBCon.Execute(CSQL)
+			IF Not(LRs.Eof Or LRs.Bof) Then 
+   				
+				
+'					Do Until LRs.eof
+'						cnt = cnt + 1
+'						response.write "<tr>"
+'						response.write " <td>"&cnt&"</td>"
+'						response.write " <td>"&LRs("TeamNm")&"</td>"       
+'						response.write " <td>"&LRs("LeaderCnt")&"</td>"
+'						response.write " <td>"&LRs("PlayerCnt")&"</td>"     
+'						response.write " <td>"&LRs("ZipCode")&"</td>"
+'						response.write " <td>"&LRs("Address")&" "&LRs("AddrDtl")&"</td>"
+'						response.write " <td>"&LRs("LeaderName")&"</td>"
+'						response.write " <td>"&LRs("LeaderInfo")&"</td>"
+'						response.write " <td>"&LRs("TeamTel")&"</td>"
+'						response.write " <td>"&LRs("TeamFax")&"</td>"
+'						response.write "</tr>"
+'						LRs.MoveNext
+'					Loop
+   					
+   				txtData = LRs.getRows   				
+   				
+  				numcols = ubound(txtData, 1)	'행
+				numrows = ubound(txtData, 2)	'열
+   
+   				FOR i = 0 to numrows	
+   						response.write "<tr>"
+						response.write " <td>"&i+1&"</td>"
+						response.write " <td>"&txtData(0, i)&"</td>"       
+						response.write " <td>"&txtData(1, i)&"</td>"
+						response.write " <td>"&txtData(2, i)&"</td>"     
+						response.write " <td>"&txtData(3, i)&"</td>"
+						response.write " <td>"&txtData(4, i)&" "&txtData(5, i)&"</td>"
+						response.write " <td>"&txtData(6, i)&"</td>"
+						response.write " <td>"&txtData(7, i)&"</td>"
+						response.write " <td>"&txtData(8, i)&"</td>"
+						response.write " <td>"&txtData(9, i)&"</td>"
+						response.write "</tr>"   
+   				NEXT
+   
+   			End IF
+   				LRs.Close
+   			SET LRs = Nothing
+			
+   			response.write " </tbody>"
+			response.write "</table>"
+   			
+   			cnt = 0
+												 
+   		NEXT 
+'  			CRs.movenext
+'		Loop  
+	Else
+		response.write "<div>등록된 정보가 없습니다.</div>"
+	End IF  
+		CRs.Close
+	SET CRs = Nothing
+										
+															
+															
+
+	DBClose()
+  
+%>

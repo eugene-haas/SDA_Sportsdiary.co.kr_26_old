@@ -1,0 +1,5 @@
+@media (max-width: 359px) and (min-width: 320px) {
+  .player_info_ipt h3 {font-family: "NotoKR-md";font-size: 1em;}
+}
+.player_info_ipt .player-number li input {display: inline-block;vertical-align: middle;width: 72%;}
+.btn-full.or .ic-letter {padding-left: 10px;}

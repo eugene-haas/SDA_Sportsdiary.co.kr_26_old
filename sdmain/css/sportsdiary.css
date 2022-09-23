@@ -1,0 +1,103 @@
+/* 회사소개, 기타 */
+/* access : 이용약관 */
+/* .sd-access {font-size: 1em;padding:10px; background:#fff;}
+.sd-access h2 {font-family:'NotoKR-md'; font-size:1em; color:#333; margin-top:10px;}
+.sd-access pre {font-family:'NotoKR-dl'; font-size:0.9em; color:#999; background:none; border:none; white-space:pre-line; letter-spacing:-0.2px; margin-bottom:0px;}
+.sd-access .sub_title {font-size:1em; font-family:'NotoKR-md'; color:#333; margin-top:10px; padding-left:10px;}
+.sd-access .article {font-size:1em; color:#333; margin-bottom:-10px;}
+.sd-access pre {height:100%;} */
+
+
+
+
+/* company.asp 회사정보 */
+/* .side{ background:#edf0f4; font-size: 1em;  padding-bottom:50px; padding-top:1px; min-height:100vh; }
+.group{ background:#edf0f4; }
+.box-list .tit-widline{ background-image:url('http://img.sportsdiary.co.kr/sdapp/sub/icon-widline@3x.png'); background-repeat:no-repeat; background-position:15px 18px; padding:25px 0 10px 41px; background-size:20px 24px; }
+.box-list .tit-sd{ background-image:url('http://img.sportsdiary.co.kr/sdapp/sub/icon-sd@3x.png'); background-repeat:no-repeat; background-position:15px 18px; padding:25px 0 10px 41px; background-size:22px 19px; }
+.box-list ul.widline li{ background-image:url('http://img.sportsdiary.co.kr/sdapp/sub/icon-square-sm_gray@3x.png'); background-repeat:no-repeat; background-position:0 7px; background-size:3px 3px; }
+.info-handle .box-list ul.widline li:last-child{ background:url('http://img.sportsdiary.co.kr/sdapp/sub/sub/icon-square-pink@3x.png'); }
+.box-list ul.sd li{ background-image:url('http://img.sportsdiary.co.kr/sdapp/sub/icon-square-sm_gray@3x.png'); background-repeat:no-repeat; background-position:0 7px; background-size:3px 3px; }
+.box-list {font-family:'NotoKR-dl'; font-size:1em; letter-spacing:-0.2px; background:#fff; border-radius:5px; margin:20px; padding-bottom:10px; box-shadow:0px 2px 3px #dbdbdb;}
+.box-list .tit-widline {font-family:'NotoKR-md'; color:#333; padding-top: 21px;font-size: 1em;}
+.box-list .tit-sd {font-family:'NotoKR-md'; color:#333;padding-top: 17px;font-size: 1em;}
+.box-list ul {padding:4px 10px 10px 10px; font-size: 1em; margin-left:10px;}
+.box-list ul li strong {color:#000; text-decoration:underline;} */
+/*.box-list ul li span {text-decoration:underline;}*/
+/* .box-list ul.sd li {font-family:'NotoKR-dl'; padding:0 0 0 10px; line-height: 1.6em; font-size:0.92em; letter-spacing:-0.5px;}
+.box-list ul.sd li a {display: inline-block;}
+.box-list ul.widline {position: relative; margin-left:10px;}
+.box-list ul.widline li {font-family:'NotoKR-dl'; letter-spacing:-0.5px; padding-left: 10px; line-height: 1.6em; font-size:0.92em;}
+.box-list ul.widline li:last-child{position: relative; background:none; text-align:right; padding-left: 0;}
+.box-list ul.widline li:last-child .daum-map.dropdown-menu {width: 100%; border: none; -webkit-box-shadow: none; box-shadow: none;}
+.box-list ul.widline .active-btn {position: relative; background-image: none; text-align: right; height: 0px;padding-left: 0;} */
+/*.box-list ul.widline .active-btn a {position: absolute; top: -30px; right: 10px;}*/
+/* .box-list ul.widline li:last-child a {margin-top: 8px;}
+.box-list ul.widline li.address {position: relative;}
+.btn-map-widline {font-family:'NotoKR-md'; display:inline-block;  */
+/*position: absolute; top: 0; right: 5px;*/
+/* background-color: #005895; font-size: 0.9em; color: #fff; transition: all .3s ease; border-radius: 4px; margin-left:5px;padding-left: 5px;padding-right: 5px;}
+.btn-map-widline .fa {color: #fff;}
+.btn-map-widline.on {font-family:'NotoKR-md'; background-color: #d4908c; font-size: 0.9em;} */
+/* .btn-map-widline span{position:absolute; top:-9999px; left:-9999px;} */
+
+
+
+
+
+
+
+/* faq 자주하는 질문 */
+/* .txt-side {padding-bottom:10px; line-height: 1.4em; color:#fff;}
+.top-faq > ul { padding-left: 6px; text-indent:-6px; }
+.top-list.top-faq {background-color: #3a5870;background-size: 87px 67px; padding: 15px 15px 15px; font-family: 'NotoKR-dl'; font-size:0.85em; letter-spacing:-0.5px;}
+.top-list { text-indent: 0;}
+.top-list.top-faq li {font-size: 1em;color: #fff; line-height:170%;}
+.side .ic-caret {display: inline-block; border-radius: 50%; border: 2px solid #ddd; width: 20px; height: 20px; line-height: 15px; text-align: center;}
+.side.faq .top-faq .txt-or {color: #fff; font-size:1.1em;}
+.side.faq .top-faq .txt-or a {color: #ff9426;letter-spacing: -0.0125em;}
+
+.side .panel {box-shadow:none;}
+.side [class*="col"] {float:none;}
+
+.side .panel {border:0; border-bottom:1px solid #d4d4d4;} */
+/*.side .panel-group .panel+.panel {margin-top:0;}*/
+/* .side .panel .panel-heading {overflow:hidden; padding:0; margin:0; background-image:none;}
+
+.side .panel-title {font-size:0.9em; font-family:"NanumGothic"; font-weight:700; line-height:1.5em; padding: 8px 2%;}
+.side .panel-title a {overflow:hidden; width:100%; display:block; margin:0; padding:8px 2%;}
+.side .panel-title .panel-ic-q {float:left; color:#666; display:inline-block; width:26px; height:26px; text-align:center; color:#123651; background:#fff; border:2px solid #123651; border-radius:50%; line-height:22px; font-family:'NotoKR-md';}
+.side .panel-title .panel-txt-q {float:left; width:82%; padding:4px 0 0 1.5%; display:inline-block;}
+
+.side .panel-title .ic-caret {float:right; width:26px; height:26px; line-height:23px; color:#d4d4d4; text-align:center; background:#fff;}
+.side .panel-title .caret{margin:0; border-top: 5px solid; border-right: 5px solid transparent; border-left: 5px solid transparent; transition: all .3s ease;}
+.side .panel-title .on .caret {transform: rotate(180deg);}
+.side .panel-title.on .caret {transform: rotate(180deg);}
+
+.side .panel-body {padding:2%; margin:0; color:#fff; font-size:0.9em; font-family:"NanumGothic"; line-height:1.5em; background-color:#919ba4;}
+.side .panel-body .panel-ic-a {float:left; display:inline-block; width:26px; height:26px; padding:0; margin:0; text-align:center; color:#fff; border:2px solid #123651; background:#123651; border-radius:50%;}
+.side .panel-body .panel-txt-a {float:left; width:90%; padding-left:1%; font-family: 'NotoKR'; font-weight:300; color: #fff;}
+
+@media screen and (min-width:400px){
+  .side .panel-title .panel-txt-q {width:86%;}
+  .side .panel-body .panel-txt-a {width:93%;}
+}
+@media screen and (min-width:640px){
+  .side .panel-title .panel-txt-q {width:91%;}
+  .side .panel-body .panel-txt-a {width:95%;}
+} */
+
+/* info-handle */
+/* .info-handle .box-list .tit-widline {background:none; background-position:10px 50%; background-color:#123651; background-size:20px 24px;}
+.info-handle .box-list ul {line-height:20px; font-size:0.9em;}
+.info-handle .box-list ul:nth-child(2) {margin:0;}
+.info-handle .box-list ul {margin:20px 0;}
+.info-handle .box-list ul.widline li {padding-left: 15px; line-height: 1.8em; font-size:1.08em;}
+.info-handle .box-list ul.widline li:last-child {
+  background-repeat:no-repeat; background-position: 0 9px; -webkit-background-size: 5px 5px; background-size: 5px 5px; position: relative; text-align:left;}
+.info-handle .box-list ul li strong {font-size:1.125em; color:#333; text-decoration:none;}
+.info-handle h3 {color:#206aa2;}
+.info-handle .info-widline {font-size:1.05em; line-height:20px; margin-top:-20px;}
+.info-handle .box-list .tit-widline {padding-left:13px;}
+.info-handle h3 {margin-bottom:5px;}
+.info-handle .btn-back {width:50%; margin:0 auto; padding: 8px 0; font-size: 0.9em; color:#3f505d; font-family:"NanumGothic"; font-weight:700; text-align:center; border-radius:3px; border:1px solid #3f505d; background:#fff;} */

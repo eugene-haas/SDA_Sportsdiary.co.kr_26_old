@@ -1,0 +1,6 @@
+.contest_page .top-navi { position: absolute; top: 51px; left: 0px; width: 100%; min-width: 731px; padding-left: 40px; padding-right: 40px; margin-bottom:20px; background:#fff;}
+.contest_page .top-navi-inner {background-color: #fff;z-index: 100;width:100%;border-bottom:1px solid #e6e6e6; }
+.contest_page .top-navi-tit { overflow:hidden; height:50px; padding:11px 0 11px 25px; font-size:20px; line-height:50px; background:url("/images/icon_tit.png") no-repeat 0 11px;}
+.contest_page .top-navi-tit .fa { display:none; }
+.contest_page .top-navi-tit strong { float:left; padding:0 0 0 13px; font-weight:normal; line-height: 120%;}
+.contest_page .top-navi-tp { position:relative;}

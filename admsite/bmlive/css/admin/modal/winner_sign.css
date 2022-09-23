@@ -1,0 +1,39 @@
+.winner-sign .modal-dialog{width:560px;}
+.winner-sign .modal-dialog .modal-content{border-radius:0;padding:40px 30px;}
+.winner-sign .modal-dialog .modal-content .modal-body{padding:0;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table{width:100%;border:3px solid #c3cad4;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr td{background:#f2f2f2;padding:5px;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr td.rb_2{border-right:2px solid #c3cad4;width:60px;text-align:center;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr td .red_font{color:#ec0a2e;font-weight:900;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr td a{width:47px;height:40px;line-height:40px;text-align:center;color:#000;border:1px solid #999;border-radius:3px;font-family: 'NanumGothicB';
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f9f9f9+50,f3f3f3+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 50%, #f3f3f3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f9f9f9 50%,#f3f3f3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#f9f9f9 50%,#f3f3f3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info{margin-top:20px;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr td a.on{background:#ec0a2e;color:#fff;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr th{border-right:2px solid #c3cad4;width:175px;background:#f2f2f2;font-family: 'NanumGothicB';font-weight:normal;padding:0 15px;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr th span{display:block;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr.blue-bg th{background:#0f335b;color:#fff;}
+.winner-sign .modal-dialog .modal-content .modal-body .input-info table tr.blue-bg td{background:#0f335b;color:#fff;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list{margin-top:20px;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table{width:100%;text-align:center;border-right:1px solid #c3cad4;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr th{height:40px;background:#7e868f;color:#fff;font-family: 'NanumGothicB';text-align:center;border-right:1px solid #c3cad4;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr.th-border{border:3px solid #7e868f;border-bottom:0;border-top:0;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td{background:#f2f2f2;padding:5px 0;border-left:1px solid #c3cad4;border-bottom:1px solid #c3cad4;color:#333;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td:nth-child(1){border-left:3px solid #c3cad4;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td:nth-child(9){border-right:3px solid #c3cad4;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td span{display:block;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td .font-bold{font-family: 'NanumGothicB';}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr:nth-child(2n) td{background:#fff;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td.yellow-bg,
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr:nth-child(2n) td.yellow-bg {background:#ffd200;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr td .modefid-btn{width:44px;height:28px;line-height:26px;text-align:center;display:inline-block;background:#7e868f;border:1px solid #777;border-radius:3px;color:#fff;font-family: 'NanumGothicB';font-size:13px;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr.bottom-bg th{height:50px;background:#39404d;font-family: 'NanumGothicB';}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr.bottom-bg th{border-bottom:3px solid #c3cad4;border-right:3px solid #c3cad4;border-left:3px solid #c3cad4;}
+.winner-sign .modal-dialog .modal-content .modal-body .sign-list table tr.bottom-bg th .yellow-font{color:#ffd200;}
+
+.yellow-bg {background-color: #ffd200;}

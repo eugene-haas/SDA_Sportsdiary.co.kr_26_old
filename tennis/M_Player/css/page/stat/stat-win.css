@@ -1,0 +1,46 @@
+.main.stat-record {height: 380px;}
+.modal-player-profile .main.stat-record {height:auto;}
+
+.stat-record .detail-win .match-summary {float: none;}
+.stat-record .term-record-chart {margin-top: 30px;}
+.stat-record .term-record-chart {font-size: 1.1em; text-align: center;}
+.stat-record .term-record-chart p {font-size: 0.79em;}
+
+.ana-win {background:#fff;}
+.ana-win .term-record-chart {padding-top:25px; }
+.ana-win .term-record-chart {margin-top:0;}
+
+/* 상세 입항현황보기 */
+.stat-record .detail-win {background-color: #edf0f4; padding-bottom:50px; padding-top:10px;}
+.stat-record .detail-win h3 {background-color: #164369; color: #fff; font-size: 0.93em; text-align: center; padding-top: 0.82em; padding-bottom: 0.82em; margin-left: 10px; margin-right: 10px; margin-bottom: 0.79em; }
+.stat-record .detail-win h3 a {display: block;}
+.stat-record .detail-win h3 a:hover,
+.stat-record .detail-win h3 a:focus,
+.stat-record .detail-win h3 a:active {color: #fff;}
+.stat-record .detail-win .deco-icon {display: inline-block; width: 20px; height: 20px; margin-left: 10px; transition: all .3s ease; }
+.stat-record .detail-win h3 a.on .deco-icon {transform: rotate(180deg);}
+.stat-record .detail-win h4 {display: table; font-family: 'NanumGothicB'; font-size: 1em; background-color: #d3d8dc;}
+.stat-record .detail-win p span {display: inline-block; vertical-align: middle;}
+.stat-record .detail-win .match-day {position: relative;background-color: #267dcd;color: #fff; width: 80%;padding-top:10px; padding-bottom: 10px;padding-left: 5px;padding-right: 5px;margin-right: 20px;float: left;font-size: 0.82em;letter-spacing: -0.0725em;}
+.stat-record .detail-win .match-day:after {position: absolute;top: 0;right: -10px;content: '';border-left: 10px solid #267dcd;border-top: 16px solid transparent;border-bottom: 17px solid transparent;}
+.stat-record .detail-win .match-title {font-size: 0.8em; width: 100%; /*line-height:33px; float: left;*/ display: table-cell; vertical-align: middle; line-height: 125%; padding-right:5px;}
+.stat-record .detail-win .match-title.long {line-height: 100%; padding-top: 2px; padding-bottom: 2px; font-size: 0.8em; line-height: 16px;}
+.stat-record .detail-win p {background-color: #fff; border-bottom: 1px solid #ddd; font-size: 0.86em; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px;}
+.stat-record .detail-win p:last-child {margin-bottom: 0.71em;}
+.stat-record .detail-win .result {display:inline-block; background-color: #6a7780;color: #fff;border-radius: 20px;padding-left: 5px;padding-right: 10px;margin-right: 6px; font-size: 0.75em; font-weight: 700; vertical-align: middle;}
+.stat-record .detail-win .result-list {width: 74%; font-size: 0.85em; display:inline-block; vertical-align: middle;}
+.stat-record .detail-win .result-list span {position: relative; display: inline-block; margin-right: 10px;}
+.stat-record .detail-win .result-list span:last-child {margin-right: 0;}
+.stat-record .detail-win .result-list span:empty {display:none;}
+.stat-record .detail-win .result-list span:after {position: absolute; top: 5px; right: -5px; content: ''; width: 1px; height: 60%; background-color: #ccc;}
+.stat-record .detail-win .result-list span:last-child:after {width: 0;}
+.stat-record .detail-win .result .img-deco {display: inline-block;background-repeat: no-repeat;-webkit-background-size: cover;background-size: cover;background-position: 0 -3px;vertical-align: top;width: 17px;height: 21px;margin-right: 4px;}
+.stat-record .detail-win .result .img-deco img {margin-top: -4px;}
+
+.stat-win-chart {background:#fff;}
+.stat-win-chart .term-record-chart {padding-top:25px; }
+.stat-win-chart .term-record-chart {margin-top:0;}
+
+/*modal*/
+.film-box .no-data {background:#fff; font-size:0.8em; padding:5px 10px;}
+

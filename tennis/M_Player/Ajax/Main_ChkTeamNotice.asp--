@@ -1,0 +1,33 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	Check_Login()
+	
+	dim ChkSQL	
+	
+	'팀공지사항 신규정보 체크 (24시간 이전 정보)
+	ChkSQL =" SELECT count(*) " &_
+			" FROM [Sportsdiary].[dbo].[tblSvcNotice] "&_
+			" WHERE DelYN='N' "&_
+			"		AND BRPubCode='BR02' " &_
+			"		And ViewTp='T' "&_
+			"		And NtcIDX in( "&_
+			"			SELECT NtcIDX "&_
+			"			FROM [Sportsdiary].[dbo].[tblSvcNoticeSub] " &_
+			"			WHERE MemberIDX="&decode(request.Cookies("MemberIDX"), 0) &_
+			"			)" &_
+			"		And DateDiff(HOUR, WriteDate, GetDate())<24 "
+	
+	SET CRs = Dbcon.Execute(ChkSQL)
+	If CRs(0) > 0 Then 
+		Response.Write "TRUE"
+	Else
+		Response.Write "FALSE"
+	End If 
+		
+		CRs.Close
+	SET CRs = Nothing
+	
+	DBClose()
+
+
+%>

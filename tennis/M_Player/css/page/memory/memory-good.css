@@ -1,0 +1,38 @@
+.mid-cat .favorite span {display: inline-block; vertical-align: middle; width: 20px; margin-left: 5px; }
+.mid-cat .favorite span img {vertical-align: top;}
+.term-sel dd select,
+.term-srch dd input {border-radius: 3px;}
+.term-sel dd.on select {background-color: #235f8d; color: #fff; }
+.term-srch dd span {display: inline-block; background-color: transparent; width: 44%; }
+.term-srch dd span:nth-child(2) {vertical-align: middle; width: 10px;}
+.term-srch dd input {vertical-align: middle; border: 1px solid #b4b4b4; width: 100%; height: 30px; font-size: 0.85em; line-height: 30px; -webkit-appearance:none; background-color: #fff;}
+.sel-list .term-srch dd.memory-term span {width: 46%;}
+.sel-list .term-srch dd.memory-term.divn-3 {width: 79%;}
+.sel-list .term-srch dd.memory-term span:nth-child(2) {width: 10px;}
+.term-srch dd.on input {background-color: #235f8d; color: #fff;}
+
+.memory-input .btn-list {text-align: center; margin-top: 10px; margin-bottom: 20px;}
+.memory-input .btn-list a {width: 35%; margin-right: 10px;}
+.memory-input .btn-list a:last-child {margin-right: 0;}
+.memory-input .btn-list a:focus {color: #fff;}
+
+/* 훈련일지 리스트 */
+.good-list h2 {font-size: 1.07em; background-color: #edf0f4; color: #164369; letter-spacing: -.05em; border-bottom: 1px solid #d4d4d4;}
+.good-list li {border-bottom: 1px solid #d4d4d4;}
+.good-list .img-icon {display: inline-block;vertical-align: top;width: 25px;margin-right: 10px; margin-bottom: 2;margin-top: -2px;}
+.good-list a {background-color: #f4f4f4; padding: 0.71em 0.36em;}
+.good-list a.on {background-color: #fff;}
+.good-list a .img-icon {width: 19px;}
+.good-list a > * {float: left;}
+.good-list a .icon-cont {font-size: .93em;text-align: center; color: #d4d4d4; border: 1px solid #d4d4d4; border-radius: 50%; width: 30px; height: 30px; line-height: 25px; margin-top: -5px; float: right;}
+.good-list a p {font-size: 0.85em; font-family: 'nanumGothicB'; overflow: hidden; width: 240px; white-space: nowrap; text-overflow: ellipsis;}
+.good-list a .icon-cont span {font-size: 0.71em;}
+.memory-txt {border-top: 1px solid #d4d4d4; padding-top: 0.71em; padding-bottom: 1.25em;}
+.memory-txt h3 {font-size: 1.125em; padding-bottom: 0.71em;}
+.memory-txt ol li {text-indent: 0; list-style-type: decimal; border: none; margin-left: 15px;}
+.memory-txt .btn-list {margin-top: 10px;font-size:0.85em;font-family: 'nanumGothicB';}
+.memory-txt .btn-list a {display: inline-block; font-size:1.1em; background-repeat: no-repeat;-webkit-background-size: 30px;background-size: 16px;background-position: 10px center;background-color: #3a87ad;color: #fff;text-indent: 18px;border-radius: 30px;padding: 0.6em 1.1em 0.7em;}
+
+.sw-chara {color:#d4d4d4;}
+.icon-off-favorite {color:#d4d4d4; display: inline-block;}
+.icon-on-favorite {color:#ffd300; display: inline-block;}

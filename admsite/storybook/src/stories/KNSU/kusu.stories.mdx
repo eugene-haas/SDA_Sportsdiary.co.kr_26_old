@@ -1,0 +1,104 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="KNSU/Introduction" />
+
+import '@/stories/assets/mdx_style.css';
+
+# 한국체육대학교 경기력향상 시스템
+
+한국체육대학교 경기력향상 시스템
+
+## Getting Started
+
+* 웹에서 [knsu.sportsdiary.co.kr](http://knsu.sportsdiary.co.kr/main/page/etc/login.asp) 접속
+* 26번 서버 /KNSU/tablet/main 에 위치
+
+## 코드 규칙
+본 규칙을 통해 프로젝트의 **코드 품질**과 **유지보수 난이도**를 조절합니다.<br/>
+[기본 코드 규칙](/?path=/story/docs-coderule--page#welcome-to-coderule-of-위드라인)참고
+
+### 1. 프론트엔드는 JS(vue), 백엔드는 ASP
+ * 클라이언트의 화면은 **모두 JS(vue)**로 제어하세요. (클라이언트에서 asp 사용 금지)
+
+### 2. tab 크기는 3으로
+
+### 3. 맨앞에 _가 붙혀진 파일은 지워진 파일
+ * 실제 배포과정에서 삭제 예정 파일
+
+## 폴더 구조 및 설명
+```
+app
+├── api - 백엔드 api 폴더
+│
+├── css
+│   ├── library - 라이브러리 스타일 폴더
+│   ├── default.css - 프로젝트별 셋팅 css 파일
+│   ├── fonts.css - 폰트 css 파일
+│   └── style.css - 실제 css 작성 파일
+│
+├── fonts - 폰트 폴더
+│
+├── images
+│   ├── app - 바탕화면에 추가할 때의 아이콘
+│   ├── icon - 브라우저 아이콘 폴더
+│   ├── index - index, etc 페이지에서 쓰는 이미지
+│   └── common - 전체적으로 쓰는 이미지
+│       ├── hurt_bars - 부상 부위 표시 막대 이미지
+│       ├── include - include에서 쓰는 이미지
+│       └── ...
+│
+├── js
+│   ├── etc - 기타 스크립트
+│   │   ├── cmu.js, cst.js, ctx.js, utx.js - 유틸 함수 스크립트
+│   │   ├── default.js - 전체 환경 셋팅 및 events
+│   │   ├── define.js - 전역 define 설정(대문자)
+│   │   └── vue_filter.js - 전역 vue filter
+│   ├── include - /app/include의 스크립트 파일
+│   ├── library - 라이브러리 스크립트 파일
+│   └── page - 페이지별 스크립트 파일
+│
+├── include - page에 쓰는 include
+│   ├── head.asp - head 태그 include
+│   ├── head_calender.asp - head calender 태그 include
+│   ├── head_chart.asp - head chart 태그 include
+│   ├── ver.asp - 버전 관리 asp 변수 선언
+│   ├── nav.asp - 사이드 메뉴 include
+│   ├── header.asp - 헤더 include
+│   ├── aside.asp - 마이 메뉴 include
+│   ├── modal_calender.asp - modal calender include
+│   └── modal.asp - 전역 모달 include
+│
+├── page - html 폴더
+│   ├── etc - 기타
+│   ├── PM - 전문실기
+│   ├── PS - 체육과학연구소
+│   ├── PS_data - 체육과학연구소 기록확인
+│   ├── PS_statistics - 체육과학연구소 통계확인
+│   ├── FM - 학생식당
+│   ├── TM - 치료실
+│   └── default.asp - asp 파일 템플릿(전체 html 틀)
+│
+└── index.asp
+```
+
+## 참여자(역할)
+
+* **조은비, 조도근**, 박진구, 전제혁 - 기획
+* **박진구(PM)** - 디자인
+* **김찬수** - 퍼블리싱
+* **김찬수, 전제혁**, 백승훈 - 프론트엔드 데이터 연결
+* **전제혁**, 백승훈 - 백엔드 API 개발
+* 누구누구 - 유지보수
+
+## 개발 기간
+
+* 시작일 : 2020-05-18(퍼블리싱 시작일)
+* 종료일 : 2021-01
+
+## 본 문서 작성자
+
+* **chansoo** - *Initial work* - 2021-01-20
+
+## Acknowledgments
+
+*

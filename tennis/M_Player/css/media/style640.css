@@ -1,0 +1,24 @@
+/**
+ * 640 이상
+ */
+@media (min-width: 640px) {
+  /* 메인 - 메인 메뉴 */
+  .main-menu{padding-bottom: 10%;}
+  .main-menu ul {width: 60%;}
+  .sub-menu-bg .container {
+    margin-bottom: -13%;
+  }
+
+  /*경기기록실 > 순위 > 메달합계*/
+  .medal-rank .rank-tb th img,.medal-total .rank-tb th img {width: 23%; margin-top:-5px;}
+
+  /* 나의 통계 > 부상정보 */
+  /*.dist-cont .table_01 .body-img {top: -1px;}*/
+  /* 훈련일지 > 부상입력 */
+  .ipt-injury .dist-cont .table_01 .body-img {top: -1px;}
+  /* 선수분석 > 전적 > 대회영상 즐겨찾기 */
+  .film-fav .ana .stat-txt {width: 74%;}
+
+  /* 대진표 > 대진표 보기 > select-list */
+  .tourney-mode {width: 640px; height:auto;}
+}

@@ -1,0 +1,28 @@
+.sub.sub-main.tourney.result-pop {border: none;}
+.result-pop .landing-box {background-color: #f2f2f2; text-align: center; width: 960px; height: 535px; line-height: 535px; margin: 0 auto;}
+.result-pop .landing-box p {font-weight: bold; color: #666;}
+.result-pop .result-list {width: 740px; margin: 0 auto; margin-top: 48px; margin-bottom: 50px;}
+.result-pop .result-list h3 {font-family: 'Noto KR Medium'; font-size: 15px; background-color: #6f7c84; color: #fff; border-radius: 20px; height: 27px; line-height: 27px;}
+.result-pop .result-list .content {text-align: left; padding-top: 16px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px;}
+.result-pop .result-list .content li {position: relative; margin-bottom: 15px;}
+.result-pop .result-list .content span {display: inline-block; vertical-align: middle;}
+.result-pop .result-list .content .num-box {text-align: center; background-color: #154877; color: #fff; border: 1px solid #154877; width: 23px; height: 23px; line-height: 23px; margin-right: 7px;}
+.result-pop .result-list .content .player {font-size: 17px; color: #666; font-weight:bold; height: 25px; line-height: 30px;}
+.result-pop .result-list .content .v-s {display: inline-block; background-color: #cacaca; color: #333; width: 25px; height: 25px; text-align: center; line-height: 30px; position: absolute; top: 0px; left: 50%; margin-left: -13px; }
+.result-pop .result-list .content .player-2 {float: right;}
+
+/**
+ * modal 로 변경
+ */
+.result_modal .modal-dialog {width: 1280px;}
+.result_modal .modal-content {background-color: #354354;border: none;border-radius: 0;padding-left: 5px;padding-right: 5px;padding-bottom: 5px;}
+.result_modal .modal-header {font-family: 'NanumBarunGothic';font-size: 24px;font-weight: bold;text-align: center;background-color: #354354;color: #fff;}
+.result_modal .modal-header .btn_close {position: absolute; top: 8px; right: 10px;}
+.result_modal .modal-header h1 {font-size:22px;}
+.result_modal .modal-body {background-color: #fff;padding: 0;}
+.result_modal .modal-body .stage-title {text-align: center; padding-top: 50px; font-family:"NanumBarunGothicB"; font-size:24px; height:40px; line-height:40px;}
+.result_modal .modal-body .date {font-size: 17px; text-align: center;color: #666;font-family:"NanumBarunGothic";}
+.result_modal .modal-body .date .d-day {display: inline-block;vertical-align: middle;width: 70px; height: 25px; line-height: 25px; margin-right: 10px;}
+.result_modal .modal-body .date .date_txt {display: inline-block;vertical-align: middle;}
+.result_modal .landing-box {width: 100%;margin-top: 55px;}
+.result_modal .landing-box p {font-weight: bold;font-size:17px;color: #666;}

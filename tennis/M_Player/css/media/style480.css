@@ -1,0 +1,116 @@
+/*
+ * 480 이상
+ */
+@media (min-width: 480px) {
+  /**
+   * --------------------------------
+   * haeder
+   * --------------------------------
+   */
+  .login-btn a .link-deco {width: 40%;}
+
+  /* footer */
+  .login-list {padding-bottom: 20px;}
+
+  .corp-list {width: 400px; margin: 0 auto;}
+  .corp-list h3 {padding-right: 15px;}
+  .corp-list ul {margin-left: 10px;}
+  .corp-list li {margin-right: 10px;}
+  .corp-list li:last-child {margin-right: 0;}
+
+  /* 회원가입 > 회원정보
+  .join-step li:first-child.on {clip-path: polygon(90% 0, 185px 50%, 90% 100%, 0 100%, 0 0);}
+  .join-step li:last-child.on {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 6% 50%);}
+  .join-form li:first-child p:last-child input {width: 82%;}
+  .join-form li.phone-check input {width: 75%;}
+  .join-form li.phone-check a {width: 22%;}
+  .join-form li.mail-line .email-input {width: 46%;} */
+
+  /* 메인 index */
+  .main-menu {padding-top: 260px; padding-bottom: 80px;}
+  .main-menu ul {width: 70%; margin-top: 20px;}
+  .main-menu li {margin-right: 10px;}
+
+  .gnb {max-width: 400px;}
+  .gnb .gnb_ctr {max-width: 400px;}
+  /* 사이드메뉴 프로필 */
+  .profile {width: 15%;}
+  .gnb .gnb-header .profile {width: 46px;}
+  .welcome {margin-top: 5px;}
+  /*.welcome .login {margin-top: 10px;}*/
+  /* 사이드메뉴 하단 로고 */
+  .gnb-footer h3 {width: 25%;}
+
+  /* 회원가입 > 회원정보 */
+  .phone-input input { width: 20%}
+  .phone-input select { width: 30%;}
+  .phone-input .btn-gray {margin-left: 1%; margin-top: 0; width:20.2%; }
+
+  /* 마이페이지 > 서비스해지신청 완료 */
+  .join-logo {padding-bottom: 30px;}
+
+  /* 메모리 > 잘된점 모아보기 > 훈련일지 */
+  .memory-councel .panel-title .panel-txt-q {width: 88%; }
+
+  /* 순위 > 점수득점 > 조회 결과 */
+  .match-list .rank-tb th {font-size:1em;}
+  .rank-tb .img-round {margin-left: 10px; margin-top: 5px; margin-bottom: 5px;}
+  .rank-tb .belong p {font-size: 16px;}
+
+  /* 메모리 > 잘된점 모아보기 > 훈련일지 */
+  .term-srch dd span {width: 47%;}
+  .sel-list .term-srch dd.memory-term span {width: 47%;}
+
+  /* 훈련일지 */
+  .sub.strength .input-group.date {width: 75%;}
+
+  /* 대회일지 */
+  .strength .navyline-top-list select#condition {width:83%;}/* 컨디션 select */
+  .strength .navyline-top-list select {width:86%;}
+
+  /* 나의 통계 > 연습경기 > 시간대별 득실점 */
+  .time-part-table thead th {font-size: 1em; height: 40px;}
+  .time-part-table tbody td {height: 35px;}
+
+  /* 나의 통계 > 전적 >대회영상모음 */
+  .stat-record .stat-list .stat-txt {width: 63%;/* padding-bottom: 10px; */}
+  .stat-film.group .record-detail {margin-left: 10px;}
+  .stat-record .stat-film .show-film {/* width: 60px; */padding-left: .94em;padding-right: .94em;margin-top: 0;float: right;}
+  .stat-film.group .show-film {margin-top: -17px;}
+
+  /* 나의 통계 > 부상정보 */
+  #injury .dist-cont {width: 400px;}
+  .dist-cont .table_01 .left_label,
+  .dist-cont .table_01 .right_label {width: 120px;}
+  .dist-cont .table_01 .body-img {position: relative; top: 0px;}
+  .dist-cont .table_02 .left_label,
+  .dist-cont .table_02 .right_label {width: 120px;}
+  .dist-cont .table_02 .body-img {position: relative; top: 0px;}
+  .tabc .dist-cont {width:400px;}
+
+  /*단체정보*/
+  .sub.srch-list li:last-child {border: none; width: 24.7%; }
+
+  /* 체력측정 */
+  /*.muscle-sub-title {text-align: center; width: 100%;}*/
+  /*.muscle-way {text-align: left;}*/
+
+  /* 훈련일지 부상정보 */
+  .ipt-injury .dist-cont .table_01 .body-img {top: 0px;}
+
+  /* 선수 분석 > 전적 > 대회영상모음 */
+  .ana .stat-list span[class*="-favorite"] {padding-top: 0;}
+  
+    /* 대진표 > 대진표 보기 */
+  .tourney-mode {width: 480px; height: auto;}
+  .sub.tourney .tourney.tourney-128 {transform: scale(.45);}
+
+  /* 결제하기 > 미성년자 안내 */
+  .pay .deputy-guide p.txt {width: 85%;}
+  .pay .deputy-guide p.img {width: 15%; padding-top: 0; float: right;}
+  .pay .deputy-guide .icon {padding-top: 0;}
+  .sms-send label input {flex: 4} 
+
+  /* 대진표 리그전 */
+  .list_league {transform: scale(1);}
+}

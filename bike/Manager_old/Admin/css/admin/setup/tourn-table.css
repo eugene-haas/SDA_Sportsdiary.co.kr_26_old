@@ -1,0 +1,31 @@
+.tourn-table .player .pre-num {background-color: #fff;}
+.tourn-table .player .tourney_ctr_btn {display: block;height: calc(100% - 21px);}
+.tourney_ctr_btn .team {display:table-cell;vertical-align:middle;}
+
+.tourn-table td:first-child div.player {height: 100px;}
+.tourn-table td:nth-child(2) div.player {height: 200px;}
+/* padding-top = (player 절반 - .tourney_ctr_btn 절반 - pre-num); */
+.tourn-table td:nth-child(2) div.player .tourney_ctr_btn {display:table;width:100%;} /* 100 - 32 - 15 */
+.tourn-table td:nth-child(3) div.player {height: 400px;}
+.tourn-table td:nth-child(3) div.player .tourney_ctr_btn {padding-top: 153px;} /* 200 - 32 - 15 */
+.tourn-table td:nth-child(4) div.player {height: 800px;}
+.tourn-table td:nth-child(4) div.player .tourney_ctr_btn {padding-top: 353px;} /* 400 - 32 - 15 */
+.tourn-table td:nth-child(5) div.player {height: 1600px;}
+.tourn-table td:nth-child(5) div.player .tourney_ctr_btn {padding-top: 753px;} /* 800 - 32- 15 */
+.tourn-table td:nth-child(6) div.player {height: 3200px;}
+.tourn-table td:nth-child(6) div.player .tourney_ctr_btn {padding-top: 1553px;} /* 1600 - 32 - 15 */
+.tourn-table td:nth-child(7) div.player {height: 6400px;}
+.tourn-table td:nth-child(7) div.player .tourney_ctr_btn {padding-top: 3153px;} /* 3200 - 32 - 15 */
+.tourn-table td:nth-child(8) div.player {height: 12800px;}
+.tourn-table td:nth-child(8) div.player .tourney_ctr_btn {padding-top: 6353px;} /* 6400 - 32 - 15 */
+.tourn-table td:nth-child(9) div.player {height: 25600px;}
+.tourn-table td:nth-child(9) div.player .tourney_ctr_btn {padding-top: 12753px;} /* 12800 - 32 - 15 */
+
+.tourney_ctr_btn .team{position:relative;}
+.tourney_ctr_btn .team .game-line .line-box{width:10px;height:86px;border:2px solid #7a8693;border-left:0;background:none;position:absolute;left:0;top:50%;margin-top:-43px;}
+.tourney_ctr_btn .team .game-line .line-box .line{width:10px;height:2px;background:#ec0a2e;display:inline-block;position:absolute;left:10px;top:50%;margin-top:-1px;}
+.tourney_ctr_btn .team .game-line .line-box .none-line{background:#7a8693;}
+.tourney_ctr_btn .team .btn-box .detail-result{width:80px;height:25px;line-height:23px;border:1px solid #888;background:#fff;text-align:center;border-radius:3px;}
+.tourney_ctr_btn .team .btn-box .win-btn{width:30px;height:25px;line-height:23px;border:1px solid #a4001a;background:#ec0a2e;text-align:center;border-radius:3px;color:#fff;}
+.tourney_ctr_btn .team .game-line .top-win-box{width:10px;height:43px;border-top:2px solid #ec0a2e;border-right:2px solid #ec0a2e;position:absolute;left:0;top:50%;z-index:10;margin-top:-43px;}
+.tourney_ctr_btn .team .game-line .bottom-win-box{width:10px;height:43px;border-bottom:2px solid #ec0a2e;border-right:2px solid #ec0a2e;position:absolute;left:0;bottom:50%;z-index:10;margin-bottom:-43px;}

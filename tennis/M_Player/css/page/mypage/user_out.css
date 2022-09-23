@@ -1,0 +1,20 @@
+/* 회원 탈퇴 */
+.sub.user_out {font-family: 'NotoKR-dl';padding-left: 25px;padding-right: 25px;}
+.user_out .guide_list {font-size: 0.80em;line-height: 130%;color: #999;margin-top: 30px;}
+.user_out .guide_list li {position: relative;margin-bottom: 20px;}
+.user_out .guide_list li:before {position: absolute; top: 5px; left: -8px;content: ''; width: 3px;height: 3px;border-radius: 50%;background-color: #999999;}
+.user_out .record_ob {font-family: 'NotoKR';font-size: 0.8em;background-color: #fff;color: #999;border: none;padding: 0;margin-top: 20px;}
+.user_out .assign_date {font-family: 'NotoKR';text-align: center;color: #005895;font-size: 0.93em;padding-bottom: 35px;}
+
+.user_out .ipt_box {padding-bottom: 100px;}
+.user_out .ipt_box label {position: relative;width: 100%;}
+.user_out .ipt_box .tit {position: absolute;font-size: 0.88em;color: #999999;padding-left: 10px;}
+.user_out .ipt_box input {border: none; border-bottom: 1px solid #bbb; border-radius: 0; width: 100%;padding-left: 10px;}
+.user_out .ipt_box input:focus {outline: none}
+
+/* 탈퇴 완료 안내 */
+.sub.user_bye {padding-bottom: 100px;}
+.user_bye .img_box {display: block;width: 49px;height: 54px;margin: 0 auto;margin-top: 40px;margin-bottom: 30px;}
+.user_bye h2 {font-family: 'NotoKR-md';text-align: center;color: #333;font-size: 1.43em;}
+.user_bye h2 .bluy {line-height: 150%;color: #005895;}
+.user_bye .ment {font-family: 'NotoKR-dl';font-size: 0.93em;text-align: center;color: #999;letter-spacing: -0.05em;}

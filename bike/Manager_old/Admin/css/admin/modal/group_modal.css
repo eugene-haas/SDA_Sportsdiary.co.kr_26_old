@@ -1,0 +1,24 @@
+.group_modal .modal-dialog{width:1218px;}
+.group_modal .modal-body{padding:0;}
+.group_modal .modal-content{padding:40px 30px;}
+.modal .content-title span:first-child:before{content: '';}
+.group_modal .content-title span:nth-child(4){padding-left:8px;}
+.group_modal .content-title span:nth-child(4):before{content: '[';top: 1px;left: 2px;width: 0;height: 0;}
+.group_modal .select_results{display:table;width:100%;margin-top:22px;}
+.group_modal .select_results .belong_title{font-size:15px;color:#fff;font-family: "NanumGothicB";background:#0f335b;width:159px;border-right:2px solid #c3cad4;float:left;;text-align:center;}
+.group_modal .select_results .belong_name{width:293px;float:left;text-align:center;font-family: "NanumGothicB";}
+.group_modal .select_results .l_con{float:left;border:3px solid #c3cad4;width:458px;height:39px;line-height:34px;}
+.group_modal .select_results .c_con{float:left;width:212px;height:39px;border-radius:3px;background:#ec0a2e;font-size:14px;color:#fff;font-family: "NanumGothicB";line-height:39px;text-align:center;margin-left:15px;}
+.group_modal .select_results .r_con{float:right;border:3px solid #c3cad4;width:458px;height:39px;line-height:34px;}
+.group_modal .select_results .r_con .belong_title{float:left;border-left:2px solid #c3cad4;border-right:0;}
+.group_modal .table_list{margin-top:30px;}
+.group_modal .table_list table{width:100%;border-left:3px solid #c3cad4;border-top:3px solid #c3cad4;border-bottom:3px solid #c3cad4;}
+.group_modal .table_list table tr th{border-right:1px solid #c3cad4;border-bottom:1px solid #c3cad4;height:39px;text-align:center;font-family: "NanumGothicB";background:#7e868f;color:#fff;font-size:14px;}
+.group_modal .table_list table tr th.border_3{border-right:3px solid #c3cad4;}
+.group_modal .table_list table tr td{border-right:1px solid #c3cad4;border-bottom:1px solid #c3cad4;height:39px;text-align:center;font-size:14px;}
+.group_modal .table_list table tr td:last-child{border-right:3px solid #c3cad4;}
+.group_modal .table_list table tr td a{width:54px;height:28px;background:#7e868f;border-radius:3px;border:1px solid #777;display:inline-block;line-height:26px;text-align:center;color:#fff;font-size:13px;font-family: "NanumGothicB";}
+.group_modal .table_list table tr td.yello_bg{background:#ffd200;}
+.group_modal .order-footer{text-align:center;}
+.group_modal .order-footer ul li{float:none;display:inline-block;width:auto;}
+.group_modal .order-footer ul li a{width:180px;}

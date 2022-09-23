@@ -1,0 +1,92 @@
+@media (max-width: 359px) and (min-width: 320px) {
+  /**
+   * --------------------------------
+   * font-size  대응
+   * --------------------------------
+   */
+  
+  /*tit*/
+  h2, h3 {font-size: 0.95em;}
+  /* 회원가입 > 선수 및 소속 선택 */
+  .player-type h3, {font-size: 1.1em; line-height: 1.25em; }
+
+  .player-school li p:first-child { width:15%;}
+  .player-school li p:last-child { width:85%;}
+  .type4 .player-school .sel-p { width:85%;}
+  
+  /* join2 회원가입 입력(증복확인 버튼) */
+
+  /* join3 회원가입 > 회원정보*/
+  .join-form li:first-child p:nth-child(2) input {width: 67%;}
+  
+  /* 마이페이지 > 내 정보 관리 */
+  .join-form li.phone-check input {width: 69%;}
+ 
+
+  /*증복확인 버튼( 우편번호검색*/
+  .address-input input:first-child {width: 49%;}
+  .address-input a {margin:0; width:48% !important;}
+
+  .join-form li:first-child p:last-child input { letter-spacing: -0.15em;}
+
+  /* join3 회원가입 약관동의 */
+  .terms-top:nth-child(5) h2 {letter-spacing:-0.11em;}
+
+  /*대회참가신청*/
+  .application-list li .tit-application {font-size:16px; letter-spacing: -0.15em; }
+  .application-list li .icon-red , .application-list li .btn-schedule {font-size: 12px;}
+
+  /*마이페이지*/
+  .parent-data li {display: block;}
+  /* 국가대표 신청 모달 */
+  #regist_a .join-form li:first-child p:last-child input {width: 61%;}
+
+
+  /*메모리*/
+
+
+   /* 훈련일지 */
+  .strength .navyline-top-list select#condition {width:75%;}
+  .strength .navyline-top-list select {width:79%;}
+  /*단체정보조회*/
+  .sub.srch-list li:last-child {border: none; width: 22.1%; }
+  .sub.srch-list .srch-inpt li:last-child {width: 100%;}
+
+  /* 체력측정 */
+  .strength .exc-list .exc-cont {width: 53%;}
+  .strength .exc-list .exc-title {font-size: 0.75em;}
+  .tip-cont h4 {font-size: 0.8em;}
+
+
+  /* 나의 일정 > 대회일지 : 대회성적 */
+  .match-info .match-set span:last-child {/* display: block; */}
+  .sche-title h2 {font-size: 0.9em;}
+
+  /*경기기록실 > 성적조회 > 입상자(단체)조회*/
+  .match-list .rank-tb th { letter-spacing: -0.09em; line-height: 16px; padding:6px 0;}
+  .winner-state .match-res dd {letter-spacing: -0.1em;}
+  
+  /*경기기록실 > 순위 > 메달합계*/
+  .medal-rank .rank-tb th img,.medal-total .rank-tb th img {width: 60%; margin-top:-10px;}
+
+  /* 선수분석 > 전적 > 대회영상모음 */
+  .stat-film.group .ana .record-detail {/* line-height: 100%; */}
+  /*.stat-film.group .show-film {margin-top: -20px;}*/
+
+  /* 대진표 > 대진표 보기 > select-list */
+  .tourney-mode {width: 320px; height:auto;}
+  .sub.tourney .tourney.tourney-128 {transform: scale(.3);}
+  
+  /*대회일정결과 */
+/*  .sch-btn-list .btn {padding-top: 0.4em; }*/
+
+  /*훈련일지*/
+  .btn-train-list li {font-size: 0.8em;}
+
+  /* .bg-inst {top: 190px;} */
+  .bg-inst .bottom-logo {padding-top: 60px;} 
+  .bg-inst.up-4 .bottom-logo {padding-top: 60px;} 
+  .bg-inst.up-5 .bottom-logo {padding-top: 100px;} 
+  .bg-inst.up-5.closed .bottom-logo {padding-top: 60px;} 
+  .bg-inst.closed {margin-top: 0;}
+}

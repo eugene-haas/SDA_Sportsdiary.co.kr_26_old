@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>대진표 128강 샘플</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+    <style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <script src="js/library/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery.oLoader.min.js"></script><!--로딩바-->
+    <script type="application/javascript" src="js/fastclick.js"></script><!--클릭반응속도up-->
+    <script src="js/bootstrap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/library/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+
+<body id="AppBody">
+
+    <!-- S: header -->
+    <div class="header container-fluid">
+      <div class="row">
+        <div class="pull-left">
+          <a onclick="clickBackbtn();" role="button" class="prev-btn">
+            <span class="icon-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+            <span class="prev-txt" id="DP_Title_Left">경기 입력 조회</span>
+          </a>
+        </div>
+        <div class="pos-center">
+          <h1 class="logo">
+            <img src="images/tournerment/header/judo-logo@3x.png" alt="대한유도회" width="140" height="37">
+          </h1>
+        </div>
+        <div class="pull-right">
+          <span class="sd-logo"><img src="images/tournerment/header/logo@3x.png" alt="스포츠 다이어리" width="100"></span>
+          <a href="index.html" role="button" class="home-link"><span class="icon-home"><i class="fa fa-home" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+    </div>
+    <!-- E: header -->
+
+    <!-- S: main -->
+    <div class="main main-operating container-fluid"><!--main-check-->
+      <h2 class="stage-title row" id="tourney_title" class="stage-title row"><!--2016 회장기 전국 유도대회--></h2>
+      <!-- S: input-select -->
+      <div class="input-select ent-sel row">
+        <!-- S: tab-menu -->
+        <div class="enter-type tab-menu">
+          <ul class="clearfix">
+            <li class="game-type">
+              <label >
+                <span><img src="images/tournerment/tourney/icon-private@3x.png" alt width="18" height="18"></span>
+                <label for="game-typeA" class="type-text" >개인전</label>
+                <input type="radio" name="game-type" id="game-typeA" value="sd040001" checked>
+              </label>
+            </li>
+            <li class="game-type">
+              <label >
+                <span><img src="images/tournerment/tourney/icon-group@3x.png" alt width="16" height="21"></span>
+                <label for="game-typeB" class="type-text" >단체전</label>
+                <input type="radio" name="game-type" id="game-typeB" value="sd040002">
+              </label>
+            </li>
+            <li class="type-sel">
+              <select id="TeamGb" data-native-menu="false">
+                <option value="">::소속구분선택::</option>
+              </select>
+            </li>
+            <li class="type-sel">
+              <select id="SexLevel" data-native-menu="false">
+                <option data-sex='' data-level='' value='' selected>::체급선택::</option>
+              </select>
+            </li>
+            <li class="btn-list">
+              <button type="button" id="search" class="btn btn-warning btn-search">조 회</button>
+            </li>
+          </ul>
+        </div>
+        <!-- E: tab-menu -->
+      </div>
+      <!-- E: input-select -->
+    </div>
+    <!-- E: main -->
+
+    <!-- S: tourney-main -->
+    <div class="tourney-main" style="display:block;">
+      <!-- S: tourney-->
+      <div class="tourney clearfix"><!--style="transform : scale3d(0.75, 0.75, 0.75);"-->
+        <!-- S: left-side -->
+        <div class="left-side clearfix">
+          <!-- S: match-list -->
+          <div  id="match_list_left" class="match-list">
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">301</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">302</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">303</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">304</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: no-match -->
+            <div class="no-match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">304</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: no-match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">305</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">306</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">307</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">308</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: no-match -->
+            <div class="no-match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">310</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: no-match -->
+            <!-- S: no-match -->
+            <div class="no-match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">311</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: no-match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">313</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">314</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: no-match -->
+            <div class="no-match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">315</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: no-match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">317</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">318</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: no-match -->
+            <div class="no-match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">320</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: no-match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">321</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">322</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">323</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">324</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">325</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">326</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">327</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">328</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">329</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">330</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">333</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">334</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">335</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">336</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">337</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">338</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">339</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">340</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">341</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">342</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">343</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">344</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">345</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">346</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">347</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">348</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">349</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">350</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">351</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">352</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">353</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">354</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">355</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">356</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">357</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">358</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">359</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">360</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">361</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">362</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+            <!-- S: match -->
+            <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">363</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">364</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+          </div>
+          <!-- E: match-list -->
+          
+          
+         <!-- S: Round-1 -->
+          <div id="round_01_left" class="round-1">
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look full">1</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-danger btn-look time-out">2</a> -->
+            </div>
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">3</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">4</a> -->
+            </div>
+             <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">5</a> -->
+            </div>
+             <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">6</a> -->
+            </div>
+             <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">7</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">8</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">9</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">10</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">12</a> -->
+            </div>
+          </div>
+          <!-- E: Round-1 -->
+        
+          <!-- S: Round-2 -->
+          <div id="round_02_left" class="round-2">
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">23</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">24</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">25</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">26</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">27</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">28</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">29</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+             <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+          </div>
+          <!-- E: Round-2 -->
+        
+          <!-- S: Round-3 -->
+          <div id="round_03_left" class="round-3">
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">38</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">39</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">40</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">41</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">41</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">41</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">41</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">41</a> -->
+            </div>
+          </div>
+          <!-- E: Round-3 -->
+        
+          <!-- S: Round-4 -->
+          <div id="round_04_left" class="round-4">
+            <div class="line-div">
+              <img src="images/tournerment/04_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">46</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/04_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">47</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/04_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">47</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/04_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">47</a> -->
+            </div>
+          </div>
+          <!-- E: Round-4 -->
+        
+          <!-- S: Round-5 -->
+          <div id="round_05_left" class="round-5">
+            <div class="line-div">
+              <img src="images/tournerment/05_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/05_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a> -->
+            </div>
+          </div>
+          <!-- E: Round-5 -->
+
+          <!-- S: Round-6 -->
+          <div id="round_06_left" class="round-6">
+            <div class="line-div">
+              <img src="images/tournerment/06_L_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a>
+            </div -->
+          </div>
+          <!-- E: Round-6 -->
+          </div>
+
+          <!-- S: final-match -->
+          <div class="final-match">
+            <!-- S: final-div -->
+            <div id="final_div" class="final-div">
+              <!-- S: final-match-box -->
+              <a href="#" role="button" class="final-match-box winner" data-toggle="modal" data-target="#round-res">
+                <span class="golden-img"><img src="images/tournerment/champion.png" alt width="30" height="45"></span>
+                <p><span class="final-player">최보라</span> 승</p>
+              </a>
+              <!-- E: final-match-box -->
+              <!-- S: line-div -->
+              <div class="line-div">
+                <img src="images/tournerment/07_final.png" alt>
+                <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a>
+              </div -->
+              <!-- E: line-div -->
+            </div>
+            <!-- E: final-div -->
+          </div>
+          <!-- E: final-match -->
+        </div>
+        <!-- E: left-side -->
+        </div>
+        
+        <!-- S: right-side -->
+        <div class="right-side">
+          <!-- S: match-list -->
+          <div id="match_list_right" class="match-list">
+            <!-- S: match -->
+            <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">301</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">302</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">303</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">304</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: no-match -->
+              <div class="no-match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">304</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: no-match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">305</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">306</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">307</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">308</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: no-match -->
+              <div class="no-match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">310</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: no-match -->
+              <!-- S: no-match -->
+              <div class="no-match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">311</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: no-match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">313</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">314</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: no-match -->
+              <div class="no-match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">315</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: no-match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">317</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">318</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: no-match -->
+              <div class="no-match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">320</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: no-match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">321</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">322</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">323</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">324</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">325</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">326</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">327</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">328</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">329</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">330</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">333</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">334</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">335</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">336</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">337</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">338</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">339</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">340</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">341</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">342</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">343</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">344</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">345</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">346</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">347</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">348</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">349</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">350</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">351</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">352</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">353</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">354</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">355</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">356</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">357</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">358</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">359</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">360</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">361</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+                <div class="player-info" tabindex="0">
+                  <span class="player-name">최보라</span>
+                  <span class="player-id">362</span>
+                  <span class="player-school">중앙여고</span>
+                </div>
+              </div>
+              <!-- E: match -->
+              <!-- S: match -->
+              <div class="match">
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">363</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+              <div class="player-info" tabindex="0">
+                <span class="player-name">최보라</span>
+                <span class="player-id">364</span>
+                <span class="player-school">중앙여고</span>
+              </div>
+            </div>
+            <!-- E: match -->
+          </div>
+          <!-- E: match-list -->
+          <!-- S: round-1 -->
+          <div id="round_01_right" class="round-1">
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="#" data-toggle="modal" data-target="#round-res" role="button" class="btn btn-primary btn-look full">13</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-danger btn-look time-out">14</a> -->
+            </div>
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">15</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">16</a> -->
+            </div>
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">17</a> -->
+            </div>
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">18</a> -->
+            </div>
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">19</a> -->
+            </div>
+            <!-- S: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic_center.png" alt>
+            </div>
+            <!-- E: 부전승 라인 -->
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">20</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">21</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/01_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">22</a> -->
+            </div>
+          </div>
+          <!-- E: round-1 -->
+
+          <!-- S: Round-2 -->
+          <div id="round_02_right" class="round-2">
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">30</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">31</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">32</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">33</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">34</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">35</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">36</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/02_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">37</a> -->
+            </div>
+          </div>
+          <!-- E: Round-2 -->
+
+          <!-- S: Round-3 -->
+          <div id="round_03_right" class="round-3">
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">42</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">43</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">44</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">45</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">45</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">45</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">45</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/03_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">45</a> -->
+            </div>
+          </div>
+          <!-- E: Round-3 -->
+
+          <!-- S: Round-4 -->
+          <div id="round_04_right" class="round-4">
+            <div class="line-div">
+              <img src="images/tournerment/04_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">47</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/04_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">48</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/04_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">48</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/04_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">48</a> -->
+            </div>
+          </div>
+          <!-- E: Round-4 -->
+        
+          <!-- S: Round-5 -->
+          <div id="round_05_right" class="round-5">
+            <div class="line-div">
+              <img src="images/tournerment/05_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a> -->
+            </div>
+            <div class="line-div">
+              <img src="images/tournerment/05_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a> -->
+            </div>
+          </div>
+          <!-- E: Round-5 -->
+
+          <!-- S: Round-6 -->
+          <div id="round_06_right" class="round-6">
+            <div class="line-div">
+              <img src="images/tournerment/06_R_basic.png" alt>
+              <!-- <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a> -->
+            </div>
+            <!--<div class="line-div">
+              <img src="images/tournerment/06_R_basic.png" alt>
+               <a href="enter-score.html" role="button" class="btn btn-primary btn-look">50</a> 
+            </div>-->
+          </div>
+          <!-- E: Round-6 -->
+
+        </div>
+        <!-- E: right-side -->
+      </div>
+      <!-- E: tourney-->
+     <!-- E: hidden-main -->
+     </div>
+
+    <!-- E: main -->
+    <!-- custom.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

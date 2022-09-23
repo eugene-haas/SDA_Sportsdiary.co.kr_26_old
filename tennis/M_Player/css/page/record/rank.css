@@ -1,0 +1,37 @@
+/* script 제어 필요 */
+.record-menu .menu-list .rank-mid {display: none; width: 140%;}
+
+/* 순위 > 점수득점 > 조회 결과 */
+.match-list .rank-tb th {font-size: 12px; text-align:center; letter-spacing: -0.09em;}
+/* 순위 */
+.match-list .rank-tb th:first-child {width: 10%;}
+/* 프로필 사진 */
+.match-list .rank-tb th:nth-child(2) {width: 12%; border-right: none;}
+/* 이름(소속) */
+.match-list .rank-tb th:nth-child(3) { text-align: left; width: 30%;}
+/* 총 득점수 */
+.match-list .rank-tb th:nth-child(4) {width: 15%;}
+/* 총 경기수 */
+.match-list .rank-tb th:nth-child(5) {width: 15%;}
+/* 득점률 */
+.match-list .rank-tb th:last-child {width: 15%;}
+/* table */
+.rank-tb {width: 97%;  height: 2.14em; line-height: 2.14em; margin: 0 auto; margin-bottom: 40px; border:1px solid #ddd;}
+.rank-tb thead {background-color: #6a7780; color: #fff; font-family:'NotoKR-dl';}
+.rank-tb thead th {border-right: 1px solid #ddd;}
+.rank-tb thead th:last-child {border-right: none;}
+.rank-tb tbody tr:nth-child(2n) {background-color: #f2f2f2; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.rank-tb tbody tr td {border-right: 1px solid #ddd;}
+.rank-tb tbody tr td:nth-child(2) {border-right: none; padding: 5px;}
+.rank-tb tbody td {text-align: center; font-family: 'NotoKR-md'; font-size:0.9em;}
+.rank-tb tbody td:nth-child(3) {text-align: left;}
+.match-list .belong {font-size: 14px; padding-left: 5px; line-height: 15px;}
+.match-list.match-rate table tr th:nth-child(3) {width:16%;}
+.match-list.match-rank table tr th:first-child {width:6%;}
+.match-list.match-rank .rank-tb th img {width:18px; height:24px; margin-top:-7px;}
+.rank-tb .belong p { position:relative;  display: inline-block; font-size: 14px; padding-right:8px;/* border-bottom: 1px solid #999; */line-height: 20px; height: 19px;height: 18px; text-decoration: underline;}
+.rank-tb .belong p:after {content: '';position: absolute;top: 6px; right:0;border-top:4px solid transparent;border-bottom: 4px solid transparent; border-left: 4px solid #737f87;}
+.rank-tb .belong span {display: block; font-size: 12px; color: #999; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 95px; line-height: 20px;}
+.rank-tb {font-size: 14px;}
+.rank-tb .profile-img .img-round {display: inline-block;vertical-align: middle;background: #d1d1d1;height: 33px;width: 33px; border: 1px solid #cdcdcd;}
+

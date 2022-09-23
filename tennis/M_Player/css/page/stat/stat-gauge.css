@@ -1,0 +1,5 @@
+.stat-gauge {background-color: #fff; margin-top: 0; /*border-top: 1px solid #ccc;*/}
+.stat-gauge p.orangy {font-size: 0.79em; letter-spacing: -0.04em; color: #ff7e00;}
+.state-cont .detail-table {position: relative; display: none; background-color: #e3e6eb;/* border: 1px solid #ccc; */border-top: none; margin-left: 10px; margin-right: 10px; margin-bottom: 30px; padding-top: 20px; padding-left: 10px; padding-right: 10px; padding-bottom: 10px;}
+.state-cont .detail-table:before {position: absolute; top: -1px; left: calc(50% - 10px); content: ''; border-top: 12px solid #fff; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: none; z-index: 100;}
+#sub_chart_total > .chart-title {padding-top:0; border-top:none;}

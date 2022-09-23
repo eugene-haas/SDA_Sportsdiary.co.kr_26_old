@@ -1,0 +1,151 @@
+/* 로그인, 아이디찾기, 본인확인 */
+.login_page{min-height:700px;margin:20px;margin-top:0;text-align:center;}
+.login_page h1{font-size:21px;font-family:"NanumBarunGothic"; color:#666;margin-top:85px;margin-bottom:10px;float:left;width:100%;}
+.login_page p{margin:auto;line-height:22px;}
+.login_page .b_text{font-size:15px;color:#888;}
+.login_page .login_box{margin-top:30px;margin-bottom:80px;float:left;width:100%;}
+.login_page .login_box .bg{width:460px;padding:35px;margin:auto;background:#f2f2f2;height:203px;}
+.login_page .login_box .login_inbox .left_in{float:left;width:260px;}
+.login_page .login_box .login_inbox .in_box input{float:left;width:100%;border:3px solid #dddddd;height:46px;line-height:46px;padding-left:35px;}
+.login_page .login_box .login_inbox .in_box .id{margin-bottom:10px;background-color:#fff;}
+.login_page .login_box .login_inbox .in_box .pass{margin-bottom:15px;background-color:#fff;}
+.login_page .login_box .login_inbox .login_btn{float:left;margin-left:55px;width:145px;height:113px;background:#57a5d4;line-height:115px;font-size:15px; font-family:"NanumBarunGothicB"; color:#fff;}
+.login_page .login_box .btm_con{float:left;width:100%;}
+.login_page .login_box .btm_con .check_in{text-align: left; float:left;width:100%;}
+.login_page .login_box .btm_con .check_in input{float:left;}
+.login_page .login_box .btm_con .check_in span{float:left;margin-top:4px;margin-left:5px;font-size:13px;color:#666; font-family:"NanumBarunGothicB";}
+.login_page .login_box .btm_con .link_line{float:left;width:100%;padding-top:20px;margin-top:20px;border-top:1px solid #bbb;}
+.login_page .login_box .btm_con .link_line a{padding:0 10px 0 10px;border-right:1px solid #bbb;font-size:13px;color:#666;}
+.login_page .login_box .btm_con .link_line a:last-child{border-right:0;}
+.login_page .btm_text{float:left;width:100%;margin-bottom:70px;}
+.login_page .bg_color{padding:25px 0;background:#f2f2f2;width:800px;margin:auto;}
+.sub_top_banner h3{text-align:left;}
+.find_id{float:left;width:100%;margin-bottom:60px;margin-top:50px;}
+.find_id .find_id_box{width:800px;margin:auto;}
+.find_id .certification_box{float:left;padding:50px 0;border:5px solid #9ccce9;width:370px;}
+.find_id .certification_box h1{color:#333;margin-top:30px; font-family:"NanumBarunGothicB"; font-size:22px;}
+.find_id .certification_box p{font-size:15px;color:#888; line-height:140%;}
+.find_id .certification_box a{width:200px;height:50px;line-height:50px;background:#0085d3;font-size:16px; font-family:"NanumBarunGothicB"; color:#fff;display:block;margin:auto;margin-top:30px;}
+.find_id .left_phone{margin-right:40px;}
+.find_id .certification_box i{display:block;margin:auto;}
+.login_page .step_box{float:left;width:100%;margin-top:30px;border-top:1px solid #bbb;border-bottom:1px solid #bbb;}
+.login_page .step_box ul li{float:left;width:25%;}
+.login_page .step_box ul li .box{border-right:1px solid #bbb;float:left;width:100%;padding:15px 0;}
+.login_page .step_box ul li .border_right_no{border-right:none;}
+.login_page .step_box ul li img{float:left;margin-left:20px;margin-top:2px;}
+.login_page .step_box ul li .right_text{float:left;text-align:left;margin-left:15px;}
+.login_page .step_box ul li .number{font-size:14px; font-family:"NanumBarunGothicB";}
+.login_page .step_box ul li .title{font-size:16px;font-family:"NanumBarunGothicB";}
+.login_page .step_box ul .on{background:#018fca;color:#fff;}
+
+/* 회원가입 약관동의 */
+.login_page .terms{text-align:left;font-size:13px;}
+.login_page .terms .t_title{font-size:19px;padding-left:25px;margin-bottom:30px; font-family:"NanumBarunGothicB";}
+.login_page dl dd .text_box{float:left;width:1196px;height:100px;overflow-y:scroll;padding:20px;border:2px solid #ddd;line-height:20px;color:#666;}
+.login_page dl dd .text_box .bold{font-weight:600;color:#333}
+.login_page dl dd .box_title{padding:15px 20px;background:#eee;float:left;width:1200px;margin-bottom:10px;font-size:17px; font-family:"NanumBarunGothicB";}
+.login_page dl dd .box_title span{color:#db2626; font-family:"NanumBarunGothicB";}
+.login_page dl dd .check_line{float:right;margin-bottom:65px;margin-top:15px;}
+.login_page dl dd .check_line input{float:left;margin-top:4px;margin-right:5px;}
+.login_page dl dd .check_line label{float:left;font-size:16px; font-family:"NanumBarunGothicB"; color:#666;cursor:pointer;}
+.login_page .btm_in_line{float:left;width:100%;font-weight:600;margin-bottom:50px;}
+.login_page .btm_in_line input{float:right;margin-top:1px;margin-right:5px;}
+.login_page .btm_in_line label{float:right;font-size:16px;color:#666;cursor:pointer; font-family:"NanumBarunGothicB";}
+
+
+/* 회원가입 정보입력 */
+.login_page .information_input {text-align:left;}
+.login_page .information_input .t_title{font-size:19px;padding-left:25px;margin-top:50px;}
+.login_page .information_input .t_title span{font-size:14px;color:#db2626}
+.login_page .information_input .at_information{width:100%;border:3px solid #ddd;}
+.login_page .information_input .at_information th{width:145px;padding:30px 0;background:#f5f7fa;font-size:16px; font-family:"NanumBarunGothicB";}
+.login_page .information_input .at_information td{width:265px;padding-left:30px;font-size:15px;font-family:"NanumBarunGothicB";color:#666;}
+.login_page .basic_information{width:100%;margin-top:30px;border-top:2px solid #018fca;}
+.login_page .basic_information tr th{width:120px;padding:20px 0;padding-left:30px;text-align:left;background:#f5f7fa;font-size:15px; font-family:"NanumBarunGothicB"; border-bottom:1px solid #ddd;}
+.login_page .basic_information tr td{width:1060px;padding:20px 0;padding-left:30px;border-bottom:1px solid #ddd;}
+.login_page .basic_information tr td p{margin-top:10px;}
+.login_page .basic_information tr td .check{margin-left:10px;margin-top:0;}
+.login_page .basic_information tr td .line_one .right_text{margin-left:10px;color:#999;}
+.login_page .basic_information tr td p{color:#999;}
+.login_page .basic_information tr td p span{color:#db2626;}
+.login_page .basic_information tr td label{font-size:13px;cursor:pointer;font-weight:100;margin-top:4px;}
+.login_page .basic_information td .line_one a {background: #018fca;border: 1px solid #0077a8; padding: 9px 14px; color: #fff; vertical-align: middle;}
+.login_page .basic_information td .line_one select:first-child {width:115px; height:34px;}
+.login_page .join_division{border:3px solid #ddd;margin-top:30px;padding:0 15px;background:#f5f7fa;float:left;width:1204px;margin-bottom:60px;}
+.login_page .join_division ul li{padding:10px;border-top:1px solid #bbb;float:left;width:1184px;}
+.login_page .join_division ul li:first-child {border-top:none;}
+.login_page .join_division ul li:nth-child(3n){border-top:0;}
+.login_page .join_division ul li:nth-child(4n){border-bottom:0;}
+.login_page .join_division ul li:last-child{border-bottom:0;}
+.login_page .join_division ul li .left_title{font-family:"NanumBarunGothicB"; font-size:15px;padding-left:15px;float:left;width:180px;height:38px;line-height:38px;}
+.login_page .join_division .information_box ul li .left_title {width: 105px;}
+.login_page .join_division ul li .left_title .add_txt {font-size: 13px;color: #d61d13;}
+.login_page .join_division ul li .right_con{float:left;height:38px;line-height:38px;margin-top: 2px;}
+.login_page .join_division ul li .right_con .show_btn {float: left;}
+.login_page .join_division ul li .right_con .btn_text {float: left;}
+.login_page .join_division ul li .right_con span{color:#666}
+.login_page .join_division ul li .right_con input{float:left;margin-right:5px;height:38px;line-height:38px;margin-top: 0;}
+.login_page .join_division ul li .right_con .check_txet{float:left;margin-right:30px;font-size:15px;/*margin-top:3px;*/margin-bottom: 0;font-weight:100;cursor:pointer;}
+.login_page .join_division ul li .right_con .btn_text{cursor:pointer;background:#7098b0;width:160px;font-size:15px;font-family:"NanumBarunGothicB";color:#fff;height:38px;line-height:38px;display:inline-block;text-align:center;border-radius:50px;margin-right:10px;}
+.login_page .join_division .explanation{font-size: 14px;color: #d61d13;float: left;margin-top: 8px;}
+
+.login_page .join_division ul li .show_table{display:none;}
+.login_page .join_division ul li .show_table .explanation{float:left;width:100%;margin-top:20px;font-family:"NanumBarunGothicB"; color:#666;}
+.login_page .join_division ul li .show_table .information_box {border:1px solid #bbb;background:#fff;float:left;width:100%;margin-top:20px;}
+.login_page .join_division ul li .show_table .information_box .bdt {border-top: 1px solid #bbb;}
+.login_page .join_division ul li .show_table .information_box ul li{width:1104px;margin:0 20px;}
+.login_page .join_division ul li .show_table .information_box ul li:last-child{border-bottom:1px solid #bbb;}
+.login_page .join_division ul li .show_table .information_box ul li{padding:20px;}
+.login_page .join_division ul li .show_table .information_box ul li .s_left{background:none;padding-left:0;width:auto;margin-right:20px;}
+.login_page .join_division ul li .show_table .information_box ul li .right_con select{margin-right:30px;}
+.login_page .join_division ul li .show_table .information_box ul li .right_con_text{font-size:15px;padding-left:15px;float:left;height:38px;line-height:38px;color:#999;}
+.login_page .join_division ul li .show_table .information_box ul li.top_radio label{float:left;margin-top:4px;font-family:"NanumBarunGothicB";font-size:15px;margin-right:5px;cursor:pointer;}
+.login_page .join_division ul li .show_table .information_box ul li.top_radio input{float:left;margin-right:20px;}
+.login_page .join_division ul li .show_table .information_box .c_btn{float:left;width:100%;padding:25px 0;text-align:center;}
+.login_page .join_division ul li .show_table .information_box .c_btn a{width:205px;height:50px;line-height:50px;font-size:15px;font-family:"NanumBarunGothicB"; color:#fff;background:#018fca;display:inline-block;}
+.login_page .join_division ul li .show_table .code{float:left;width:1180px;;margin-top:30px;border:3px solid #9fa3a8;background:#fff;margin-bottom:15px;}
+.login_page .join_division ul li .show_table .code .title{padding:7px 0;text-align:center;color:#fff;font-size:16px;font-weight:600;background:#9fa3a8;}
+.login_page .join_division ul li .show_table .code .number{padding:30px 0;text-align:center;color:#3a99d8;font-size:18px;font-weight:600;}
+.login_page .join_division ul li .show_table .code table{width:100%;font-size:16px;font-weight:600;}
+.login_page .join_division ul li .show_table .code table tr td{padding:30px 0;width:25%;text-align:left;padding-left:20px;color:#666;}
+.login_page .join_division ul li .show_table .code table tr td.blue{color:#018fca;}
+.login_page .join_division ul li .show_table .code table tr th{width:12%;background:#eee;}
+.login_page .join_division ul li .show_table .information_box .red_color{font-size:14px;font-weight:600;color:#d8261c;margin-top:15px;margin-left:30px;float:left;width:100%;}
+
+
+/* 회원가입 완료 */
+.login_page .step_04{margin-top:100px;float:left;width:100%;text-align:center;}
+.login_page .step_04 h2{margin-bottom:10px;font-size:26px;font-family:"NanumBarunGothicB"; margin-top:35px;color:#666;}
+.login_page .step_04 h2 span{color:#0085d3;}
+.login_page .step_04 h3{font-size:26px;color:#666;margin-bottom:30px;}
+.login_page .step_04 .text_con{margin-bottom:50px;}
+.login_page .step_04 .text_con p{font-size:16px;color:#666;}
+.login_page .step_04 .gt_btn_box{margin-bottom:100px;}
+
+
+/* 아이디 찾기 */
+.login_page .find_id_comp{width:520px;margin:auto;}
+.login_page .find_id_comp .name_id_box{background:#f6f6f6;padding:50px;margin:35px 0 ;}
+.login_page .find_id_comp .name_id_box table{border:1px solid #bbb;width:100%;background:#fff;}
+.login_page .find_id_comp .name_id_box table tr td{height:59px;text-align:left;padding:0 20px;color:#666;font-size:16px;}
+.login_page .find_id_comp .name_id_box table .line_1 td{border-bottom:1px solid #bbb;}
+.login_page .find_id_comp .name_id_box table tr td.name{background:#e9e9e9;text-align:center;}
+.login_page .find_id_comp a{width:185px;}
+
+/* 비밀번호 찾기 */
+.login_page .id_input{padding:15px 70px;width:385px;border-radius:100px;background:#f2f2f2;text-align:left;margin:auto;margin-top:35px;height:50px;}
+.login_page .id_input span{float:left;font-size:16px;color:#666;margin-top:20px;}
+.login_page .id_input .input{float:left;height:44px;border:3px solid #ddd;width:316px;margin-left:20px;background:#fff;}
+.login_page .id_input .input input{padding-left:35px;width:274px;height:44px;border:0;color:#666;}
+
+/* 비밀번호 찾기 완료 */
+.find_comp_pw{width:520px;margin:auto;}
+.find_comp_pw .table_box{background:#f6f6f6;padding:30px 35px;margin:35px 0 ;width:450px;float:left;}
+.find_comp_pw .table_box ul li{float:left;width:100%;margin-bottom:10px;}
+.find_comp_pw .table_box ul li:last-child{margin-bottom:0;}
+.find_comp_pw .table_box ul li .l_title{text-align:right;width:110px;float:left;font-size:16px;color:#666;margin-top:19px;}
+.find_comp_pw .table_box ul li .r_in{float:left;margin-left:20px;width:320px;text-align:left;}
+.find_comp_pw .table_box ul li .r_in input{padding:0 10px;height:44px;border:3px solid #ddd;width:300px;}
+.find_comp_pw .table_box ul li .r_in input.bg_color{background:#eee;}
+.find_comp_pw .table_box ul li .r_in .red_font{color:#db2626;font-size:16px;margin-top:5px;}
+.find_comp_pw .gt_btn_box a{width:185px;}

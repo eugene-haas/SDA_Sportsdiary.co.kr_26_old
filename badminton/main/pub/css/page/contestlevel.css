@@ -1,0 +1,10 @@
+.contestlevel .table-box{margin-top:10px;}
+.contestlevel .table-box tr td:nth-child(1){width:60px;}
+.contestlevel .table-box tr td:nth-child(2){width:320px;text-align:left;}
+.contestlevel .table-box tr td:nth-child(3){width:300px;}
+.contestlevel .table-box tr td:nth-child(4){width:100px;}
+.contestlevel .table-box tr td:nth-child(5){width:100px;}
+.contestlevel .table-box tr td:nth-child(6){width:100px;}
+.contestlevel .table-box tr td:nth-child(7){width:100px;}
+.contestlevel .table-box tr td:nth-child(8){width:120px;}
+.contestlevel .basic-table-box table td.small-btn a{height:25px;line-height:25px;margin:0 3px;}

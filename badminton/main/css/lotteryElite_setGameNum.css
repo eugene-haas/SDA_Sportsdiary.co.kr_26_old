@@ -1,0 +1,31 @@
+body.t_modal{overflow-y:hidden;}
+
+.set-game-num_modal_wrap{position:fixed;top:0;left:0;display:none;width:100vw;height:100vh;background:rgba(0, 0, 0, .5);}
+.set-game-num_modal_wrap.s_show{display:block;}
+.set-game-num_modal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;min-width:1000px;height:800px;}
+.set-game-num_modal__header{position:absolute;top:0;padding:10px;border-bottom:1px solid #000;width:100%;display:flex;align-items:center;justify-content:space-between;}
+.set-game-num_modal__header>span{position:relative;top:8px;font-size:15px;font-weight:bold;}
+.set-game-num_modal__header>span>strong{color:#2f6fc1;}
+.set-game-num_modal__header__btn-box>button{float:left;line-height: 35px;background: #2f6fc1;color: #fff;min-width: 100px;padding: 0 15px;font-size: 14px;text-align: center;border-radius: 3px;margin: 0 3px;border:0;}
+.cls_SGNumTournament{margin:56px 0 0;padding:20px 10px;height:calc(100% - 56px);box-sizing:border-box;overflow-y:auto;}
+.tournament__inner{transform-origin:center !important;}
+.lotteryMatch__matchNo{position:relative;width:100%;}
+.round_1 .lotteryMatch__matchNo{position:relative;width:66px;height:100%;}
+.round_1 .lotteryMatch__matchNo>input{width:calc(100% - 2px);}
+.lotteryMatch.lotteryMatch_first{overflow:visible;z-index:99;}
+.lotteryMatch_second{z-index:-1;}
+.lotteryMatch__matchNo>input{z-index:999;position:absolute;top:100%;right:0;transform:translateY(-50%);width:100%;height:26px;border: 1px solid #afafaf;text-align:center;}
+.lotteryMatch__seedWrap1{min-width:24px;text-align:center !important;text-indent:0 !important;line-height:44px !important;}
+.lotteryMatch__playerWrap{}
+.lotteryMatch__seedWrap{text-indent:0 !important;line-height:1 !important;display:flex !important;align-items:center;justify-content:center;}
+.lotteryMatch{opacity:1 !important;}
+/* Chrome, Safari, Edge, Opera */
+.lotteryMatch__matchNo>input[type=number]::-webkit-outer-spin-button,
+.lotteryMatch__matchNo>input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.lotteryMatch__matchNo>input[type=number] {
+  -moz-appearance: textfield;
+}

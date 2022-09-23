@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-size: 12pt;
+  color: #333333;
+}
+
+body.index {
+  background-color: #324467;
+  color: #e6eeff;
+}
+
+ul,ol {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#header-wrapper {
+  overflow: hidden;
+  padding: 6em 9em 2em 0;
+}
+
+#logo h1 {
+  display: inline-block;
+  margin-bottom: 0.20em;
+  padding: 0.20em 0.9em;
+  font-size: 3.5em;
+}
+
+#logo a {
+  text-decoration: none;
+  color: white;
+}
+
+#menu ul {
+  border-bottom: none;
+}
+
+#menu li a,#menu li span {
+  display: inline-block;
+  padding: 1.3em 1.5em;
+  text-decoration: none;
+  font-size: 0.90em;
+  text-transform: uppercase;
+  outline: 0;
+  color: white;
+}
+
+.index #menu li:hover a,.index #menu li:active a,.index #menu li.active span {
+  background: #3e5998;
+}
+
+.main {
+  padding: 60px;
+}
+
+section .divn {
+  font-size: 16px;
+  color: #333333;
+  border-bottom: 2px solid #bababa;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+section .divn .number {
+  font-family: 'NotoKR-bd';
+  font-size: 14px;
+  color: #bababa;
+  margin-right: 5px;
+}
+
+section .title {
+  font-family: 'NotoKR-md';
+  font-size: 16px;
+  color: #bababa;
+}
+
+.main .column-1 {
+  float: left;
+  width: 50%;
+}
+
+.flex {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/*# sourceMappingURL=../maps/sd_part/common.css.map */

@@ -1,0 +1,44 @@
+.search_top {padding-top:30px;}
+.search_top .title_select{display: inline-block;vertical-align: middle;color: #666;border:1px solid #ced5e3;text-align:center;width:140px;height: 34px;margin-right: 4px;padding-top: 7px;padding-bottom: 7px;}
+.search_top span .title_select{display: inline-block;vertical-align: middle;color: #666;border:1px solid #ced5e3;text-align:center;width:140px;height: 34px;margin-right: 4px;padding-top: 7px;padding-bottom: 7px;}
+.search_top .sel_box {display: inline-block;vertical-align: middle;margin:10px 0;}
+.search_top .sel_box.type_sel {width: 120px;margin-right: 4px;}
+.search_top .sel_box.type_sel select {border: 1px solid #ced5e3;height: 34px;}
+.search_top .title_select.in_4{width:300px;}
+.search_top .search_box input.in_3{width:140px;}
+.search_top .search_box input.in_4{width:400px;}
+.search_top .long_select {display: inline-block;vertical-align: middle;color: #666;border: 1px solid #ced5e3;width: 380px;height: 34px;margin-right: 4px;padding-top: 7px;padding-bottom: 7px;}
+.search_top .search_box {background:#f7f9fb;border:3px solid #e1e7f0;padding:20px;display:table;width:100%;}
+.search_top .search_box h4 {display: block;margin-bottom: 10px;}
+.search_top .search_box .tit {padding-right: 10px;}
+.search_top .search_box .divn {display: inline-block;vertical-align: middle;padding-right: 5px;}
+.search_top .search_box p{margin-bottom:0;}
+.search_top .search_box input{display: inline-block;vertical-align: middle;width: 200px;height: 34px;margin-right: 4px;padding: 5px 5px;border: 1px solid #ced5e3;}
+.search_top .search_box input.ipt-word {width: 320px;}
+.search_top .search_box .btn {height: 34px;margin-right: 4px;}
+.search_top .search_box .btn:last-child {margin-right: 0;}
+.search_top .search_box ul{display:table;width:100%;}
+.search_top .search_box ul li{float:left;margin:5px 0;margin-right:20px;margin-bottom:10px;}
+.search_top .search_box ul li .l_name{float:left;font-family: 'NanumGothicB';margin-top:6px;margin-right:10px;}
+
+.search_top .search_box ul li label{font-family: 'NanumGothicB';margin-right:10px;margin-bottom:0;margin-top: 3px;}
+.search_top .search_box ul li label span{vertical-align:-3px;margin-right:5px;}
+.search_top .search_box ul li label input{width:20px;height:20px;}
+
+.search_top .upper-line {margin-bottom: 10px;}
+.search_top .srch-word input.ipt-word {width: 455px;margin-left: -5px;}
+.search_top .srch-word .title_select {width: 100px;}
+
+.search_top .ch_year {font-family: 'NanumGothicB';background-color: #6fb4af;color: #fff;margin-top: 20px;padding: 15px;}
+.search_top .ch_year h3 {text-align: center;padding-bottom: 10px;}
+.search_top .ch_year .match_title {text-align: center;}
+
+.search_box.reg-team {margin-top: 10px;}
+.search_box.reg-team select {display: inline-block;vertical-align: middle;width: 200px;height: 40px;margin-right: 10px;}
+.search_box.reg-team .btn {vertical-align: middle;}
+
+.reg_team .search_top.community {padding-top: 0px;}
+.reg_team .community .table-list-wrap h3 {font-size: 21px;margin-top: 15px;margin-bottom: 10px;}
+.dis-table{display:table;width:100%;}
+.dis-table .total_count{float:left;}
+.dis-table .btn-right{float:right;margin-top:10px;}

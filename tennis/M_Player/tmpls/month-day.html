@@ -1,0 +1,66 @@
+<div class="cal-month-day <%= cls %>">
+	<span class="pull-right" data-cal-date="<%= data_day %>" data-cal-view="day" data-toggle="tooltip" title="<%= tooltip %>"><%= day %></span>
+	<% if (events.length > 0) { %>
+    
+		<div class="events-list" data-cal-start="<%= start %>" data-cal-end="<%= end %>">
+
+      
+      <% _.each(events, function(event) { %>
+          
+<!--				<a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+					class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+					title="<%= event.title %>"></a>
+-->     
+        
+        
+        <% if (event['gubun'] == "Training") { %>
+          
+          <% if (event.title != "") { %>
+              <a data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+              class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+              style="font-size:11px;color:#fff;text-align:center">훈</a>
+
+            <% } else { %>
+              <!--
+              <a data-event-id="<%= event.id %>" data-event-class="event-important"
+              class="pull-left event event-important" data-toggle="tooltip"
+              title="" style="font-size:11px;color:#ffffff;text-align:center;">불</a>
+              -->
+          <% } %>
+            
+        <% } else { %>
+
+          
+            <% if (event['gubun'] == "ExeGame") { %>
+              <a data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+              class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+              style="font-size:11px;color:#fff;text-align:center">연</a>
+            <% } else if (event['gubun'] == "Game") { %>
+              <a data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+              class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+              style="font-size:11px;color:#fff;text-align:center">공</a>
+            <% } else if (event['gubun'] == "Menses") { %>
+              <a data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+              class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+              style="font-size:11px;color:#fff;text-align:center">생</a>
+            <% } else if (event['gubun'] == "Injury") { %>
+              <a data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+              class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+              style="font-size:11px;color:#fff;text-align:center">부</a>
+            <% } else if (event['gubun'] == "GameTitle") { %>
+              <a data-event-id="<%= event.id %>" data-event-class="<%= event['class'] %>"
+              class="pull-left event <%= event['class'] %>" data-toggle="tooltip"
+              style="font-size:11px;color:#fff;text-align:center">대</a>
+
+            <% } else { %>
+              
+            <% } %>
+          
+        <% } %>
+
+        
+      <% }); %>
+		</div>
+        
+	<% } %>
+</div>

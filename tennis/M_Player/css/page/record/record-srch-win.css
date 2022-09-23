@@ -1,0 +1,116 @@
+.sel-list dl {font-size:0.85em; border-bottom: 1px solid #ddd; padding-bottom:0px; padding-left: 10px; padding-right: 10px; }
+.sel-list dl:first-child.push-term-sel {margin-top:0;}
+/*.sel-list dl:first-child  {margin-top: .4em;}*/
+.sel-list dt, .sel-list dd {font-weight:normal; position:relative; float: left; height: 36px; line-height: 36px;}
+.sel-list dt {font-size: 0.95em; width: 26%; line-height:43px;}
+.sel-list dd {width: 74%;}
+#search_date {position: relative;}
+.on #search_date_id {background-color: #777; color: #fff}
+#search_date:after {position: absolute; top: 50%; right: 10px; content: ''; border-top: 5px solid #000; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: none;}
+.term-sel.on #search_date:after {border-top: 5px solid #fff;}
+/*.sel-list dd.game-type {width: 75px;}*/
+.sel-list dd select {position: relative; -webkit-appearance: none; appearance: none; color: #000; height: 30px; padding-right: 23px; margin-top: 6px;}
+.on .sel-list dd select {background-color: #777; color: #fff;}
+.sel-list dd input {color: #000; padding-left: 5px; height:30px; line-height: 31px;padding-top: 0;padding-bottom: 0;}
+.sel-list .game-type input {margin-right: 5px;}
+/*.record-input {background: #edf0f4;}*/
+.record-input {background-color: #fff;}
+.record-input .sel-list {padding-bottom:5px;}
+.record-input .sel-list dl:first-child dd {margin-bottom:3px;}
+.record-input .sel-list dl:first-child dd,
+.record-input .sel-list dl:nth-child(2) dd { position: relative; }
+.record-input .sel-list dl dd.none-deco:before {border-top:none;}
+.record-input .sel-list dl dd:before {position: absolute; top: 50%; right: 10px; content: ''; z-index: 10; border-top: 5px solid #333; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: none;}
+.record-input .sel-list dl.on dd:before {border-top: 5px solid #fff;}
+.record-input .sel-list dl.on input.active {background-color: #777; color: #fff;}
+.record-input .sel-list dl.on select {background-color: #777; color: #fff;}
+/* .record-input .sel-list dl.on dd:before {border-top: 5px solid #fff;} */
+.record-input .sel-list dl:nth-child(2) dd.flow:before {border-top: none;}
+.analysis-menu + form[name="s_frm"] .record-input .sel-list dl.on dd select {background-color: #777; color: #fff}
+.analysis-menu + form[name="s_frm"] .record-input .sel-list dl.on dd:before {border-top: 5px solid #fff;}
+.record-input .btn-list {text-align: center; border-bottom: 1px solid #ddd; padding-top: 0.71em; padding-bottom: 0.71em;}
+.record-input .btn-list .btn {display: inline-block; border-radius: 4px; width: 30%; margin-right: 10px; padding: 5px 0; padding-top:8px;}
+.record-input .btn-list .btn.btn-close {background-color: #fff; color: #264862;}
+.record-input .btn-list .btn:hover, .record-input .btn-list .btn:focus, .record-input .btn-list .btn:active {color: #3f505d;}
+.record-input .btn-list .btn.btn-right:hover, .record-input .btn-list .btn.btn-right:focus, .record-input .btn-list .btn.btn-right:active {color: #fff;}
+.record-input .btn-list .btn:last-child {margin-right: 0; /*background:#005895;*/}
+/*.record-input .btn-list .record-menu .btn {background:#fff; border:1px solid #264862; color:#264862; border-radius:3px;}*/
+.record-menu .big-cat {background:#005895;}
+
+/* win-state */
+.state-cont h2 {position: relative; background-color: #edf0f4; line-height: 0.95em; letter-spacing: -0.05em; font-size: 0.93em; color: #333; /* border-bottom: 2px solid #d2d2d2; */ padding-left: 20px;}
+.state-cont h2:before { position: absolute; top: 10px; left: 10px; content: ''; background-color: #123651; height: 14px; width: 4px; }
+.state-cont h2 .line-div {display: inline-block; width: 2px; height: 14px; margin-left: 2px; margin-right: 2px;}
+.state-cont h2 .line-div img {height: 100%;}
+.match-day h3 { font-size: 0.85em; border-bottom: 1px solid #d2d2d2; border-top: 1px solid #d2d2d2; background: #d3d8dc;}
+.match-day h3 span {display: inline-block;}
+.match-day h3 span:first-child {position: relative; font-size: 0.93em; background-color: #267dcd; color: #fff; padding-top: .8em; padding-bottom: .8em; padding-left: 10px; padding-right: 10px; }
+.match-day h3 span:first-child:after {position: absolute;top: 0px;right: -10px;content: '';border-left: 10px solid #267dcd;border-top: 16px solid transparent;border-bottom: 17px solid transparent;}
+.match-day h3 span:nth-child(2) {margin-left: 15px; max-width: 64%; vertical-align: middle; line-height: 115%;}
+.medal-list {background-color: #dfe3e7; margin-bottom:10px; border-bottom:1px solid #ddd;}
+.medal-list a {/*border-bottom: 1px solid #ddd; */border-right: 1px solid #ddd; /*margin-bottom: 1.07em;*/}
+.medal-list a:last-child {border-right:0;}
+.medal-list dl:last-child {border-right: none;}
+.medal-list dt {-webkit-background-size: contain;background-size: 19px;background-repeat: no-repeat;background-position: 8px 0; background-color: #6a7780;color: #fff;font-size: 0.75em; padding-top: 0.7em;padding-bottom: 0.6em;padding-left: 33px;}
+.medal-list dt span { float: left; }
+.medal-list dt span:first-child {display: inline-block; width: 25px; height: 35px; margin-right: 5px;}
+.medal-list dl dd {background-color: #fff; padding: 5px; font-family: 'NotoKR-md'; line-height:17px;}
+.medal-list dd p {font-size: 0.85em; text-align: center; background: none;}
+.medal-list dd p.group {font-size: 12px; color: #999; max-width: 66px; overflow: hidden; text-overflow: clip; white-space: nowrap; margin: 0 auto;}
+
+/* modal */
+.modal-notice {line-height: 20px; margin:8px 0 3px 0;}
+.modal-notice .ic-medal {padding-bottom:20px;}
+.modal-notice .golden {
+color:#fff; font-size: 0.95em; padding:0.7em 15px 0.7em 33px; border-radius:20px;
+background-image:url(../../../images/record/golden-medal@3x.png); 
+background-repeat:no-repeat;
+background-position:10px 0;
+background-size:20px;
+background-color: #6a7780;
+}
+
+.modal-notice .silver {
+color:#fff; font-size: 0.95em; padding:0.7em 15px 0.7em 33px; border-radius:20px;
+background-image:url(../../../images/record/silver-medal@3x.png); 
+background-repeat:no-repeat;
+background-position:10px 0;
+background-size:20px;
+background-color: #6a7780;
+}
+
+.modal-notice .bronze {
+color:#fff; font-size: 0.95em; padding:0.7em 15px 0.7em 33px; border-radius:20px;
+background-image:url(../../../images/record/bronze-medal@3x.png); 
+background-repeat:no-repeat;
+background-position:10px 0;
+background-size:20px;
+background-color: #6a7780;
+}
+
+.record-notice .modal-header {text-align: center; background-color: #3f505d; color: #fff;}
+.record-notice .modal-header .close {width: 25px; height: 25px; margin-top: 0;}
+.record-notice .modal-body ul {width: 120px; margin: 0 auto; margin-top: 10px;}
+.record-notice .modal-body li {text-align: center; margin-right: 5px;}
+.record-notice .modal-body li a {background-color: #2e6da7; color: #fff; border: 1px solid #154877;}
+.record-notice .modal-body li a.so {background-color: #fff; border: none; color: #000;}
+.record-notice .pop-guide {text-align: center; letter-spacing: -.05em; margin-top: 10px;}
+.record-notice .modal-footer {background-color: #ddd; border-top: 1px solid #8e8e8e; border-radius: 0 0 4px 4px;}
+.record-notice .modal-footer label {float: left; margin-bottom: 0;}
+.record-notice .modal-footer label.img-replace {background-position: left center;}
+.record-notice .modal-footer label input,
+.record-notice .modal-footer label span {vertical-align: middle; font-size: 13px;}
+.record-notice .modal-footer label input {margin-top: 0; margin-right: 5px;}
+.record-notice .modal-footer .btn {font-size:13px; float:right; width:auto; border: none; border-radius: 0; background: none; color: #000; -webkit-box-shadow: none; box-shadow: none; text-shadow: none; padding: 1px 0 0 2px; border-left: 1px solid #666; padding-left:10px; margin-top: 2px;}
+
+/* qa board*/
+.qa-tail {border-top:2px solid #123651;}
+.qa-record-input {background:#123651; padding-bottom:5px; padding-top:3px;}
+.qa-record-input .sel-list #search_user {width:52%; float:left;}
+.qa-record-input .sel-list dt {color:#fff;}
+.qa-record-input .sel-list dl {border-bottom:none;}
+.qa-record-input .sel-list .term-srch dd span {color:#fff;}
+.qa-record-input .btn-list {border-bottom:none; width:20%; padding-top:0; float:right;}
+.qa-record-input .btn-list .btn {width:100%;}
+.qa-record-input .btn-list .btn-right {padding:7px 0; background:#999;}
+.qa-record-input .sel-list dl dd.qa_btn:before {border:none;}

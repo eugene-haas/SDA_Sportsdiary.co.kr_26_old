@@ -1,0 +1,1 @@
+{"version":3,"sources":["typo.css"],"names":[],"mappings":"AAAA;EACE,sBAAsB;CACvB;;AAED;EACE,yBAAyB;EACzB,oBAAoB;CACrB","file":"../../sd_part/typo.css","sourcesContent":["body {\n  font-family: 'NotoKR';\n}\n\nh1, h2, h3, h4, h5, h6 {\n  font-family: 'NotoKR-md';\n  font-weight: normal;\n}\n"]}

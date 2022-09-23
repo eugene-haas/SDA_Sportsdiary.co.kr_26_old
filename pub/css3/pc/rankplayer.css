@@ -1,0 +1,12 @@
+.admin_content .rankplayer tr td:nth-child(1n){width:60px;}
+.admin_content .rankplayer tr td:nth-child(2n){width:80px;}
+.admin_content .rankplayer tr td:nth-child(3n){width:80px;}
+.admin_content .rankplayer tr td:nth-child(4n){width:150px;}
+.admin_content .rankplayer tr td:nth-child(5n){width:80px;}
+.admin_content .rankplayer tr td:nth-child(6n){width:80px;}
+.admin_content .rankplayer tr td:nth-child(7n){width:200px;}
+.admin_content .rankplayer tr td:nth-child(8n){width:80px;}
+.admin_content .rankplayer tr td:nth-child(9n){width:60px;}
+.admin_content .rankplayer tr td:nth-child(10n){width:100px;}
+.admin_content .rankplayer tr td .in_50{width:60px;margin-bottom:0;line-height:inherit;margin-bottom:4px;font-size:15px;}
+.admin_content .rankplayer tr td.delet_btn a{width:80%;font-weight: 600;font-size: 13px; height: 30px;line-height: 30px;margin-left: 5px;text-align: center;font-weight: bold;color: #fff;display: inline-block;background: #dc2116;}

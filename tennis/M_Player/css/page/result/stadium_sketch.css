@@ -1,0 +1,22 @@
+.main.stadium_sketch {background-color: #f2f2f2;padding-top: 20px;}
+.main.stadium_sketch .spinner {display: none;position: fixed; top: calc(50% - 15px); left: calc(50% - 15px); z-index: 1040; width: 30px;height: 30px;}
+.main.stadium_sketch .ctr_select {padding-left: 20px;padding-right: 20px;}
+.main.stadium_sketch .ctr_select li {margin-bottom: 10px;}
+.main.stadium_sketch .sel_box {position: relative;}
+.main.stadium_sketch .sel_box:after {content: '';position: absolute; top: 41%; right: 30px; border-top: 6px solid #333; border-left: 4px solid transparent; border-right: 4px solid transparent;}
+.main.stadium_sketch .ctr_select select {font-family: 'NotoKR-md'; font-size: 14px; border: 2px solid #d0d0d0; height: 35px; line-height: 33px; -webkit-appearance: none;-moz-appearance: none;appearance: none;}
+
+.main.stadium_sketch .photo_list {position: relative;padding-top: 20px;}
+.main.stadium_sketch .photo_list li {margin-bottom: 20px;}
+.main.stadium_sketch .photo_list .img_caption {padding-left: 10px;padding-right: 10px;}
+.main.stadium_sketch .photo_list .order {display: block;position: absolute;top: 0;left: 0; background-color: #f2f2f2; width: 100%; padding: 0 20px; padding-bottom: 40px; margin-top: 20px;}
+
+.main.stadium_sketch .photo_list .effect { animation: showFade 0.65s 1 ease;}
+.main.stadium_sketch .pic_info {font-family:'NotoKR-md'; font-size:0.86em; text-align: center; color:#333; margin-top:18px;}
+@keyframes showFade {
+  from {-webkit-transform: translateY(100px); transform: translateY(100px);opacity: 0}
+  to {-webkit-transform: translateY(0); transform: translateY(0); opacity: 1;}
+}
+
+.def_sc {overflow: hidden;width: 100%;}
+.def_sc:after {content: '';position: fixed;top: 0;bottom: 0;left: 0;right: 0;background-color: #000;opacity: 0.3}

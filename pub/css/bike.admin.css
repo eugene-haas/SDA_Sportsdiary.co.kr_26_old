@@ -1,0 +1,1259 @@
+ @charset "UTF-8";
+/*@import url("http://fonts.googleapis.com/css?family=Roboto");*/
+/*@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");*/
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  /*src: url(http://fonts.gstatic.com/s/roboto/v16/5YB-ifwqHP20Yn46l_BDhA.eot);*/
+}
+
+/* =========================
++ font 로딩 +
+========================= */
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic/NanumGothic-Regular.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicB';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothic/NanumGothic-Bold.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicEB';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothic/NanumGothic-ExtraBold.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NotoKR-md';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Noto KR Medium'), local('Noto KR Medium'), local('Noto KR Medium');
+  src: url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot);
+  src: url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSans/NotoKR-Medium/Notokr-medium.woff) format('woff'),
+    url(../fonts/NotoSans/NotoKR-Medium/Notokr-medium.otf) format('truetype'),
+    url(../fonts/NotoSans/NotoKR-Medium/Notokr-medium.woff2) format('woff2'),
+    url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.svg#svgFontName) format('svg');
+  src: local('※'), url(../fonts/NotoSans/notoKR-Medium/Notokr-medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bd';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Noto KR Bold'), local('Noto KR Bold'), local('Noto KR Bold');
+  src: url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot);
+  src: url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.otf) format('truetype'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff2) format('woff2'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.svg#svgFontName) format('svg');
+  src: local('※'), url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bl';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto KR Black'), local('Noto KR Black'), local('Noto KR Black');
+  src: url(../fonts/NotoSans/NotoKR-Black/notokr-black.eot);
+  src: url(../fonts/NotoSans/NotoKR-Black/notokr-black.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.otf) format('truetype'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.woff2) format('woff2'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.svg#svgFontName) format('svg');
+  src: local('※'), url(../fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff');
+}
+
+
+
+
+/*@import url("/pub/css/font-awesome.css");*/
+
+/*  http://fontawesome.io/icons/  부스트트렙 아이콘 찾기  */
+/*  http://astronautweb.co/snippet/font-awesome/   */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{margin:0;height:100%;overflow:hidden;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,  caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+ol, ul { list-style: none }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after {  content: '';  content: none}
+
+a:link {
+  text-decoration:none;
+}
+a:visited {
+  text-decoration:none;
+}
+
+a:active {
+  text-decoration:none;
+}
+
+
+
+/*#leftside {width:40px;height:100%;overflow:hidden;background-color:#1E2744;}*/
+header{position:absolute;top:0;left:0px;right:0;/*height:115px;*/background-color:#ccc;min-width:900px;}
+aside{position:absolute;/*top:115px;*/top:50px;bottom:0px;left:0px;right:180px;width:180px;overflow:auto;background-color:#3E4E68;margin-top:-3px;margin-bottom: 0px;}
+article{position:absolute;/*top:115px;*/top:50px;bottom:0px;left:180px;right:0;overflow:auto;min-width:500px;padding:0px 5px 0px 5px;margin-bottom: 20px;}
+footer{position:absolute;bottom:0;left:0px;right:0;height:40px;background-color:#E8EBF0;background: linear-gradient( to top, #E8EBF0 95%, #1E2744 5%, gray, #1E2744 );}
+
+
+
+
+/*어코디언메뉴*/
+.nav a, .nav label {
+  font-size: 1.32em;
+  display: block;
+  padding: .8rem;
+  color: #fff;
+  background-color: #28354C;
+  box-shadow: inset 0 -1px #1d1d1d;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+}
+
+.nav a:focus, .nav a:hover, .nav label:focus, .nav label:hover {
+  color: rgba(255, 255, 255, 0.5);
+  background: #28354C;
+}
+
+.nav label { cursor: pointer; }
+
+/**
+ * Styling first level lists items
+ */
+
+.group-list a, .group-list label {
+  font-size: 1.125em;
+  padding-left: 1rem;
+  background: #3C4A61;
+  box-shadow: inset 0 -1px #373737;
+}
+
+.group-list a:focus, .group-list a:hover, .group-list label:focus, .group-list label:hover { background: #3E4E68; }
+
+/**
+ * Styling second level list items
+ */
+
+.sub-group-list a, .sub-group-list label {
+  padding-left: 4rem;
+  background: #3C4A61;
+  box-shadow: inset 0 -1px #474747;
+}
+
+.sub-group-list a:focus, .sub-group-list a:hover, .sub-group-list label:focus, .sub-group-list label:hover { background: #232323; }
+
+/**
+ * Styling third level list items
+ */
+
+.sub-sub-group-list a, .sub-sub-group-list label {
+  padding-left: 6rem;
+  background: #3C4A61;
+  box-shadow: inset 0 -1px #575757;
+}
+
+.sub-sub-group-list a:focus, .sub-sub-group-list a:hover, .sub-sub-group-list label:focus, .sub-sub-group-list label:hover { background: #333333; }
+
+/**
+ * Hide nested lists
+ */
+
+.group-list, .sub-group-list, .sub-sub-group-list {
+  height: 100%;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height .5s ease-in-out;
+  transition: max-height .5s ease-in-out;
+}
+
+.nav__list input[type=checkbox]:checked + label + ul { /* reset the height when checkbox is checked */
+max-height: 1000px; }
+
+/**
+ * Rotating chevron icon
+ */
+
+label > span {
+  float: right;
+  -webkit-transition: -webkit-transform .65s ease;
+  transition: transform .65s ease;
+}
+
+.nav__list input[type=checkbox]:checked + label > span {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+/*button*****************************************************/
+.btn_a {
+  display: inline-block;
+  min-width: 40px;
+  margin: 1px 2px;
+  padding: 3px 6px 3px;
+  font: 700 12px/1 'Open Sans', sans-serif;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 110px;
+  margin: 2px 3px;
+  padding: 5px 10px 6px;
+  font: 700 12px/1 'Open Sans', sans-serif;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn.sec {
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: #fff;
+}
+
+.btn.sec:hover {
+  background: #f5f5f5;
+}
+
+.btn.pri {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.set.blue .btn.pri, .set.find .btn.pri {
+  background: #59d;
+}
+
+.set.blue .btn.pri:hover, .set.find .btn.pri:hover {
+  background: #48c;
+}
+
+.btn.sec.ico,
+.btn.pri.ico {
+  position: relative;
+  padding-left: 40px;
+  text-align: left;
+}
+
+/*fa fa-chevron-up*/
+.btn.sec.ico:before,
+.btn.pri.ico:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 30px;
+  padding: 10px 0 12px;
+  font-family: fontawesome;
+  text-align: center;
+  border-radius: 3px 0 0 3px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+
+.btn.sec.ico:before {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.set.blue .btn.sec.ico:before {
+  content: "";
+}
+
+.set.blue .btn.pri.ico:before {
+  content: "\f077";
+}
+
+.set.find .btn.pri.ico:before {
+  /*content: "\f002";*/
+  content: "\f078" ;
+}
+
+.divbox {
+
+width:100%; height:50px;
+padding-left:5px;border: none;border:solid 1px #ccc;border-radius: 5px;margin-top:5px;
+/* Opera */
+box-shadow:10px 10px 10px silver;
+/* Firefox */
+-moz-box-shadow:10px 10px 10px silver;
+/* Safiri, Chrome */
+-webkit-box-shadow:10px 10px 10px silver;
+/* IE */
+filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20);
+}
+
+
+
+/*table*/
+table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+
+}
+table.type09 thead th {
+    padding: 5px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+}
+table.type09 tbody th {
+    width: 150px;
+    padding: 5px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    font-size:12px;
+  width: 350px;
+    padding: 5px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*모달*/
+.modal {
+    width: 98%;
+    margin-left:-49%;
+        height: 85%;
+}
+
+
+
+.warn_modal {
+  width: auto;
+  margin: auto;
+  height: auto;
+  background-color: #fff;
+}
+
+.warn_modal .modal-body {padding: 10px 30px;}
+.warn_modal .modal-body p {font-size: 16px;color: #000;}
+.warn_modal .modal-body .ic-deco {position: relative; display: inline-block;vertical-align: middle;font-size: 22px;text-align: center;color: #ea845f;margin-right: 5px; top: -2px;}
+
+
+.modal-body {
+  max-height: 720px;
+  background:#eeeeee;
+  flex: 0 1 auto;
+  overflow-y: hidden;
+}
+
+
+/*로그인*/
+
+#login-modal .modal-dialog {
+    width: 350px;
+}
+
+#login-modal input[type=text], input[type=password] {
+  margin-top: 10px;
+}
+
+#div-login-msg,
+#div-lost-msg,
+#div-register-msg {
+    border: 1px solid #dadfe1;
+    height: 30px;
+    line-height: 28px;
+    transition: all ease-in-out 500ms;
+}
+
+#div-login-msg.success,
+#div-lost-msg.success,
+#div-register-msg.success {
+    border: 1px solid #68c3a3;
+    background-color: #c8f7c5;
+}
+
+#div-login-msg.error,
+#div-lost-msg.error,
+#div-register-msg.error {
+    border: 1px solid #eb575b;
+    background-color: #ffcad1;
+}
+
+#icon-login-msg,
+#icon-lost-msg,
+#icon-register-msg {
+    width: 30px;
+    float: left;
+    line-height: 28px;
+    text-align: center;
+    background-color: #dadfe1;
+    margin-right: 5px;
+    transition: all ease-in-out 500ms;
+}
+
+#icon-login-msg.success,
+#icon-lost-msg.success,
+#icon-register-msg.success {
+    background-color: #68c3a3 !important;
+}
+
+#icon-login-msg.error,
+#icon-lost-msg.error,
+#icon-register-msg.error {
+    background-color: #eb575b !important;
+}
+
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+/* #########################################
+   #    override the bootstrap configs     #
+   ######################################### */
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .8;
+}
+
+.modal-content {
+   /*
+  background-color: #ececec;
+    border: 1px solid #bdc3c7;
+    border-radius: 0px;
+    outline: 0;
+  */
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px 15px 15px 15px;
+    border-bottom: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-footer {
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    border-top: 0px;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+    border-radius: 0px;
+}
+
+.btn-link {
+    /*padding: 5px 10px 0px 0px;*/
+    color: #95a5a6;
+  padding: 0;border:none;background: none;
+}
+
+
+.btn-link:hover, .btn-link:focus {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.glyphicon {
+    top: 0px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ * --------------------------------
+ * content
+ * --------------------------------
+ */
+.navigation_box { padding:9px 0; margin-bottom: 0px; color:#3e4e68; font-size:13px;}
+.navigation_box strong { display:inline-block; padding:6px 23px; color:#fff; font-weight:bold; border-radius: 15px; background:#576f96;}
+
+.top-navi { position: absolute; top: 51px; left: 0px; width: 100%; min-width: 731px; padding-left: 40px; padding-right: 40px; margin-bottom:20px; background:#fff;}
+ .top-navi-inner {background-color: #fff;z-index: 100;width:100%;border-bottom:1px solid #e6e6e6; }
+ .top-navi-tit { overflow:hidden; height:50px; padding:11px 0 11px 25px; font-size:20px; line-height:50px; background:url("/images/icon_tit.png") no-repeat 0 11px;}
+ .top-navi-tit .fa { display:none; }
+ .top-navi-tit strong { float:left; padding:0 0 0 13px; font-weight:normal; line-height: 120%;}
+ .top-navi-tp { position:relative;}
+
+.sub-tit { display:inline-block; margin-bottom:15px; padding:7px 20px; color:#fff; font-size:13px; font-weight:bold; border-radius:15px; background:#9baecc;}
+
+.stit { display:inline-block; margin:12px 0 7px 0; padding:6px 23px; color:#fff;  font-size:13px; font-weight:bold; border-radius:15px; background:#58a6e1;}
+.sch { margin:0 0 7px; padding:13px 14px 5px; border:1px solid #ced5e3; background:#e8ebf0;}
+.sch-result { text-align:right; margin-top:-40px; /*height:28px;*/ padding:0 85px 7px 0;}
+.btn-more-result { color:#3e4e68; display:inline-block; padding:0 40px 0 20px; height:28px; line-height:28px; vertical-align:middle; color:#3e4e68; text-align:center; font-size:12px; background:url("/images/btn_more_result.png") no-repeat 100% 0 #9baecc; border-top-left-radius:3px; border-bottom-left-radius:3px;}
+.btn-more-result .current { color:#fff; font-size:11px;}
+
+/**
+ * --------------------------------
+ * table
+ * --------------------------------
+ */
+/*.navi-tp-table-wrap { padding:0 0 15px; margin:0 0 15px;}*/
+.navi-tp-table-wrap.type2 { border-bottom:0;}
+.navi-tp-table { width:100%; max-width:1280px;}
+.navi-tp-table th { height:34px;color:#3e4e68; font-size:13px; font-weight:bold; text-align:left;}
+.navi-tp-table td { height:34px; padding:0 12px 0 0; color:#3e4e68; font-size:13px; text-align:left;}
+.navi-tp-table .birth-list select,
+.navi-tp-table .ymd-list select { width:30%;}
+
+.navi-btm-table { margin-bottom:28px;}
+.navi-btm-table td { color:#3e4e68; font-weight:bold;}
+.navi-btm-table td input { width:32px; color:#3e4e68; font-size:13px; text-align:center;}
+.navi-btm-table td select { width:75px; color:#3e4e68; font-size:13px; text-align:center;}
+
+.sch-table { width:100%; max-width:1280px;}
+.sch-table th { height:26px; vertical-align:top; line-height:26px; text-align:left; padding-right:10px;}
+.sch-table td { vertical-align:top; line-height:100%; padding:0 12px 8px 0;}
+.sch-table td input {border: 1px solid #ced5e3; height: 26px; line-height: 26px; vertical-align:middle;}
+.sch-table select { padding:0; left:0; width:100%; color:#3e4e68; font-size:13px; height:24px; border:1px solid #ced5e3;}
+.sch-table .select-small { width:30%;}
+.sch-table td .check_txet {margin-right:7px;}
+.sch-table td #div_InfoKeyWord {margin-top:5px;}
+
+
+.table-list { width:100%; text-align:center; border-top:1px solid #ced5e3; border-left:1px solid #ced5e3; margin-top:5px;}
+.table-list thead th {text-align: center;}
+.table-list tr.table-top,
+.table-list tr.subtotal,
+.table-list tr.total {font-weight: bold;}
+.table-list-wrap .table-list tbody tr.table-top {background-color: #28354c;}
+.table-list-wrap .table-list tbody tr.table-top td {color: #fff;}
+.table-list-wrap .table-list tbody tr.subtotal {background-color: #c2c9d7;}
+.table-list-wrap .table-list tbody tr.subtotal td {}
+.table-list-wrap .table-list tbody tr.total {background-color: #91a3c0;}
+.table-list-wrap .table-list tbody tr.total td {color: #fff;}
+.table-list thead th { height:34px; font-size:12px; background:#e1e7f0; border-right:1px solid #ced5e3; border-bottom:2px solid #ced5e3;}
+.table-list tbody tr:nth-child(odd) { background:#fff;}
+.table-list tbody tr:nth-child(even) { background:#f7f9fb;}
+.table-list tbody tr:hover { background:#e6ebf3;}
+.table-list tbody tr.hover {cursor: pointer;}
+.table-list tbody th { height:34px; color:#94a4be; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3;}
+.table-list tbody td { height:34px; color:#3e4e68; border-right:1px solid #ced5e3; border-bottom:0px solid #ced5e3;padding:0 0px;}
+.table-list tbody td.left { text-align:left; padding-left:12px;}
+
+.table-list tfoot td {font-weight:bold; padding:5px 25px; text-align:left; background:#e1e7f0; border-right:1px solid #ced5e3;}
+.table-list tfoot td.first {padding-top:25px;}
+.table-list tfoot td.last {padding-bottom:25px; border-bottom:1px solid #ced5e3;}
+.table-list tfoot td.none {padding:25px 10px; border-bottom:1px solid #ced5e3; border-right:1px solid #ced5e3;}
+.table-list tfoot td.btn {background:none; text-align:center; padding-top:30px; border-left:1px solid #f5f5f5; border-right:0;}
+
+
+/**
+ * 관리자 - 태블릿 
+ */
+/* 예선 대진표 관리 table */
+.modal.step2modal.in {left: 45%;width: 740px;}
+.btn.back_btn {font-size: 1.5em;text-shadow: none;/*position: absolute;top: 0;*/width: 100%;height:55px; line-height: 51px; margin: 0;}
+/*.nav {position: relative;padding-top: 36px;}*/
+.admin-table-list thead tr {border-bottom: 3px solid #ff4c00;}
+.admin-table-list.table-list  thead th {font-family: 'NanumGothicB';font-size: 17px;background-color: #3f4953; color: #fff;height: 40px;line-height: 1; vertical-align: middle;}
+.admin-table-list.table-list td {font-size: 15px; padding-top: 6px; padding-bottom: 6px;}
+.btn_call {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8863f+0,893f1e+100 */
+background: #c8863f; /* Old browsers */
+background: -moz-linear-gradient(top,  #c8863f 0%, #893f1e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c8863f 0%,#893f1e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c8863f 0%,#893f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8863f', endColorstr='#893f1e',GradientType=0 ); /* IE6-9 */ border: 1px solid #a86c3f; color: #fff;}
+.btn_call:hover,
+.btn_call:focus,
+.btn_call:active {color: #fff;}
+.btn_func {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2f9b9c+1,257a7b+100 */
+background: #2f9b9c; /* Old browsers */
+background: -moz-linear-gradient(top,  #2f9b9c 1%, #257a7b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #2f9b9c 1%,#257a7b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #2f9b9c 1%,#257a7b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f9b9c', endColorstr='#257a7b',GradientType=0 ); /* IE6-9 */ border: 1px solid #2b9091; color: #fff;}
+.btn_func:hover,
+.btn_func:focus,
+.btn_func:active {color: #fff;}
+.btn_final_round {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#627d4d+0,1f3b08+100;Olive+3D */
+background: #627d4d; /* Old browsers */
+background: -moz-linear-gradient(top, #627d4d 0%, #1f3b08 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #627d4d 0%,#1f3b08 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #627d4d 0%,#1f3b08 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08',GradientType=0 ); /* IE6-9 */}
+
+.admin-table-list.table-list .btn_call {width: 85%; height: 28px; line-height: 26px; padding-top: 0; padding-bottom: 0;}
+.admin-table-list.table-list .btn_func {min-width: 85px; height: 28px; line-height: 26px; padding-top: 0; padding-bottom: 0;}
+.admin-table-list.table-list .btn_final_round {width: 160px;}
+
+.modal-header.game-ctr {font-family: 'NotoKR-bd';text-align: center;background-color: #1d3046;color: #fff; padding-top: 10px; padding-bottom: 10px;}
+.modal-header.game-ctr .change_type {font-size: 16px;display: inline-block;vertical-align: middle;position: absolute;top: 5px; left: 5px;background-color: #3e7c00;border: none;border-radius: 4px;width: 130px;height: 40px;line-height: 38px;text-shadow: none;}
+.modal-header.game-ctr .change_type:hover,
+.modal-header.game-ctr .change_type:focus,
+.modal-header.game-ctr .change_type:active {color: #fff;}
+.modal-body.game-ctr .league_tab .pull-left .btn_a:first-child {margin-left: 0;}
+.modal-body.game-ctr .league_tab .pull-right .change_type {width: 80px;margin-left: 0;}
+.modal-body.game-ctr .league_tab .pull-right .change_type:hover,
+.modal-body.game-ctr .league_tab .pull-right .change_type:focus,
+.modal-body.game-ctr .league_tab .pull-right .change_type:active {width: 80px;}
+.league_tab .change_type .ic_deco {display: inline-block;position: relative;top: 2px;font-size: 23px;line-height: 1;padding-left: 6px;}
+.modal-header.game-ctr h3 {font-size: 21px;color: #fff;letter-spacing: -0.025em;}
+.modal-header.game-ctr h3 .txt {font-size: 15px; color: #fff000;}
+.modal-header.game-ctr .close {font-size: 36px;opacity: 1;text-shadow: none;color: #fff;}
+.modal-body.game-ctr  {font-family: 'NotoKR-md';padding-top: 0;padding-bottom: 30px; border-top: none; margin-top: -1px;}
+.modal-body.game-ctr .pull-right .search_btn {font-size: 16px;margin-bottom: 0;width:250px;height: 40px;margin-right: 6px;padding-left: 10px;}
+.modal-body.game-ctr .top_control {position: fixed; z-index: 1000; text-align: center; background-color: #455160; width: 97.8%; margin-left: -15px;margin-right: -15px;}
+@media (min-width: 1280px) {
+  .modal-body.game-ctr .top_control {width: 97.9%;}
+}
+.modal-body #drowbody {margin-top: 90px;}
+.modal-body .scroll_box {height: 574px; margin-top: 90px; overflow-y: scroll;}
+.modal-body.tourn-modal-body #drowbody.tourn_box {height: auto;overflow-y: hidden;margin-top: 130px;}
+.modal-body.tourn-modal-body .tourn_scroll_area {overflow-y: scroll;height: 400px;padding-bottom: 40px;}
+.tourn-modal-body .scroll_box {margin-top: 130px;}
+.modal-body.game-ctr .inner_sub_ctrl {text-align: center;font-size: 17px; font-weight: bold; color: #fff; width: 100%; padding-top: 10px; padding-bottom: 10px;}
+.modal-body.game-ctr .inner_sub_ctrl select {width: 60px;}
+.tourn-modal-body #tourney_admin.tourney_admin.table_header {display: block;}
+.tourn-modal-body #tourney_admin.tourney_admin.table_header thead {display: block;width: 100%;}
+.tourn-modal-body #tourney_admin.tourney_admin.table_header thead tr {display: table;width: 100%;}
+.tourn-modal-body #tourney_admin.tourney_admin.table_header,
+.tourn-modal-body #tourney_admin.tourney_admin.table_header thead {border-left: none;border-right: none;}
+.tourn-modal-body #tourney_admin.tourney_admin.table_header th {display: table-cell;width: 125px;}
+.tourn-modal-body #tourney_admin.tourney_admin.table_header th:first-child {width: 18%;}
+.tourn-modal-body #tourney_admin.tourney_admin td {vertical-align: top;width: 130px;}
+.tourn-modal-body #tourney_admin.tourney_admin td:first-child {width: 18%;}
+.tourn-modal-body #tourney_admin.tourney_admin td > div {display: table;}
+.tourn-modal-body #tourney_admin.tourney_admin td > div > div {display: table-cell; vertical-align: middle;}
+.tourn-modal-body #tourney_admin.tourney_admin td > div > div:first-child {width: 30px;}
+.tourn-modal-body #tourney_admin.tourney_admin .btn_func {width: 98%; height: 28px; line-height: 26px; padding-top: 0; padding-bottom: 0;}
+.tourn-modal-body #tourney_admin.tourney_admin {position: static;top: 0;}
+.modal.tourney_admin_modal {background-color: #eee;}
+
+.modal-body.game-ctr .btn {font-family: 'NanumGothicB';font-size: 14px; text-shadow: none; height: 40px; line-height: 40px; border-radius: 5px; padding-top: 0;padding-bottom: 0;}
+.modal-body.game-ctr .btn.btn_tab,
+.modal-body.game-ctr .btn.btn_tab:hover,
+.modal-body.game-ctr .btn.btn_tab:focus,
+.modal-body.game-ctr .btn.btn_tab:active {font-size: 16px;background-color: #fff; color: #333; border: 2px solid #bbb; border-radius: 5px; width: 200px; height: 40px; line-height: 36px; padding-top: 0; padding-bottom: 0; -webkit-box-shadow: none; box-shadow: none; transition: all .3s ease;}
+.modal-body.game-ctr .btn.btn_tab:hover,
+.modal-body.game-ctr .btn.btn_tab:focus,
+.modal-body.game-ctr .btn.btn_tab:active {
+  background-color: #6EAD2E; color: #fff;border: 2px solid transparent;}
+  .modal-body.game-ctr .serach_btn {font-size: 16px;display: inline-block;vertical-align: middle;color: #333;width: 300px;height: 40px;line-height: 40px;padding-top: 0;padding-bottom: 0;padding-left: 10px;padding-right: 10px;margin: 0;margin-left: 6px;}
+.modal-body.game-ctr .btn.btn_tab.on {background-color: #3e7c00;color: #fff;border: 2px solid transparent;}
+.modal-body.game-ctr .making_group {position: relative;}
+.modal-body.game-ctr .making_group .btn_del {background: #637AA1;color: #fff;display: inline-block;position: absolute;top: 0;right: 0;border-radius: 0;width: 50px;height: 40px;line-height: 38px;padding: 0;margin: 0;}
+.modal-body.game-ctr .making_group .btn_del:hover,
+.modal-body.game-ctr .making_group .btn_del:focus,
+.modal-body.game-ctr .making_group .btn_del:active {background: #637AA1;color: #fff;}
+
+.modal-body.game-ctr .sel_box {font-family: 'NanumGothicB';background-color: #FFFAE0;padding-top: 10px;padding-bottom: 10px;}
+.modal-body.game-ctr .sel_box .tit {display: inline-block; vertical-align: middle;font-size: 18px; color: #000; padding-right: 10px;}
+.modal-body.game-ctr .sel_box select {display: inline-block;vertical-align: middle;}
+.modal-body.game-ctr .league_tab {padding-top: 15px;padding-bottom: 15px;padding-left: 15px;padding-right: 15px;}
+.modal-body.game-ctr .inner_sub_ctrl {font-size: 16px;background-color: #FFFAE0;color: #000;}
+.modal-body.game-ctr .inner_sub_ctrl input {height: 28px; line-height: 26px;vertical-align: middle;margin-bottom: 0;margin-top: 0;}
+.modal-body.game-ctr .inner_sub_ctrl .ctr_table {display: inline-block; vertical-align: middle; font-family: 'NanumGothicB'; font-size: 16px;}
+.modal-body.game-ctr .inner_sub_ctrl .ctr_table .txt {display: inline-block;vertical-align: middle;}
+.modal-body.game-ctr .btn_enter {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8863f+0,893f1e+100 */
+background: #c8863f; /* Old browsers */
+background: -moz-linear-gradient(top,  #c8863f 0%, #893f1e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c8863f 0%,#893f1e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c8863f 0%,#893f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8863f', endColorstr='#893f1e',GradientType=0 ); /* IE6-9 */ border: 1px solid #a86c3f; color: #fff;}
+.modal-body.game-ctr .btn_enter {width: 60px; min-width: 60px; height: 28px; line-height: 24px; margin-right: 15px;}
+.modal-body.game-ctr .btn_func,
+.modal-body.game-ctr .btn_func:hover,
+.modal-body.game-ctr .btn_func:focus,
+.modal-body.game-ctr .btn_func:active {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2f9b9c+1,257a7b+100 */
+background: #2f9b9c; /* Old browsers */
+background: -moz-linear-gradient(top,  #2f9b9c 1%, #257a7b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #2f9b9c 1%,#257a7b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #2f9b9c 1%,#257a7b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f9b9c', endColorstr='#257a7b',GradientType=0 ); /* IE6-9 */ border: 1px solid #2b9091; color: #fff;}
+#loadmsg {display: block; padding-bottom: 20px;}
+.table-list.game-ctr {font-family: 'NotoKR-bd';margin-top: 0;margin-bottom: 100px;}
+.game-ctr thead tr {border-bottom: 3px solid #ff4c00;color: #fff;}
+.game-ctr thead tr th {padding:0;font-size: 16px;background-color: #3f4953; height: 50px; line-height: 50px;}
+.game-ctr thead tr td{padding:0;}
+.game-ctr thead tr th .btn_a {font-size: 14px; color: #fff; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,c8c8c8+100 */
+background: #fefefe; /* Old browsers */
+background: -moz-linear-gradient(top, #fefefe 0%, #c8c8c8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #fefefe 0%,#c8c8c8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #fefefe 0%,#c8c8c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#c8c8c8',GradientType=0 ); /* IE6-9 */ border: 1px solid #a2a2a2; color: #333; height: 30px; line-height: 30px; padding-top: 0; padding-bottom: 0; box-shadow: none;}
+.game-ctr tbody tr td {vertical-align: middle;line-height: 125%;}
+.game-ctr tbody tr td input {font-size: 15px; text-align: center;margin-bottom: 0;padding-top: 7px;}
+.game-ctr tbody tr td:nth-child(2) input,
+.game-ctr tbody tr td:nth-child(3) input {font-size: 20px;width: 60px;height: 55px;}
+.game-ctr .tabarea {font-size: 20px;height: 55px;}
+.game-ctr .make_comp {/*background-color: #f5ffe1;*/ background-color: #FFFAE0;}
+
+.game-ctr .chk_col .btn_a {height: 30px; line-height: 26px; border: 1px solid #ddd; padding-top: 0; padding-bottom: 0;}
+.game-ctr .chk_state {font-weight: bold;line-height: 1;padding-top: 10px; padding-bottom: 10px;}
+.game-ctr .chk_state select {font-size: 16px;width: 60px;height: 40px;padding: 0;}
+.game-ctr .chk_state a {font-size: 22px;vertical-align: middle;letter-spacing: -0.075em;}
+.game-ctr td .sel_court {width: 100px;}
+.game-ctr .chk_col .btn_updateMember {font-size: 15px;padding-left: 10px; padding-right: 10px;}
+.game-ctr tbody td:last-child .btn_a {font-size: 15px; padding-left: 10px; padding-right: 10px;}
+.game-ctr tbody td .btn_a.btn_toggle_show {font-size: 20px;width: 100%;height: 100%;line-height: 99px;padding: 0;}
+.title_scroll .game-ctr tbody td .btn_a {font-size: 12px;line-height: 125%}
+.title_scroll .game-ctr tbody td:nth-child(3),
+.title_scroll .game-ctr tbody td:nth-child(5) {width: 160px;}
+
+/* 코트 관리 */
+.game-ctr.no_scroll {height: auto;}
+.game-ctr.court-ctr .scroll_area {text-align: center;height: 330px; line-height: 3.2; overflow-y: scroll; margin-top: 20px;margin-bottom: 20px;padding: 10px;}
+.game-ctr.court-ctr .scroll_area input {height: 28px;vertical-align: middle;margin-bottom: 0;}
+.game-ctr.court-ctr .scroll_area .btn_a {color: #fff;height: 28px; line-height: 28px; vertical-align: middle; padding-top: 0; padding-bottom: 0;}
+.game-ctr.court-ctr .scroll_area .btn_a:nth-child(5n+3) {background-color: #f0ad4e; border-color: #eea236;}
+.game-ctr.court-ctr .scroll_area .btn_a:nth-child(5n+4) {
+  background-color: #c9302c; border-color: #ac2925;}
+  .game-ctr.court-ctr .scroll_area .btn_rev {display: inline-block;vertical-align: middle;width: 42px;height: 28px;line-height: 28px;background-color: #4e8ff0;border-color: #4136ee;color: #fff;padding-top: 0;padding-bottom: 0;border-radius: 4px;}
+
+/* table 간격 조절 */
+.game-ctr tbody td:first-child {font-size: 22px;width: 50px;}
+.game-ctr tbody td:nth-child(2),
+.game-ctr tbody td:nth-child(3),
+.game-ctr tbody td:nth-child(4) {width: 100px;}
+.game-ctr tbody td:nth-child(5),
+.game-ctr tbody td:nth-child(6),
+.game-ctr tbody td:nth-child(7) {width: 422px;}
+.game-ctr tbody td:last-child {width: 160px;}
+table.game-ctr tbody td.making_group {width: 460px;}
+@media (max-width: 1281px) {
+  .game-ctr tbody td:nth-child(2) {width: 95px;}
+.game-ctr tbody td:nth-child(3),
+.game-ctr tbody td:nth-child(4) {width: 95px;}
+  table.game-ctr tbody td:nth-child(5),
+  table.game-ctr tbody td:nth-child(6),
+  table.game-ctr tbody td:nth-child(7) {width: 260px;}
+  table.game-ctr tbody td.making_group {width: 360px;}
+  table.game-ctr tbody td:last-child {width: 160px;}
+}
+
+.game-ctr.type_1 .make_comp {width: 380px;}
+.game-ctr.type_2 .make_comp {width: 380px;}
+.game-ctr.type_2 td:nth-child(4) {width: 65px;}
+
+
+.game-ctr .set_league .table thead th {height: 45px; line-height: 1; vertical-align: middle;}
+.game-ctr .set_league .table thead th:nth-child(2n+2) {width: 290px;}
+.game-ctr .set_league .table thead th:nth-child(2n+3) {width: 120px;}
+.game-ctr .set_league .table thead th:nth-child(2) {width: 85px;}
+.set_league_table{margin-top:0;}
+.set_league .set_league_table thead th {text-align: center;border-right: 1px solid #ddd;}
+.set_league .set_league_table tbody tr {border-bottom: 1px solid #bbb;}
+.set_league .set_league_table tbody th {text-align: center;vertical-align: middle;border-left: 1px solid #bbb;border-right: 1px solid #bbb;}
+.set_league .set_league_table tbody td {text-align: center;border-right: 1px solid #bbb;}
+.set_league .set_league_table tbody td select {font-size: 15px; border: 1px solid #bbb; width: 100%; height: auto; /*padding-top: 25px; padding-bottom: 25px;*/ padding-top: 15px; padding-bottom: 15px; padding-left: 4px; padding-right: 4px;}
+.set_league .set_league_table tbody td a {display: block;}
+.set_league .set_league_table .groupbtn,
+.set_league .set_league_table .selectbtn {display: inline-block;vertical-align: middle;}
+.set_league .set_league_table .groupbtn {width: 68%;}
+.set_league .set_league_table .selectbtn {width: 30%;}
+.set_league .set_league_table .team {display: inline-block; vertical-align: middle; background-color: #fff; color: #000; border: 1px solid #bbb; border-radius: 5px; padding: 0px 5px; width: calc(50% - 4px); height: 55px;}
+.set_league .set_league_table .team:first-child {margin-right: 2px;}
+.set_league .set_league_table .team:after {content: '';display: table;clear: both;}
+.set_league .set_league_table .finish {background-color: #777;}
+.set_league .set_league_table .playing {background-color: #f39041;}
+.set_league .set_league_table .finish .team.win {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c539e+0,2c539e+100;Blue+3D+%232 */
+background: #2c539e; /* Old browsers */
+background: -moz-linear-gradient(top, #2c539e 0%, #2c539e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #2c539e 0%,#2c539e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #2c539e 0%,#2c539e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */ color: #fff;}
+/*.set_league .set_league_table .team:first-child {margin-bottom: 5px;}*/
+.set_league .set_league_table .team li,
+.set_league .set_league_table .team ul {display: inline-block;vertical-align: middle;}
+.set_league .set_league_table .groupbtn .team  ul {margin-top: 0px;}
+.set_league .set_league_table .team .result_txt {float: right;}
+.set_league .set_league_table .team ul {width: 75%;}
+.set_league .set_league_table .team li {color: #000;}
+.set_league .set_league_table .finish .team.win li {color: #fff;}
+.set_league .set_league_table .team .player {display: inline-block; vertical-align: middle; position: relative;}
+.set_league .set_league_table .team .club {display: inline-block; vertical-align: middle;position: relative;font-size: 13px; max-width: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-left: 5px; padding-right: 5px;}
+.set_league .set_league_table .team .club:before,
+.set_league .set_league_table .team .club:after {position: absolute; top: -1px; content: '';}
+.set_league .set_league_table .team .club:before {content: '(';left: 0px;}
+.set_league .set_league_table .team .club:after {content: ')'; right: 0px}
+/*.set_league .set_league_table .team li:nth-child(2) .player:before {content: ',';position: absolute; bottom: 0; left: -5px;}*/
+.set_league .set_league_table .team .result_txt {display: inline-block; vertical-align: middle; text-align: center; color: #fff; width: 25px; height: 53px; line-height: 50px; font-size: 16px; margin-right: -5px; border-top-right-radius: 5px;border-bottom-right-radius: 5px;}
+.set_league .set_league_table .team.win .result_txt {background-color: #FF2B2B;border: 2px solid #21458a;}
+.set_league .set_league_table .team .result_txt {background-color: #ccc; color: #fff; border: 2px solid #fff;}
+
+/* table 폰트 조절 */
+.set_league .set_league_table tbody th:first-child {font-size: 15px;}
+.set_league .set_league_table .team li {display: block;font-size: 18px; text-align: left; letter-spacing: -0.05em; line-height: 150%;}
+
+
+/* table 간격 조절 */
+.set_league .set_league_table tbody td:nth-child(odd) {width: 330px;}
+.set_league .set_league_table tbody td:nth-child(even) {width: 320px;}
+.set_league .set_league_table tbody td:nth-child(2) {font-size: 22px;width:140px;}
+.set_league .set_league_table tbody th:first-child {width: 40px;}
+
+.modal-body.game-ctr .set_league_table thead th {border: none;}
+.modal-body.game-ctr .set_league_table thead th:first-child {width: 40px;}
+.modal-body.game-ctr .set_league_table thead th:nth-child(2) {width: 140px;}
+.modal-body.game-ctr .set_league_table thead th:nth-child(3),
+.modal-body.game-ctr .set_league_table thead th:nth-child(5),
+.modal-body.game-ctr .set_league_table thead th:nth-child(7) {width: 230px;}
+.modal-body.game-ctr .set_league_table thead th:nth-child(4),
+.modal-body.game-ctr .set_league_table thead th:nth-child(6),
+.modal-body.game-ctr .set_league_table thead th:nth-child(8) {width: 110px;}
+
+
+/* 관리자 - 태블릿 */
+
+/* 추가 */
+.modal .modal-footer .btn_list.btn_3 .btn {float: left;width: 32%;}
+#drowbody.modal-body > table {margin-top: 130px;padding-top: 15px;}
+.modal-body.game-ctr .set_tourney {margin-top: 90px;}
+
+.modal-body.game-ctr .set_tourney_table thead th {text-align: center;height: 30px;line-height: 30px;}
+.modal-body.game-ctr .set_tourney_table tbody th {text-align: center;vertical-align: middle;}
+.modal-body.game-ctr .set_tourney_table tbody td {font-size: 16px;padding-top: 8px;padding-bottom: 8px;}
+.modal-body.game-ctr .set_tourney_table tbody td:nth-child(4) {text-align: center;}
+.modal-body.game-ctr .set_tourney_table tbody td:last-child {text-align: center;}
+.modal-body.game-ctr .set_tourney_table .playing th,
+.modal-body.game-ctr .set_tourney_table .playing td {background-color: #999;color: #fff;}
+.set_tourney_table .playing .groupbtn .team {background-color: #fff;}
+
+/* 테이블 길이 조절 */
+.modal-body.game-ctr .set_tourney_table thead th:first-child {width: 8%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(2),
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(3) {width: 20%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(4) {width: 8%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(5) {width: 44%;}
+
+.game-ctr thead tr th{text-align:center;}
+.modal-body.game-ctr .set_tourney_table thead th {font-size: 21px;vertical-align: middle;padding-top: 10px;padding-bottom: 10px;}
+.modal-body.game-ctr .set_tourney_table thead th .btn {font-size: 28px;width: 180px;}
+.modal-body.game-ctr .scroll_box .set_tourney_table th,
+.modal-body.game-ctr .scroll_box .set_tourney_table td {font-size: 26px;}
+.modal-body.game-ctr .scroll_box .set_tourney_table td select {font-size: 22px;width: 95%;height: auto;}
+.modal-body.game-ctr .scroll_box .set_tourney_table .score_left,
+.modal-body.game-ctr .scroll_box .set_tourney_table .score_right {width: 65px;height: 55px;}
+.modal-body.game-ctr .scroll_box .set_tourney_table .groupbtn {width: 580px;}
+.modal-body.game-ctr .scroll_box .set_tourney_table .groupbtn ul {width: 84%;}
+.modal-body.game-ctr .scroll_box .set_tourney_table .groupbtn li {display: inline-block;vertical-align: middle;width: 50%;margin-left: -4px;}
+.modal-body.game-ctr .scroll_box .set_tourney_table .groupbtn li:first-child {margin-left: 0px;}
+
+/* 본선경기진행 테이블 길이 조절 */
+.modal-body.game-ctr .set_tourney_table tbody td {text-align: center;}
+.modal-body.game-ctr .set_tourney_table thead th:first-child,
+.modal-body.game-ctr .set_tourney_table tbody th:first-child {width: 10%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(2) {width: 21%;}
+.modal-body.game-ctr .set_tourney_table tbody td:nth-child(2) {width: 21%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(3) {width: 10%;}
+.modal-body.game-ctr .set_tourney_table tbody td:nth-child(3) {width: 10%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(4) {width: 10%;}
+.modal-body.game-ctr .set_tourney_table tbody td:nth-child(4) {width: 10%;}
+.modal-body.game-ctr .set_tourney_table thead th:nth-child(5),
+.modal-body.game-ctr .set_tourney_table tbody td:nth-child(5) {width: auto;}
+
+.modal-body.game-ctr .set_tourney_table thead th.score {width: 12%;}
+.modal-body.game-ctr .set_tourney_table tbody td.score_line {width: 11%;}
+
+.modal-body.game-ctr .set_tourney_table tbody td.score_line select {font-size: 16px;background-color: #006529;color: #ffe400;width: 54px;height: 55px;padding-left: 5px;float: left;}
+.modal-body.game-ctr .set_tourney_table tbody td.score_line select:first-child {background-color: #bf4300;margin-right: 10px;}
+
+.modal-body.game-ctr .set_tourney_table .groupbtn .player {font-size: 21px;}
+
+
+/* 선수 vs 선수 경기 버튼 */
+.tourney_ctr_btn {display: inline-block;vertical-align: middle;font-size: 16px;background-color: #ddd;padding-left: 5px;padding-right: 5px;}
+.tourney_ctr_btn .team {display: block;padding-top: 5px;padding-bottom: 5px;}
+.tourney_ctr_btn li {display: inline-block;vertical-align: middle;}
+.tourney_ctr_btn li:first-child {margin-right: 5px;}
+#tourney_admin td:first-child .player {font-size: 1.25em;}
+.tourney_ctr_btn .player {display: block;font-size: 1.25em;font-weight: 600;letter-spacing: -0.125em;color: #333;line-height: 1}
+@media (max-width: 1200px) {
+  #tourney_admin td:first-child .player {font-size: 1em;}
+.tourney_ctr_btn .player {font-size: 1em;}
+}
+.tourney_ctr_btn .btn_a {color: #fff;width: 55px;height: 30px;line-height: 25px;padding-top: 0;padding-bottom: 0;}
+.chk_win_lose .btn_a .txt {display: inline-block;vertical-align: middle;font-size: 0.92em;}
+.chk_win_lose .btn_a .ic_deco {display: inline-block;vertical-align: middle;margin-top: 2px;}
+.tourney_ctr_btn .chk_win_lose,
+.tourney_ctr_btn .chk_win {margin-bottom: 6px;}
+.chk_win_lose .btn_cancel {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
+background: #606c88; /* Old browsers */
+background: -moz-linear-gradient(top, #606c88 0%, #3f4c6b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */}
+.chk_win .btn_win,
+.chk_win_lose .btn_win {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+background: #006e2e; /* Old browsers */
+background: -moz-linear-gradient(top, #006e2e 0%, #006e2e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #006e2e 0%,#006e2e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #006e2e 0%,#006e2e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */}
+.tourney_ctr_btn .chk_win .btn_a {width: 90%;height: 30px;line-height: 30px;}
+
+.table .groupbtn {display: inline-block;vertical-align: middle;width: 260px;margin: 0 auto;}
+.groupbtn .team {display: inline-block;vertical-align: middle;border: 1px solid #bbb;border-radius: 6px;width: calc(50% - 85px);height: 55px;}
+.groupbtn .team:first-child {margin-right: 5px;}
+.groupbtn .team.win {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c539e+0,2c539e+100;Blue+3D+%232 */
+background: #2c539e; /* Old browsers */
+background: -moz-linear-gradient(top, #2c539e 0%, #2c539e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #2c539e 0%,#2c539e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #2c539e 0%,#2c539e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */ color: #fff;}
+.groupbtn .team > ul,
+.groupbtn .team .result_txt {display: inline-block;vertical-align: middle;}
+.groupbtn .team .player {line-height: 1}
+.groupbtn .team > ul {width: 75%;}
+.groupbtn .team .result_txt,
+.groupbtn .team.win .player {color: #fff;}
+.groupbtn .team.win .player {display: block;text-align: center;font-size: 18px;letter-spacing: 0.0125em;width: 70px;line-height: 150%;white-space: nowrap;text-overflow: clip;overflow: hidden;}
+.groupbtn .team .result_txt {display: inline-block;font-size: 16px;background-color: #ccc;vertical-align: middle;text-align: center;border-top-right-radius: 6px;border-bottom-right-radius: 6px;width: 30px;height: 53px;line-height: 50px;margin-right: -4px;}
+.groupbtn .team.win .result_txt {background-color: #ff2828;border: 2px solid #21458a;}
+
+
+/*-----------------User Info Table-----------------*/
+
+.table-Profile { width:100%; text-align:center; border-top:1px solid #ced5e3; border-left:1px solid #ced5e3; margin-top:5px;}
+.table-Profile thead th {text-align: center; font-weight: bold}
+.table-Profile tr.table-top,
+.table-Profile tr.subtotal,
+.table-Profile-wrap .table-Profile tbody tr.total td {color: #fff;}
+.table-Profile thead th { height:35px; font-size:12px; background:#e1e7f0; border-right:1px solid #ced5e3; border-bottom:2px solid #ced5e3;font-weight: bold;}
+
+/*.table-Profile tbody tr:nth-child(odd) { background:#fff;}*/
+/*.table-Profile tbody tr:nth-child(even) { background:#f7f9fb;}*/
+
+.table-Profile tbody tr:hover { background:#e6ebf3;}
+.table-Profile tbody tr.hover {cursor: pointer;}
+
+.table-Profile tbody th { height:35px; color:#3e4e68; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3;}
+.table-Profile tbody td { height:35px; color:#3e4e68; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3;padding:0 10px;}
+.table-Profile tbody td.title {font-weight: bold;}
+
+
+/*-----------------User Info Table-----------------*/
+
+/*--------------Sort---------------------*/
+
+span.sort-by { 
+  padding-right: 18px;
+  position: relative;
+}
+
+span.sort-by:before,
+span.sort-by:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 5px;
+  top: 50%;
+  position: absolute;
+  width: 0;
+}
+span.sort-by:before {
+  border-bottom-color: #666;
+  margin-top: -9px;
+}
+span.sort-by:after {
+  border-top-color: #666;
+  margin-top: 1px;
+}
+
+/*--------------Sort---------------------*/
+/*--------------Ascending----------------*/
+
+span.sort-by-asc { 
+  padding-right: 18px;
+  position: relative;
+}
+
+span.sort-by-asc:before,
+span.sort-by-asc:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 5px;
+  top: 75%;
+  position: absolute;
+  width: 0;
+}
+span.sort-by-asc:before {
+  border-bottom-color: #0000FF;
+  margin-top: -9px;
+}
+
+
+span.sort-by-asc { 
+  padding-right: 18px;
+  position: relative;
+}
+
+span.sort-by-asc:before,
+span.sort-by-asc:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 5px;
+  top: 75%;
+  position: absolute;
+  width: 0;
+}
+span.sort-by-asc:before {
+  border-bottom-color: #0000FF;
+  margin-top: -9px;
+}
+/*--------------Ascending----------------*/
+/*--------------Desending----------------*/
+
+span.sort-by-des { 
+  padding-right: 18px;
+  position: relative;
+}
+
+span.sort-by-des:before,
+span.sort-by-des:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 5px;
+  top: 75%;
+  position: absolute;
+  width: 0;
+}
+span.sort-by-des:before {
+  border-bottom-color: #0000FF;
+  margin-top: -9px;
+}
+
+
+span.sort-by-des { 
+  padding-right: 18px;
+  position: relative;
+}
+
+span.sort-by-des:before,
+span.sort-by-des:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 5px;
+  top: 45%;
+  position: absolute;
+  width: 0;
+}
+
+
+span.sort-by-des:after {
+  border-top-color: #0000FF;
+  margin-top: 1px;
+}
+
+/*--------------Desending----------------*/
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 24px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+
+
+
+
+.sd_page {
+width:30%;overflow:auto; height:50px; background-color:#ffffff; margin:0 auto;
+}
+.sd_page ul {  
+    list-style:none;  
+    float:left;  
+    display:inline;  
+}  
+.sd_page ul li {  
+    float:left;  
+}  
+.sd_page ul li a {  
+    float:left;  
+    padding:4px;  
+    margin-right:3px;  
+    width:30px;  
+    color:#000;  
+    font:bold 12px tahoma;  
+    border:1px solid #eee;  
+    text-align:center;  
+    text-decoration:none;  
+}  
+.sd_page ul li a:hover,.sd_page ul li a:focus {  
+    color:#fff;  
+    border:1px solid #f40;  
+    background-color:#f40;  
+}
+
+
+.dupstr{
+ height:100%;
+ float:left;
+ background:green;
+ color:#fff;
+ bottom:0;
+ font-family: ‘MS UI gothic';
+ font-size:11px;
+ padding: 5px;
+ box-sizing: content-box;
+ width: 21px;
+ line-height: 1.125;
+}
+
+
+.laketmodal{width:90%;margin:auto;left:0;right:0;height:auto;border-radius:0;}
+.laketmodal .modal-header.game-ctr h3{font-size:26px;}
+.laketmodal .modal-body{padding:42px 30px;background:#bbb;display:table;width:100%;position:relative;}
+.laketmodal .modal-body .player-con{width:46%;float:left;}
+.laketmodal .modal-body .player-con table{width:100%;}
+.laketmodal .modal-body .player-con.l-con table{background:#bf4300;border-left:1px solid #4f4f4f;border-bottom:1px solid #4f4f4f;}
+.laketmodal .modal-body .player-con.r-con table{background:#005c25;}
+.laketmodal .modal-body .player-con table tr:frist-child td{border-top:0;}
+.laketmodal .modal-body .player-con table tr td{padding:12px 15px;text-align:center;font-size:25px;color:#fff;font-family: 'NotoKR-bd';border-top:1px solid #4f4f4f;border-right: 1px solid #4f4f4f;}
+.laketmodal .modal-body .player-con table tr th{padding:12px 15px;text-align:center;font-size:22px;color:#fff;font-family: 'NotoKR-bd';border-top:1px solid #4f4f4f;border-right: 1px solid #4f4f4f;background:#1a1a1a;}
+.laketmodal .modal-body .player-con table tr td .player-title{font-size:30px;color:#fff000;margin:0 20px;}
+.laketmodal .modal-body .player-con table tr td .txt{font-size:23px;padding:0 5px;width:85%;float:left;text-align:left;}
+.laketmodal .modal-body .player-con table tr td select{height:auto;font-size:23px;padding:0 5px;width:85%;float:left;}
+.laketmodal .modal-body .player-con table tr td .l-img{display:inline-block;width:15%;float:left;}
+.laketmodal .modal-body .player-con table tr td .l-img img{width:100%;max-width:21px;vertical-align:-7px;}
+.laketmodal .modal-body .player-con.r-con{margin-left:8%;}
+{vertical-align:-7px;}
+.laketmodal .modal-body .vs-con{width:8%;float:left;text-align:center;font-size:26px;color:#333;line-height:50%;position:absolute;top:50%;left:46%;font-family: 'NotoKR-bd';}
+.laketmodal .modal-footer{text-align:center;}
+.laketmodal .modal-footer .blue-btn{width:213px;height:50px;line-height:46px;text-align:center;color:#fff;border:1px solid #2b9091;font-size:25px;font-family: 'NotoKR-bd';border-radius:8px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#39b0b1+0,2e9798+49,22797a+100 */
+background: #39b0b1; /* Old browsers */
+background: -moz-linear-gradient(top, #39b0b1 0%, #2e9798 49%, #22797a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #39b0b1 0%,#2e9798 49%,#22797a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #39b0b1 0%,#2e9798 49%,#22797a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39b0b1', endColorstr='#22797a',GradientType=0 ); /* IE6-9 */
+}

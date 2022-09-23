@@ -1,0 +1,44 @@
+/**
+ * S: 프로필 이미지 및 이름, 소속 
+ */
+.user-img-wrap {font-size: 1.13em;background-color: #eaf0f5;color: #222;padding: 17px 15px 20px;}
+.user-img-wrap .prof_img {position: relative;display: inline-block;vertical-align: middle;}
+.user-img {display: inline-block;vertical-align: middle;text-align: center;width: 61px;height: 61px;line-height: 61px;border: 1px solid #035a96;border-radius: 50%;overflow: hidden;}
+.user-img img {min-width: 61px;min-height: 61px;line-height: 61px;margin-top: calc(-50% + 30px);}
+.user-img-wrap .prof_img .img_deco {position: absolute;display: inline-block;bottom: -5px;right: 0;width: 25px;height: 25px;}
+.user-img-wrap p {display: inline-block;vertical-align: middle;font-size: .92em;font-family: "NotoKR-md";margin-top: 6px;margin-left: 4px;}
+.user-img-wrap p span {display: block;}
+.user-img-wrap p .player_belong {font-family: "NotoKR-dl";font-size: .86em;color: #005895;max-width: 210px;line-height: 130%;margin-top: 3px;}
+/* E: 프로필 이미지 및 이름, 소속 */
+
+/**
+ * S: 마이페이지 메뉴 
+ */
+.mypage-menu {background-color: #eaf0f5;border-top: 1px solid #bfd0df;padding-top: 15px;padding-bottom: 15px;padding-left: 20px;padding-right: 20px;}
+.mypage-menu li {width: 50%;/*width: 33%;*/float: left;}
+.mypage-menu li p {display: block;text-align: center;}
+.mypage-menu li p:first-child {width: auto;}
+.mypage-menu li p:first-child img {width: auto;height: 32px;}
+.mypage-menu li p:last-child {font-family: "NotoKR-dl";font-size: .93em;padding-top: 6px;}
+/* E: 마이페이지 메뉴 */
+
+/**
+ * S: 마이페이지 list 메뉴 
+ */
+.my_list {background-color: #fff;padding-top: 15px;padding-bottom: 15px;margin-left: 20px;margin-right: 20px;}
+.my_list li {border-bottom: 1px dotted #ddd;padding-top: 8px;padding-bottom: 8px;}
+.my_list li:last-child {border-bottom: none;}
+.my_list li .img_deco {display: inline-block;vertical-align: top;width: 20px;height: 20px;}
+.my_list .txt {display: inline-block;vertical-align: middle;font-family: "NotoKR";font-size: .95em;color: #333;padding-left: 6px;}
+.my_list .ic_more {display: inline-block;width: 8px;height: 14px;float: right;}
+/* E: 마이페이지 list 메뉴 */
+
+/**
+ * S: 마이페이지 로그아웃, 회원탈퇴 
+ */
+.out_list {border-top: 1px solid #bbb;padding-top: 15px;margin-left: 20px;margin-right: 20px;}
+.out_list li {font-family: "NotoKR";color: #333;padding-top: 8px;padding-bottom: 8px;border-bottom: 1px dotted #ddd;}
+.out_list li:last-child {border-bottom: none;}
+.out_list li .ic_deco {display: inline-block;vertical-align: middle;font-size: 0.94em;margin-right: 3px;}
+.out_list .txt {font-size: .9em;}
+/* E: 마이페이지 로그아웃, 회원탈퇴 */

@@ -1,0 +1,7 @@
+/**
+ * S: 360 이상 
+ */
+@media (min-width: 360px) {
+  /* 종목 메인 ㅋㅋ몰 */
+  .kk_mall .mall_list li {max-width: 31.3%}
+}

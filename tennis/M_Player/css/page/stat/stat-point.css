@@ -1,0 +1,19 @@
+.point-gain, .point-lost {text-align: center; background-color: #fff; border: 1px solid #ccc; padding-top: 2.14em; margin-left: 10px; margin-right: 10px;}
+.point-gain h3, .point-lost h3 {font-size: 1em;font-weight: bold; /* padding-bottom: 10px; */}
+.point-lost h3+p { padding-bottom:12px; font-size:0.85em;}
+/* 점수별 득실점 - 득점 */
+.point-gain-chart table, .point-lost-chart table {width: 100%; border: 1px solid #d0d0d0; margin-bottom: 20px;}
+.point-gain-chart thead tr {background-color: #d6e9f7; color: #333; border-bottom: 1px solid #d0d0d0;}
+.point-gain-chart thead th {text-align: center;border-right: 1px solid #d0d0d0;padding-top:2px; padding-bottom: 2px;font-size: 0.78em;}
+.point-gain-chart tbody tr {height: 30px; border-bottom: 1px solid #d0d0d0;}
+.point-gain-chart tbody th {text-align: left;background-color: #f0f0f0;color: #000;border-right: 1px solid #d0d0d0;padding-left: 10px;/* padding-right: 10px; */font-size: 0.75em; letter-spacing: -1px;width: 40%;}
+.point-gain-chart tbody td {background-color: #2385d0; color: #fff; border-right: 1px solid #d0d0d0; font-size:0.8em;}
+.point-gain-chart tbody td:empty {background-color: #fff;}
+
+/* 점수별 득실점 - 실점 */
+.point-lost-chart thead tr { background-color: #feecc5; border-bottom: 1px solid #ddd;/* height: 2.25em; */}
+.point-lost-chart thead th {text-align: center;border-right: 1px solid #d0d0d0;font-size: 0.78em; padding-top: 2px; padding-bottom: 2px;}
+.point-lost-chart tbody tr { height: 30px; border-bottom: 1px solid #d0d0d0; }
+.point-lost-chart tbody th {font-size: 0.75em;text-align: left;background-color: #f0f0f0;color: #000;border-right: 1px solid #d0d0d0;padding-left: 10px;/* padding-right: 10px; */width: 40%;}
+.point-lost-chart tbody td { background-color: #f0a400; color: #fff; border-right: 1px solid #d0d0d0; font-size:0.8em;}
+.point-lost-chart tbody td:empty {background-color: #fff;}

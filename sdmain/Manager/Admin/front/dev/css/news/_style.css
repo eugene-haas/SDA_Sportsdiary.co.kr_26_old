@@ -1,0 +1,171 @@
+﻿/* BOARD_VIEW 유도소식 > 뉴스/공지 > 게시판 상세보기 */
+.board_view {margin:30px 20px 60px 20px;}
+.board_view table {width:100%; text-align:left; font-size:14px;  font-family:"NanumBarunGothic"; color:#666; border-top:1px solid #0a5e94;}
+.board_view table thead th {height:49px; text-align:center; font-weight:bold; border-bottom:1px solid #ddd; background:#f2f2f2;}
+.board_view table thead th.title {padding:0 10px; text-align:left; font-size:16px; background:#fff;}
+.board_view table thead th.title strong {margin:0 0 0 8px; vertical-align:middle;}
+.board_view table thead td {padding:0 20px; border-bottom:1px solid #ddd;}
+.board_view table thead td a.icon_file {padding:2px 0 2px 28px; color:#2e90c8; text-decoration:underline; background:url(../../../dist/imgs/sub/icon_file.png) no-repeat 0 0;}
+.board_view table tbody td .board_txt {min-height:250px; margin:10px 0 0 0; padding:20px; line-height:1.7; background:#f2f2f2;}
+
+/* GYM 유도소식 > 유도장정보 */
+.gym {padding:30px 0px 0px 0px;}
+
+.search_gym {margin:0 0 30px; padding:22px 0; text-align:center; background:#f7f7f7; border:3px solid #eee;}
+.search_gym select {width:138px; height:32px; margin:0 2px; color:#666; font-family:"NanumBarunGothic"; vertical-align:top; line-height:100%; border:1px solid #ccc;}
+.search_gym input {width:294px; height:32px; margin:0 2px; color:#666; font-family:"NanumBarunGothic"; vertical-align:top; line-height:100%; border:1px solid #ccc;}
+.search_gym .btn_darkgray {width:60px; height:34px; line-height:32px; vertical-align:top; font-size:15px;}
+
+.gym_txt {margin:0 0 15px; color:#666; font-size:16px; font-family:"NanumBarunGothicB";}
+.gym_txt span {color:#d50000; font-weight:bold;}
+
+.gym_result {overflow:hidden; padding:10px; background:#f2f2f2; margin:0 0 60px 0;}
+.gym_result .left {float:left; width:440px; height:440px; background:#eaeaea; border:3px solid #eaeaea; border-bottom:0; overflow-y:scroll;}
+.gym_result .right {float:left; width:489px; height:440px; margin:0 0 0 5px; background:#fff;}
+
+.gym_result .gym_list {padding:20px 20px 5px 20px; margin:0 0 3px; font-family:"NanumBarunGothicB"; background:#fff;}
+.gym_result .gym_list ul{margin-bottom:10px;}
+.gym_result .gym_list h4 {margin:0 0 18px; color:#333; font-size:18px; font-weight:bold; font-family:"NanumBarunGothic";}
+.gym_result .gym_list li {padding:5px 0px 5px 20px; color:#666; font-size:15px; vertical-align:middle;font-weight:300;font-family:"NanumBarunGothic"}
+
+
+.gym_result .gym_list a.btn_map {display:inline-block; height:22px; line-height:24px; margin:0 0 0 5px; padding:0 10px; color:#fff; border-radius:20px; background:#f37200;font-size:13px;}
+.gym_result .gym_list a.btn_map:hover,
+.gym_result .gym_list a.btn_map:active,
+.gym_result .gym_list a.btn_map:focus {text-decoration:none;}
+
+/* EBOOK_LIST 유도소식 > 계간유도 리스트 */
+.ebook {padding:40px 0 0 0;}
+.icon_tit {padding:0 0 15px; margin:0 20px; color:#333; font-size:24px; font-family:"NanumBarunGothicB"; vertical-align:top; line-height:100%; border-bottom:1px solid #0085d3;}
+.search_ebook {margin:30px 0 15px 20px;}
+.search_ebook select {width:136px; height:32px; color:#666; font-family:"NanumBarunGothicB"; vertical-align:top; line-height:100%; border:1px solid #ccc;}
+.search_ebook .btn_darkgray {width:58px; height:32px; margin:0 0 0 3px; font-size:15px; vertical-align:middle;}
+
+.ebook_list {overflow:hidden; margin:0 8px;}
+.ebook_list li {float:left; margin:0 12px 24px; padding:25px 33px; border:2px solid #e2e2e2;}
+.ebook_list li p {vertical-align:top; line-height:100%; font-family:"NanumBarunGothicB";}
+.ebook_list li .img {width:150px; height:193px; border:1px solid #ccc;}
+.ebook_list li .img img {width:150px; height:193px;}
+.ebook_list li .day {margin:15px 0 9px 0; font-size:14px; color:#0085d3; text-align:center;}
+.ebook_list li .title {font-size:16px; color:#666; text-align:center;}
+
+/* EBOOK_LIST 유도소식 > 계간유도 신청하기 */
+.ebook_form {overflow:hidden; margin:10px 20px; padding:10px; background:#f2f2f2;}
+.ebook_form h5 {padding:10px 0; text-align:center; color:#fff; font-size:20px; font-family:"NanumBarunGothicB"; font-weight:normal; background:#758792;}
+.ebook_form .left {float:left; width:333px;}
+.ebook_form .left .ebook_select {margin:8px 0 0 0; border:3px solid #ddd; background:#fff;}
+
+.ebook_form .right {float:right; width:598px;}
+.ebook_form .right table {margin:0 0 15px; text-align:left; font-family:"NanumBarunGothicB"; font-weight:normal; color:#333; font-size:16px;}
+.ebook_form .right table input {width:428px; height:32px;}
+.ebook_form .right table th {padding:8px 0 8px 15px; border-bottom:1px solid #bbb;}
+.ebook_form .right table td {padding:8px 0; border-bottom:1px solid #bbb;}
+.ebook_form .right .txt_bank {margin:0 0 29px 15px; color:#ba0000; font-size:16px; font-family:"NanumBarunGothicB";}
+
+
+/* BOARD_LIST 유도소식 > 뉴스/공지 > 게시판 리스트 */
+.search_board {float:right; display:inline-block; text-align:right; margin:0 0 15px;}
+.search_board select {width:97px; height:32px; margin:0 2px; border:1px solid #ccc; vertical-align:top; line-height:100%; color:#666; font-size:14px; font-family:"NanumBarunGothic";}
+.search_board input {width:228px; height:32px; margin:0 2px; border:1px solid #ccc; vertical-align:top; line-height:100%; color:#666; font-size:15px; font-family:"NanumBarunGothic";}
+.search_board .btn_darkgray {width:60px; height:34px;margin:0 0 0 2px; font-size:15px; text-align:center;}
+
+.board_list table {width:100%; text-align:center; border-top:1px solid #0a5e94;}
+.board_list table tbody tr.notice {background:#deebf3;}
+.board_list table thead th {height:45px; color:#333; font-size:16px; font-family:"NanumBarunGothic"; font-weight:500; background:#f2f2f2; border-bottom:1px solid #ddd;}
+.board_list table tbody td {padding:10px 0; font-size:14px; color:#666; font-family:"NanumBarunGothic"; border-bottom:1px solid #ddd;}
+.board_list table tbody td.title {padding:0 15px; text-align:left;}
+.board_list table tbody td.title a {color:#666;}
+.board_list table tbody td .icon_notice img,
+.board_list table tbody td .icon_file img {vertical-align:middle;}
+
+.txt_news {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#5c7797;}
+.txt_judo {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#ff3b30;}
+.txt_subdivision {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#ff9500;}
+.txt_federation {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#69bf39;}
+.txt_notice {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#56b3e9; margin:0 5px 0 0;}
+.txt_job {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#5774f3;}
+.txt_etc {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#999999;}
+.txt_event {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#f54889;}
+.txt_judopeople {display:inline-block; width:51px; height:22px; line-height:22px; color:#fff; font-size:12px; font-family:"NanumBarunGothic"; text-align:center; background:#a15ae4;}
+
+.pagination {display: inline-block; margin: 40px auto 60px auto; font-family:"NanumBarunGothicB"; font-size:14px; text-align:center; width:100%;}
+.pagination > li {display:inline-block; vertical-align:top; line-height:100%;}
+.pagination > li > a,
+.pagination > li > span {display:block; width:28px; height:28px; margin:0 2px; vertical-align:top; line-height:30px; color: #333; text-decoration: none; background: #fff; border: 1px solid #bbbbbb;}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {color: #fff; background: #758792;}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {color: #fff; cursor: default; background: #758792;}
+.pagination > li.prev_page a {width:28px; height:28px; line-height:28px;}
+.pagination > li.prev a {width:28px; height:28px; line-height:28px; }
+.pagination > li.next a {width:28px; height:28px; line-height:28px; }
+.pagination > li.next_page a {width:28px; height:28px; line-height:28px;}
+.pagination > li > a > span {position:absolute; top:-9999px; left:-9999px;}
+.pagination > li.prev a:hover, 
+.pagination > li.prev a:focus,
+.pagination > li.prev_page a:hover,
+.pagination > li.prev_page a:focus,
+.pagination > li.next a:hover,
+.pagination > li.next a:focus,
+.pagination > li.next_page a:hover,
+.pagination > li.next_page a:focus {background-color: #758792;}
+
+
+/* 계간유도 */
+.magazine_view{padding:40px 0px 0px 0px;}
+.magazine_view .board_list {padding-right:0;}
+.magazine_view .list_box {margin-top: 30px;}
+.magazine_view .list_box ul li{float:left;width:217px;height:296px;border:2px solid #e2e2e2;margin-right:25px;margin-bottom:25px;text-align:center;}
+.magazine_view .list_box ul li:nth-child(4n){margin-right:0;}
+.magazine_view .list_box ul li .img{border:1px solid #ccc;width:150px;height:193px;margin:auto;margin-top:25px;}
+.magazine_view .list_box ul li .day{margin-top:18px;font-size:14px; color:#3a99d8;}
+.magazine_view .list_box ul li .name{margin-top:8px; color:#666; font-size:14px;}
+.magazine_view h4{border-bottom:2px solid #3a99d8;}
+
+
+/* 구독신청 내역조회 */
+.magazine_req{padding:40px 0px 50px 0px;float:left;}
+.magazine_req h4{border-bottom:2px solid #3a99d8;position:relative;}
+.magazine_req h4 a{position:absolute;right:0;}
+.magazine_req table{width:100%;margin-top:30px;}
+.magazine_req table tr td{border-right:1px solid #bbb;border-bottom:1px solid #bbb;padding:7px 0;text-align:center;}
+.magazine_req table tr td:first-child {border-left:1px solid #ddd;}
+.magazine_req table .title_bg td {background:#788286;color:#fff;font-weight:600;height:25px;}
+.magazine_req table .bg_color td{background:#f3f5f7;}
+.magazine_req .view_box{padding:10px; background:#f2f2f2;float:left;width:940px;margin-top:10px;margin-bottom:20px;}
+.magazine_req .view_box .b_title{height:40px;line-height:40px;font-size:18px;font-weight:600;text-align:center;background:#758792;color:#fff;}
+.magazine_req .view_box .left_con{float:left;width:332px;margin-right:10px;}
+.magazine_req .view_box .left_con ul{border:3px solid #ddd;background:#fff;margin-top:10px;}
+.magazine_req .view_box .left_con ul li{padding:30px 0;border-bottom:1px solid #bbb;margin:0 15px;}
+.magazine_req .view_box .left_con ul li:last-child{border-bottom:0;}
+.magazine_req .view_box .left_con ul li .s_title{height:26px;width:110px;text-align:center;color:#fff;line-height:26px;background:#758792;margin-left:0;border-radius:30px;}
+.magazine_req .view_box .left_con ul li .tetx{margin-top:20px;font-size:16px;}
+.magazine_req .view_box .left_con ul li .tetx input{float:left;margin-right:5px;margin-top:2px;}
+.magazine_req .view_box .left_con ul li .tetx span{float:left;margin-right:50px;}
+.magazine_req .view_box .left_con ul li .subscribe{font-size:20px;font-weight:600;margin-top:30px;}
+.magazine_req .view_box .left_con ul li .subscribe .r_text{float:right;color:#d8261c;}
+.magazine_req .view_box .left_con ul li .subscribe .r_text input{border:0;font-size:14px;height:32px;line-height:32px;color:#666;width:160px;}
+.magazine_req .view_box .left_con ul li .subscribe .gg_sc{margin-top:-10px;}
+.magazine_req .view_box .left_con ul li .select_line1{margin-top:20px;}
+.magazine_req .view_box .left_con ul li .select_line1 select{width:134px;height:32px;line-height:32px;}
+.magazine_req .view_box .left_con ul li .select_line2{width:284px;height:32px;line-height:32px;margin-top:10px;}
+.magazine_req .view_box .left_con .day{height:30px;line-height:30px;color:#fff;font-size:15px;text-align:center;background:#9fa3a8;margin:0 15px;margin-bottom:10px;}
+.magazine_req .view_box .right_con{float:left;width:598px;}
+.magazine_req .view_box .right_con ul li{padding:15px 0;border-bottom:1px solid #bbb;font-size:15px;font-weight:600;line-height:22px;float:left;width:100%;}
+.magazine_req .view_box .right_con ul li .l_text{float:left;width:125px;margin-right:30px;margin-left:10px;}
+.magazine_req .view_box .right_con ul li .r_text{float:left; font-weight:500;}
+.magazine_req .view_box .right_con ul li .r_text .map_1 a{height:34px;width:75px;line-height:34px;text-align:center;color:#fff;font-weight:600;background:#777;display:inline-block;}
+.magazine_req .view_box .right_con ul li .r_text .map_2{margin-top:10px;}
+.magazine_req .view_box .right_con .gg_sc li{padding:10px 0;}
+.magazine_req .view_box .right_con .red_color{margin-top:20px;float:left;margin-left:10px; color:#ba0000;font-size:15px;margin-bottom:70px;}
+.magazine_req .view_box .right_con .gg_sc_text{margin-bottom:50px;}
+.magazine_req .view_box .right_con .gt_btn_box{margin-bottom:0;}
+.magazine_req .btm_text{margin-top:10px; color:#666;}
+.magazine_req .view_box .right_con .in_5 {width:421px;}
+.magazine_req .view_box .right_con .in_6 {width:202px;}

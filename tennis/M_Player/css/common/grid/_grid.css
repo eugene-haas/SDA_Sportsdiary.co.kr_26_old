@@ -1,0 +1,17 @@
+.container {padding-left: 10px; padding-right: 10px; }
+.row {padding-left: 0; padding-right: 0;}
+
+/* column */
+[class*="col"] {float: left;}
+.col-1 { width: 33.33%; }
+.col-2 { width: 66.66%; }
+.col-3 { width: 100%; }
+
+/* column offset */
+.col-offset-1 { margin-left: 33.33%; }
+.col-offset-2 { margin-left: 66.66%; }
+.col-offset-3 { margin-left: 100%; }
+
+/* center offset */
+.center { position: relative; }
+.center .comp { position: absolute; left: -50%; width: 100%; /*margin-left: auto; 이 값만 별도로 설정 */ }

@@ -1,0 +1,171 @@
+/* tournament tree */
+
+.tournament {
+    height: 0;
+}
+
+.tournament__inner {
+    white-space: nowrap;
+    transform-origin: top left;
+    display: table;
+}
+
+.tournament__round {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.tournament__roundOf {
+    padding: 0;
+    text-align: center;
+    top: 0;
+    margin: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: #bfc3cc;
+    line-height: 100%;
+}
+
+
+/* .tournament__roundOf{font-size:60px;} */
+
+.tournament__block {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.tournament__block_board {
+    list-style: none;
+}
+
+
+/* .tournament__block_board{ width:220px; list-style:none; }
+.tournament__block_branch{ width:40px; } */
+
+.ttMatch {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    box-sizing: border-box;
+    border-color: #fff;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.ttMatch {
+    background-color: #ccc;
+}
+
+.ttMatch_first {
+    bottom: 50%;
+    border-width: 0 0 1px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.ttMatch_second {
+    top: 50%;
+    border-width: 1px 0 0 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.ttMatch__playerWrap {
+    display: block;
+    float: left;
+    width: calc(100% - 40px);
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: left;
+    color: #444444;
+}
+
+.ttMatch__playerInner {
+    position: relative;
+    width: 100%;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ttMatch__player {
+    display: inline;
+    font-size: 18px;
+    margin-right: 5px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.ttMatch__belong {
+    display: inline;
+    font-size: 16px;
+}
+
+.ttMatch__score {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    line-height: 60px;
+    color: #666666;
+}
+
+.ttBranch {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+.ttBranch__branch {
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin: auto;
+    border-style: solid;
+    box-sizing: border-box
+}
+
+.ttBranch__branch_top {
+    height: 0;
+    top: 0;
+}
+
+.ttBranch__branch_top_right {
+    height: 50%;
+    top: 0;
+}
+
+.ttBranch__branch_bottom_right {
+    height: 50%;
+    bottom: 0;
+}
+
+.ttBranch__branch_bottom {
+    height: 0%;
+    bottom: 0;
+}
+
+.ttBranch__branch_middle {
+    height: 0%;
+    top: 0;
+    bottom: 0;
+}

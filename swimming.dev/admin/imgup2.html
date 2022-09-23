@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Image Capture and Submit</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+ 
+var imageObj = null; 
+var mx,my,cmx,cmy = 0;
+var isDown = false;
+ 
+$(function() {
+    $('#file-input').change(function(e) {
+        var file = e.target.files[0],
+            imageType = /image.*/;
+ 
+        if (!file.type.match(imageType))
+            return;
+ 
+        var reader = new FileReader();
+        reader.onload = fileOnload;
+        reader.readAsDataURL(file);       
+    });
+ 
+	
+    function fileOnload(e) {
+        var $img = $('<img>', { src: e.target.result });
+        var canvas1 = $('#canvas1')[0];
+        var context = canvas1.getContext('2d');
+
+        $img.load(function() {
+
+			var MAX_WIDTH = 300;
+			var width = this.width;
+			var height = this.height;
+
+			if (width > MAX_WIDTH) {
+				height = height * (MAX_WIDTH / width);
+				width = MAX_WIDTH;
+			}
+
+			$(canvas1).attr('width', width+ 'px');
+			$(canvas1).attr('height', height +'px');
+
+			context.drawImage(this, 0,0,width, height);
+            imageObj = this;
+        });
+
+    }
+ 
+
+	function uploadCanvasData(){
+		var upimgurl = '';
+		var canvas = document.getElementById('canvas1');
+		if(canvas == null){
+			return false;
+		}
+		var dataUrl = canvas.toDataURL('image/png'); ////캔버스를 전송하는 방법
+		var blob = dataURItoBlob(dataUrl);
+		var formData = new FormData();
+		formData.append("iFile[]", blob, 'test2.png');
+			
+		$.ajax({
+			processData: false,
+			contentType: false,
+			url:"/pub/up/testUpload.asp",
+			type:"POST",
+			data:formData,
+			success: function(returnData){
+				alert("저장완료");
+			}
+		});
+
+
+
+		
+		
+//		var xhr = new XMLHttpRequest();
+//		xhr.open('POST', '/pub/up/testUpload.asp', true); //비동기
+//		xhr.onload = function() {
+//			if (xhr.status == 200) {
+//				try{
+//					var resp = JSON.parse(xhr.response);
+//				}
+//				catch(e){
+//				   return false;
+//				}
+//				//var value = resp.name; //file name
+//			}
+//		};
+//		xhr.send(formData);	
+
+	}
+
+	function dataURItoBlob(dataURI){
+		var byteString = atob(dataURI.split(',')[1]);
+		var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+		var ab = new ArrayBuffer(byteString.length);
+		var ia = new Uint8Array(ab);
+		for (var i = 0; i < byteString.length; i++)
+		{
+			ia[i] = byteString.charCodeAt(i);
+		}
+		var bb = new Blob([ab], { "type": mimeString });
+		return bb;
+	}
+
+
+    $('#save').click(function(){
+		uploadCanvasData();
+    });
+
+});
+ 
+
+
+
+</script>
+</head>
+<body>
+
+
+<div style="display:none;">
+<canvas id="canvas1" width="500px" height="300px"></canvas>
+</div>
+
+
+<br>
+<input type="file" id="file-input">
+<button id="save">Save to Server</button>
+<p>
+<canvas id="canvas2" width="500px" height="300px"></canvas>
+</body>
+</html>
+
+

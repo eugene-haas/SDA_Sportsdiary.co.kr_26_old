@@ -1,0 +1,57 @@
+.Game_operation .t_title{height:50px;line-height:50px;color:#fff;font-size:20px;font-family: 'NanumGothicB';background:#0f335b;text-align:center;}
+.Game_operation input{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;}
+.Game_operation select{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;}
+.Game_operation .competition_select{padding:15px 0;background:#e6e9ee;text-align:center;}
+.Game_operation .competition_select select{width:730px;}
+.Game_operation .tab{background:#c3cad4;width:100%;height:45px;line-height:45px;}
+.Game_operation .tab ul{width:730px;margin:auto;display:table;}
+.Game_operation .tab ul li{float:left;width:25%;}
+.Game_operation .tab ul li a{border-right:1px solid #c3cad4;background:#8b97a9;color:#fff;font-size:16px;font-family: 'NanumGothicB';display:block;text-align:center;}
+.Game_operation .tab ul li.on a{background:#fff;color:#333;}
+.Game_operation .ranking_result{width:836px;margin:auto;padding:20px 0;background:#fff;display:table;}
+.Game_operation .ranking_result label{float:left;margin-bottom:0;margin-top:5px;margin-right:20px;}
+.Game_operation .ranking_result select{float:left;width:170px;margin-right:5px;}
+.Game_operation .ranking_result a{float:left;width:156px;height:35px;line-height:35px;background:#ec0a2e;color:#fff;text-align:center;border-radius:3px;}
+.Game_operation .ranking_result a i{vertical-align: -1px;margin-left:5px;}
+.Game_operation .ranking_result input{height:auto;width:15px;height:15px;vertical-align: -3px;}
+.Game_operation .ranking_result span{font-weight:normal;}
+.Game_operation .search_box{width:1260px;margin:auto;border:3px solid #e1e7f0;padding:15px 0;text-align:center;background:#f7f9fb;margin-top: 20px;}
+.Game_operation .search_box select{width:170px;}
+.Game_operation .search_box input{width:250px;}
+.Game_operation .search_box a{width:70px;height:35px;line-height:35px;background:#7e868f;color:#fff;text-align:center;border-radius:3px;}
+.Game_operation .top_btn_list{width:1260px;margin:auto;padding:20px 0;}
+.Game_operation .top_btn_list a{width:150px;height:35px;line-height:35px;background:#7e868f;color:#fff;text-align:center;border-radius:3px;border:1px solid #0f335b;background:url(../../../../images/btn_bg1.jpg);color:#0f335b;font-size:13px;font-family: 'NanumGothicB';}
+.Game_operation .top_btn_list a img {width:22px; height:22px;}
+.Game_operation table{width:1260px;margin:auto;text-align:center;border-top:1px solid #ced5e3;border-right:1px solid #ced5e3;}
+.Game_operation table tr th{height:40px;line-height:40px;background:#e1e7f0;text-align:center;border-left:1px solid #ced5e3;border-bottom:1px solid #ced5e3;font-family: 'NanumGothicB';color:#333;}
+.Game_operation table tr td{height:40px;line-height:19px;border-left:1px solid #ced5e3;border-bottom:1px solid #ced5e3;padding:5px;width:70px;}
+.Game_operation table tr:nth-child(2n) td{background:#f7f9fb;}
+.Game_operation table tr td a{height:26px;line-height:26px;display:block;color:#fff;background:#7e868f;font-size:12px;width:50px;margin:auto;text-align:center;border-radius:3px;}
+.Game_operation table tr td a.order-btn{background:#387cb0;width:100px;}
+.Game_operation table tr td a.blue_btn {background:#387cb0;}
+.Game_operation table tr td a.blue_btn.on {background-color: #ec951b;}
+.Game_operation table tr td a.red_btn{background:#ec0a2e;}
+.Game_operation .match-order .team {text-align: center;width: 80px;padding-left: 5px;padding-right: 5px;}
+.Game_operation .match-order .team .cut-el {width: 100px;}
+.Game_operation .match-order td .cut-el {display: inline-block; vertical-align: middle; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;margin: 0 auto;}
+
+/* 길이 조절 */
+.Game_operation .match-order th:first-child {width: 70px;}
+.Game_operation .match-order th:nth-child(2) {width: 70px;}
+.Game_operation .match-order th:nth-child(3) {width: 100px;}
+.Game_operation .match-order th:nth-child(4) {width: 160px;}
+.Game_operation .match-order th:nth-child(8),
+.Game_operation .match-order th:nth-child(10) {width: 60px;padding-left: 4px;padding-right: 4px;}
+
+/*.Game_operation .match-order td:nth-child(8) span,
+.Game_operation .match-order td:nth-child(11) span {display: block; width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }*/
+
+.operate .match_sel {padding-bottom: 15px;}
+.match_sel h3 {position: relative;font-family: "NanumGothicB";font-size: 16px;padding-left: 20px;}
+.match_sel h3:before,
+.match_sel h3:after {content: '';position: absolute;width: 6px;height: 6px;}
+.match_sel h3:before {background-color: #d72e31;top: 4px;left: 0;}
+.match_sel h3:after {background-color: #0e51a0;top: 10px;left: 6px;}
+.match_sel h3 span {position: relative;display: inline-block;vertical-align: middle;padding-right: 7px;}
+.match_sel h3 span:after {content: '|';position: absolute;right: 0;color: #bbb;}
+.match_sel h3 span:last-child:after {content: '';}

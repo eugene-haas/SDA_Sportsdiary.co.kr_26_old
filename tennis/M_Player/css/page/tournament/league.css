@@ -1,0 +1,20 @@
+.list_league {width: 100%; min-width: 500px; overflow: hidden; transform: scale(0.6); transform-origin: top left; margin-top: 15px;}
+.list_league .player-name {font-size: 0.94em;}
+.list_league .player-name span {display: block; line-height: 125%; text-align: center;}
+.list_league .player-name span:first-child {margin-top: 0.71em;}
+.list_league .player-school {font-size: 0.79em; width: 100%; line-height: 100%; white-space: nowrap; text-overflow: clip; overflow: hidden;}
+.list_league .player-name span.pre-num {display: block; border: 1px solid #000; border-radius: 50%; font-size: 0.76em; width: 15px; height: 15px; text-align: center; line-height: 12px; margin: 0 auto;}
+.list_league td {border: 1px solid #aaa;}
+.list_league td .btn-write {background-color: #a8622e; color: #fff; margin-top: 5px; margin-bottom: 5px; padding: 3px 9px;}
+.list_league tr {border-left: 1px solid #aaa;}
+.list_league td:first-child {text-align: center; background-color: #d3e0eb;}
+.list_league tr:first-child {background-color: #e2e2e2; border-top: 1px solid #aaa;}
+.list_league tr:first-child td {text-align: center;}
+.list_league tr:first-child td:first-child {font-family: 'NanumGothicB'; font-size: 1.125em; text-align: center; background-color: #2e6fa9; color: #fff;}
+.list_league td {text-align: center; width: 15%; height: 100px; padding-left: 5px; padding-right: 5px;}
+.list_league td.no {background-color: #616971;}
+.list_league td.score {width: 17%; padding: 0; text-align: center; border-left: 1px solid #aaa;}
+.list_league tr:last-child td.score {border-bottom: 1px solid #aaa;}
+.list_league td.rank {text-align: center; padding: 0; border-right: 1px solid #aaa;}
+.list_league tr:last-child td.rank {border-bottom: 1px solid #aaa;}
+.list_league tr:last-child {border-bottom: 1px solid #aaa;}

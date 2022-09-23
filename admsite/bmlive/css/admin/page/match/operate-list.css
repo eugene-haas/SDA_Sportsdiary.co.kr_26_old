@@ -1,0 +1,4 @@
+.operate-list .search_box {position: relative;}
+.operate-list .search_box .r_search_btn {position: absolute;top: 0;right: 0;}
+.operate-list .search_box .r_search_btn .btn {font-size: 17px;border-radius: 0;width: 100px;height: 118px;line-height: 115px;padding: 0;}
+

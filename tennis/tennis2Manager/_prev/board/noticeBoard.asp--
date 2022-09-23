@@ -1,0 +1,152 @@
+<!--#include virtual="/Manager/Common/common_header.asp"-->
+<!--#include virtual="/Manager/Library/config.asp"-->
+<link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+<script src="../js/library/bootstrap.min.js"></script>
+<body>
+  <!-- S: main container -->
+  <div class="main container board col-12">
+    <section class="container">
+      <div class="row">
+        <div class="loaction">
+          <strong>게시판 관리</strong> > 공지사항 게시판
+        </div>
+      </div>
+    </section>
+    <!-- S: top row -->
+    <div class="top row clearfix">
+      <!-- S: 최근 기간 선택 -->
+      <!-- <div class="sel-date">
+        <select name="" class="darkgray">
+          <option value="">최근 1주일</option>
+          <option value="">최근 1개월</option>
+          <option value="">최근 3개월</option>
+        </select>
+      </div> -->
+      <!-- E: 최근 기간 선택 -->
+      <!-- S: 조회 앞 날짜 -->
+     <!--  <div class="sel-date">
+       <input type="date" class="day-btn" name="SDate" id="SDate" maxlength="10" value>
+     </div>
+     E: 조회 앞 날짜
+     <span class="wave">~</span>
+     S: 조회 뒷 날짜
+      <div class="sel-date">
+       <input type="date" class="day-btn" name="EDate" id="EDate" maxlength="10" value>
+     </div> -->
+      <!-- E: 조회 뒷 날짜 -->
+    </div>
+    <!-- E: top row -->
+
+    <!-- S: article-bg -->
+    <div class="article-bg">
+      <!-- S: board-list -->
+       <div id="board-contents" class="article-frame community board-list">
+        <table class="table-list notice-list basic-table">
+          <thead>
+            <tr>
+              <th>선택</th>
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+              <th>조회수</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6">등록된 글이 없습니다.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>3</td>
+              <td><a href="writeBoard.asp">마크업 입니다.</a></td>
+              <td>아무개</td>
+              <td>17.06.27</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>2</td>
+              <td><a href="writeBoard.asp">마크업 입니다.</a></td>
+              <td>누구게</td>
+              <td>17.06.25</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>1</td>
+              <td><a href="writeBoard.asp">마크업 입니다.</a></td>
+              <td>어떻게</td>
+              <td>17.06.01</td>
+              <td>7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- E: board-list -->
+      <!-- S: board-btm-list -->
+        <div class="board-btm-list">
+          <!-- S: pagination -->
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&lt;</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>1</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>2</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&gt;</span>
+              </a>
+            </li>
+          </ul>
+          <!-- E: pagination -->
+
+          <!-- S: btn-list -->
+          <div class="btn-list">
+            <!-- S: srch-field -->
+            <div class="srch-field">
+              <!-- S: 작성자 선택 -->
+              <div class="sel-date srch-sel">
+                <select name="">
+                  <option value="">제목</option>
+                  <option value="">내용</option>
+                  <option value="">제목 + 내용</option>
+                </select>
+                <input type="text" class="txt-box">
+              </div>
+              <!-- E: 작성자 선택 -->
+              <!-- S: 검색 버튼 -->
+              <div class="btn-cta">
+                <a href="#" class="btn btn-basic">검색</a>
+              </div>
+              <!-- E: 검색 버튼 -->
+            </div>
+            <!-- E: srch-field -->
+            <ul class="clearfix">
+              <li><a href="#" class="btn btn-orangy">선택 삭제</a></li>
+              <li><a href="#" class="btn btn-blue">글쓰기</a></li>
+            </ul>
+          </div>
+          <!-- E: btn-list -->
+        </div>
+        <!-- E: board-btm-list -->
+    </div>
+    <!-- E: article-bg -->
+  </div>
+  <!-- E: main container -->
+</body>

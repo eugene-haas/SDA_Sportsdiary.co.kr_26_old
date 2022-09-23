@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/* CSS Document */
+/* Reset */
+
+
+
+
+
+
+
+table a:link {
+	font-weight: bold;
+	text-decoration:none;
+}
+table a:visited {
+	font-weight:bold;
+	text-decoration:none;
+}
+
+table a:active,
+table {
+	font-size:12px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border:#ccc 0px solid;
+
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:0px;
+}
+table th {
+	background: #ededed;
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#000));*/
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+
+
+#table {display: table; width: 100%;}
+.row {display: table-row;}
+.cell {display: table-cell; padding: 3px; border-bottom: 1px solid #000;}
+.col1 { width: 20%;}
+.col2 {width: 20%;}
+.col3 {width: 40%;}
+.col4 {width: 20%;}

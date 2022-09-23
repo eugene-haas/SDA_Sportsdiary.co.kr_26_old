@@ -1,0 +1,72 @@
+/**
+ * S: qa_board 
+ */
+#board-contents .container {border-bottom: 1px solid #ccc;}
+.sel-list.qa-sel-list #search_user:before {border-top: none;}
+.top-counsel.qa-top {margin: 8px 15px;}
+.top-counsel.qa-top h3 {font-family:'notoKr-dl'; font-size:0.9em; display: inline-block; /*color: #fff;*/ float: left; margin-top: 8px;}
+.top-counsel.qa-top .btn-or {display: inline-block; float: right; height: 30px; line-height: 30px; padding:0 9px; font-size:0.7em;}
+.top-counsel.qa-top .btn-or:hover, .top-counsel.qa-top .btn-or:focus, .top-counsel.qa-top .btn-or:active {color: #fff;}
+
+.sub.qa-board .re-cont .icon {display: inline-block; width: 15px;}
+.sub.qa-board .word-list { border-top: 1px solid #ddd; margin: 0; margin-left: -10px; margin-right: -10px; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; font-size: 0.86em;}
+.sub.qa-board .word-list a {position: relative; border: none; padding-top:2px;}
+.sub.qa-board .word-list a:after {display: block; content: ''; clear: both;}
+.sub.qa-board .word-list a .txt {font-family:'notoKr-dl'; font-size: 0.96em; position: relative; display: inline-block; vertical-align: middle; max-width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.sub.qa-board .word-list .write-info span {font-family:'notoKr-dl'; font-size:1.16em;}
+.write-info span.seen {margin-left:6px;}
+.sub.qa-board .word-list a span[class*="ic-"] {display: inline-block; font-size: 0.86em; position: relative; margin-right: 5px; float: right;}
+.sub.qa-board .word-list a span.ic-re {background-color: #aaa; color: #fff;}
+.sub.qa-board .word-list a .txt span:first-child {right: -25px;}
+.sub.qa-board .word-list a .txt span:nth-child(2) {right: -50px;}
+.sub.qa-board .word-list .write-info {padding: 0 0.5em;}
+.sub.qa-board .re-cont {background-color: #fff; padding-left: 1.125em; padding-top: 5px; padding-bottom: 5px; float: none; /*border-bottom:1px solid #ddd;*/ margin:0 -10px; padding-left:30px;}
+
+.sub.qa-board .counsel-tit {position: relative;}
+.sub.qa-board .counsel-tit .txt {display: inline-block; max-width: 66%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; vertical-align: middle; font-size:0.92em;}
+.sub.qa-board .counsel-tit .ic-new {position: absolute; right: 20px; font-size: 0.74em; display: inline-block;}
+
+.qa-board + .pagination {width: 100%; text-align: center;}
+.qa-board + .pagination a {display: inline-block; width: 25px; height: 25px; line-height: 22px; margin-left: 3px; margin-right: 3px; border: 1px solid #bbb; border-radius: 4px; vertical-align: middle;}
+.qa-board + .pagination a.on {border: 1px solid #3899e4; color: #3899e4}
+.qa-board + .pagination a img {padding: 0 8px;}
+
+.qa-board .pagination {width: 100%; text-align: center; margin:0; padding:20px 0; background:#edf0f4;}
+.qa-board .pagination:empty {display: none;}
+.qa-board .pagination a {display: inline-block; width: 25px; height: 25px; line-height: 22px; margin-left: 3px; margin-right: 3px; border: 1px solid #bbb; border-radius: 4px; vertical-align: middle;}
+.qa-board .pagination a.on {border: 1px solid #3899e4; color: #3899e4}
+.qa-board .pagination a img {padding: 0 8px;}
+.qa-top .view-title {padding:13px 15px;}
+.qa-top .view-title .write-title {font-family:'notoKr-md';}
+.qa-top.write {background-color: #edf0f4; margin: 0; border-top: 2px solid #123651;}
+.qa-top.write .divn_bd {position: relative; /* border-top: 1px solid #788d9d; */ padding-top: 13px; padding-bottom: 13px; }
+.qa-top.write .divn_bd:before {position: absolute; top: -3px; left: 0; content: ''; width: 100%;}
+.qa-top.write h3 {flex: 1; font-size: 0.86em; letter-spacing: -0.0125em; width: 20%;}
+.qa-top.write input {display: inline-block; flex: 5; line-height:35px;}
+.qa-top .write-title {font-size:1em;}
+.qa-top .write-info {font-family:'notoKr-dl'; font-size:0.8em; color:#999;}
+.sub.board.qa-board {background-color: #fff;border-top:1px solid #ddd;}
+.qa-board.qa-write .type-word {border-top: 1px solid #ddd; padding: 10px;}
+.qa-board.qa-write .type-word textarea,
+.qa-board.qa-write .view-word textarea {color: #666; border: 1px solid #ddd; width: 100%; height: 200px; font-size: 0.84em; appearance:none; -webkit-appearance:none;}
+.qa-board.qa-write .view-word textarea {border: none;}
+#board-contents.qa-write .container {border-bottom:1px solid #ddd; padding: 10px; background-color: #fff;}
+.qa-board-cta {margin-top: 10px; justify-content:flex-start;}
+.qa-board-cta .btn.btn-cancel {font-family:'notoKr-dl'; font-size:0.8em; max-width:58px; float:left; margin-right: 63%;}
+.qa-board-cta.qa-view .btn.btn-cancel {margin-right: 48%;}
+.qa-board-cta .btn.delete {max-width: 58px; font-size:0.8em; float:right; background:#999; color:#fff;}
+.qa-board-cta .btn.modify {max-width: 58px; float:right; color:#fff; background:#1f557d;}
+.qa-board-cta a {display: inline-block; height: 32px; line-height:32px; padding: 0;}
+.qa-board-cta .btn-cancel,.qa-board-cta .btn-cancel:hover,.qa-board-cta .btn-cancel:active,.qa-board-cta .btn-cancel:focus {background:#123651; color:#fff; border-radius: 4px;}
+.qa-board-cta .btn-save {background-color: #fff; color:#123651; border-radius: 4px; font-size: 0.8em; margin-left:7px; border:2px solid #123651; max-width: 58px; justify-content: flex-end;} 
+.qa-board-cta .btn-save:hover, .qa-board-cta .btn-save:active, .qa-board-cta .btn-save:focus {color: #fff;}
+.qa-board .view-word {font-size: 0.85em; background-color: #fff; border-bottom: 1px solid #ddd; width: 100%; padding: 20px 10px; line-height:22px; word-break: break-word;}
+
+/* 답글 */
+.qna-re.re-divn .re-info {font-size: .84em; padding: 10px; background-color: #f8f8f8;}
+.qna-re.re-divn .re-info .ic-reply {background:#123651; color:#fff; padding:3px 6px; border-radius:4px; margin-right:5px;}
+.qna-re.re-divn .re-info p:last-child {color:#999; font-size:13px;}
+.qna-re .re-info p .ic-deco {display: inline-block; width: 20px; height: 20px; margin-right: 2px;}
+.qna-re.re-divn .view-word {font-size: .85em; margin-bottom: 10px; padding-bottom: 10px; background:#f8f8f8; border-bottom: 1px solid #ddd;}
+.qna-re.re-divn .view-word p {background:#fff; padding:10px;}
+/* E: qa_board */

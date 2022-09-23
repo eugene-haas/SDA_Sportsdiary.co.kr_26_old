@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../../fonts/NanumGothic/NanumGothic-Regular.eot);
+  src: url(../../../fonts/NanumGothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NanumGothic/NanumGothic-Regular.woff2) format('woff2'),
+    url(../../../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff'),
+    url(../../../fonts/NanumGothic/NanumGothic-Regular.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicB';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../../../fonts/NanumGothic/NanumGothic-Bold.eot);
+  src: url(../../../fonts/NanumGothic/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NanumGothic/NanumGothic-Bold.woff2) format('woff2'),
+    url(../../../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff'),
+    url(../../../fonts/NanumGothic/NanumGothic-Bold.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicEB';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../../../fonts/NanumGothic/NanumGothic-ExtraBold.eot);
+  src: url(../../../fonts/NanumGothic/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NanumGothic/NanumGothic-ExtraBold.woff2) format('woff2'),
+    url(../../../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff'),
+    url(../../../fonts/NanumGothic/NanumGothic-ExtraBold.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumSquareBold';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../../fonts/NanumSquare/nanumsquareb.eot);
+  src: url(../../../fonts/NanumSquare/nanumsquareb.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NanumSquare/nanumsquareb.woff2) format('woff2'),
+    url(../../../fonts/NanumSquare/nanumsquareb.woff) format('woff'),
+    url(../../../fonts/NanumSquare/nanumsquareb.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NanumGothic/nanumsquareb.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../../fonts/NotoSans/NotoKR-Regular/notokr-regular.eot);
+  src: url(../../../fonts/NotoSans/NotoKR-Regular/notokr-regular.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NotoSans/NotoKR-Regular/notokr-regular.woff2) format('woff2'),
+    url(../../../fonts/NotoSans/NotoKR-Regular/notokr-regular.woff) format('woff'),
+    url(../../../fonts/NotoSans/NotoKR-Regular/notokr-regular.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NotoSans/NotoKR-Regular/notokr-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-dl';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../../fonts/NotoSans/NotoKR-DemiLight/notokr-DemiLight.eot);
+  src: url(../../../fonts/NotoSans/NotoKR-DemiLight/notokr-DemiLight.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NotoSans/NotoKR-DemiLight/notokr-DemiLight.woff2) format('woff2'),
+    url(../../../fonts/NotoSans/NotoKR-DemiLight/notokr-DemiLight.woff) format('woff'),
+    url(../../../fonts/NotoSans/NotoKR-DemiLight/notokr-DemiLight.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NotoSans/NotoKR-DemiLight/notokr-DemiLight.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-md';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot);
+  src: url(../../../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff2) format('woff2'),
+    url(../../../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff) format('woff'),
+    url(../../../fonts/NotoSans/NotoKR-Medium/notokr-medium.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'Noto-Bd';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot);
+  src: url(../../../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot?#iefix) format('embedded-opentype'),
+    url(../../../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff2) format('woff2'),
+    url(../../../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff'),
+    url(../../../fonts/NotoSans/NotoKR-Bold/notokr-bold.ttf) format('truetype');
+  src: local(※), url(../../../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff');
+}
+
+body {font: 14px/150% 'NanumGothic', '나눔고딕', 'MalgunGothic', 'dotum', 'gulim', 'arial', sans-serif; letter-spacing: -0.02em; box-sizing: border-box; -webkit-box-sizing: border-box; color: #000;}

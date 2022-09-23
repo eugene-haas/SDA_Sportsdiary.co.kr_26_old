@@ -1,0 +1,150 @@
+/* 마이페이지 > 메뉴 */
+.mypage {background:#edf0f4; height: 100%;}
+.user-img-wrap {padding:10px 0 8px; font-size:18px; color:#222; text-align:center; background:#eaf0f5;}
+.user-img-wrap p {font-size: 0.85em; font-family:'NanumGothicB';}
+.user-img { text-align: center; width: 70px; height: 70px; line-height: 70px; margin:0 auto 3px; border:1px solid #c3c3c3; border-radius: 50%; overflow: hidden;}
+.user-img img {min-width: 70px; min-height: 70px; line-height: 70px;margin-top: calc(-50% + 30px);}
+.mypage-menu {background:#fff; border-top:1px solid #ddd; letter-spacing: -1px;}
+.mypage-menu li a {overflow:hidden; width:100%; padding:14px 15px; border-bottom:1px solid #ddd; display: flex; align-items: center; justify-content: center;}
+.mypage-menu li p:first-child {float:left; width:11%; max-width: 42px; margin:0; padding-left:2%;}
+.mypage-menu li p:nth-child(2) {float:left; width:76%; margin-left:4%;}
+.mypage-menu li p:last-child {float:left; width: 8%; max-width: 32px; padding:0 2%;}
+.mypage-menu li p strong { display:block; font-size:0.95em; line-height: 1.24em; padding-bottom:3px;}
+.mypage-menu li p span { display:block; color:#666; font-size: 0.81em;  letter-spacing: -0.12em; font-family:'NanumGothic'; line-height:1.4em;}
+
+/* 마이페이지 > 내정보관리 */
+.join-form .uniq_n p:first-child .tit-box {background-color: #ff7200; color: #fff; padding: 8px;}
+.join-form .uniq_n p:nth-child(2) {background-color: #fff; color: #ff7200;}
+.join-form .uniq_n p.un_iden .tit-box {background-color: #fff; color: #000;}
+.join-form .uniq_n p.un_iden a {display: inline-block; background-color: #999; color: #fff; font-size: 1em; font-weight: bold; padding-left: 15px; padding-right: 15px; border-radius: 4px; height: 35px; line-height: 35px;}
+.join-form .regist_a .btn {padding-top: 0; padding-bottom: 0;}
+.mypage h2 {font-size: 0.90em;}
+.h30 {height: 30px;}
+.myinfo {width:100%; padding:13px 0 11px; letter-spacing: -1px; border-top:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2; background:#fff;}
+.myinfo .img-myinfo {text-align: center; float:left;margin: 6px 5%;width: 80px; height: 80px; line-height: 80px; border:1px solid #c3c3c3;border-radius: 50%;overflow: hidden;}
+.myinfo .img-myinfo img {min-width: 80px; min-height: 80px; line-height: 78px; margin-top: calc(-50% + 35px);}
+.txt-myinfo {width: 60%;float:left;/* font-size: 0.85em; */font-size: 0.81em;margin-bottom:10px;line-height: 1.35em;margin-top: 9px;}
+.txt-myinfo strong {display:block; font-size:1.1em;}
+.btn-myinfo {padding-top:5px;margin-top:10px;}
+.txt-myinfo .btn-gray, .txt-myinfo .btn-skyblue {font-size: 12.5px;}
+.txt-myinfo-number {font-size: 0.78em; line-height: 1.4em; padding:0 10px 7px; color:#ff7200;}
+
+/* 마이페이지 > 내정보관리 > 선수훈련 데이터 열람 동의 */
+.parent-data-wrap {padding:10px; background:#edf0f4;}
+.parent-data-wrap .tit-parent-data {overflow:hidden; background:#ff7200;}
+.parent-data-wrap .tit-parent-data h2 {color:#fff;}
+.parent-data-wrap .tit-parent-data .more-a,
+.parent-data-wrap .tit-parent-data .close-a {float:right; margin:5px 10px 0 0; padding: 6px 7px; color: #fff; font-size: 10px; line-height: 10px; border: 2px solid #fff; border-radius: 50%; text-align: center;}
+.parent-data {padding:10px; margin-bottom:10px; background:#fff;}
+.parent-data h3 {padding-left:10px; padding-bottom: 5px; font-size: 0.88em;}
+.parent-data h3:nth-child(4) {margin-top: 15px; padding-bottom: 0;}
+.parent-data h3.tit-manager {padding-top:10px; border-top:1px solid #ccc;  background-position: 0 15px;}
+.parent-data ul {margin-bottom:5px;}
+.parent-data li {display:flex; padding-bottom:5px;}
+.parent-data li p {font-size: 0.81em; width:60%; display: inline-block;}
+.parent-data li p:last-child {width: 37%; display:inline-block; text-align:center; color:#fff; background:#999; border-radius:3px; font-size: 0.75em;}
+.parent-data .graybox {padding:10px; background:#edf0f4; font-size: 0.75em; line-height: 1.5em;}
+.parent-data .graybox span {display:block; color:#ff7200;}
+.parent-data p.data-cut {background:#2a3c4a; font-size:0.9em; font-family:"NanumGothicB"; padding-left:10px; padding-top:2px; padding-bottom:2px; color:#fff; margin-top:10px; margin-bottom:10px;}
+.parent-data .cut li {font-size:0.82em; line-height:18px;}
+.parent-data .cut li .point {color:#ff7200; font-size:0.96em; font-family:"NanumGothicB";}
+.parent-data span {color:#ff7200; font-size:0.85em;}
+
+.parent-data-wrap .fold {width: 100%;}
+.parent-data-wrap h2 .icon {margin-top:-2px; float: right; border: 2px solid #fff; border-radius: 50%; width: 20px; height: 20px; line-height: 20px; text-align: center;}
+.parent-data-wrap .caret {margin-top: -3px; margin-left: 0px; transition: all .3s cubic-bezier(0.29,-0.55, 0.62, 1.93);}
+.parent-data-wrap .on .caret {transform: rotate(180deg);}
+.sub.mypage .btn-center {margin-top: 10px; padding-bottom: 60px;}
+.sub.mypage .btn-center a.btn-left:hover,
+.sub.mypage .btn-center a.btn-left:focus,
+.sub.mypage .btn-center a.btn-left:active {color: #3f505d;}
+.sub.mypage .btn-center a.btn-right:hover,
+.sub.mypage .btn-center a.btn-right:focus,
+.sub.mypage .btn-center a.btn-right:active {color: #fff;}
+
+/* 마이페이지 > 비밀번호 변경 */
+.top-list {text-indent: -6px; padding:18px 15px 13px; font-family:'NanumGothicB'; font-size: .94em; color:#fff; background:#3f505d;}
+.top-list li { padding:0 0 5px; letter-spacing: -0.05em; font-size: 0.83em; font-weight: lighter; line-height: 1.5em;}
+.top-list li span { display:block; color:#ff7e00; padding-left:5px;}
+
+.pw-modify { font-size:0.85em; margin:10px 0; background:#fff; border-top:1px solid #d4d4d4;}
+.pw-modify li {overflow:hidden; padding:0 10px; border-bottom:1px solid #d4d4d4; font-size: 16px;}
+.pw-modify p {float:left; vertical-align:middle; letter-spacing: -0.5px; padding:5px 0; line-height:38px; color:#333; font-weight:bold; font-size: 0.8em;}
+.pw-modify p:first-child {width:44%;}
+.pw-modify p:last-child {width:56%;}
+
+/* 마이페이지 > 소속변경 */
+.my-school-list {margin:10px; border:1px solid #d2d2d2; border-bottom:none; background:#fff; font-family: 'NanumGothicB';}
+.my-school-list li {font-size: 0.95em; overflow:hidden; width:100%; padding:4px 0; border-bottom:1px solid #d2d2d2;}
+.my-school-list li p { padding:0 10px; height:38px; line-height:38px; float: right;}
+.my-school-list li:last-child a { width: 80px; padding: 0 10px; letter-spacing: -0.02em;}
+.my-school-list li:last-child a:hover,
+.my-school-list li:last-child a:focus,
+.my-school-list li:last-child a:active {color: #fff; text-decoration: none;}
+.my-school-list li p:first-child { float:left;}
+.my-school-list li p:first-child .icon-now {margin-left: 5px; letter-spacing: -0.02em; padding: 0 6px;}
+.my-school-list li p:last-child { float:right; color:#999; font-size: 12px; letter-spacing: -1px;}
+
+/* 마이페이지 > 연습상대 관리*/
+.rival-list-wrap { margin:10px 10px 0 10px; padding:0 0 20px;}
+.rival-list {margin-top:20px; border:1px solid #d2d2d2; border-bottom:none; background:#fff;}
+.rival-list li {overflow:hidden; width:100%; padding:8px 0; font-size:0.85em; font-family: 'NanumGothicB'; /*height:38px;*/ /*line-height:38px;*/ border-bottom:1px solid #d2d2d2;}
+.rival-list li p:nth-child(1) {float:left; width:90%; padding-left:4%;}
+.rival-list li p:nth-child(2) {float:left; width:4%; padding:0 2%;}
+.rival-name {margin-right:1px;}
+.rival-list li p img {width:10px;}
+
+/* 마이페이지 > 연습상대 관리 > 팝업 */
+.rival-check-list {overflow:hidden; width:100%;}
+.rival-check-list li {float:left; width:50%; margin-bottom: 8px;}
+.rival-select-list {margin-top:10px; padding:10px 0; border-top:1px solid #ddd;}
+.txt-gray {width:96%; padding:2%; border:1px solid #d2d2d2; border-radius:3px; background:#f3f3f3;}
+
+/* 마이페이지 > 훈련종류 항목관리 */
+.tab-menu.type2 {display:flex; text-align:center;}
+.tab-menu.type2 li {width:50%;color:#85929c; font-size:1em; background:#dbe5f3; border-bottom:3px solid #dbe5f3;}
+.tab-menu.type2 li a {color:#85929c; display:block; padding:10px 0 7px 0; width:100%;}
+.tab-menu.type2 li.on {color:#fff; background:#26577f; border-bottom:3px solid #26577f; font-family: 'NanumGothicB';}
+.tab-menu.type2 li.on a {color: #fff; text-decoration: none;}
+.tabc.type2 { padding:0;}
+
+.training-add {padding:10px; background:#26577f;}
+.training-add input {width:80%; height:30px; border:1px solid #b4b4b4; border-radius:3px; color: #000; vertical-align:top; line-height:100%;}
+
+.training-add-list li {display:flex; padding: 7px 10px 6px 10px; border-bottom:1px solid #d4d4d4; background:#fff;}
+.training-add-list li p {width:68%; font-size:0.85em; margin-right:1%; line-height: 2em; font-family: 'NanumGothicB';}
+.training-add-list li a {margin:0 1% 0 0; width:15%; text-align: center; font-family: 'NanumGothicB'; font-size: 0.82em; line-height: 2.4em; height: 33px;}
+
+.training-fix-list li {padding:10px; color:#888; font-size:0.85em; border-bottom:1px solid #d4d4d4; background:#f2f2f2; font-family: 'NanumGothicB';}
+
+#confirm-del .modal-txt {font-size: 1.02em;text-align: center; margin-top:30px; margin-bottom:20px; font-family:"NanumGothicB";}
+#confirm-del .btn-center {padding-bottom:20px;}
+#confirm-del .btn-center a {padding:10px 15px; font-family:"NanumGothicB";}
+#confirm-del .btn-center a:first-child {padding:9px 13px;}
+#confirm-del .close,
+#confirm-del .close span {font-size:28px; color:#666; opacity:1;}
+.training-add-list li a:hover,
+.training-add-list li a:focus,
+.training-add-list li a:active {color: #fff;}
+
+#import-number .modal-header .close {top: 10px;}
+
+.confirm-modal .modal-txt-wrap.player-result .player-number {text-align: left; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; padding-top: 20px; margin-top: 20px; padding-bottom: 20px; margin-bottom: 10px;}
+.confirm-modal .modal-txt-wrap.player-result .player-number p {display: inline-block; color: #333;}
+.confirm-modal .modal-txt-wrap.player-result .player-number p.player-result-number,
+#import-number.confirm-modal .modal-txt-wrap.player-result .player-number p.player-result-no {width: 100%; margin-top: 10px;}
+#import-number.confirm-modal .modal-txt-wrap.player-result .player-number p.player-result-no {background: none; border: none;}
+.confirm-modal .modal-txt-wrap.player-result .player-number p:last-child {background-color: #e2e2e2; color: #888; border: 1px solid #b4b4b4; border-radius: 3px; width: 73%; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;}
+#import-number.confirm-modal .modal-footer {padding: 10px;}
+#import-number.confirm-modal .modal-footer .btn-modal-close {width: 42%; padding-top: 0.6em; padding-bottom: 0.6em; background-color: #999;}
+
+/* 마이페이지 > 내 정보 관리 */
+.mypage .warn-pha {font-size: 0.84em; font-weight: bold; letter-spacing: -0.075em; line-height: 150%; padding: 0 12px; }
+
+/* 마이페이지 > 국가대표 등록 모달 */
+.belong-change .modal-header .close {top: 8px;}
+.belong-change .join-form {border-bottom: 1px solid #d4d4d4; margin-top: 20px; padding-top: 10px; padding-bottom: 10px;}
+.belong-change .join-form p:first-child {text-align: left;}
+.belong-change .join-form li:first-child p:nth-child(2) input {width: 68%;}
+.belong-change .join-form li:last-child {border-bottom: none;}
+.belong-change .modal-footer .btn {width: 42%; padding: 8px 12px;}

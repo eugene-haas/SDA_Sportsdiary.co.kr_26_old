@@ -1,0 +1,100 @@
+a.btn:hover, a.btn:focus, a.btn:active {text-decoration: none;} 
+.btn-center {overflow:hidden; width:100%; padding-bottom:30px; text-align:center;}
+.btn-center .btn-left { float:left; width:48.5%;}
+.btn-center .btn-right { float:right; width:48.5%;}
+.btn-solo {text-align:center;}
+
+.btn-full {width:100%; color:#fff; padding:12px 0; font-size: 0.9em; text-align:center; font-family:"NanumGothicB"; background:#3f505d; border-radius:3px; border-style:none;}
+.btn-full:hover, .btn-full:focus, .btn-full:active {color: #fff;}
+.btn-full-white {width:100%; padding:12px 0; font-size: 0.98em; color:#3f505d; text-align:center; font-family:"NanumGothicB"; background:#fff; border:1px solid #3f505d; border-radius:3px;}
+.btn-left {padding: 8px 0; font-size: 0.9em; color:#3f505d; font-family:"NotoKR-md"; text-align:center; border-radius:3px; border:1px solid #3f505d; background:#fff;}
+.btn-right {padding: 8px 0; color:#fff; font-size: 0.9em; font-family:"NotoKR-md"; text-align:center; border-radius:3px; border:1px solid #3f505d; background:#3f505d;}
+.btn-center a.btn-right:hover, .btn-center a.btn-right:focus, .btn-center a.btn-right:active {color: #fff;}
+
+.btn-or {display:inline-block;color:#fff;padding:0 15px;font-size:0.9em;height:33px; line-height:32px;font-family:"NanumGothicB";border-radius:3px; background:#ff7200; border:1px solid #ff7200;}
+.btn-blue {display:inline-block; padding:8px 30px; color:#fff; font-size: 0.9em; font-family:"NanumGothicB"; border-radius:3px; background:#3f505d;}
+a.btn-blue:hover,
+a.btn-blue:focus,
+a.btn-blue:active {color: #fff; text-decoration: none;}
+.btn-gray {display:inline-block; font-size: 12px; padding:0 7px; height: 33px;/*margin-top:3px; 회원가입틀어짐 */vertical-align: top; font-family:"NotoKR-md"; color:#fff; text-align:center; background:#999; border-radius:3px; border-style:none; vertical-align:top; line-height:33px;}
+.btn-gray:hover, .btn-gray:focus, .btn-gray:active {color: #fff;}
+.btn-gray2 {display:inline-block; font-size: 12.5px; padding:0 14px; height: 33px; vertical-align: top; font-family:"NanumGothicB"; color:#fff; text-align:center; background:#999; border-radius:3px; border-style:none; vertical-align:top; line-height:33px;}
+.btn-skyblue {display:inline-block; padding:0 11px; height:33px; line-height: 33px; font-family:"NanumGothicB"; color:#fff; text-align:center; background:#3899e4; border-radius:3px; border-style:none; vertical-align:top;}
+.btn-skyblue:hover, .btn-skyblue:focus, .btn-skyblue:active {color: #fff;}
+
+.btn-skyline {display:inline-block; height:38px; line-height:38px; padding:0 10px; font-family: 'NanumGothicB'; color:#3899e4; border:1px solid #3899e4; border-radius:3px;}
+.btn-grayline {display:inline-block; height:38px; line-height:38px; padding:0 10px; color:#333; border:1px solid #999; border-radius:3px;}
+.btn-schedule { width:30%; padding:3px 10px 3px 30px; border:1px solid #999; border-radius:15px; background-repeat: no-repeat; background-position: 12px 50%; background-size:13px 17px;}
+
+.btn-navyline-square {display:inline-block; padding:0 5px; color:#3f505d; background:#fff; border:2px solid #3f505d;}
+.btn-navy-square {display:inline-block; padding:0 5px; color:#fff; background:#3f505d; border:1px solid #3f505d;}
+.btn-gray-square {display:inline-block; padding:0 5px; color:#fff; background:#999; border:1px solid #999;}
+.btn-red-square {display:inline-block; padding:0 5px; color:#fff; background:#b30000; border:1px solid #b30000;}
+
+.btn-add {display:inline-block; height:30px; font-size: 0.8em; font-family: 'NanumGothicB'; text-align:center; line-height:30px; width:18%; /*padding:0 10px;*/ color:#fff; background:#0e293f; border-radius:3px;}
+.btn-add span {color:#ff7200;}
+.btn-add:hover, .btn-add:focus, .btn-add:active {color: #fff;}
+
+.icon-skyblue {display:inline-block; height:21px; line-height:21px; font-size: 11px; padding:0 6px; letter-spacing: -1px; color:#fff; border-radius:3px; background:#3899e4;}
+.icon-gray {display:inline-block; height:21px; line-height:21px; font-size: 11px; letter-spacing: -1px; padding:0 6px; color:#fff; border-radius:3px; background:#999;}
+.icon-navy {display:inline-block; height:23px; line-height:23px; padding:0 10px; color:#333; font-size:0.85em; border-radius:20px; background:#dce3e9;}
+.icon-red {color:#fff; border-radius:3px; padding:3px 8px; background:#e43838;}
+.icon-plus {margin-right:5px; padding:0 5px; font-weight:bold; color:#0076d1; border:2px solid #0076d1; border-radius:50%;}
+
+a.btn:hover, a.btn:focus {color: inherit;}
+
+/* 테니스 버전 추가 */
+.tab .btn {position: relative;}
+
+.sel_wr .btn {font-family: 'NanumGothic';font-size: 1em;font-weight: bold;height: 35px;line-height: 35px;letter-spacing: -0.02em;padding-top: 0;padding-bottom: 0;color: #999; width: 50%;float: left;}
+.tab_2 li:first-child .btn {border-right: none;border-top-right-radius: 0;border-bottom-right-radius: 0;}
+.tab_2 li:last-child .btn {border-left: none;border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.sel_wr .btn.on {background-color: #164369;color: #fff;border: none;}
+.sel_wr .btn.on .fa {color: #fff;}
+.sel_wr .btn .ic-new {top: 10px;right: 5px;font-size: 0.86em;width: 18px;height: 18px;line-height: 18px;}
+
+.btn-empty {font-family: 'NotoKR';font-size: 1em;letter-spacing: -0.02em;background-color: #fff;color: #666;border: 1px solid #bbb;border-radius: 4px;width: 80px;height: 30px;line-height: 30px;padding-top: 0;padding-bottom: 0;}
+.btn_orangy {background-color: #ff7e00;color: #fff;}
+.btn_orangy .fa {color: #fff;}
+
+/* 난타 러브콜 버튼 */
+.btn_love_call .btn {position: relative;display: inline-block;width: 60px;height: 62px;}
+.btn_love_call .btn:hover,
+.btn_love_call .btn:focus,
+.btn_love_call .btn:active {outline: none}
+.btn_love_call .btn.off {background-color: #bbb;}
+.btn_love_call .btn.off .end_txt {line-height: 60px;}
+.btn_love_call .btn .ic_deco {display: inline-block;width: 16px;height: 16px;margin: 0 auto;}
+.btn_love_call .btn span {display: block;font-size: 0.92em;width: 100%;line-height: 1;padding-bottom: 4px;}
+.btn_love_call .btn .ic-new {width: 16px;height: 16px;line-height: 16px;top: -6px;left: -6px;}
+
+.btn_love_call.btn_line1 .btn {background-color: #ff7e00;width: 90px;height: 30px;line-height: 30px;}
+.btn_love_call.btn_line1 .btn .txt {line-height: inherit;}
+
+
+/**
+ * on_off_switch 버튼
+ */
+.btn_switch {position: relative;display: block;font-size: 0.86em;font-weight: bold;letter-spacing: -0.02em;border-radius: 20px;width: 85px; height: 28px; line-height: 28px;padding: 0;-webkit-box-shadow: inset -1px 1px 4px #999; box-shadow: inset -1px 1px 4px #999;transition: all .3s ease ;overflow: hidden;-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;}
+.on_off_switch .chk_ipt {display: none;}
+.btn.btn_switch .front,
+.btn.btn_switch .back {display: block;letter-spacing: -0.025em;border-radius: 20px;width: 100%;transition: all .3s ease;}
+.btn.btn_switch .front {position: relative;background-color: #c5c5c5;color: #666;border-top-left-radius: 0;border-bottom-left-radius: 0;padding-left: 24px;margin-left: 0px;}
+.btn.btn_switch .back {position: relative;top:-28px;background-color: #2e94c5;color: #fff;margin-left: -100%;border-top-right-radius: 0;border-bottom-right-radius: 0;}
+.btn.btn_switch.on {display: block;color: #fff;border-radius: 20px;overflow: hidden;}
+
+/* 텍스트 움직임 */
+.btn.btn_switch.on .front {margin-left: 100%;}
+.btn.btn_switch.on .back {margin-left: 0;}
+
+/* 동그라미 마크 */
+.btn.btn_switch:after {position: absolute;top: 0;bottom: 0;left: 0;right: 59%;z-index: 40;margin: 2px;content: ''; background-color: #fff; border-radius: 20px; width: 30px; height: 22px;transition: all .3s ease;}
+.btn.btn_switch.on:after {left: 59%;right: 0;}
+
+.btn.btn_switch.on .back {letter-spacing: -0.02em;padding-right: 24px;}
+
+/* on_off_switch 버튼 */
+
+.btn_empty {font-size: 0.93em;letter-spacing: -0.02em;background-color: #fff;color: #666;border: 1px solid #bbb;border-radius: 4px;padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}
+
+.btn-ok {background-color: #005895;color: #fff;}

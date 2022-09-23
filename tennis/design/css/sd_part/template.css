@@ -1,0 +1,31 @@
+.container_body .box {
+  height: 3300px;
+  background-color: #ddd;
+}
+
+.temp_box {
+  text-align: center;
+}
+
+.lazy_spinner {
+  display: none;
+  position: fixed;
+  top: 45%;
+  left: 45%;
+}
+
+.lazy_spinner:before {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin: 0;
+}
+
+/*# sourceMappingURL=../maps/sd_part/template.css.map */

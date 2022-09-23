@@ -1,0 +1,26 @@
+.film-fav .ana .stat-txt {width: 65%;letter-spacing: -.05em;margin-bottom: 5px;}
+/*.film-fav .ana span[class*="-favorite"] {margin-top: -2px;}*/
+.film-fav .ana .film-info {font-size: 0.75em;line-height: 1.3em;margin-bottom: 10px;letter-spacing: -0.09em;}
+.film-fav .ana .stat-list { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; margin-bottom: 60px; border-bottom: 1px dotted #ddd; background:#fff;}
+.film-fav .ana .stat-list li {border-bottom: none;}
+.film-fav .ana .video a {height: 200px;}
+.film-fav .ana .video-title {font-family: 'NanumGothicB'; background-color: #164369; text-align: center; padding-top: 12px; padding-bottom: 7px;}
+.film-fav .ana .video-title h3 {font-size: 0.93em; color: #fff; padding:0 10px; line-height:20px;}
+.film-fav .ana .video-title p {font-size: 0.83em; color: #9cb6cc;}
+.film-fav .stat-list p span.cut-off {display: inline-block; float: none; width:100%; margin:0; border-radius: 0; text-align: left; height: 30px; line-height: 30px;}
+.film-fav .stat-list p span.cut-off .sw-chara {padding-left:2%;}
+.film-fav .stat-list span.cut-off .icon-favorite {vertical-align: middle;}
+/*.film-fav .stat-list .video-info {padding-top: 5px; padding-bottom: 5px;}*/
+.film-fav .stat-list .video-info .me,
+.film-fav .stat-list .video-info .you {font-size: 1em; color: #333; padding-top: 10px; padding-bottom: 10px; line-height: 20px;}
+.film-fav .stat-list .video-info .me {width: 41%;float: left; margin-left: 10px;}
+.film-fav .stat-list .video-info .you {width: 41%;float: right; margin-right: 10px; text-align: right;}
+.film-fav .stat-list .video-info .school {display: block; font-size: 0.83em; color: #999; float: none;}
+.film-fav .stat-list .video-info {position: relative;}
+.film-fav .stat-list .video-info .vs {position: absolute; top: 46px; left: 48%; background-color: #ddd; color: #666; font-size: 17px; width:23px; height:23px; line-height:20px; text-align:center;}
+
+.film-fav .ana .video-title,
+.film-fav .ana .video .play,
+.film-fav .ana .video-info {margin-left: -10px; margin-right: -10px;} /* 좌우 여백 제거 */
+
+.film-fav .ana .video-info.group .vs {top: 45px; left: 48%;}

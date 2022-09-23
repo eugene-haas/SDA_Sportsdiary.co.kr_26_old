@@ -1,0 +1,73 @@
+/**
+ * 햄버거 메뉴
+ */
+.dim {display: none; position: absolute; top: 0; left: 0; content: ''; z-index: 999; width: 100%; height: 100%; background-color: hsla(0, 0%, 0%, .3); }
+.gnb {position: fixed; top: 0; right: -100%; z-index: 1000; width: 80%; -webkit-box-shadow: 0px 0px 8px #333; box-shadow: 0px 0px 8px #333; background-color: #e6edf4; overflow-y : scroll; transition: all .4s cubic-bezier(0.51, 0.01, 0.35, 1.0);}
+.gnb.on {right: 0px;}
+.gnb .cate-list dl dd a {background-repeat: no-repeat; background-position: center right 6px; -webkit-background-size: 6px; background-size: 6px; margin-right: 5px;}
+.gnb .cate-list dd a .menu-txt {position: relative;}
+.gnb .cate-list dl dd a .ic-new {font-size: 0.86em; font-weight: bold; right: -22px; width: 18px; height: 18px; line-height: 18px;}
+.gnb .gnb-box {position: relative;}
+.gnb-header {background-color: #164369; padding-left: 10px; padding-top: 35px; padding-bottom: 12px;}
+.profile {text-align: center; width: 55px; height: 55px; line-height: 55px; margin-right: 3%; float: left; overflow: hidden;}
+.profile img {min-width: 55px; min-height: 55px; line-height: 53px; margin-top: -2px;}
+.welcome {width: 74%;  float: left;}
+.welcome h2 { display:block; font-size: 0.8em; letter-spacing: -.1em; color: #c7c7c7; padding:0; margin:3px 0 5px 0;}
+.welcome h2 span {font-size: 1.3em; color:#fff;}
+.welcome a {display: inline-block; border: 2px solid #82c1f4; border-radius: 20px; font-size: 11px; text-align: center; color: #82c1f4; padding: 0 0.8em; }
+.welcome .login {background-color: transparent;}
+.gnb-icon {position: absolute; top: 10px; right: 10px;}
+.gnb-icon a {border-right: 2px solid #517390; width: 35px; padding-right: 9px; margin-right: 9px; float: left;}
+.gnb-icon a:last-child {border-right: none; margin-right: 0;}
+.gnb-icon a img {vertical-align: middle;}
+.gnb-icon .close-btn {background-color: transparent; width: 16px; padding: 0;}
+
+/* navi-list */
+.navi-list {background-color: #4f97d5; font-family: 'NanumGothicB'; font-size:15px; border-bottom: 1px solid #69a6db;}
+.navi-list li {padding: 8px 10px;}
+.navi-list li:nth-child(even) {border-left: 1px solid #69a6db; }
+.navi-list li a {position: relative;}
+.navi-list li .ic-new {font-size: 0.78em; /*top: 5px; right: 5px;*/ top: 3px; right: -20px; width: 18px; height: 18px; line-height: 18px;}
+.navi-list a span {display: inline-block; vertical-align: middle;}
+/*.navi-list a span:first-child {width: 24%; margin-right: 5px;}*/
+.navi-list a span.img-box {width: 24%; margin-right: 5px;}
+.navi-list a span.menu-txt {position: relative; font-size: 0.94em; letter-spacing: -0.075em; color: #fff;}
+
+/* 메뉴 카테고리 리스트 */
+.cate-list { background-color: #fff; padding-top: 9px; }
+.cate-list dl {margin-top: 8px;}
+.cate-list dl:first-child {margin-top: 0; letter-spacing: -1px;}
+.cate-list dt {font-size: 0.92em; text-indent: 20px; background-repeat: no-repeat; -webkit-background-size: 15px; background-size: 15px; background-position: 12px 1px; border-bottom: 1px solid #c9c9c9; color: #494277; padding-left: 10px; padding-bottom: 7px;}
+.cate-list dd {position: relative; font-size: 0.82em; border-bottom: 1px solid #e6e6e6; width: 50%; box-sizing: border-box; height: 38px; line-height: 38px; padding-left: 10px; float: left;}
+/* .cate-list dl:last-child dd:last-child {border-bottom: 0;} */
+.cate-list dd:nth-of-type(2n-1) {border-right: 1px solid #e6e6e6;}
+.cate-list dd:nth-child(2n+3) {border-right: none;}
+.cate-list dd .ic-wrap {position: relative; float: right; margin-right: 22px; top: -80%;}
+.cate-list dd .ic-wrap span {position: relative; float: right; margin-left: 5px; width: 18px; height: 18px; line-height: 18px; font-size: 0.86em; font-weight: bold;}
+/* .cate-list dd .ic-new {top: 10px; right: 22px;}
+.cate-list dd .ic-re {top: 10px; right: 45px;} */
+
+/* gnb footer */
+.gnb-footer { text-align: center; background-color: #e6edf4; /*border-top: 1px solid #d8dfe5;*/ padding-top: 24px; padding-bottom: 60px; }
+.gnb-footer li {display: inline-block; padding-right: 9px; margin-right: 3px; }
+.gnb-footer li.r-bar:after {top: 6px;}
+.gnb-footer li:last-child {border: none; padding-right: 0; margin-right: 0;}
+.gnb-footer li a { font-size: 0.75em;}
+.gnb-footer h3 {width: 50%; padding-top: 25px; margin: 0 auto;}
+
+/**
+ * S: top-btn 
+ */
+.tops.btn-div {position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-family: 'NanumGothicB'; font-size: 14px; text-align: center; background-color: #fff; border: 3px solid #164369; border-radius: 50%; width: 40px; height: 40px; line-height: 34px; padding: 0; opacity: 0;}
+.tops.btn-div .top_btn {color: #164369;}
+/* E: top-btn */
+
+/**
+ * S: sub-logout 
+ */
+.sub-logout {line-height: 100%;}
+.sub-logout.login-btn .log-out {top: 8px; left: auto; right: 10px;}
+.sub-logout .log-out .fa{font-size: 20px;}
+.sub-logout .log-out span {font-size: 20px; color: #000;}
+.sub-logout .log-out .txt {font-size: 0.78em; font-weight: bold; letter-spacing: -0.05em;}
+/* E: sub-logout */

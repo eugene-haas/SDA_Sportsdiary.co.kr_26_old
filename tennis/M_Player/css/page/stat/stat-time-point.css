@@ -1,0 +1,14 @@
+.time-part-table .time-part {margin-bottom: 20px;}
+.time-part-table thead tr {background-color: #d1e8f9;}
+.time-part-table thead th {font-size: .65em; background:#d1e8f8;}
+.time-part-table thead th:first-child {width: 26%;}
+.time-part-table thead th:nth-child(2),
+.time-part-table thead th:nth-child(3),
+.time-part-table thead th:nth-child(4),
+.time-part-table thead th:nth-child(5),
+.time-part-table thead th:nth-child(6),
+.time-part-table thead th:last-child {width: 10%;}
+.time-part-table table tbody th {background-color: #f0f0f0; text-align: left; border-right: 1px solid #d0d0d0; padding-left: 5px;}
+.time-part-table table tbody tr {border-bottom: 1px solid #d0d0d0;}
+.time-part-table table tbody td {background-color: #2385d0; border-right: 1px solid #d0d0d0; color: #fff;}
+.time-part-table table tbody td:empty {background-color: #fff; color: #000;}

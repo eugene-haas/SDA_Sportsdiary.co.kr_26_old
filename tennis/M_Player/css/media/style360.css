@@ -1,0 +1,40 @@
+@media (min-width: 360px) {
+  .main-menu {padding-bottom: 17%;}
+  .sub-header.flex h1 {flex-basis: 270px;}
+
+  /* 경기기록실 > 검색 테이블 */
+  .rank-tb .profile-img {padding-left: 10px;}
+  /* 경기기록실 > 순위 > 기술득점 > 검색 */
+  .skill-state h2 { width: auto; }
+  .skill-state h2:before {height: 16px;}
+  /* 훈련일지 */
+  .sub.strength .input-group.date {width: 65%;}
+
+  /* 나의 통계 > 대회득실점 > 시간대별 */
+  .time-part-table thead th {font-size: .73em;}
+  /* 나의 통계 > 부상정보 */
+  /*.dist-cont .table_01 .body-img {top: -14px;}*/
+  
+  /* 나의 일정 > 대회일지 */
+  .match-info dl dd.match-set {width: auto;}
+
+/* 훈련일지 */
+  .strength .navyline-top-list select#condition {width:78%;}
+  /* 훈련일지 부상정보 입력 */
+  .ipt-injury .dist-cont .table_01 .body-img {top: -14px;}
+
+  /* 선수분석 > 전적 > 대회영상모음 */
+  .ana .stat-list .stat-txt {width: 55%; margin-right: 0;}
+  .ana .stat-list span[class*="-favorite"] {padding-top: 0;}
+  .stat-record .stat-film .show-film {width: 46px;}
+  .show-film {width: 40px!important;}
+  /* 선수분석 > 전적 > 대회영상즐겨찾기 */
+  .film-fav .ana .stat-txt {width: 70%;}
+  /* 대진표 > 대진표 보기 */
+  .tennis-tourney-wrap,
+  .tourney-mode {width: 360px; height: auto; margin: 0 auto;}
+  .sub.tourney .tourney {transform: scale(.31);}
+  /* 대진표 리그전 */
+  /*.list_league {transform: scale(0.735);} 별도 페이지 일때*/
+  .list_league {transform: scale(0.675);}
+}

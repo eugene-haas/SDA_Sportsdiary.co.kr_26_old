@@ -1,0 +1,19 @@
+/**
+ * S: 480 이상 
+ */
+@media (min-width: 480px) {
+  /* 종목 메인 선수 분석 select */
+  .sel_list .sel_2 .sel_box {width: 49%;}
+  /* 종목 메인 ㅋㅋ몰 */
+  .kk_mall .mall_list {padding-left: 10px;padding-right: 10px;}
+  .kk_mall .mall_list li {max-width: 31%;margin-right: 17px;}
+  .kk_mall .mall_list .img_box {min-height: 169px;}
+
+  /*.main_menu li {width: 100px;}*/
+
+  /* gnb */
+  .gnb .profile {width: 36px;}
+  .gnb-icon-list.list-4 ul {max-width: 320px;}
+  .gnb-icon-list.list-3 ul {max-width: 300px;}
+}
+/* E: 480 이상 */

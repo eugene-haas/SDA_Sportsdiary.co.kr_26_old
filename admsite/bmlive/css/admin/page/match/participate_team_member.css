@@ -1,0 +1,8 @@
+.participate_team_member .registration_box .ipt-word {width: 100%;padding-left: 10px;}
+.participate_team_member .registration_box th {width: 100px;}
+.participate_team_member .registration_box td {width: 43%;}
+.participate_team_member .registration_box .con {display: inline-block;vertical-align: middle;width: 100%;}
+
+.participate_team_member .table-list td:first-child {width: 60px;}
+.participate_team_member .table-list td:nth-child(2) {width: 520px;}
+.participate_team_member .table-list td:nth-child(3) {width: 100px;}

@@ -1,0 +1,136 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	'=========================================================================================
+	''통합회원 ID 설정을 위한 회원계정 카운트 조회
+	'=========================================================================================
+	dim UserName	: UserName  	= fInject(Trim(Request("UserName")))
+	dim UserBirth	: UserBirth  	= fInject(Trim(Request("UserBirth")))
+	dim join_IDX 	: join_IDX 		= fInject(Trim(Request("join_IDX")))		
+	dim CookiesID	: CookiesID		= request.Cookies("SD")("UserID")			
+   
+	dim CSQL, CRs
+	dim str_Cookie(2)	'쿠키설정 
+	
+	IF join_IDX = "" Or UserName = "" OR UserBirth = "" Then 
+		Response.Write "FALSE|200"
+		Response.End
+	Else
+		On Error Resume Next
+			
+		DBcon.BeginTrans()
+		DBcon3.BeginTrans()
+		
+		'-----------------------------------------------------------------------------------------						 
+		'STEP1. 선택된 계정만 남기고 삭제 처리	
+		'----------------------------------------------------------------------------------------- 
+		CSQL = " 		DELETE [SD_Member].[dbo].[tblMember]"
+		CSQL = CSQL & " WHERE DelYN = 'N'" 
+		CSQL = CSQL & "		AND UserName = '"&UserName&"' " 
+		CSQL = CSQL & "		AND Birthday = '"&UserBirth&"' " 
+		CSQL = CSQL & "		AND UserID <> '"&join_IDX&"' " 
+
+		DBCon3.Execute(CSQL)
+		ErrorNum = ErrorNum + DBCon3.Errors.Count
+		
+   		'-----------------------------------------------------------------------------------------
+   		'유도 145번 서버
+		'STEP2. 통합아이디[SD_UserID] 업데이트
+		'----------------------------------------------------------------------------------------- 
+		CSQL = " 		UPDATE [SportsDiary].[dbo].[tblMember]"
+		CSQL = CSQL & " SET SD_UserID = '"&join_IDX&"' "
+		CSQL = CSQL & " WHERE DelYN = 'N'" 
+		CSQL = CSQL & "		AND UserName = '"&UserName&"' " 
+		CSQL = CSQL & "		AND Birthday = '"&UserBirth&"' " 
+
+		DBCon.Execute(CSQL)
+		ErrorNum = ErrorNum + DBCon.Errors.Count
+		
+   		'-----------------------------------------------------------------------------------------
+		'STEP3. 통합아이디 설정  SD_GameIDSET value[Y] update
+   		'-----------------------------------------------------------------------------------------
+		CSQL = " 		UPDATE [SportsDiary].[dbo].[tblMember]"
+		CSQL = CSQL & " SET SD_GameIDSET = 'Y' "
+		CSQL = CSQL & " WHERE DelYN = 'N'" 
+		CSQL = CSQL & "		AND UserName = '"&UserName&"' " 
+		CSQL = CSQL & "		AND Birthday = '"&UserBirth&"' " 
+		CSQL = CSQL & "		AND UserID = '"&join_IDX&"' " 
+
+		DBCon.Execute(CSQL)
+		ErrorNum = ErrorNum + DBCon.Errors.Count
+		
+		'-----------------------------------------------------------------------------------------
+		'STEP4. 통합아이디 설정된 데이터 이외 나머지 계정 SD_GameIDSET value[N] update
+		'----------------------------------------------------------------------------------------- 
+		CSQL = " 		UPDATE [SportsDiary].[dbo].[tblMember]"
+		CSQL = CSQL & " SET SD_GameIDSET = 'N' "
+		CSQL = CSQL & " WHERE DelYN = 'N'" 
+		CSQL = CSQL & "		AND UserName = '"&UserName&"' " 
+		CSQL = CSQL & "		AND Birthday = '"&UserBirth&"' " 
+		CSQL = CSQL & "		AND UserID <> '"&join_IDX&"' " 
+
+		DBCon.Execute(CSQL)
+		ErrorNum = ErrorNum + DBCon.Errors.Count
+		
+		IF ErrorNum > 0 Then
+			DBCon.RollbackTrans()
+			DBCon3.RollbackTrans()
+			
+			Response.Write "FALSE|66"
+			
+		Else	
+			
+			DBCon.CommitTrans()
+			DBCon3.CommitTrans()
+			
+			'로그인 후 통합아이디 설정한 경우 쿠키변경합니다.
+			IF CookiesID <> "" Then
+	
+				'회원DB 조회하여 쿠키설정 Sportsdiary.dbo.tblMember	
+				LSQL =  " 		SELECT MemberIDX " 
+				LSQL = LSQL & " 	,UserName"
+				LSQL = LSQL & " 	,replace(UserPhone,'-','') UserPhone"
+				LSQL = LSQL & " 	,Birthday"
+				LSQL = LSQL & " 	,Sex"
+				LSQL = LSQL & " FROM [SD_Member].[dbo].[tblMember]"
+				LSQL = LSQL & " WHERE DelYN = 'N'" 
+				LSQL = LSQL & "		AND UserID = '"&join_IDX&"' " 
+
+				SET LRs = DBCon3.Execute(LSQL)
+				IF Not(LRs.Eof Or LRs.Bof) Then 
+
+					MemberIDX 	= LRs("MemberIDX")
+					UserName 	= LRs("UserName")
+					UserPhone 	= LRs("UserPhone")
+					Birthday 	= LRs("Birthday")
+					Sex 		= LRs("Sex")
+
+					response.Cookies("SD").Domain = ".sportsdiary.co.kr"
+					response.Cookies("SD").path = "/"
+					response.Cookies("SD")("UserID")    	= join_IDX					'사용자ID
+					response.Cookies("SD")("UserName")  	= UserName					'사용자명			
+					response.Cookies("SD")("UserBirth")  	= encode(BirthDay, 0)		'생년월일
+					response.Cookies("SD")("MemberIDX")  	= encode(MemberIDX, 0)		'MemberIDX
+					response.Cookies("SD")("UserPhone")  	= encode(UserPhone, 0)		'Phone
+					response.Cookies("SD")("Sex")  			= Sex						'성별		
+
+					'/sdmain/Libary/common_function.asp					
+					str_Cookie(1) = SET_INFO_COOKIE(join_IDX, "judo", request.Cookies("SD")("SaveIDYN"))		'쿠키세팅(유도)
+					str_Cookie(2) = SET_INFO_COOKIE(join_IDX, "tennis", request.Cookies("SD")("SaveIDYN"))		'쿠키세팅(테니스)
+
+				End IF
+					LRs.Close
+				SET LRs = Nothing
+			
+			End IF
+	
+			'로그인 하지 않고 [회원가입>가입유무 체크페이지(combin_check.asp)]에서 넘어온 경우			
+			Response.Write "TRUE|"&CookiesID
+			
+			
+		End IF
+		
+		DBClose()
+		DBClose3()
+		
+	End If 
+%>

@@ -1,0 +1,111 @@
+/**
+ * S: 상세스코어 모달 
+ */
+.tn_modal .modal-content {background-repeat: no-repeat;-webkit-background-size: cover; background-size: cover;}
+
+.tn_modal .modal-header {background-color: #5b9a1c;border-bottom: 0;padding-top: 10px;padding-bottom: 10px;}
+.tn_modal .modal-header.livescore {background:#ff7d01;}
+.score_board .scorefresh {background:#fff; font-family:'NotoKR-md'; font-size:0.78em; color:#333; padding:5px 7px 4px; margin-bottom:10px;}
+.score_board .scorefresh .fa-repeat {color:#ff7d01;}
+.tn_modal .modal-header h3 {font-size: 1.07em;letter-spacing: -0.05em;text-align: center;color: #fff;}
+.tn_modal .modal-header .btn-close {position: absolute; top: 0px; right: 10px;font-size: 24px;color: #fff;padding: 0;}
+
+.tn_modal .modal-body {padding: 10px;}
+.tn_modal .modal-body .banner_md {background-color: #ddd;margin: 0;}
+.tn_modal .modal-body h4 {font-family: 'NotoKR-bd';font-size: 1.2em;font-weight: bold;background-color: transparent;margin-top: 15px;margin-bottom: 15px;padding: 0;}
+.tn_modal .modal-body h4 span {line-height: 1}
+.tn_modal .modal-body h4 span:before,
+.tn_modal .modal-body h4 span:after {top: 7px;}
+.tn_modal .modal-body h4 span:before {left: -24%;}
+.tn_modal .modal-body h4 span:after {top: 8px; left: 100%;}
+/* E: 상세스코어 모달 */
+
+/* 스코어 보드 */
+.tn_modal .score_board {margin-bottom: 11px;}
+.tn_board_table li {width: 100%;float: left;}
+.tn_board_table li div {display: inline-block;margin-left: -4px;}
+.tn_board_table li div:first-child {margin-left: 0;}
+.tn_board_table .board_header {font-size: 0.86em;font-weight: normal;color: #fff;width: 48.565%; margin-bottom:6px; margin-top:6px;}
+.tn_board_table .board_header span {display: inline;vertical-align: middle; width:12px;}
+.tn_board_table .board_header span.serve {width:14px; display:inline-block;}
+.tn_board_table .board_header span img {width:11px; padding-top: 2px;}
+.tn_board_table .board_header .p_self span,
+.tn_board_table .board_header .p_pt span {float:left; margin-left:1px;}
+.tn_board_table .board_header .p_self,
+.tn_board_table .board_header .p_pt {width: 100%;line-height: 125%;margin-left: 0;}
+.tn_board_table .board_header .p_pt .ic_deco {width:12px;}
+.tn_board_table .board_header .player {color: #fff;width: 30%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.tn_board_table .board_header .team {font-size: 0.78em;color: #aed499;width: 53%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+
+.tn_board_table div {color: #032005;width: 8.9%;vertical-align: middle;}
+.tn_board_table .win,
+.tn_board_table .num {text-align: center;height: 40px;line-height: 40px;}
+.tn_board_table .win {text-align: center;width: 10.435%; padding-top:8px;line-height: 20px;}
+.tn_board_table .win .img_box {vertical-align: middle;width: 20px;height: 20px;}
+.tn_board_table .win .img_box img {vertical-align: top;}
+.tn_board_table .num {position: relative;background-color: #fff;width: 8.1%;border-left: 1px solid #072f0e;}
+.tn_board_table .num .tie {display: block;position: absolute;bottom: 2px;/*left: calc(50% - 5px);*/font-size: 8px; width: 100%; line-height: 1;}
+.tn_board_table .num:last-child {border-right: 1px solid #072f0e;}
+
+.tn_board_table .set_line {background-color: hsla(0, 0%, 0%, .4);height: 20px;line-height: 20px;}
+.tn_board_table .set_line .win,
+.tn_board_table .set_line .num {font-size: 0.71em;background-color: transparent;color: #afd59a;height: auto;line-height: 1;border: none;}
+.tn_board_table .num.y {background-color: #e6db25;}
+.tn_board_table .pts {text-align: center;color: #fff;width: 10%;height: 40px;line-height: 40px;margin-right: 1px;}
+.tn_board_table .pts.on {border: 1px solid #e6db25;}
+.tn_board_table .set_line .pts {font-size: 0.71em;color: #aed499;height: auto;line-height: 2.3;}
+
+.tn_board_table .duration {line-height: 125%;}
+.tn_board_table .duration .board_header {letter-spacing: -0.075em;color: #e6db25;}
+.tn_board_table .duration .board_header .ic_deco {display: inline-block;margin-right: 2px;}
+.tn_board_table .duration .win,
+.tn_board_table .duration .num {height: auto;line-height: 1;}
+.tn_board_table .duration .num {background-color: transparent;color: #fff;font-size: 0.79em;letter-spacing: -0.075em;border: none;}
+
+/* 득실기록 표 */
+/*.tn_modal .tn_display_board {height: 220px;}*/
+.tn_display_board .record-box {border-radius: 0;padding-top: 12px;padding-left: 10px;padding-right: 10px;padding-bottom: 30px; margin-bottom: 0;}
+.tn_display_board .record-box h4 {font-family: 'NotoKR-dl';font-size: 0.9em;letter-spacing: -0.06em;text-align: left;color: #333;margin: 0;padding-bottom: 14px;}
+.tn_display_board .record-box .player_divn {background-color: #848c96; color: #fff;font-size: .82em;}
+.tn_display_board .record-box .player_divn ul {position: relative;}
+.tn_display_board .record-box .player_divn li {float: left;margin-top: 2px;}
+.tn_display_board .record-box .player_divn span {display: inline-block;vertical-align: middle;max-width: 60px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.tn_display_board .record-box .player_divn .team_a {padding-left: 8px;}
+.tn_display_board .record-box .player_divn .team_b {float: right;padding-right: 8px;}
+.tn_display_board .record-box .player_divn .vs {position: absolute; top: 0px; left: calc(50% - 18px); background-color: #323a45;border-radius: 30px;color: #ffe400; height: 85%; padding: 0 10px; margin: 3px 0;}
+.tn_modal .tn_display_board .record-box .scroll_box {height: 190px;overflow-y: scroll;}
+.tn_modal .tn_display_board .record-box .scroll_box .serve img {width:11px;} 
+.tn_modal .tn_display_board .record-box .scroll_box .point-list li {font-size:0.85em;}
+.tn_modal .tn_display_board .record-box .scroll_box .point-list li .score {background:#d45a00; color:#fff; padding:2px 5px 0; font-size:0.83em; margin:0 3px;} 
+.tn_modal .tn_display_board .record-box .scroll_box .point-list li .score.base_team {background:#d45a00; color:#fff; padding:2px 5px 0; font-size:0.83em; margin:0 3px;} 
+.tn_modal .tn_display_board .record-box .scroll_box .point-list li .score.other_team {background:#007f33; color:#fff; padding:2px 5px 0; font-size:0.83em; margin:0 3px;} 
+
+.record-box .summary-rec {background:#848c96; margin:10px 0;}
+.record-box .summary-rec ul li {display:inline-block; font-size:0.8em; color:#fff;}
+.record-box .summary-rec ul li.round {background:#323a45; color:#fff; padding:0 5px; margin:0 4px 0 3px; font-size:0.9em;}
+.record-box .summary-rec ul li.score {background:#323a45; border-radius:30px; color:#ffe400; padding:0 10px; margin:3px 5px;}
+
+.match_summary {width: 100%;}
+.tn_match_summary {border-top: 2px solid #3e7d00;}
+.tn_match_summary tr {font-size: 0.82em;letter-spacing: -0.09em;border-bottom: 1px solid #d5d5d5;}
+.tn_match_summary td {font-weight: bold;text-align: center;background-color: #f2f2f2;color: #333;border-left: 1px solid #d5d5d5;height: 25px;line-height: 25px;}
+.tn_match_summary td:last-child {border-right: 1px solid #d5d5d5;}
+.tn_match_summary th {background-color: #fff;font-weight: normal;text-align: center;border-left: 1px solid #d5d5d5;}
+
+
+/* 경기 영상 */
+.tn_display_board .film-box {/*display: block;*/border: none;-webkit-box-shadow: none; box-shadow: none;}
+
+/* 테니스 모달 footer 버튼 */
+.tn_modal .modal-footer {border-top: none; padding-top: 0;padding-bottom: 20px;padding-left: 0px;padding-right: 0px;}
+.tn_modal .modal-footer .btn {font-size: 0.82em;font-weight: bold;color: #fff;border-radius: 0;margin-right: 4px;}
+.tn_modal .modal-footer .btn:last-child {margin-right: 0px;}
+.tn_modal .modal-footer .btn:nth-child(3) {margin-right: 10px;}
+.tn_modal .modal-footer .btn-green {background-color: #62a91d; margin-left:10px;}
+.tn_modal .modal-footer .btn-green .ic-deco {width: 16px;}
+.tn_modal .modal-footer .btn-default {background: none;background-color: #14202d;border: 1px solid #0b151f;-webkit-box-shadow: none; box-shadow: none;text-shadow: none; margin-right:10px;}
+
+/* 대회일정 모달 수정 */
+.sche-list.modal .btn.btn-orangy {background-color: #ff7d01;}
+.sche-list.modal .btn-live-score {letter-spacing: -0.02em;}
+.sche-list.modal .btn-live-score .ic_deco {margin-left: 8px;}

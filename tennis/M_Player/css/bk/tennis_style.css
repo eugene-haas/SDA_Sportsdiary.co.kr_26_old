@@ -1,0 +1,38 @@
+/**
+ * --------------------------------
+ * 테니스 추가
+ * --------------------------------
+ */
+/* sd_style */
+@import url(./sd_style/design.css);
+/* 기존 버전 over write */
+@import url(./main/over_write.css);
+/* 테니스 추가 공통 */
+@import url(./tn_addition/common.css);
+/* 종목 메인 */
+@import url("./main/part_main.css?ver=1.1");
+/* 종목 메인 2 */
+@import url(./main/part_main2.css);
+
+/* Live Score */
+@import url(./page/tournament/live_score.css);
+
+
+/* 파트너 찾기 */
+@import url(./partner/pt_srch.css);
+/* 파트너 소통 내역 */
+@import url(./partner/pt_history.css);
+
+/* 내주변 레슨코트 찾기 */
+@import url(./lesson/lesson_register.css);
+
+/* 난타(Rally) 모집 */
+@import url(./rally/rally_register.css);
+
+/* 회원정보 */
+@import url(./userInfo/info.css);
+
+/* 반응형 */
+@import url(./tennis_media/style360.css);
+@import url(./tennis_media/style480.css?ver=1.1.1);
+@import url(./tennis_media/style640.css);

@@ -1,0 +1,10 @@
+.tn_live_tab {margin-top: 10px;}
+.tn_live_tab .btn_list {padding-left: 10px;padding-right: 10px;}
+.tn_live_tab li {text-align: center;}
+.tn_live_tab .btn-normal {position: relative;background-color: #eee;color: #888;font-size: 0.86em;font-weight: bold;width: 100%;overflow: hidden;}
+.tn_live_tab .btn-normal.on {background-color: #164369;color: #fff;}
+.tn_live_tab .btn-normal.btn-live-score {padding-left: 20px;}
+.tn_live_tab .btn-normal.btn-live-score.on {background-color: #ff7d01;color: #fff;}
+.tn_live_tab .btn-normal.on .fa {color: #fff;}
+.tn_live_tab li:first-child {margin-right: 10px;}
+.tn_live_tab .btn-normal .live {display: inline-block;position: absolute;top: 0;left: 0;font-size: 0.57em;letter-spacing: 0;background-color: #ff4700;color: #fff;padding-left: 15px;padding-right: 15px;padding-top: 10px; transform: rotate(-45deg) translateX(-8px) translateY(-15px);}

@@ -1,0 +1,40 @@
+﻿2019-05-21 오후 6:44:52 => <br><br>Default Info gLevelDtlIdx = 12054, gTitleIdx = 1355, nPlayer = 3, nRound = 4 , nEmpty = 1, nBlock = 4<br>
+2019-05-21 오후 6:44:52 => ************************ print Position  *************
+2019-05-21 오후 6:44:52 => Idx = 1, fUse = 1, pos = 1 , playerCode = 71152, cUser1 = 57764, user1 = 김선준, cUser2 = 43789, user2 = 조현석 , cTeam1 = BA02489, team1 = 토요애, cTeam2 = BA02489, team2 = 토요애, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:44:52 => Idx = 2, fUse = 1, pos = 4 , playerCode = -1, cUser1 = 0, user1 = Empty, cUser2 = , user2 = Empty , cTeam1 = , team1 = Empty, cTeam2 = , team2 = Empty, cSido1 =  , sido1 = , cSido2 = , sido2 =  <br>
+2019-05-21 오후 6:44:52 => Idx = 3, fUse = 1, pos = 2 , playerCode = 71153, cUser1 = 43951, user1 = 지용윤, cUser2 = 43908, user2 = 배동진 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02488, team2 = 자굴산, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:44:52 => Idx = 4, fUse = 1, pos = 3 , playerCode = 71154, cUser1 = 61870, user1 = 서동호, cUser2 = 43806, user2 = 정현종 , cTeam1 = BA02487, team1 = 의령, cTeam2 = BA02490, team2 = 홍의, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:44:52 => 71152,0,71153,71154
+2019-05-21 오후 6:44:52 => ************************ print Position  *************
+2019-05-21 오후 6:54:34 => <br><br>Default Info gLevelDtlIdx = 12055, gTitleIdx = 1355, nPlayer = 3, nRound = 4 , nEmpty = 1, nBlock = 4<br>
+2019-05-21 오후 6:54:34 => ************************ print Position  *************
+2019-05-21 오후 6:54:34 => Idx = 1, fUse = 1, pos = 1 , playerCode = 71153, cUser1 = 43908, user1 = 배동진, cUser2 = 43951, user2 = 지용윤 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02488, team2 = 자굴산, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:54:34 => Idx = 2, fUse = 1, pos = 4 , playerCode = -1, cUser1 = 0, user1 = Empty, cUser2 = , user2 = Empty , cTeam1 = , team1 = Empty, cTeam2 = , team2 = Empty, cSido1 =  , sido1 = , cSido2 = , sido2 =  <br>
+2019-05-21 오후 6:54:34 => Idx = 3, fUse = 1, pos = 2 , playerCode = 71152, cUser1 = 43789, user1 = 조현석, cUser2 = 57764, user2 = 김선준 , cTeam1 = BA02489, team1 = 토요애, cTeam2 = BA02489, team2 = 토요애, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:54:34 => Idx = 4, fUse = 1, pos = 3 , playerCode = 71154, cUser1 = 61870, user1 = 서동호, cUser2 = 43806, user2 = 정현종 , cTeam1 = BA02487, team1 = 의령, cTeam2 = BA02490, team2 = 홍의, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:54:34 => 71153,0,71152,71154
+2019-05-21 오후 6:54:34 => ************************ print Position  *************
+2019-05-21 오후 6:54:59 => <br><br>Default Info gLevelDtlIdx = 12064, gTitleIdx = 1355, nPlayer = 3, nRound = 4 , nEmpty = 1, nBlock = 4<br>
+2019-05-21 오후 6:54:59 => ************************ print Position  *************
+2019-05-21 오후 6:54:59 => Idx = 1, fUse = 1, pos = 1 , playerCode = 71147, cUser1 = 43769, user1 = 최현진, cUser2 = 43737, user2 = 김기완 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02488, team2 = 자굴산, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:54:59 => Idx = 2, fUse = 1, pos = 4 , playerCode = -1, cUser1 = 0, user1 = Empty, cUser2 = , user2 = Empty , cTeam1 = , team1 = Empty, cTeam2 = , team2 = Empty, cSido1 =  , sido1 = , cSido2 = , sido2 =  <br>
+2019-05-21 오후 6:54:59 => Idx = 3, fUse = 1, pos = 2 , playerCode = 71167, cUser1 = 46195, user1 = 조규강, cUser2 = 43756, user2 = 박창병 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02487, team2 = 의령, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:54:59 => Idx = 4, fUse = 1, pos = 3 , playerCode = 71168, cUser1 = 61379, user1 = 이학성, cUser2 = 62147, user2 = 이양수 , cTeam1 = BA02490, team1 = 홍의, cTeam2 = BA02487, team2 = 의령, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:54:59 => 71147,0,71167,71168
+2019-05-21 오후 6:54:59 => ************************ print Position  *************
+2019-05-21 오후 6:57:21 => <br><br>Default Info gLevelDtlIdx = 12075, gTitleIdx = 1355, nPlayer = 4, nRound = 4 , nEmpty = 0, nBlock = 4<br>
+2019-05-21 오후 6:57:21 => ************************ print Position  *************
+2019-05-21 오후 6:57:21 => Idx = 1, fUse = 1, pos = 1 , playerCode = 71120, cUser1 = 43774, user1 = 고영선, cUser2 = 43763, user2 = 강병훈 , cTeam1 = BA02487, team1 = 의령, cTeam2 = BA02487, team2 = 의령, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:57:21 => Idx = 2, fUse = 1, pos = 4 , playerCode = 71115, cUser1 = 43748, user1 = 강정훈, cUser2 = 43867, user2 = 임한나 , cTeam1 = BA02490, team1 = 홍의, cTeam2 = BA02490, team2 = 홍의, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:57:21 => Idx = 3, fUse = 1, pos = 2 , playerCode = 71117, cUser1 = 43767, user1 = 권영녀, cUser2 = 43981, user2 = 윤성운 , cTeam1 = BA02490, team1 = 홍의, cTeam2 = BA02490, team2 = 홍의, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:57:21 => Idx = 4, fUse = 1, pos = 3 , playerCode = 71118, cUser1 = 43743, user1 = 양미정, cUser2 = 43741, user2 = 김현석 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02488, team2 = 자굴산, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 6:57:21 => 71120,71115,71117,71118
+2019-05-21 오후 6:57:21 => ************************ print Position  *************
+2019-05-21 오후 7:14:37 => <br><br>Default Info gLevelDtlIdx = 12068, gTitleIdx = 1355, nPlayer = 3, nRound = 4 , nEmpty = 1, nBlock = 4<br>
+2019-05-21 오후 7:14:37 => ************************ print Position  *************
+2019-05-21 오후 7:14:37 => Idx = 1, fUse = 1, pos = 1 , playerCode = 71142, cUser1 = 43853, user1 = 김석균, cUser2 = 43907, user2 = 최재영 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02488, team2 = 자굴산, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 7:14:37 => Idx = 2, fUse = 1, pos = 4 , playerCode = -1, cUser1 = 0, user1 = Empty, cUser2 = , user2 = Empty , cTeam1 = , team1 = Empty, cTeam2 = , team2 = Empty, cSido1 =  , sido1 = , cSido2 = , sido2 =  <br>
+2019-05-21 오후 7:14:37 => Idx = 3, fUse = 1, pos = 2 , playerCode = 71144, cUser1 = 43739, user1 = 박승주, cUser2 = 43747, user2 = 조윤일 , cTeam1 = BA02488, team1 = 자굴산, cTeam2 = BA02488, team2 = 자굴산, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 7:14:37 => Idx = 4, fUse = 1, pos = 3 , playerCode = 71143, cUser1 = 43760, user1 = 박종호, cUser2 = 49207, user2 = 김진수 , cTeam1 = BA02490, team1 = 홍의, cTeam2 = BA02489, team2 = 토요애, cSido1 = 15010 , sido1 = 의령군, cSido2 = 15010, sido2 = 의령군 <br>
+2019-05-21 오후 7:14:37 => 71142,0,71144,71143
+2019-05-21 오후 7:14:37 => ************************ print Position  *************

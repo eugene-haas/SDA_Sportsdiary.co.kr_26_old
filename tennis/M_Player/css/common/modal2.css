@@ -1,0 +1,261 @@
+#record-notice button.close {position:absolute; top:2%; right:13px;}
+
+
+.confirm-modal .modal-header {font-family: 'NotoKR-md'; font-size: 0.94em; background-color: #005895; color: #fff; text-align: center; padding:7px 5px; border-radius: 4px 4px 0 0;}
+#record-notice .modal-header {padding:5px 0;} 
+.confirm-modal .modal-header .close {position: absolute; right:5px; color: #fff; width: 25px; height: 25px; margin-top: -2px; opacity: 1;}
+.confirm-modal .modal-body {font-family: 'NotoKR'; font-size: 0.9em; line-height:22px; text-align: center; }
+.confirm-modal .modal-footer {text-align: center; border-top: none;}
+#record-notice .modal-footer {padding-top:5px; padding-bottom:5px;}
+.confirm-modal .modal-footer .btn {font-weight: bold; background-color: #3f505d; background-image: none; color: #fff; border: none; text-shadow: none; -webkit-box-shadow: none; box-shadow: none; width: 80px;}
+
+#pay-cancel-bankbook .modal-body .phone {margin-top: 10px;}
+#pay-cancel-card .modal-footer .btn-cancel {background-color: #fff; color: #3f505d; border: 2px solid #3f505d;}
+
+/* 대회일정 > 일정표 모달 */
+.sche-table .modal-header {padding: 5px;}
+.sche-table .modal-body {padding: 0;}
+.sche-table .sche-title {background-color: #e2e6ea; padding: 5px 10px;}
+.sche-table .sche-title h2 {font-family: 'NotoKR-bd'; font-size: 0.94em; letter-spacing: .001em; color: #333; padding-top: 3px; padding-bottom: 0;}
+.sche-table .sche-title .match-term {font-size: 0.75em; color: #666;}
+.sche-table .stadium {font-size: 0.75em; color: #666;}
+.sche-table .match-day {background-color: #e2e6ea; padding: 5px 10px;}
+.sche-table .match-day select {color: #000; border: 1px solid #000;}
+.sche-table .match-list {text-align: left; padding: 10px 20px 6px; float: none;}
+.sche-table .match-list h3 {font-family: 'NotoKR-bd'; font-size: 0.88em; color: #004892; padding-bottom: 15px;}
+.sche-table .match-list dt {position: relative; font-family: 'NotoKR-bd'; font-size: 0.81em; color: #333; padding-left: 8px;}
+.sche-table .match-list dt:before {position: absolute; top: 25%; left: 0; content: ''; background-color: #3f505d; width: 4px; height: 4px; }
+.sche-table .match-list dd {font-size: 0.75em; color: #666; padding-bottom: 10px;}
+.sche-table .time-table {font-size: 0.75em; text-align: left; background-color: #efefef; border: 3px solid #a4a5a6; margin-left: 10px; margin-right: 10px;}
+.sche-table .time-table li {border-bottom: 1px solid #ccc; padding-left: 10px; padding-right: 10px;}
+.sche-table .time-table li:last-child {border-bottom: none;}
+.sche-table .time-table li.now {color: #b60000;}
+.sche-table .time-table span {float: left;}
+.sche-table .time-table .time {width: 40%;}
+.sche-table .time-table .cont {width: 60%;}
+
+/* 대회일정 모달 */
+.sche-list .modal-header {padding: 7px 5px;}
+.sche-list .modal-body {padding: 0;}
+.sche-list .sche-title {background-color: #e2e6ea; padding: 5px 12px;}
+.sche-list .sche-title h2 {font-family: 'NotoKR-md'; font-size: 1em; letter-spacing:-1px; color: #333; padding-top: 10px; padding-bottom: 0; line-height:20px;}
+.sche-list .sche-title .match-term {font-size: 0.85em; color: #666;}
+.sche-list .stadium {font-size: 0.75em; color: #666;}
+.sche-list .match-day {background-color: #e2e6ea; padding: 5px 10px;}
+.sche-list .match-day select {color: #000; border: 1px solid #000;}
+.sche-list .match-list {text-align: left; padding: 10px 20px 6px; float: none;}
+.sche-list .match-list h3 {font-family: 'NotoKR-bd'; font-size: 0.88em; color: #004892; padding-bottom: 15px;}
+.sche-list .match-list dt {position: relative; font-family: 'NotoKR-bd'; font-size: 0.81em; color: #333; padding-left: 8px;}
+.sche-list .match-list dt:before {position: absolute; top: 25%; left: 0; content: ''; background-color: #3f505d; width: 4px; height: 4px; }
+.sche-list .match-list dd {font-size: 0.75em; color: #666; padding-bottom: 10px;}
+.sche-list .time-table {font-size: 0.75em; text-align: left; background-color: #efefef; border: 3px solid #a4a5a6; margin-left: 10px; margin-right: 10px;}
+.sche-list .time-table li {border-bottom: 1px solid #ccc; padding-left: 10px; padding-right: 10px;}
+.sche-list .time-table li:last-child {border-bottom: none;}
+.sche-list .time-table li.now {color: #b60000;}
+.sche-list .time-table span {float: left;}
+.sche-list .time-table .time {width: 40%;}
+.sche-list .time-table .cont {width: 60%;}
+
+.sche-list .pop {text-align: left; background-color: #fff;}
+.sche-list .pop dl {height: auto; margin-bottom:10px;}
+.sche-list .pop dt {display: block; color:#666; /*color: #428bca;*/ font-family:"NotoKR-md";}
+.sche-list .pop dd {padding-left: 35px; color:#666; font-family:"NotoKR";}
+.sche-list .pop dt:after {border-left: none;}
+
+.sche-list .pop .sch-btn-list {padding-left: 15px; padding-right: 15px; margin-top: 12px; padding-bottom: 0;}
+.sche-list .pop .sch-btn-list a.btn {display: block; width: 100%; margin-bottom: 10px; font-size: 1.2em;}
+.sche-list .pop dd#GameDate_detail span {display: inline-block;}
+
+
+/* 훈련계획표 준비중 모달 */
+#now-ready .modal-footer {background: #ddd; border-top: 1px solid #6f6f6f; border-radius: 0 0 5px 5px; padding:8px 10px;}
+#now-ready .modal-footer label {font-size: 0.88em; -webkit-background-size: 21px 20px; background-size: 21px 20px; background-position: center left; margin-bottom: 0; float: left;}
+#now-ready .modal-footer label span {display: inline-block; vertical-align: middle; margin-left: 5px;}
+#now-ready .modal-footer .btn {border: none; background: none; color: #000; border-left: 1px solid #ddd; width: 50px; padding: 0; margin-top: 3px; float: right;}
+
+/* 체육인번호 불러오기 */
+.modal .modal-txt input {color: #000; margin-bottom: 10px;}
+
+/* 연습상대 선수 신규등록 */
+.rival-modal .modal-body {text-align: left;}
+.rival-modal .modal-list li {margin-bottom: 10px;}
+.rival-modal .modal-list li p {float: left; width: 80%; text-align: left; }
+.rival-modal .modal-list li p:first-child {width: 20%; padding-top: 4px;}
+.rival-modal .modal-list select {color: #000;}
+.rival-modal .scroll-box {background-color: #f3f3f3;}
+.rival-modal label.img-replace {-webkit-background-size: 21px 22px; background-size: 21px 22px;}
+.rival-modal label.img-replace span {margin-left: 5px;}
+.rival-modal .rival-select-list li {margin-bottom: 6px;}
+.rival-modal .rival-select-list li a { display: inline-block; color: #fff; background-color: #b0b0b0; border-radius: 50%; }
+.rival-modal .rival-select-list li .glyphicon {font-size: 10px; padding: 5px; margin: 0;}
+.rival-modal .modal-body .btn-center {padding-top: 10px;}
+
+/**
+ * 단체전 결과 조회 모달
+ * --------------------------------
+ */
+/* 모달 내부 전광판 */
+.groups-res .modal-header {background:#0f1b29; height:39px; font-size:24px; font-weight:900; border-bottom:none; padding-top:8px;}
+.groups-res .modal-header a {position: absolute; top: 7px; right: 5px; width: 1.07em; height: 1.07em; font-size:21px; text-shadow: 0 1px 0 #fff; font-weight: 700; color:#fff;}
+
+
+.groups-res .modal-header .modal-title {color:#fff; font-weight:900; text-align:center;}
+.groups-res .group-modal {background: #455160; padding-top:2px; padding-bottom: 0;}
+.groups-res .group-modal h2 {font-family: 'Noto KR Bold'; font-size: 1.2em; font-weight: 900; text-align: center; color: #fff000; margin-top: 0px; margin-bottom: 3px;}
+/*.groups-res .group-modal h2 .left-arrow {position: absolute; top:0px; left:-43px;}*/
+.groups-res .group-modal h2 .left-arrow > img {width:25px; margin-right: 7px;}
+/*.groups-res .group-modal h2 .right-arrow {position: absolute; top:0px; right:-75px;}*/
+.groups-res .group-modal h2 .right-arrow > img {width:25px; margin-left: 7px;}
+.groups-res .group-modal .display-board {background:none;}
+.groups-res .group-modal .display-board ul {width: 50%; padding:0 10px 0px; margin: 0; margin-top: 0px; margin-bottom:15px; float: left; background:#fff; color:#222; padding-bottom: 10px;}
+.groups-res .group-modal .display-board .away {color:#15dbff; background:#004ed0; width:50%;}
+.groups-res .group-modal .display-board .v-s {position:absolute; top:75px; left:calc(50% - 13px); width:26px; height:20px; color:#fff; font-size:11px; border-radius:20px; line-height:20px; background:#04101f; padding-top:0; text-align:center;}
+.groups-res .group-modal .display-board li {line-height: 100%; font-weight: bold; width: 100%; float: none;}
+.groups-res .group-modal .display-board li:first-child {font-family: 'Noto KR Bold'; font-size: 1.05em;	padding-top: 26px; margin-top: 0; margin-bottom: 5px; line-height:125%; white-space: nowrap; text-overflow: ellipsis; overflow:hidden;}
+.groups-res .group-modal .display-board li:nth-child(2) {font-family: 'Noto KR Black'; color:#dbdfe5; border-radius:5px;
+  background: #222e42; /* Old browsers */
+  background: -moz-linear-gradient(top, #222e42 0%, #010306 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #222e42 0%,#010306 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #222e42 0%,#010306 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e42', endColorstr='#010306',GradientType=0 ); /* IE6-9 */ padding-top: 5px; padding-bottom: 5px;}
+
+.groups-res #DP_LResult {color:#dbdfe5; font-size:14px; line-height:20px; padding:4px 0; border-radius:5px; background: #222e42; /* Old browsers */ background: -mozlinear-gradient(top, #222e42 0%, #010306 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, #222e42 0%,#010306 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #222e42 0%,#010306 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e42', endColorstr='#010306',GradientType=0 ); /* IE6-9 */}
+.groups-res #DP_RResult {color:#dbdfe5; font-size:14px; line-height:20px; padding:4px 0;border-radius:5px; background: #222e42; /* Old browsers */ background: -moz-linear-gradient(top, #222e42 0%, #010306 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, #222e42 0%,#010306 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #222e42 0%,#010306 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e42', endColorstr='#010306',GradientType=0 ); /* IE6-9 */}
+.groups-res .group-modal .display-board .win {background-repeat: no-repeat; -webkit-background-size 36px 14px; background-size: 70px 12px; background-position: center 10px;}
+
+/* 결과 리스트 */
+.groups-res .group-modal .record {background-color: #fff; height: 220px; overflow-y:scroll; padding: 10px;}
+.groups-res .group-modal .record ul {border-left: 1px solid #ccc; border-top:1px solid #ccc;}
+.groups-res .group-modal .record ul li {width: 33%; height: 28px; font-size:0.7em; text-align: center;  border-right: 1px solid #ccc; padding-bottom: 0; float: left;
+display: flex; align-items: center; justify-content: center; line-height:100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.groups-res .group-modal .record ul:not(.title) li {justify-content: flex-start; padding-left:3px;}
+.groups-res .group-modal .record ul li:last-child {border-right: none; }
+.groups-res .group-modal .record .home-team  {float: left; border-bottom: 1px solid #ccc; width:50%;}
+.groups-res .group-modal .record .away-team {float: left; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; width:50%; }
+.groups-res .group-modal .record .v-s {position: fixed; top: 42%; left: 47%; font-family: 'Noto KR Bold'; font-size: 20px; color: #030c18; }
+.groups-res .group-modal .record ul:nth-child(2n-1) {background-color: #f3f2f2;}
+.groups-res .group-modal .home-team ul.title {background-color: #b9b9b9;}
+.groups-res .group-modal .away-team ul.title {background-color: #b9d4e4;}
+.groups-res .group-modal .modal-footer {border-top:none;}
+.groups-res .group-modal .panel {margin-bottom:0; background: none; border:none;}
+.groups-res .group-modal #DP_WinGroup {position:relative; vertical-align: middle;}
+
+.groups-res .group-modal .DP_WinSchoolName {min-width:124px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: inline-block; vertical-align: middle;}
+
+.round-res .modal-content {background-color: #455160;}
+.round-res .modal-footer {padding:10px 0; text-align: left; border: none; margin-left: 15px; margin-right: 15px;}
+.round-res .modal-footer a.btn-repair {font-family: 'NanumGothic'; width: 48.2%; background-color: #ef5e20; color:#fff;}
+.round-res .modal-footer a.btn-close  {font-family: 'NanumGothic'; width: 48.3%; background-color: #0f1b29; color:#fff; float:right;}
+.round-res .group-modal + .modal-footer .btn-default {background-color: #0f1b29; background-image: none; color: #fff; width: 5.71em; border:none;}
+.round-res .group-modal + .modal-footer .btn-orange {background-color: #ff7200; color: #fff; line-height: 38px; margin-right: 10px; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0; font-family: "NotoKR-bd"; font-size:0.95em; letter-spacing: -1px;}
+.round-res .group-modal + .modal-footer .btn-orange.off {background:#cfcfcf; color: #555;}
+.round-res .group-modal + .modal-footer .btn .ic-deco {display: inline-block; width: 1.7em; margin-right: 5px;}
+.round-res .group-modal + .modal-footer .btn .ic-deco img {margin-top:-4px;}
+
+/* 프로필 사진 모달 */
+.show-prof-img.confirm-modal .modal-content {text-align: center;}
+.show-prof-img.confirm-modal .modal-header {border-bottom: none;}
+.show-prof-img.confirm-modal .modal-header .close {top: 8px;}
+.show-prof-img.confirm-modal .modal-body {display: inline-block; padding: 0; margin-bottom: -7px; /* width: 100%; */ overflow: hidden;}
+.show-prof-img.confirm-modal .modal-body .prof-img {display: table-cell; vertical-align: middle;}
+/* .show-prof-img.confirm-modal .modal-body .prof-img img {display: table-cell; text-align: center;} */
+/* .show-prof-img.confirm-modal .modal-body .prof-img {min-height: 400px} */
+/* .show-prof-img.confirm-modal .modal-footer {padding-top: 0;} */
+.show-prof-img.confirm-modal .modal-dialog {margin-bottom: 40px;}
+
+/**
+ * S: warn-back-btn popover 
+ */
+/* .modal-open .modal {position: relative;} */
+.back-btn-warn {display: none;}
+.webui-popover.pop {position: absolute; padding: 0; }
+.webui-popover.pop > .webui-arrow {border-bottom-color: transparent;}
+.webui-popover.pop > .webui-arrow:after {border-bottom-color: #fff; left: 105px;}
+.modal-open .back-btn-warn {position: absolute; top: 5px; right: 15px;  width: 0px; height: 0px; margin: -1px; overflow: hidden; }
+.modal-open .webui-popover .webui-popover-inner {background-color: #fff;}
+.modal-open .webui-popover .webui-popover-inner .btn-list {text-align: center; margin-top: 10px; margin: 10px;}
+.modal-open .webui-popover .webui-popover-inner .btn-close {background-color: #354354; color: #fff; padding:6px 16px;}
+.modal-open .webui-popover .webui-popover-inner .btn-close:hover,
+.modal-open .webui-popover .webui-popover-inner .btn-close:focus,
+.modal-open .webui-popover .webui-popover-inner .btn-close:active {color: #fff;}
+.modal-open .webui-popover .webui-popover-inner .warn-txt {text-align:center; color:#777; line-height:22px;}
+.modal-open .webui-popover .webui-popover-inner .webui-popover-content {padding:0 14px 9px 14px;}
+.modal-open .webui-popover .webui-popover-title {border: none; padding: 0;}
+.modal-open .webui-popover .webui-popover-title h2 {font-size: 1.125em; color: #333; line-height: 135%; text-align: center;}
+.modal-open .webui-popover .webui-popover-title h2 .strong {color: #e00000;}
+.modal-open .webui-popover .webui-popover-title .icon {display: block; color: #e30000; text-align: center; font-size: 3.2em; margin-top: 18px; margin-bottom:2px;}
+/* E: warn-back-btn popover */
+
+/**
+ * S: 가입 완료 안내 모달  
+ */
+/*.modal-open .modal {z-index: 2040}*/
+.modal.welcome_modal { z-index: 2040; }
+.welcome_modal .modal-dialog {top: 10px;}
+.welcome_modal .modal-body {padding-left: 20px;padding-right: 20px;}
+.welcome_modal h2 {text-align: center;/*border-bottom: 1px solid #ddd;*/ /*padding-top: 20px; *//*padding-bottom: 12px;*/padding-top: 10px;}
+.welcome_modal h2 .img_box {display: inline-block;width: 182px;}
+.welcome_modal h2 img {display: block;width: 100%;}
+.welcome_modal .modal-body p {font-family: 'NotoKR';font-size: 0.88em;text-align: center;letter-spacing: -0.05em;color: #666;/*padding-top: 30px;*/padding-bottom: 15px;}
+.welcome_modal .modal-footer {background-color: #ddd;padding: 0;}
+.welcome_modal .modal-footer .btn {font-family: 'NotoKR-md';font-size: 0.94em; color: #333;border-top-right-radius: 0;border-top-left-radius: 0;padding-top: 10px;padding-bottom: 10px;}
+
+.req_comp .modal-body p {padding-top: 20px;}
+/* E: 가입 완료 안내 모달  */
+
+/**
+ * S: 선수프로필 모달
+ */
+.modal-player-profile .modal-header {background:#005895;}
+.modal-player-profile .modal-title {font-family:'NotoKR-md'; font-size:0.98em; padding-top:2px;}
+.modal-player-profile..confirm-modal .modal-header .close {top:2px;}
+/* E: 선수프로필 모달  */
+
+
+/**
+ * S: 계정 전환 모달 
+ */
+.modal.change_account {z-index: 20000;}
+.modal.change_account .modal-content {font-family: 'NotoKR';border-radius: 0;}
+.modal.change_account .modal-header {text-align: center;border-bottom: none;padding-bottom: 20px;}
+.modal.change_account .modal-header h2 {font-family:'NotoKR-md'; font-size: 1.13em; color: #005895; padding-bottom: 10px;}
+.modal.change_account .modal-header h2 span {display: inline-block;vertical-align: middle;}
+.modal.change_account .modal-header h2 .ic_deco {font-size: 1.25em;margin-right: 2px;}
+.modal.change_account .modal-header h2 .ic_deco .fa {color: #005895;}
+.modal.change_account .modal-header p {line-height: 125%}
+.modal.change_account .modal-header p span {display: block;}
+.modal.change_account .modal-header .now {font-size: 0.80em;color: #999;}
+.modal.change_account .modal-header .belong {font-size: 0.90em;color: #005895;}
+.modal.change_account .modal-body {border-bottom: none;padding-top: 0px;padding-left: 20px;padding-right: 20px;}
+
+.modal.change_account .count_list {border-top: 1px solid #ddd;}
+.modal.change_account .count_list li {border-bottom: none;padding-bottom: 10px; padding-top:10px; border-bottom:1px solid #ddd;}
+.modal.change_account .count_list div {display: inline-block;vertical-align: middle;}
+.modal.change_account .count_list .cont {width: 73%;}
+.modal.change_account .count_list .ctr_btn {text-align: center;width: 25%; height: 23px; margin:0; padding:0; text-align:right;}
+.modal.change_account .count_list .ctr_btn label {margin:0; padding:0;}
+/*.modal.change_account .count_list .ctr_btn input {visibility: hidden;width: 0;height: 0;margin: -1px;border: none;}*/
+.modal.change_account .sw_box {display: inline-block; position: relative; background-color: #c6c6c6;border-radius: 20px;width: 45px;height: 23px;-webkit-box-shadow: inset 1px 2px 4px #666;box-shadow: inset 1px 2px 4px #666;transition: all .3s ease;}
+.modal.change_account .sw_box:after {position: absolute; top: 2px;left: 2px;right: auto;content: '';z-index: 2000;background-color: #fff;border-radius: 50%;width: 19px;height: 19px;margin-left: 0;transition: all .3s ease;}
+.modal.change_account .cont {font-family: 'NotoKR';font-size: 0.93em;color: #666;letter-spacing: -0.025em;}
+.modal.change_account .on .cont {color: #005895;}
+.modal.change_account .on .sw_box {background-color: #0067a7;-webkit-box-shadow: inset 1px 2px 4px #00436D;box-shadow: inset 1px 2px 4px #00436D;}
+.modal.change_account .on .sw_box:after {margin-left: 50%;transition: all .3s ease ;}
+.modal.change_account .join_date {font-size: 0.82em;color: #999;}
+
+.modal.change_account .make_sub {text-align: center;color: #005895; margin-top:20px; padding-bottom: 15px;}
+.modal.change_account .make_sub a {display: inline-block;font-size: 0.92em;letter-spacing: -0.05em;border: 1px solid #bbb;border-radius: 20px;height: 30px;line-height: 30px;padding-top: 0;padding-bottom: 0;padding-left: 10px;padding-right: 10px;}
+.modal.change_account .make_sub span {display: inline-block;vertical-align: middle;line-height: 1;}
+.modal.change_account .make_sub .ic_deco {margin-right: 2px;}
+.modal.change_account .make_sub .txt {font-family: 'NotoKR-dl';font-size: 0.93em;margin-right: 10px;}
+.modal.change_account .make_sub .img_deco {position: relative;top:0px;width: 6px;height: 9px;line-height: 9px;}
+
+.modal.change_account .modal-footer {border-top: none;padding: 0;}
+.modal.change_account .modal-footer .modal-btn li {text-align: center;float: left;width: 50%;}
+.modal.change_account .modal-footer .btn-cancel {background-color: #ddd;color: #333;}
+.modal.change_account .modal-footer .btn {border-radius: 0;width: 100%;height: 40px;line-height: 40px;padding-top: 0;padding-bottom: 0;}
+.modal.change_account .cont p {font-size:13px; letter-spacing:-0.2px;}
+/* E: 계정 전환 모달 */

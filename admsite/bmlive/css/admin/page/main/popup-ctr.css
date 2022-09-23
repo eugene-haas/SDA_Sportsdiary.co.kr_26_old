@@ -1,0 +1,17 @@
+/* 팝업 관리 상세보기 */
+.popup-ctr .ipt-px li {display: inline-block;vertical-align: middle;margin-right: 20px;}
+.popup-ctr .ipt-px input {width: 160px;margin-left: 5px;margin-right: 10px;}
+
+.popup_write .btn-list-center .btn {width: 80px;margin-left: 6px;}
+.popup_write .btn-list-center .btn:first-child {margin-left: 0;}
+
+/* 팝업 관리 */
+.popup-table td {font-size: 13px;}
+.popup-table td.short {width: 90px;}
+.popup-table td.name {width: 560px;}
+.popup-table td:first-child {width: 50px;}
+.popup-table td:nth-child(2) {width: 100px;}
+.popup-table td:nth-child(4),
+.popup-table td:nth-child(5) {width: 160px;}
+.popup-table td:nth-child(8) {width: 200px;}
+.popup-table td:last-child {width: 200px;}

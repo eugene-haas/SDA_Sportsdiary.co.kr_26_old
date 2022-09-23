@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="AWS/Introduction" />
+
+import '@/stories/assets/mdx_style.css';
+
+
+# 아마존 웹 서비스
+
+위드라인의 aws 활용 설명 문서입니다.
+
+## Getting Started
+
+1. [AWS 사이트](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fap-northeast-2.console.aws.amazon.com%2Fconsole%2Fhome%3Fregion%3Dap-northeast-2%26state%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0&code_challenge=PgmWIo1hcIwNpWaFPnpJFJjVOc88uhIJ6qm9uWG1e5A&code_challenge_method=SHA-256)에 로그인
+2. [생성된 인스턴스](https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Instances:) 확인하기
+3. 서버 활용하기
+
+### 전제조건
+
+#### PuTTY 설치 및 Private key 가지고 있기
+
+1. [PuTTY Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/) - AWS ssh 접속 프로그램
+2. [PuTTYgen으로 Private key 생성](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/putty.html)
+
+## 사용중인 서비스
+
+### 1. EC2(AWS Cloud Compute Service)
+아마존의 가상컴퓨터를 임대 받아 쓰는 것<br/>
+가상컴퓨터 1대 : 인스턴스 라고 부른다.
+
+#### 비용
+ * 프리티어 일 경우 **1달에 모든 인스턴스 사용량 총합이 750시간 초과**하면 비용부과
+ * 프리티어 전용 인스턴스  세팅이 있으므로 주의
+
+### 2. EBS(Amazon Elastic Block Store)
+EC2에서 생성한 인스턴스의 실질적인 스토리지<br/>
+한개의 인스턴스와 한개의 볼륨이 연결되어 사용된다.
+
+#### 비용
+ * 프리티어 일 경우 **총합 30GB를 넘으면** 비용부과
+ * 인스턴스를 중지해도 볼륨은 살아있기 때문에 30GB에 계속 포함된다.(용량을 줄일려면 종료 혹은 삭제)
+
+### 3. CodePipeline
+지속적 통합 및 전달(CI/CD) 서비스<br/>
+github와 연결해서 push감지 후 정해진 인스턴스에 배포
+
+#### 비용
+ * 프리티어 일 경우 **1개까지 무료**
+ * **CodeBuild는 1달에 100분까지 무료**이니 주의
+ * CodeDeploy는 EC2 인스턴스에 배포할 경우 무료
+
+## 본 문서 작성자
+
+* **chansoo** - *Initial work* - 2021-01-20
+
+## Acknowledgments
+
+*

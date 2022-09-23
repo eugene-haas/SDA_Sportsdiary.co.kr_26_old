@@ -1,0 +1,15 @@
+/* 컨텐츠 적을때 바탕화면 컬러 채우기 */
+body.lack-bg {background:#e8ebf0;}
+
+/* content 영역 조절, left-navi 와 간격 조절 */
+#content {padding:20px; position: relative;width:100%;padding-left: 220px;min-width:1680px;}
+
+/* 폰트 어썸 등 icon 정렬 */
+.ic_deco {display: inline-block;text-align: center;vertical-align: middle;}
+.ic_deco .fas {padding: 0;line-height: 1;}
+
+.text-bold {font-family: "NanumGothicB";}
+
+
+/* 로딩바 zindex 강제 */
+.oloader_canvas{ z-index:5000 !important; }

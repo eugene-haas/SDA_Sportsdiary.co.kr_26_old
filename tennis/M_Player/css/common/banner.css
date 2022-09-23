@@ -1,0 +1,9 @@
+.banner {width: 100%;margin-top: 10px;margin-bottom: 10px;}
+.banner a {max-width: 320px; margin: 0 auto;}
+.banner.no_mg {margin-top: 0;margin-bottom: 0;}
+.banner.banner_lg {background-color: #eee;height: 200px;line-height: 195px;}
+.banner.banner_md {background-color: #eee;height: 120px;line-height: 115px;}
+.banner.banner_sm {background-color: #eee;height: 80px;line-height: 75px;}
+.major_banner .banner.banner_md {margin-top: 0;margin-bottom: 0;}
+.banner .banner_area {width: 320px;margin: 0 auto;}
+.kk_mall .banner.banner_md {margin-bottom:0;}

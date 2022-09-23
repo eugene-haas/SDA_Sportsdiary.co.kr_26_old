@@ -1,0 +1,10 @@
+.gnb {z-index: 10000;}
+.header .hamBtn {right: 5px;}
+/*.welcome h2 {font-size: .92em;}*/
+.welcome h2 {}
+.cate-list dl {border-bottom: none;}
+.cate-list a {letter-spacing: -0.05em;}
+
+.gnb .ad_pack dt {text-indent: 0;}
+.sub-header.flex h1, .sub-header h1 {font-family: 'NotoKR-md';font-size: 1.4em;}
+.btn-orange {background-color: #ff7e00;color: #fff;}

@@ -1,0 +1,29 @@
+.carousel {
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.carousel ul {
+  position: relative;
+}
+
+.carousel ul li {
+  position: absolute;
+}
+
+.carousel_btn_list {
+  width: 560px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.carousel_btn_list a {
+  background-color: #ff7200;
+}
+
+.carousel_btn_list a:first-child {
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=../maps/sd_part/front.css.map */

@@ -1,0 +1,18 @@
+.play_detail_modified .modal-dialog{width:560px;}
+.play_detail_modified .modal-body{padding:0;}
+.play_detail_modified .modal-content{padding:40px 30px;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .game{margin-top:10px;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .game table{width:100%;border:3px solid #c3cad4;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .game table tr td{background:#f2f2f2;padding:5px;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .game table tr td a{width:70px;height:44px;line-height:44px;text-align:center;color:#fff;border-radius:3px;font-family: 'NanumGothicB';background:#bfbfbf;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .game table tr th{background:#f2f2f2;text-align:center;width:121px;font-family: 'NanumGothicB';color:#333333;}
+
+.play_detail_modified .modal-dialog .modal-content .modal-body .score{margin-top:10px;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .score table{width:100%;border:3px solid #c3cad4;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .score table tr td{background:#f2f2f2;padding-top:5px;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .score table tr td a{width:70px;height:44px;line-height:44px;text-align:center;color:#fff;border-radius:3px;font-family: 'NanumGothicB';background:#bfbfbf;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .score table tr td a.on{background:#ec0a2e;color:#fff;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .score table tr:last-child td{padding-bottom:5px;}
+.play_detail_modified .modal-dialog .modal-content .modal-body .score table tr th{background:#f2f2f2;text-align:center;width:126px;font-family: 'NanumGothicB';color:#333333;}
+.play_detail_modified .order-footer ul li{float:none;display:inline-block;width:auto;}
+.play_detail_modified .order-footer .btn-list a{width:180px;}

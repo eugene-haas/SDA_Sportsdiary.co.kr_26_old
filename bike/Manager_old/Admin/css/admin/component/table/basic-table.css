@@ -1,0 +1,11 @@
+.table-list { width:100%; text-align:center; border-top:1px solid #ced5e3; border-left:1px solid #ced5e3; margin-top:10px;}
+.table-list thead th { font-family: 'NanumGothicB'; font-size:13px; text-align: center; background:#e1e7f0; border-right:1px solid #ced5e3; border-bottom:2px solid #ced5e3;height:39px;}
+.table-list tbody tr:nth-child(odd) { background:#fff;}
+.table-list tbody tr:nth-child(even) { background:#f7f9fb;}
+.table-list tbody tr:hover { background:#e6ebf3;}
+.table-list tbody th { height:34px; color:#94a4be; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3;}
+.table-list tbody td {font-size: 12px;color:#3e4e68; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3; vertical-align: middle; height:39px;}
+.table-list tbody td.left { text-align:left; padding-left:12px;}
+.table-list .name{text-align:left; padding:8px;}.;
+.table-list.push-top {margin-top: 30px;}
+.table-list .no-data td {font-size: 14px;background-color: #f2f2f2;padding-top: 5px;padding-bottom: 5px;}

@@ -1,0 +1,328 @@
+<!-- S: config -->
+<!-- #include file="../include/config.asp" -->
+<!-- E: config -->
+<%
+	search_user 	= fInject(Request("search_user"))
+	search_date 	= fInject(Request("search_date"))	
+	SDate 			= fInject(Request("SDate"))
+	EDate 			= fInject(Request("EDate"))	
+	currPage		= fInject(Request("currPage"))	
+	
+	BlockPage 		= 5	'페이지
+	B_PSize 		= 5	'페이지내 보여지는 목록카운트
+	TotCount	 	= 0	'전체카운트
+	TotPage			= 0	'전체페이지
+	intTemp		 	= 0	'페이징
+	intLoop 		= 1	'페이징
+
+	IF Len(currPage) = 0 Then currPage = 1
+	
+		
+	'기간선택
+	IF SDate <> "" and EDate <> "" Then
+		CSearch = " and DateDiff(d, '"&SDate&"', WriteDate)>=0 and DateDiff(d, WriteDate, '"&EDate&"')>=0 "
+	ElseIF SDate <> "" and EDate = "" Then
+		CSearch = " and DateDiff(d, WriteDate, '"&EDate&"')=0 "
+	ElseIF SDate = "" and EDate <> "" Then
+		CSearch = " and DateDiff(d, '"&SDate&"', WriteDate)=0 "
+	Else
+	End IF
+
+	'작성자 조회
+	IF search_user <> "" Then
+		CSearch2 = " and UserName Like '%"&search_user&"%' "
+	End IF
+	
+	ChkSQL = 	"SELECT COUNT(*), CEILING(CAST(COUNT(*) AS FLOAT)/"&B_PSize&") " &_
+				"FROM SportsDiary.dbo.tblBoard " &_
+				"WHERE SportsGb='"&SportsGb&"' " &_
+				"		and boardGubun='JudoBoard' " & CSearch&CSearch2
+	
+	SET CRs = Dbcon.Execute(ChkSQL)	
+		TotalCount = CRs(0)
+		TotalPage = CRs(1)
+
+	ChkSQL =""
+	ChkSQL = 	"SELECT TOP "&currPage * B_PSize & " * " &_
+				"FROM SportsDiary.dbo.tblBoard " &_
+				"WHERE SportsGb='"&SportsGb&"' " &_
+				"		and boardGubun='JudoBoard' " & CSearch&CSearch2 &_
+				"ORDER BY board_gongjiGubun DESC, WriteDate DESC "
+	
+	SET CRs = Dbcon.Execute(ChkSQL)
+	If Not(CRs.Eof Or CRs.Bof) Then 
+		CRs.Move (currPage - 1) * B_PSize
+		
+		Do Until CRs.eof
+			
+			FndData = FndData & "<ul>"
+			IF CRs("board_gongjiGubun")<>"" Then
+			FndData = FndData & "	<li class='require' onclick=""chk_Submit('./notice-view.asp','"&CRs("board_id")&"','"&currPage&"');"">"
+			Else
+			FndData = FndData & "	<li onclick=""chk_Submit('./notice-view.asp','"&CRs("board_id")&"','"&currPage&"');"">"	
+			End IF
+			FndData = FndData & "	  <h4>"&CRs("board_title")&"</h4>"
+			FndData = FndData & "	  <p class='write-info clearfix'>"
+			FndData = FndData & "		<span>"&CRs("UserName")&"</span>"
+			FndData = FndData & "		<span>"&replace(left(CRs("WriteDate"),10), "-",".")&"</span>"
+			FndData = FndData & "		<span class='seen'>조회수</span>"
+			FndData = FndData & "		<span>"&CRs("count")&"</span>"
+			FndData = FndData & "	  </p>"
+			FndData = FndData & "	 </a>"
+			FndData = FndData & "	</li>"
+			FndData = FndData & "</ul>"
+			
+			CRs.movenext
+		Loop	
+	Else	
+		
+		FndData = FndData & "<ul>"
+		FndData = FndData & "	<li>"	
+		FndData = FndData & "	  <h4>등록된 정보가 없습니다</h4>"
+		FndData = FndData & "	</li>"
+		FndData = FndData & "</ul>"	
+
+	End IF	
+	
+		CRs.Close
+	SET CRs = Nothing
+
+	DBClose()
+	
+%>
+<script>
+  //검색창 닫기
+  function click_close(){
+	   $("#sbox").slideToggle( "slow", function() {
+		   $('#click_close').hide();
+		   $('#click_open').show();
+
+      // Animation complete.
+    });
+  }
+
+  //검색창 열기
+  function click_open(){
+    $("#sbox").slideDown( "slow", function() {
+		  $('#click_close').show();
+		  $('#click_open').hide();
+      // Animation complete.
+    });
+  }
+  
+  //검색
+  function chk_Submit(CLink, board_ID, CPage){
+	$('#board_ID').val(board_ID);
+	$('#currPage').val(CPage);
+	  
+	$('form[name=s_frm]').attr('action',CLink);
+  	$('form[name=s_frm]').submit();
+  }
+  
+  //기간선택 날짜 조회
+  function chk_FndDateValue(){
+	var date = new Date(); 
+	var todayDate = date.toISOString().slice(0,10);	
+	var newDate;
+	
+	if($('#search_date_id').val()=="date"){
+		$('#SDate').val("");
+		$('#EDate').val("");
+	}
+	else{
+		if($('#search_date_id').val()=="week"){     
+			newDate = new Date(date.setDate(date.getDate() - 7));  
+		}
+		else if($('#search_date_id').val()=="month"){     
+			newDate = new Date(date.setDate(date.getDate() - 30));  
+		}
+		else{
+			newDate = new Date(date.setDate(date.getDate() - 365));  	
+		}
+
+		var SearchDate = newDate.toISOString().slice(0,10);
+		
+		$('#SDate').val(SearchDate);
+		$('#EDate').val(todayDate);
+	}
+  }
+  
+  $(document).ready(function(){
+	  
+	 $("select[name='search_date'] option[value='<%=search_date%>']").attr("selected", "selected");
+ 
+});
+
+  
+</script>
+<body>
+  <!-- S: sub-header -->
+  <div class="sub-header flex">
+    <!-- S: sub_header_arrow -->
+    <!-- #include file="../include/sub_header_arrow.asp" -->
+    <!-- E: sub_header_arrow -->
+    <h1>공지사항</h1>
+    <!-- S: sub_header_gnb -->
+    <!-- #include file="../include/sub_header_gnb.asp" -->
+    <!-- E: sub_header_gnb -->
+  </div>
+  <!-- E: sub-header -->
+
+  <!-- S: sub sub-main -->
+  <div class="sub sub-main board">
+    <!-- S: search 
+    <div class="search">
+      <label>
+        <span class="label-title">작성자 검색</span>
+        <select name="">
+          <option value="">::전체::</option>
+          <option value="">::전체::</option>
+          <option value="">::전체::</option>
+        </select>
+        <input type="submit" value="검색">
+      </label>
+    </div>
+    <!-- E: search -->
+    <!-- S: board-list -->
+    <div class="board-list">
+			<!-- S: board-search-input 상단검색 -->
+			<form name="s_frm" method="post">
+            	<input type="hidden" name="currPage" id="currPage" value="<%=currPage%>" />
+                <input type="hidden" name="board_ID" id="board_ID" />
+				<div class="board-search-input" id="sbox">
+					<!-- S: sel-list -->
+					<div class="sel-list">
+						<!-- S: 기간 선택 -->
+						<dl class="clearfix term-sel">
+							<dt>기간선택</dt>
+							<!--<dd class="on">-->
+							<dd id="search_date">
+								<select name="search_date" id="search_date_id" onChange="chk_FndDateValue();">
+									<option value="date" selected>기간 조회</option>
+                                    <option value="week">최근 1주일</option>
+									<option value="month">최근 1달</option>
+									<option value="year">최근 1년</option> 
+								</select>
+							</dd>
+						</dl>
+						<!-- E: 기간 선택 -->
+						<!-- S: 기간 조회 -->
+						<dl class="clearfix term-srch">
+							<dt>기간조회</dt>
+							<!--<dd class="on">-->
+							<dd>				
+								<span><input type="date" name="SDate" id="SDate" maxlength="10" value="<%=SDate%>" /></span>
+							</dd>
+							<dd class="flow">
+								<span>~</span>
+							</dd>
+							<!--<dd class="on">-->
+							<dd>
+								<span><input type="date" name="EDate" id="EDate" maxlength="10" value="<%=EDate%>" /></span>
+							</dd>
+						</dl>
+						<!-- E: 기간 조회 -->
+						<!-- S: 작성자 검색 -->
+						<dl class="clearfix term-user">
+							<dt>작성자 검색</td>
+							<!--<dd class="on">-->
+							<dd id="search_user">
+								<input type="text" name="search_user" id="search_user" style="width:82%;" />
+								<a href="javascript:chk_Submit('./notice-list.asp','','');" class="btn-gray">검색</a>
+							</dd>
+						</dl>
+					</div>
+					<!-- E: sel-list -->
+				</div>
+				<!-- E: board-search-input 상단검색 -->
+			</form>
+			<!-- S: tail -->
+			<div class="tail">
+				<a href="javascript:click_open();"><img src="../images/record/close-tail@3x.png" id="click_open" style="display:none;" alt="열기"></a>
+				<a href="javascript:click_close();"><img src="../images/record/open-tail@3x.png" id="click_close" alt="닫기"></a>    
+			</div>
+			<!-- E: tail -->
+      <!-- S: 게시판 리스트 -->
+      <ul>
+        <!-- S: 리스트 -->
+        <%=FndData%>
+        <!--
+        <li class="require">
+          <h4>[필독] 스포츠다이어리 신규결제 안내</h4>
+          <p class="write-info clearfix">
+            <span>관리자</span>
+            <span>2016.12.26</span>
+            <span class="seen">조회수</span>
+            <span>4,221</span>
+          </p>
+        </li>
+        <li>
+          <h4>스포츠다이어리 공지사항입니다.</h4>
+          <p class="write-info clearfix">
+            <span>관리자</span>
+            <span>2016.12.26</span>
+            <span class="seen">조회수</span>
+            <span>4,221</span>
+          </p>
+        </li>
+        -->
+        <!-- E: 리스트 -->
+      </ul>
+      <!-- E: 게시판 리스트 -->
+    </div>
+    <!-- E: board-list -->
+    <!-- S: board-bullet -->
+   	<%
+   	CStrPG = CStrPG & " <div id='boardPage' class='board-bullet'>"
+	
+	intTemp = Int((currPage - 1) / BlockPage) * BlockPage + 1
+
+	If intTemp = 1 Then
+	Else 
+		CStrPG = CStrPG & " <a href=""javascript:chk_Submit('./notice-list.asp','','"&intTemp - BlockPage&"');"" class='prev'><img src='../images/board/board-l-arrow@3x.png' alt='이전페이지'></a> "
+	End If	
+	
+	Do Until intLoop > BlockPage Or intTemp > TotalPage
+		If intTemp = CInt(currPage) Then
+			CStrPG = CStrPG & " <a href='#' class='on'>"&intTemp&"</a> " 
+		Else
+			CStrPG = CStrPG & " <a href=""javascript:chk_Submit('./notice-list.asp','','"&intTemp&"');"">"&intTemp&"</a> "
+		End If
+		
+		intTemp = intTemp + 1
+		intLoop = intLoop + 1
+	Loop
+	
+	IF intTemp > TotalPage Then
+	Else
+		CStrPG = CStrPG & " <a href=""javascript:chk_Submit('./notice-list.asp','','"&intTemp&"');"" class='next'><img src='../images/board/board-r-arrow@3x.png' alt='다음페이지'></a> "
+	End IF	
+  
+    CStrPG = CStrPG & "</div>"
+	
+	response.Write CStrPG
+   %>
+   <!--
+    <div class="board-bullet">
+          <a href="#" class="prev"><img src="../images/board/board-l-arrow@3x.png" alt="이전페이지"></a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next"><img src="../images/board/board-r-arrow@3x.png" alt="이전페이지"></a>
+    </div>
+    -->
+    <!-- E: board-bullet -->
+  </div>
+  <!-- E: sub sub-main board -->
+  
+  <!-- S: footer -->
+  <div class="footer">
+    <!-- S: bottom-menu -->
+    <!-- #include file="../include/bottom_menu.asp" -->
+    <!-- E: bottom-menu -->
+  </div>
+  <!-- E: footer -->
+  <!-- S: bot-config -->
+  <!-- #include file= "../include/bot_config.asp" -->
+  <!-- E: bot-config -->
+</body>

@@ -1,0 +1,255 @@
+<!--#include virtual="/Manager/Library/ajax_config.asp"-->
+<%
+	strtp = fInject(request("tp"))
+	strkey = fInject(decode(request("key"),0))
+	ViewCnt = "50"
+
+	'조회조건 데이터
+	Search_GameYear = fInject(Request("Search_GameYear"))
+	Search_GameTitleIDX = fInject(Request("Search_GameTitleIDX"))
+	Search_GroupGameGb  = fInject(Request("Search_GroupGameGb"))	
+	Search_TeamGb       = fInject(Request("Search_TeamGb"))	
+	Search_Sex          = fInject(Request("Search_Sex"))
+	Search_Level        = fInject(Request("Search_Level"))
+	player              = fInject(Request("player"))
+	
+	WSQL = ""
+	
+	if Search_GroupGameGb = "2" then '단체전
+	
+		If Search_GameYear <> "" Then 
+			WSQL = WSQL&" AND C1.GameYear = '"&Search_GameYear&"'"
+		End If 
+	
+		If Search_GameTitleIDX <> "" Then 
+			WSQL = WSQL&" AND A1.GameTitleIDX = '"&Search_GameTitleIDX&"'"
+		End If 
+				
+		If Search_TeamGb <> "" Then 
+			WSQL = WSQL&" AND A1.TeamGb = '"&Search_TeamGb&"'"
+		End If 	
+	
+		If Search_Sex <> "" Then 
+			WSQL = WSQL&" AND A1.Sex = '"&Search_Sex&"'"
+		End If 
+		
+		If player <> "" Then 
+			WSQL = WSQL&" AND (ISNULL(A1.LSchoolName,'') LIKE '%"&player&"%' OR ISNULL(A1.RSchoolName,'') LIKE '%"&player&"%')"
+		End If
+				
+		LSQL = "        SELECT TOP " & ViewCnt & " A1.RGameLevelidx RGameLevelidx"
+    LSQL = LSQL & "       ,A1.GameTitleIDX GameTitleIDX"
+    LSQL = LSQL & "       ,A1.GameTitleName GameTitleName"    
+    LSQL = LSQL & "       ,A1.TeamGb TeamGb"
+	  'LSQL = LSQL & "       ,A1.GroupGameGbName GroupGameGbName"
+	  'LSQL = LSQL & "       ,A1.GroupGameGb GroupGameGb"
+	  LSQL = LSQL & "       ,A1.Gender Gender"
+	  LSQL = LSQL & "       ,A1.Sex Sex"
+	  'LSQL = LSQL & "       ,A1.Level Level"
+	  'LSQL = LSQL & "       ,A1.LevelA LevelA"
+    LSQL = LSQL & "       ,A1.Game1R Game1R"
+    LSQL = LSQL & "       ,A1.LSchoolName LSchoolName"
+    LSQL = LSQL & "       ,A1.RSchoolName RSchoolName"
+    'LSQL = LSQL & "       ,A1.LPlayerIDX LPlayerIDX"
+    'LSQL = LSQL & "       ,A1.RPlayerIDX RPlayerIDX"
+    LSQL = LSQL & "       ,A1.LSchIDX LSchIDX"
+    LSQL = LSQL & "       ,A1.RSchIDX RSchIDX"
+    LSQL = LSQL & "       ,B1.LResult LResult"
+    LSQL = LSQL & "       ,B1.RResult RResult"
+    LSQL = LSQL & "       ,Sportsdiary.dbo.FN_PubName(B1.LResult) LResultNm"
+    LSQL = LSQL & "       ,Sportsdiary.dbo.FN_PubName(B1.RResult) RResultNm"    
+    LSQL = LSQL & "       ,CONVERT(VARCHAR,A1.GameTitleIDX)+A1.Sex+CONVERT(VARCHAR,A1.LSchIDX)+CONVERT(VARCHAR,A1.RSchIDX)+CONVERT(VARCHAR,A1.Game1R)+A1.TeamGb NextKey"    
+    LSQL = LSQL & "  FROM (SELECT A.RGameLevelidx RGameLevelidx"
+    LSQL = LSQL & "              ,A.GameTitleIDX GameTitleIDX"
+    LSQL = LSQL & "              ,SportsDiary.dbo.FN_GameTitleName(A.GameTitleIDX) AS GameTitleName"
+	  'LSQL = LSQL & "              ,SportsDiary.dbo.FN_PubName(A.GroupGameGb) AS GroupGameGbName"
+	  LSQL = LSQL & "              ,CASE WHEN A.Sex = 'Man' THEN '남자'" 
+	  LSQL = LSQL & "                    WHEN A.Sex = 'Woman' THEN '여자'" 
+	  LSQL = LSQL & "               ELSE '' END Gender" 
+	  'LSQL = LSQL & "              ,SportsDiary.dbo.FN_PubName(A.Level) Level"
+    LSQL = LSQL & "              ,A.Game1R Game1R"
+    LSQL = LSQL & "              ,A.SchoolName LSchoolName"
+    LSQL = LSQL & "              ,B.SchoolName RSchoolName"
+    'LSQL = LSQL & "              ,A.PlayerIDX LPlayerIDX"
+    'LSQL = LSQL & "              ,B.PlayerIDX RPlayerIDX"
+    LSQL = LSQL & "              ,A.SchIDX LSchIDX"
+    LSQL = LSQL & "              ,B.SchIDX RSchIDX"
+    'LSQL = LSQL & "              ,A.GroupGameGb GroupGameGb"
+    LSQL = LSQL & "              ,A.Sex Sex"
+    LSQL = LSQL & "              ,A.TeamGb TeamGb"
+    'LSQL = LSQL & "              ,A.Level LevelA"        
+    LSQL = LSQL & "        FROM Sportsdiary.dbo.tblRGameGroupSchool A"
+    LSQL = LSQL & "        INNER JOIN Sportsdiary.dbo.tblRGameGroupSchool B ON A.Game1R = B.Game1R"
+	  LSQL = LSQL & "                 AND A.SchIDX <> B.SchIDX"
+	  LSQL = LSQL & "                 AND B.RGameLevelidx = A.RGameLevelidx"
+	  LSQL = LSQL & "                 AND A.SchNum < B.SchNum"
+    LSQL = LSQL & "        WHERE A.Game1R <> ''" 
+    LSQL = LSQL & "        AND A.Game1R is not null"    
+    LSQL = LSQL & "        AND A.DelYN = 'N'"
+    'LSQL = LSQL & "        AND A.GroupGameGb = 'sd040002'"
+    LSQL = LSQL & "   ) A1"      
+    LSQL = LSQL & "     LEFT OUTER JOIN (SELECT  LSchIDX" 
+    LSQL = LSQL & "                             ,RSchIDX" 
+    LSQL = LSQL & "                             ,LResult" 
+    LSQL = LSQL & "                             ,RResult" 
+    LSQL = LSQL & "                             ,GameTitleIDX" 
+    'LSQL = LSQL & "                             ,GroupGameGb" 
+    'LSQL = LSQL & "                             ,Sex" 
+    'LSQL = LSQL & "                             ,Level" 		
+    LSQL = LSQL & "                       FROM Sportsdiary.dbo.tblRGameGroup" 
+    LSQL = LSQL & "                       WHERE DelYN = 'N') B1 ON    A1.GameTitleIDX = B1.GameTitleIDX" 
+    'LSQL = LSQL & "                                               AND A1.GroupGameGb = B1.GroupGameGb" 
+    'LSQL = LSQL & "                                               AND A1.Sex = B1.Sex" 
+    'LSQL = LSQL & "                                               AND A1.LevelA = B1.Level"
+    LSQL = LSQL & "                                               AND A1.LSchIDX = B1.LSchIDX"
+    LSQL = LSQL & "                                               AND A1.RSchIDX = B1.RSchIDX"
+    LSQL = LSQL & "      LEFT OUTER JOIN (SELECT GameTitleIDX GameTitleIDX"
+    LSQL = LSQL & "                             ,GameYear GameYear" 
+    LSQL = LSQL & "                       FROM SportsDiary.dbo.tblGameTitle" 
+    LSQL = LSQL & "                       WHERE DelYN='N') C1 ON A1.GameTitleIDX = C1.GameTitleIDX" 	 
+    LSQL = LSQL & "  WHERE A1.GameTitleIDX <> 0"
+    
+    If Trim(strkey) <> "" Then 
+			LSQL = LSQL & " AND (CONVERT(VARCHAR,A1.GameTitleIDX)+A1.Sex+CONVERT(VARCHAR,A1.LSchIDX)+CONVERT(VARCHAR,A1.RSchIDX)+CONVERT(VARCHAR,A1.Game1R)+A1.TeamGb) < '" & strkey & "'"
+		End If 
+		
+    LSQL = LSQL & WSQL        			
+				
+		LSQL = LSQL & " ORDER BY (CONVERT(VARCHAR,A1.GameTitleIDX)+A1.Sex+CONVERT(VARCHAR,A1.LSchIDX)+CONVERT(VARCHAR,A1.RSchIDX)+CONVERT(VARCHAR,A1.Game1R)+A1.TeamGb) DESC "
+		
+		
+		
+	  CNTSQL = " SELECT COUNT(A2.RGameLevelidx) CNT "
+		CNTSQL = CNTSQL & " FROM(SELECT A1.RGameLevelidx RGameLevelidx"
+    CNTSQL = CNTSQL & "       ,A1.GameTitleIDX GameTitleIDX"
+    CNTSQL = CNTSQL & "       ,A1.GameTitleName GameTitleName"    
+    CNTSQL = CNTSQL & "       ,A1.TeamGb TeamGb"
+	  'CNTSQL = CNTSQL & "       ,A1.GroupGameGbName GroupGameGbName"
+	  'CNTSQL = CNTSQL & "       ,A1.GroupGameGb GroupGameGb"
+	  CNTSQL = CNTSQL & "       ,A1.Gender Gender"
+	  CNTSQL = CNTSQL & "       ,A1.Sex Sex"
+	  'CNTSQL = CNTSQL & "       ,A1.Level Level"
+	  'CNTSQL = CNTSQL & "       ,A1.LevelA LevelA"
+    CNTSQL = CNTSQL & "       ,A1.Game1R Game1R"
+    CNTSQL = CNTSQL & "       ,A1.LSchoolName LSchoolName"
+    CNTSQL = CNTSQL & "       ,A1.RSchoolName RSchoolName"
+    'CNTSQL = CNTSQL & "       ,A1.LPlayerIDX LPlayerIDX"
+    'CNTSQL = CNTSQL & "       ,A1.RPlayerIDX RPlayerIDX"
+    CNTSQL = CNTSQL & "       ,A1.LSchIDX LSchIDX"
+    CNTSQL = CNTSQL & "       ,A1.RSchIDX RSchIDX"
+    CNTSQL = CNTSQL & "       ,B1.LResult LResult"
+    CNTSQL = CNTSQL & "       ,B1.RResult RResult"
+    CNTSQL = CNTSQL & "       ,Sportsdiary.dbo.FN_PubName(B1.LResult) LResultNm"
+    CNTSQL = CNTSQL & "       ,Sportsdiary.dbo.FN_PubName(B1.RResult) RResultNm"    
+    CNTSQL = CNTSQL & "       ,CONVERT(VARCHAR,A1.GameTitleIDX)+A1.Sex+CONVERT(VARCHAR,A1.LSchIDX)+CONVERT(VARCHAR,A1.RSchIDX)+CONVERT(VARCHAR,A1.Game1R)+A1.TeamGb NextKey"    
+    CNTSQL = CNTSQL & "  FROM (SELECT A.RGameLevelidx RGameLevelidx"
+    CNTSQL = CNTSQL & "              ,A.GameTitleIDX GameTitleIDX"
+    CNTSQL = CNTSQL & "              ,SportsDiary.dbo.FN_GameTitleName(A.GameTitleIDX) AS GameTitleName"
+	  'CNTSQL = CNTSQL & "              ,SportsDiary.dbo.FN_PubName(A.GroupGameGb) AS GroupGameGbName"
+	  CNTSQL = CNTSQL & "              ,CASE WHEN A.Sex = 'Man' THEN '남자'" 
+	  CNTSQL = CNTSQL & "                    WHEN A.Sex = 'Woman' THEN '여자'" 
+	  CNTSQL = CNTSQL & "               ELSE '' END Gender" 
+	  'CNTSQL = CNTSQL & "              ,SportsDiary.dbo.FN_PubName(A.Level) Level"
+    CNTSQL = CNTSQL & "              ,A.Game1R Game1R"
+    CNTSQL = CNTSQL & "              ,A.SchoolName LSchoolName"
+    CNTSQL = CNTSQL & "              ,B.SchoolName RSchoolName"
+    'CNTSQL = CNTSQL & "              ,A.PlayerIDX LPlayerIDX"
+    'CNTSQL = CNTSQL & "              ,B.PlayerIDX RPlayerIDX"
+    CNTSQL = CNTSQL & "              ,A.SchIDX LSchIDX"
+    CNTSQL = CNTSQL & "              ,B.SchIDX RSchIDX"
+    'CNTSQL = CNTSQL & "              ,A.GroupGameGb GroupGameGb"
+    CNTSQL = CNTSQL & "              ,A.Sex Sex"
+    CNTSQL = CNTSQL & "              ,A.TeamGb TeamGb"
+    'CNTSQL = CNTSQL & "              ,A.Level LevelA"        
+    CNTSQL = CNTSQL & "        FROM Sportsdiary.dbo.tblRGameGroupSchool A"
+    CNTSQL = CNTSQL & "        INNER JOIN Sportsdiary.dbo.tblRGameGroupSchool B ON A.Game1R = B.Game1R"
+	  CNTSQL = CNTSQL & "                 AND A.SchIDX <> B.SchIDX"
+	  CNTSQL = CNTSQL & "                 AND B.RGameLevelidx = A.RGameLevelidx"
+	  CNTSQL = CNTSQL & "                 AND A.SchNum < B.SchNum"
+    CNTSQL = CNTSQL & "        WHERE A.Game1R <> ''" 
+    CNTSQL = CNTSQL & "        AND A.Game1R is not null"    
+    CNTSQL = CNTSQL & "        AND A.DelYN = 'N'"
+    'CNTSQL = CNTSQL & "        AND A.GroupGameGb = 'sd040002'"
+    CNTSQL = CNTSQL & "   ) A1"      
+    CNTSQL = CNTSQL & "     LEFT OUTER JOIN (SELECT  LSchIDX" 
+    CNTSQL = CNTSQL & "                             ,RSchIDX" 
+    CNTSQL = CNTSQL & "                             ,LResult" 
+    CNTSQL = CNTSQL & "                             ,RResult" 
+    CNTSQL = CNTSQL & "                             ,GameTitleIDX" 
+    'CNTSQL = CNTSQL & "                             ,GroupGameGb" 
+    'CNTSQL = CNTSQL & "                             ,Sex" 
+    'CNTSQL = CNTSQL & "                             ,Level" 		
+    CNTSQL = CNTSQL & "                       FROM Sportsdiary.dbo.tblRGameGroup" 
+    CNTSQL = CNTSQL & "                       WHERE DelYN = 'N') B1 ON    A1.GameTitleIDX = B1.GameTitleIDX" 
+    'CNTSQL = CNTSQL & "                                               AND A1.GroupGameGb = B1.GroupGameGb" 
+    'CNTSQL = CNTSQL & "                                               AND A1.Sex = B1.Sex" 
+    'CNTSQL = CNTSQL & "                                               AND A1.LevelA = B1.Level"
+    CNTSQL = CNTSQL & "                                               AND A1.LSchIDX = B1.LSchIDX"
+    CNTSQL = CNTSQL & "                                               AND A1.RSchIDX = B1.RSchIDX"
+    CNTSQL = CNTSQL & "      LEFT OUTER JOIN (SELECT GameTitleIDX GameTitleIDX"
+    CNTSQL = CNTSQL & "                             ,GameYear GameYear" 
+    CNTSQL = CNTSQL & "                       FROM SportsDiary.dbo.tblGameTitle" 
+    CNTSQL = CNTSQL & "                       WHERE DelYN='N') C1 ON A1.GameTitleIDX = C1.GameTitleIDX" 	 
+    CNTSQL = CNTSQL & "  WHERE A1.GameTitleIDX <> 0"
+   
+    CNTSQL = CNTSQL & WSQL        			
+    CNTSQL = CNTSQL & ") A2 "    
+			
+	end if
+
+	Dbopen()
+  Set LRs = Dbcon.Execute(LSQL)
+	Set CRs = Dbcon.Execute(CNTSQL)
+
+	'다음조회 데이타는 행을 변경한다
+	If Strtp = "N" Then 
+	End If 
+
+%>
+<%
+	If LRs.Eof Or LRs.Bof Then 
+		Response.Write "null"
+		Response.End
+	Else 
+%>
+	<%
+		intCnt = 0
+
+		Do Until LRs.Eof 										
+	%>
+	
+	<tr>		
+		<td style="cursor:pointer;text-align:left;padding-left:10px;"><%=LRs("GameTitleName")%></td>
+		<td style="cursor:pointer;"></td>
+		<td style="cursor:pointer;"><%=LRs("Gender")%></td>
+		<td style="cursor:pointer;"></td>
+		<td style="cursor:pointer;"><%=LRs("Game1R")%></td>		
+		<td style="cursor:pointer;"><%=LRs("LSchoolName")%></td>	
+		<td style="cursor:pointer;color:blue;" onclick="relt_update('B','<%=Search_GroupGameGb%>','<%=LRs("LSchIDX")%>','<%=LRs("RSchIDX")%>','<%=LRs("LSchoolName")%>','<%=LRs("RSchoolName")%>','<%=LRs("LResult")%>','<%=LRs("RResult")%>','<%=LRs("GameTitleIDX")%>','','<%=LRs("Sex")%>','<%=LRs("Gender")%>','','<%=LRs("RGameLevelidx")%>','<%=LRs("TeamGb")%>','<%=LRs("Game1R")%>','<%=LRs("LSchIDX")%>','<%=LRs("RSchIDX")%>');">불참처리</td>	
+		<td style="cursor:pointer;"><%=LRs("LResultNm")%></td>
+		<td style="cursor:pointer;"><%=LRs("RSchoolName")%></td>		
+		<td style="cursor:pointer;color:blue;" onclick="relt_update('C','<%=Search_GroupGameGb%>','<%=LRs("LSchIDX")%>','<%=LRs("RSchIDX")%>','<%=LRs("LSchoolName")%>','<%=LRs("RSchoolName")%>','<%=LRs("LResult")%>','<%=LRs("RResult")%>','<%=LRs("GameTitleIDX")%>','','<%=LRs("Sex")%>','<%=LRs("Gender")%>','','<%=LRs("RGameLevelidx")%>','<%=LRs("TeamGb")%>','<%=LRs("Game1R")%>','<%=LRs("LSchIDX")%>','<%=LRs("RSchIDX")%>');">불참처리</td>	
+		<td style="cursor:pointer;"><%=LRs("RResultNm")%></td>
+								
+		<td style="cursor:pointer;color:red;" onclick="relt_update('A','<%=Search_GroupGameGb%>','<%=LRs("LSchIDX")%>','<%=LRs("RSchIDX")%>','<%=LRs("LSchoolName")%>','<%=LRs("RSchoolName")%>','<%=LRs("LResult")%>','<%=LRs("RResult")%>','<%=LRs("GameTitleIDX")%>','','<%=LRs("Sex")%>','<%=LRs("Gender")%>','','<%=LRs("RGameLevelidx")%>','<%=LRs("TeamGb")%>','<%=LRs("Game1R")%>','<%=LRs("LSchIDX")%>','<%=LRs("RSchIDX")%>');">동시불참처리</td>		
+		
+	</tr>
+<%
+			'다음조회를 위하여 키를 생성한다.
+			strsetkey = LRs("NextKey")				
+			LRs.MoveNext
+			intCnt = intCnt + 1
+		Loop 
+%>
+		ㅹ<%=encode(strsetkey,0)%>ㅹ<%=StrTp%>ㅹ<%=Crs("Cnt")%>ㅹ<%=intCnt%>
+<%
+	End If 
+%>
+<% LRs.Close
+   Set LRs = Nothing
+   
+   CRs.Close
+   Set CRs = Nothing
+
+	Dbclose()
+%>

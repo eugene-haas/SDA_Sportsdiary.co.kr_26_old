@@ -1,0 +1,6 @@
+/* 회원구분 정보 안내 - 지도자 > 생활체육 : join1_type5_coach */
+.join-body .user_divn .input-list .txt_guide p {font-family: "NotoKR-dl";font-size: 0.9em;line-height: 150%;letter-spacing: -0.1em;color: #005895;padding-top: 10px;}
+.user_divn select {font-size: 1em;color: #999;letter-spacing: -0.0125em;border: none;padding-left: 10px;line-height: 33px;}
+.join-body .user_divn .input-list label {font-size: 1em;width: 100%;margin-bottom: 0;padding-left: 10px;padding-right: 10px;}
+.join-body .user_divn .input-list label input {line-height: 35px;padding-top: 0;padding-bottom: 0;padding-left: 0;}
+.join-body .user_divn .input-list .team_choice {font-family: "NotoKR-md";font-size: 1.025em;padding-top: 20px;border-bottom: 1px solid #005895;color: #005895;padding-bottom: 5px;}

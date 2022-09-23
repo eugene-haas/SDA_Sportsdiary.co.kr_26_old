@@ -1,0 +1,23 @@
+.enter_score .sel_player .team {padding: 7px;}
+.enter_score .sel_player ul {float: left;width: 50%;}
+.enter_score .sel_player .team a {padding-left: 5px;padding-right: 5px;height: 34px;line-height: 30px;padding-top: 0;padding-bottom: 0;}
+.enter_score .sel_player .team .name {display: inline-block;font-size: 14px;font-weight: bold;letter-spacing: -0.05em;max-width: 55px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.enter_score .sel_player .team .club {display: inline-block;font-size: 12px;letter-spacing: -0.05em;max-width: 40px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.enter_score .sel_player .team_a {background-color: #003890;}
+.enter_score .sel_player .team_b {background-color: #ff3c00;}
+.enter_score .sel_player .team_a a {text-align: left;}
+.enter_score .sel_player .team_a .btn_white {width: 73%;}
+.enter_score .sel_player .team_b a {text-align: right;}
+.enter_score .sel_player .team_b .btn_serve {background-color: #ff3c00;border: 1px solid #ffab92;}
+.enter_score .sel_player li {margin-bottom: 5px;}
+.enter_score .sel_player li:last-child {margin-bottom: 0;}
+.enter_score .sel_player .btn_white.on {border: 3px solid #fbab00;}
+.enter_score .sel_player .btn_white {border: 3px solid transparent;border-radius: 5px;width: 74%;padding-top: 2px;padding-bottom: 2px;}
+.enter_score .sel_player .btn_serve {background-color: #0045a9;border: 1px solid #5b89d2;text-align: center;width: 32px;height: 34px;line-height: 30px;padding: 0;}
+.enter_score .sel_player .btn_serve.on {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#081f3d+0,000102+100 */
+background: #081f3d; /* Old browsers */
+background: -moz-linear-gradient(top, #081f3d 0%, #000102 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #081f3d 0%,#000102 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #081f3d 0%,#000102 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#081f3d', endColorstr='#000102',GradientType=0 ); /* IE6-9 */border: 1px solid #898989;}
+.enter_score .sel_player .img_box {width: 20px;height: 20px;}

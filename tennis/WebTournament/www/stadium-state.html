@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>스포츠 다이어리</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+    <style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <style>
+      #calendar {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      
+      .fc h2 {
+         font-size: 20px;
+      }
+      
+      .fc-sun {
+    /*    background-color: #FF0000; */
+        color: #FF0000;
+      }
+      .fc-sat {
+        color: blue;
+      }
+      
+    </style>
+    
+    
+    <!-- font-awesome -->
+    <link rel="stylesheet" type="text/css" href="css/library/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+    <link href="css/fullcalendar.css" rel="stylesheet">
+    <link href="css/fullcalendar.print.css" rel="stylesheet" media="print">
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
+    <script src="js/library/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery.oLoader.min.js"></script><!--로딩바-->
+    <script type="application/javascript" src="js/fastclick.js"></script><!--클릭반응속도up-->
+    <script src="js/bootstrap.js"></script>
+    
+    <script src="cordova.js" id="xdkJScordova_"></script>
+
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+
+    
+    <script src="lib/moment.min.js"></script>
+
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/language/ko.js"></script>
+
+    <script src="js/global.js"></script>
+
+    <script>
+      
+      if ('addEventListener' in document) {
+          document.addEventListener('DOMContentLoaded', function() {
+              FastClick.attach(document.body);
+          }, false);
+      }     
+      
+      /*S:--------------------$(document).ready(function()--------------------*/
+      $(document).ready(function(){
+
+      //해당대회 날짜 가져오기
+      select_gamedate();
+
+      });
+      /*E:--------------------$(document).ready(function()--------------------*/
+
+      /*S:script 시작부*/
+
+      /*E:script 시작부*/
+
+      //S:해당대회 날짜 가져오기
+      function select_gamedate(){
+        var defer = $.Deferred();
+
+        var obj = {};
+
+        obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+        obj.SportsGb = localStorage.getItem("SportsGb");
+
+        var jsonData = JSON.stringify(obj);
+
+        var events = "";
+
+        var d = new Date();
+   
+        var nowyear  = d.getFullYear();
+        var nowmonth = d.getMonth() + 1; // 0부터 시작하므로 1더함 더함
+        var nowday   = d.getDate();
+    
+        if (("" + nowmonth).length == 1) { nowmonth = "0" + nowmonth; }
+        if (("" + nowday).length   == 1) { nowday   = "0" + nowday;   }
+
+
+        $.ajax({
+          url: '/Ajax/judo_os/Management/GameDay.ashx',
+          type: 'post',
+          data: jsonData,
+          success: function (sdata) {
+
+            var myArr = JSON.parse(sdata);
+          
+            if (myArr.length > 0)
+            {
+               //대회명
+               $("#tourney_title").html(localStorage.getItem("GameTitleName"));
+
+               for (var i = 0; i < myArr.length; i++)
+               {
+								 if(myArr[i].GameDay == nowyear + "-" + nowmonth + "-" + nowday)
+								 {
+									$("#GameDay").append("<option value='" + myArr[i].GameDay + "' selected>" + myArr[i].GameDay + "</option>");
+								 }
+								 else
+								 {
+								 	$("#GameDay").append("<option value='" + myArr[i].GameDay + "'>" + myArr[i].GameDay + "</option>");
+								 }
+               }
+            } 
+            else
+            {
+              alert('해당 대회일자가 없습니다.');
+              $("#GameDay").append("<option value=''>일정없음</option>");
+            }
+
+            defer.resolve(sdata);
+          },
+          error: function (errorText) {
+            defer.reject(errorText);
+          }
+        });
+          return defer.promise();           
+      }
+      //E:해당대회 날짜 가져오기
+
+      //S:조회하기
+      function list_search(strStadiumNumber){
+
+        var defer = $.Deferred();
+
+        var obj = {};
+
+        //obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+				obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+        obj.SportsGb = localStorage.getItem("SportsGb");
+        obj.GameDay = $("#GameDay").val();
+        obj.StadiumNumber = strStadiumNumber;
+
+        var jsonData = JSON.stringify(obj);
+
+        var events = "";
+
+				console.log(jsonData);
+
+
+        $.ajax({
+          url: '/Ajax/judo_os/Result/Stadium-state_list.ashx',
+          type: 'post',
+          data: jsonData,
+          async:false,
+          success: function (sdata) {
+
+						console.log(sdata);
+
+            var myArr = JSON.parse(sdata);
+
+            var strHtml = "";
+          
+            if (myArr.length > 0)
+            {
+               for (var i = 0; i < myArr.length; i++)
+               {
+								  //header
+									strHtml += "<section class='match-stadium stadium-" + myArr[i].StadiumNumber + "'>";
+									strHtml += "<h3>" + myArr[i].StadiumNumber + " 경기장</h3>";
+									strHtml += "<div id='list_body_1' class='stadium-state'>";
+									strHtml += "<div class='operating-state'>";
+								  strHtml += "<table class='table table-bordered table-striped operating-state-table'>";
+									strHtml += "<thead>";
+								  strHtml += "<tr>";
+                  strHtml += "<th>구분</th>";
+                  strHtml += "<th>소속/체급</th>";
+                  strHtml += "<th>강수</th>";
+
+
+                  strHtml += "<th>경기번호</th>";
+                  strHtml += "<th>대전자</th>";
+                  strHtml += "<th>진행상황</th>";
+
+                  strHtml += "</tr>";
+                  strHtml += "</thead>";
+                  strHtml += "<tbody id='DP_List1" + myArr[i].StadiumNumber + "'>";
+
+
+									var strHTML_Player = "";
+
+									var TotalGameNum = Number(myArr[i].TotRound) - Number(myArr[i].UnearnWinCnt) - 1;
+
+									//각 체급별 대전자 SELECT
+									load_GGameOperate = $.when(GGameOperate( myArr[i].StadiumNumber ));  
+
+									load_GGameOperate.done(function(sdata2) {
+
+										var myArr2 = JSON.parse(sdata2);
+
+										if (myArr2.length > 0)
+										{
+
+											//개인전일때만 빈라운드 보이기
+											for (var k = 0; k < myArr2.length; k++)
+											{
+													var varLUserName = myArr2[k].LUserName;
+													var varRUserName = myArr2[k].RUserName;
+													var varLSchoolName = "(" + myArr2[k].LSchoolName + ")";
+													var varRSchoolName = "(" + myArr2[k].RSchoolName + ")";
+
+													if (varLUserName == "") 
+													{
+														varLUserName = "?";
+													}
+													if (varRUserName == "") 
+													{
+														varRUserName = "?";
+													}
+													if (myArr2[k].LSchoolName == "")
+													{
+														varLSchoolName = "";
+													}
+													if (myArr2[k].RSchoolName == "")
+													{
+														varRSchoolName = "";
+													}
+
+													strHtml += "<tr>";	
+													strHtml += "<td>" + myArr2[k].GroupGameGbNM + "</td>";
+													strHtml += "<td>" + myArr2[k].TeamGBNM + " " + myArr2[k].LevelNM + "</td>";
+	
+													/*
+													if (myArr2[k].Sex == "Man")
+													{
+														strHtml += "<td class='man'><!--남자 -->" + myArr2[k].LevelNM + "</td>";
+													}
+													else
+													{
+														strHtml += "<td class='woman'><!--여자 -->"+ myArr2[k].LevelNM +"</td>";
+													}	
+													*/
+													strHtml += "<td>" + myArr2[k].NowRoundNM + "</td>";
+													
+													if (myArr2[k].GroupGameGb == "sd040001")
+													{
+														strHtml += "<td>" + myArr2[k].GameNum + " </td>";
+														strHtml += "<td>" + varLSchoolName + varLUserName + " VS " + varRUserName + varRSchoolName + "</td>";
+													}
+													else
+													{
+														strHtml += "<td>" + myArr2[k].GroupGameNum + " 번 </td>";
+														strHtml += "<td>" + varLSchoolName + " VS " + varRSchoolName + "</td>";
+													}
+													
+													strHtml += "<td>" + myArr2[k].GameStatus + "</td>";
+													strHtml += "</tr>";				
+													
+											}
+											/*
+											if(myArr2[0].GroupGameGb == "sd040001"){			
+											}
+											else{
+											}
+											*/
+										}
+
+									});	
+
+
+
+
+
+
+
+
+									//bottom
+									strHtml += "</tbody>";
+								  strHtml += "</table>";
+									strHtml += "</div>";
+									strHtml += "</div>";
+									strHtml += "</section>";
+                  
+               }
+
+            } 
+            else
+            {
+              
+            }
+
+						$("#DP_TotalStadium").html(strHtml);
+
+            defer.resolve(sdata);
+          },
+          error: function (errorText) {
+            defer.reject(errorText);
+          }
+        });
+          return defer.promise();           
+      }
+      //E:조회하기
+
+      //S:라운드수 가져오기
+      function list_search_detail(strStadiumNumber){
+        var defer = $.Deferred();
+
+        var obj = {};
+
+        obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+        obj.GameDay = $("#GameDay").val();
+        obj.StadiumNumber = strStadiumNumber;
+        
+        var jsonData = JSON.stringify(obj);
+
+        var events = "";
+
+        $.ajax({
+          url: '/Ajax/judo_os/Stadium-state_detail.ashx',
+          type: 'post',
+          data: jsonData,
+          async:false,
+          success: function (sdata1) {
+
+            var myArr1 = JSON.parse(sdata1);
+          
+
+            defer.resolve(sdata1);
+          },
+          error: function (errorText) {
+            defer.reject(errorText);
+          }
+        });
+          return defer.promise();           
+      }
+      //E:라운드수 가져오기
+
+			//S:해당경기 번호수 가져오기
+			function loadgametitle(strTeamGb, strSex, strLevel, strGroupGameGb){
+				var defer = $.Deferred();
+
+				var obj = {};
+
+				obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+				obj.TeamGb = strTeamGb;
+				obj.Sex = strSex;
+				obj.Level = strLevel;
+				obj.GroupGameGb = strGroupGameGb;
+				obj.SportsGb = localStorage.getItem("SportsGb");
+
+				var jsonData = JSON.stringify(obj);
+
+				var events = "";
+
+				$.ajax({
+					url: '/Ajax/judo_os/Management/LevelInfo.ashx',
+					type: 'post',
+					data: jsonData,
+					async:false,
+					success: function (sdata) {
+
+						var myArr = JSON.parse(sdata);
+
+						defer.resolve(sdata);
+					},
+					error: function (errorText) {
+						defer.reject(errorText);
+					}
+				});
+					return defer.promise();           
+			}
+			//S:해당경기 번호수 가져오기
+
+			//S:해당경기 정보가져오기
+			function GGameOperate(strStadiumNumber){
+
+					var defer = $.Deferred();
+
+					var obj = {};
+					obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+					obj.StadiumNumber = strStadiumNumber;
+					obj.GameDay = $("#GameDay").val();
+					//obj.GroupGameNum = strGroupGameNum;
+					//obj.GameNum = strGameNum;
+
+					var jsonData = JSON.stringify(obj);
+
+					$.ajax({
+							url: '/Ajax/judo_os/GGameOperate.ashx',
+							type: 'post',
+							data: jsonData,
+							async:false,
+							success: function (sdata2) {
+
+					console.log(sdata2);
+				
+
+								var myArr = JSON.parse(sdata2);
+
+								defer.resolve(sdata2);
+							},
+							error: function (errorText) {
+								defer.reject(errorText);
+							}
+					});
+					return defer.promise();
+			}
+			//E:해당 라운드의 스코어 가져오기
+
+			//S:해당 경기번호의 출전가능선수 count
+			function playercntcheck(){
+				var defer = $.Deferred();
+
+				var obj = {};
+
+				obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+				obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+				obj.GameNum = localStorage.getItem("PlayerGameNum");
+
+				var jsonData = JSON.stringify(obj);
+
+				var events = "";
+
+				$.ajax({
+					url: '/Ajax/judo_os/GGamePlayerCntCheck.ashx',
+					type: 'post',
+					data: jsonData,
+					async:false,
+					success: function (sdata2) {
+
+						var myArr1 = JSON.parse(sdata2);
+					
+						defer.resolve(sdata2);
+					},
+					error: function (errorText) {
+						defer.reject(errorText);
+					}
+				});
+					return defer.promise();           
+			}
+			//E:해당 경기번호의 출전가능선수 count
+
+
+      //S:로딩바
+
+      $(document).ajaxStart(function() {
+
+          
+        apploading("AppBody", "조회 중 입니다.");
+
+
+      });
+      $(document).ajaxStop(function() {
+
+              
+        $('#AppBody').oLoader('hide');
+
+      });
+      //E:로딩바
+
+    </script>
+    
+  </head>
+  <body id="AppBody" class="stadium-board">
+    <!-- S: header -->
+    <div class="header container-fluid">
+      <div class="row">
+        <div class="pull-left">
+          <a href="index.html" role="button" class="prev-btn"><span class="icon-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></span><span class="prev-txt">대회별 현황보기</span></a>
+        </div>
+        <div>
+         <h1 class="logo">
+          <img src="images/tournerment/header/judo-logo@3x.png" alt="대한유도회" width="140" height="37">
+        </h1>
+        </div>
+        <div class="pull-right">
+          <span class="sd-logo"><img src="images/tournerment/header/logo@3x.png" alt="스포츠 다이어리" width="100"></span>
+          <a href="index.html" role="button" class="home-link"><span class="icon-home"><i class="fa fa-home" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+    </div>
+    <!-- E: header -->
+    
+    <!-- S: main -->
+    <div class="main main-operating container-fluid">
+     <h2 class="stage-title row" id="tourney_title" class="stage-title row"><!--제16회 제주컵 유도대회--></h2>
+      <!-- S: input-select -->
+      <div class="input-select ent-sel row">
+        <!-- S: tab-menu -->
+        <div class="enter-type tab-menu">
+          <ul class="clearfix">
+            <li class="type-sel">
+              <select id="GameDay" data-native-menu="false">
+              </select>
+            </li>
+            <li class="btn-list">
+              <button type="button" id="search" class="btn btn-warning btn-search" onclick="list_search('');">조 회</button>
+            </li>
+          </ul>
+        </div>
+        <!-- E: tab-menu -->
+      </div>
+      <!-- E: input-select -->
+    </div>
+    <!-- E: main -->
+
+		<!-- S: operating-tab -->
+		<div class="operating-tab">
+			<ul class="operating-list">
+				<li>
+					<a href="stadium-state.html" class="on">경기순서</a>
+				</li>
+				<li>
+					<a href="operating-state.html">진행현황</a>
+				</li>
+				<li>
+					<a href="operating-medal.html" >수상현황</a>
+				</li>
+			</ul>
+		</div>
+		<!-- E: operating-tab -->
+
+    <!-- S : gym-tab stadium -->
+    <ul class="gym-tab stadium">
+      <!-- <li class="on"><a onclick="list_search('');">전체</a></li> -->
+      <li class="on"><a onclick="list_search('');">전체</a></li>
+      <!-- <li><a onclick="list_search('1');">제1경기장</a></li> -->
+      <li><a onclick="list_search('1');">제1경기장</a></li>
+      <li><a onclick="list_search('2');">제2경기장</a></li>
+      <li><a onclick="list_search('3');">제3경기장</a></li>
+      <li><a onclick="list_search('4');">제4경기장</a></li>
+      <li><a onclick="list_search('5');">제5경기장</a></li>
+      <li><a onclick="list_search('6');">제6경기장</a></li>
+    </ul>
+    <!-- E : gym-tab stadium -->
+
+    <!-- S: stadium-show -->
+    <div class="stadium-show clearfix">
+    <!-- S: match-stadium-box -->
+    <div class="match-stadium-box" id="DP_TotalStadium">
+		<!--
+    <!-- S: 1경기장 stadium-1 ->
+    <section class="match-stadium stadium-1">
+      <h3>중등부</h3>
+      <!-- <h4><span class="player player-1">호날두</span> <span class="vs">vs</span> <span class="player player-2">포그바</span></h4> ->
+      <div id="list_body_1" class="stadium-state">
+        <div class="operating-state">
+          <!-- S: operating-state 개인전 ->
+          <table class="table table-bordered table-striped operating-state-table">
+            <!-- <caption id="">중등부</caption> ->
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대전방식</th>
+                <th>소속</th>
+                <th>성별</th>
+                <th>체급</th>
+                <th>총 경기</th>
+                <th>경기완료</th>
+                <th>진행중</th>
+                <th>남은 경기</th>
+                <th>진행률</th>
+                <th>대진보기</th>
+              </tr>
+            </thead>
+            <tbody id="DP_List1">
+              <tr>
+                <td colspan="11">제1 경기장 조회 조건을 선택 후, 조회버튼을 눌러주세요.</td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- E: 1경기장 stadium-1 -->
+
+    <!-- S: 2경기장 stadium-2 ->
+    <section class="match-stadium stadium-2">
+      <h3>중등부</h3>
+      <!-- <h4><span class="player player-1">호날두</span> <span class="vs">vs</span> <span class="player player-2">포그바</span></h4> ->
+      <div id="list_body_1" class="stadium-state">
+        <div class="operating-state">
+          <!-- S: operating-state 개인전 ->
+          <table class="table table-bordered table-striped operating-state-table">
+            <!-- <caption id="">중등부</caption> ->
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대전방식</th>
+                <th>소속</th>
+                <th>성별</th>
+                <th>체급</th>
+                <th>총 경기</th>
+                <th>경기완료</th>
+                <th>진행중</th>
+                <th>남은 경기</th>
+                <th>진행률</th>
+                <th>대진보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="11">제2경기장 조회 조건을 선택 후, 조회버튼을 눌러주세요.</td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- E: 2경기장 stadium-2 ->
+
+    <!-- S: 3경기장 stadium-3 ->
+    <section class="match-stadium stadium-3">
+      <h3>중등부</h3>
+      <!-- <h4><span class="player player-1">호날두</span> <span class="vs">vs</span> <span class="player player-2">포그바</span></h4> ->
+      <div id="list_body_1" class="stadium-state">
+        <div class="operating-state">
+          <!-- S: operating-state 개인전 ->
+          <table class="table table-bordered table-striped operating-state-table">
+            <!-- <caption id="">중등부</caption> ->
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대전방식</th>
+                <th>소속</th>
+                <th>성별</th>
+                <th>체급</th>
+                <th>총 경기</th>
+                <th>경기완료</th>
+                <th>진행중</th>
+                <th>남은 경기</th>
+                <th>진행률</th>
+                <th>대진보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="11">제3 경기장 조회 조건을 선택 후, 조회버튼을 눌러주세요.</td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- E: 3경기장 stadium-3 ->
+
+    <!-- S: 4경기장 stadium-4 ->
+    <section class="match-stadium stadium-4">
+      <h3>중등부</h3>
+      <!-- <h4><span class="player player-1">호날두</span> <span class="vs">vs</span> <span class="player player-2">포그바</span></h4> ->
+      <div id="list_body_1" class="stadium-state">
+        <div class="operating-state">
+          <!-- S: operating-state 개인전 ->
+          <table class="table table-bordered table-striped operating-state-table">
+            <!-- <caption id="">중등부</caption> ->
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대전방식</th>
+                <th>소속</th>
+                <th>성별</th>
+                <th>체급</th>
+                <th>총 경기</th>
+                <th>경기완료</th>
+                <th>진행중</th>
+                <th>남은 경기</th>
+                <th>진행률</th>
+                <th>대진보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="11">제4 경기장 조회 조건을 선택 후, 조회버튼을 눌러주세요.</td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- E: 4경기장 stadium-4 ->
+
+    <!-- S: 5경기장 stadium-5 ->
+    <section class="match-stadium stadium-5">
+      <h3>중등부</h3>
+      <!-- <h4><span class="player player-1">호날두</span> <span class="vs">vs</span> <span class="player player-2">포그바</span></h4> ->
+      <div id="list_body_1" class="stadium-state">
+        <div class="operating-state">
+          <!-- S: operating-state 개인전 ->
+          <table class="table table-bordered table-striped operating-state-table">
+            <!-- <caption id="">중등부</caption> ->
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대전방식</th>
+                <th>소속</th>
+                <th>성별</th>
+                <th>체급</th>
+                <th>총 경기</th>
+                <th>경기완료</th>
+                <th>진행중</th>
+                <th>남은 경기</th>
+                <th>진행률</th>
+                <th>대진보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="11">제5 경기장 조회 조건을 선택 후, 조회버튼을 눌러주세요.</td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- E: 5경기장 stadium-5 ->
+
+    <!-- S: 6경기장 stadium-6 ->
+    <section class="match-stadium stadium-6">
+      <h3>중등부</h3>
+      <!-- <h4><span class="player player-1">호날두</span> <span class="vs">vs</span> <span class="player player-2">포그바</span></h4> ->
+      <div id="list_body_1" class="stadium-state">
+        <div class="operating-state">
+          <!-- S: operating-state 개인전 ->
+          <table class="table table-bordered table-striped operating-state-table">
+            <!-- <caption id="">중등부</caption> ->
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대전방식</th>
+                <th>소속</th>
+                <th>성별</th>
+                <th>체급</th>
+                <th>총 경기</th>
+                <th>경기완료</th>
+                <th>진행중</th>
+                <th>남은 경기</th>
+                <th>진행률</th>
+                <th>대진보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="11">제6 경기장 조회 조건을 선택 후, 조회버튼을 눌러주세요.</td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="man">남자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+              <tr>
+                <td>개인전</td>
+                <td>토너먼트</td>
+                <td>중등부</td>
+                <td class="woman">여자</td>
+                <td>-45kg</td>
+                <td>14</td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100%</td>
+                <td>
+                  <button class="btn btn-default" type="button">보기</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- E: 6경기장 stadium-6 ->
+    </div>
+    <!-- E: match-stadium-box -->
+  </div>
+  <!-- E: stadium-show -->
+
+    <!-- custom.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

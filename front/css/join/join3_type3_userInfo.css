@@ -1,0 +1,8 @@
+/* 회원정보 입력 join3_type3_userInfo : 보호자(부모) 정보 입력 */
+.sub form.conf_player_info h2 {font-size: 1em;color: #333;padding: 6px 10px;}
+
+.join-form .parents-select {display: inline-block;vertical-align: middle;width: 59%;float: none;}
+.join-form .parents-select input[type="radio"] {-webkit-appearance: radio;-moz-appearance: radio;appearance: radio;}
+.join-form .parents-select input[type="text"] {display: inline-block;width: 100%; /*max-width: 160px;*/ margin-top: 8px;}
+.join-form .parents-select input {vertical-align: middle;margin-top: 0;}
+.join-form .parents-select label {vertical-align: middle;margin-bottom: 0;padding-top: 0;padding-bottom: 0;}

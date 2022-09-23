@@ -1,0 +1,5 @@
+.player_video_view tr td .delete-btn{float:none;width:80px;height:35px;line-height:35px;}
+.player_video_view .box-shadow{padding:30px;}
+.player_video_view .bt-btn-box{float:right;}
+.player_video_view .bt-btn-box a{height:40px;line-height:38px;width:100px;float:left;margin-left:5px;font-family:'NotoKR-md';}
+.player_video_view .bt-btn-box a.gray-btn{line-height:40px;}

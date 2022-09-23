@@ -1,0 +1,100 @@
+<!-- S: config -->
+<!-- #include file="../include/config.asp" -->
+<!-- E: config -->
+
+<!-- S: detail INFO -->
+<%
+	board_id 		= fInject(request("board_id"))
+	currPage 		= fInject(request("currPage"))
+	search_user 	= fInject(request("search_user"))
+	search_date 	= fInject(request("search_date"))	
+	SDate 			= fInject(request("SDate"))
+	EDate 			= fInject(request("EDate"))
+	
+	IF board_id = "" Then
+		response.Write "<script>alert('잘못된 접근입니다\n확인 후 이용하세요'); history.back();</script>"	
+		response.End()
+	End IF
+
+	ChkSQL = 	"SELECT * " &_
+				"FROM SportsDiary.dbo.tblBoard " &_
+				"WHERE board_id="&board_id	&_
+				"		and SportsGb='"&SportsGb&"'" 
+				
+	SET CRs = Dbcon.Execute(ChkSQL)
+	If Not(CRs.Eof Or CRs.Bof) Then 
+		board_title 		= CRs("board_title")
+		board_contents 		= CRs("board_contents")
+		board_gongjiGubun 	= CRs("board_gongjiGubun")
+		board_file1 		= CRs("board_file1")
+		board_file2 		= CRs("board_file2")
+		board_file3 		= CRs("board_file3")
+		board_file4 		= CRs("board_file4")
+		board_file5 		= CRs("board_file5")
+		WriteDate 			= CRs("WriteDate")
+		UserName 			= CRs("UserName")
+		count 				= CRs("count")
+	Else
+		response.Write "<script>alert('일치하는 정보가 없습니다.');history.back();</script>"
+		response.End()
+	End IF
+		CRs.Close
+	SET CRs = Nothing
+	
+	
+%>
+<!-- E: detail INFO -->
+<body>
+  <!-- S: sub-header -->
+  <div class="sub-header flex">
+    <!-- S: sub_header_arrow -->
+    <!-- #include file="../include/sub_header_arrow.asp" -->
+    <!-- E: sub_header_arrow -->
+    <h1>공지사항</h1>
+    <!-- S: sub_header_gnb -->
+    <!-- #include file="../include/sub_header_gnb.asp" -->
+    <!-- E: sub_header_gnb -->
+  </div>
+  <!-- E: sub-header -->
+
+  <!-- S: sub sub-main -->
+  <div class="sub sub-main board">
+    <div class="view-title">
+      <h4><%=board_title%></h4>
+      <p class="write-info clearfix">
+        <span><%=UserName%></span>
+        <span><%=replace(left(WriteDate, 10), "-", ".")%></span>
+        <span class="seen">조회수</span>
+        <span><%=formatnumber(count, 0)%></span>
+      </p>
+    </div>
+    <!-- S: view-cont -->
+    <div class="view-cont">
+      <!-- S: 게시판 작성 내용 -->
+      <p>
+      	<%=board_contents%>
+      </p>
+      <!-- E: 게시판 작성 내용 -->
+    </div>
+    <!-- E: view-cont -->
+    <!-- S: btn-list -->
+    <div class="btn-list">
+      <ul>
+        <li><a href="./notice-list.asp?currPage=<%=currPage%>&SDate=<%=SDate%>&EDate=<%=EDate%>&search_user=<%=search_user%>&search_date=<%=search_date%>" class="btn show-list">목록</a></li>
+      </ul>
+    </div>
+    <!-- E: btn-list -->
+  </div>
+  <!-- E: sub sub-main board -->
+  
+  <!-- S: footer -->
+  <div class="footer">
+    <!-- S: bottom-menu -->
+    <!-- #include file="../include/bottom_menu.asp" -->
+    <!-- E: bottom-menu -->
+  </div>
+  <!-- E: footer -->
+  <!-- S: bot-config -->
+  <!-- #include file= "../include/bot_config.asp" -->
+  <!-- E: bot-config -->
+</body>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="405.333" viewBox="0 0 1280 405.333">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#009dd8"/>
+      <stop offset="1" stop-color="#0042a5"/>
+    </linearGradient>
+  </defs>
+  <g id="bg02" transform="translate(0 -314.666)" opacity="0.8">
+    <path id="패스_11" data-name="패스 11" d="M0,0S225.523,138.666,566.856,77.714,1280,96,1280,96V362.667H0Z" transform="translate(0 357.333)" opacity="0.1" fill="url(#linear-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+    <path id="패스_12" data-name="패스 12" d="M0-28s161.523,187.81,481.523,211.809S1280,110.667,1280,110.667V377.333H0Z" transform="translate(0 342.667)" opacity="0.1" fill="url(#linear-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+    <path id="패스_13" data-name="패스 13" d="M0,223.047S251.428,290.1,536.38,180.381,1280-4,1280-4V364.762H0Z" transform="translate(0 355.238)" opacity="0.1" fill="url(#linear-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+  </g>
+</svg>

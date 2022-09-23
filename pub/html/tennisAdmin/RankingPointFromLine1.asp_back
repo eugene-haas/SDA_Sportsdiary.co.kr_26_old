@@ -1,0 +1,37 @@
+<th scope="row"> 구분 </th>   
+
+	<td>    
+		<select id="TeamGb1" onchange="javascript:mx.searchRanking(<%=IDX%>);">    
+			<option value="">==선택==</option>    
+			<%			
+			If IsArray(arrRS) Then
+				For ar = LBound(arrRS, 2) To UBound(arrRS, 2) 
+					sex = arrRS(0, ar) 
+					PTeamGb = arrRS(1, ar)
+					PTeamGbNm = arrRS(2, ar)
+					TeamGb = arrRS(3, ar)
+					TeamGbNm = arrRS(4, ar)
+					EnterType = arrRS(5, ar)
+				%>
+						<option value="<%=TeamGb%>" <%If fstr2 = TeamGb then%>selected<%End if%>>
+						<%
+							if(PTeamGb = "202") Then
+						%>
+						단체-<%=TeamGbNm%>
+						<%
+							else
+						%>
+						개인-<%=TeamGbNm%>
+						<%
+							end if
+						%>
+						</option>
+				<%
+				i = i + 1
+				Next
+			End if					
+			%>
+		</select>    
+	</td>    
+	
+	

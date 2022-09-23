@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA;EACE,6CAA6C;CAC9C","file":"../../sd_part/index.css","sourcesContent":[".main.index {\n  background-image: url(\"../imgs/main_bg.png\");\n}\n"]}

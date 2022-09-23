@@ -1,0 +1,6 @@
+.skill-state {background-color: #edf0f4;}
+.skill-state h2 { width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.skill-state h2:before {/* height: 50px; */}
+.skill-state .match-list thead th {line-height: 1.2em;padding: 4px 0 4px 0;}
+.rank-tb tbody tr:nth-child(2n-1) {background-color: #fff;}
+.rank-tb tbody tr:nth-child(2n) {background-color: #edf0f4;}

@@ -1,0 +1,31 @@
+﻿.pay.pay-deputy {padding-bottom: 40px;}
+.pay .user-table {padding: 10px;}
+.pay .user-table ul {border: 2px solid #6f91ae; border-radius: 2px;}
+.pay .user-table ul {background-color: #fff; font-size: 0.81em; letter-spacing: -0.05em; padding: 0px 10px;}
+.pay .user-table li {padding-left: 10px; padding-right: 10px; margin-left: -10px; margin-right: -10px;}
+.pay .user-table li:first-child {padding-top: 5px;}
+.pay .user-table li:nth-child(2n-1) {background-color: #ececec;}
+.pay .user-table .deputy-req {background-color: #fff; border-top: 2px solid #ddd; margin-left: -10px; margin-right: -10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;}
+.pay .user-table span {position: relative; display: inline-block; padding-right: 5px; margin-right: 5px;}
+.pay .user-table span:after {position: absolute; top: 6px; right: -5px; content: ''; width: 2px; height: 12px; background-color: #c0c0c0;}
+.pay .user-table span:last-child:after {width: 0;}
+.pay .user-table span:first-child {font-family: 'NanumGothicB'; width: 100px;}
+.pay .user-table span:last-child {margin-left: 20px;}
+.pay .user-table span.partion {font-family: 'NanumGothic'; width: auto; padding: 0; margin: 0;}
+.pay .user-table .agree-deputy {font-size: 0.75em; line-height: 150%; border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-top: 20px;}
+.pay .user-table .agree-deputy span {font-family: 'NanumGothic'; font-weight: normal; width: auto; padding: 0; margin: 0;}
+
+/* 결제 */
+.agree.deputy-agree {padding-bottom: 10px;}
+.agree .about-sd {display: inline-block; font-family: 'NanumGothicB'; font-size: 0.81em; color: #0082f0; float: right;}
+.agree .about-sd .def-txt {display: inline-block; border-bottom: 1px solid #6ea9f1; line-height: 150%;}
+.agree .about-sd .icon {display: inline-block; width: 15px;}
+
+/* 스포츠다이어리 보호자용 소개 */
+.sd-parents {background-color: #fff; border: 2px solid #c9cdd2; margin-left: 10px; margin-right: 10px;}
+.sd-parents h3 {font-family: 'NanumGothicB'; text-align: center; color: #0082f0; margin-top: 20px; margin-bottom: 20px;}
+.sd-parents .icon-img {width: 68px; margin: 0 10px; float: left;}
+.sd-parents .txt {font-size: 0.75em; letter-spacing: -0.02em; width: 66%; line-height: 175%; float: left;}
+.store-link {width: 95%; margin: 20px auto; clear: both;}
+.store-link li:first-child {margin-right: 10px;}
+.store-link a {width: 100%;}

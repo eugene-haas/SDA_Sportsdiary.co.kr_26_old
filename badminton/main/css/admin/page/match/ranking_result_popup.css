@@ -1,0 +1,23 @@
+/* ´ëÁøÇ¥ ÆË¾÷ */
+
+.ranking_result_popup input{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;}
+.ranking_result_popup select{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;}
+.ranking_result_popup .search_box select{width:170px;}
+.ranking_result_popup .search_box input{width:250px;}
+.ranking_result_popup .search_box label{margin-bottom:0;margin-top:5px;margin-right:20px;}
+.ranking_result_popup .search_box label input{height:auto;width:15px;height:15px;vertical-align: -3px;}
+.ranking_result_popup .search_box label span{font-weight:normal;}
+.ranking_result_popup .search_box a{width:70px;height:35px;line-height:35px;background:#7e868f;color:#fff;text-align:center;border-radius:3px;}
+.ranking_result_popup .top_title{background:#ec0a2e;color:#fff;font-family: 'NanumGothicB';height:40px;line-height:40px;text-align:center;font-size:16px;}
+.ranking_result_popup .search_box{padding:15px 0;text-align:center;background:#f7f9fb;}
+.ranking_result_popup .list_box{padding:30px;}
+.ranking_result_popup .list_box h2{font-size:16px;font-family: 'NanumGothicB';}
+.ranking_result_popup .list_box h2 .red_font{color:#ec0a2e;}
+.ranking_result_popup .list_box h2 .division{font-weight:normal;color:#cecece;}
+.ranking_result_popup table{width:100%;margin:auto;text-align:center;border-top:1px solid #ced5e3;border-right:1px solid #ced5e3;}
+.ranking_result_popup table tr th{height:40px;line-height:40px;background:#e1e7f0;text-align:center;border-left:1px solid #ced5e3;border-bottom:1px solid #ced5e3;font-family: 'NanumGothicB';color:#333;}
+.ranking_result_popup table tr td{width:120px;height:40px;line-height:40px;border-left:1px solid #ced5e3;border-bottom:1px solid #ced5e3;}
+.ranking_result_popup table tr td a{height:26px;line-height:26px;display:block;color:#fff;background:#7e868f;font-size:12px;width:70px;margin:auto;text-align:center;border-radius:3px;}
+.ranking_result_popup table tr td a.blue_btn{background:#387cb0;width:100px;}
+.ranking_result_popup table tr:nth-child(2n) td{background:#f7f9fb;}
+.ranking_result table tr td a.red_btn{background:#ec0a2e;}

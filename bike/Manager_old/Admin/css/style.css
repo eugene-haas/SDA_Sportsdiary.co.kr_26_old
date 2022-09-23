@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+
+
+/**
+ * --------------------------------
+ * 회원관리 > 회원명단
+ * --------------------------------
+ */
+/*.table-list.member-info tbody td:nth-child(8),
+.table-list.member-info tbody td:nth-child(12),
+.table-list.member-info tbody td:nth-child(14) {text-align: left; padding-left: 4px;}
+.table-list .name{text-align:left; padding:8px;}*/
+
+/**
+ * --------------------------------
+ * 게시판 board
+ * --------------------------------
+ */
+/*.main.board {margin: 15px;}
+.board .top {width: 1100px; margin: 0 auto; margin-bottom: 20px;}
+.board .top > * {float: left;}
+.board .sel-date {margin-right: 10px;}
+.board .sel-date select,
+.board .sel-date input {width: 100%; height: 35px; line-height: 30px;}
+.board .top .wave {margin: 8px 5px 0 5px;}
+.board .sel-date select {background-color: #777; color: #fff; width: 180px;}
+.board .sel-date.srch-sel {width: 500px;}
+
+.board .srch-sel select {width: 17%;}
+.board .srch-sel input {font-size: 16px; color: #000; width: 80%; padding-left: 10px;}
+.board .btn-basic {background-color: #354354; height: 35px; border: 1px solid #212e3f; padding-top: 0; padding-bottom: 0; margin-left: 0;} /* 검색 버튼 */
+/* .board .btn-orangy {background-color: #25465f;}
+
+.board .board-list .table-list td:first-child input {width: 20px; height: 20px;}
+srch-field 하단으로 이동
+.board .board-btm-list .srch-sel select {width: 27%; padding-left:5px;}
+.board .board-btm-list .srch-sel input {width: 70%;}
+.board .board-btm-list {position: relative; text-align: center; margin-top: 10px;}
+
+.board .board-btm-list .btn-list li {float: left}
+.board .board-btm-list .btn {height: 35px; line-height: 35px; margin-left: 5px;}
+.board .board-btm-list .sel-date.srch-sel {display: inline-block; width: 380px; margin-right: 0;}
+.board .board-btm-list .btn-cta {display: inline-block;}
+.board .board-btm-list .btn-cta .btn {margin:0 -5px 0 -3px;}
+.board .board-btm-list .srch-field,
+.board .board-btm-list .btn-list ul {display: inline-block; vertical-align: middle;}
+.board .qna-table tbody td:nth-child(3), 
+.board .notice-list tbody td:nth-child(4) {text-align: left; padding-left: 10px;}
+.board .qna-table tbody td:nth-child(4) {text-align:center;} */
+
+/**
+* s: top_search_box
+*/
+#contest tr.active{background:#d4dae4;}
+.top_fixe{position:inherit;top:20px;}
+.top_fixe.fixed{position:fixed;width:100%;padding-left:225px;right:0;padding-right:20px;background:#fff;padding-bottom:20px;z-index:100;top:0px;padding-top:20px;border-bottom:2px solid #2f6fc1;}

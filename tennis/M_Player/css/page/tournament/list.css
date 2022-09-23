@@ -1,0 +1,12 @@
+.sub.tourney .tourney-list {background-color: #edf0f4; padding-bottom: 30px;}
+.sub.tourney .tourney-list .match h4 {font-family: 'NanumGothicB'; font-size: 1em; background-color: #636e7c; color: #fff; padding: 10px;}
+.sub.tourney .tourney-list .match ul {padding-left: 10px; padding-right: 10px;}
+.sub.tourney .tourney-list .match li {position: relative; border-bottom: 1px solid #ddd; padding-top: 10px; padding-bottom: 10px; margin-left: -10px; margin-right: -10px;}
+.sub.tourney .tourney-list .match p {float: left; line-height: 100%;}
+.sub.tourney .tourney-list .match .number {font-size: 0.88em; text-align: center; background-color: #2e6da7; color: #fff; border: 1px solid #154877; width: 30px; height: 30px; line-height: 28px; margin-left: 10px; margin-right: 10px;}
+.sub.tourney .tourney-list .me,
+.sub.tourney .tourney-list .you {font-family: 'NanumGothicB'; font-size: 0.84em; color: #333; margin-top: 7px;}
+.sub.tourney .tourney-list .me span,
+.sub.tourney .tourney-list .you span {display: block; font-size: 0.81em; color: #999;}
+.sub.tourney .tourney-list p.you {float: right; text-align: right; padding-right: 10px;}
+.sub.tourney .tourney-list .match p.vs {position: absolute; top: 13px; left: calc(50% - 10px); font-size: 0.88em; background-color: #ddd; color: #666; text-align: center; width: 28px; padding: 5px; float: none;}

@@ -1,0 +1,10 @@
+.TMS_DayRegistPage table{margin-bottom:0;}
+.TMS_DayRegistPage table tr td{white-space: nowrap;}
+.TMS_DayRegistPage .table-responsive{border:0;}
+.TMS_DayRegistPage .table>tbody>tr>td, 
+.TMS_DayRegistPage .table>tbody>tr>th, 
+.TMS_DayRegistPage .table>tfoot>tr>td, 
+.TMS_DayRegistPage .table>tfoot>tr>th, 
+.TMS_DayRegistPage .table>thead>tr>td, 
+.TMS_DayRegistPage .table>thead>tr>th{border-top:0;}
+.TMS_DayRegistPage .table-responsive{height:600px;overflow-y:scroll;}

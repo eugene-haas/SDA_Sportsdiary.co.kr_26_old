@@ -1,0 +1,17 @@
+/* 입상 현황 팝업 */
+.detail-win li a {background-color: #fff; border-bottom: 1px solid #ddd; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;}
+.detail-win li a:last-child { margin-bottom: 0.71em;}
+
+/* 팝업 스타일 */
+#ana-medal-list .modal-header {font-family: 'NanumGothicB'; font-size: 1.07em; text-align: center; background-color: #3f505d; color: #fff; padding: 5px;}
+#ana-medal-list .modal-header .close-x {display: inline-block; width: 20px; margin-top:2px;}
+#ana-medal-list .medal li {text-align: center; background-color: #6a7780; color: #fff; font-weight: bold; line-height: 100%; border-radius: 20px; padding-right: 5px; margin-right: 5px; }
+#ana-medal-list li .medal-icon {display: inline-block; background-repeat: no-repeat; -webkit-background-size: cover; background-size: cover; background-position: center -4px; width: 20px; height: 25px; margin-left: 2px;} 
+#ana-medal-list .medal span:nth-child(2) {display: inline-block;vertical-align: top;padding-top: 6px;font-size: 0.85em;}
+#ana-medal-list .modal-body .txt {font-size: 0.95em;font-weight: bold;text-align: center;margin-top: 13px; margin-bottom: 5px; line-height:22px; letter-spacing: -1px;}
+#ana-medal-list .modal-footer {font-size:0.95em; background-color: #ddd; border-top: 1px solid #6f6f6fs; padding: 5px 15px 8px 10px; border-radius: 0 0 5px 5px;}
+#ana-medal-list .modal-footer label {background-position: left center; float: left; margin-bottom: 0;}
+#ana-medal-list .modal-footer label span {vertical-align:middle; font-size: 13px;}
+#ana-medal-list .modal-footer label input {vertical-align: middle; margin-top: 0;}
+#ana-medal-list .modal-footer button.btn {position: relative; background: none; border: none; color: #000; -webkit-box-shadow: none; box-shadow: none; text-shadow: none; border-radius: 0; font-size:13px; padding:1px 0 0 2px;}
+#ana-medal-list .modal-footer button.btn:before {position: absolute; top: 0; left: -10px; content: ''; background-color: #6f6f6f; width: 1px; height: 100%;}

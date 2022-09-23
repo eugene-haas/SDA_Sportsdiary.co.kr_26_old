@@ -1,0 +1,8 @@
+.admin_content .findcontestplayer td .td_select{margin-top:-4px;}
+.admin_content .findcontestplayer td .change_btn{height:30px;width:60px;line-height:30px;text-align:center;color:#fff;display:inline-block;background:#637aa1;}
+.admin_content .findcontestplayer td .name_btn{height:30px;width:95%;line-height:30px;text-align:center;color:#fff;display:inline-block;background:#637aa1;}
+.admin_content .findcontestplayer td .participant{color:#f00;}
+.admin_content .findcontestplayer td .waiting{color:#000;}
+.admin_content .findcontestplayer td:nth-child(7n){width:120px;}
+.admin_content .findcontestplayer td:nth-child(8n){width:120px;}
+.admin_content .findcontestplayer td:nth-child(9n){width:120px;}

@@ -1,0 +1,55 @@
+.good-list .memory-txt {font-size: 0.8em; line-height: 1.3em;}
+.memory-txt .reply{background-color: #edf0f4; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; margin-top: 10px;}
+
+#chart_view.memory-councel {padding-bottom: 40px;}
+/* modify */
+.memory-councel .panel {box-shadow:none;}
+.memory-councel [class*="col"] {float:none;}
+
+.memory-councel .panel-default {border:0; border-bottom:1px solid #d4d4d4;}
+.memory-councel .panel-group .panel+.panel {margin-top:0;}
+.memory-councel .panel-default > .panel-heading {overflow:hidden; padding:0; margin:0; background-image:none; background-color:#fff;}
+
+.memory-councel .panel-title {font-size:0.85em; font-family:"NanumGothicB"; line-height:1.5em;}
+.memory-councel .panel-title a {overflow:hidden; /*width:100%;*/ display:block; margin:0; padding:0.71em 0.36em;}
+.memory-councel .panel-title .panel-ic-q {float:left; display: inline-block;vertical-align:middle; font-size:20px; margin-right: 10px; margin-bottom:0;margin-top:10px; margin-left:10px;}
+.memory-councel .panel-title .panel-txt-q {position: relative; float:left; width: 85%; font-size:0.95em; line-height:1.5; /*padding:3px 1% 0;*/ display:inline-block; vertical-align:middle; padding-right: 40px; padding-top: 2px; padding-bottom: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.memory-councel .panel-title .panel-txt-q .ic-new {top: 4px; width: 18px; height: 18px;}
+.memory-councel .panel-title .panel-txt-q .ic-re {top: 4px; width: 18px; height: 18px; line-height: 18px;}
+.memory-councel .panel-title .panel-txt-q span:first-child {right: 22px}
+.memory-councel .panel-title .panel-txt-q span:nth-child(2) {right: 0px;}
+/*
+.memory-councel .panel-title .good-list li {border-bottom: 1px solid #d4d4d4;}
+.memory-councel .panel-title .good-list .img-icon {display: inline-block;vertical-align: top;width: 25px;margin-right: 10px; margin-bottom:0;margin-top:0px;}
+.memory-councel .panel-title .good-list a {background-color: #f4f4f4; padding: 0.71em 0.36em;}
+.memory-councel .panel-title .good-list a.on {background-color: #fff;}
+.memory-councel .panel-title .good-list a .img-icon {width: 19px;}
+.memory-councel .panel-title .good-list a > * {float: left;}
+.memory-councel .panel-title .good-list a .icon-cont {font-size: .93em;text-align: center; color: #d4d4d4; border: 1px solid #d4d4d4; border-radius: 50%; width: 30px; height: 30px; line-height: 25px; margin-top:0; float: right;}
+.memory-councel .panel-title .good-list a p {font-size: 0.85em; font-family: 'nanumGothicB'; overflow: hidden; width: 240px; white-space: nowrap; text-overflow: ellipsis; background:pink;}
+.memory-councel .panel-title .good-list a .icon-cont span {font-size: 0.71em;}
+*/
+
+.memory-councel .panel-title .ic-caret {float:right; display: inline-block; border-radius: 50%; border: 2px solid #ddd; width:26px; height:26px; line-height:23px; color:#d4d4d4; text-align:center; background:#fff;}
+.memory-councel .panel-title .caret{margin:0 0 3px 0; border-top: 5px solid; border-right: 5px solid transparent; border-left: 5px solid transparent; transition: all .3s ease;}
+.memory-councel .panel-title .on .caret {transform: rotate(180deg);}
+
+.memory-councel .panel-body {padding:0.71em 10px 1.25em; margin:0; font-family:"NanumGothic"; line-height:1.5em; background-color:#fff;}
+.memory-councel .memory-txt {padding:0; margin:0; border:0; font-size: 0.8em; line-height: 1.3em;}
+.memory-councel .memory-txt .reply{background-color: #edf0f4; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; margin-top: 10px;}*/
+
+
+/*
+.memory .panel-body .panel-ic-a {float:left; display:inline-block; width:26px; height:26px; padding:0; margin:0; text-align:center; color:#fff; border:2px solid #123651; background:#123651; border-radius:50%;}
+.memory .panel-body .panel-txt-a {float:left; width:90%; padding-left:1%;}
+*/
+
+
+@media screen and (min-width:400px){
+  .memory .panel-title .panel-txt-q {width:86%;}
+  .memory .panel-body .panel-txt-a {width:93%;}
+}
+@media screen and (min-width:640px){
+  .memory .panel-title .panel-txt-q {width:91%;}
+  .memory .panel-body .panel-txt-a {width:95%;}
+}

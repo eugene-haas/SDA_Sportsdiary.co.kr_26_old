@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>스포츠다이어리</title>
+  <meta name="apple-mobile-web-app-title" content="스포츠다이어리">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="refresh" content="0;./main.asp">
+  <!-- 개발 css -->
+  <link rel="stylesheet" href="css/d.style.css">
+  <!-- publishing css -->
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <script src="js/library/jquery-1.12.2.min.js"></script>
+  <script src="js/library/jquery-migrate-1.4.1.min.js"></script>
+  <script src="js/library/jquery.easing.1.3.min.js"></script>
+</head>
+<body>
+  <!-- S: header -->
+  <div class="header flex">
+    <!-- S: 로그아웃 버튼 -->
+    <div class="login-btn">
+      <a href="#" role="button">
+        <span class="link-deco"><img src="../images/include/header/icon_login@3x.png" alt></span>
+        <span>로그아웃</span>
+      </a>
+    </div>
+    <!-- E: 로그아웃 버튼 -->
+    <!-- S: logo -->
+    <h1 class="logo">
+      <img src="../images/include/header/logo@3x.png" alt="스포츠다이어리 유도">
+    </h1>
+    <!-- E: logo -->
+    <!-- S: gnb-btn -->
+    <div class="hamBtn">
+      <button class="btn" type="button">메뉴보기</button>
+    </div>
+    <!-- E: gnb-btn -->
+    <!-- S: gnb -->
+    <div class="gnb">
+      <!-- S: gnb-header -->
+      <div class="gnb-header clearfix">
+        <!-- S: profile 사진 -->
+        <div class="profile">
+          <img src="../images/include/gnb/profile@3x.png" alt="프로필 사진을 넣어 주세요.">
+        </div>
+        <!-- E: profile 사진 -->
+        <!-- S: 환영, 로그아웃 -->
+        <div class="welcome">
+          <h2><span>최보라</span> 님 환영합니다.</h2>
+          <a href="#" class="login">로그아웃</a>
+        </div>
+        <!-- E: 환영, 로그아웃 -->
+        <!-- S: gnb icon -->
+        <div class="gnb-icon clearfix">
+          <a href="index.html">
+            <img src="../images/include/gnb/home@3x.png" alt="홈으로 이동">
+          </a>
+          <a href="#" class="close-btn">
+            <img src="../images/include/gnb/X@3x.png" alt="닫기">
+          </a>
+        </div>
+        <!-- E: gnb icon -->
+      </div>
+      <!-- E: gnb-header -->
+      <!-- S: navi-list 1-->
+      <ul class="navi-list flex">
+        <li>
+          <a href="index.html"><span><img src="../images/include/gnb/icon-training@3x.png" alt"></span><span>훈련일지</span></a>
+        </li>
+        <li>
+          <a href="#"><span><img src="../images/include/gnb/icon-report@3x.png" alt></span><span>대회일지</span></a>
+        </li>
+      </ul>
+      <!-- E: navi-list 1 -->
+      <!-- S: navi-list 2 -->
+      <ul class="navi-list flex">
+        <li>
+          <a href="#"><span><img src="../images/include/gnb/icon-rehearsal@3x.png" alt></span><span>연습경기</span></a>
+        </li>
+        <li>
+          <a href="#"><span><img src="../images/include/gnb/icon-physical@3x.png" alt></span><span>체력측정</span></a>
+        </li>
+      </ul>
+      <!-- E: navi-list 2 -->
+      <!-- S: cate-list -->
+      <div class="cate-list">
+        <!-- S: 나의 정보 -->
+        <dl class="clearfix">
+          <dt><a href="#">나의 정보</a></dt>
+          <dd><a href="#">마이페이지</a></dd>
+          <dd><a href="#">나의일정</a></dd>
+          <dd><a href="#">나의 통계</a></dd>
+          <dd><a href="#">메모리</a></dd>
+        </dl>
+        <!-- E: 나의 정보 -->
+        <!-- S: 대회 정보 -->
+        <dl class="clearfix">
+          <dt><a href="#">대회 정보</a></dt>
+          <dd><a href="#">대회일정/결과</a></dd>
+          <dd><a href="#">경기 기록실</a></dd>
+          <dd><a href="#">선수분석</a></dd>
+          <dd><a href="#">대회 참가신청</a></dd>
+        </dl>
+        <!-- E: 대회 정보 -->
+        <!-- S: 대회참가신청 -->
+        <dl class="clearfix">
+          <dt><a href="#">대회참가신청</a></dt>
+          <dd><a href="#">참가신청</a></dd>
+          <dd><a href="#">신청 내역 확인</a></dd>
+        </dl>
+        <!-- E: 대회참가신청 -->
+        <!-- S: 게시판 -->
+        <dl class="clearfix">
+          <dt><a href="#">게시판</a></dt>
+          <dd><a href="#">공지사항</a></dd>
+          <dd><a href="#">기타일정</a></dd>
+        </dl>
+        <!-- E: 게시판 -->
+        <!-- S: 커뮤니티 -->
+        <dl class="clearfix">
+          <dt><a href="#">커뮤니티</a></dt>
+          <dd><a href="#">기술전수 칼럼</a></dd>
+          <dd><a href="#">유도 소식</a></dd>
+          <dd><a href="#">SD 사용후기</a></dd>
+          <dd><a href="#">생활체육 소식</a></dd>
+        </dl>
+        <!-- E: 커뮤니티 -->
+      </div>
+      <!-- E: cate-list -->
+      <div class="gnb-footer">
+        <ul class="clearfix">
+          <li>
+            <a href="#">사업자정보</a>
+          </li>
+          <li>
+            <a href="#">자주하는 질문</a>
+          </li>
+          <li>
+            <a href="#">단체정보조회</a>
+          </li>
+        </ul>
+        <h3><img src="../images/include/gnb/bottom_logo@3x.png" alt="스포츠다이어리 유도"></h3>
+      </div>
+    </div>
+    <!-- E: gnb -->
+  </div>
+  <!-- E: header -->
+  <!-- S: main -->
+  <div class="main index-main">
+    <!-- S: main-menu -->
+    <div class="main-menu main-bg bg-insert">
+      <ul class="flex">
+        <li>
+          <a href="#" role="button" alt="훈련일지">
+            <img src="../images/main/main-menu/icon_diary@3x.png" alt>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="button" alt="대회일지">
+            <img src="../images/main/main-menu/icon_record@3x.png" alt>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="button" alt="연습경기">
+            <img src="../images/main/main-menu/icon_rehearsal@3x.png" alt>
+          </a>
+        </li>
+        <li>
+          <a href="#" role="button" alt="체력측정">
+            <img src = "../images/main/main-menu/icon_physical@3x.png" alt>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- E: main-menu -->
+    <!-- S: sub-menu -->
+    <div class="sub-menu sub-menu-bg ">
+      <!-- S: sub-menu-bg -->
+      <div class="container target">
+        <!-- S: 첫번째 줄, 대회일정/결과, 경기기록실, 선수분석 -->
+        <ul class="flex">
+        <!-- S: 대회일정/결과 -->
+          <li class="">
+            <a href="#">
+              <span class="link-deco flex">
+                <img src="../images/main/sub-menu/icon_match@3x.png" alt="">
+              </span>
+              <span>대회일정/결과</span>
+            </a>
+          </li>
+          <!-- E: 대회일정/결과 -->
+          <!-- S: 경기기록실 -->
+          <li class="">
+            <a href="#">
+              <span class="link-deco flex">
+                <img src="../images/main/sub-menu/icon_reocrd@3x.png" alt="">
+              </span>
+              <span>경기기록실</span>
+            </a>
+          </li>
+          <!-- E: 경기기록실 -->
+          <!-- S: 선수 분석 -->
+          <li class="">
+            <a href="#">
+              <span class="link-deco flex">
+                <img src="../images/main/sub-menu/icon_match@3x.png" alt>
+              </span>
+              <span>선수분석</span>
+            </a>
+          </li>
+          <!-- E: 선수 분석 -->
+        </ul>
+        <!-- E: 첫번째 줄, 대회일정/결과, 경기기록실, 선수분석 -->
+        <!-- S: 두번째 줄, 나의 일정, 나의 통계, 메모리 -->
+        <ul class="flex">
+          <!-- S: 나의 일정 -->
+          <li class="">
+            <a href="#">
+              <span class="link-deco flex">
+                <img src="../images/main/sub-menu/icon_schedule@3x.png" alt="">
+              </span>
+              <span>나의 일정</span>
+            </a>
+          </li>
+          <!-- E: 나의 일정 -->
+          <!-- S: 나의 통계 -->
+          <li class="">
+            <a href="#">
+              <span class="link-deco flex">
+                <img src="../images/main/sub-menu/icon_stat@3x.png" alt="">
+              </span>
+              <span>나의 통계</span>
+            </a>
+          </li>
+          <!-- E: 나의 통계 -->
+          <!-- S: 메모리 -->
+          <li class="">
+            <a href="#">
+              <span class="link-deco flex">
+                <img src="../images/main/sub-menu/icon_memory@3x.png" alt="">
+              </span>
+              <span>메모리</span>
+            </a>
+          </li>
+          <!-- E: 메모리 -->
+        </ul>
+        <!-- E: 두번째 줄, 나의 일정, 나의 통계, 메모리 -->
+      </div>
+      <!-- E: sub-menu-bg -->
+    </div>
+    <!-- E: sub-menu -->
+    <div class="board container">
+      <ul class="clearfix">
+        <li>
+          <a href="#" class="on">경기일정</a>
+          <ul class="panel">
+            <li><a href="#"><span>[D-1]</span>2016 추계 전국 남,여 대학교 유도연맹전</a></li>
+            <li><a href="#"><span>[D-14]</span>2016 추계 한국 실업 유도연맹전(강원도)</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">공지사항</a>
+          <ul class="panel">
+            <li><a href="#"><span>[D-1]</span>2016 추계 전국 남,여 대학교 유도연맹전</a></li>
+            <li><a href="#"><span>[D-14]</span>2016 추계 한국 실업 유도연맹전(강원도)</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">기타일정</a>
+          <ul class="panel">
+            <li><a href="#"><span>[D-1]</span>2016 추계 전국 남,여 대학교 유도연맹전</a></li>
+            <li><a href="#"><span>[D-14]</span>2016 추계 한국 실업 유도연맹전(강원도)</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">더보기 ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- E: main -->
+  <!-- S: footer -->
+  <div class="footer">
+    <!-- S: corp-list -->
+    <div class="corp-list">
+      <ul class="flex">
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li></li>
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li>
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li>
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li>
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li>
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li>
+        <li><img src="../images/include/footer/corp-1.png" alt="대한유도회"></li>
+      </ul>
+    </div>
+    <!-- E: corp-list -->
+    <!-- S: bottom-menu -->
+    <div class="bottom-menu">
+      <button class="bot-menu-btn btn" type="button">
+        <img src="../images/include/footer/btn-open@3x.png" alt="하위 메뉴 보기">
+      </button>
+      <ul class="bottom-menu-list flex">
+        <li>
+          <a href="#">
+            <span class="link-deco flex"><img src="../images/include/footer/icon-home@3x.png" alt></span>
+            <span>홈</span>
+          </a>
+        </li>
+         <li>
+          <a href="#">
+            <span class="link-deco flex"><img src="../images/include/footer/icon-mypage@3x.png" alt></span>
+            <span>마이페이지</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="link-deco flex"><img src="../images/include/footer/icon-request@3x.png" alt></span>
+            <span>참가신청</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="link-deco flex"><img src="../images/include/footer/icon-board@3x.png" alt=""></span>
+            <span>커뮤니티</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- E: bottom-menu -->
+  </div>
+  <!-- E: footer -->
+  <!-- custom js -->
+  <script src="js/main.js"></script>
+</body>
+</html>

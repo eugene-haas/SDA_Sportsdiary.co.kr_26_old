@@ -1,0 +1,11 @@
+.TMS_MonthByDayViewPage_Count{}
+.TMS_MonthByDayViewPage_Count table{margin-bottom:0;}
+.TMS_MonthByDayViewPage_Count table tr td{white-space: nowrap;}
+.TMS_MonthByDayViewPage_Count .table-responsive{border:0;}
+.TMS_MonthByDayViewPage_Count .table>tbody>tr>td, 
+.TMS_MonthByDayViewPage_Count .table>tbody>tr>th, 
+.TMS_MonthByDayViewPage_Count .table>tfoot>tr>td, 
+.TMS_MonthByDayViewPage_Count .table>tfoot>tr>th, 
+.TMS_MonthByDayViewPage_Count .table>thead>tr>td, 
+.TMS_MonthByDayViewPage_Count .table>thead>tr>th{border-top:0;}
+.TMS_MonthByDayViewPage_Count .table-responsive{height:600px;overflow-y:scroll;}

@@ -1,0 +1,187 @@
+/* TOURNAMENT_INTRO 대회정보 > 국내대회 > 대회일정 */
+.dh_schedule {margin:30px 0 0 0;}
+.dh_schedule .panel {margin:0 0 15px; background-color: #fff; border: 1px solid transparent;}
+.dh_schedule .panel-body {padding:0px; line-height:1.5; background:#f2f2f2;}
+.dh_schedule .panel-body .top_line{float:left;width:100%;background:#fff;}
+.dh_schedule .panel-body .top_line .title{width:85px;height:35px;float:left; margin:7px; line-height:39px;text-align:center;background-color: #bbb;color:#fff;font-size:16px; font-family:"NanumBarunGothicB";}
+.dh_schedule .panel-body .top_line .right_text{float:left;height: 50px;line-height:54px;margin-left:10px;margin-right:30px;font-size:15px;font-family:"NanumBarunGothic";}
+.dh_schedule .panel-body .btm_list{float:left;width:100%;padding:15px;}
+.dh_schedule .panel-body .btm_list ul li{padding:5px 0;float:left;width:100%;}
+.dh_schedule .panel-body .btm_list ul li .left_name{float:left;width:120px;height: 17px;padding-left:20px;font-size:15px; font-family:"NanumBarunGothicB";}
+.dh_schedule .panel-body .btm_list ul li:nth-child(n+5) .left_name {background: none;}
+.dh_schedule .panel-body .btm_list ul li.empty_tit .left_name {background: none;}
+.dh_schedule .panel-body .btm_list ul li:nth-child(n+5) .right_text {border-left: none;padding-left: 17px;}
+.dh_schedule .panel-body .btm_list ul li.empty_tit .right_text {border-left: none;padding-left: 17px;}
+.dh_schedule .panel-body .btm_list ul li .right_text{border-left:2px solid #bbb;padding-left:15px;float:left;width: 660px;}
+.dh_schedule .panel-body .btm_list ul li .right_text a{padding-left:20px;width:17px;height:17px;float:left;width:100%;}
+.dh_schedule .panel-body .btn_list{float:left;width:100%;text-align:center;padding:0 15px 20px 0;}
+.dh_schedule .panel-body .btn_list img {margin-right:5px;}
+.dh_schedule .panel-heading > .dropdown .dropdown-toggle {color: inherit;}
+.dh_schedule .panel-heading {overflow:hidden; margin-top: 0; margin-bottom: 0; color:#333; font-size: 18px; color: inherit;}
+.dh_schedule .panel-title a {display:block; padding:9px 20px; color: inherit;}
+.dh_schedule .panel-title a:after {display: block; clear: both; content: '';}
+
+.dh_schedule .panel-group {/*margin-bottom: 20px;*/ margin-bottom: 60px;}
+.dh_schedule .panel-group .panel {margin-bottom: 0 0 20px;border-radius:0;}
+.dh_schedule .panel-group .panel + .panel {margin-top: 5px;}
+.dh_schedule .panel-group .panel-heading {border-bottom: 0;border-radius:0;padding:0;}
+/*.dh_schedule .panel-group .panel-heading + .panel-collapse > .panel-body,*/
+.dh_schedule .panel-group .panel-heading + .panel-collapse > .list-group {border-top: 1px solid #ddd;}
+.dh_schedule .panel-default {border-color: #ddd;}
+
+.dh_schedule .tit_management {float:left; width:900px; vertical-align:middle; line-height:33px;margin:auto;font-weight:600;font-size:18px;}
+.dh_schedule .btn_file {display:block; text-decoration:underline; padding:0 0 7px 27px; color:#4f83a1; font-size:14px; font-family:"NanumBarunGothic"; font-weight:bold;}
+.dh_schedule .txt_management {color:#333; margin:0 0 10px; line-height:1.5;}
+
+.dh_schedule .icon_caret {transition: all .3s ease; float:right; padding:0 6px; height:23px; line-height:23px; text-align:center; color:#ddd; border:3px solid #ddd; border-radius:50%;margin:auto; margin-top: 10px; line-height:1em;}
+.dh_schedule .caret {transform: rotate(180deg); display: inline-block; width: 0; height: 0; margin:0; vertical-align: middle; border-top:none; border-right:6px solid transparent; border-left:6px solid transparent;border-top: 6px solid #ddd;margin-top:4px;}
+.dh_schedule .collapsed .icon_caret {transform: rotate(180deg); color:#ddd; border:3px solid #ddd; margin-top: 8px;}
+.dh_schedule .collapsed .icon_caret .caret {transition: all .3s ease;margin-top:4px;}
+
+.dh_schedule .panel-title {color:#fff; background:#788286;}
+.dh_schedule .panel-title .collapsed {color:#333; background:#fff;}
+.dh_schedule .panel-title .collapsed .day{color:#fff;}
+.dh_schedule .panel-title a p {color:#fff;}
+.dh_schedule .panel-title a.collapsed p {color:#666;}
+
+.dh_schedule .panel-default>.panel-heading{background:#fff;}
+.dh_schedule .panel-title .left_text{float:left;}
+.dh_schedule .panel-title .left_text span{float:left;width:55px;height:23px;line-height:25px;text-align:center;margin-top:3px; font-family:"NanumBarunGothic"; font-size:13px;}
+.dh_schedule .panel-title .left_text span.end {background:url(../../../dist/imgs/match/schedule_btn_end_bg.png) no-repeat;}
+.dh_schedule .panel-title .left_text p{float:left;margin-left:10px;margin-top:6px;margin-bottom:0; font-family:"NanumBarunGothicB";}
+.dh_schedule .panel-title .left_text p.date {display: block; font-size: 14px; color: #c3c3c3; padding-left: 55px; clear: both;}
+
+
+
+/* TOURNAMENT_INTRO 대회정보 > 국내대회 > 대회일정 팝업 */
+.result_popup h1{background:#354354;height:46px;line-height:46px;text-align:center;color:#fff;font-size:24px;font-weight:600;}
+.result_popup .pop_con{border: 1px solid #bbb;margin:15px;}
+.result_popup .top_con ul li{float:left;background-color: #eee;width:50%;font-size:18px;}
+.result_popup .top_con ul li .title{width:85px;height:36px;line-height: 36px; margin:7px 0 7px 7px; text-align:center;background-color: #398dbe;color:#fff;float:left;font-family:"NanumBarunGothic"; font-size:15px;}
+.result_popup .top_con ul li .right_text{font-weight: normal;float:left;height: 50px;line-height: 50px;margin-left:10px; font-size:15px;}
+.result_popup .top_con ul li .right_select {float: left;width: 345px;height: 50px;line-height: 50px;}
+.result_popup .top_con ul li .right_select select{font-weight: normal;margin-top:-2px;height:34px;margin-left:10px;width:100%;height: 35px;line-height: 35px; font-size:15px;}
+.result_popup .pou_table{float:left;background-color: #eeeeee;}
+.result_popup .pou_table tr td{border-right:1px solid #bbb;padding:11px 20px;font-size:15px;text-align:-webkit-auto;border-bottom:1px solid #bbb; font-family:"NanumBarunGothic";}
+.result_popup .pou_table tr:last-child td {border-bottom: none;}
+.result_popup .pou_table tr td span{font-weight:600;color:#db0800;display:block;line-height:30px;}
+.result_popup .pou_table tr td:last-child{border-right:0;}
+.result_popup .pou_table tr td ul li{line-height:26px; font-family:"NanumBarunGothic";}
+.result_popup .title_name td{background:#354354;color:#fff; text-align:center !important;}
+.result_popup .pou_table p {padding:10px 0; font-family:"NanumBarunGothicB"; font-size:16px;}
+.result_popup .pou_table td > p {display: none;}
+.result_popup .pou_table .border_none td{border-right:0;border-bottom:none;background:#398dbe;color:#fff;font-weight:600;}
+.result_popup .pou_table .text_center{text-align:center;}
+.result_popup .pou_table .text_center a{width:90px;height:30px;display:inline-block;line-height:30px;color:#fff;}
+.result_popup .pou_table .text_center .btn_1 {font-size:14px; font-family:"NanumBarunGothic";}
+
+
+/* TOURNAMENT_INTRO 대회정보 > 국내대회 > 대진표 */
+.tournament_intro {/*padding:30px 0 80px;*/padding:30px 0 20px;}
+.tournament_intro .user_guide {clear: both;}
+.tournament_intro select {width:127px; height:32px; font-size:14px; font-family:"NanumBarunGothic"; color:#666; vertical-align:top; line-height:100%; border:1px solid #ccc;}
+.tournament_intro select.long_sel {width: 190px;}
+.tournament_intro .btn_skyblue {margin:0 0 0 6px; vertical-align:top; line-height:34px;}
+
+.tournament_intro ul {width:100%; margin:10px 0 80px 0; border-top:2px solid #0085d3;float:left;}
+.tournament_intro ul li {font-family:"NanumBarunGothicB"; height:49px; line-height:49px; border-bottom:1px solid #ccc;}
+.tournament_intro ul li span {display:block; float:left; width:210px; font-size:14px; color:#999; text-align:left; padding-left:20px;}
+.tournament_intro ul li strong {display:block; float:left; width:730px; font-size:15px; font-weight:normal; color:#333;}
+
+.tournament_intro ul li a {display:block; overflow:hidden; width:100%;  }
+
+.tournament_intro ul li a strong:hover,
+.tournament_intro ul li a strong:active,
+.tournament_intro ul li a strong:focus {color:#0085d3;}
+
+
+/* TOURNAMENT_INTRO 대회정보 > 국내대회 > 대회참가신청/현황 */
+.match_list .btn_skyblue {margin:0 0 0 6px; vertical-align:top; line-height:34px;}
+.match_list .match_board .table thead th {border-left:0;}
+.match_list .match_board .table-striped .ta_l p {color:#0085d3;}
+.match_list .match_board .table-striped {margin-bottom:70px;}
+.match_list .match_board .table-striped .btn {background:#999; color:#fff;}
+
+.req_login .req_login_box{width:500px;margin:auto;text-align:center;}
+.req_login .req_login_box .top_title h1{font-size:26px;margin-top:80px;}
+.req_login .req_login_box .top_title p{font-size:16px;color:#666;margin-top:20px;}
+.req_login .req_login_box .login_box{padding:40px;background:#f2f2f2;margin-top:40px;float:left;margin-bottom:100px;}
+.req_login .req_login_box .login_box .in_box ul li{width:414px;height:44px;border:3px solid #ddd;background:#fff;margin-bottom:10px;}
+.req_login .req_login_box .login_box .in_box ul li input{font-size:16px;width:377px;height:42px;line-height:42px;border:3px;padding-left:37px;}
+.req_login .req_login_box .login_box .login_btn{height:58px;width:418px;text-align:center;line-height:58px;color:#fff;font-size:18px;background:#57a5d4;display:block;border-radius:3px;border:1px solid #2c82b6;}
+.req_login .req_login_box .login_box .find_btn{width:148px;height:28px;line-height:28px;color:#666;font-size:14px;background:#fff;display:block;margin:auto;margin-top:20px;border-radius:3px;border:1px solid #bbb;
+background: #fff;
+    color: #333;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+}
+.req_login .req_login_box .login_box .btn_b_text{font-size:13px;color:#666;line-height:20px;margin-top:20px;}
+.req_login .req_login_box .login_box .btn_b_text span{color:#d8302d;}
+.req_login .req_login_box .login_box .bt_title{padding-top:20px;border-top:2px solid #ddd;margin-top:20px;font-size:16px;font-weight:600;}
+.req_login .req_login_box .login_box .bt_box{margin-top:20px;}
+.req_login .req_login_box .login_box .bt_box dl dd{float:left;width:205px;margin-right:10px;text-align:left;}
+.req_login .req_login_box .login_box .bt_box dl dd:last-child{margin-right:0;}
+.req_login .req_login_box .login_box .bt_box dl dd a{width:100%;height:23px;color:#fff;font-size:14px;line-height:23px;display:block;text-align:center;}
+.req_login .req_login_box .login_box .bt_box dl dd a.red_btn{background:#e13937;}
+.req_login .req_login_box .login_box .bt_box dl dd a.grey_btn{background:#7e878e;}
+.req_login .req_login_box .login_box .bt_box dl dd p{line-height:18px;font-size:13px;margin-top:10px;color:#666;}
+
+
+.req_find .req_find_box{width:500px;margin:auto;text-align:center;}
+.req_find .req_find_box .top_title h1{font-size:26px;margin-top:80px;}
+.req_find .req_find_box .top_title p{font-size:16px;color:#666;margin-top:20px;}
+.req_find .req_find_box .find_box{padding:40px;background:#f2f2f2;float:left;width:414px;margin-top:40px;float:left;margin-bottom:100px;}
+.req_find .req_find_box .find_box .in_box ul{width:280px;float:left;}
+.req_find .req_find_box .find_box .in_box ul li{width:274px;height:44px;border:3px solid #ddd;background:#fff;margin-bottom:10px;}
+.req_find .req_find_box .find_box .in_box ul li input{font-size:16px;width:254px;height:44px;line-height:44px;border:3px;padding:0 10px;}
+.req_find .req_find_box .find_box .in_box .login_btn{margin-left:10px;float:left;width:122px;height:108px;background:#57a5d4;border-radius:3px;border:1px solid #2c82b6;text-align:center;line-height:108px;color:#fff;font-size:18px;}
+.req_find .req_find_box .find_box .red_font{float:left;width:100%;text-align:left;line-height:18px;font-size:13px;color:#d8302d;}
+.req_find .req_find_box .find_box .text_code{float:left;padding:20px 15px;background:#fff;margin-top:20px;text-align:left;width:384px;line-height:20px;color:#666;font-size:13px;}
+.req_find .req_find_box .find_box .text_code .left_7{margin-left:7px;}
+.req_find .req_find_box .find_box .text_code .red_font{width:auto;float:none;}
+.req_find .req_find_box .find_box .lgoin_btn{float:left;width:100%;margin-top:20px;text-align:center;}
+.req_find .req_find_box .find_box .lgoin_btn a{width:178px;height:58px;border:1px solid #636b71;font-size:18px;color:#fff;background:#7e878e;line-height:58px;display:inline-block;border-radius:3px;}
+.req_find .req_find_box .find_box .box_title{font-size:18px;text-align:left;margin-bottom:10px;padding-left:22px;height:18px;line-height:19px;}
+.req_find .req_find_box .find_box .lookup_end .lookup_list_box{padding-bottom:20px;border-bottom:2px solid #bbb;float:left;width:100%;}
+.req_find .req_find_box .find_box .lookup_end .lookup_table{float:left;width:100%;border-left:1px solid #ddd;border-top:1px solid #ddd;margin-top:20px;}
+.req_find .req_find_box .find_box .lookup_end .lookup_table tr td{height:34px;font-size:15px;border-right:1px solid #ddd;border-bottom:1px solid #ddd;background:#fff;}
+.req_find .req_find_box .find_box .lookup_end .lookup_table tr td input{margin-top:-2px;}
+.req_find .req_find_box .find_box .lookup_end .lookup_table .bg_color td{background:#6f8294;color:#fff;}
+.req_find .req_find_box .find_box .lookup_end .lookup_table .division_color{background:#c8ced4;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box{float:left;width:100%;margin-top:20px;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box .text_con{font-size:13px;line-height:20px;text-align:left;color:#666;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box .text_con .red_font{color:#d8302d;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box .psaa_in{text-align:left;margin-top:10px;padding-bottom:20px;border-bottom:2px solid #bbb;float:left;width:100%;margin-bottom:10px;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box .psaa_in span{font-size:16px;float:left;margin-right:10px;margin-top:10px;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box .psaa_in input{width:206px;padding:0 10px;height:33px;line-height:33px;border:1px solid #999;float:left;margin-right:5px;}
+.req_find .req_find_box .find_box .lookup_end .pass_find_box .psaa_in a{height:33px;width:79px;float:left;line-height:33px;border:1px solid #999;border-radius:3px;text-align:center;background:#fff;color:3333;
+    background: #fff;
+    color: #333;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+}
+
+.divNodata {text-align: center;}
+.dh_schedule .divNodata {margin-top: 150px;}
+div.divNodata,
+.divTechnicNodata {text-align: center;border-bottom: 1px solid #bbb;height: 45px;line-height: 45px;}

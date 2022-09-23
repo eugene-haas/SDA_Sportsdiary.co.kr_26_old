@@ -1,0 +1,13 @@
+/**
+ * reset
+ * 2018.03.07 admin 버전
+ */
+body, div, h1, h2, h3, h4, h5, h6, p, button, ul, li, ol, dl, dt, dd, input {margin: 0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+table{border-collapse: collapse;border-spacing: 0;}
+a { color:#000; text-decoration:none; display: inline-block;}
+a:hover,
+a:active,
+a:focus {text-decoration:none;}
+li {list-style: none;}
+
+select, input {width: 100%;}

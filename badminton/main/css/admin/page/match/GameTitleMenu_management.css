@@ -1,0 +1,15 @@
+.GameTitleMenu_management{}
+.GameTitleMenu_management table{width:100%; border-bottom:2px solid #9bb3d7;}
+.GameTitleMenu_management table tr th{background:#f2f3f7;height:60px;line-height:60px;width:130px;border-right:1px solid #ced5e3;border-bottom:1px solid #ced5e3;text-align:center;font-family:'NanumGothicB';}
+.GameTitleMenu_management table tr td{height:60px;line-height:60px;border-right:1px solid #ced5e3;border-bottom:1px solid #ced5e3;padding:0 20px;}
+.GameTitleMenu_management table tr td input{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;width:125px;}
+.GameTitleMenu_management table tr td select{height:35px;border:1px solid #ced5e3;padding:0 10px;color:#3e4e68;font-size:13px;width:185px;}
+.GameTitleMenu_management table tr td .in_1{width:220px;}
+.GameTitleMenu_management table tr td .in_2{width:185px;}
+.GameTitleMenu_management table tr td .in_3{width:85px;}
+.GameTitleMenu_management table tr td .in_100{width:100%;}
+.GameTitleMenu_management table tr td.rb_none{border-right:none;}
+.GameTitleMenu_management table tr td .black_btn{width:78px;height:35px;border-radius:3px;line-height:35px;display:inline-block;color:#fff;background:#727272;font-family:'NanumGothicB';text-align:center;}
+.GameTitleMenu_management .btn_list{text-align:right;margin-top:20px;}
+.GameTitleMenu_management .btn_list a{width:80px;height:30px;line-height:30px;text-align:center;display:inline-block;color:#fff;text-align:center;background:#7e868f;border-radius:3px;font-size:12px;}
+.GameTitleMenu_management .btn_list a.blue_btn{background:#2f6fc1;}

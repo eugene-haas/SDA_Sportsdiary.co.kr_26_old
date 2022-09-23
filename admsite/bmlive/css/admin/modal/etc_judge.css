@@ -1,0 +1,16 @@
+.modal.etc-judge .modal-dialog {width: 560px;}
+.modal.etc-judge .modal-body {color: #333;padding: 40px 30px;}
+
+.modal.etc-judge .sel-content {margin-top: 25px;}
+.modal.etc-judge .sel-list {margin-top: 20px;}
+.modal.etc-judge .sel-list h4 {font-family: "NanumGothicB";font-size: 16px;padding-bottom: 10px;}
+.modal.etc-judge .sel-list li {margin-bottom: 10px;}
+.modal.etc-judge .sel-list li:last-child {margin-bottom: 0;}
+.modal.etc-judge .sel-list sub {font-size: 14px;bottom: 0;display: inline-block;vertical-align: middle;}
+.modal.etc-judge .sel-list a {font-size: 16px;text-align: left;background-color: #fff;color: #333;border: 2px solid #ccc;border-radius: 6px;width: 100%;padding-left: 6px;}
+.modal.etc-judge .sel-list .ic-deco {float: right;margin-right: 15px;}
+.modal.etc-judge .sel-list a.on {background-color: #0f335b;color: #fff;}
+
+.modal.etc-judge .btn-list li {float: left;width: calc(50% - 10px);margin-right: 20px;}
+.modal.etc-judge .btn-list li:last-child {margin-right: 0;}
+.modal.etc-judge .btn-list a {font-size: 16px;display: block;height: 60px;line-height: 60px;padding: 0;}

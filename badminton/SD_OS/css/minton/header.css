@@ -1,0 +1,6 @@
+/* 헤더 */
+.header {position: relative;background-color: #04101f;height: 45px;}
+.back_btn .btn_back {position: absolute;top: 5px;left: 0px;background: transparent;}
+.header .match_tit {font-family: 'NotoKR-md';text-align: center;margin-top: 5px;}
+.header .match_tit .court {font-size: 14px;background-color: #fff;color: #04101f;border-radius: 20px;display: inline-block;padding: 5px 10px;}
+.header .match_tit .game_idx {display: inline-block;font-size: 16px;color: #fff;margin-left: 6px;}

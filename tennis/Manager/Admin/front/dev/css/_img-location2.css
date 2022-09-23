@@ -1,0 +1,13 @@
+/* SUBDIVISION 협회정보 > 협회소개 > 정관 */
+.articles div.title {background:#788286 url(../../dist/imgs/sub/title_Rounded_bg_left.jpg) no-repeat 0 0; }
+.articles div.title p {background: url(../../dist/imgs/sub/title_Rounded_bg_right.jpg) no-repeat right 0; }
+
+/* MANAGEMENT 협회정보 > 유도소개 > 유도역사 */
+.info_history .tab-content dt { background: url(../../dist/imgs/info/member_icon_1.png) no-repeat 0 3px; }
+.info_history .tab-content .tab_3 { background: url(../../dist/imgs/info/info_history_img02.png) no-repeat 800px center; }
+
+/* MANAGEMENT 협회정보 > 유도소개 > 유도기술 */
+.jundo_skill .tab-content h4 { background: url(../../dist/imgs/info/member_icon_1.png) no-repeat 0 0; }
+
+/* MANAGEMENT 협회정보 > 유도소개 > 유도규정 */
+.judo_rule .tab-content h4 { background: url(../../dist/imgs/info/member_icon_1.png) no-repeat 0 0; }

@@ -1,0 +1,16 @@
+/* @media screen and (max-width: 1200px) {
+  .left-gnb{display:none;}
+  .right-content{width:100%;}
+}
+@media screen and (max-width: 900px) {
+  .main .chart-1{float:none;width:100%;}
+  .main .chart-2{float:none;width:100%;margin-top:30px}
+  .main .chart-3 ul li{width:49%;}
+  .main .chart-3 ul li:nth-child(1){margin-bottom:2%;}
+  .main .chart-3 ul li:nth-child(2){margin-bottom:2%;}
+  .main .chart-3 ul li:nth-child(2n){margin-right:0;}
+  .dis-none{display:none;}
+}
+@media screen and (max-width: 600px) {
+  .dis-none-2{display:none;}
+} */

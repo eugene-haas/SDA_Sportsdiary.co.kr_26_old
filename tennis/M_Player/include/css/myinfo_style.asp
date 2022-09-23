@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="/front/css/mypage/myinfo.css">

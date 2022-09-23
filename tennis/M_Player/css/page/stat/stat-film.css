@@ -1,0 +1,49 @@
+.stat-film-title .stat-year {font-weight: bold; border-left: 4px solid #123651; height: 17px; font-size:18px; line-height: 17px; padding-left: 8px; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; margin-right: 10px;}
+.stat-film-title h3 {background-color: #164369; color: #fff;font-size: 0.93em;text-align: center;padding-top: 0.68em;padding-bottom: 0.68em; padding-left:15px; padding-right:15px; line-height: 22px;}
+.stat-film-title h3 span {display: block;font-size: 0.85em; color: #9cb6cc; margin-top: 0px;}
+.stat-film .div-title {/*border-bottom: 2px solid #4c6f8c; margin-bottom: 10px;*/} 
+.stat-film .list-info {border-left: 4px solid #123651;padding-left: 6px;padding-right: 10px;margin-top: 8px;margin-bottom: 8px;margin-left: 10px;font-size: 0.85em;font-family: 'nanumGothicB';height: 15px;line-height: 1.2em;}
+.stat-film .list-info span {position: relative; padding-right: 5px; margin-right: 5px;}
+.stat-film .list-info span:after {position: absolute; top: 5px; right:0px; content: ''; width: 1px; height: 60%; background-color: #ccc;}
+.stat-film .list-info span:last-child:after {width: 0;}
+.stat-film h4 {background-color: #edf0f4;font-weight: bold;padding: 10px;font-size: 0.93em;}
+.stat-film .container { padding:0;}
+.stat-film .container .list-info span {position: relative; padding-right: 5px; margin-right: 5px;}
+.stat-film .container .list-info span:after {position: absolute; top: 3px; right: 0px; content: ''; width: 2px; height: 14px; background-color: #ddd;}
+.stat-film .container .list-info span:last-child:after {width: 0;}
+.stat-record .stat-list li {border-bottom: 1px solid #ddd;/* padding-bottom: 10px; margin-bottom: 10px; */ padding: 0 10px;}
+.stat-record .stat-list span {font-weight: bold;/* margin-top: 8px; */float: left;font-size: 0.9em;}
+.stat-record .record-detail span:last-child {margin-right: 0;}
+.stat-record .stat-list .cut-off {display: inline-block;background-color: #6a7780;color: #fff;font-weight: normal;border-radius: 20px;text-align: center;width: 18%;margin-right: 7px;font-size: 0.9em;font-family: 'nanumGothicB';}
+.stat-record .stat-list .stat-txt {width: 62%;margin-right: 10px;font-size: 0.85em;}
+.stat-record .stat-film .show-film {position: relative;display: inline-block;background-color: #ff7200;border: 1px solid #e06400;pad;padding-left: 0.4em;padding-right: 0.3em;padding-top: 0.25em;padding-bottom: 0.1em;w;width: 40px;*width: 50px; */right;text-align: center;height: 26px;}
+.stat-record .stat-film .show-film img {position: absolute;top: 4px;left: 12px;x;width: 43%;float: right;}
+
+.ana .stat-list dt {background-color: #636e7c; color: #fff; height: 32px; padding-left: 10px; padding-right: 10px; line-height: 28px;}
+.ana .stat-list dt span.icon-on-favorite,
+.ana .stat-list dt span.icon-off-favorite {display: inline-block; vertical-align: middle; font-size:20px;}
+.ana .stat-list dt span {vertical-align: middle; float: none;}
+.ana .stat-list dt span:nth-child(2) {font-size: 0.9em; color: #fff;}
+.ana .stat-list dt .show-film {margin-top: 3px; float: right;}
+.ana .stat-list dd p {display: table; font-weight: bold; float: left; font-size:0.9em;}
+.ana .stat-list dd p.vs {display: inline-block; position: absolute; top: 14px; left: calc(50% - 11px); background-color: #ddd; color: #666; font-size: 13px; text-align: center; width: 23px; height: 23px; line-height: 23px;}
+.ana .stat-list dd p.you {display: table; text-align: right; float: right;}
+.ana .stat-list dd li {position: relative; border-bottom: none; padding-top: 6px; padding-bottom: 6px; margin-bottom: 0; background:#fff; border-bottom:1px solid #ddd;}
+.ana .stat-list dd .school {display: block; color: #999; float: none;}
+.stat-film.group .ana .stat-list dd .school {display: table-cell; vertical-align: middle; line-height: 125%;}
+
+/* 단체전 */
+.stat-film.group {background-color: #fff; border-top: 2px solid #4c6f8c; margin-bottom: 60px;}
+.stat-film.group .show-film { margin-top:7px;}
+.stat-film.group .div-title {background-color: #fff;}
+.stat-film.group .stat-film .show-film {margin-top: -20px;}
+.stat-film.group .record-detail {display: block;font-size: 0.86em;font-weight: bold;overflow: hidden;float: left;width: 86%;}
+.stat-film.group .record-detail span {margin-right: 2px;}
+.stat-film.group .record-detail .school {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 76px;}
+.stat-film.group dd li .me,
+.stat-film.group dd li .you {width: 41%; height: 36px; line-height: 36px;}
+
+/* 대회 영상보기 모달 */
+.modal.show-film .modal-header {background-color: #3f505d; color: #fff; text-align: center;}
+.modal.show-film .close {width: 15px;}
+.modal.show-film .modal-footer {text-align: center;}

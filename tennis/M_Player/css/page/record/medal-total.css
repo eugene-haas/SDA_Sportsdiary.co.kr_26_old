@@ -1,0 +1,7 @@
+.medal-total .rank-tb th:first-child {width: 6%;}
+.medal-total .rank-tb th:nth-child(2) {width: 7%;}
+.medal-total .rank-tb th:nth-child(3),
+.medal-total .rank-tb th:nth-child(4),
+.medal-total .rank-tb th:nth-child(5) {width: 5%;}
+.medal-total .rank-tb th:nth-child(6) {width: 8%;}
+.medal-total .rank-tb th:last-child {width: 8%;}

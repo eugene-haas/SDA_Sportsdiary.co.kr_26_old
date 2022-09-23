@@ -1,0 +1,47 @@
+.stat-menu .big-cat {background-color: #005895; width: 100%; overflow-x: scroll;}
+.stat-menu .big-cat .menu-list {width: 260%;}
+.stat-menu .menu-list li {float: left;}
+
+.analysis-menu .big-cat {background-color: #264862; width: 100%; overflow-x: scroll;}
+.analysis-menu .big-cat .menu-list {width: 260%;}
+.analysis-menu .menu-list li {float: left;}
+.analysis-menu .menu-list > li {float: left; width:33.333333%;}
+
+.sel-list .term-sel select:not(#search_date_id) {-webkit-appearance: none; appearance: none; line-height: 30px;} /* 공지사항 기간선택 제외 */
+/*.sel-list .term-srch dd:not(.flow, .memory-term) {width: 31%;}*/
+.sel-list .term-srch dd {width: 36.5%;}
+.sel-list .term-srch dd.flow {text-align: center; width: 5%;}
+.sel-list .term-srch dd span {width: 100%;}
+.sel-list .term-srch input {letter-spacing: -0.05em;}
+
+.state-cont {background-color: #edf0f4; padding-bottom: 40px;}
+.state-cont h2 {font-size: 0.9em; clear:fixed;}
+.state-cont h2 .medal_rank_txt {font-size:12px; color:#ff0000; float:right;}
+.state-cont .stat-title {background-color: #fff; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;}
+.state-cont .stat-title h2 {font-size: 0.93em; font-weight: bold; background-color: #fff; color: #164369; padding-left: 0; border-bottom:1px solid #ddd; padding-bottom:8px;}
+.state-cont .stat-title ul {margin-top:4px;}
+.state-cont .stat-title h2:before {width: 0;height: 0;}
+.state-cont .stat-title li {position: relative; font-size: 0.86em; margin-left: 10px;}
+.state-cont .stat-title li:before {position: absolute; top: 40%; left: -10px; content: ''; width: 4px; height: 4px; background-color: #164369;}
+.state-cont .stat-title .redy {color: #e3473d;}
+#itable .stat-chart {margin-top:0;}
+
+.stat-chart {text-align: center; border: 1px solid #ccc; border-top: none; padding-left: 0; padding-right: 0; margin-left: 10px; margin-right: 10px; margin-top: 1.52em; background: #fff;}
+.stat-chart .chart-title {/*background-color: #fff;*/border-top: 1px solid #ccc; padding-top: 25px;padding-bottom: 12px; /* font-size: 0.90em; */}
+.stat-chart h3 {font-size: 1em;font-weight: bold;/* padding-bottom: 10px; */}
+.stat-chart .chart-title p {font-size: 0.8em;letter-spacing: -0.0125em;color: #666;}
+#chartobject-1 text {font-size: .72em !important;}
+.stat-chart p.orangy {font-size: 0.79em; font-weight: bold; color: #ff7200; line-height: 130%; margin-bottom:20px; padding:0 15px;} 
+#ichart > .train-place .chart-title,
+#itable > .train-place .chart-title,
+#itable1 > .train-place .chart-title,
+#itable > .stat-chart .chart-title {border-top:none;}
+
+.stat-chart .no-apply-txt {font-size: 12px; color:#ff0000; padding-bottom:15px; padding-left:6px; padding-right:11px; line-height:20px;} 
+.stat-chart .unit {font-size:0.75em; text-align:right; padding-right:15px; padding-bottom:3px; color:#777;}
+
+
+.stat-menu.temp .big-cat .menu-list {width: 100% !important;}
+.stat-menu.temp .big-cat .menu-list li {width: 100%;float: none;}
+.stat-menu.temp .mid-cat .menu-list {width: 100% !important;float: none;}
+.stat-menu.temp .mid-cat .menu-list li {text-align: center; width: 85px; margin: 0 auto; float: none;}

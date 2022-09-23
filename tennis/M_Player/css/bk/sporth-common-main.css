@@ -1,0 +1,33 @@
+body{line-height:100%;}
+.header{height:auto;padding:0;position:inherit;}
+.header .top_cont{height:auto;margin:10px 0;}
+.header .logo a{display:inline-block;}
+.header .left_arrow{line-height:inherit;top:4px;}
+.header .left_arrow .ic_deco{height:auto;line-height:inherit;}
+.header .hamBtn{top:4px;width:auto;height:auto;width:25px;right:0px;}
+.hamBtn .btn{text-indent: inherit;height:auto;width:auto;background-color:aliceblue;}
+.hamBtn .btn img{width:25px;}
+h1, h2, h3, h4, h5, h6{line-height:100%;}
+.left_arrow .ic_deco{margin-top:0;}
+.sporth-common-main{line-height:100%;font-size:16px;background:#f2f2f2;}
+.sporth-common-main .main-tab{display:table;width:100%;padding-top:10px;background:#fff;}
+.sporth-common-main .main-tab ul li{float:left;width:33%;text-align:center;}
+.sporth-common-main .main-tab ul li:last-child{float:left;width:34%;}
+.sporth-common-main .main-tab ul li a{padding:10px 0;display:block;color:#444;line-height:100%;}
+.sporth-common-main .main-tab ul li a.active{border-bottom:2px solid #0288d1;font-family: 'NotoKR-md';}
+.sporth-common-main .board-list {padding: 0 15px;margin-top:10px;background:#fff;border-bottom:1px solid #ddd;}
+.sporth-common-main .board-list .list-title{color:#333;font-family: 'NotoKR-md';padding:10px 0;border-bottom:1px solid #aaa;display:table;width:100%;}
+.sporth-common-main .board-list .list-title h2{float:left;margin-top:2px;color:#333;font-size:1em;letter-spacing:1;}
+.sporth-common-main .board-list .list-title a{float:right;}
+.sporth-common-main .board-list .list-title a img{width:22px;}
+.sporth-common-main .board-list ul li{padding:10px 0;border-bottom:1px solid #eee;width:100%;font-size:0.92em;line-height:100%;}
+.sporth-common-main .board-list ul li:last-child{border-bottom:0;}
+.sporth-common-main .board-list ul li .l-date{font-size:0.86em;width:42px;height:19px;line-height:19px;text-align:center;background:#005895;float:left;color:#fff;}
+.sporth-common-main .board-list ul li .r-txt{float:left;margin-top:1px;line-height:100%;margin-left:10px;width: calc(100% - 59px);overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.sporth-common-main .board-list ul li a{width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display:inline-block;}
+.sporth-common-main .news-list ul li{display:block;}
+.sporth-common-main .calumn-list ul li .l-name{float:left;color:#089bce;}
+.sporth-common-main .calumn-list ul li .r-txt{width: calc(100% - 100px);}
+.sporth-common-main .notice-list ul li {display: block}
+.sporth-common-main #match_list a{width:auto;padding-right:0;}
+.sporth-common-main .banner.banner_lg.carousel{height:auto;}

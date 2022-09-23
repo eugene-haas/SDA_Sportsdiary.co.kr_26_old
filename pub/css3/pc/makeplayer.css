@@ -1,0 +1,10 @@
+.admin_content .makeplayer table tr td.name{text-align:center;}
+.admin_content .makeplayer table tr td .switch_box ul li{display:inline-block;margin:0 5px;}
+.admin_content .makeplayer table tr td:nth-child(1n){width:60px;}
+.admin_content .makeplayer table tr td .switch{top:-2px;}
+.admin_content .makeplayer table tr td .point_btn{width:94%;height:30px;line-height:30px;background:#637AA1;color:#fff;text-align:center;display:block;margin:auto;}
+.admin_content .makeplayer table tr td .point_btn .point_p{font-weight:bold;}
+.admin_content .makeplayer_search ul li .txt{width:auto;margin-right:10px;}
+.admin_content .makeplayer_search input{margin-right:10px;}
+.admin_content .makeplayer_search select{margin-right:10px;}
+.admin_content .makeplayer_search ul li input.w_50{margin-right:10px;}

@@ -1,0 +1,52 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	element = fInject(Request("element"))
+	attname = fInject(Request("attname"))	
+	code    = fInject(Request("code"))
+
+	If code = "" Then 
+		Response.End
+	End If 
+
+	array_code = Split(code,",")
+	TeamGb = array_code(0)		
+	AreaGb = array_code(1)
+	
+	LSQL =  "SELECT Team, TeamNm " &_
+			"FROM Sportsdiary.dbo.tblTeamInfo " &_
+			"WHERE DelYN='N' " &_
+			"		and PTeamGb in( "&_
+			"			SELECT PartCode " &_
+			"			FROM [Sportsdiary].[dbo].[tblAssPart] "&_
+			"			WHERE PubCode='"&TeamGb&"' ) " &_
+			"		and sido in( " &_
+			"			SELECT AreaCode " &_
+			"			FROM [Sportsdiary].[dbo].[tblAssArea] " &_
+			"			WHERE PubCode='"&AreaGb&"') " &_
+			"ORDER BY TeamNm ASC "
+			
+	Set LRs = Dbcon.Execute(LSQL)
+	If Not(LRs.Eof Or LRs.Bof) Then 
+		
+		selData = "<select name='"&attname&"' id='"&attname&"'>"
+		selData = selData&"<option value=''>소속선택</option>"
+				
+		Do Until LRs.Eof 
+
+			selData = selData &"<option value='"&LRs("Team")&"'>"&LRs("TeamNm")&"</option>"	
+
+			LRs.MoveNext
+		Loop 
+
+		selData = selData&"</select>"	
+
+	End If 
+	
+		LRs.Close
+	SET LRs = Nothing
+	
+	Response.Write selData	
+
+	DBClose()
+
+%>

@@ -1,0 +1,22 @@
+.login_box{width:390px;margin:auto;text-align:center;position:relative;}
+.login_box .logo{margin-top:40%;}
+.login_box .login_con{padding:50px 65px;background:#fff;text-align:left;margin-top:20px;}
+.login_box .login_title{font-family: 'Malgun Gothic';font-size: 14px;border-radius:40px;background-color:#0f335b;color:#ffffff;text-align:center;padding-top: 9px;padding-bottom: 8px;}
+.login_box .login_title .ic_deco {margin-right: 6px;}
+.login_box .login_title span {display: inline-block;vertical-align: middle;}
+
+.login_box .in_list{font-size: 13px;color: #606d83;margin-top:30px;}
+.login_box .in_list span {letter-spacing: 0.025em;}
+.login_box .in_list li:nth-child(odd) {padding-bottom: 7px;}
+.login_box .in_list li:nth-child(even) {padding-bottom: 17px;}
+.login_box .in_list li:last-child {padding-bottom: 0;}
+.login_box .in_list li:after {display: block;clear: both;content: '';}
+.login_box .in_list .l_text{float:left;font-size:13px;color:#47556f;}
+.login_box .in_list .r_con{float:right;}
+.login_box .in_list .r_con input,
+.login_box .in_list .r_con span {display: inline-block;vertical-align: middle;}
+.login_box .in_list .r_con input {width: 20px;height: 20px;}
+
+.login_box .in_list .in_10{height:40px;padding:0 10px;border:1px solid #ced5e3;width:100%;}
+.login_box .login_btn{display:block;text-align:center;height:45px;line-height:45px;background-color:#2f6fc1;color:#fff;margin-top: 21px;}
+.login_box .copy_text{font-size:11px;color: #9baecc;margin-top:13px;}

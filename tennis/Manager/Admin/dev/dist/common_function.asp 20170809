@@ -1,0 +1,126 @@
+<%
+		'-------------------------전역 변수-----------------------
+	global_PagePerData = 5   ' 한화면에 출력할 갯수
+	global_BlockPage = 5  ' 페이징수, 5면 1,2,3,4,5 까지 나오고 다음페이지 나옴
+
+	global_Id = "junida"
+	global_userName = "주니"
+	global_Admin ="admin"
+	global_AdminName ="admin"
+
+  global_Subject_Val = "제목을 입력해 주세요."
+  global_Contents_Val = "내용을 입력해 주세요."
+  global_fileNum = 5 ' 첨부파일 최대 갯수
+	global_filepath = "D:\judo.sports.or.kr\FileDown\" ' 첨부파일 저장경로
+  global_filepath_temp = "D:\judo.sports.or.kr\FileTemp\" ' 첨부파일 Temp 경로
+	golbal_youtubeEmbeded = "https://www.youtube.com/embed/" '유투브 IFrame 나오게 하는 방법
+	SportsGb = "judo"
+
+	'------------------------------Role----------------------------
+	Const_Player = "P"
+	Const_Leader = "L"
+	Const_Director = "D"
+	Const_Judgment = "J"
+	Const_User = "U"
+		'----------------------------------------------------------
+	global_iLoginID = global_Id
+	global_iName = global_userName
+
+	response.cookies("id") = global_Admin						'global_Admin 
+	response.cookies("name") = global_AdminName   'global_AdminName
+	response.cookies("role") = Const_Director 'Const_User 'Const_Director
+
+	'회원프로필 기본이미지
+	ImgDefault  = "../images/public/ic-profile-basic@3x.png"
+	'=========================================================================================================================================================
+	'============================================================* 한자리수 숫자 0붙이기  ====================================================================
+	'=========================================================================================================================================================
+	
+	Function AddZero(Str)
+	 IF len(Str)=1 Then
+	  AddZero="0"&Str
+	 Else
+	  AddZero=Str
+	 End IF
+	End Function
+'=========================================================================================================================================================
+'============================================================* 한자리수 숫자 0붙이기  ====================================================================
+'=========================================================================================================================================================
+'=========================================================================================================================================================
+'============================================================* 참여인원에 따른 강수 구하기================================================================
+'=========================================================================================================================================================
+	Function chk_TotRound(PlayerCnt)
+		If PlayerCnt <=2 Then 
+			chk_TotRound = 2
+		ElseIf PlayerCnt > 2 And PlayerCnt <=4 Then 
+			chk_TotRound = 4
+		ElseIf PlayerCnt > 4 And PlayerCnt <=8 Then 
+			chk_TotRound = 8
+		ElseIf PlayerCnt > 8 And PlayerCnt <=16 Then 
+			chk_TotRound = 16
+		ElseIf PlayerCnt > 16 And PlayerCnt <=32 Then 
+			chk_TotRound = 32
+		ElseIf PlayerCnt > 32 And PlayerCnt <=64 Then 
+			chk_TotRound = 64
+		ElseIf PlayerCnt > 64 And PlayerCnt <=128 Then 
+			chk_TotRound = 128
+		ElseIf PlayerCnt > 128 And PlayerCnt <= 256 Then 
+			chk_TotRound = 256	
+		End If 
+	End Function 
+'=========================================================================================================================================================
+'============================================================* 참여인원에 따른 강수 구하기================================================================
+'=========================================================================================================================================================
+
+	Function Check_Login()
+		If Request.Cookies("MemberIDX") = "" Then 
+			'Response.Write "<script>location.href='../Main/login.asp'</script>"
+			Response.Write "<script>alert('로그인이 필요 합니다.');</script>"
+			Response.End
+		End If 
+	End Function 
+	
+	
+	Function Check_NoLogin()
+		If Request.Cookies("MemberIDX") <> "" Then 
+			Response.Write "<script>location.href='../Main/index.asp'</script>"
+			Response.End
+		End If 
+	End Function
+
+  ' 첨부파일 삭제 함수
+  Function DeleteExistFile(filePath) 
+    Dim fso, result
+    Set fso = CreateObject("Scripting.FileSystemObject") 
+    If fso.FileExists(filePath) Then 
+      fso.DeleteFile(filePath) '파일이 존재하면 삭제합니다. 
+      result = 1
+    Else
+      result = 0
+    End If
+    DeleteExistFile = result
+  End Function
+
+  ' 특수문자 치환
+  Function HtmlSpecialChars(strValue)
+    HtmlSpecialChars = Replace( strValue, "&", "&amp;" )
+    HtmlSpecialChars = Replace( HtmlSpecialChars, ">", "&gt;" )
+    HtmlSpecialChars = Replace( HtmlSpecialChars, "<", "&lt;" )
+    HtmlSpecialChars = Replace( HtmlSpecialChars, """", "&quot;" )
+    HtmlSpecialChars = Replace( HtmlSpecialChars, "'", "&#039;" )
+    HtmlSpecialChars = Replace( HtmlSpecialChars, chr(10), "<BR>" )
+  End Function
+
+		' 유도 로그 찍는 용
+	Function JudoWriteLine(str)
+		Response.Write(str & "<br/>")
+	End Function 
+
+	' 유도 로그 찍는 용2
+	' 호출 시 파라미터가 2개라서 대괄호는 못 쓴다.
+	Function JudoTitleWriteLine(title, str)
+		Response.Write(title & " : " & str & "<br/>")
+	End Function 
+	
+	
+%>

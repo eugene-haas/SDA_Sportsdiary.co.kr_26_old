@@ -1,0 +1,63 @@
+@charset "utf-8";
+/*
+   vue transition
+   modal
+*/
+.fade-enter-active, .fade-leave-active{transition:opacity 0.2s cubic-bezier(.08,.51,.54,1);}
+.fade-enter, .fade-leave-to{opacity:0;}
+
+.list-fade-enter-active, .list-fade-leave-active{transition:opacity 0.2s cubic-bezier(.08,.51,.54,1);}
+.list-fade-enter, .list-fade-leave-to{opacity:0;}
+
+
+/*
+   layout
+*/
+.l_wrap{overflow:overlay;width:100%;height:100%;}
+.l_main{width:100%;height:100%;}
+
+/*
+   module
+*/
+
+.m_fullscreen-guard{cursor:pointer;z-index:9999;position:fixed;top:0;left:0;display:flex;justify-content:center;align-items:center;width:100%;height:100%;background:rgba(0, 0, 0, 0.51);color:#fff;}
+@media all and (display-mode: fullscreen) {
+  .m_fullscreen-guard {
+    display:none;
+  }
+}
+.m_total-rank{width:100%;height:100%;background:#9598A3;}
+.m_total-rank__header{display:flex;justify-content:center;align-items:center;height:105px;background:#085DBF;font-size:44px;font-weight:700;color:#fff;}
+.m_total-rank__ranking{display:flex;align-items:center;justify-content:center;width:100%;height:70px;background:#53668D;border-radius:0 35px 35px 0;color:#fff;}
+.m_total-rank__total-score{color:#004AB9;font-weight:700;}
+.m_total-rank>table{width:100%;text-align:center;}
+.m_total-rank>table>thead>tr>th{height:54px;background:#094B97;font-size:24px;font-weight:500;color:#fff;}
+.m_total-rank>table>tbody{position:relative;}
+.m_total-rank>table>tbody>tr{height:calc((100vh - 159px)/10);}
+.m_total-rank>table>tbody>tr>td{background:#F1F5F6;border-bottom:1px solid #BCC4D2;font-size:32px;font-weight:500;color:#2F364A;white-space:nowrap;}
+.m_total-rank>table>tbody>tr:nth-child(2n)>td{background:#E0E7EF;color:#3E455B;}
+
+
+.m_round-info{padding:0;display:flex;flex-direction:column;width:100%;height:100%;background:#E4E4E4;}
+.m_round-info__header{z-index:9;padding:0 56px 0 81px;display:flex;align-items:center;justify-content:space-between;height:278px;background: transparent linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(220, 222, 226, 1) 100%) 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.32);font-weight:700;}
+.m_round-info__header__round{font-size:160px;color:#1D4398;}
+.m_round-info__header__group-info{display:flex;flex-direction:column;align-items:flex-end;}
+.m_round-info__header__group-info__text{font-size:70px;color:#3E455B;}
+.m_round-info__header__group-info__text.t_blue{color:#1D4398;}
+.m_round-info__con{padding:0 56px 0 96px;display:flex;align-items:flex-start;flex:1;background:transparent linear-gradient(0deg, #1353B1 0%, #183477 100%) 0% 0% no-repeat padding-box;}
+.m_round-info__con__order{margin-right:85px;padding:20px 0 0;font-size:100px;font-weight:700;color:#fff;text-shadow: 0px 3px 12px rgba(0, 0, 0, 0.32);}
+.m_round-info__con__order__num{font-size:140px;}
+.m_round-info__con__name{padding:32px 0 0;display:flex;flex-direction:column;flex:1;}
+.m_round-info__con__name__title{font-size:114px;font-weight:700;color:#fff;letter-spacing:5.7px;text-shadow: 0px 3px 12px rgba(0, 0, 0, 0.32);}
+.m_round-info__con__name__team{font-size:72px;font-weight:700;color:#BADCFE;text-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16);}
+.m_round-info__con__info{padding:50px 0 0;display:flex;flex-direction:column;align-items:flex-end;font-size:112px;font-weight:700;text-shadow: 0px 3px 24px rgba(0, 0, 0, 0.52);line-height:140px;}
+.m_round-info__con__info.t_no-score{font-size:180px;line-height:267px;}
+.m_round-info__con__info.t_no-score>.m_round-info__con__info__dive-num{font-size:280px;line-height:415px;}
+.m_round-info__con__info__diff-num{color:#EEE37C;}
+.m_round-info__con__info__dive-num{color:#EFF7FF;}
+.m_round-info__score{position:absolute;bottom:0;left:0;width:100%;height:383px;background:rgba(32, 57, 101, 0.42);mix-blend-mode: screen;}
+.m_round-info__score__list-wrap{display:grid;grid-template-columns:repeat(7, 1fr);grid-template-rows:repeat(2, 1fr);height:100%;}
+.m_round-info__score__list{display:flex;justify-content:center;align-items:center;height:100%;font-size:100px;font-weight:700;color:#BADCFE;text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.52);}
+.m_round-info__score__total{padding:0 80px 26px 0;position:absolute;bottom:0;right:0;}
+.m_round-info__score__total__text{font-size:108px;font-weight:700;color:#fff;text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.52);}

@@ -1,0 +1,99 @@
+.subheading {
+  --mediumdark: '#999999';
+  font-weight: 900!important;
+  font-size: 13px!important;
+  color: #999!important;
+  letter-spacing: 6px!important;
+  line-height: 24px!important;
+  text-transform: uppercase!important;
+  margin-bottom: 12px!important;
+  margin-top: 40px!important;
+}
+
+.link-list {
+  display: grid!important;
+  grid-template-columns: 1fr!important;
+  row-gap: 10px!important;
+}
+
+@media (min-width: 620px) {
+  .link-list {
+    row-gap: 20px!important;
+    column-gap: 20px!important;
+    grid-template-columns: 1fr 1fr!important;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+.link-list {
+    display: -ms-grid!important;
+    -ms-grid-columns: 1fr 1fr!important;
+    -ms-grid-rows: 1fr 1fr!important;
+  }
+}
+
+.link-item {
+  padding: 20px 30px 20px 15px!important;
+  border: 1px solid #00000010!important;
+  border-radius: 5px!important;
+  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out!important;
+  color: #333333!important;
+  display: flex!important;
+  align-items: center!important;
+}
+
+.link-item:hover {
+  border-color: #1EA7FD50!important;
+  transform: translate3d(0, -3px, 0)!important;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0!important;
+}
+
+.link-item:active {
+  border-color: #1EA7FD!important;
+  transform: translate3d(0, 0, 0)!important;
+}
+
+.link-item strong {
+  font-weight: 700!important;
+  display: block!important;
+  margin-bottom: 2px!important;
+}
+
+.link-item img {
+  height: auto!important;
+  width: 40px!important;
+  margin-right: 15px!important;
+  flex: none!important;
+}
+
+.link-item span {
+  font-size: 14px!important;
+  line-height: 20px!important;
+}
+
+.tip {
+  display: inline-block!important;
+  border-radius: 1em!important;
+  font-size: 11px!important;
+  line-height: 12px!important;
+  font-weight: 700!important;
+  background: #E7FDD8!important;
+  color: #66BF3C!important;
+  padding: 4px 12px!important;
+  margin-right: 10px!important;
+  vertical-align: top!important;
+}
+.tip.t_2{background:#fcded8!important;
+color: #bf4c3c!important;}
+
+.tip-wrapper {
+  font-size: 13px!important;
+  line-height: 20px!important;
+  margin-top: 20px!important;
+  margin-bottom: 20px!important;
+}
+
+.tip-wrapper code {
+  font-size: 12px!important;
+  display: inline-block!important;
+}

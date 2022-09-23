@@ -1,0 +1,185 @@
+<!-- #include file="./include/config.asp"-->
+<%
+  '로그인하지 않았다면 login.asp로 이동
+  Check_Login()
+
+  dim refererValue : refererValue = Request.ServerVariables("HTTP_REFERER")
+%>
+<script type="text/javascript">
+	
+   
+    function chk_Password(uid, upw) {
+        if(!/^[a-zA-Z0-9]{6,12}$/.test(upw)){ 
+            alert!('비밀번호는 숫자와 영문자 조합으로 6~12자리를 사용해야 합니다.'); 
+            return false;
+        }
+
+        var chk_num = upw.search(/[0-9]/g); 
+        var chk_eng = upw.search(/[a-z]/ig);
+
+        if(chk_num < 0 || chk_eng < 0) { 
+            alert!('비밀번호는 숫자와 영문자를 혼용하여야 합니다.'); 
+            return false;
+        }
+
+        if(/(\w)\1\1\1/.test(upw)) {
+            alert!('비밀번호에 같은 문자를 4번 이상 사용하실 수 없습니다.'); 
+            return false;
+        }
+
+        if(upw.search(uid)>-1) {
+            alert!('ID가 포함된 비밀번호는 사용하실 수 없습니다.'); 
+            return false;
+        }
+        return true;
+    }   
+
+  	function chk_onSubmit(){
+		if(!$('#nowpass').val()){
+			alert("현재 비밀번호를 입력해 주세요.");
+			$('#nowpass').focus();
+			return;
+		}
+                        
+		if($('#nowpass').val().length<6 || $('#nowpass').val().length>12){
+			alert("비밀번호는 6자~12자입니다.");
+			$('#nowpass').focus();
+			return;
+		}
+                        
+		if(!$('#change_pass1').val()){
+			alert("변경하실 비밀번호를 입력해 주세요.");
+			$('#change_pass1').focus();
+			return;
+		}
+                             
+		if($('#change_pass1').val().length<6 || $('#change_pass1').val().length>12){
+			alert("변경하실 비밀번호는 6자~12자입니다.");
+			$('#change_pass1').focus();
+			return;
+		}
+                             
+		if(!$('#change_pass2').val()){
+			alert("변경하실 비밀번호 를 한번더 입력해 주세요.");
+			$('#change_pass2').focus();
+			return;
+		}
+                             
+		if($('#change_pass2').val().length<6 || $('#change_pass2').val().length>12){
+			alert("변경하실 비밀번호는 6자~12자입니다.");
+			$('#change_pass2').focus();
+			return;
+		}
+
+		if($('#change_pass1').val() != $('#change_pass2').val()){
+			alert("변경하실 비밀번호가 일치하지 않습니다.");
+			$('#change_pass1').val('');
+			$('#change_pass2').val('');
+			return;
+		}
+        
+        //비밀번호 영문자+숫자조합                                     
+        //chk_Password('<%=request.Cookies("SD")("UserID")%>',$('#change_pass1').val().replace(/ /g, ''));
+
+
+		if(confirm("비밀번호를 변경하시겠습니까?")){
+
+			var strAjaxUrl = "./ajax/pwd_change.asp";
+			var NowPass      = $('#nowpass').val().replace(/ /g, '');
+			var Change_Pass  = $('#change_pass1').val().replace(/ /g, '');
+
+			$.ajax({
+				url: strAjaxUrl,
+				type: 'POST',
+				dataType: 'html',
+				data: {
+					NowPass    : NowPass
+					,Change_Pass  : Change_Pass
+				},
+				success: function(retDATA) {
+					if(retDATA){
+						var strcut = retDATA.split("|");
+
+						if (strcut[0]=="TRUE") {
+							alert("비밀번호 변경이 완료되었습니다.");
+							$(location).attr('href', '<%=refererValue%>');
+						}
+						else{
+							if(strcut[1]=="200"){
+								alert('잘못된 접근입니다.\n확인 후 이용하세요.');
+								$('#nowpass').val('');
+								return;
+							}
+							else if(strcut[1]=="99"){
+								alert('변경하고자 하는 비밀번호와 현재비밀번호와 같습니다..');
+								$('#nowpass').val('');
+								return;
+							}
+							else{
+								alert('기존 비밀번호가 일치하지 않습니다.\n확인 후 다시 이용하세요');
+								$("#nowpass").val("");
+								$("#nowpass").focus();
+								return;
+							}
+						}
+					}
+				},
+				error: function(xhr, status, error){
+					if(error!=""){
+						alert ("오류발생! - 시스템관리자에게 문의하십시오!");
+						return;
+					}
+				}
+			});
+
+		}
+		else{
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+  
+  <!-- S: sub-header -->
+  <div class="sd-header sd-header-sub">
+    <!-- #include file="./include/sub_header_arrow.asp" -->
+    <h1>비밀번호 변경</h1>
+    <!-- #include file="./include/sub_header_gnb.asp" -->
+  </div>
+  <!-- E: sub-header -->
+
+  <!-- S: main -->
+  <div class="main find_id fnd_pwd pack">
+    <!-- S: top_section -->
+    <div class="top_section">
+      <p>비밀 번호 변경을 위해 현재 비밀번호 확인 후<br> 새로운 비밀번호를 입력해 주세요.</p>
+    </div>
+    <!-- E: top_section -->
+
+    <!-- S: form-group -->
+    <div class="form-group fnd">
+      <ul>
+        <li>
+          <input type="password" name="nowpass" id="nowpass" placeholder="현재 비밀번호" style="ime-mode:disabled;text-transform:lowercase;" />
+        </li>
+        <li>
+          <input type="password" name="change_pass1" id="change_pass1" placeholder="새 비밀번호 6~12자 영문+숫자조합" maxlength="12" style="ime-mode:active;" oninput="maxLengthCheck(this);" />
+        </li>
+        <li>
+          <input type="password" name="change_pass2" id="change_pass2" placeholder="새 비밀번호 확인 6~12자 영문+숫자조합" maxlength="12" style="ime-mode:active;" oninput="maxLengthCheck(this);" />
+        </li>
+      </ul>
+    </div>
+    <!-- E: form-group -->
+
+    <div class="cta">
+      <a href="javascript:chk_onSubmit();" class="btn btn-ok btn-block"> 비밀번호 변경</a>
+    </div>
+
+  </div>
+  <!-- E: main -->
+
+  <!-- #include file='./include/footer.asp' -->
+</body>
+</html>

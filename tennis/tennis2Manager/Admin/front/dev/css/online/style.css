@@ -1,0 +1,135 @@
+﻿/* 증명서발급안내 */
+.cert_info{padding:50px 20px 70px 20px;}
+.cert_info .top_text{font-size:16px; color:#666;text-align:right;}
+.cert_info .top_text span{color:#0085d3;}
+.cert_info .table_title{margin-top:20px;height:40px;line-height:40px;background:#0085d3;font-size:16px; font-family:"NanumBarunGothicB"; color:#fff;text-align:center;}
+.cert_info .table_box{border-right:1px solid #ddd;}
+.cert_info .table_box tr td{padding:25px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
+.cert_info .table_box.table_2 tr.column_2 td span {float: none;}
+.cert_info .table_box.table_2 tr.column_2 td a {float: none; margin-left: 10px;}
+.cert_info .table_box tr td .blue_font{float:left;margin-top:10px;font-size:16px;color:#0085d3;font-family:"NanumBarunGothicB";}
+.cert_info .table_box tr td a{float:right;}
+.cert_info .table_box tr td.left_title{text-align:center;font-size:16px; padding:20px 0;background:#f2f2f2;}
+.cert_info .table_box tr td.left_title span {font-family:"NanumBarunGothicB";}
+.cert_info .table_box tr td p{font-size:15px;line-height:25px;color:#666;}
+.cert_info .table_box tr td p.con_title{font-family:"NanumBarunGothicB"; color:#333;padding-left:25px;margin-top:20px;font-size:16px;margin-bottom:5px;}
+.cert_info .table_box tr td p.top_0{margin-top:0;}
+.cert_info .table_box tr td p .red_color{color:#d00000;}
+
+/* 경기실적증명서 */
+.cert_game{padding:30px 20px 0px 20px;float:left;}
+.cert_game .con_box{padding:40px 30px;background:#f2f2f2;text-align:center;float:left;width:900px;margin-bottom:50px;}
+.cert_game .con_box .top_icon_box{background:#fff;padding:30px;-webkit-box-shadow: 3px 3px 3px #ddd;  -moz-box-shadow: 3px 3px 3px #ddd;  box-shadow: 3px 3px 3px #ddd;position:relative;}
+.cert_game .con_box .top_icon_box .icon{width:40px;height:38px;display:block;position:absolute;top:-25px;left:50%;margin-left:-20px;}
+.cert_game .con_box .top_icon_box h1{font-size:22px;font-family:'NanumBarunGothicB';border-bottom:2px solid #333;display:inline-block;margin-top:15px;margin-bottom:30px;}
+.cert_game .con_box .top_icon_box p{text-align:left;line-height:25px;font-size:15px;color:#666;}
+.cert_game .con_box .top_icon_box p .red_color{color:#d00000;}
+.cert_game .con_box .bottom_box_list {margin-top:13px;text-align:left;}
+.cert_game .con_box .bottom_box_list ul li{margin-right:13px;float:left;width:261px;background:#fff;padding:35px 15px;-webkit-box-shadow: 3px 3px 3px #ddd;  -moz-box-shadow: 3px 3px 3px #ddd;  box-shadow: 3px 3px 3px #ddd;}
+.cert_game .con_box .bottom_box_list ul li:last-child{margin-right:0;width:262px;}
+.cert_game .con_box .bottom_box_list ul li .title{font-size:16px;font-family:"NanumBarunGothicB"; margin-bottom:15px;padding-left:23px;height:17px;padding-top:2px;}
+.cert_game .con_box .bottom_box_list ul li a{font-size:15px;color:#0085d3;text-decoration:underline;}
+.cert_game .con_box .bottom_box_list ul li span{color:#666;font-size:15px;}
+.cert_game .online_btn{text-align:center;width:100%; float:left;margin-bottom:70px;}
+.cert_game .online_btn a{width:276px;height:69px;line-height:69px;border-radius:60px;font-size:17px; color:#fff; font-family:"NanumBarunGothicB"; background:#658699;display:inline-block;}
+
+.cert_game .con_box .bottom_box_list .cert_regist li{width:414px;}
+.cert_game .con_box .bottom_box_list .cert_regist li:last-child{width:413px;}
+.cert_game .con_box .bottom_box_list .cert_entry li{width:414px;}
+.cert_game .con_box .bottom_box_list .cert_entry li:last-child{width:413px;min-height:124px;}
+.cert_game .con_box .bottom_box_list .cert_entry li p{line-height:30px;}
+.cert_game .con_box .bottom_box_list .cert_entry li .title{line-height:17px;}
+.cert_game .con_box .top_icon_box .top_30{margin-top:30px;}
+.cert_game .con_box .top_icon_box .top_30 .red_color p{color:#d00000;}
+.cert_game .con_box .top_icon_box h2{width:130px;height:35px;line-height:35px;background:#666;color:#fff;font-size:16px;border-radius:30px;margin-left:0;margin-bottom:15px;}
+.cert_game .con_box .bottom_box_list ul li span .red_color{color:#d00000;}
+.cert_game .con_box .top_icon_box p .left_12{margin-left:12px;}
+.cert_game .Cert_re_top_listbox li{min-height:75px;}
+.cert_game .Cert_re_top_listbox li span p{line-height:20px;}
+.cert_game .Cert_re_top_listbox.license li {min-height:94px;}
+
+/* 선수증재발급 리스트 */
+.cert_game .Cert_re_list_box .list_title{float:left;width:100%;}
+.cert_game .Cert_re_list_box .list_title h1{font-size:21px; font-family:"NanumBarunGothicB"; padding-left:25px;float:left;}
+.cert_game .Cert_re_list_box .list_title a{float:right;margin-top:-5px;}
+.cert_game .Cert_re_list_box .list_box{width:100%;text-align:center;border-top:1px solid #bbb;border-right:1px solid #bbb;float:left;margin-top:10px;}
+.cert_game .Cert_re_list_box .list_box tr td{height:35px;line-height:35px;border-left:1px solid #bbb;border-bottom:1px solid #bbb;font-size:13px;}
+.cert_game .Cert_re_list_box .list_box .title_bg_color td{background:#788286;color:#fff;font-family:"NanumBarunGothicB"; font-size:15px;}
+.cert_game .Cert_re_list_box .list_box .bg_color td{background:#f3f5f7;font-size:13px;}
+.cert_game .Cert_re_list_box .list_box td .blue_color{color:#0085d3;}
+.cert_game .Cert_re_list_box .list_box td a{height:25px;width:85px;line-height:25px;background:#999; border-radius:3px; text-align:center;color:#fff;display:inline-block;}
+.cert_game .Cert_re_list_box .divNodata {text-align: center; margin:70px 0; font-size:15px; line-height:100px;}
+
+/* 선수증재발급 뷰 */
+.cert_game .Cert_re_view_box .title_tap{margin-top:50px;float:left;width:100%;border-top:2px solid #749ab0;border-bottom:1px solid #ccc;}
+.cert_game .Cert_re_view_box .title_tap th{width:100px; font-family:"NanumBarunGothicB"; font-size:15px; background:#f2f2f2;height:50px;line-height:50px;}
+.cert_game .Cert_re_view_box .title_tap td{width:190px;padding-left:20px;}
+.cert_game .Cert_re_view_box .view_list_box{float:left;width:958px;margin-top:20px;border:3px solid #ddd;margin-bottom:50px;}
+.cert_game .Cert_re_view_box .view_list_box ul li{border-bottom:1px solid #ccc;float:left;width:100%;}
+.cert_game .Cert_re_view_box .view_list_box ul li:last-child{border-bottom:0;}
+.cert_game .Cert_re_view_box .view_list_box ul li .l_title{width:150px;background:#f2f2f2;float:left;font-family:"NanumBarunGothicB"; font-size:15px; padding:15px 0px 15px 20px;}
+.cert_game .Cert_re_view_box .view_list_box ul li .r_con{color:#666;float:left;padding:15px 0px 15px 20px;}
+.cert_game .Cert_re_view_box .view_list_box ul li .l_hei_230{height:230px;}
+
+
+/* 선수증재발급 글쓰기 */
+.cert_game .Cert_re_write_box {margin-top:50px;float:left;width:100%;border-top:2px solid #749ab0;}
+.cert_game .Cert_re_write_box .title_box{height:50px;line-height:50px;float:left;width:100%;}
+.cert_game .Cert_re_write_box .title_box .l_title{font-size:17px;font-family:"NanumBarunGothicB";}
+.cert_game .Cert_re_write_box .title_box .r_text{color:#d80000;margin-left:20px;}
+.cert_game .Cert_re_write_box ul{border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding:15px 0;float:left;width:100%;margin-bottom:30px;}
+.cert_game .Cert_re_write_box ul li{margin:7px 0;float:left;width:100%;}
+.cert_game .Cert_re_write_box ul li .l_title{width:130px;float:left;margin-top:10px;font-family:"NanumBarunGothicB"; font-size:15px;}
+.cert_game .Cert_re_write_box ul li .l_title .icon{margin-left:5px;color:#d80000;}
+.cert_game .Cert_re_write_box ul li .r_con{float:left;width:830px;}
+.cert_game .Cert_re_write_box ul li .r_con .r_text{margin-left:10px;color:#666;font-size:13px;}
+.cert_game .Cert_re_write_box ul li .r_con .address dl{float:left;width:100%;margin-bottom:0;}
+.cert_game .Cert_re_write_box ul li .r_con .address dl dd{float:left;width:100%;margin-bottom:14px;}
+.cert_game .Cert_re_write_box ul li .r_con .address dl dd:last-child{margin-bottom:0;}
+.cert_game .Cert_re_write_box ul li .r_con .address dl dd a{height:36px;line-height:36px;width:110px;border-radius:3px;background:#777;color:#fff;text-align:center;display:inline-block;float:left;}
+.cert_game .Cert_re_write_box ul li .r_con select{float:left;}
+.cert_game .Cert_re_write_box ul li .r_con select.cert_use {margin-right:10px;}
+.cert_game .Cert_re_write_box ul li.check_input input {display:none;}
+.cert_game .Cert_re_write_box ul li .r_con input{float:left;}
+.cert_game .Cert_re_write_box ul li .r_con label{float:left; margin-top:9px; margin-left:5px;margin-right:40px;cursor:pointer; font-family:"NanumBarunGothicB"; font-size:15px;}
+.cert_game .Cert_re_write_box ul li .r_con span{float:left;margin:0px 5px;margin-top:10px;}
+.cert_game .Cert_re_write_box ul li .r_con a{float:left;margin-left:5px;}
+.cert_game .Cert_re_write_box ul li .r_con .date_icon{width:35px;height:35px;margin-top:0;}
+.cert_game .Cert_re_write_box ul li .r_con .radio_in{margin-top:10px;}
+.cert_game .Cert_re_write_box ul li .r_con .red_font{float:left;width:100%;margin-top:15px;font-size:13px;color:#d80000;}
+.cert_game .consent dl dd .text_box{float:left;height:100px;overflow-y:scroll;padding:20px;border:2px solid #ddd;line-height:150%; color:#666;width:916px;}
+.cert_game .consent dl dd .text_box .bold{font-weight:600;color:#333}
+.cert_game .consent dl dd .box_title{padding:12px 20px;background:#eee;float:left;width:920px;margin-bottom:10px;font-size:16px;font-family:"NanumBarunGothicB";}
+.cert_game .consent dl dd .box_title span{color:#db2626; font-family:"NanumBarunGothicB";}
+.cert_game .consent dl dd .check_line{float:right;margin-bottom:65px;margin-top:15px;}
+.cert_game .consent dl dd .check_line input{float:left;margin-top:4px;margin-right:5px;}
+.cert_game .consent dl dd .check_line label{float:left;font-size:16px;font-family:"NanumBarunGothicB"; color:#666;cursor:pointer;}
+.cert_game .consent .btm_in_line{float:left;width:100%;font-weight:600;margin-bottom:10px;}
+.cert_game .consent .btm_in_line input{float:right;margin-top:1px;margin-right:5px;}
+.cert_game .consent .btm_in_line label{float:right;font-size:16px;color:#666;cursor:pointer; font-family:"NanumBarunGothicB";}
+.cert_game .bt_text{padding:40px 0;width:100%;float:left;text-align:center;background:#f2f2f2;font-size:15px;line-height:20px;color:#666;margin-bottom:40px;}
+.cert_game .con_box .search_box h1{font-size:22px;font-family:'NanumBarunGothicB';border-bottom:2px solid #333;display:inline-block;margin-top:30px;margin-bottom:30px;}
+.cert_game .con_box .search_box .search_con_box{border:3px solid #ddd;padding:25px 0;background:#fff;text-align:left;float:left;width:894px;}
+.cert_game .con_box .search_box .search_con_box .l_title{font-size:15px;font-family:"NanumBarunGothicB"; margin-left:30px;margin-right:15px;float:left;margin-top:11px;}
+.cert_game .con_box .search_box .search_con_box .l_title {margin-right: 30px;}
+.cert_game .con_box .search_box .search_con_box input{float:left; width: 275px;}
+.cert_game .con_box .search_box .search_con_box .search_btn{float:left;width:80px;height:35px;background:#777;color:#fff;font-weight:600;text-align:center;line-height:35px;margin-left:10px;}
+.cert_game .search_box .search_con_box .date_icon{width:35px;height:35px;float:left;margin-left:5px;}
+.cert_game .search_after{float:left;width:100%;border:3px solid #ddd;background:#fff;margin-top:20px;}
+.cert_game .search_after tr td{height:40px;text-align:center; border-right:1px solid #ddd;}
+.cert_game .search_after tr td:last-child {border-right:0;}
+.cert_game .search_after .bg_color td{background:#74a1bc;color:#fff;font-family:"NanumBarunGothicB"; font-size:15px;}
+.cert_game .Cert_re_view_box .view_list_box ul li .r_con .proof_box{width:323px;height:204px;margin-top:12px;position:relative;}
+.cert_game .Cert_re_view_box .view_list_box ul li .r_con .proof_photo{position:absolute;left:26px;top:68px;}
+.cert_game .Cert_re_write_box ul li .r_con .proof_box{position:relative; height:204px;position:relative;}
+.cert_game .Cert_re_write_box ul li .r_con .proof_photo{position:absolute;left:26px;top:68px;}
+p.license_prevew {width: 360px;position: absolute;bottom: 0;left: 350px; line-height:20px; color:#d80000;}
+
+.prepare {width:295px; margin:130px auto;}
+
+#divLicenseResult,
+.Cert_re_list_box,
+.Cert_re_top_listbox {float: left; margin-top: 33px;}
+.Cert_re_list_box .divNodata,
+.Cert_re_top_listbox .divNodata {font-size: 14px;background-color: #fff;}
+#divLicenseResult .Cert_re_list_box {margin-top: 0;}

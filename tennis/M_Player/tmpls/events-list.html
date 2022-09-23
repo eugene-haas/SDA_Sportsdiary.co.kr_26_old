@@ -1,0 +1,71 @@
+<span id="cal-slide-tick" style="display: none"></span>
+<div id="cal-slide-content" class="cal-event-list">
+	<ul class="unstyled list-unstyled">
+		<% _.each(events, function(event) { %>
+			<li>
+        
+        <% if (event['gubun'] == "Training") { %>
+          
+          <% if (event.title != "") { %>
+            <span class="pull-left event <%= event['class'] %>" style="font-size:11px">훈</span>&nbsp;
+          <% } else { %>
+          <!--  <span class="pull-left event event-important" style="font-size:11px">불</span>&nbsp; -->
+          <% } %>
+            
+        <% } else { %>
+
+            <% if (event['gubun'] == "ExeGame") { %>
+              <span class="pull-left event <%= event['class'] %>" style="font-size:11px">연</span>&nbsp;
+            <% } else if (event['gubun'] == "Game") { %>
+              <span class="pull-left event <%= event['class'] %>" style="font-size:11px">공</span>&nbsp;
+            <% } else if (event['gubun'] == "Menses") { %>
+              <span class="pull-left event <%= event['class'] %>" style="font-size:11px">생</span>&nbsp;
+            <% } else if (event['gubun'] == "Injury") { %>
+              <span class="pull-left event <%= event['class'] %>" style="font-size:11px">부</span>&nbsp;
+            <% } else if (event['gubun'] == "GameTitle") { %>
+              <span class="pull-left event <%= event['class'] %>" style="font-size:11px">대</span>&nbsp;
+            <% } else { %>
+            <% } %>
+          
+          
+        <% } %>
+        
+
+        <% if (event['gubun'] == "Training" && event.title == "") { %>
+          <!--
+				<a id="linkday" style="font-size:12px;text-align:center" data-event-id="<%= event.id %>"
+					data-event-class="<%= event['class'] %>" class="event-item">
+					훈련불참</a>
+          -->
+        <% } else { %>
+          
+				<a id="linkday" style="font-size:12px;text-align:center" data-event-id="<%= event.id %>"
+					data-event-class="<%= event['class'] %>" class="event-item" onclick="calllink('<%= event.id %>','<%= event.gubun %>')">
+					<%= event.title %></a>
+          
+        <% } %>
+          
+<!--        
+				<a id="linkday" style="font-size:12px;text-align:center" data-event-id="<%= event.id %>"
+					data-event-class="<%= event['class'] %>" class="event-item" onclick="calllink('<%= event.id %>','<%= event.gubun %>')">
+					<%= event.title %></a>
+-->
+        
+			</li>
+		<% }) %>
+
+      
+	</ul>
+</div>
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          

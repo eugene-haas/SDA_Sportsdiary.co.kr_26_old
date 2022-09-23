@@ -1,0 +1,54 @@
+.enter_score .point_btn {background-color: #f2f2f2;padding: 10px 20px;}
+.enter_score .point_btn li {display: inline-block;vertical-align: middle;margin-left: -4px;width: calc(50% - 22px);}
+.enter_score .point_btn li:first-child {margin-left: 0;}
+/*.enter_score .point_btn .show_point {font-size: 66px;font-weight: bold;text-align: center;height: 80px;line-height: 75px;}*/
+.enter_score .point_btn .show_point {font-size: 44px;font-weight: bold;text-align: center;height: 60px;line-height: 60px;}
+.enter_score .point_btn li:first-child .show_point {color: #888;}
+.enter_score .point_btn li:last-child .show_point {color: #003890;}
+.enter_score .point_btn .up,
+.enter_score .point_btn .down {display: block;text-align: center;border: 1px solid #0b0f19;height: 30px;line-height: 30px;}
+.enter_score .point_btn .up {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#445872+0,03060e+100 */ 
+background: #445872; /* Old browsers */
+background: -moz-linear-gradient(top, #445872 0%, #03060e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #445872 0%,#03060e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #445872 0%,#03060e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#445872', endColorstr='#03060e',GradientType=0 ); /* IE6-9 */ border-top-left-radius: 8px;border-top-right-radius: 8px;}
+.enter_score .point_btn .down {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#03060e+0,445872+99 */
+background: #03060e; /* Old browsers */
+background: -moz-linear-gradient(top, #03060e 0%, #445872 99%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #03060e 0%,#445872 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #03060e 0%,#445872 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03060e', endColorstr='#445872',GradientType=0 ); /* IE6-9 */border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;}
+.enter_score .point_btn .up .img_box {display: inline-block;width: 14px;}
+.enter_score .point_btn .down .img_box {display: inline-block;width: 8px;}
+.enter_score .point_btn li .show_point {background-color: #fff;border: 1px solid #0b0f19;}
+.enter_score .point_btn .dot {text-align: center;width: 40px;}
+.enter_score .point_btn .img_box {width: 10px;}
+
+/* 경기종료 버튼 */
+.point_btn .btn_list {padding-top: 10px;}
+.point_btn .btn_list .cock_count {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#737a86+0,12151e+100 */
+background: #737a86; /* Old browsers */
+background: -moz-linear-gradient(top, #737a86 0%, #12151e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #737a86 0%,#12151e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #737a86 0%,#12151e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#737a86', endColorstr='#12151e',GradientType=0 ); /* IE6-9 */ font-family: 'NotoKR-md'; font-size: 24px; color: #fff; border: 1px solid #151e31; width: calc(50% - 8px); padding: 0; margin-right: 10px;}
+.point_btn .btn_list .cock_count .img_box {width: 27px;margin-right: 4px;}
+.point_btn .btn_list .cock_count .img_box,
+.point_btn .btn_list .cock_count .count {margin-top: 7px;}
+.point_btn .btn_list .cock_count .img_box,
+.point_btn .btn_list .cock_count .count,
+.point_btn .btn_list .cock_count .up_down {display: inline-block;vertical-align: middle;}
+.point_btn .btn_list .cock_count .up_down {float: right;}
+.point_btn .btn_list .cock_count .up_down .btn {width: 35px;height: 25px;line-height: 25px;}
+.point_btn .btn_list .cock_count .up_down li {display: block;height: 25px;line-height: 0;width: 100%;}
+.point_btn .btn_list .cock_count .up_down li {margin-left: 0;}
+.point_btn .btn_list .cock_count .up_down li a {padding: 0};
+.point_btn .btn_list .cock_count,
+.point_btn .btn_list .btn_end {float: left;}
+.point_btn .btn_list .btn_end {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff6400+0,ff3800+100 */
+background: #ff6400; /* Old browsers */
+background: -moz-linear-gradient(top, #ff6400 0%, #ff3800 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ff6400 0%,#ff3800 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ff6400 0%,#ff3800 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6400', endColorstr='#ff3800',GradientType=0 ); /* IE6-9 */ font-family: 'NotoKR-md'; font-size: 18px; color: #fff; border: 1px solid #ff530d; width: calc(50% - 8px); height: 50px; line-height: 50px; padding-top: 0;padding-bottom: 0;}

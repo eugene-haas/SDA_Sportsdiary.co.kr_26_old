@@ -1,0 +1,10 @@
+.main.update {text-align: center;}
+.main.update .update_img {padding-top: 90px;}
+.main.update .update_img .img_box {width: 50px;height: 55px;margin: 0 auto;}
+
+.main.update h2 {font-size: 1.43em;padding-top: 20px;padding-bottom: 20px;}
+.main.update h2 .bluy {color: #005895;}
+.main.update .guide_txt {font-size: 0.93em;color: #999;}
+.main.update .update_list {border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;margin-top: 20px;margin-left: 20px;margin-right: 20px;padding-top: 27px;padding-bottom: 27px;}
+.main.update .update_list .fa {color: #005895;}
+.main.update .update_time {font-size: 0.93em;letter-spacing: -0.02em;margin-top: 20px;}

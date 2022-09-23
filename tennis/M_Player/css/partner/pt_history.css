@@ -1,0 +1,46 @@
+/**
+ * S: 수발신 내역 버튼 
+ */
+.pair_tab li a {background-color: #fff;color: #999;border: 1px solid #164369;border-radius: 4px;text-align: center;letter-spacing: -0.02em;height: 34px;line-height: 34px;padding: 0;}
+.pair_tab li a.on {background-color: #164369;border: 1px solid #164369;color: #fff;}
+.pair_tab li:first-child a {border-right: none;border-top-right-radius: 0;border-bottom-right-radius: 0;}
+.pair_tab li:nth-child(2) a {border-left: none;border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.pair_tab li a.on .fa {color: #fff;}
+.pair_tab li a .ic-new {display: inline-block;position: static; margin-left: 5px;}
+
+.main.partner .pair_tab {margin-top: 10px;}
+/* E: 수발신 내역 버튼 */
+
+/**
+ * S: 테니스 검색창 
+ */
+.srch_list {background-color: #edf0f4;border-top: 2px solid #c6c6c6;border-bottom: 2px solid #c6c6c6;padding-top: 15px;padding-bottom: 20px;}
+.srch_list .title {display: inline-block;vertical-align: middle;font-weight: bold;color: #333;width: 27%;}
+.srch_list .sel_box {display: inline-block;vertical-align: middle;width: 70%;}
+.srch_list .input_box {display: inline-block;vertical-align: middle;width: 70%;}
+.srch_list li {margin-bottom: 10px;}
+.srch_list .sel_2 input{width: 46%;}
+.srch_list .sel_2 .divn_wave{display: inline-block;width: 4%;margin-left: 0;}
+.srch_list .srch_area input {width: 70%;}
+.srch_list .srch_area .btn {width: 25%;margin-left: 6px;}
+.srch_list select {border-radius: 4px;width: 100%;height: 33px;line-height: 33px;}
+.srch_list_guide {margin-top: 10px;margin-bottom: 10px;}
+
+.main.partner .srch_list {margin-top: 15px;}
+/* E: 테니스 검색창 */
+
+/**
+ * S: 조회 결과 리스트 
+ */
+.srch_result_table {border-top: 2px solid #164369; padding-bottom: 40px;}
+.srch_result_table li {display: table;border-bottom: 1px solid #bbb;padding-bottom: 10px;padding-top: 10px;}
+.srch_result_table li .txt_side {display: table-cell;vertical-align: middle;width: 75%;}
+.srch_result_table li .btn_side {display: table-cell;vertical-align: middle;}
+.srch_result_table li .btn_side .btn {position: relative;font-size: 0.93em;width: 100%;padding-left: 14px;padding-right: 14px;}
+.srch_result_table li .btn_side .btn:nth-child(2) {margin-top: 10px;}
+.srch_result_table li .btn_side .ic-new {top: -8px; right: 0; left: -10px;}
+.srch_result_table li .date {background-color: #ff7e00;color: #fff;padding-left: 13px;padding-right: 13px;}
+.srch_result_table li .user .name {font-weight: bold;}
+.srch_result_table li .user .birth {color: #666;}
+.srch_result_table li .belong {color: #ff7e00;}
+/* E: 조회 결과 리스트 */

@@ -1,0 +1,98 @@
+/* 초기화 */
+html {overflow-y:scroll;line-height:100%;}
+body {font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.02em;display:table;box-sizing: border-box; -webkit-box-sizing: border-box;line-height:100%;font-size:15px;}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img, ul {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-size:1em;line-height:100%;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+li{list-style:none;}
+#hd ul, nav ul, #ft ul {margin:0;padding:0;list-style:none}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select, img {vertical-align:middle}
+input, button {margin:0;padding:0;}
+button {cursor:pointer}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a:link, a:visited {text-decoration:none}
+.pd-15{padding:0 15px;}
+.pd-all-15{padding:15px;}
+.pd-30{padding:30px;}
+.warp{display:table;width:100%;}
+label{cursor:pointer;}
+.h-title{font-size:1.285em;margin-bottom:15px;}
+.font-bold{font-family:'NotoKR-md';}
+.txt-right{text-align:right;}
+.box-shadow{background-color: #fff;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);padding:15px;}
+/* head */
+.top-head{height:60px;background:#103148;position: fixed;top:0;left:0;z-index:10;width:100%;}
+.top-head .logo a{line-height:60px;font-size:20px;color:#fff;}
+/* font-color */
+.red-font{color:#dc2116;}
+/* content */
+.content{position:relative;display:table;width:100%;background:url("../../images/sub-bg.gif") repeat;background-position:left top;top:60px;}
+.right-content{padding-bottom:50px;float:left;width: calc(100% - 300px);position:relative;min-height:1000px;}
+.content .navigation{padding:15px;background:#e0e4ec;font-size:0.85em;color:#333;}
+.content .navigation .fa-home{color:#7a858e;}
+.content .navigation .fa-chevron-right{font-size:0.8em;color:#999;margin:0 5px;}
+/* btn 스타일 */
+.black-btn{ background-color:#333; display:inline-block; text-align:center; color:#fff;}
+.blue-btn{ background-color:#2B4C7E; display:inline-block; text-align:center; color:#fff;}
+.green-btn{ background-color:#64bd63; display:inline-block; text-align:center; color:#fff;}
+.red-btn{ background-color:#F21D41; display:inline-block; text-align:center; color:#fff;}
+.gray-btn{background-color:#7a858e; display:inline-block; text-align:center; color:#fff;}
+.navy-btn{background-color:#28618a; display:inline-block; text-align:center; color:#fff;}
+.orange-btn{background-color:#ea6140; display:inline-block; text-align:center; color:#fff;}
+input:focus {
+  outline: none;
+}
+select:focus {
+  outline: none;
+}
+.white-btn{
+  font-family: 'NotoKR-md';
+  display:inline-block;
+  text-align:center;
+  color:#666;
+  border:1px solid #ddd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f9f9f9));
+  background: -moz-linear-gradient(top, #fff, #ededed);
+  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+  -webkit-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+/* input, select 스타일*/
+select{width:200px;height:40px;padding:0 10px;border:1px solid #e0e4ec;
+  cursor:pointer;}
+input{width:200px;height:50px;padding:0 10px;border:1px solid #e0e4ec;font-size:14px;}
+.checkbox{width:20px;height:20px;display:inline-block;margin:0;}
+input[type=checkbox], input[type=radio]{margin:0;width:20px;height:20px;}
+label{font-weight:400;}
+.btn{padding:0;border-radius:0;}
+
+@media screen and (max-width:450px) {
+  div.admin_login_box{width:100%}
+}
+
+.admin_login_box{width:450px;margin:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.admin_login_box .logo{max-width:350px;text-align:center;margin:auto;margin-bottom:30px;}
+.admin_login_box .login_con{padding:50px;background:#fff;box-shadow: 0px 0px 1px 1px #e2e2e2;}
+.admin_login_box .login_con ul li{margin-bottom:10px;}
+.admin_login_box .login_con ul li input{width:100%;box-sizing: border-box;}
+.admin_login_box .login_con .login_btn{
+margin-top:30px;
+width: 100%;
+height: 50px;
+line-height: 48px;
+font-family: 'NotoKR-md';color: #fff;
+background-color: #337ab7;
+border-color: #2e6da4;    display: inline-block;
+margin-bottom: 0;
+font-size: 16px;
+font-weight: 400;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+background-image: none;
+border: 1px solid transparent;}
+.admin_login_box label span{vertical-align:-2px;color:#888;font-size:14px;}
+.admin_login_box .copy_text{font-size:13px;color:#777;text-align:center;margin-top:30px;}

@@ -1,0 +1,6 @@
+/* bootstrap 편집 */
+legend { position:absolute; top:-9999px; left:-9999px; }
+button:hover, button:focus, button:active { outline:none; -webkit-box-shadow:none; box-shadow:none; border:none;}
+textarea { resize:none; }
+a:hover, a:focus, a:active, a:visited { text-decoration:none; }
+.panel{margin-bottom:0; background-color:initial; border:0; box-shadow:none; }

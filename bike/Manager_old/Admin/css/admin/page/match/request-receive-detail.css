@@ -1,0 +1,45 @@
+.request-detail .content_area .container {width: auto;}
+.request-detail .write_comp {margin-top: 30px;}
+.request-detail .write_comp .title_header h2 {font-size: 32px;text-align: center;color: #333;padding-top: 57px;padding-bottom: 57px;letter-spacing: -2px;}
+.request-detail .match_title_bar {font-family: 'NanumGothicB';text-align: center;background-color: #00479b;color: #fff;padding-top: 30px;padding-bottom: 30px;}
+.request-detail .match_title_bar .title {font-size: 18px;}
+.request-detail .match_title_bar .match_date {font-size: 14px;color: #a2cdff;}
+
+.request-detail .loaded {padding-top: 20px;}
+.request-detail .loaded .table {border: 3px solid #ddd;}
+.request-detail .loaded table th {font-family: 'NanumGothicB';text-align: center;vertical-align: middle;background-color: #eef2f7;width: 120px;}
+.request-detail .loaded table tr td {width: 134px;height: 58px;padding-top: 19px;padding-bottom: 19px;padding-left: 10px;}
+.request-detail .write_doc {background-color: #fff;padding: 50px 50px 70px;}
+.request-detail .write_doc .sky_bg {background-color: #eef2f7;text-align: center;}
+.request-detail .write_doc .show_payment {padding-top: 16px;padding-bottom: 16px;margin-bottom: 39px;}
+.request-detail .write_doc .state {display: inline-block;vertical-align: middle;background-color: #7e858e;color: #fff;border-radius: 20px;height: 28px;line-height: 28px;padding: 0 10px;}
+.request-detail .write_doc .state.pay_wait {background-color: #eb042d;color: #fff;}
+.request-detail .write_doc .show_payment .txt {display: inline-block;vertical-align: middle;margin-left: 10px;}
+
+.request-detail .table_section.first_table {margin-top: 0;}
+.request-detail .table_section {margin-top: 50px;}
+.request-detail .ipt_table {border-top: 2px solid #666;border-bottom: 2px solid #ddd;}
+.request-detail .ipt_table th {text-align: center;background-color: #eef2f7;}
+.request-detail section.table_section .table {margin-top: 15px;}
+.request-detail section.table_section h3 {font-family: 'NanumGothicB';font-size: 16px;position: relative;color: #333;margin-left: 20px;}
+
+.request-detail section.table_section h3:before,
+.request-detail section.table_section h3:after {content: '';position: absolute;width: 6px;height: 6px;}
+.request-detail section.table_section h3:before {background-color: #d72e31;top: 2px;left: -20px;}
+.request-detail section.table_section h3:after {background-color: #0e51a0;bottom: 2px;left: -14px;}
+.request-detail section.table_section h3 .small_text {font-family: 'NanumGothic';font-size: 14px;margin-left: 8px;}
+.request-detail section.table_section .table th {font-family: 'NanumGothicB';}
+.request-detail .write_comp .ipt_table th {vertical-align: middle;width: 120px;}
+.request-detail .write_comp .ipt_table td {font-size: 14px;width: 245px;padding-top: 19px;padding-bottom: 19px;}
+
+.request-detail .result_table thead th {font-size: 13px;background-color: #303944;color: #fff;}
+.request-detail .result_table th {text-align: center;padding-top: 14px;padding-bottom: 14px;}
+.request-detail .result_table tbody tr {border-bottom: 1px solid #ddd;}
+.request-detail .result_table tbody td {font-size: 14px;text-align: center;vertical-align: middle;color; #666;padding-top: 17px;padding-bottom: 15px;}
+
+.request-detail .write_doc > .btn_list {text-align: center;margin-top: 60px;margin-bottom: 20px;}
+.request-detail .write_doc > .btn_list .btn {font-family: 'NanumGothicB';font-size: 15px;width: 190px;height: 55px;line-height: 55px;padding: 0;margin-left: 6px;}
+.request-detail .write_doc > .comp_list_btn .btn:first-child {margin-left: -4px;}
+
+.request-detail .bluy {color: #00479b;}
+.request-detail .redy {color: #ed0000;}

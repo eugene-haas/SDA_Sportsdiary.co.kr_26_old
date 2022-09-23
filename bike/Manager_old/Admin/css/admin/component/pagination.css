@@ -1,0 +1,8 @@
+.page_index {display: block;text-align: center;width: 100%;margin-top: 10px;}
+.page_index li a {color: #647a9d;border-color: #b4bfd7;padding: 6px 14px;transition: all .3s ease ;}
+.page_index li a:focus {background-color: #eee;border-color: #b4bfd7;}
+.page_index li a:hover,
+.page_index li a:active {background-color: #eee;border-color: #b4bfd7;color: #2f6fc1;}
+.page_index .prev a,
+.page_index .next a {color: #c6cfe2;}
+.page_index .active a {background-color: #1e5788;}

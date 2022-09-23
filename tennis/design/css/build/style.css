@@ -1,0 +1,82 @@
+ol a
+{
+    display: inline-block;
+
+    width: 350px;
+
+    background-color: #df654d;
+}
+
+ol a:hover,
+ol a:focus,
+ol aactive
+{
+    background-color: #209ab2;
+}
+
+a
+{
+    line-height: 45px;
+
+    display: inline-block;
+
+    width: 180px;
+    height: 45px;
+    margin-right: 10px;
+
+    -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+
+    color: #000;
+    color: #fff;
+    background-color: #346fdc;
+}
+
+a:hover,
+a:focus,
+a:active
+{
+    text-decoration: none;
+
+    color: black;
+    background-color: #cb9023;
+}
+
+.front-menu
+{
+    margin-top: 20px;
+}
+
+.front-menu a
+{
+    color: #fff;
+    background-color: #000;
+}
+
+li
+{
+    list-style: none;
+}
+
+.carousel
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: 700px;
+}
+
+.carousel ul
+{
+    position: relative;
+}
+
+.carousel ul li
+{
+    position: absolute;
+}
+
+/*# sourceMappingURL=maps/style.css.map */

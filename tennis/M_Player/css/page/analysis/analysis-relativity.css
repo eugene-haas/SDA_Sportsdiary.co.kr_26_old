@@ -1,0 +1,14 @@
+.relativity .point-table {background-color: #e3e6eb; border: none; padding-bottom: 20px;}
+.relativity .point-table h3 {font-family: 'NanumGothicB'; font-size: 1em; padding-top: 10px; padding-bottom: 15px;}
+.relativity .point-table .skill-part {background-color: #fff; font-size: 0.86em;}
+.relativity .point-table thead th {background-color: #f2f2f2; text-align: center; border-bottom: 1px solid #d0d0d0; border-top: 1px solid #d0d0d0; border-left: 1px solid #d0d0d0; border-right: 1px solid #d0d0d0; font-size:0.94em;}
+.relativity .point-table thead th:nth-child(2) {background-color: #2385d0; color: #fff; padding-top:2px; padding-bottom:2px;}
+.relativity .point-table thead td {background-color: #d6e9f7; border-right: 1px solid #d0d0d0; border-bottom: 1px solid #d0d0d0; padding-top: 1px; padding-bottom: 1px; font-size:0.9em;}
+.relativity .point-table tbody th {background-color: #f2f2f2; width: 280px; border-left: 1px solid #d0d0d0; border-right: 1px solid #d0d0d0; border-bottom: 1px solid #d0d0d0; padding-left: 10px; padding-top: 2px; padding-bottom: 2px; font-size:0.85em;}
+.relativity .point-table tbody td {width: 80px; border-right: 1px solid #d0d0d0; border-bottom: 1px solid #d0d0d0; font-size:0.85em;}
+.relativity .point-table .big-gain {background-color: #2385d0; color: #fff;}
+
+/* 실점 상세 테이블 */
+.relativity .point-table.lost thead th:nth-child(2) {background-color: #f0a400;}
+.relativity .point-table.lost thead td {background-color: #feecc6;}
+.relativity .point-table.lost .big-lost {background-color: #f0a400; color: #fff;}

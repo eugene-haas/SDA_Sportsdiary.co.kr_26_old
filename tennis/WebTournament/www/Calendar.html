@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>스포츠 다이어리</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+    <style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <style>
+      #calendar {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      
+      .fc h2 {
+         font-size: 20px;
+      }
+      
+      .fc-sun {
+    /*    background-color: #FF0000; */
+        color: #FF0000;
+      }
+      .fc-sat {
+        color: blue;
+      }
+      
+    </style>
+    
+    
+    <!-- font-awesome -->
+    <link rel="stylesheet" type="text/css" href="css/library/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+    <link href="css/fullcalendar.css" rel="stylesheet">
+    <link href="css/fullcalendar.print.css" rel="stylesheet" media="print">
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
+    <script src="js/library/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery.oLoader.min.js"></script><!--로딩바-->
+    <script type="application/javascript" src="js/fastclick.js"></script><!--클릭반응속도up-->
+    <script src="js/bootstrap.js"></script>
+    
+    <script src="cordova.js" id="xdkJScordova_"></script>
+
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+
+    
+    <script src="lib/moment.min.js"></script>
+
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/language/ko.js"></script>
+
+    <script src="js/global.js"></script>
+    
+    <script>
+
+      if ('addEventListener' in document) {
+          document.addEventListener('DOMContentLoaded', function() {
+              FastClick.attach(document.body);
+          }, false);
+      }
+
+    
+      function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+				if(!localStorage.getItem("UserId") && !localStorage.getItem("HostCode")){
+
+					$("#DP_Logout").css("display","none");
+
+				}
+				else{
+
+					$("#DP_Logout").css("display","");
+				}
+
+				//중고연맹
+				if(localStorage.getItem("HostCode") == "sd053002"){
+					$("#DP_UserLogo").attr("src","images/tournerment/intro/logo_kjhs.png");
+					$("#DP_UserLogo").css("display","");
+				}
+				//대학연맹
+			  else if(localStorage.getItem("HostCode") == "sd053003"){
+					$("#DP_UserLogo").attr("src","images/tournerment/intro/logo_kujf.png");
+					$("#DP_UserLogo").css("display","");
+				}
+				//서울특별시유도
+			  else if(localStorage.getItem("HostCode") == "sd053006"){
+					$("#DP_UserLogo").attr("src","images/tournerment/intro/logo_sja.png");
+					$("#DP_UserLogo").css("display","");
+				}
+			  else if(localStorage.getItem("UserId") == "sportsdiary" || localStorage.getItem("HostCode") == "sd053001"){
+					$("#DP_UserLogo").attr("src","images/tournerment/intro/logo_kja.png");
+					$("#DP_UserLogo").css("display","");
+				}
+
+      }
+
+      function onDeviceReady() {
+        document.addEventListener("backbutton", onBackKey, false);
+      }
+
+      function onBackKey() {
+
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+            // IOS DEVICE
+          location.href="index.html";
+        } else if (userAgent.match(/Android/i)) {
+            // ANDROID DEVICE
+//              navigator.app.backHistory();
+          location.href="index.html";
+        } else {
+            // EVERY OTHER DEVICE
+          location.href="index.html";
+        }
+
+      }
+
+			function logout(){
+				
+				if(!confirm("로그아웃 후, 메인으로 이동합니다. 동의하시면 확인버튼을 눌러주세요.")){
+					return;
+				}
+
+				localStorage.clear();
+
+				location.href='index.html';
+			}
+
+      
+      $(document).ready(function() {
+
+        
+
+        if (localStorage.getItem("IntroIndex") == "3"){
+          $("#DP_Title_Left").html("경기운영본부 /&nbsp;");
+        }
+        else if(localStorage.getItem("IntroIndex") == "2"){
+          $("#DP_Title_Left").html("대회별 결과 보기 /&nbsp;");
+        }
+        else if(localStorage.getItem("IntroIndex") == "5"){
+          $("#DP_Title_Left").html("경기운영본부 /&nbsp;");
+        }
+        else{
+          $("#DP_Title_Left").html("경기스코어 입력 /&nbsp;");
+        }
+
+        var that = this;
+
+        if(!this.todayDate) {
+            this.todayDate = new Date();
+        }
+
+        var varSportsGb = localStorage.getItem("SportsGb");
+
+        localStorage.setItem("BackPage","");
+        
+        $('#calendar').fullCalendar({
+          editable: true,
+          height:678,
+          lang: 'ko',
+          eventLimit: true, // allow "more" link when too many events
+          
+          events: { 
+            url: '/Ajax/judo_os/management/tblGameTitleCalendar.ashx?SportsGb='+varSportsGb+'&HostCode='+ localStorage.getItem("HostCode"),
+            error: function() { 
+
+              $('#script-warning').show(); 
+              $('#AppBody').oLoader('hide');
+                          
+            },
+            complete : function() {
+              //로딩바
+              // $('#AppBody').oLoader('hide');
+            }
+
+          },
+          eventClick: function(event) {
+
+					  if (localStorage.getItem("HostCode") != "sd053007") {
+							if (localStorage.getItem("HostCode") != event.HostCode) {
+								alert("해당 경기 입력권한이 없습니다. 해당대회의 주최협회 아이디로 로그인 하시기 바랍니다.");
+								return;
+							}
+						}
+
+            localStorage.setItem("GameTitleIDX",event.id);
+            localStorage.setItem("GameTitleName",event.title);
+            localStorage.setItem("EnterType",event.EnterType);
+						localStorage.setItem("GameHostCode",event.HostCode);
+					
+
+            var IntroIndex = localStorage.getItem("IntroIndex");
+            
+            //메인에서 운영본부 클릭했을때
+            if (IntroIndex == "3"){
+              location.href = "operating-state.html";
+            }
+            else if(IntroIndex == "2"){
+              location.href = "RGameResultList.html";
+            }
+            else if(IntroIndex == "5"){
+              location.href = "stadium-state.html";
+            }
+            else{
+              location.href = "RGameList.html";
+            }
+
+
+          }
+          
+  
+        });
+        
+
+      });
+
+
+      $(document).ajaxStart(function() {
+
+        apploading("AppBody", "일정 조회 중 입니다.");
+      
+      });
+
+      $(document).ajaxStop(function() {
+
+        //$('#AppBody').oLoader('hide');
+        $('#AppBody').oLoader('hide');
+
+      });
+      
+      
+    </script>
+  </head>
+  <body onload="onLoad()" id="AppBody">
+    <!-- S: header -->
+    <div class="header container-fluid">
+      <div class="row">
+        <div class="pull-left">
+          <a href="index.html" role="button" class="prev-btn"><span class="icon-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></span><span class="prev-txt" id="DP_Title_Left">경기스코어 입력 /&nbsp;</span><span class="prev-txt"> 경기일정</span></a>
+        </div>
+        <div>
+         <h1 class="logo">
+          <img id="DP_UserLogo" src="images/tournerment/intro/logo_kja.png" alt="대한유도회" height="35">
+          <!-- <img src="images/tournerment/intro/logo_sja.png" alt="서울특별시유도회" height="35">
+          <img src="images/tournerment/intro/logo_kujf.png" alt="한국대학유도연맹" height="35">
+          <img src="images/tournerment/intro/logo_kjhs.png" alt="한국 초중고등학교 유도연맹" height="35"> -->
+        </h1>
+        </div>
+        <div class="pull-right">
+          <span class="sd-logo"><img src="images/tournerment/header/logo@3x.png" alt="스포츠 다이어리" width="100"></span>
+          <a href="index.html" role="button" class="home-link"><span class="icon-home"><i class="fa fa-home" aria-hidden="true"></i></span></a>
+          <a href="javascript:logout();" id="DP_Logout" role="button" class="log-out">
+            <span class="icon-logout"><i class="fa fa-power-off" aria-hidden="true"></i></span>
+            <span class="logout-txt">로그아웃</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- E: header -->
+    
+    <!-- S: main -->
+    <div class="main container-fluid">
+      <!-- S: calendar -->
+      <div class="calendar row">
+
+        <!-- 이 안에 달력 넣어 주세요 -->
+        <!-- S: dummy-img -->
+        <div class="dummy-img">
+          <div id="calendar" style="margin:15px 5px 5px 5px"></div>
+                    
+          <!--<img src="images/dummy/calendar.png" alt="" width="1280" height="678">-->
+          
+        </div>
+        <!-- E: dummy-img -->
+        <!-- 이 안에 달력 넣어 주세요 -->
+
+
+      </div>
+      <!-- E: calendar -->
+    </div>
+    <!-- E: main -->
+
+    <!-- custom.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

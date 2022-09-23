@@ -1,0 +1,19 @@
+/* html, css, javascript 결합 모듈 */
+._overLayer{ position:fixed; z-index:5000; width:100vw; height:100vh; left:0; top:100%; overflow:hidden; }
+._overLayer._s_on{ top:0; }
+._overLayer__backdrop{ width:100%; height:100%; opacity:0; }
+._overLayer__backdrop._s_on{ opacity:1; background-color:rgba(0,0,0,0.2); }
+._overLayer__box{ position:absolute; width:100%; opacity:1; top:100%; overflow-y:scroll; }
+._overLayer__box._s_on{ top:0%; }
+._overLayer__wrap{ height:auto; overflow-y:scroll; -webkit-overflow-scrolling:touch; overscroll-behavior:none; }
+
+
+
+._pagination-scroll{ text-align:center; }
+._pagination-scroll__btn-prev{ display:inline-block; vertical-align:top; }
+._pagination-scroll__pagerWrap{ position:relative; display:inline-block; width:33%; overflow-y:hidden; overflow-x:scroll; vertical-align:top; white-space:nowrap; }
+._pagination-scroll__btn-pager{ display:inline-block; vertical-align:top; }
+._pagination-scroll__btn-pager._s-on{ }
+._pagination-scroll__btn-next{ display:inline-block; vertical-align:top; }
+
+._memorize-scroll{ opacity:0; }

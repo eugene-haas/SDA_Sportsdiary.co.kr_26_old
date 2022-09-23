@@ -1,0 +1,19 @@
+.result-match-sche {padding-bottom: 70px;}
+.result-match-sche .sche-title {background-color: #26577f; color: #fff; text-align: center; border-bottom: 1px solid #4c6f8c; /*height: 60px;*/}
+.result-match-sche .sche-title h2 {font-size: 1em; color: #fff; padding-top: 10px; padding-bottom: 1px;}
+.result-match-sche .sche-title p {font-size: 0.85em; font-weight: bold; color: #9cb6cc;}
+.result-match-sche .stadium {background-color: #6293ba; color: #fff; font-size: 0.85em; text-align: center; padding-top: 4px; padding-bottom: 5px; padding-left:10px; padding-right:10px; line-height: 20px;}
+.result-match-sche .match-day { background-color: #edf0f4; text-align: center; padding-top: 6px; padding-bottom: 6px;}
+.result-match-sche .match-day select {font-size:0.85em; width: 90%; color: #333;}
+.result-match-sche .match-list {padding-left: 15px; padding-right: 15px; padding-top: 15px;}
+.result-match-sche .match-list h3 {font-size: .92em; color: #164369; padding-bottom: 6px;}
+.result-match-sche .match-list dl {margin-bottom: 8px;}
+.result-match-sche .match-list dt {position: relative; font-size:0.85em; padding-left: 8px;}
+.result-match-sche .match-list dt:before {position: absolute; top: 40%; left: 0; content: ''; width: 4px; height: 4px; background-color: #3f505d;}
+.result-match-sche .match-list dd {font-size: 0.8em; text-indent: 5px; margin-top:2px; line-height: 20px;}
+.result-match-sche .time-table {display: block; background-color: #efefef; color: #666; border: 3px solid #a4a5a6; font-size: 0.8em; margin-left: 15px; margin-right: 15px; padding:0px;}
+.result-match-sche .time-table li {font-weight: bold; border-bottom: 1px solid #ccc; padding: 0 5px;}
+.result-match-sche .time-table li:last-child {border-bottom: none;}
+.result-match-sche .time-table .now {color: #b60000;}
+.result-match-sche .time-table span {float: left;}
+.result-match-sche .time-table .time {width: 37%;}

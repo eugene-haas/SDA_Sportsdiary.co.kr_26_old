@@ -1,0 +1,27 @@
+.match-rate .rank-tb th:nth-child(2),
+.medal-rank .rank-tb th:nth-child(2),
+.medal-total .rank-tb th:nth-child(2) {border-right: 1px solid #ddd;}
+.match-rate .rank-tb th:nth-child(3),
+.medal-rank .rank-tb th:nth-child(3),
+.medal-total .rank-tb th:nth-child(3) {text-align: center;}
+.match-rate .rank-tb td.belong,
+.medal-rank .rank-tb td.belong,
+.medal-total .rank-tb td.belong {text-align: left; padding-left: 10px; border-right: 1px solid #ddd;}
+.match-rate .rank-tb td:nth-child(3),
+.medal-rank .rank-tb td:nth-child(3),
+.medal-total .rank-tb td:nth-child(3) {text-align: center;}
+.rank-tb td:last-child {border-right: none;}
+
+/*record-match-rate modal */
+.modal-player-profile .modal-body {padding:0;}
+.modal-player-profile .record-modal-wrap {padding:0 15px;}
+.modal-player-profile .player-profile {overflow:hidden; margin-bottom:20px; border-bottom:1px solid #ddd; padding:5px 15px; background:#f2f2f2;}
+.modal-player-profile .player-profile .profile-img {float:left; /*width:40px;*/ border-radius:50%; padding: 0;}
+.modal-player-profile .player-profile .profile-img img {width:40px; border-radius:50%; border:2px solid #c6c6c6;}
+.modal-player-profile .player-profile h3 {float:left; padding-left:8px; line-height:40px; font-size: 1.1em;}
+.modal-player-profile .player-profile h3 span {color:#666; font-size: 0.85em;}
+.modal-player-profile .stat-record .record h3 {text-align:left; position: relative; background-color:#fff; line-height: 0.95em; letter-spacing: -0.05em; font-size: 1em; font-weight: bold; color: #123651; padding-left: 10px;}
+.modal-player-profile .stat-record .record h3:before{position: absolute; top: 0px; left:0px; content: ''; background-color: #123651; height: 14px; width: 4px;}
+.modal-player-profile .stat-record .record .gray-box {padding:0 0 0.62em 0; background-color:#edf0f4; border:1px solid #ddd; text-align:left;}
+.modal-player-profile .stat-record .record .gray-box h3 {background-color:#edf0f4;}
+.modal-player-profile .stat-record .record .gray-box h4 {padding-bottom:5px; font-size: 0.93em;}

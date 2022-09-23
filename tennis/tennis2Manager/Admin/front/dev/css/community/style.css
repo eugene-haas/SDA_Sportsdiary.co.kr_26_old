@@ -1,0 +1,108 @@
+﻿/*커뮤니티 > 갤러리 리스트 */
+.gallery_list {overflow:hidden; width: 100%; padding:30px 0 50px 0px;}
+.search_top.community {float:right; margin-right: 20px;}
+.search_top.community select {float:left; width:120px; height:32px; margin:0 5px 0 0; color:#666; font-size:14px; font-family:"NanumBarunGothic"; border:1px solid #ccc; vertical-align:top; line-height:100%;}
+.search_top.community .sel_long {width: 140px;}
+.search_top.community input {float:left; width:214px; height:32px; margin:0; color:#666; font-size:16px; font-family:"NanumBarunGothicB"; border:1px solid #ccc;/* border-right:0;*/ vertical-align:top; line-height:100%;}
+.search_top.community .btn_darkgray {font-family: 'NanumBarunGothic';float:left; width:60px; vertical-align:middle; margin-left: 5px;}
+.search_top.community .btn_darkgray:hover,
+.search_top.community .btn_darkgray:focus,
+.search_top.community .btn_darkgray:active {color: #fff;}
+
+.gallery_list table {overflow:hidden; width:100%; margin:15px 0 10px 20px;float: left;}
+.gallery_list table td {display:block; float:left; overflow:hidden; width:205px; height: 210px;margin:0 10px 20px; padding:9px; border:1px solid #dddddd;}
+.gallery_list table td:first-child,
+.gallery_list table td:nth-child(5n) {margin-left: 0;}
+.gallery_list table td .img {text-align: center;overflow:hidden; width:205px; height:140px;}
+.gallery_list table td .img img {max-width: 205px;}
+.gallery_list table td .tit {margin:8px 0 6px 0; font-size:14px; font-family:"NanumBarunGothic"; color:#333; max-height: 40px; line-height:1.4; overflow: hidden;}
+.gallery_list table td .day {margin:0 0 5px; color:#999;  font-size:13px; font-family:"NanumBarunGothic";}
+.gallery_list table td a:hover,
+.gallery_list table td a:active,
+.gallery_list table td a:focus {text-decoration:none;}
+
+/* GALLERY_LIST 커뮤니티 > 갤러리 상세보기 */
+.gallery_view {margin:30px 20px;}
+.gallery_view table {width: 100%; border-top:1px solid #0a5e94; border-bottom:1px solid #bbb;}
+.gallery_view table thead th {height:48px; line-height:48px; color:#666; font-size:15px; font-family:"NanumBarunGothicB"; background:#f2f2f2; border-bottom:1px solid #ddd;}
+.gallery_view table thead td {padding:0 20px; height:48px; line-height:48px; color:#666; font-size:14px; font-family:"NanumBarunGothic"; border-bottom:1px solid #ddd;}
+.gallery_view table tbody td {padding:40px 50px; color:#666; font-size:16px; line-height:1.4;}
+.gallery_view table tbody td img {max-width: 860px;}
+
+/* COMMUNITY_LIST 커뮤니티 자유게시판, 질문과 답변 리스트 */
+.community_list {overflow:hidden; margin:30px 20px 40px;}
+.community_list .search_top.community {float:right; margin:0 0 15px;}
+.community_list table {width:100%; text-align:center;}
+.community_list table thead th.top {color:#fff; font-weight:normal; font-size:15px; font-family:"NanumBarunGothic"; background:#758792;}
+.community_list table thead th {height:45px; color:#666; font-size:15px; font-family:"NanumBarunGothicB"; font-weight:normal; background:#f2f2f2;}
+.community_list table tbody td {padding:10px 0; font-size:14px; color:#666; font-family:"NanumGothic"; border-bottom:1px solid #ddd;}
+.community_list table tbody td.title {padding:0 15px; text-align:left;}
+.community_list table tbody td.title a {color:#666; text-overflow: ellipsis; -o-text-overflow: ellipsis; overflow: hidden; white-space: nowrap; word-wrap: normal; display: block;}
+.community_list table tbody td .num_reply {font-size: 12px;color: #17a9ff;margin-left: 3px; line-height:150%;}
+
+.community_list table.freeboard tbody td.title a {max-width:360px;float:left;}
+.community_list table.qna tbody td.title a {max-width:360px; float:left;}
+
+.community_list table tbody td .icon_notice img,
+.community_list table tbody td .icon_file img {vertical-align:middle;}
+
+.icon_reply_ok {display:inline-block; width:63px; height:22px; line-height:22px; color:#fff; font-size:12px; background:#999999;}
+.icon_reply_no {display:inline-block; width:63px; height:22px; line-height:22px; color:#fff; font-size:12px; background:#69bf39;}
+
+.community_list .btn_list.right .btn_skyblue {width:auto;}
+.community_list .btn_list.right .btn_skyblue .icon_pen {width:49px; padding:0 24px 0 10px; }
+
+/* COMMUNITY_VIEW 커뮤니티 자유게시판, 질문과 답변 상세보기 */
+.community_view {margin-top:30px;margin-bottom:70px;}
+.community_view .btn_list a:hover,
+.community_view .btn_list a:focus,
+.community_view .btn_list a:active {color: #fff;}
+.community_view .btn_list a.btn_white:hover,
+.community_view .btn_list a.btn_white:focus,
+.community_view .btn_list a.btn_white:active {color: #6f7c84;}
+.community_view table {width:100%;}
+.community_view table thead th.top {padding:0; height:48px; color:#fff; font-weight:normal; font-size:15px; font-family:"NanumBarunGothicB"; background:#758792;}
+.community_view table thead th.top span {font-size:15px; color:#d2ecfc;}
+.community_view table thead th {padding:18px 0; color:#666; font-size:15px; font-family:"NanumBarunGothicB"; font-weight:bold; background:#f2f2f2; border-bottom:1px solid #ddd;}
+.community_view table thead td {padding:18px 20px; font-size:14px; color:#666; font-family:"NanumBarunGothic"; border-bottom:1px solid #ddd;}
+.community_view table thead td .in_title{width:852px;height:30px;background:#fff;border:1px solid #ccc;}
+.community_view table thead td.file_write {padding:18px 20px 10px;width:864px;}
+.community_view table thead td.file_write .file_list_box{float:left;width:100%;padding:10px 0;}
+.community_view table thead td.file_write .file_map{float:left;width:100%;padding:2px 0;}
+.community_view table thead td.file_write .file_line{float:left;width:100%;}
+.community_view table thead td.file_write .file_line input{float:left;font-size:12px;}
+.community_view table thead td.file_write .plus_delete_btn{margin-top:5px;float:left;width:100%;}
+.community_view table thead td .red_color{font-size:12px;color:#da0000;}
+.community_view .btn_file_del{width:46px;height:20px;float:left;margin-right:5px;}
+.community_view .btn_file_del_2{width:16px;height:15px;float:left;margin-top:1px;}
+.community_view .btn_file_plus{width:46px;height:20px;display:inline-block;float:left;}
+.community_view table thead td.file_view {padding:18px 20px 20px;}
+.community_view table tbody td .board_txt {padding:20px;margin:10px 0 0 0; color:#666; font-size:14px; background:#f2f2f2;}
+.community_view table tbody td .board_txt p{line-height:20px;}
+.community_view table tbody td .textarea{padding:0;}
+
+.community_view .file_txt {padding:0 0 14px; color:#999; font-size:13px; font-family:"NanumBarunGothicB";}
+.community_view .file_name {padding:0 16px 2px 0;color:#666;float:left;margin-right:5px;font-weight:100;}
+.community_view .file_name strong {padding:0 0 2px 28px; line-height:1.5;font-weight:100;font-size:13px;}
+.community_view .file_add {padding:0 0 10px;font-size:12px;float:left;width:864px;}
+
+.reply_wrap {margin:10px 0 0 0;}
+.reply_number {color:#0085d3; margin:0 0 10px; font-size:14px; font-family:"NanumBarunGothicB";}
+.reply_list {border:2px solid #e4e4e4; border-top:2px solid #758792; background:#f2f2f2;}
+.reply_list li {overflow:hidden; position:relative; margin:0 20px; padding:20px 0; border-bottom:1px solid #bbb;}
+.reply_list li.last {border-bottom:0;}
+.reply_list li p.tit {margin:0 0 12px;}
+.reply_list li p.tit strong {padding:0 0 20px; color:#333; font-size:14px; font-family:"NanumBarunGothicB";}
+.reply_list li p.tit span {padding:0 15px; color:#3188bc; font-size:14px; font-family:"NanumBarunGothicB";}
+.reply_list li p.txt {color:#666; font-size:14px; line-height:1.5;}
+.reply_list li textarea {float:left; width:756px; height:60px; line-height: 125%; padding:10px; color:#666; font-size:14px; border:1px solid #bbb;resize:none;}
+.reply_list li .btn_basic {float:left; width:98px; height:81px; line-height:83px; margin:0 0 0 6px; font-size:14px;background:#fff;border-radius:0;}
+
+.reply_list .btn_reply {position:absolute; top:10px; right:0;}
+.reply_list .btn_reply a {padding:0 7px 0 3px; color:#666; font-size:12px; }
+.reply_list .btn_reply a:last-child {background: none; padding-right:0;}
+.reply_list .btn_reply .btn_reply_del {padding:0 0 0 3px; background:none;}
+
+/* faq */
+.FAQ_list .search_top {margin-right: 20px; padding-top: 30px; padding-bottom: 20px;}
+.FAQ_list .search_top .btn_darkgray {width: 60px;}

@@ -1,0 +1,67 @@
+.schedule-list .select-list .year {display: inline-block; text-align: center; width: 98%; height: 36px; line-height: 36px; padding-left: 0; margin-left: 0;}
+.schedule-list .institute .select-list .year {font-size:1.1em; line-height: 32px;}
+
+.schedule {border-top: 1px solid #d3d3d3;}
+.calendar-header .schedule.line-1 {border:none; padding-bottom: 0.4em;}
+.schedule.line-3 {border:none; padding:0;}
+.schedule-header {background-color: #e1e9f0; border-bottom: 1px solid #d3d3d3;}
+.schedule .schedule-header h2 {float:none; display: inline-block; position: relative; background-color: #267dcd; font-family: 'NanumGothicB'; font-size: 0.9em; letter-spacing: 1px; color: #fff; padding-top: 12px; padding-bottom: 11px; padding-left: 10px;}
+.schedule .schedule-header h2:after {position: absolute; top: 0; right: -15px; content: ''; border-left: 15px solid #267dcd; border-top: 19px solid transparent; border-bottom: 19px solid transparent; border-right: none;}
+.schedule {padding:0 0 25px 0;}
+.schedule dt {/*margin: 0.83em 0;*/}
+.schedule section {/* margin-bottom: 10px; overflow: auto; */}
+.schedule section dl {font-size:13px;/* height: 25px; */line-height: 1.8; letter-spacing: -0.1em;}
+.schedule section > dl > dt {position: relative;/*border-top: 1px solid #d3d3d3;/* border-bottom: 1px solid #d3d3d3; *//* padding-top: 0.63em; *//* padding-bottom: 0.63em; */}
+.schedule section > dl > dt:first-child {border-top: none;}
+.schedule dt span {display: inline-block; vertical-align: middle; font-weight: bold;}
+.schedule dt span:first-child {/* width: 20%; */ vertical-align:center; margin-left: 10px; margin-right: 6px;}
+.schedule section dd {/* padding-bottom: 10px; *//* padding-top: 10px; */}
+.schedule section dl .sch-item-def {width:100%; border-bottom: 1px solid #d3d3d3;padding-top: 8px;}
+
+dd.sch-item-def {}
+.schedule dt span:nth-child(2) {width: 66%;}
+.schedule dt .icon-slide {width: 30px;margin-right: 10px; /*float: right;*/ position: absolute; top:calc(50% - 15px); right: 10px;}
+.schedule-item dt {position:relative;background-repeat: no-repeat;-webkit-background-size: cover;background-size: cover;font-weight: bold;/* border-right:1px solid #a5a5a5; */padding-left: 10px;padding-right: 12px;/* margin-bottom: 15px; */ font-size: 1.1em}
+
+.schedule-item dt span.icon {display: inline-block; background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; width: 16px; height: 20px; margin-left: 0; margin-right: 2px;}
+.schedule-item dt, .schedule-item dd {display: inline-block;/* line-height: 20px; */margin: 0px; font-size:13px;}
+.schedule-item dd {/* width: 60%; */ vertical-align: middle; margin:0 0 3px 0; line-height: 22px;}
+.schedule-item.request {padding-bottom: 5px;}
+
+.schedule-item dt:after {content:''; border-left: 1px solid #ababab; position:absolute; height:13px; top:3px; right:3px;}
+.tourney-info .sche-title {margin-bottom:8px;} 
+
+.schedule .panel-body {padding:0;}
+.schedule .panel-default {border:0;}
+.schedule .panel {margin:0; box-shadow:0 1px 1px rgba(0,0,0,0);}
+.schedule .panel-title {font-size:13px; border-top:1px solid #d3d3d3; border-bottom:1px solid #d3d3d3;}
+.schedule .panel-title a {position: relative; padding: 0.83em 0;}
+/*.schedule .panel-title a span.icon-slide {margin-top: calc(50% - 15px);}*/
+.schedule [class*="col"] {float:none;}
+.schedule .icon-slide {transition: all .3s ease;}
+.schedule .on .icon-slide {transform: rotate(180deg);}
+.modal-schedule .tourney-info p {font-size:0.8em;}
+
+
+
+.schedule-item.request dd {/* width: 55%; */}
+.sch-btn-list {text-align: center;padding-bottom: 10px;}
+.sch-btn-list .btn {background-color: #67af3c; color: #fff; border: none; font-size: 12px; font-weight: bolder; letter-spacing: -0.05em; width: 30%; border-radius: 20px; padding-top: 0.6em; padding-bottom: 0.6em;  margin-right: 0.2em; }
+.sch-btn-list .btn:last-child {margin-right: 0;}
+.sch-item-def {position: relative; background: #eaeaea;}
+.sch-item-def .sch-itemcon {position: absolute;top: 10px;right: 10px;width: 40px;}
+
+.schedule-item .icon {background-position: 0 3px; vertical-align: middle;}
+.schedule-item .place .icon {background-size: 10px 15px!important;}
+.schedule-item .term .icon {background-size: 13px 13px!important;}
+.schedule-item .request .icon {background-size: 13px 13px!important;}
+
+.modal-schedule .schedule-item dt:after {top:4px; right:4px;}
+
+/* 대회일정결과 */
+.inst-sche .schedule-item dt {font-size: 1em; padding-right:9px; height:auto; vertical-align: top;}
+.inst-sche .schedule-item dd {width:66%; letter-spacing:-0.15em; height:auto;}
+.inst-sche .schedule-item .place,
+.inst-sche .schedule-item .term,
+.inst-sche .schedule-item .request {padding-left:10px;}
+.inst-sche .sch-btn-list {padding:10px 0 15px 0;}

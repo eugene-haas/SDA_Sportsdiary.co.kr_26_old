@@ -1,0 +1,216 @@
+/* =========================
++ font 로딩 +
+========================= */
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic/NanumGothic-Regular.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicB';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothic/NanumGothic-Bold.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicEB';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothic/NanumGothic-ExtraBold.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff');
+}
+
+
+/*body {width: 3508px;}*/
+/*body {width: 2400px;}*/
+body, h1, h2, h3, h4, h5, h6, div, p, ul, li, dl, dt, dd {margin: 0;
+padding: 0;}
+li {list-style: none;}
+* {box-sizing: border-box;}
+table {border-spacing: 0; border-collapse: collapse;}
+
+.clearfix:after {display: table; content: ''; clear: both;}
+
+body {width: 2000px; font-family: 'NanumGothic';}
+h1 {text-align: center; font-size:34px;}
+
+.header {position: relative;}
+.header .attend {font-size:22px; font-family: 'NanumGothicB'; position: absolute; top:80px; left: 0;}
+.header .attend span {font-family:'NanumGothic'; text-decoration: underline;}
+.title {border-bottom: 2px solid #333; padding-bottom: 15px;}
+.title > * {margin-top: 8px;}
+.title .date { text-align: center; font-size:22px; font-family: 'NanumGothicB';}
+.title .team { text-align: center; font-size:22px; font-family: 'NanumGothicB';border: 1px solid #333; max-width: 520px; margin: 0 auto; margin-top: 10px; padding:2px 10px;}
+
+.main {display: flex;}
+/* S: left_side*/
+.left_side {width:230px; font-size:22px; flex:1; display: flex; justify-content: flex-start; flex-direction: column; text-align: right;}
+.left_side.jc-center {justify-content: center;}
+.left_side table {width: 100%;}
+/*
+.left_side table tr td{ padding:0 10px; padding-right: 80px;}
+.main .right_side table tr td{padding-left: 80px;}
+*/
+.left_side table tr td{ padding:0 10px; padding-right: 10px;}
+.main .right_side table tr td{padding-left: 10px;}
+
+/* 4강전 */
+.match4 .line_area {width: 1518px; height: 900px; flex:3; justify-content: center; align-items: center; display: flex; margin-left:-2px; margin-right:-2px;}
+.match4 .left_side {padding-top:170px;}
+.match4 .left_side table:first-child {margin-bottom:510px;}
+.match4 .right_side {padding-top:170px;}
+.match4 .right_side table:first-child {margin-bottom:510px;}
+/*.semifinal {position: fixed; bottom: 10px; left: 50%; }*/
+.semifinal table {width: 500px; border:2px solid #666; margin:0 auto 65px auto; text-align: center; font-size:22px;}
+.semifinal table thead tr {border-bottom:2px solid #666; height:35px;}
+.semifinal table tbody tr:last-child {height:150px;}
+
+/* 8강전 */
+/*
+.match8 .left_side {padding-top:231px;}
+.match8 .left_side table:first-child {margin-bottom:587px;}
+.match8 .left_side table tr {border-right: 2px solid #666;}
+.match8 .left_side table tr.no_match {border-right: 5px solid #666;}
+.match8 .right_side {padding-top:231px;}
+.match8 .right_side table:first-child {margin-bottom:587px;}
+.match8 .right_side table tr {border-left: 2px solid #666;}
+.match8 .right_side table tr.no_match {border-left: 5px solid #666;}
+*/
+
+/* NEW 8강전 */
+.match8 .left_side {padding-top:84px;}
+.match8 .left_side table {margin-bottom:294px;}
+.match8 .left_side table:last-child {margin-bottom:0px;}
+.match8 .left_side table tr {border-right: 2px solid #666;}
+.match8 .left_side table tr.no_match {border-right: 5px solid #666;}
+.match8 .right_side {padding-top:84px;}
+.match8 .right_side table {margin-bottom:294px;}
+.match8 .right_side table:last-child {margin-bottom:0px;}
+.match8 .right_side table tr {border-left: 2px solid #666;}
+.match8 .right_side table tr.no_match {border-left: 5px solid #666;}
+
+/* NEW 16강전 */
+.match16.main {margin:20px 0;}
+.match16 .line_area {width: 1518px; height: 1100px; flex:3; justify-content: center; align-items: center; display: flex; margin-left:-2px; margin-right:-2px;}
+.match16 .left_side {padding-top: 69px;}
+.match16 .left_side table {margin-bottom:109px;}
+.match16 .left_side table:last-child {margin-bottom:0px;}
+.match16 .left_side table tr {border-right: 2px solid #666;}
+.match16 .left_side table tr.no_match {border-right: 5px solid #666;}
+.match16 .right_side {padding-top:69px;}
+.match16 .right_side table {margin-bottom:109px;}
+.match16 .right_side table:last-child {margin-bottom:0px;}
+.match16 .right_side table tr {border-left: 2px solid #666;}
+.match16 .right_side table tr.no_match {border-left: 5px solid #666;}
+
+/* NEW 32강전 */
+.match32.main {margin:30px 0;} 
+.match32 .line_area {width: 1518px; height: 1070px; flex:3; justify-content: center; align-items: center; display: flex; margin-left:-2px; margin-right:-2px;}
+.match32 .left_side {padding-top: 22px; font-size:20px;}
+.match32 .left_side table {margin-bottom:44px;}
+.match32 .left_side table:last-child {margin-bottom:0px;}
+.match32 .left_side table tr {border-right: 2px solid #666;}
+.match32 .left_side table tr.no_match {border-right: 5px solid #666;}
+.match32 .right_side {padding-top: 22px; font-size:20px;}
+.match32 .right_side table {margin-bottom:44px;}
+.match32 .right_side table:last-child {margin-bottom:0px;}
+.match32 .right_side table tr {border-left: 2px solid #666;}
+.match32 .right_side table tr.no_match {border-left: 5px solid #666;}
+
+/* NEW 64강전 */
+.match64.main {margin:20px 0;}
+.match64 .line_area {width: 1518px; height: 1124px; flex:5.1; justify-content: center; align-items: center; display: flex; margin-left:-2px; margin-right:-2px;}
+.match64 .left_side {font-size:13px; padding-top: 27px;}
+.match64 .left_side table {margin-bottom:19.1px;}
+.match64 .left_side table:last-child {margin-bottom:0px;}
+.match64 .left_side table tr {border-right: 2px solid #666;}
+.match64 .left_side table tr.no_match {border-right: 5px solid #666;}
+.match64 .right_side {font-size:13px; padding-top:27px;}
+.match64 .right_side table {margin-bottom:19.1px;}
+.match64 .right_side table:last-child {margin-bottom:0px;}
+.match64 .right_side table tr {border-left: 2px solid #666;}
+.match64 .right_side table tr.no_match {border-left: 5px solid #666;}
+
+/* NEW 128강전 */
+.match128.main {margin:20px 0;}
+.match128 .line_area {width: 1518px; height: 2213px; flex:5.1; justify-content: center; align-items: center; display: flex; margin-left:-2px; margin-right:-2px;}
+.match128 .left_side {font-size:13px; padding-top: 24.8px;}
+.match128 .left_side table {margin-bottom:19.1px;}
+.match128 .left_side table:last-child {margin-bottom:0px;}
+.match128 .left_side table tr {border-right: 2px solid #666;}
+.match128 .left_side table tr.no_match {border-right: 5px solid #666;}
+.match128 .right_side {font-size:13px; padding-top: 24.8px;}
+.match128 .right_side table {margin-bottom:19.1px;}
+.match128 .right_side table:last-child {margin-bottom:0px;}
+.match128 .right_side table tr {border-left: 2px solid #666;}
+.match128 .right_side table tr.no_match {border-left: 5px solid #666;}
+/* E: left_side */
+
+/* S: line_area  */
+.line_area {width: 1518px; height: 1150px; flex:5; justify-content: center; align-items: center; display: flex; margin-left:-2px; margin-right:-2px;}
+.line_area img {width:100%; vertical-align: middle;}
+/* E: line_area */
+
+/* S: right_side */
+.right_side{width:230px; font-size:22px; flex:1; display: flex; justify-content: flex-start; flex-direction: column; text-align: left;}
+.right_side.jc-center {justify-content: center;}
+.right_side table {width: 100%;}
+.right_side table tr td{ padding:0 10px;}
+/* E: right_side */
+
+/* S: footer  */
+.footer {height: 50px; border-top: 2px solid #333; padding-top: 10px;}
+.footer .bot_logo {float:left;}
+.footer .bot_logo img {height:51px;}
+.print_date {font-size:20px; float:right;}
+/* E: footer */
+
+/* S: 리그전 */
+.league.main {height:1150px;}
+.league .line_area {position: relative; top: calc(50% - 400px); height: 800px;}
+.league .table {border: 2px solid #666; color:#333;} /* 전체 border */
+.league .table th,
+.league .table td {border-right: 1px solid #666; border-bottom: 1px solid #666; padding: 16px 5px; width: 190px; text-align: left;}
+.league .table th.team {font-size:22px; text-align: center;}
+.league .table td {height:85px; font-size:20px; color:#666; text-align: center; font-family: "NanumGothicB";}
+.league .table th.record_point,
+.league .table th.record_order,
+.league .table td.record_point,
+.league .table td.record_order {font-size:22px; width: 120px; text-align: center;} /* 승패, 순위 길이 */
+.league .table th.record_point {border-left: 3px solid #333; border-top: 3px solid #333;}
+.league .table th.record_order {border-right: 3px solid #333; border-top: 3px solid #333;}
+.league .table td.record_point {border-left: 3px solid #333;}
+.league .table td.record_order {border-right: 3px solid #333;}
+.league .table tr:last-child td.record_point,
+.league .table tr:last-child td.record_order {border-bottom: 3px solid #333;}
+
+.league .table th .number,
+.league .table th .player {display: inline-block; vertical-align: middle;} /* 선수 이름, 학교 정렬 */
+.league .table th .number {margin-left: 5px; margin-right: 3px;}
+.league .table th .number .round {display: inline-block; text-align: center; border: 1px solid #333; border-radius: 50%; width: 20px; height: 20px;} /* 선수 넘버 */
+.league .table th .player > * {display: block; text-align: left;}
+.league .table th .player .name {font-size:22px; padding-top: 3px; padding-bottom: 3px;}
+.league .table th .player .school {height:20px; font-size:16px; color:#666; text-overflow: clip; overflow:hidden; white-space: nowrap;}
+.league .table .self {padding:0;}
+.league .table .self img {width:100%; height:85px;}
+/* E: 리그전 */
+
+@media print {
+  .match2 .left_side table,
+  .match2 .right_side table {margin-top: 10px;}
+}

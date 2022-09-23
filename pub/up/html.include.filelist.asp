@@ -1,0 +1,1 @@
+<%=r_filenmstr%> <a href="javascript:mx.delFile(<%=r_tidx%>,'<%=r_filenmstr%>','<%=uptype%>')"> &nbsp;<button type="button" class="btn btn-default btn-xs">삭제</button></a><br>

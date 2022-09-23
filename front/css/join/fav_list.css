@@ -1,0 +1,9 @@
+/* 회원정보 입력 join2_type5_userInfo : 주특기 */
+.sub .fav-list {margin-bottom: 10px;}
+.sub .fav-list .join_title {display: block;text-align: center;border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;}
+.sub .fav-list h3 {background-color: #a7b1b7;color: #fff;font-size: .96em;text-align: center;border-top: 1px solid #bbb;padding-top: 6px;padding-bottom: 6px;}
+.fav-list ul li {text-align: center;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd;width: 33.33%;padding: 0;float: left;}
+.fav-list ul li:nth-child(3n+1) {border-left: 1px solid #ddd;}
+.fav-list li input {visibility: hidden;width: 0;height: 0;}
+.fav-list li a {display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex; -ms-align-items: center; justify-content: center;align-items: center; justify-content: center; background-color: #fff; font-size: 0.94em; height: 60px; padding: 10px;}
+.fav-list li a.on {background-color: #ff8d00;color: #fff;}

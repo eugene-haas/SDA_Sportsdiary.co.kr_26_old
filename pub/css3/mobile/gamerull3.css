@@ -1,0 +1,11 @@
+
+.admin_content .gamerull3 table{border-top:3px solid #ff4c00;margin-bottom:100px;}
+.admin_content .gamerull3 table tr td{padding:2px;height:auto;line-height:inherit;background:#fff;font-size:18px;}
+.admin_content .gamerull3 table tr td input{width:98%;height:30px;font-weight:bold;text-align:center;font-size:18px;margin-bottom:0;border:1px solid #ddd;}
+.admin_content .gamerull3 table tr td .blue_font{color:#fff;background:#009ae6;}
+.admin_content .gamerull3 table tr td .red_font{color:#fff;background:#ec0000;}
+.admin_content .gamerull3 table tr td .space{height:5px;}
+.admin_content .gamerull3 table tr th{border-bottom:1px solid #ccc;width:60px;}
+.admin_content .gamerull3 table tr.no_bg td{background:#f7f9fb;font-size:18px;height:35px;font-weight:bold;font-weight:400;}
+.admin_content .gamerull3 table tr:nth-child(2n) td{background:#fff;}
+.admin_content .gamerull3 table tr td input.black_font{font-weight:400;}

@@ -1,0 +1,39 @@
+.live-score .modal-dialog{width:560px;}
+.live-score .modal-dialog .modal-content{border-radius:0;padding:40px 30px;}
+.live-score .modal-dialog .modal-content .modal-body{padding:0;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table{width:100%;border:3px solid #c3cad4;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr td{background:#f2f2f2;padding:5px;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr td.rb_2{border-right:2px solid #c3cad4;width:60px;text-align:center;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr td .red_font{color:#ec0a2e;font-weight:900;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr td a{width:47px;height:40px;line-height:40px;text-align:center;color:#000;border:1px solid #999;border-radius:3px;font-family: 'NanumGothicB';
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f9f9f9+50,f3f3f3+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 50%, #f3f3f3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f9f9f9 50%,#f3f3f3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#f9f9f9 50%,#f3f3f3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+}
+.live-score .modal-dialog .modal-content .modal-body .input-info{margin-top:20px;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr td a.on{background:#ec0a2e;color:#fff;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr th{border-right:2px solid #c3cad4;width:175px;background:#f2f2f2;font-family: 'NanumGothicB';font-weight:normal;padding:0 15px;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr th span{display:block;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr.blue-bg th{background:#0f335b;color:#fff;}
+.live-score .modal-dialog .modal-content .modal-body .input-info table tr.blue-bg td{background:#0f335b;color:#fff;}
+
+.live-score .modal-dialog .modal-content .modal-body .game{margin-top:10px;}
+.live-score .modal-dialog .modal-content .modal-body .game table{width:100%;border:3px solid #c3cad4;}
+.live-score .modal-dialog .modal-content .modal-body .game table tr td{background:#f2f2f2;padding:5px;}
+.live-score .modal-dialog .modal-content .modal-body .game table tr td a{width:70px;height:44px;line-height:44px;text-align:center;color:#fff;border-radius:3px;font-family: 'NanumGothicB';background:#bfbfbf;}
+.live-score .modal-dialog .modal-content .modal-body .game table tr th{background:#f2f2f2;text-align:center;width:121px;font-family: 'NanumGothicB';color:#333333;}
+
+.live-score .modal-dialog .modal-content .modal-body .score{margin-top:10px;}
+.live-score .modal-dialog .modal-content .modal-body .score table{width:100%;border:3px solid #c3cad4;}
+.live-score .modal-dialog .modal-content .modal-body .score table tr td{background:#f2f2f2;padding-top:5px;}
+.live-score .modal-dialog .modal-content .modal-body .score table tr td a{width:70px;height:44px;line-height:44px;text-align:center;color:#fff;border-radius:3px;font-family: 'NanumGothicB';background:#bfbfbf;}
+.live-score .modal-dialog .modal-content .modal-body .score table tr td a.on{background:#ec0a2e;color:#fff;}
+.live-score .modal-dialog .modal-content .modal-body .score table tr:last-child td{padding-bottom:5px;}
+.live-score .modal-dialog .modal-content .modal-body .score table tr th{background:#f2f2f2;text-align:center;width:126px;font-family: 'NanumGothicB';color:#333333;}
+.live-score .modal-dialog .modal-content .modal-body .sign-box{border:3px solid #c3cad4;margin-top:10px;position:relative;}
+.live-score .modal-dialog .modal-content .modal-body .sign-box img{width:100%;}
+.live-score .modal-dialog .modal-content .modal-body .sign-box .delete_btn{position:absolute;top:10px;right:10px;width:82px;height:30px;line-height:30px;text-align:center;border-radius:3px;background:#7e868f;font-size:13px;display:inline-block;color:#fff;}
+.live-score .modal-dialog .modal-content .modal-body .sign-box .delete_btn .fa-times{margin-left:5px;font-size:11px;}

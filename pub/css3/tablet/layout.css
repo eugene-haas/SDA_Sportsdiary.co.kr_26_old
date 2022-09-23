@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/*@import url("http://fonts.googleapis.com/css?family=Roboto");*/
+/*@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");*/
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  /*src: url(http://fonts.gstatic.com/s/roboto/v16/5YB-ifwqHP20Yn46l_BDhA.eot);*/
+}
+
+/* =========================
++ font 로딩 +
+========================= */
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic/NanumGothic-Regular.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-Regular.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicB';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothic/NanumGothic-Bold.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-Bold.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicEB';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothic/NanumGothic-ExtraBold.eot);
+  src: url(../fonts/NanumGothic/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff2) format('woff2'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff'),
+    url(../fonts/NanumGothic/NanumGothic-ExtraBold.ttf) format('truetype');
+  src: local(※), url(../fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NotoKR-md';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Noto KR Medium'), local('Noto KR Medium'), local('Noto KR Medium');
+  src: url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot);
+  src: url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSans/NotoKR-Medium/Notokr-medium.woff) format('woff'),
+    url(../fonts/NotoSans/NotoKR-Medium/Notokr-medium.otf) format('truetype'),
+    url(../fonts/NotoSans/NotoKR-Medium/Notokr-medium.woff2) format('woff2'),
+    url(../fonts/NotoSans/NotoKR-Medium/notokr-medium.svg#svgFontName) format('svg');
+  src: local('※'), url(../fonts/NotoSans/notoKR-Medium/Notokr-medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bd';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Noto KR Bold'), local('Noto KR Bold'), local('Noto KR Bold');
+  src: url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot);
+  src: url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.otf) format('truetype'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff2) format('woff2'),
+    url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.svg#svgFontName) format('svg');
+  src: local('※'), url(../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bl';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto KR Black'), local('Noto KR Black'), local('Noto KR Black');
+  src: url(../fonts/NotoSans/NotoKR-Black/notokr-black.eot);
+  src: url(../fonts/NotoSans/NotoKR-Black/notokr-black.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.otf) format('truetype'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.woff2) format('woff2'),
+    url(../fonts/NotoSans/NotoKR-Black/notokr-black.svg#svgFontName) format('svg');
+  src: local('※'), url(../fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff');
+}
+
+
+
+
+/* 초기화 */
+fon
+html, body{margin:0;height:100%;overflow:hidden;}
+body {margin:0;padding:0;font-size:14px;;font-family:"NotoKR-md", sans-serif !important;font-weight:400;}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img,dl,dd,ul,li {margin:0;padding:0;border:0}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+
+#hd ul, nav ul, #ft ul {margin:0;padding:0;list-style:none}
+legend {position:absolute;margin:0;padding:0;line-height:0;text-indent:-9999em;overflow:hidden}
+img{}
+label, input, button, select, img {vertical-align:middle;font-size:16px;}
+button {cursor:pointer}
+label{margin-bottom:0;}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all;}
+hr {display:none}
+pre {overflow-x:scroll;}
+li{list-style:none;}
+input, select, textarea{outline: none;}
+a:hover, a:focus{text-decoration:none;}
+.header .top_box{position:relative;height:45px;line-height:45px;font-size:16px;padding:0 15px;}
+.header .top_box .r_link{position:absolute;right:15px;top:0;}
+.header .top_box .r_link a{color:#666;}
+.header .top_box .r_link span{margin:0 5px;}
+.fa, .fas, .far, .fal, .fab{line-height:inherit;}
+
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+/*#leftside {width:40px;height:100%;overflow:hidden;background-color:#1E2744;}*/
+header{position:absolute;top:0;left:0px;right:0;/*height:115px;*/background-color:#ccc;min-width:900px;}
+aside{position:absolute;/*top:115px;*/top:50px;bottom:0px;left:0px;right:180px;width:180px;overflow:auto;background-color:#3E4E68;margin-top:-3px;margin-bottom: 0px;}
+article{position:absolute;/*top:115px;*/top:50px;bottom:0px;left:180px;right:0;overflow:auto;min-width:500px;padding:0px 5px 0px 5px;margin-bottom: 20px;}
+footer{position:absolute;bottom:0;left:0px;right:0;height:40px;background-color:#E8EBF0;background: linear-gradient( to top, #E8EBF0 95%, #1E2744 5%, gray, #1E2744 );}
+
+/**
+ * --------------------------------
+ * header
+ * --------------------------------
+ */
+.top-tp {display: none; overflow:hidden; width:100%; height:64px; background:#fff;}
+.top-tp .logo { float:left; width:189px; height:64px;}
+.top-tp .logo h1 { margin:0; padding:11px 0 0 22px;}
+.top-tp .top-banner { float:left; width:771px; height:64px; background:#f4f8ff;}
+
+.top-btm { overflow:hidden; width:100%; height:48px; line-height:48px; color:#808ca0; font-weight:bold; border-top:1px solid #dae2e9; border-bottom:1px solid #dae2e9; background:#fff;}
+.top-btm .home a { float:left; width:174px; padding-left:15px; color:#333; font-weight:bold;font-size:14px;}
+.top-btm .btn-member-list li { float:left; padding-top:9px;}
+.top-btm .txt-member { color:#333; font-weight:bold;font-size:;}
+.btn-member-list{}
+/**
+
+
+/* 레이아웃 공통 부분 */
+/* head */
+a.btn-logout { display:block; height:30px;width:100px; line-height:28px; margin-right:7px;text-align:center; color:#fff; font-weight:bold; background:#637aa1; border-radius:20px;font-size:14px;}
+a.btn-member { display:block; height:30px;width:30px; line-height:30px; margin-right:11px;text-align:center; color:#fff; font-weight:bold; background:#637aa1; border-radius:20px;}
+a.btn { margin:0 0 0 5px; display:inline-block; /*width:88px;*/ padding:0 10px; height:28px; line-height:28px; color:#fff; font-size:12px; font-weight:bold; text-align:center; background:#637AA1;}
+a.btn-delete { background:#e61e8a;}
+a.btn-top-sdr { position:absolute; top:11px; right:0; display:block; color:#fff; width:27px; height:27px; text-align:center; /*background:#576f96; border-radius:20px;*/}
+a.btn-top-sdr.open { background:url("../images/btn_navi_open.png") no-repeat 0 0;}
+a.btn-top-sdr.close { background:url("../images/btn_navi_close.png") no-repeat 0 0;}
+
+
+
+

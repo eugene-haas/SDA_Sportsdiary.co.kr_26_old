@@ -1,0 +1,121 @@
+
+<% 
+	ReqTeamGb = oJSONoutput.TEAMGB
+	idx = oJSONoutput.IDX
+
+	Set db = new clsDBHelper
+
+		If Len(ReqTeamGb) > 0 Then
+		 whereTeamGb = " and TeamGb = " &  ReqTeamGb
+	End IF
+
+	SQL = "select sex,PTeamGb,PTeamGbNm,TeamGb, TeamGbNm,EnterType from tblTeamGbInfo where SportsGb = 'tennis' " & whereTeamGb & " and PTeamGb in ('200', '201', '202') and DelYN = 'N' order by Orderby asc"
+	Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+		If Not rs.EOF Then 
+			arrRS = rs.GetRows()
+		End if
+	db.Dispose
+
+	If Len(ReqTeamGb) > 0 Then
+		 whereTeamGb = " and a.teamGb = " &  ReqTeamGb
+	End IF
+
+	SQL = " Select  idx, PlayerIDX, rankpoint, b.TeamGb, b.TeamGbNm, writeday "
+	SQL = SQL & " FROM [SD_Tennis].[dbo].[sd_TennisRPoint] a  "
+	SQL = SQL & " Inner Join [SD_Tennis].[dbo].[tblTeamGbInfo] b On a.teamGb = b.TeamGb  WHERE a.PlayerIDX = '"&idx&"' " & whereTeamGb & "  order by a.writeday desc"
+
+	Set rs = db.ExecSQLReturnRS(SQL , null, ConStr)
+
+	If Not rs.EOF Then 
+		arrRS2 = rs.GetRows()
+	End if
+
+	db.Dispose
+	Set db = Nothing
+
+	IF Len(ReqTeamGb) = 0 Then
+		Cnt = 0
+		'	strFieldName = " PlayerIDX, UserName, UserPhone,Birthday, Sex,PersonCode,team,teamNm,team2,team2Nm,RankingPoint,userLevel,WriteDate "
+		If IsArray(arrRS) Then
+			IF IsArray(arrRS2) tHEN
+				For ar = LBound(arrRS, 2) To UBound(arrRS, 2) 
+					TeamGb = arrRS(3, ar)
+					TeamGbNm = arrRS(4, ar)
+					IsMatCh = 0
+						For ar2 = LBound(arrRS2, 2) To UBound(arrRS2, 2) 
+							rteamGb = arrRS2(3, ar2) 
+							IF TeamGb = rteamGb Then
+							ridx =  arrRS2(0, ar2) 
+							rrankpoint = arrRS2(2, ar2) 
+							rteamGbName =	 arrRS2(4, ar2) 
+							rwriteday =	 arrRS2(5, ar2) 
+							Cnt = Cnt + 1		
+							%>
+								<!-- #include virtual = "/pub/html/tennisAdmin/RankingPointList.asp" -->
+							<%
+								IsMatCh = 1
+							End IF
+						Next
+
+					IF IsMatCh = 0  Then
+					Cnt = Cnt + 1
+					%>
+					
+					<tr class="gametitle<%=Cnt%>">
+						<td><%=TeamGbNm%></td> 
+						<td><input type="text" id="txtRankingPoint<%=Cnt%>" value="0"></input></td>
+						<td>-</td>
+						<td> <a class="btn_a" class="btn" href="javascript:mx.input_Ranking(<%=IDX%>,<%=TeamGb%>,<%=Cnt%>);" >입력</a></td>
+					</tr>
+					<%
+					End If
+				Next
+			else
+				For ar = LBound(arrRS, 2) To UBound(arrRS, 2) 
+					Cnt = Cnt + 1
+					TeamGb = arrRS(3, ar)
+					TeamGbNm = arrRS(4, ar)
+					%>
+					<tr class="gametitle<%=Cnt%>">
+						<td><%=TeamGbNm%></td> 
+						<td><input type="text" id="txtRankingPoint<%=Cnt%>" value="0"></input></td>
+						<td>-</td>
+						<td> <a class="btn_a" class="btn" href="javascript:mx.input_Ranking(<%=IDX%>,<%=TeamGb%>,<%=Cnt%>);" >입력</a></td>
+					</tr>
+					<%
+				Next
+			End if
+		End if
+	else
+		If IsArray(arrRS2) Then
+			For ar = LBound(arrRS2, 2) To UBound(arrRS2, 2) 
+				Cnt = Cnt + 1
+				ridx =  arrRS2(0, ar) 
+				rrankpoint = arrRS2(2, ar) 
+				rteamGb = arrRS2(3, ar) 
+				rteamGbName =	 arrRS2(4, ar) 
+				rwriteday =	 arrRS2(5, ar) 
+			%>
+			<!-- #include virtual = "/pub/html/tennisAdmin/RankingPointList.asp" -->
+			<%
+			Next
+		else
+			If IsArray(arrRS) Then
+				For ar = LBound(arrRS, 2) To UBound(arrRS, 2) 
+			Cnt = Cnt + 1
+				TeamGb = arrRS(3, ar)
+					TeamGbNm = arrRS(4, ar)
+			%>
+				<tr class="gametitle<%=Cnt%>">
+					<td><%=TeamGbNm%></td> 
+					<td><input type="text" id="txtRankingPoint<%=Cnt%>" value="0"></input></td>
+					<td>-</td>
+					<td> <a class="btn_a" class="btn" href="javascript:mx.input_Ranking(<%=IDX%>,<%=ReqTeamGb%>,<%=Cnt%>);" >입력</a></td>
+				</tr>
+			<%
+				Next
+			End if
+		End if
+	End IF
+
+%>

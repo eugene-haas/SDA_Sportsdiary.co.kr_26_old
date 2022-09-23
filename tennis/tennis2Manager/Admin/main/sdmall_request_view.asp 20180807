@@ -1,0 +1,81 @@
+<!--#include file="../dev/dist/config.asp"-->
+<!--#include file="head.asp"-->
+
+<section>
+  <div id="content">
+<form name="s_frm" method="post">
+    <input type="hidden" name="currPage" id="currPage" value="<%=currPage%>" />    
+    <input type="hidden" name="fnd_KeyWord" id="fnd_KeyWord" value="<%=fnd_KeyWord%>" />
+    <input type="hidden" name="fnd_KeyWordType" id="fnd_KeyWordType" value="<%=fnd_KeyWordType%>" />
+    <input type="hidden" name="CIDX" id="CIDX" value="<%=CIDX%>" />
+    <input type="hidden" name="act" id="act" />
+
+     <!-- S: 네비게이션 -->
+      <div class="navigation_box">제휴·입점 관리 &gt;  제휴·입점 관리</div>
+      <!-- E: 네비게이션 -->
+ <br />
+        <!-- S: basic-view -->
+        <table class="Community_wtite_box">
+          <thead>
+            <tr>
+              <th>회사명</th>
+              <td>위드라인</td>
+            </tr>
+            <tr>
+              <th>취급상품군</th>
+              <td>골프</td>
+            </tr>
+            <tr>
+              <th>회사주소</th>
+              <td>서울시 마포구 삼개로16 근신빌딩 본관 5층</td>
+            </tr>
+						<tr>
+              <th>회사 URL</th>
+              <td>
+								<a href="#">www.widline.co.kr</a>
+							</td>
+            </tr>	 
+						<tr>
+              <th>담당자명</th>
+              <td>원빈</td>
+            </tr>
+						<tr>
+              <th>연락처</th>
+              <td>010-6666-7777</td>
+            </tr>
+						<tr>
+              <th>이메일</th>
+              <td>www.@naver.com</td>
+            </tr>
+						<tr>
+              <th>문의 내용</th>
+              <td>
+								<p>임점상품은 000 입니다. 입점을 환영합니다.</p>
+							</td>
+            </tr>
+						<tr>
+              <th>비고</th>
+              <td>
+								<input type="text">
+							</td>
+            </tr>
+						<tr>
+              <th>개인정보수집 및<br>이용동의</th>
+              <td>
+								Y
+							</td>
+            </tr>
+          </thead>
+        </table>
+        <!-- E: basic-view -->
+
+        <div class="btn_list">
+              <a href="javascript:chk_Submit('LIST');" class="btn btn-grayline">목록</a>
+              <a href="javascript:chk_Submit('MOD');" class="btn btn-orangy">수정</a>
+              <a href="javascript:chk_Submit('DEL');" class="btn btn-redy">삭제</a>
+        </div>
+
+  </form>
+  </div>
+</section>
+<!--#include file="footer.asp"-->

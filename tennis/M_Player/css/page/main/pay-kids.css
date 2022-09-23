@@ -1,0 +1,24 @@
+/* 미성년자 안내 */
+.pay .for-kids .icon {display: inline-block; width: 15px; height: 22px; margin-right: 5px;}
+.pay .for-kids .icon img {vertical-align: top; height: 100%;}
+.pay .for-kids {font-family: 'NanumGothicB'; font-size: 0.88em; color: #fff; padding: 5px 10px;}
+.pay .pay-title p.for-kids {background-color: #00204b;}
+.pay .for-kids .orangi {color: #ff7e00;}
+
+/* 대리결제 안내 */
+.pay .deputy-guide {font-size: 0.75em; background-color: #fff; color: #6a7780; border-bottom: 1px solid #ddd; padding: 10px;}
+.pay .deputy-guide p {float: left;}
+.pay .deputy-guide p.txt {width: 75%; line-height: 150%;}
+.pay .deputy-guide p.img {text-align: right; width: 25%; line-height: 100%;}
+.pay .deputy-guide .icon {display: inline-block; width: 40px; padding-top: 15px;}
+.pay .deputy-guide .icon img {height: 100%;} 
+
+/* 대리결제 요청문자 발송 */
+.sms-send {padding-bottom: 40px;}
+.sms-send h3 {background-color: #164369; color: #fff; text-align: center; margin-left: 10px; margin-right: 10px; padding: 10px 0;}
+.sms-send form {border-left: 1px solid #bbb; border-right: 1px solid #bbb; border-bottom: 1px solid #bbb; margin-left: 10px; margin-right: 10px;}
+.sms-send fieldset {background-color: #fff;}
+.sms-send legend {position: static; font-family: 'NanumGothicB'; font-size: 0.88em; text-align: center; background-color: #c7d9e8; color: #000; padding-top: 5px; padding-bottom: 5px;}
+.sms-send label span {font-size: 0.88em; line-height: 200%; padding-left: 10px;}
+.sms-send label input {flex: 2; height: 30px; margin-right: 10px;}
+.sms-send fieldset .pay-cta {font-family: 'NanumGothicB'; font-size: 0.88em; text-align: center; background-color: #ff7e00; color: #fff; border-radius: 2px; margin: 10px; padding-top: 8px; padding-bottom: 8px;}

@@ -1,0 +1,27 @@
+/* 결제 안내 텍스트 */
+.pay-comp {background-color: #edf0f4; padding-bottom: 60px;}
+.pay-comp .pay-title p { font-size: 0.81em; font-weight: bold; line-height: 175%; letter-spacing: -0.025em; padding: 10px; }
+/* 결제 정보 */
+.pay-comp .pay-div h3 {background-color: #164369; color: #fff; padding: 10px;}
+.pay-comp .pay-info ul {background-color: #fff; padding: 10px;}
+.pay-comp .pay-info .pay-type {float: left;}
+.pay-comp .pay-info .pay-value {color: #1088ed; float: right;}
+
+/* 결제 방법 */
+.pay-comp .pay-way ul {background-color: #fff; padding: 10px;}
+.pay-comp .pay-way .img-icon {display: block; width: 25px; padding: 10px 0; margin: 5px auto;}
+.pay-comp .pay-way .img-icon.long {width: 20px; padding: 8px 0 4px; margin: 5px auto 0;}
+.pay-comp .pay-way .btn-txt {display: block;}
+.pay-comp .pay-way li a {font-size: 0.81em; font-weight: bold; text-align: center; border: 1px solid #bbbbbb; box-sizing: border-box;}
+.pay-comp .pay-way li a.on {border: 1px solid #1088ed; color: #1088ed;}
+
+/* 은행선택 */
+.bank-choice {background-color: #fff; border-bottom: 1px solid #ddd; padding-left: 10px; padding-right: 10px; padding-bottom: 10px; margin-bottom: 10px;}
+.bank-choice select {color: #000;}
+
+.pay-comp .deputy-agree {background-color: #fff; padding-top: 10px;}
+
+/* 동의, 결제하기 */
+.pay-comp .agree {border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.pay-comp .agree label {padding-bottom: 0; margin-bottom: 0;}
+.pay-comp .pay-cta {font-family: 'NanumGothicB'; background-color: #3f505d; color: #fff; text-align: center; padding: 10px 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; border-radius: 2px;}

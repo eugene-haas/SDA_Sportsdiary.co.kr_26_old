@@ -1,0 +1,16 @@
+.record-menu.memory-menu {width: 100%; overflow: hidden;}
+.memory-menu .big-cat,
+.memory-menu .mid-cat {overflow-x: scroll; width: 100%;}
+.memory-menu .big-cat .menu-list { width: 77em; background-color: #264862;}
+.memory-menu .big-cat li {position:relative; /*background-color: #164369;*/ float: left;}
+.memory-menu .menu-list a.btn {display: block; font-size: 0.95em; padding-right:20px;}
+.memory-menu .big-cat li .ic-new {font-size: 0.86em; top: 5px; right: -10px; width: 18px; height: 18px; line-height: 18px;}
+.memory-menu.record-menu .menu-list li:last-child a.btn {width: 10em; padding-right: 20px;}
+.memory-tail {/*border-top: 1px solid #d4d4d4;*/ padding-bottom: 0;}
+.estimate {background-color: #edf0f4; text-align: center; padding-bottom: 20px;}
+.estimate-box {background-color: #fff; border: 1px solid #ccc; padding-top: 20px; margin-top: -15px; padding-bottom: 20px;}
+.estimate-box p.orangy {font-size: 0.79em; font-weight: bold; color: #ff7200; line-height: 130%;}
+.estimate h2 {font-size: 1.25em; color: #333;}
+.estimate h2 + p {font-size: 0.79em; color: #666;}
+.estimate .detail-table {display: none; margin-top: 20px; margin-left: -10px; margin-right: -10px; margin-bottom: 50px;}
+.estimate .detail-table h3 {font-family: 'NanumGothicB'; font-size: 16px; background-color: #a2bfd5; color: #222; height: 35px; line-height: 35px;}

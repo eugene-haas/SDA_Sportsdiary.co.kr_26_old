@@ -1,0 +1,80 @@
+<!--#include virtual="/M_Player/Library/ajax_config.asp"-->
+<%
+	Dim profile
+	Dim memcode
+
+	Dim ChkSQL
+	Dim upSQL
+	Dim CRs
+
+	Dim FSO
+	Dim UploadPath
+	Dim Upload
+	Dim STR_ExtensionType
+	Dim upFileName
+
+	SET FSO = CreateObject("Scripting.FileSystemObject") 
+	'업로드경로
+	UploadPath =  server.mappath("\")&"\M_Player\Upload\"
+
+	SET Upload = Server.CreateObject("TABSUpload4.Upload")
+		Upload.CodePage = 65001
+
+	Upload.Start UploadPath, False
+
+	SET profile = Upload.Form("profile")
+	SET memcode = Upload.Form("memcode")
+
+	If profile = "" Then
+		Response.Write "FALSE_profile_empty|profile=" & profile & "|memcode=" & memcode
+		Response.END
+	End If
+
+	If memcode = "" Then
+		Response.Write "FALSE_memcode_empty|profile=" & profile & "|memcode=" & memcode
+		Response.END
+	End If
+
+	STR_ExtensionType = profile.FileType
+
+	If profile <> "" Then
+		If LCase(STR_ExtensionType) = "jpg" Or LCase(STR_ExtensionType) = "jpeg" Or LCase(STR_ExtensionType) = "gif" Or LCase(STR_ExtensionType) = "png" Or LCase(STR_ExtensionType) = "bmp" Then
+
+			'이미지 업로드
+			Upload.Save UploadPath, False
+
+			'저장된업로드 파일명
+			upFileName = profile.ShortSaveName
+
+		Else
+			Response.Write "FALSE_profile_savefalse|profile=" & profile & "|memcode=" & memcode
+			Response.END
+		END IF
+	End If
+
+	'해당아이디 정보조회
+	ChkSQL = " SELECT MemberIDX " &_ 
+			 " FROM Sportsdiary.dbo.tblMember " &_	
+			 " WHERE DelYN = 'N'" &_					
+			 " AND MemberIDX = '"&memcode&"'"
+
+	SET CRs = Dbcon.Execute(ChkSQL)
+	IF Not(CRs.eof or CRs.bof) Then
+
+		'이미지정보 업데이트
+		upSQL = " UPDATE Sportsdiary.dbo.tblMember " &_
+				" SET PhotoPath = '"&"../upload/"&upFileName&"'" &_
+				" WHERE MemberIDX = '"&memcode&"'" &_
+				" AND DelYN = 'N'"
+				Dbcon.Execute(upSQL)	
+
+		Response.Write upFileName
+		Response.END
+	Else
+		Response.Write "FALSE_update_false|profile=" & profile & "|memcode=" & memcode
+		Response.END
+	End If
+
+	DBClose()
+
+%>

@@ -1,0 +1,124 @@
+
+
+//숫자입력체크
+function chk_Number(){
+	if ((event.keyCode<48)||(event.keyCode>57)) event.returnValue=false;
+}
+
+ function autoHypenPhone(str,elem){	
+	str = str.replace(/[^0-9]/g, '');
+	var tmp = '';
+	var f = document.getElementById(elem);
+	if( str.length < 4){
+		f.value =  str; 
+	}else if(str.length < 7){
+		tmp += str.substr(0, 3);
+		tmp += '-';
+		tmp += str.substr(3);
+		f.value =  tmp;
+	}else if(str.length < 11){
+		tmp += str.substr(0, 3);
+		tmp += '-';
+		tmp += str.substr(3, 3);
+		tmp += '-';
+		tmp += str.substr(6);
+		f.value =  tmp; 
+	}else{              
+		tmp += str.substr(0, 3);
+		tmp += '-';
+		tmp += str.substr(3, 4);
+		tmp += '-';
+		tmp += str.substr(7);
+		f.value =  tmp;
+	}	
+}
+
+function chk_logout(){
+	//alert("a");
+  var expdate = new Date();
+	expdate.setTime(expdate.getTime() - 1); // 쿠키 삭제조건
+	setCookie("sd_saveid", "", expdate);
+	setCookie("sd_savepass", "", expdate);
+
+	var strAjaxUrl = "/M_Player/Ajax/logout.asp";
+	$.ajax({
+		url: strAjaxUrl,
+		type: 'POST',
+		dataType: 'html',			
+		data: { 
+		},		
+		success: function(retDATA) {
+			if(retDATA){
+				if (retDATA=="TRUE") {
+					alink = "/M_Player/Main/login.asp"
+					$(location).attr('href',alink);   //a href						
+				}else{
+					alert('로그아웃중에 오류가 발생하였습니다.');								
+				}
+			}
+		}, error: function(xhr, status, error){						
+			alert ("오류발생! - 시스템관리자에게 문의하십시오!");			
+		}
+	});
+}
+//쿠키정보 저장
+function setCookie (name, value, expires) {
+  document.cookie = name + "=" + escape (value) +
+    "; path=/; expires=" + expires.toGMTString();
+}
+
+/*Select Box 생성*/
+function make_box(element,attname,code,action_type){
+
+	//alert(action_type)
+	if(action_type=="TeamGb"){
+		var strAjaxUrl = "/M_Player/Select/TeamGb_Select.asp";		
+	}else if(action_type=="AreaGb"){
+		var strAjaxUrl = "/M_Player/Select/AreaGb_Select.asp";			
+	}else if(action_type=="TeamCode"){
+		var strAjaxUrl = "/M_Player/Select/TeamCode_Select.asp";					
+		//make_box("sel_TeamCode","TeamCode",inputdata,"TeamCode")     
+	}else	if(action_type=="Join_TeamGb"){
+		var strAjaxUrl = "/M_Player/Select/Join_TeamGb_Select.asp";		
+	}else if(action_type=="Join_AreaGb"){
+		var strAjaxUrl = "/M_Player/Select/Join_AreaGb_Select.asp";			
+	}else if(action_type=="Join_TeamCode"){
+	    var strAjaxUrl = "/M_Player/Select/Join_TeamCode_Select.asp";					
+		//make_box("sel_TeamCode","TeamCode",inputdata,"TeamCode")     
+    } else if (action_type == "train_Code") {
+        var strAjaxUrl = "/M_Player/Select/train_Select.asp";
+    } else if (action_type == "PPUB_Code") {
+        var strAjaxUrl = "/M_Player/Select/Pub_Select.asp";
+    } else if (action_type == "StimFistCd") {
+        var strAjaxUrl = "/M_Player/Select/Strength_FistInfo.asp";
+    }
+
+	$.ajax({
+			url: strAjaxUrl,
+			type: 'POST',
+			dataType: 'html',
+			data: { element: element ,attname:attname ,code:code },
+			success: function(retDATA) {
+				if(retDATA){	
+						document.getElementById(element).innerHTML = retDATA	
+				}			
+				
+				if (retDATA == null) {
+					//조회종료 효과
+					alert ("조회 데이타가 없습니다!");				
+				}
+			}, error: function(xhr, status, error){
+				//조회종료 효과
+				//parent.fBottom.popupClose("","","");
+				alert ("조회중 에러발생 - 시스템관리자에게 문의하십시오!");
+				setseq = "";
+			}
+		});
+}
+
+//전화걸기
+function callNumber(num){
+location.href="tel:"+num;
+}
+
+

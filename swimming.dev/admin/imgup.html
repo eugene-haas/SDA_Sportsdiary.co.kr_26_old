@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Image Capture and Submit</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+ 
+var imageObj = null; 
+var mx,my,cmx,cmy = 0;
+var isDown = false;
+ 
+$(function() {
+    $('#file-input').change(function(e) {
+        var file = e.target.files[0],
+            imageType = /image.*/;
+ 
+        if (!file.type.match(imageType))
+            return;
+ 
+        var reader = new FileReader();
+        reader.onload = fileOnload;
+        reader.readAsDataURL(file);       
+    });
+ 
+   
+    function fileOnload(e) {
+        var $img = $('<img>', { src: e.target.result });
+        var canvas1 = $('#canvas1')[0];
+        var context = canvas1.getContext('2d');
+ 
+        $img.load(function() {
+            context.drawImage(this, 0, 0);
+            imageObj = this;
+        });
+    }
+     
+    $('#canvas1').on('mousedown',function(e){
+        var element = this;
+        var offsetX = 0;
+        var offsetY = 0;
+        if (element.offsetParent !== undefined) {
+            do {
+              offsetX += element.offsetLeft;
+              offsetY += element.offsetTop;
+            } while ((element = element.offsetParent));
+            mx = e.pageX - offsetX;
+            my = e.pageY - offsetY;
+            isDown = true;
+            console.log(mx+','+my);
+        }
+    });
+     
+    $('#canvas1').on('mousemove',function(e){
+        if(!isDown) return;
+        var element = this;
+        var offsetX = 0;
+        var offsetY = 0;
+        if (element.offsetParent !== undefined) {
+            do {
+              offsetX += element.offsetLeft;
+              offsetY += element.offsetTop;
+            } while ((element = element.offsetParent));
+            cmx = e.pageX - offsetX;
+            cmy = e.pageY - offsetY;
+             
+            console.log(cmx+','+cmy);
+             
+          var canvas1 = $('#canvas1')[0];
+          var context = canvas1.getContext('2d');
+          context.drawImage(imageObj,0,0);//배경 이미지를 그린다
+           
+          //마우스로 선택된 영역에 대시라인으로 사각형을 그린다
+          context.setLineDash([5]);
+          context.strokeStyle = 'red';
+          context.strokeRect(mx,my,cmx-mx,cmy-my);
+        }
+    });
+     
+    $('#canvas1').on('mouseup',function(e){
+        var canvas1 = $('#canvas1')[0];
+        var context = canvas1.getContext('2d');
+        context.drawImage(imageObj,0,0);//배경 이미지를 그린다
+         
+        //마우스로 선택된 영역에 반투명 사각형을 그려서 선택영역을 표시해준다
+        context.fillStyle = 'rgba(30,0,0,0.1)';
+        context.fillRect(mx,my,cmx-mx,cmy-my);
+         
+        //마우스로 선택된 영역에 대시라인으로 사각형을 그린다
+        context.setLineDash([5]);
+        context.strokeStyle = 'red';
+        context.strokeRect(mx,my,cmx-mx,cmy-my);
+        isDown = false;
+    });
+     
+    $('#save').click(function(){
+        //sendBase64Img();
+		uploadCanvasData();
+    });
+     
+    $('#copy').click(function() {
+        drawOnCanvas2();
+    });
+});
+ 
+function drawOnCanvas2() {
+    var canvas2 = $('#canvas2')[0];
+     
+    $(canvas2).attr('width', cmx-mx+'px');
+    $(canvas2).attr('height', cmy-my+'px');
+     
+    var context = canvas2.getContext('2d');
+    context.clearRect(0,0,canvas2.width, canvas2.height);
+     
+    var sx = mx;
+    var sy = my;
+    var sw = cmx-mx;
+    var sh = cmy-my;
+    var dx = 0;
+    var dy = 0;
+    var dw = sw;
+    var dh = sh;
+ 
+    context.drawImage(imageObj, sx, sy, sw, sh, dx, dy, dw, dh);
+}
+ 
+function sendBase64Img() {
+//    var canvas2 = document.getElementById('canvas2');
+//    var dataURL = canvas2.toDataURL();//이미지 데이터가 base64 문자열로 인코딩된 데이터
+//    // base64문자열의 첫 부분에 위치한 'https://t1.daumcdn.net/cfile/tistory/24343B4956E6601629"");*/
+//    $.ajax({
+//      type: "POST",
+//      url: "/pub/up/testUpload.asp",
+//      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+//      data: { "imgBase64": dataURL }
+//    }).success(function(o) {
+//      alert('선택영역을 서버의 이미지 파일에 저장했습니다');
+//    });
+
+
+    var canvas2 = document.getElementById('canvas2');
+    var dataURL = canvas2.toDataURL('image/png');//이미지 데이터가 base64 문자열로 인코딩된 데이터
+	var blob = dataURItoBlob(dataURL);
+
+	var formData = new FormData();
+	formData.append("iFile[]", blob, 'test.png');
+
+
+    // base64문자열의 첫 부분에 위치한 'https://t1.daumcdn.net/cfile/tistory/24343B4956E6601629"");*/
+    $.ajax({
+      type: "POST",
+      url: "/pub/up/testUpload.asp",
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: { "imgBase64": dataURL }
+    }).success(function(o) {
+      alert('선택영역을 서버의 이미지 파일에 저장했습니다');
+    });
+}
+
+
+
+
+////////////////////////////////////////////////////////////
+
+function uploadCanvasData(){
+	var upimgurl = '';
+	var canvas = document.getElementById('canvas2');
+	if(canvas == null){
+		return false;
+	}
+	var dataUrl = canvas.toDataURL('image/png'); ////캔버스를 전송하는 방법
+	var blob = dataURItoBlob(dataUrl);
+	var formData = new FormData();
+	formData.append("iFile[]", blob, 'test.png');
+
+	var xhr = new XMLHttpRequest();
+	//xhr.open('POST', '/pub/up/testUpload.asp', false); //동기
+	xhr.open('POST', '/pub/up/testUpload.asp', true); //비동기
+
+//	xhr.upload.onprogress = function(e) {
+//		if (e.lengthComputable) {
+//		  //var percentComplete = (e.loaded / e.total) * 100;
+//		  //progress.style.backgroundPosition = percentComplete + "% 0";
+//		}
+//	};
+
+	xhr.onload = function() {
+		if (xhr.status == 200) {
+			try{
+				var resp = JSON.parse(xhr.response);
+			}
+			catch(e){
+			   return false;
+			}
+			//var value = resp.name; //file name
+			//var thumb = resp.thumb; //img html string
+			//gPage.thumbImg = thumb;
+		}
+	};
+	xhr.send(formData);	
+}
+
+
+
+function dataURItoBlob(dataURI){
+	var byteString = atob(dataURI.split(',')[1]);
+	var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+	var ab = new ArrayBuffer(byteString.length);
+	var ia = new Uint8Array(ab);
+	for (var i = 0; i < byteString.length; i++)
+	{
+		ia[i] = byteString.charCodeAt(i);
+	}
+	var bb = new Blob([ab], { "type": mimeString });
+	return bb;
+};
+
+//////////////////////////////////////////////////////////////
+
+
+
+</script>
+</head>
+<body>
+<canvas id="canvas1" width="500px" height="300px"></canvas>
+<br>
+<input type="file" id="file-input">
+<button id="copy">Copy Selection</button>
+<button id="save">Save to Server</button>
+<p>
+<canvas id="canvas2" width="500px" height="300px"></canvas>
+</body>
+</html>
+
+

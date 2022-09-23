@@ -1,0 +1,6 @@
+/* 메인 > 메인 메뉴 */
+@import url('./main_menu/main-menu-content.css');
+/* 메인 > 서브 메뉴 */
+@import url('./sub_menu/sub-menu-content.css');
+/* 메인 > 게시판 */
+@import url('./board/board-content.css');

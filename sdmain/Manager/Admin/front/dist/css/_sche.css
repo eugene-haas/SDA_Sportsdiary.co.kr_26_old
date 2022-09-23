@@ -1,0 +1,10 @@
+/**
+ * S: 대회 일정표 모달 
+ */
+.sche_modal .modal-dialog {width: 1000px;}
+.sche_modal .modal-content {background-color: #354354;border: none;border-radius: 0;padding-left: 5px;padding-right: 5px;padding-bottom: 5px;}
+.sche_modal .modal-header {background-color: #354354;text-align: center;color: #fff;}
+.sche_modal .modal-header h1 {font-size: 22px; font-family:"NanumBarunGothicB";}
+.sche_modal .modal-header .btn_close {position: absolute;top: 8px;right: 10px;}
+.sche_modal .modal-body {background-color: #fff;}
+/* E: 대회 일정표 모달 */

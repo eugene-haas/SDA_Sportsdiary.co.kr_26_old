@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Uploads</title>
+  </head>
+  <script src="ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="auth.js"></script>
+  <body>
+  </body>
+</html>
+<script>
+  var url="https://www.googleapis.com/youtube/v3/channels?";
+  var playlistItemsUrl = "https://www.googleapis.com/youtube/v3/playlistItems?"
+  var uploadID = "UUU8NwQG55wOwWBDQksQOr_A"
+  var channelID = "UCU8NwQG55wOwWBDQksQOr_A"
+
+  var optionParams={
+    part: "contentDetails,id",
+    id: uploadID,
+    key: "AIzaSyCpXfbYpLUo9GwBAhNNAR1jpAkGUWWhp68",
+    maxResults: 2
+  };
+
+  for(var option in optionParams){
+	  playlistItemsUrl+=option+"="+optionParams[option]+"&";
+  }
+
+  function getAPI() {
+
+    $.ajax({
+        url: playlistItemsUrl,
+        type: 'POST',
+        dataType: 'JSON',
+        data: {},
+        success: function(retDATA) {
+          console.log(retDATA);
+        }
+    });
+  }
+
+  getAPI()
+
+
+</script>

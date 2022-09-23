@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/*
+.printzoom {
+    margin: 5% 5% 5% 5%;
+    zoom: 100%;
+}
+*/
+
+@media print {
+    input[type=select] {
+        display: inline-block;
+        border:none;
+        border-bottom:2px solid #000;
+        etc..
+    }
+    input[type=button] {
+        display: none;
+    }
+	.btn{display:none !important;}
+	span{display:none;}
+	/*.hidehtml{display:none;} 숨길 열에 사용*/ 
+
+
+	@page {
+		size:landscape;
+	}
+
+
+
+  h1{font-size:10pt !important;}
+  table{text-align:center;font-size:9pt;}
+  table td{padding:2pt 0;text-align:center;}
+  select{-webkit-appearance:none;border:0;background-color:transparent;font-size:9pt;margin:auto;}
+}
+
+
+
+
+
+@media screen {
+    input[type=select] {
+        display: inline-block;
+    }
+    input[type=button] {
+        display: none;
+    }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 0.1pt solid black;
+}
+
+
+.container-fluid{display:none;}
+.tbl-btnarea{display:none;}
+.btn{display:none !important;}

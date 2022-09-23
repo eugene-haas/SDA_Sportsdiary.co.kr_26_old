@@ -1,0 +1,132 @@
+﻿/* TEAM_INFO 팀/선수정보 > 팀정보 */
+.search_top {float:right;}
+.search_top.right {margin:0; text-align:right;}
+.search_top select {width:127px; height:32px; margin:0 5px 0 0; color:#666; font-size:14px; font-family:"NanumBarunGothic"; border:1px solid #ccc; vertical-align:top; line-height:100%;}
+.search_top select#selectTypeOption {width:150px;}
+.search_top input {width:177px; height:32px; margin:0 5px 0 0; color:#666; font-size:14px; font-family:"NanumBarunGothic"; border:1px solid #ccc; vertical-align:top; line-height:100%;}
+.search_top .btn_skyblue {width:60px; vertical-align:top;}
+
+.team_info {padding:40px 0 20px 0;}
+.team_info h4.tit {float: left;}
+.team_info table.state {width:100%; margin:0 0 50px; border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.team_info table.state thead tr.first th {height:34px; color:#fff; font-family:"NanumBarunGothicB"; font-weight:normal; font-size:15px; background:#788286; border-right:1px solid #ccc; border-bottom:1px solid #ccc;}
+.team_info table.state thead th {width:4%; height:34px; color:#666; font-family:"NanumBarunGothicB"; font-weight:normal; font-size:15px; background:#788286; border-right:1px solid #ccc; border-bottom:1px solid #ccc; background:#f2f2f2;}
+.team_info table.state tbody td {height:28px; color:#666; font-family:"NanumBarunGothic"; font-size:14px; text-align:center; border-right:1px solid #ccc; border-bottom:1px solid #ccc;}
+.team_info table.state tbody td.area {font-family:"NanumBarunGothicB";}
+.team_info table.state tbody td.total {color:#ff5400; font-family:"NanumBarunGothicB"; background:#ffece2;}
+.team_info table.state tbody tr.last td {background:#f2f2f2;}
+.team_info table.state tbody tr.last td.total {background:#ffece2;}
+
+.search_info {display:inline-block; width:100%; text-align:center; margin:0 0 30px; padding:22px 0; border:3px solid #eee; font-family:"NanumBarunGothic"; font-size:15px; background:#f7f7f7;}
+.search_info select {width:120px; height:32px; margin:0 2px; color:#666; border:1px solid #ccc; vertical-align:top; line-height:100%;}
+.search_info input {width:200px; height:32px; margin:0 2px; border:1px solid #ccc; vertical-align:top; line-height:100%;}
+.search_info .btn_darkgray {width:60px; height:34px; margin:0 2px; font-size:15px; vertical-align:top; line-height:34px;}
+
+.search_info_result .category_result {overflow:hidden; width:100%; height:45px; line-height:45px; background:#788286;}
+.search_info_result .category_result li {float:left; width:210px; text-align:center; font-family:"NanumBarunGothicB"; font-size:15px; color:#fff;}
+.search_info_result .category_result li.last {width:112px;}
+
+/*.search_info_result .panel-group {margin:0 0 30px;}*/
+.search_info_result .panel {background:#fff; border-bottom:1px solid #ddd;}
+.search_info_result .panel-heading > .dropdown .dropdown-toggle {color: inherit;}
+.search_info_result .panel-heading {overflow:hidden; margin-top: 0; margin-bottom: 0; color:#333; font-size: 16px; font-family:"NanumBarunGothic"; color: inherit;}
+.search_info_result .panel-title a {overflow:hidden; display:block; width:100%; color: inherit; padding:6px 0; font-size:15px;}
+.search_info_result .panel-title a:hover,
+.search_info_result .panel-title a:active,
+.search_info_result .panel-title a:focus {text-decoration:none;}
+
+.search_info_result .panel-title {color:#fff; background:#0085d3;}
+.search_info_result .panel-title .collapsed {color:#333; background:#fff;color:#333;}
+
+.search_info_result .panel-title li {float:left; width:210px; line-height:29px; text-align:center; vertical-align:middle;}
+.search_info_result .panel-title li.last {width:112px;}
+
+.search_info_result .icon_caret {transition: all .3s ease; float:right; margin-right:36px; padding:0 6px; height:23px; line-height:23px; text-align:center; color:#ddd; border:3px solid #ddd; border-radius:50%;}
+.search_info_result .caret {transform: rotate(180deg); display: inline-block; width: 0; height: 0; margin:0; vertical-align: middle; border-top:6px dashed; border-right:6px solid transparent; border-left:6px solid transparent;}
+.search_info_result .collapsed .icon_caret {transform: rotate(180deg); color:#ddd; border:3px solid #ddd;}
+.search_info_result .collapsed .icon_caret .caret {transition: all .3s ease;color:#ddd;}
+
+.search_info_result .panel-body {line-height:1.5; border-top:none;}
+.search_info_result .panel-body .team_txt {padding:20px 20px 5px;border:9px solid #0085d3;border-top:0;}
+.search_info_result .panel-body .team_txt li {margin:0 0 15px; padding:0 0 0 15px; font-size:15px; color:#666; vertical-align:top; line-height:12px; background:url(../../dist/imgs/sub/icon_square_skyblue.png) no-repeat 0 5px;}
+.search_info_result .panel-body .team_txt li strong {font-family:"NanumBarunGothicB"; font-weight:normal;}
+
+.txt_search_result {padding:0 0 12px; color:#666; font-size:16px; font-family:"NanumBarunGothicB";}
+.txt_search_result span {color:#d50000; margin: 0 5px;}
+.search_info_result table {width:100%; margin:0 0 40px; text-align:center; border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.search_info_result table thead th {height:34px; color:#fff; font-size:16px; font-family:"NanumBarunGothicB"; font-weight:normal; background:#788286; border-right:1px solid #ddd; border-bottom:1px solid #ddd;}
+.search_info_result table tbody td {height:34px; color:#666; font-size:15px; border-right:1px solid #ddd; border-bottom:1px solid #ddd;}
+
+/* TEAM 팀/선수정보 > 심판/지도자정보 */
+.team {padding:40px 10px;}
+.team .tab {margin:0 10px 20px 10px; width:960px;}
+.team h4.tit {margin:0 0 0 10px;}
+.team .search_top {margin:0 10px;}
+
+.team_list {overflow:hidden; width:980px; margin:0 0 20px; }
+.team_list li {float:left; width:165px; margin:0 10px 20px; padding:20px 29px; font-family:"NanumBarunGothicB"; text-align:center; border:1px solid #ccc;}
+.team_list li .img {width:163px; height:208px; border:1px solid #ccc; background:url(../../dist/imgs/sub/img_no_image.png) no-repeat 0 0;}
+.team_list li .img img {width:163px; height:208px;}
+.team_list li .director {height:26px; line-height:26px; color:#fff; font-size:16px; background:#0b81c7;}
+.team_list li .manager {height:26px; line-height:26px; color:#fff; font-size:16px; background:#7d99aa;}
+.team_list li .name {margin:15px 0 0 0; color:#333; font-size:18px;}
+.team_list li .team {margin:9px 0 0 0; padding:0; color:#666; font-family:"NanumBarunGothic";}
+
+/* JUDGE 팀/선수정보 > 심판/지도자정보 */
+.judge {padding:30px 20px;}
+.odd_even_table {width:100%; margin:0 0 30px; text-align:center; border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.odd_even_table thead th {height:34px; line-height:34px; color:#fff; font-size:14px; font-family:"NanumBarunGothicB"; font-weight:normal; background:#788286; border-right:1px solid #ccc; border-bottom:1px solid #ccc;}
+.odd_even_table tbody td {height:34px; line-height:34px; color:#333; font-size:14px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;}
+.odd_even_table tbody tr:nth-child(even) td {background:#f3f5f7;}
+
+
+
+
+/* TEAM_INFO 대표팀정보 > 국가대표팀, 국가대표 후보선수, 청소년 선수, 꿈나무 선수 */
+.country_team{margin-top:40px;}
+.nav-tabs{border-bottom:2px solid #0085d3;padding-bottom:1px; font-family:"NanumGothicB"; margin-bottom:20px;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{background:#0085d3;color:#fff;border:0;}
+.nav-tabs>li>a{border-radius:0;background:#eee;color:#666;border:0;width:206px;height:50px;line-height:50px;margin-right:10px;}
+.nav>li>a{padding:0;text-align:center;font-size:16px;font-weight:600;}
+
+.country_team .tab-pane {display: block; visibility: visible; width: 470px; float: left;}
+.country_team .tab-pane.tab_1 {margin-right: 20px;}
+.country_team .search_top{float:right;}
+.country_team .cont_tit {clear: both;}
+.country_team .cont_tit li {font-family: 'NanumBarunGothic'; font-size: 18px; font-weight: bold; text-align: center; width: 470px; height: 50px; line-height: 50px; color: #fff; float: left; margin-top: 20px; margin-bottom: 30px;}
+.country_team .cont_tit li:first-child {background-color: #799aad; margin-right: 20px;}
+.country_team .cont_tit li:last-child {background-color: #86b64e;}
+.country_team .list_box{float:left;width:100%;}
+.country_team #list_box1 {margin-bottom:40px;}
+.country_team .photo_title{padding-left:25px;font-size:24px;float:left;width:100%; font-family:"NanumBarunGothicB";margin-left: 15px;}
+.country_team .photo_list{float:left;width: 100%;/*margin-top:20px;*/margin-bottom:40px; margin-left: 15px; }
+.country_team .photo_list ul li{float:left;padding: 13px;border:1px solid #ccc; margin-right:14px;margin-top:16px;}
+.country_team .photo_list ul li img{border:1px solid #ddd; border-bottom:none; width: 106px; height: 136px; }
+.country_team .photo_list ul li:nth-child(3n){margin-right:0;}
+.country_team .photo_list span{display:block;text-align:center;}
+.country_team .photo_list .name{font-family:"NanumBarunGothicB"; font-size:16px; color:#333; width: 108px; line-height: 1; margin-top:15px; }
+.country_team .photo_list .school{font-size:15px;color:#666; margin-top:10px;}
+.country_team .photo_list .designation{width:106px;height:28px;line-height:28px;background:#7d99aa;color:#fff;font-family:"NanumBarunGothicB"; font-size:15px; border-left:1px solid #ddd; border-right:1px solid #ddd;}
+#list_box1 .photo_list li:first-child .blue_bg{background:#0b81c7;}
+#list_box2 .photo_list li:first-child .blue_bg{background:#618f2a;}
+#list_box2 .photo_list .designation{background:#96a387;}
+.country_team #spanTitle {font-size:24px; color:#333; font-family:"NanumBarunGothicB"; background:url(../../../dist/imgs/sub/icon_title.png) no-repeat 0 13px; padding:10px 0 0 21px;}
+
+/* TEAM_INFO 대표팀정보 > 국제심판, 국내1급 심판, 1급 지도자 */
+.country_team .table_box{float:left;width:100%;font-weight:600;color:#333;}
+.country_team .table_box .count{font-size:16px;font-weight: 400;margin-bottom:10px; margin-top:25px;}
+.country_team .table_box .count span{color:#d50000; margin: 0 5px;}
+.country_team .table_box table{text-align:center;width:100%;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+.country_team .table_box table tr td{border-left:1px solid #ccc;border-top:1px solid #ccc;padding:10px 0;}
+.country_team .table_box table tr {font-weight: 400;}
+.country_team .table_box table .bg_color{font-family: 'NanumBarunGothicB';background:#788286;color:#fff;}
+.country_team .table_box table .line_bg{background:#f3f5f7;}
+.country_team .margin_top_no{margin-top:0;}
+
+
+.panel{border:0;}
+.panel-body{padding:0;}
+.panel-default>.panel-heading{border-color:none;background:none;}
+.panel-group .panel{border-radius:0;}
+.panel-heading{padding:0;border-radius:0;}
+.panel-group .panel+.panel{margin-top:0;}

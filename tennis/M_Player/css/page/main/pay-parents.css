@@ -1,0 +1,62 @@
+.sub.pay {background-color: #edf0f4;}
+.sub.pay .pay-title {background-color: #164369;}
+.sub.pay h2 { font-size: 0.75em; color: #fff; line-height: 150%; padding: 10px;}
+.sub.pay h2 .orangi {color: #ff7e00;}
+
+/* 서비스 안내 */
+.sub.pay .service-info, .sub.pay .pay-info {background-color: #fff; border: 1px solid #e6e8ec; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;}
+.sub.pay .service-info h3, .pay-info h3 {background-color: #ff7e00; color: #fff; padding: 10px;}
+.sub.pay .service-info .icon {border: 2px solid #fff; border-radius: 50%; text-align: center; width: 20px; height: 20px; line-height: 20px; float: right;}
+.sub.pay .service-info .caret {margin-left: 0; margin-top: -4px; transition: all .3s cubic-bezier(0.29,-0.55, 0.62, 1.93) ;}
+.sub.pay .service-info.on .caret {transform: rotate(180deg);}
+.sub.pay .service-info p {font-size: 0.75em;background-color: #fff; background-image: none; border-radius:0; color: #333; line-height: 150%; padding: 15px;}
+
+/* 결제정보 */
+.sub.pay .pay-info {border: 1px solid #bbb; padding-bottom: 10px;}
+.sub.pay .pay-info h3 {background-color: #6f91ae;}
+.sub.pay .pay-info h4 span.type {display: inline-block; background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; font-size: 0.88em; color: #ff3c00; padding: 5px; padding-top: 8px; padding-bottom: 8px; margin-right: 5px;}
+.sub.pay .pay-info h4 span {vertical-align: middle;}
+.sub.pay .pay-info h4 {font-family: 'NanumGothicB'; font-size: 0.88em; border-bottom: 1px solid #ddd; margin: 10px; padding-bottom: 10px;}
+.sub.pay .pay-info ul {border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-left: 10px; margin-right: 10px;}
+.sub.pay .pay-info li {font-size: 0.75em; line-height: 175%;}
+.sub.pay .pay-info p {display: inline-block; font-family: 'NanumGothicB'; font-size: 0.75em; color: #666; padding: 10px; padding-top: 15px; float: left;}
+.sub.pay .pay-info p:empty {display: none;}
+.sub.pay .pay-info .money-buy {display: inline-block; float: right; margin-right: 10px; padding-top: 10px; padding-bottom: 10px;}
+.sub.pay .pay-info .money {font-family: 'NanumGothicB'; color: #ff3c00; margin-right: 5px;}
+.sub.pay .pay-info .money-buy a {display: inline-block; font-family: 'NanumGothicB'; font-size: 0.81em; background-color: #ff7e00; border-radius: 3px; color: #fff; padding: 5px;}
+
+/* 결제 방법 */
+.sub.pay .pay-way {border-bottom: 1px solid #164369; padding-left: 10px; padding-right: 10px; padding-bottom: 20px;}
+.sub.pay .pay-way h3 {background-color: #164369; font-size: 0.88em; color: #fff; padding: 10px;}
+.sub.pay .pay-way ul {margin-top: 10px; margin-bottom: 10px;}
+.sub.pay .pay-way li {text-align: center;}
+.sub.pay .pay-way li a {font-family: 'NanumGothicB'; font-size: 0.81em; border: 2px solid #bbb; padding-top: 5px; padding-bottom: 5px;}
+.sub.pay .pay-way li:first-child a {border-right: 2px solid transparent; border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+.sub.pay .pay-way li:last-child a {border-left: 2px solid transparent;border-top-right-radius: 20px; border-bottom-right-radius: 20px;}
+.sub.pay .pay-way li:first-child a.on {border-right: 2px solid #ff7e00;}
+.sub.pay .pay-way li a.on {border-color: #ff7e00; color: #ff5a00;}
+.sub.pay .pay-way li:last-child a.on {border-left: 2px solid #ff7e00;}
+.sub.pay .pay-way li span {display: inline-block; background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; vertical-align: middle; width: 25px; height: 25px; margin-right: 5px;}
+.sub.pay .pay-way p {font-size: 0.75em; line-height: 150%; color: #666;}
+.sub.pay .pay-way .way-info {text-indent: -12px; margin-left: 12px;}
+.sub.pay .pay-way .phone-number {font-family: 'NanumGothicB'; color: #ff3c00; margin-top: 10px;}
+.sub.pay .pay-way .phone-number span {display: inline-block; width: 21px; margin-right: 5px;}
+
+/* 이용안내 */
+.pay .using-info {background-color: #fff; border-bottom: 1px solid #ddd; padding-left: 10px; padding-right: 10px; padding-top: 20px; padding-bottom: 20px;}
+.pay .using-info h3 {font-size: 0.88em; color: #0072d2; padding-bottom: 15px;}
+.pay .using-info {font-size: 0.75em; color: #666;}
+.pay .using-info li {position: relative; line-height: 180%; padding-left: 10px; padding-bottom: 8px;}
+.pay .using-info li:before {position: absolute; top: 7px; left: 0; content: ''; width: 4px; height: 4px; background-color: #0072d2;}
+.pay .agree,
+.pay-comp .agree {padding-left: 10px; padding-right: 10px; margin-top: 10px; padding-bottom: 40px;}
+.pay .agree label,
+.pay-comp .agree label {font-size: 0.75em; letter-spacing: -.05em; color: #666; background-repeat: no-repeat; -webkit-background-size: 20px 20px; background-size: 20px 20px; line-height: 175%; padding-bottom: 1px;}
+.pay .agree label input,
+.pay-comp .agree label input {vertical-align: middle; width: 21px; height: 20px; margin-top: 0; margin-right: 5px;}
+/* .pay .agree label.on input,
+.pay-comp .agree label.on input {width: 0px; height: 0px; clip: rect(0,0,0,0); margin-right: 25px;} */
+.pay .agree label span,
+.pay-comp .agree label span {display: inline-block; margin-top: -2px;}
+.pay .agree .pay-cta,
+.pay-comp .agree .pay-cta {font-family: 'NanumGothicB'; font-size: 0.88em; text-align: center; background-color: #ff7e00; color: #fff; border-radius: 2px; margin-top: 10px; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px;}

@@ -1,0 +1,7 @@
+.participate_team .table-list .btn {width: 120px;height: 28px;line-height: 28px;padding: 0;}
+
+/* 대회 신청팀(단체전) 테이블 길이 조절 */
+.participate_team .table-list td:first-child {width: 60px;}
+.participate_team .table-list td:nth-child(2) {width: 400px;}
+.participate_team .table-list td:nth-child(3) {width: 160px;}
+.participate_team .table-list td:nth-child(4) {width: 100px;}

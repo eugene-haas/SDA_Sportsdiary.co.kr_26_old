@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+@page {
+  size: 210mm 297mm; /*A4*/
+  margin: 0;
+}
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .l_print__page {
+    margin: 0 auto !important;
+  }
+  .l_print__page:before {
+    display: none !important;
+  }
+  .l_print {
+    padding: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+}
+.l_print {
+  padding: 30px 0 30px;
+  font-family: "NotoKR", sans-serif;
+  background: rgb(238, 238, 238);
+}
+.l_print > ol {
+  counter-reset: paging;
+  width: 100%;
+}
+.l_print__page {
+  position: relative;
+  box-shadow: 2px 2px 10px #737373;
+  margin: 0 auto 30px;
+  width: 210mm;
+  height: 297mm;
+  page-break-before: always;
+  box-sizing: border-box;
+  background: #fff;
+}
+.l_print__page:before {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  counter-increment: section;
+  content: counters(section, ".") "/ ";
+}
+.l_print__page:last-child {
+  margin-bottom: 0;
+}
+.l_print__page.t_border {
+  border: 1px solid;
+}
+
+.l_print__page {
+  padding: 15mm;
+}
+
+.HStyle0_wrap {
+  border: none;
+  padding: 1.4pt;
+}
+
+P.HStyle0,
+LI.HStyle0,
+DIV.HStyle0 {
+  /* style-name: "바탕글"; */
+  margin: 0;
+  text-align: justify;
+  text-indent: 0pt;
+  line-height: 160%;
+  font-size: 10pt;
+  font-family: 바탕;
+  letter-spacing: 0pt;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+}
+
+.HStyle0__title {
+  font-size: 13.8pt;
+  font-family: "궁서";
+  font-weight: bold;
+  line-height: 160%;
+}
+
+.HStyle0__text {
+  font-size: 18pt;
+  font-family: "궁서체";
+  font-weight: bold;
+  line-height: 160%;
+  white-space:nowrap;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}

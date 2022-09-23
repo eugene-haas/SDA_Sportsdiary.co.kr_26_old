@@ -1,0 +1,46 @@
+#show-score .modal-content {border: none; -webkit-box-shadow: none; box-shadow: none;}
+#show-score .modal-dialog {background-color: #fff; border-radius: 5px;}
+#show-score .modal-header {border-bottom: none;background-color: #3f505d; color: #fff; padding:12px 0; border-radius: 5px 5px 0 0;}
+#show-score .modal-header h3 {color: #fff; text-align: center; font-size:1.1em;}
+#show-score .modal-header a {position: absolute; top: 9px; right: 5px; width: 1.07em; height: 1.07em; font-size:21px; text-shadow: 0 1px 0 #fff; font-weight: 700;}
+#show-score .modal-body {padding: 0;}
+#show-score .point-title li,
+#show-score .player-1-point li,
+#show-score .player-2-point li {-webkit-flex: 1; flex: 1; line-height: 30px;}
+#show-score .point-title li:first-child,
+#show-score .player-1-point li:first-child,
+#show-score .player-2-point li:first-child {-webkit-flex: 2; flex: 2; margin-left: 5px;}
+#show-score .point-title li:last-child,
+#show-score .player-1-point li:last-child,
+#show-score .player-2-point li:last-child {-webkit-flex: 2; flex: 2; line-height: 15px;}
+#show-score .point-title li:last-child {letter-spacing: -.075em; margin-right: 5px;}
+#show-score .player-1-point li:last-child,
+#show-score .player-2-point li:last-child {margin-right: 5px;}
+#show-score .player-1-point li:first-child {position:relative; margin-top: 8px;}
+#show-score .player-1-point,
+#show-score .player-2-point {margin: 0;}
+#show-score .point-display .player-name {display: block;}
+#show-score .point-display .player-school {text-align: center; /*width: 56px; */overflow: hidden; /*text-overflow: ellipsis; */white-space: nowrap;}
+#show-score .display-board .player-1-point a:hover,
+#show-score .display-board .player-1-point a:focus,
+#show-score .display-board .player-1-point a:active {color: #333;}
+#show-score .display-board .player-2-point a:hover,
+#show-score .display-board .player-2-point a:focus,
+#show-score .display-board .player-2-point a:active {color: #fff;}
+#show-score .player-1-point .player-school {color: #777; margin-bottom: 0; line-height: 22px; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow: hidden;}
+#show-score .player-2-point .player-school {color: #adccff; margin-bottom: 0; line-height: 22px;}
+/*#show-score .pop-point-display .vs {top: 105px;}*/
+#show-score .player-point select {font-size: 1em; width: 100%; height: 65px; margin-right: 10px; margin-top: 5px; -webkit-appearance:none;}
+#show-score .display-board li a {width: 100%; padding-right: 5px;}
+#show-score .display-board li:last-child a {margin-right: 0;}
+#show-score .display-board .score {width: 100%; height: 65px; line-height: 65px;padding: 0;}
+#show-score .container h3 {border-bottom: 1px solid #ccc; padding-top: 15px; padding-bottom: 5px;}
+#show-score .modal-content .container {background-color: #eee; margin-top: 20px; margin-left: 7px; margin-right: 7px; padding-bottom: 5px;}
+#show-score .plactice-txt {height: 130px; overflow-y: scroll;}
+#show-score .plactice-txt li {background: none; padding-left: 0;}
+#show-score .modal-footer {text-align: center; border-top: none;}
+#show-score .modal-footer .btn-default {background-color: #3f505d; background-image: none; color: #fff; width: 5.71em}
+
+.display-board .player-point .disp-win {display: block; background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; width: 100%; height: 12px;}
+.display-board .player-point .disp-none {display: block;}
+.display-board .player-1-point .disp-none {width: 100%; height: 10px;}

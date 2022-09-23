@@ -1,0 +1,285 @@
+body.join-body {font-size: 14px;}
+
+/* 생활체육 지도자 */
+.sub.join .warn-bd {font-size: 0.84em; color: #f03735; margin-left: -10px; margin-right: -10px; padding: 10px 10px 0; line-height: 1.5em;}
+
+.join-end.type-2 {padding-top: 40px;}
+.join-end.type-2 .join-logo {padding-bottom: 30px;}
+.join-end.type-2 .welcome-msg-2 {margin-bottom: 20px;}
+.join-end.type-2 .welcome-guide .txt {font-family: 'NanumGothicB'; font-size: .78em; line-height: 150%; text-align: center; color: #666;}
+.join-end.type-2 .welcome-guide > .txt {margin-bottom: 20px;}
+.join-end.type-2 .welcome-guide .guide-box {border: 3px solid #92adc4; margin-bottom: 13px;}
+.join-end.type-2 .welcome-guide .guide-box,
+.join-end.type-2 .welcome-guide .guide-list {margin-left: 10px; margin-right: 10px;}
+.join-end.type-2 .welcome-guide .guide-box h2 {text-align: center; background-color: #3e6a8f; color: #fff; letter-spacing: -0.055em;}
+.join-end.type-2 .welcome-guide .guide-box p {font-size: 0.98em; text-align: center; letter-spacing: -0.05em; background-color: #fff; color: #666; padding-top: 10px; padding-bottom: 10px;}
+.join-end.type-2 .welcome-guide .guide-box .ic-deco {font-size: 1.125em; color: #f00}
+.join-end.type-2 .welcome-guide .guide-box p span {vertical-align: middle;}
+
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) {background-color: #fff;}
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) h2 {margin-bottom: 12px;}
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) dl {margin-bottom: 5px; padding: 0px 12px;}
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) dt {background-color: #3e6a8f; color: #fff; text-align: center; width: 38%; border-top-left-radius: 30px; border-bottom-left-radius: 30px;}
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) dd { background-color: #dae6f0; width: 60%; margin-left: -4px; padding-left: 7px; border-top-right-radius: 30px; border-bottom-right-radius: 30px;}
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) dt,
+.join-end.type-2 .welcome-guide .guide-box:nth-child(3) dd {display: inline-block; font-family: 'NanumGothicB'; font-size: 0.82em; padding-top: 6px; padding-bottom: 6px;}
+.join-end.type-2 .welcome-guide .guide-box p {font-weight: bold; font-size: 1.0125em;}
+.join-end.type-2 .welcome-guide .guide-box p span {vertical-align: middle;}
+.join-end.type-2 .welcome-guide .guide-box p span.ic-deco {color: #bf0000;}
+.join-end.type-2 .welcome-guide .guide-box p span.redy {vertical-align: top; color: #bf0000;}
+.join-end.type-2 .welcome-guide .guide-box p.em-txt {font-size: 0.76em; letter-spacing: -0.115em;}
+.join-end.type-2 .welcome-guide.welcome-player .em-txt {line-height: 150%; padding-top: 8px; padding-bottom: 8px;}
+.join-end.type-2 .welcome-player .offer-day {margin-left: 10px; margin-right: 10px; margin-bottom: 10px;}
+.join-end.type-2 .welcome-player .offer-day dl {margin-bottom: 5px;}
+.join-end.type-2 .welcome-player .offer-day dt,
+.join-end.type-2 .welcome-player .offer-day dd {display: inline-block; vertical-align: middle; font-size: 0.76em; font-weight: bold; padding-top: 6px; padding-bottom: 6px;}
+.join-end.type-2 .welcome-player .offer-day dt {background-color: #3e6a8f; color: #fff; text-align: center; width: 42%; border-top-left-radius: 30px; border-bottom-left-radius: 30px;}
+.join-end.type-2 .welcome-player .offer-day dd {background-color: #fff; width: 56%; padding-left: 7px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -4px;}
+
+.join-end.type-2 .welcome-guide .guide-list {font-family: 'NanumGothicB'; font-size: 0.84em; background-color: #b0c7db; color: #333; border: 3px solid #d7ecff;}
+.join-end.type-2 .welcome-guide .guide-list .num {display: inline-block; border: 1px solid #545b62; border-radius: 50%; font-size: 0.72em; text-align: center; text-indent: 0; width: 15px; height: 15px; line-height: 13px;}
+.join-end.type-2 .welcome-guide .guide-list li {font-size: 0.92em; text-indent: -17px; line-height: 150%; border-bottom: 3px solid #d7ecff; padding-left: 25px; padding-top: 7px; padding-bottom: 7px;}
+.join-end.type-2 .welcome-guide .guide-list li:last-child {border-bottom: none;}
+.join-end.type-2 .welcome-guide .besting {font-size: 0.76em; text-align: center; line-height: 150%; color: #333; margin-top: 20px; margin-bottom: 30px;}
+.join-end.type-2 .btn-solo a {background-color: #072a47; border: 1px solid #4e7089;}
+/*.join-end.type-2 .welcome-guide */
+
+/**
+ * S: 엘리트 - 지도자 
+ */
+.input-list.player-id-num {font-size: 0.86em;text-align: center; border: 1px solid #b4b4b4; margin-top: 15px;}
+.input-list.player-id-num li {border-bottom: 1px solid #b4b4b4;}
+.input-list.player-id-num li:last-child {border-bottom: none;}
+.input-list.player-id-num li p {float: left; border-right: 1px solid #b4b4b4; padding: 5px 0px;}
+.input-list.player-id-num li .tit {width: 30%; padding-left: 2px; padding-bottom: 5px; background-color: #eee;}
+.input-list.player-id-num li .cont {text-align: left; width: 65%; color: #333; border-right: none; padding-left: 5px; padding-right: 5px;}
+
+.comp-guide {font-size: 0.8em;line-height: 150%;margin-top: 10px;}
+/* E: 엘리트 - 지도자 */
+
+/**
+ * S: 통합회원가입 form 
+ */
+.pack.mb100 {margin-bottom: 100px;}
+.input-box .input-control {font-size: 0.96em;font-weight: normal;letter-spacing: -0.02em;color: #333;border: none;border-radius: 0;border-bottom: 1px solid #bbb;width: 100%;padding-top: 10px;padding-bottom: 10px;/*padding-left: 10px;*/}
+.input-box input {border-radius: 0;}
+.input-control:focus {outline: none}
+.input-form {padding-left: 20px;padding-right: 20px;}
+.input-form {text-align: center;}
+.input-form label {position: relative;width: 100%;}
+.input-form label .tit {position: absolute; top: 10px; left: 10px; font-family: 'NotoKR'; font-size: 0.88em; font-weight: normal; color: #999;}
+.input-form .text-warning {display: none;font-size: 0.72em;color: #ea0000;line-height: 150%;padding-left: 10px;}
+.input-form ul {margin-bottom: 30px;}
+.input-form li { transition: all .3s cubic-bezier(0.83, 0, 0, 1); margin-bottom: 20px; -webkit-transition: all .3s cubic-bezier(0.83, 0, 0, 1); -moz-transition: all .3s cubic-bezier(0.83, 0, 0, 1); -ms-transition: all .3s cubic-bezier(0.83, 0, 0, 1); -o-transition: all .3s cubic-bezier(0.83, 0, 0, 1); }
+.input-form li:first-child.on {margin-top: 0;}
+.input-form li.on {margin-top: 30px;}
+.input-form label:after {position: absolute; bottom: 0; left: 0; content: ''; background-color: #409de5; width: 0; height: 2px; transition: all .3s cubic-bezier(0.83, 0, 0, 1) .3s;}
+.input-form .on label:after {width: 100%;}
+
+
+.sdmain-header {background-color: #005895;padding:10px 15px;}
+.sdmain-header span{color:#fff;}
+.sdmain-header i{color:#fff;font-size:0.8em;margin:0 5px;}
+.sdmain-header ul {position: relative;padding: 10px 20px;}
+/* .sdmain-header ul:before {content: "";position: absolute;top: 10px;left: 10px;width: 2px;height: 55%;background-color: #fff;} */
+.sdmain-header ul:after {content: "";clear: both;display: table;}
+.sdmain-header ul li {position: relative;color: #fff;float: left;padding-right: 5px;margin-right: 10px;}
+.sdmain-header ul li:after {content: "\f054";font-family: "FontAwesome";font-weight: normal;position: absolute;top: 1px;right: -6px; font-size:10px;}
+.sdmain-header ul li:last-child {padding-right: 0;margin-right: 0;}
+.sdmain-header ul li:last-child:after {content: "";}
+.user_info .sdmain-pack {padding: 30px 10px 20px;}
+.join-body .user_info .sdmain-pack.additional-pack {padding-top: 0;}
+.sdmain-pack .input-form {margin-bottom: 20px;}
+.sdmain-pack .input-box li {padding:10px 0;position: relative;width: 100%;border-bottom: 1px solid #bbb;}
+
+.sdmain-pack .input-box label {position: relative;width: 100%;margin: 0;}
+.sdmain-pack .input-box .tit {position: absolute;left: 10px;font-family: "Noto-KR";font-size: 0.96em;font-weight: normal;letter-spacing: -0.05em;color: #999;}
+.sdmain-pack .input-box input {font-size:1em;width: 100%;border: none;height:auto;padding:0;}
+.input-box li .pos-right {position: absolute;top: 7px;right: 0;}
+.btn-chk {font-family: "NotoKR-md";font-size: 0.88em;letter-spacing: -0.0125em;text-shadow: none;-webkit-box-shadow: none;box-shadow: none;}
+.btn-gray {font-family: "NotoKR-md";font-size: 0.82em; background:#bbb; color:#fff; border:none;}
+.input-box li .result-text {font-size: 0.92em;font-weight: normal;position: absolute;top: 10px;right: 0;}
+.result-text.good {color: #005895;}
+.result-text.no-good {color: #d9534f;}
+
+/*.sdmain-pack .load-list {margin-bottom: 30px;}*/
+.input-box.load-list ul {border: 1px solid #005895;}
+.input-box.load-list li {height: auto;margin-bottom: 0}
+.input-box.load-list li.qualify-list{padding:10px;border-bottom:0;}
+.input-box.load-list li.qualify-list input{border:1px solid #ddd;}
+.input-box.load-list li.qualify-list .pos-right{top:10px;right:0px;}
+.input-box.load-list li.qualify-list .pos-right a{height: 45px;width: 60px;line-height: 45px;background: #005895;display: block;text-align:center;color:#fff;font-family: 'NotoKR';}
+.input-box.load-list input {font-size: 0.96em;padding: 10px;}
+.input-box .user-gender {margin-right: 10px;}
+.input-box .user-gender label {text-align: center;border: 1px solid #ddd;width: 50px;height: 28px;line-height: 28px;float: left;}
+.input-box .user-gender label:first-child {margin-right: 5px;}
+.input-box .user-gender label input {margin: 0;}
+.input-box .user-gender label .txt,
+.input-box .user-gender label input {display: inline-block;vertical-align: middle;}
+.input-box .user-gender label .txt {font-size: 0.94em;font-weight: normal;}
+.input-box .user-gender label input {display: none;width: 0;height: 0;margin: -1px;overflow: hidden;visibility: hidden;}
+.input-box .user-gender label.on {background-color: #005895;border: 1px solid #b2b2b2;color: #fff;}
+.input-box .phone-line {text-align:center;}
+.input-box .phone-line > div {display: inline-block;vertical-align: middle;width: 20%; margin-right:5px;}
+.input-box .phone-line > div:last-child {margin-right:0;}
+.input-box .phone-line .phone-call {width: 15%; margin-left:2px;}
+.input-box .phone-line input {border: 1px solid #bbb;height: 35px;line-height: 35px;/*padding: 2px;*/ padding-left: 5px;}
+.input-box .phone-line select {border-radius: 0;padding-left: 5px;}
+.input-box .phone-line .btn-chk {height: 35px;line-height: 35px;padding-top: 0;padding-bottom: 0;}
+/*.input-box .qualify-list {display: none;}*/
+.input-box .phone-line.divn-2 .type-number {width: calc(100% - 23%);}
+.input-box.no-svg .mail-line {display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;}
+.input-box.no-svg .mail-line .email-l,
+.input-box.no-svg .mail-line .email-r {flex:  6}
+.input-box.no-svg .mail-line .txt {flex: 1;}
+.input-box.no-svg .mail-line .sel_box {flex: 6;}
+.input-box .mail-line .sel_box select {width: 100%;margin: 0;}
+.input-box .mail-line input {margin: 0;}
+.search_child .input-box li {height: auto;}
+.search_child .input-box li.chk-agree {background: none;}
+.search_child .phone-line {padding-left: 0;}
+.search_child .chk-agree {background-color: #dedede;padding:0 !important;}
+.search_child .chk-agree .btn-chk {letter-spacing: -0.02em;text-align: left;border-radius: 0;background-color: #fff;white-space: normal; padding:10px;}
+.search_child .chk-agree .btn-chk .ic-deco {position: relative;font-size: 18px;width: 20px;}
+.search_child .chk-agree .btn-chk span {display: inline-block;vertical-align: top;font-size: 1.05em;width: calc(100% - 25px);transition: all .3s ease;}
+.search_child .chk-agree .fa {font-size:20px; margin-right:5px;}
+.search_child .chk-agree .btn-chk.on .fa {color: #005895;}
+.search_child .chk-agree .btn-toggle.on {background-color: #fff;color: #005895;}
+.search_child .chk-agree .btn-toggle.on .fa {color: #005895;}
+.search_child .chk-agree .agree-content {border-top: 1px solid #ddd;}
+.search_child .chk-agree .agree-content pre {line-height: 150%;border: none;border-radius: 0;padding: 10px;white-space: pre-line;font-size:0.875em;line-height:1.8em;word-break: break-all;word-wrap: break-word;margin-bottom: 0; background:#f9f9f9;font-family:"NotoKR";}
+.input-box .phone-line.divn-2 .ipt-number input {width: 100%;}
+.input-box .qualify-list .pos-right {margin-right: 10px;}
+.input-box .qualify-list .pos-right span {display: inline-block;vertical-align: middle;margin-right: 10px;}
+.agree .list-group {border: none;border-radius: 0;-webkit-box-shadow: none;box-shadow: none;padding-left: 10px;padding-right: 10px;margin-top: 40px;}
+.agree .list-group h2 {font-size: 1em;margin-bottom: 40px;}
+.agree .list-group h2 input {vertical-align: middle;margin-top: 0;}
+.agree .list-group h2 .txt {vertical-align: middle;margin-left: 17px;}
+.agree .list-group .panel {border: none; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;margin: 0; margin-top: 20px;}
+.agree .list-group .panel-heading {border-bottom: 1px solid #bbb;padding: 0; padding-bottom: 10px;}
+.agree .list-group .panel-heading .txt {font-family: 'NotoKR';font-size: 0.88em;font-weight: normal;color: #666;vertical-align: middle;margin-left: 17px;}
+.agree .list-group .panel-heading input {vertical-align: middle;margin-top: 0;}
+.agree .list-group .panel-heading .target_btn {font-size: 1.3em;line-height: 15px;color: #bbb;float: right;}
+.agree .list-group .panel-heading .target_btn .fa,
+.agree .list-group .panel-heading .target_btn .fa:before {display: inline-block;line-height: 15px}
+.agree .list-group .panel-body {font-family: 'NotoKR-dl'; font-size: 0.81em; letter-spacing: -0.05em; background-color: #f2f2f2; color: #999; height: 120px; line-height: 150%; overflow-y: scroll; white-space: pre-line; border-radius: 0; padding: 10px;margin-top: 10px;}
+
+/* 체크 svg */
+.ic_check {position: relative;}
+.ic_check input {visibility: hidden;}
+.ic_check svg {position: absolute; top: 0px; left: 5px; border: 1px solid #bbb; width: 20px;height: 20px; padding: 1px;}
+h2 .ic_check svg {top: 0px;}
+.ic_check svg path {stroke: #3899e4; stroke-width: 20px; fill: none; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 0, 150; stroke-dashoffset: 1;}
+.ic_check.on svg path {visibility: visible;stroke-dasharray: 126, 126;stroke-dashoffset: 0; transition: all 0.3s ease-in-out 0s;}
+.sdmain-pack .agree-list .ic_check input {width: 0;height: 0;margin: -1px;overflow: hidden;}
+.sdmain-pack .agree-list .ic_check .txt {font-family: "NotoKR";font-size: 0.88em;font-weight: normal;color: #666;vertical-align: middle;margin-left: 28px;}
+.sdmain-pack .agree-list .ic_check svg {top: 3px;}
+.sdmain-pack .agree-list label {margin-bottom: 10px;}
+.sdmain-pack .input-box.title-input li {border-bottom: 1px solid #ddd;}
+.sdmain-pack .input-box.title-input .title {display: inline-block;vertical-align: middle;width: 90px;padding-left: 10px;}
+.sdmain-pack .input-box.title-input .addr-line {padding-top: 5px;padding-bottom: 5px;}
+.sdmain-pack .input-box.title-input .addr-line p {display: inline-block;vertical-align: top;padding-left: 10px;width: calc(100% - 107px);color: #888;padding-left: 0;}
+.sdmain-pack .input-box.title-input .addr-line p.title {width: 90px;color: #333;padding-left: 10px;}
+.sdmain-pack .input-box.title-input input {display: inline-block;vertical-align: middle;width: calc(100% - 107px);border: none;}
+.join-body .sdmain-pack .input-box.title-input input {padding: 0;}
+.input-box.no-svg li {height: auto;display:table;width:100%;}
+.input-box.no-svg li span{float:left;}
+.input-box.no-svg li .email-l{width:30%;}
+.input-box.no-svg li .email-r{width:32%;}
+.input-box.no-svg li .txt{width:6%; padding-top:8px; text-align: center;}
+.input-box.no-svg li select{padding:0 8px;width:30%;height:auto;line-height:auto;margin:10px 0 10px 5px;}
+.input-box.no-svg input {padding: 0 8px;}
+.input-box.no-svg .pos-right {top: 5px;}
+.input-box .mail_sel_box:after {position: absolute; top: 70%; right: 10px; content: '';border-top: 6px solid #333; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: none;}
+.sdmain-pack .agree-list .ic_check input {width: 0;height: 0;margin: -1px;overflow: hidden;}
+.sdmain-pack .agree-list .ic_check .txt {font-family: "NotoKR";font-size: 1em;font-weight: normal;color: #666;vertical-align: middle;margin-left: 28px;}
+.sdmain-pack .agree-list .ic_check svg {top: 3px;}
+.sdmain-pack .agree-list label {margin-bottom: 10px;}
+.input-box.no-svg li {height: auto;display:table;width:100%;}
+.input-box.no-svg li span{float:left;}
+.input-box.no-svg li .email-l{width:30%;}
+.input-box.no-svg li .email-r{width:32%;}
+.input-box.no-svg li .txt{width:6%; padding-top:8px; text-align: center;}
+.input-box.no-svg li select{padding:0 8px;width:30%;height:auto;line-height:auto;margin:10px 0 10px 5px;}
+.input-box.no-svg input {padding:0 8px;}
+.input-box.no-svg .pos-right {top: 5px;}
+.input-box .mail_sel_box:after {position: absolute; top: 47%; right: 10px; content: '';border-top: 6px solid #333; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: none;}
+
+/* 추가 정보 - 선택적 입력 */
+.sdmain-pack.pt0 {padding-top: 0;}
+.sdmain-pack.pt20 {padding-top: 20px;}
+.sdmain-pack h2 {margin-bottom: 10px; font-size: 1.125em;color: #333;}
+/*.user_info .sdmain-pack.additional-pack {padding-top: 0px;}*/
+.sdmain-pack.additional-pack h3 {margin-top: 15px;margin-bottom: 15px;}
+.sdmain-pack.additional-pack .title {display: inline-block;vertical-align: middle;font-size: 1em;width: 100px;padding-left: 10px;}
+.sdmain-pack.additional-pack .title + * {display: inline-block;vertical-align: middle;font-size: 1em;width: calc(100% - 105px);}
+.sdmain-pack.additional-pack .flex-list {display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;}
+.sdmain-pack.additional-pack .flex-list li {padding:0;border-bottom:0;-webkit-flex: 1;-moz-flex: 1;-ms-flex: 1;-o-flex: 1;flex: 1;text-align: center;margin-bottom: 0;padding-left: 1px;}
+.sdmain-pack.additional-pack .marriage-line .label-list label {width: 80px;}
+.sdmain-pack.additional-pack .parents-line .label-list label {width: 56px;}
+.sdmain-pack.additional-pack .blood-line .label-list label {width: 40px;height: 30px;line-height: 30px}
+.sdmain-pack.additional-pack .label-list label {width: 80px;height: 30px;line-height: 30px;}
+.sdmain-pack.additional-pack .relation-line label {width: 60px;height: 30px;line-height: 30px}
+.sdmain-pack.additional-pack li {height: auto;}
+.sdmain-pack.additional-pack li .r-btn{text-align:right;}
+.sdmain-pack.additional-pack li .r-btn label{width: 82px;height: 35px;line-height: 35px;cursor: pointer;}
+.sdmain-pack.additional-pack li .r-btn label.active{background:#005895;color:#fff;}
+.sdmain-pack.additional-pack li .blood label{width:40px;}
+.sdmain-pack.additional-pack li .relation label{width:40px;}
+.sdmain-pack.additional-pack label input {display: inline;overflow: hidden;visibility: hidden;border: none;width: 0;height: 0;padding: 0;margin:0px;} 
+/*.sdmain-pack.additional-pack label input {display: inline-block;visibility: visible;width: 10px;height: 10px;border: 1px solid #333;-webkit-appearance: radio;}*/
+.sdmain-pack.additional-pack label .txt {display: block;font-size: 0.94em;font-weight: normal;text-align: center;}
+.sdmain-pack.additional-pack label {border: 1px solid #ddd;}
+.sdmain-pack.additional-pack label.on {background-color: #005895;border: 1px solid #b2b2b2;color: #fff;}
+/* E: 통합회원가입 form */
+
+.cta {position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding-bottom: 20px;}
+.cta .btn {display:block;font-family: 'NotoKR-md';font-size: 1.07em; background-color: #005895; color: #fff;width: 90%;height: 50px;line-height: 50px;margin: 0 auto;padding-top: 0;padding-bottom: 0;}
+.cta-list {margin:0 10px 40px;}
+.cta-list .btn {display:block;font-family: 'NotoKR';font-size: 1.1em;  letter-spacing:-0.05em; background-color: #005895; color: #fff;width: 100%;height: 50px;line-height: 50px;margin: 0 auto;padding-top: 0;padding-bottom: 0;}
+
+/**
+ * 자녀 선수정보 조회결과
+ */
+.search_child .load-list .title {display: inline-block;vertical-align: middle;width: 100px;padding-left: 10px;}
+.search_child .load-list .title + * {display: inline-block;vertical-align: middle;width: calc(100% - 105px);}
+.search_child .load-list li {border-bottom: 1px solid #ddd;}
+.join-body .search_child .load-list input {border-bottom: none;height: 25px;line-height: 25px;padding: 0;}
+.search_child .btn-list {padding:0 10px;}
+.join-body .btn-list {margin-top: 10px;padding: 0;}
+
+.btn-list-2 a {font-family:'NotoKR'; display: inline-block;vertical-align: middle;font-size: 1em; letter-spacing:-0.05em; width: calc(50% - 5px);height: 50px;line-height: 50px;padding-top: 0;padding-bottom: 0;text-shadow: none;-webkit-box-shadow: none;box-shadow: none;}
+.btn-list-2 a.btn-ok {line-height: 125%;padding:5px;}
+.btn-list-2 a:first-child {margin-right: 6px;}
+
+.sdmain-pack .no-res-img {padding-top: 10px;padding-bottom: 20px;border-bottom: 1px solid #ddd;margin-bottom: 20px;}
+.sdmain-pack .no-res-img .title {font-size:1em;/*font-size: 1.25em;*/text-align: center;padding-bottom: 20px;}
+.no-res-img .img-box {width: 80px;margin: 0 auto;}
+.sdmain-pack .no-res.guide-txt {text-align: center;padding-left: 10px;padding-right: 10px;padding-bottom: 20px;border-bottom: 1px solid #ddd;margin-bottom: 20px;}
+.sdmain-pack .no-res.guide-txt .title {font-size: 1.5em;}
+.sdmain-pack .no-res.guide-txt p {font-size: 1.05em;line-height: 150%;}
+
+/**
+ * S: 통합회원 가입 완료 
+ */
+.sdmain-pack.join-end {background-image: none;}
+.sdmain-pack.join-end .join-logo {width: 110px; margin: 0 auto;padding-top: 30px;margin-bottom: 25px;padding-bottom: 0;}
+.join-end .join-logo img {width: 100%;}
+.sdmain-pack.join-end h2 {font-family: "NotoKR-md";font-size: 1.45em;line-height:1.4; color: #333; text-align: center;padding-bottom: 15px;margin-bottom: 0;}
+.sdmain-pack.join-end p {font-family: "NotoKR";font-size: 1em; color:#999;border: none;letter-spacing: -0.5px; text-align: center;margin-bottom: 20px;}
+.sdmain-pack.join-end p.welcome-msg-3{margin-top:30px;font-size: 1em;line-height:1.5em; border-top:1px solid #ddd; border-bottom:1px solid #ddd; padding:13px 0; margin:15px 45px;}
+.sdmain-pack.join-end .btn-list a {float:left;vertical-align: middle;font-size: 1.1em; letter-spacing:-0.05em; text-align: center; width:49%;line-height: 50px;padding: 0;}
+.sdmain-pack.join-end .btn-list a:last-child {margin-right:0;}
+.sdmain-pack.join-end .btn-list .btn-default {text-shadow: none; -webkit-box-shadow: none;box-shadow: none; background: #eee; font-size:1.1em; letter-spacing:-0.05em; color:#333; border:none;}
+.sdmain-pack.join-end .btm-con{position: fixed;bottom: 20px; left: 10px;right: 10px;margin:auto;max-width:767px;}
+.sdmain-pack.join-end .account{display:table;width:100%;text-align:right;margin-bottom:10px;font-size:14px;}
+.sdmain-pack.join-end .account .icon{margin-right:5px;width:20px;height:20px;line-height:20px;border-radius:100%;background:#f0f0f0;display:inline-block;text-align:center;font-size:12px;color:#005895;}
+.sdmain-pack.join-end .account a{width:auto;color:#666; letter-spacing:-0.05em;}
+.account-modal{text-align:center;}
+.account-modal .modal-body{padding:30px 0 25px 0;}
+.account-modal .modal-body h2{font-size:20px;color:#005895;font-family: "NotoKR-md"; border-bottom:1px solid #ddd; margin:0 20px; padding:0 0 15px 0; line-height:1.4;}
+.account-modal .modal-body p{margin:25px 30px;font-size:14px;color:#666;}
+.account-modal .modal-content{border-radius:0;}
+.account-modal .modal-footer{text-align:center;background:#f0f0f0;padding:0;}
+.account-modal .modal-footer a{width:100%;height:40px;background:#eee;color:#333;line-height:40px;display:inline-block;}
+/* E: 통합회원 가입 완료 */

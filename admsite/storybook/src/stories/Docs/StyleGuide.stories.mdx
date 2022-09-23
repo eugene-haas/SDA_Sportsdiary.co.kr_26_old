@@ -1,0 +1,230 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/StyleGuide" />
+
+import '@/stories/assets/mdx_style.css';
+
+
+# StyleGuide of 위드라인
+ * 퍼블리셔를 위한 위드라인의 스타일 규칙(css)
+ * smacss 작성법과 bem 작성법을 혼용하여 작성
+
+## 구성
++ [작성법](#기본-작성법)
++ [주석](#주석)
++ [layout](#layout)
++ [module](#module)
++ [status](#status)
++ [기타](#기타)
+
+
+
+## 기본 작성법
+### bem 변형
++ 하이픈 방식(ex: main-table-button) + BEM + [l_,m_,s_,t_]
++ block__element.s_modifer<br/>
+l_ : 전체적인 공통 레이아웃<br/>
+m_ : 모달, 섹션(메인 콘텐츠는 앞에 안 붙임)<br/>
+s_ : class 상태 토글(혼자서 쓰일 수 없음) ex:{l_header.s_active{style}}<br/>
+t_ : class 타입 추가(혼자서 쓰일 수 없음) ex:{l_header.t_info{style}}<br/>
+
+```html
+<div class="m_quick">
+  <a href="#a" class="m_quick__btn s_attend">대회참가</a>
+  <a href="tel:01022154980" class="m_quick__btn s_lesson">레슨문의</a>
+  <a href="tel:01050334980" class="m_quick__btn s_use">이용문의</a>
+</div>
+<style>
+  .m_quick{margin:10px 0;padding:0 10px;display:flex;height:69px;background:#fff;border-bottom:1px solid #ddd;color:#333;text-align:center;font-size:12px;}
+  .m_quick__btn{display:block;width:34%;height:100%;}
+  .m_quick__btn.s_attend{background:#005895;}
+  .m_quick__btn.s_lesson{background:#eee;}
+  .m_quick__btn.s_use{background:#ddd;}
+</style>
+```
+
+### css 작성 스타일
++ 띄어쓰기 없이 oneline으로 작성
++ vender prefix는 줄바꿈하여 작성
++ 속성 순서는
+#### 1. 예외(영향력 있는) 속성
+
+* opacity - z-index - content 등등
+
+#### 2. 포지션 관련 속성
+
+* float - position(top, right, bottom, left) - margin - padding 등등
+
+#### 3. 콘텐츠 관련 속성
+
+* display - width(max-width, min-width) - height(max-height, min-height) - border(border-radius) - box-sizing - background 등등
+
+#### 4. 폰트 관련 속성
+
+* font-size - font-weight - color 등등
+
+#### 5. vender prefix
+
+* webkit-appearance - webkit-user-select 등등
+
+```css
+.sd_form__btn{
+	float:right;margin:12px 10px 0 0;padding:0 12px;display:block;height:25px;border-radius:4px;background-color:#999;color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:25px;
+	-ms-touch-action:manipulation;
+	touch-action:manipulation;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+```
+
+
+## 주석
+1. fonts
+    + `/* ============================ fonts ============================ */`
+1. reset - 모든 프로젝트의 적용 가능
+    + `/* ============================ RESET ============================ */`
+1. default - 해당 프로젝트에서 적용
+    + `/* =========================== default =========================== */`
+1. library, framework의 reset이 필요한 경우
+    + `/* ===================== reset-[libraryname] ===================== */`
+1. 일반 주석
+
+```
+/*==============================================================================
+  chansoo
+  Copyright 2020 widline
+  written for - 스포츠 다이어리 앱
+    http://sdmain.sportsdiary.co.kr/app/index.asp
+  sytle guide 참고 :
+
+  index:
+  (_1) laout style (nav, header, aside, modal, main)
+  (_2) main style
+  (_3) 모듈 style (table, button, tab, input, select, calender, chart)
+  (_4) index, login style
+  (_5) local style()
+  (_6) media query
+==============================================================================*/
+```
+
+## layout
++ 'l_'
++ header footer grid section gnb aside 등 global 영역의 레이아웃 모듈, 반응형 레이아웃 모듈
++ .l_block__element.s_modifer
+
+```html
+<div class="l_header">
+  <ul class="l_header__sports">
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">배드민턴</a>
+    </li>
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">유도</a>
+    </li>
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">테니스</a>
+    </li>
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">자전거</a>
+    </li>
+  </ul>
+</div>
+<style>
+  .l_header{padding-top:10px;display:table;width:100%;background:#fff;border-bottom:1px solid #ddd;}
+  .l_header__sports{margin:0;padding:0;}
+  .l_header__sports__list{float:left;text-align:center;list-style:none;}
+  .l_header__sports__list__text{padding:10px 0;display:block;color:#444;line-height:100%;font-size:16px;letter-spacing:0.02em;}
+</style>
+```
+
+
+## module
++ 'm_'
++ 재사용이 가능한 스타일의 모듈, layout보다 범주가 작으며 layout안에 들어갈 모듈
++ .m_block__element.s_modifer
+
+```html
+<div class="m_game-header">
+  <div class="m_game-header__type">혼합 일반부 단체전 예선16조</div>
+  <div class="m_game-header__status">
+    <span class="m_game-header__status__text">완료</span>
+  </div>
+</div>
+<style>
+  .m_game-header{font-size:16px;text-align:center;background-color:#666;}
+  .m_game-header.s_ing{background-color:#2465a2;}
+  .m_game-header.s_ready{background-color:#2465a2;}
+  .m_game-header.s_complete{background-color:#666;}
+  .m_game-header__type{width:100%;padding:0 5px;}
+  .m_game-header__status{width:30px;position:absolute;right:0;}
+  .m_game-header__status__text{font-size:13px;text-align:right;text-indent:-5px;}
+</style>
+```
+
+
+## 모듈 로컬화
++ 페이지명 클래스 하위 클래스로 지정
+
+```css
+/* [pagename] */
+.[pagename] [module]{}
+```
+
+
+## status
++ 's_'
++ 상태변화 or 타입정의 클래스
++ '.s_[status]'
++ 단독으로 쓰지 말 것
+
+```html
+<div class="l_header">
+  <ul class="l_header__sports">
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">배드민턴</a>
+    </li>
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text s_active">유도</a>
+    </li>
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">테니스</a>
+    </li>
+    <li class="l_header__sports__list">
+      <a href="#a" class="l_header__sports__list__text">자전거</a>
+    </li>
+  </ul>
+</div>
+<style>
+  .l_header{padding-top:10px;display:table;width:100%;background:#fff;border-bottom:1px solid #ddd;}
+  .l_header__sports{margin:0;padding:0;}
+  .l_header__sports__list{float:left;text-align:center;list-style:none;}
+  .l_header__sports__list__text{padding:10px 0;display:block;color:#444;line-height:100%;font-size:16px;letter-spacing:0.02em;}
+  .l_header__sports__list__text.s_active{border-bottom:2px solid #0288d1;font-weight:500;color:#005895;}
+</style>
+```
+
+
+## 기타
+### 1. 이왕이면 의미에 따라 이름지을 것
+* o -> s_selected, t_cover, t_main, t_large, t_small
+* x -> t_blue, t_w100, t_center
+
+### 2. 참고
+* [다음-네이밍가이드](http://darum.daum.net/convention/name)
+* [IT-영단어](https://brunch.co.kr/@hopeless/8)
+
+### 3. z-index 순서
+* default layout : 0 ~ 1000
+* fixed layout : 8000 ~ 9000
+
+### 4. css @import 쓰지 마세요
+* style.css로 모으세요.
+
+## 본 문서 작성자
+* **chansoo** - *Initial work* - 2021-01-20
+
+## Acknowledgments
+
+* 화이팅입니다 - chansoo

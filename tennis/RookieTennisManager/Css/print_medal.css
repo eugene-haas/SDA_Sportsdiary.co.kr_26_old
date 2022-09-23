@@ -1,0 +1,30 @@
+body {background: #fff;color: #000;font-size: 8pt;line-height: 150%;
+margin: 0px;}
+hr {color: #ccc;background-color: #ccc;}
+h1, h2, h3, h4, h5, h6, code, pre {color: #000;
+text-transform: none; /* because sometimes I set all-caps */}
+h1 {font-size: 11pt;margin-top: 1em;}
+h2 {font-size: 10pt;}
+h3 {font-size: 9pt;}
+h4, h5, h6 {font-size: 8pt;}
+code, pre {font-size: 8pt;background-color: transparent;/* just in case the user configured browser to print backgrounds */}
+blockquote {background-image: none;/* though they may not print, I’d rather be sure */}
+a:link, a:visited {text-decoration: underline;color: #000;}
+abbr:after, acronym:after { /* some HTML4 love */content: " (" attr(title) ") ";/* I suspect I am one of the few who still use these elements */}
+.a4 {page-break-after: always; }
+.maintitle{background-color: #008eb2;color: #fff;font-size: 18px;text-align: center;height: 30px;line-height: 30px;}
+.title {background-color: #3f4953;color: #fff;}
+.operating-medal-table .bg {display: none;}
+
+@media print {
+  #content {width: 100%;padding: 0;}
+  .sub.sub-main {padding: 0;}
+  .sub-main .maintitle {text-align: center;width: 100%; margin: 0 auto; padding-left: 20px;}
+  .top-navi-tit {background-color: #000; color: #fff; font-size: 16pt; text-align: center;}
+  /*.operating-medal-table {position: relative;}
+  .operating-medal-table .bg {position: absolute; top: 0px; left: 0; width: 100%; left: 70px; z-index: 1;}
+  .operating-medal-table .bg td {padding: 0;}
+  .operating-medal-table .title {}
+  .operating-medal-table .bg span {width: 100%;}
+  .operating-medal-table .bg span img {width: 100%;}*/
+}

@@ -1,0 +1,89 @@
+<%
+'#############################################
+'순서에서 오후순서 제거
+'#############################################
+	'request
+	If hasown(oJSONoutput, "LIDX") = "ok" then
+		lidx = oJSONoutput.LIDX
+	End if
+
+
+	Set db = new clsDBHelper
+
+	gubunQuery = " and finalgameingS > 0 " '오전오후를 구분하기 위해 넣는다.
+
+
+	SQL = "Select top 1 Gametitleidx, cdc,finalgamedate from tblRGameLevel where RgameLevelIDX = " & lidx
+	Set rs = db.ExecSQLReturnRS(SQL , null, ConStr) 
+	tidx = rs(0)
+	cdc = rs(1)
+	dateam = rs(2)
+	SQL = "Select min(finalgamestarttime),max(finalgamestarttime) from tblRGameLevel where gametitleidx = '"&tidx&"' and cdc = '"&cdc&"' and finalgamedate = '"&dateam&"' "&gubunQuery&" "
+	Set rs = db.ExecSQLReturnRS(SQL , null, ConStr) 
+	timeammin = rs(0) '다음 설정값 시간이 될값.....
+	timeammax = rs(1)
+
+
+	'시간 없데이트 할 데이터들.....(오전과 오후가 구분되어야한다)
+	SQL = "select top 1 finalgamestarttime,finalgameingS  from tblRGameLevel where gametitleidx = "&tidx&" and finalgamedate = '"&dateam&"'  and finalgamestarttime > '"&timeammax&"' "&gubunQuery&"  order by gameno,finalgameingS "
+	Set rs = db.ExecSQLReturnRS(SQL , null, ConStr) 
+	If Not rs.EOF Then
+		ar = rs.GetRows()
+	End If
+
+	'Call getrowsdrow(ar)
+
+	If IsArray(ar) Then 
+		For ari = LBound(ar, 2) To UBound(ar, 2)
+			tm = ar(0, ari)
+
+			If ari = 0 Then
+				addtmvalue =  DATEDIFF("n", dateam & " " & timeammin & ":00" , dateam & " " & tm & ":00")
+			End If
+		Next 
+
+		If tm <> "" then
+			strwhere = " where gametitleidx = "&tidx&" and finalgamedate = '"&dateam&"'  and finalgamestarttime > '"&timeammax&"'  "&gubunQuery&" "
+			setvalue = " left(CONVERT(VARCHAR(8), DATEADD(minute, -"&addtmvalue&", convert(char(10), finalgamedate,23) + ' ' + finalgamestarttime + ':00'), 108),5) "
+
+			'아래것들 순서 당기기
+			SQL = "Update tblRGameLevel Set finalgamestarttime = "&setvalue&" " &  strwhere
+			Call db.execSQLRs(SQL , null, ConStr) 
+		End if	
+	
+	End if
+
+
+
+	'선택된 정보 초기화
+	updatefld = "  gubunpm=0, finalgamedate = null ,finalgamestarttime = null ,finalgameingS='0',gameno2= '0',joono2='0'  " '오후 초기화할 데이터
+	SQL = "update tblRGameLevel Set "& updatefld & " where gametitleidx = '"&tidx&"' and cdc = '"&cdc&"' and finalgamedate = '"&dateam&"' "&gubunQuery&" "
+	Call db.execSQLRs(SQL , null, ConStr)
+
+	'#####################################################################
+	'삭제할데이터의 gameno1 값보다 큰아이들을 순서대로 만들어서 업데이트 /오후
+	'#####################################################################
+
+	'오후 업데이트
+	SQL = SQL & " update A Set A.gameno2 = A.gnum from  ( select gameno2, ((select max(gameno) from tblRGameLevel where delyn = 'N' and gametitleidx = '"&tidx&"' and tryoutgamedate = '"&dateam&"' )+ RANK() OVER (Order By gameno2 asc)) AS gnum from tblRGameLevel where delyn = 'N' and gametitleidx = '"&tidx&"' and finalgamedate = '"&dateam&"' )  A "
+	Call db.execSQLRs(SQL , null, ConStr) 	
+	'#####################################################################
+
+
+
+
+	Call oJSONoutput.Set("result", 0 )
+	strjson = JSON.stringify(oJSONoutput)
+	Response.Write strjson
+
+
+	'SQL = "Select  "&setvalue&"  from tblRGameLevel  "&strwhere
+	'Set rs = db.ExecSQLReturnRS(SQL , null, ConStr) 
+	'Call rsdrow(rs)
+
+
+  db.Dispose
+  Set db = Nothing
+%>
+
+

@@ -1,0 +1,8 @@
+listOfRegUser
+    : 참가 신청시 받는 Excel File Data 검증및 자동 수정, 오류 Data Detect 기능 
+
+makeTestID 
+    : tblMember에 테스트 아이디 Insert routine
+
+sms 
+    : sms Test시 사용한 routine

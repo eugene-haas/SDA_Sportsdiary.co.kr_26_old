@@ -1,0 +1,33 @@
+.ana .stat-list .stat-txt {width: 55%;margin-right: 5px;letter-spacing: -0.12em;}
+.ana .stat-list span[class*="-favorite"] {font-size: 21px;margin-right: 5px;/* float: right; */}
+/*.stat-film.group .ana .stat-list span[class*="-favorite"] {padding-top: 10px;} */
+.stat-film.group .ana .record-detail span.school {font-size: 1em;}
+.stat-film.group .ana .record-detail {width: 78%;letter-spacing: -0.1em;}
+
+.film-modal .modal-body h4 {font-family: 'NanumGothicB'; font-size: 1.05em; text-align: center; background-color: #2c3842; color: #fff000; padding-top: 0.35em; padding-bottom: 0.35em;}
+.film-modal .modal-body h4 span {position: relative; line-height: 24px;}
+.film-modal .modal-body h4 span:before,
+.film-modal .modal-body h4 span:after {position: absolute; top: 3px; left: 0px; content: ''; background-repeat: no-repeat; -webkit-background-size: 30px 18px; background-size: 23px 15px; width: 36px; height: 20px;}
+.film-modal .modal-body h4 span:before {left: -80%;}
+.film-modal .modal-body h4 span:after {left: 114%;}
+#show-score.film-modal .container {background-color: #fff; margin-left: 0; margin-right: 0; margin-top: 10px;}
+#show-score.film-modal .container h3 {padding-top: 10px;}
+.film-modal .container .record-box {background-color: #eee; margin-top: 0px; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-bottom: 10px;}
+.film-box {display: none;margin-bottom: 0;}
+.film-box .btn {background: #000;color: #fff;border-radius: 0;width: 50%;height: 50px;line-height: 50px;margin-top: -10px;padding-top: 0;padding-bottom: 0;float: left;}
+.film-box .btn-fastforward {border-left: 1px solid #333;}
+.film-modal .modal-footer .btn-list {display: -webkit-flex;
+display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; margin-top:5px;}
+.film-modal .modal-footer .btn {font-size: .86em; flex: 1;}
+.film-modal .modal-footer .btn.btn-default {height: 40px; padding-top: 0; padding-bottom: 0;}
+#show-score.film-modal .modal-footer .btn.btn-default {width: 46.75%; border:none; text-shadow: none;}
+.film-modal .modal-footer .btn .ic-deco {display: inline-block; width: 1.86em; margin-right: 5px;}
+.film-modal .modal-footer .btn-orange {background-color: #ff7200; color: #fff; line-height: 38px; margin-right: 10px; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0; font-family: "NanumGothicB"; font-size:0.95em; letter-spacing: -1px;}
+.film-modal .modal-footer .btn-orange.off {background-color: #cfcfcf; color: #555;}
+.film-modal .modal-footer .btn-record{display: none; margin-left: 0;}
+#show-score.film-modal .modal-footer {padding-top: 0; padding:0 10px 10px 10px;}
+
+.groups-res .record .guide-txt,
+.groups-res .film-box .guide-txt.show-film-guide,
+.film-modal .modal-content .guide-txt {font-size: 0.8em; line-height: 1.5em; letter-spacing: -0.125em; background: #8b97a0; padding: 10px; color: #fff;}
+.film-modal .record-box .guide-txt {margin-left: -10px; margin-right: -10px;}

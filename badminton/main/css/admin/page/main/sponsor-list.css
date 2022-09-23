@@ -1,0 +1,14 @@
+.sponsor_list .table-list th {font-size: 16px;height: 45px;}
+.sponsor_list .table-list td {font-size: 14px;height: 50px;}
+.sponsor_list .table-list td:nth-child(2),
+.sponsor_list .table-list td:nth-child(3) {text-align: left;padding-left: 10px;padding-right: 10px;}
+.sponsor_list .table-list td img {height: 40px;}
+
+/* 후원사 표 길이조절 */
+.sponsor_list .table-list td:first-child {width: 60px;}
+.sponsor_list .table-list td:nth-child(2) {width: 440px;}
+.sponsor_list .table-list td:nth-child(3) {width: 520px;}
+.sponsor_list .table-list td:nth-child(4) {width: 300px;}
+.sponsor_list .table-list td:nth-child(5),
+.sponsor_list .table-list td:nth-child(6) {width: 80px;}
+.sponsor_list .table-list td:last-child {width: 200px;}

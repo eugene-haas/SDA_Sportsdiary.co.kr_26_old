@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/**
+ * preli 예선 테이블
+ */
+.preli .btn-list {width: 650px; margin: 0 auto; margin-top: 30px; margin-bottom: 20px;}
+.preli .btn-list li {display: inline-block; width: 320px;}
+.preli .btn-list li:first-child {margin-right: 6px;}
+.preli .btn-list li a {font-size: 22px; color: #999; width: 100%; border: 3px solid #ddd; border-radius: 6px; padding-top: 12px; padding-bottom: 12px;}
+.preli .btn-list li a.on {background-color: #3e7c01; border: 3px solid #3e7c01; color: #fff;}
+
+.preli .preli-table {font-size: 16px; margin-top: 0px; margin-left: 50px; margin-right: 50px; margin-bottom: 40px;}
+.tourn table td {padding: 8px;}
+.preli .preli-table .table-title {border: none;}
+.preli .preli-table .table {border: 1px solid #bbb;}
+.preli .preli-table thead {border-bottom: 3px solid #ff4c00;}
+.preli .preli-table thead th {background-color: #3f4953; color: #fff; text-align: center;border-right: 1px solid #bbb;}
+.preli .preli-table thead th:last-child {border-right: none;}
+.preli .preli-table tbody td {font-weight: bold;border-right: 1px solid #bbb; height: 50px; vertical-align: middle;}
+.preli .preli-table tbody td:last-child {border-right: none;}
+.preli .preli-table .player {display: block; font-size: 16px;}
+.preli .preli-table .belong {display: block; font-size: 14px; color: #ff4c00; width: 105px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin: 0 auto;}
+.preli .preli-table .pass {background-color: #ffe6d3;}
+.preli .preli-table .btn-comp,
+.preli .preli-table .btn-finish,
+.preli .preli-table .btn-ready {border-radius: 30px; width: 99px; height: 37px; line-height: 37px;}
+.preli .preli-table .btn-comp {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f97c8+0,1e4789+100 */
+background: #3f97c8; /* Old browsers */
+background: -moz-linear-gradient(top,  #3f97c8 0%, #1e4789 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #3f97c8 0%,#1e4789 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #3f97c8 0%,#1e4789 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f97c8', endColorstr='#1e4789',GradientType=0 ); /* IE6-9 */ border: 1px solid #245796; border-radius: 20px; color: #fff;
+ }
+.preli .preli-table .btn-finish {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8863f+0,893f1e+100 */
+background: #c8863f; /* Old browsers */
+background: -moz-linear-gradient(top,  #c8863f 0%, #893f1e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c8863f 0%,#893f1e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c8863f 0%,#893f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8863f', endColorstr='#893f1e',GradientType=0 ); /* IE6-9 */ border: 1px solid #a86c3f; color: #fff; vertical-align: middle; padding-top: 0;padding-bottom: 0;}
+.preli .preli-table .btn-ready,
+.preli-league .btn.btn-ready {background-color: #fff; border: 1px solid #2e6ea8; color: #2e6ea8; padding-top: 0;padding-bottom: 0;}
+.preli-league .btn.btn-danger:hover {background-color: #ac2925;background-position: 0 0;}
+.preli .preli-table .btn-no-game {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#db6b6b+0,bb0000+100 */
+background: #db6b6b; /* Old browsers */
+background: -moz-linear-gradient(top,  #db6b6b 0%, #bb0000 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #db6b6b 0%,#bb0000 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #db6b6b 0%,#bb0000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db6b6b', endColorstr='#bb0000',GradientType=0 ); /* IE6-9 */ border: 1px solid #bb0000; color: #fff; border-radius: 30px; height: 37px; line-height: 37px;}
+.preli .preli-table tbody td {border-bottom: 1px solid #bbb;}
+
+/* table 간격 조절 */
+.preli .preli-table thead th:first-child,
+.preli .preli-table tbody td:first-child {width: 100px;}
+.preli .preli-table thead th {width: 320px; padding-top: 8px; padding-bottom: 8px;}
+.preli .preli-table tbody td {width: 160px;}
+.preli .preli-table thead th:last-child,
+.preli .preli-table tbody td:last-child {width: 120px;}
+
+
+/** 
+ * 예선 리그 table
+ */
+.preli-league table {border: 2px solid #aaa; width: 940px; margin: 0 auto;}
+.preli-league table tr {border-bottom: 1px solid #aaa;}
+.preli-league table th {background-color: #e1ecdd; color: #333; width: 170px; border-right: 1px solid #aaa; text-align: center;}
+.preli-league table thead th:first-child {background-color: #244405; color: #fff; font-size: 20px; text-align: center;}
+.preli-league table th:last-child {border-right: none;}
+.preli-league table thead th p {margin-bottom: 0}
+.preli-league table thead th p:nth-child(3) {margin-bottom: 15px;}
+.preli-league table thead .tit {margin-top: 5px;}
+.preli-league table .round {display: block; width: 18px; height: 20px; line-height: 18px; border: 1px solid #000; border-radius: 50%; text-align: center; margin: 0 auto; margin-top: 18px; margin-bottom: 8px;}
+.preli-league table .player {display: inline-block; vertical-align: middle; font-size: 16px;}
+.preli-league table .belong {display: inline-block; vertical-align: middle; font-size: 14px; color: #f26822; width: 97px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.preli-league table tbody tr {border-bottom: 1px solid #aaa;}
+.preli-league table tbody tr:last-child {border-bottom: none;}
+.preli-league table tbody td {font-size: 16px; font-weight: bold; text-align: center; border-right: 1px solid #aaa;}
+.preli-league table tbody td:last-child {border-right: none;}
+.preli-league table tbody th p {margin: 0; padding: 0;}
+.preli-league table tbody th .round {margin: 0 auto; margin-top: 7px;}
+.preli-league table tbody td p {margin: 0; padding: 0; line-height: 100%;margin-top: 5px;margin-bottom: 5px;}
+.preli-league table tbody td .no-match {margin-top: 0;margin-bottom: 0;}
+.preli-league table tbody td .btn {display: inline-block; font-size: 14px; text-align: center; color: #fff; border-radius: 4px; width: 83px; height: 24px; line-height: 20px; padding: 0; margin-top: 6px;}
+.preli-league .btn-result {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a7612e+0,844d24+100 */
+background: #a7612e; /* Old browsers */
+background: -moz-linear-gradient(top,  #a7612e 0%, #844d24 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #a7612e 0%,#844d24 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #a7612e 0%,#844d24 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7612e', endColorstr='#844d24',GradientType=0 ); /* IE6-9 */
+ border: 1px solid #884f25;}
+ .preli-league .btn-enter-score {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2f9b9c+1,257a7b+100 */
+background: #2f9b9c; /* Old browsers */
+background: -moz-linear-gradient(top,  #2f9b9c 1%, #257a7b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #2f9b9c 1%,#257a7b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #2f9b9c 1%,#257a7b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f9b9c', endColorstr='#257a7b',GradientType=0 ); /* IE6-9 */ border: 1px solid #2b9091;}
+.preli-league table .win-lose {font-size: 18px;}
+.preli-league table tbody td {background-color: #f2f2f2;}
+.preli-league table .win-lose,
+.preli-league table .order {background-color: #fff;}
+.preli-league table .win-lose .record-box,
+.preli-league table .win-lose .point {display: block;}
+.preli-league table .win-lose .point {margin-top: 5px;}
+.btn-show-list {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f67a00+0,e72f00+100 */
+background: #f67a00; /* Old browsers */
+background: -moz-linear-gradient(top,  #f67a00 0%, #e72f00 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f67a00 0%,#e72f00 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f67a00 0%,#e72f00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67a00', endColorstr='#e72f00',GradientType=0 ); /* IE6-9 */
+ border: 1px solid #ea4202; color: #fff;}
+.btn-show-list:hover,
+.btn-show-list:focus,
+.btn-show-list:active {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f67a00+0,e72f00+100 */
+background: #f67a00; /* Old browsers */
+background: -moz-linear-gradient(top,  #f67a00 0%, #e72f00 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f67a00 0%,#e72f00 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f67a00 0%,#e72f00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67a00', endColorstr='#e72f00',GradientType=0 ); /* IE6-9 */}
+.preli-league .btn-list {text-align: center;}
+.preli-league .btn-show-list {font-size: 22px; width: 228px; height: 57px; line-height: 57px; color: #fff; margin-top: 0px; padding: 0;}
+
+.preli-result thead th span {vertical-align: middle;}
+.preli-result thead th .ic-deco {width: 22px;}
+.btn-show-result {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,c8c8c8+100 */
+background: #fefefe; /* Old browsers */
+background: -moz-linear-gradient(top,  #fefefe 0%, #c8c8c8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fefefe 0%,#c8c8c8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fefefe 0%,#c8c8c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#c8c8c8',GradientType=0 ); /* IE6-9 */ border: 1px solid #a2a2a2; width: 100%; color: #4d4d4d; font-size: 16px; font-weight: bold; height: 25px; line-height: 25px; padding-top: 0; padding-bottom: 0;}
+a.btn.btn-show-result:hover,
+a.btn.btn-show-result:focus,
+a.btn.btn-show-result:active {color: #333;}

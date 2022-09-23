@@ -1,0 +1,23 @@
+.state-cont.relativity .stat-chart.train-place {border-top: 1px solid #ccc;} /* 선수분석 > 상대성 >좌우기술 득,실점 tab 에 border-top 추가 */
+.stat-chart.train-place {background-color: #fff; /*border-top: 1px solid #ccc;*/ margin-top: 0; padding-bottom:10px;} 
+
+.train-place .train-time {display: inline-block; background-color: #fff; color: #333; /*font-size: 1.12em;*/ font-size:0.83em; border: 2px solid #ccc; border-radius: 20px; padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-top: 10px; margin-bottom: 30px;}
+.train-place .train-time span {color: #164369;}
+
+.stat-chart .detail-chart {position: relative; background-color: #e3e6eb; padding-bottom: 20px; margin-left: 10px; margin-right: 10px; margin-bottom: 20px; }
+.stat-chart .detail-chart:after {position: absolute; top: 0; left: 47%; border-top: 15px solid #fff; border-left: 15px solid transparent; border-right: 15px solid transparent; border-bottom: none; }
+
+.raphael-group-126-background rect {fill: #e3e6eb!important;}
+
+.detail-chart .train-table {font-size: .83em; border: 2px solid #d0d0d0; width: 100%; margin: 0 auto;}
+.detail-chart .train-table thead th {text-align: center;}
+.detail-chart .train-table th, 
+.detail-chart .train-table td {border-right: 2px solid #d0d0d0; border-bottom: 1px solid #d0d0d0;}
+.detail-chart .train-table thead > tr {background-color: #164369; color: #fff;}
+.detail-chart .train-table tbody tr {background-color: #fff;}
+
+/* 훈련종류 */
+.stat-chart .btn-list {margin-top: 20px;}
+.stat-chart .btn-list a {width: 30%; border-radius: 20px;}
+.stat-chart .btn-list a.btn {background-color: #fff; border: 2px solid #ccc; color: #999; }
+.stat-chart .btn-list a.btn.on {color: #164369; border-color: #164369;}

@@ -1,0 +1,66 @@
+<!--#include file="../Library/ajax_config.asp"-->
+<%
+	'===========================================================================================
+	'메인페이지 대회정보 리스트 조회페이지
+	'===========================================================================================
+'	Check_Login()
+	
+		
+	dim NDate	 	: NDate 	= Date() 
+	dim NYear 		: NYear 	= Year(Date())
+	dim Chk_Game 	: Chk_Game 	= FALSE			'대회시작일 및 진행중정보 체크
+	dim ViewCnt 	: ViewCnt 	= 4		
+	
+	dim SearchDate								'institute-search.asp 조회월 파라미터값
+	dim txtContents
+	dim Chk_Num, cnt
+	
+	
+	txtContents = "<li class='list_tit'>대회일정/결과</li>"
+	
+	LSQL = " 		SELECT TOP " &ViewCnt
+	LSQL = LSQL & "  	 GameTitleIDX"  
+	LSQL = LSQL & " 	,GameTitleName"  
+	LSQL = LSQL & " 	,ISNULL(GameArea, '') GameArea" 
+	LSQL = LSQL & " 	,CONVERT(DATE, GameS, 101) GameS" 
+	LSQL = LSQL & " 	,CONVERT(DATE, GameE, 101) GameE" 
+	LSQL = LSQL & "		,CASE WHEN DATEDIFF(d, CONVERT(DATE, GameS), GETDATE())>=0 and DATEDIFF(d, GETDATE(), CONVERT(DATE, GameE))>=0 THEN '0' Else '1' END StateGame "
+	LSQL = LSQL & "		,DATEDIFF(d, CONVERT(DATE, GameS), GETDATE()) StateValueOn "
+	LSQL = LSQL & " FROM [SD_Tennis].[dbo].[sd_TennisTitle] " 
+	LSQL = LSQL & " WHERE DelYN = 'N'" 
+	LSQL = LSQL & " 	AND SportsGb = '"&SportsGb&"' " 
+	LSQL = LSQL & " 	AND GameYear = '"&NYear&"'" 
+	LSQL = LSQL & " 	AND ViewYN = 'Y'" 
+	LSQL = LSQL & " 	AND ViewState = 'Y' " 
+	LSQL = LSQL & "		AND DATEDIFF(d, CONVERT(DATE, GameS), GETDATE()) <= 0 "
+	LSQL = LSQL & " ORDER BY StateGame, StateValueOn desc, GameS ASC"
+
+	
+	SET LRs = DBCon3.Execute(LSQL)
+	If	Not (LRs.Eof Or LRs.Bof) Then 
+		'공식대회가 있을경우
+		Do Until LRs.Eof 
+			  
+			txtContents = txtContents & "<li>"			
+			txtContents = txtContents & "	<a href='../Result/institute-search.asp?SearchDate="&LRs("GameS")&"&GameTitleIDX="&LRs("GameTitleIDX")&"'><span class=""d_day"">D  "&LRs("StateValueOn")&"</span> "
+			txtContents = txtContents & LRs("GameTitleName")
+			txtContents = txtContents & "	</a>"
+			txtContents = txtContents & "</li>"	 
+			
+			LRs.MoveNext
+		Loop 
+		
+	Else
+		'공식대회가 없을경우
+
+		txtContents = txtContents & "<li><a href='#'><span>등록된 대회일정이 없습니다.</span></a></li>"
+
+	End If 
+		LRs.Close
+	SET LRs = Nothing 	
+	
+	response.Write txtContents	
+		
+	
+	DBClose3()
+%>

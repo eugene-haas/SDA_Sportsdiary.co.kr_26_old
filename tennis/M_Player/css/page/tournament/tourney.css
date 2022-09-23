@@ -1,0 +1,109 @@
+.sub.sub-main.tourney {overflow: hidden;}
+.sub.tourney .tourney-title {background-color: #164369; color: #fff;}
+.sub.tourney .tourney-title h3 {font-size: 0.9em; text-align: center; color: #fff; padding-top: 10px; padding-bottom: 10px; padding-left:10px; padding-right: 10px; border-top: 1px solid #ddd; line-height:120%;}
+.sub.tourney .tourney-sel ul {background-color: #edf0f4; border-bottom: 1px solid #ddd; padding: 10px 10px 5px;}
+.sub.tourney .tourney-sel li { width: 32%; margin-right: 2%; float: left;}
+.sub.tourney .tourney-sel li:first-child {width:23%;}
+.sub.tourney .tourney-sel li:nth-child(3) {width:22%;}
+.sub.tourney .tourney-sel li:last-child {width:17%; margin-right: 0;}
+.sub.tourney .tourney-sel .btn-gray {display:inline-block; font-size: 12.5px; padding:0 7px; width:100%; height: 33px; margin-top:0; vertical-align: top; color:#fff; text-align:center; background:#999; border-radius:3px; border-style:none; vertical-align:top; line-height:33px; letter-spacing:-1px;}
+.sub.tourney .tourney-sel li select {color: #000; border: 1px solid #9c9d9e; padding-left:2px;}
+.sub.tourney .tourney-sel .game-type {font-weight:normal; font-size:0.86em;margin-top:1px; vertical-align:middle;}
+.sub.tourney .tourney-sel .game-type .type-text {margin-top:5px;}
+.sub.tourney .tourney-sel .game-type span {margin-left:3px; vertical-align:middle;}
+.sub.tourney .tourney-info p {position: relative; font-size: 0.94em; text-indent: 10px; border-bottom: 1px solid #ddd; padding: 10px; height:45px;}
+.sub.tourney .tourney-info p:before {position: absolute; top: 16px; left: 10px; content: ''; width: 4px; height: 12px; background-color: #123651;}
+.sub.tourney .tourney-info p span {position: relative; color: #333; margin-right: 8px; font-family: "NanumGothicB";}
+.sub.tourney .tourney-info p span:after {position: absolute; top: 4px; right: -6px; content: ''; width: 1px; height: 12px; background-color: #68717e;}
+.sub.tourney .tourney-info p span:last-child:after  {width: 0;}
+.sub.tourney .tab-panel {display: none;}
+.top-search-box{text-align:center;padding:15px 0 5px 0;}
+.top-search-box input{margin:0 10px;}
+/* .tourney-list .match {padding-bottom: 10px;} */
+
+/* medal-list */
+.sub.tourney .medal-list {background-color: #fff; overflow-x: scroll; padding-bottom: 7px;}
+.sub.tourney .medal-list ul {width: 800px;}
+.sub.tourney .medal-list li {padding-left: 10px; float: left; }
+.sub.tourney .medal-list span {display: inline-block; vertical-align: middle;}
+.sub.tourney .medal-list .medal {display: inline-block; vertical-align: middle; background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center -2px; width: 25px; height: 30px;}
+.sub.tourney .medal-list .player {font-family:"NanumGothicB"; color: #333; font-size:0.95em; padding-top:4px;}
+.sub.tourney .medal-list .belong {font-size: .85em; color: #999; width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top:6px;}
+.sub.tourney .guide-txt.show-film-guide,
+.sub.tourney .natfinal_tourney .guide-txt.show-film-guide {background: #8b97a0; color: #fff; font-size: 1.125em; line-height: 150%; padding: 5px; margin:6px 6px 8px; margin-bottom: 8px;}
+.sub.tourney .guide-txt.show-film-guide {font-size: 0.9em;}
+.sub.tourney .natfinal_tourney .guide-txt.show-film-guide {font-size: 0.86em;}
+
+/* show-btn */
+.sub.tourney .show-btn a {font-family: 'NanumGothicB'; background-color: #dadada; color: #797e87; text-align: center; padding-top: 7px; padding-bottom: 7px; font-size: 0.9em; border-top: 2px solid transparent;}
+.sub.tourney .show-btn li a.on {background-color: #fff; color: #164369; border-top: 2px solid #164369;}
+
+.sub.tourney .btn-guide {font-size: 12px; /*padding-top: 8px;*/ margin-bottom: 8px;}
+.sub.tourney .btn-guide p {text-align: center; width:203px; margin:0 auto 6px auto; padding:3px 0; background:#f3f3f3;}
+.sub.tourney .btn-guide p span:nth-child(2) {display: inline-block; margin-right: 10px;}
+
+.tourney-mode {width: 320px; height: 1400px; overflow: hidden; margin: 0 auto;}
+.tourney-mode.group {background-color: #fff;}
+.sub.tourney .tourney {transform-origin: left top; transform: scale(.29); }
+.sub.tourney .tourney.t-2 {transform: scale(.29) translateY(-210%);}
+.sub.tourney .tourney.t-3 {transform: scale(.29) translateY(-690%);}
+.sub.tourney .tourney.t-4 {transform: scale(.29) translateY(-870%);}
+.sub.tourney .tourney.t-5 {transform: scale(.29) translateY(-1060%);}
+.sub.tourney .tourney .match {background-color: #fff; /*padding-bottom: 15px;*/ height: 59px; padding-bottom: 0; margin-bottom: 12px;}
+
+/* show-pop */
+/*#show-tourney-pop {display: block; padding-right: 0;}*/
+#show-tourney-pop .modal-header {text-align: center; background-color: #3f505d; color: #fff; padding:7px 5px; border-radius:4px 4px 0 0;}
+#show-tourney-pop .modal-header .close {position:absolute; right:5px; width: 25px; height: 25px; color:#fff; margin-top: 0; opacity: 1;}
+#show-tourney-pop .modal-body ul {font-size:0.85em; width: 120px; margin: 0 auto; margin-top: 8px;}
+#show-tourney-pop .modal-body li {text-align: center; margin-right: 5px;}
+#show-tourney-pop .modal-body li a {background-color: #2e6da7; color: #fff; border: 1px solid #154877;}
+#show-tourney-pop .modal-body li a.so {background-color: #fff; border: none; color: #000;}
+#show-tourney-pop .pop-guide {font-family: 'NanumGothicB';text-align: center; font-size:0.9em; line-height: 20px; letter-spacing: -0.05em; margin-top: 10px;}
+#show-tourney-pop .modal-footer {background-color: #ddd; border-top: 1px solid #8e8e8e; padding:5px 10px; border-radius: 0 0 4px 4px;}
+#show-tourney-pop .modal-footer label {font-family: 'NanumGothicB'; float: left;}
+#show-tourney-pop .modal-footer label input,
+#show-tourney-pop .modal-footer label span {vertical-align: middle; font-size:0.85em;}
+#show-tourney-pop .modal-footer label input {margin-top: 0; margin-right: 5px;}
+#show-tourney-pop .modal-footer .btn {border: none; border-radius: 0; background: none; color: #000; -webkit-box-shadow: none; box-shadow: none; text-shadow: none; padding: 0; border-left: 2px solid #929292; padding-left: 10px;}
+
+#show-tourney-pop .modal-content {padding-bottom: 0;}
+
+/* 진행 준비중인 경기 안내 */
+.result-content {text-align: center;}
+.result-content .playing-now {font-size: 0.84em; color: #ff7200; overflow: hidden; padding-top: 8px; }
+
+/**
+ * S: 5명 토너먼트& 리그전 
+ */
+.sub.tourney .tourney.game-five,
+.sub.tourney .IJF_tourney .tourney {width: 1030px;}
+.sub.tourney .IJF_tourney .tourney:not(.game-five) {margin-top: -200px;}
+.tourney.game-five {padding-top: 120px; font-family:"Noto KR Bold";}
+.tourney.game-five tr {border-bottom:1px solid #666;}
+.tourney.game-five tr:last-child {border-bottom:none;}
+.tourney.game-five td {border-right:1px solid #666;}
+.tourney.game-five td:last-child {border-right:none;} 
+.tourney.game-five tr:nth-child(1) td:nth-child(1),
+.tourney.game-five tr:nth-child(1) td:nth-child(2),
+.tourney.game-five tr:nth-child(1) td:nth-child(3),
+.tourney.game-five tr:nth-child(1) td:nth-child(4)
+{background:#eeeff4;}
+.tourney.game-five tr:nth-child(2) td:nth-child(1),
+.tourney.game-five tr:nth-child(3) td:nth-child(1),
+.tourney.game-five tr:nth-child(4) td:nth-child(1)
+{background:#eeeff4;}
+.tourney.game-five tr:nth-child(1) td:nth-child(5),
+.tourney.game-five tr:nth-child(1) td:nth-child(6)
+ {background:#9396a0; color:#fff;}
+.tourney.game-five .player-info {width: 140px;}
+.tourney.game-five .right-side {vertical-align: middle; margin-top: -133px;border:4px solid #666;}
+.tourney.game-five .league-tourney .no {background-color: #333;}
+.tourney.game-five .right-side .league-tourney.group {width: 680px;}
+.tourney.game-five .right-side .player-name {font-size:16px; margin-top:7px; margin-bottom:5px;}
+.tourney.game-five .right-side .player-school {font-size:15px; max-width: 120px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.tourney.game-five .btn-write {margin-top:-3px; font-size:14px;}
+.tourney-bronze {padding-bottom:60px;}
+.tourney-bronze h4 {background:#747b82; text-align:center; width:140px; border-radius:30px; padding:10px 0; margin:28px auto 45px auto; font-size:19px; font-family:"Noto KR Bold"; color:#fff;}
+
+/* E: 5명 토너먼트& 리그전 */

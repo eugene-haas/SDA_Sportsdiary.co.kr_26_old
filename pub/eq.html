@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ <link href="/pub/js/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+  <script src="/pub/js/jquery-1.11.1.min.js"></script>
+
+ </head>
+ <body>
+  
+
+<input type="text"  name="rndno1[]"  value="1" onchange="cc(this.value)">
+<input type="text"  name="rndno1[]"  value="2" onchange="cc(this.value)">
+<input type="text"  name="rndno1[]"  value="3" onchange="cc(this.value)">
+<input type="text"  name="rndno1[]"  value="4" onchange="cc(this.value)">
+<input type="text"  name="rndno1[]"  value="5" onchange="cc(this.value)">
+
+
+<script type="text/javascript">
+<!--
+
+function cc(eqval){
+
+		var eqcnt = 0;
+		for (var i = 0;i< $('input[name="rndno1[]"]').length;i ++ )	{
+			if ( $('input[name="rndno1[]"]')[i].value == eqval ){
+				eqcnt++;
+			}
+		}
+		alert(eqcnt);
+
+
+
+		
+		//var i = $("rndno1").val(); 
+//		var eqval = $("input[name=rndno1[]]:eq(" + i + ")").val(); 
+//        console.log( i  + ":" + eqval) ;
+
+//	  $("input[name=rndno1[]]").each(function(idx){   
+//        var value = $(this).val();
+//        var eqValue = $("input[name=chk]:eq(" + idx + ")").val();
+//        console.log(value + ":" + eqValue) ;
+//      });
+
+}
+
+
+//-->
+</script>
+ </body>
+</html>

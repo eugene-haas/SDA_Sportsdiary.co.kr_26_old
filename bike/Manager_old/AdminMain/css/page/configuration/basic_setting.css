@@ -1,0 +1,13 @@
+.basic_setting .nav-tabs{border-bottom:0;}
+.basic_setting .nav-tabs>li{width:12.5%;text-align:center;}
+.basic_setting .nav-tabs>li>a{color:#333;line-height:100%;padding:15px 0; border-radius:0; -webkit-border-radius:0; -moz-border-radius:0; -ms-border-radius:0; -o-border-radius:0;background:#fff;border:1px solid #e9ecf2;margin-right:0;border-right:0;}
+.basic_setting .nav-tabs>li:last-child a{border-right:1px solid #e9ecf2;}
+.basic_setting .nav-tabs>li.active>a, .basic_setting .nav-tabs>li.active>a:focus, .basic_setting .nav-tabs>li.active>a:hover{background:#30a5ff;color:#fff;border:1px solid #2097f3;}
+.basic_setting .tab-content{margin-top:15px;}
+.basic_setting .tab-content .tab-1 .seting-list{display:table;width:100%;}
+.basic_setting .tab-content .tab-1 .seting-list ul li{border-bottom:1px solid #e9ecf2;display:table;width:100%;}
+.basic_setting .tab-content .tab-1 .seting-list ul li .l-name{max-width:230px;float:left;width:25%;padding:10px 15px;background:#f1f4f7;display:table;}
+.basic_setting .tab-content .tab-1 .seting-list ul li .l-name span{display:table-cell;vertical-align:middle;font-size:1em;}
+.basic_setting .tab-content .tab-1 .seting-list ul li .r-con{float:left;width:75%;padding:10px 15px;display:table;}
+.basic_setting .tab-content .tab-1 .seting-list ul li .r-con .middle-box{display:table-cell;vertical-align:middle;}
+.basic_setting .tab-content .tab-1 .seting-list ul li .r-con .p-ment{font-size:0.9em;color:#999;margin-bottom:10px;}

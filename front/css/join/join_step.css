@@ -1,0 +1,9 @@
+/* 회원가입 진행 사항 */
+.join-step {background-color: #fff;border-bottom: 1px solid #ddd;}
+.join-step li {position: relative;font-size: 0.95em;text-align: center;color: #666;letter-spacing: -0.09em;background-color: #fdfdfd;background-image: url(/front/imgs/join/bg-join-step.png);background-repeat: no-repeat;background-position: 100% 50%;-webkit-background-size: 10px 36px;background-size: 10px 36px;width: 33.3%;padding: 8px 0 4px;}
+.join-step li:nth-child(3) {background-image: none;}
+.join-step li.on {position: relative;font-family: "NanumGothicB";background-color: #005895;background-repeat: no-repeat;background-position: 0 50%;-webkit-background-size: 10px 36px;
+background-size: 10px 36px;color: #fff;}
+.join-step li.on:nth-child(1) {background-image: url(/front/imgs/join/bg-join-step02.png);background-position: 100% 50%;}
+.join-step li.on:nth-child(2) {margin-left: -10px;padding-left: 10px;background-image: url(/front/imgs/join/bg-join-step01.png), url(/front/imgs/join/bg-join-step02.png);background-position: 0 50%, 100% 50%;}
+.join-step li.on:nth-child(3) {background-image: url(/front/imgs/join/bg-join-step01.png);margin-left: -10px;padding-left: 10px;}

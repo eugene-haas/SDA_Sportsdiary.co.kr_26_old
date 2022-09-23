@@ -1,0 +1,23 @@
+#logo {
+  text-align: center;
+}
+
+#logo a {
+  text-decoration: none;
+  color: #333;
+}
+
+#menu ul li {
+  display: inline-block;
+}
+
+#menu ul li a {
+  color: #333;
+}
+
+#menu ul li:hover a,#menu ul li.active a {
+  background-color: #3e5998;
+  color: #FFF;
+}
+
+/*# sourceMappingURL=../maps/sd_part/header.css.map */

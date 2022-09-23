@@ -1,0 +1,13 @@
+.popContent { padding: 20px; position:relative; width:100%; }
+
+.pop-table { width:100%; text-align:center; border-top:1px solid #ced5e3; border-left:1px solid #ced5e3;}
+.pop-table thead th { font-family: 'NanumGothicB'; font-size:13px; text-align: center; background:#e1e7f0; border-right:1px solid #ced5e3; border-bottom:2px solid #ced5e3;height:39px;}
+.pop-table tbody tr:nth-child(odd) { background:#fff;}
+
+.pop-table tbody th { height:34px; color:#94a4be; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3;}
+.pop-table tbody td {color:#3e4e68; border-right:1px solid #ced5e3; border-bottom:1px solid #ced5e3; vertical-align: middle; height:39px; padding:10px;}
+.pop-table tbody td input { height:35px; width:72%;}
+.pop-table tbody td span { font-size:13px}
+.pop-table tbody td div { height:163px; overflow:auto; overflow-x:hidden;}
+.pop-table tbody td p { height:25px; font-size:16px;}
+.pop-table .no-data td {font-size: 14px;background-color: #f2f2f2;padding-top: 5px;padding-bottom: 5px;}

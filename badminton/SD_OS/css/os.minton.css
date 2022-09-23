@@ -1,0 +1,28 @@
+/**
+ * 배드민턴 경기입력 css
+ */
+/* 세팅, 리셋 */
+@import url('./minton/reset.css');
+
+/* 헤더 */
+@import url('./minton/header.css');
+
+/* 메인 - 선수 선택 */
+/*@import url('./minton/sel_player.css');*/
+
+/* 그 외 판정결과 */
+/*@import url('./minton/another_result.css');*/
+
+/* 스코어 보드 */
+@import url('./minton/scoreboard.css');
+
+/* 그 외 판정결과 모달 */
+@import url('./minton/another_result_modal.css');
+
+/* 점수입력 버튼 */
+@import url('./minton/point_btn.css');
+
+/* 경기입력 높이 조절 미디어 쿼리 */
+@import url('./minton/media360.css');
+
+/* 배트민턴 경기입력 */

@@ -1,0 +1,71 @@
+/* 초기화 */
+.fc-toolbar {height: 0; margin: 0;}
+.fc-scroller {height: 100%!important;}
+/* 초기화 */
+.calendar-header {width: 100%;box-sizing: border-box;padding-top: 0.8em;/* padding-bottom:1em; */background:#fff;}
+.calendar-header .prev-btn, .calendar-header .next-btn {padding: .2em 1.4em;border: 1px solid #d4d4d4;font-family: 'NanumGothicB';font-size: 0.7em;}
+.calendar-header .prev-btn {position: absolute; left: 0px; border-top-left-radius: 2px; border-bottom-left-radius: 2px; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+10,eaeaea+100 */background: #ffffff; /* Old browsers */background: -moz-linear-gradient(top, #ffffff 10%, #eaeaea 100%); /* FF3.6-15 */background: -webkit-linear-gradient(top, #ffffff 10%,#eaeaea 100%); /* Chrome10-25,Safari5.1-6 */background: linear-gradient(to bottom, #ffffff 10%,#eaeaea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+}
+.calendar-header .next-btn {position: absolute; right: 0px;border-top-right-radius: 2px;border-bottom-right-radius: 2px;/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+10,eaeaea+100 */background: #ffffff; /* Old browsers */background: -moz-linear-gradient(top, #ffffff 10%, #eaeaea 100%); /* FF3.6-15 */background: -webkit-linear-gradient(top, #ffffff 10%,#eaeaea 100%); /* Chrome10-25,Safari5.1-6 */background: linear-gradient(to bottom, #ffffff 10%,#eaeaea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */}
+
+.calendar-header .institute .date {display:inline-block; text-align:center;}
+.calendar-header .institute .date select {padding-left:0;}
+.calendar-header .institute .date .year {font-size:17px; border: none;color: #000;width: 92px; padding-left: 1.25em;margin-right:5px; height: 30px; -webkit-appearance: none; appearance: none;}
+.calendar-header .institute .date .month {font-size:17px; border: none;color: #000;width: 92px; padding-left: 1.25em;margin-right:5px; height: 30px; -webkit-appearance: none; appearance: none;}
+.calendar-header .institute .date .caret {margin-left: -25px; margin-right: 10px;}
+.calendar-header .month {width: 40%;margin-right:0.75em;font-size: 1.2em;font-family: 'nanumGothicB';}
+.calendar-header .line-1.institute .month {font-size: 1.1em;font-family: 'NotoKR-md'; margin-right:0;}
+.calendar-header .line-1 {padding-bottom: 0.4em;}
+.calendar-header .line-1 .select-list {position: relative; width: 100%;}
+.calendar-header .line-1.institute .select-list {position: relative; display: inline-block; width: 100%; width:82%; text-align:center;}
+.calendar-header .institute .today-btn {background-color: #428bca;border: none;border-radius: 2px;font-family: 'NotoKR-bd';font-size: 0.80em;font-weight: bold;color: #fff;padding: 0.23em 0.8em;vertical-align: middle;float: right;width: 15%;}
+
+.calendar-header .line-1.institute .today-btn {background-color: #428bca;border: none;border-radius: 2px;font-family: 'NotoKR-dl';font-size: 0.8em; color: #fff;padding: 0.36em 0.8em 0.1em; vertical-align: middle;float: right; width: 15%; line-height:25px; letter-spacing:-0.06em;}
+.calendar-header .line-2 select {width: 100%; padding-left: 10px; box-sizing: border-box;}
+.calendar-header .line-3 ul {position:relative; margin-top: 5px;margin-bottom: 5px;float: right;}
+.calendar-header .line-3 li {padding-right: 10px; /* border-right: 2px solid #ddd; */ margin-right: 10px; float: left;}
+.calendar-header .line-3 li:last-child {border-right: none; padding-right: 0; margin-right: 0;}
+.calendar-header .line-3 li a {width: 20px;}
+.calendar-header .line-3 li:after {position:absolute; top:4px; right:31px; height:19px; content:'';  border-right: 2px solid #dddddd;}
+
+.fc-toolbar { margin-bottom:2px!important; height: 0px;}
+
+/**
+ * --------------------------------
+ * 팝 오버
+ * --------------------------------
+ */
+.pop {border-top: 1px solid #ddd; font-size: 0.85em; letter-spacing: -0.09em;}
+.pop dl { height:25px;}
+.pop dt {/* margin: 0.83em 0; */}
+.pop dt span {display: inline-block; vertical-align: middle; font-weight: bold;}
+.pop dt span:first-child {width: 20%; vertical-align: top; margin-left: 10px;}
+.pop dt span:nth-child(2) {width: 60%;}
+.pop dt .icon-slide {width: 38px; margin-right: 10px; float: right;}
+.pop {position: relative; background-color: #eaeaea; padding-top: 15px; padding-bottom: 15px;}
+.pop .sch-itemcon {position: absolute; top: 15px; right: 10px; width: 35px;}
+.pop .sch-btn-list.bluey .btn {background-color: #3a87ad;}
+.pop .sch-btn-list.bluey .btn:hover, .pop .sch-btn-list.bluey .btn:focus, .pop .sch-btn-list.bluey .btn:active {color: #fff;}
+.pop .sch-btn-list.greeny .btn {background-color: #67af3c;}
+.pop .sch-btn-list.browny .btn {background-color: #bf8528;}
+.pop .sch-btn-list.orangy .btn {background-color: #d14500;}
+
+/**
+ * --------------------------------
+ * fullcalendar 편집
+ * --------------------------------
+ */
+.fc th {font-size: 0.75em; background-color: #e7e7e7;}
+.fc-ltr .fc-basic-view .fc-day-number {font-size: 0.75em;}
+/* 일요일 */
+.fc th:first-child {color: #e82727;}
+/* 토요일 */
+.fc th:last-child {color: #1462c2;}
+/* 이벤트 표시 영역 */
+.fc-day-grid-event .fc-content {font-size: 0.85em;}
+
+/**
+ * --------------------------------
+ * 일정표 이미지 모달
+ * --------------------------------
+ */

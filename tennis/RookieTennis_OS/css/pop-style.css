@@ -1,0 +1,18 @@
+.group-modal .display-board ul {width: 256px; padding: 0; margin: 0; margin-top: 30px; margin-bottom: 30px; float: left;}
+.group-modal .display-board .win {background-image: url('../images/tournerment/tourney/win.svg'); background-repeat: no-repeat; -webkit-background-size: 36px 14px; background-size: 36px 14px; background-position: center 0;}
+.group-modal .display-board .away {color: #15dbff;}
+.group-modal .display-board li {line-height: 100%; font-weight: bold; width: 100%; float: none;}
+.group-modal .display-board li:first-child {font-family: 'Noto KR Bold'; font-size: 26px; padding-top: 21px; margin-top: 0; margin-bottom: 11px;}
+.group-modal .display-board li:last-child {font-family: 'Noto KR Black'; font-size: 42px;}
+.group-modal .display-board .v-s {font-family: 'Noto KR Bold'; font-size: 44px; width: auto; height: 100%; line-height: 100%; padding-top: 65px; margin: 0; float: left;}
+
+.group-modal .record {position: relative; background-color: #fff; height: 300px; padding-top: 20px; padding-bottom: 20px;}
+.group-modal .record ul {border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+.group-modal .record ul li {text-align: center; width: 77px; height: 35px; line-height: 35px; border-right: 1px solid #ccc; padding-bottom: 0; float: left;}
+.group-modal .record ul li:last-child {border-right: none;}
+.group-modal .record .home-team,
+.group-modal .record .away-team {float: left;}
+.group-modal .record .v-s {position: fixed; top: 62%; left: 46%; font-family: 'Noto KR Bold'; font-size: 20px; color: #030c18; }
+.group-modal .record ul:nth-child(2n-1) {background-color: #f3f2f2;}
+.group-modal .home-team ul.title {background-color: #b9b9b9; border-top: 1px solid #ccc;}
+.group-modal .away-team ul.title {background-color: #b9d4e4;}

@@ -1,0 +1,12 @@
+.participate .navi-tp-table td {font-size: 14px;width: 43%;}
+.participate .navi-tp-table .con {display: inline-block;vertical-align: middle;width: auto;}
+.participate .navi-tp-table .con .ipt-word {width: 420px;}
+.participate .navi-tp-table label {margin-bottom: 0;}
+.participate .navi-tp-table label input {vertical-align: middle;width: 20px;height: 20px;margin-top: 0;}
+.participate .navi-tp-table .sub_txt {display: inline-block;vertical-align: middle;margin-right: 10px;}
+
+.table-list.participate td:nth-child(1) {width: 60px;}
+.table-list.participate td:nth-child(2) {width: 120px;}
+.table-list.participate td:nth-child(3) {width: 500px;}
+.table-list.participate td:nth-child(4) {width: 80px;}
+.table-list.participate td:nth-child(5) {width: 100px;}

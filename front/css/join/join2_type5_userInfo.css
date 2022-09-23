@@ -1,0 +1,7 @@
+/* 회원정보 입력 join2_type5_userInfo : 추가정보; */
+.join-form .hang-deco {position: relative;}
+.join-form .hang-deco .over-txt {width: 59%;}
+@media (max-width: 359px) and (min-width: 320px) {
+ .join-form .sports-start.hang-deco .over-txt input {width: 100%;}
+} /* 운동 시작년도 overwrite */
+.join-form .txt-deco {position: absolute;top: 30%;right: 20px;color: #888;font-size: 0.88em;}

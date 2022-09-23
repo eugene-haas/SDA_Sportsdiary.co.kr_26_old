@@ -1,0 +1,79 @@
+<!-- #include file="../include/config.asp" -->
+
+  <body>
+    <!-- S: container_body -->
+    <div class="part_main tennis_part">
+      <!-- S: header -->
+      <!-- #include file = '../include/header_sub_left.asp' -->
+      <h1>SD 칼럼</h1>
+      <!-- #include file = '../include/header_sub_right.asp' -->
+      <!-- E: header -->
+
+      <!-- S: main -->
+      <div class="main gray_bg">
+        <!-- S: include gnb -->
+        <!--
+        <span class="srch_box">
+        <input type="text" class="search_box" placeholder="검색어를 입력해 주세요">
+        </span>
+        -->
+        <!-- #include file = "../include/gnbType/player_gnb.asp" -->
+        <!-- E: include gnb -->
+
+        <!-- s: view 시작 -->
+        <div class="column_story_view">
+					<p class="view_name">정현, ASB클래식 1회전서 에드먼드 와 또 만나 네 번째로 상대전적</p>
+					<div class="date">
+						<span>기사입력일</span>
+						<span class="date_line"></span>
+						<span>2018.01.10</span>
+					</div>
+					<div class="source">
+						<span>출처</span>
+						<span class="date_line"></span>
+						<span>한국테니스연맹</span>
+					</div>
+					<!-- s: photo 뷰 -->
+					<div class="img">
+						<img src="../images/media/view_photo.png" alt=""/>
+					</div>
+					<!-- s: photo 뷰 -->
+					<!-- s: video 뷰 -->
+					<div class="img">
+						<iframe width="100%" height="191" src="https://www.youtube.com/embed/1kJnzcBIxEA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+					</div>
+					<!-- s: video 뷰 -->
+					<div class="con_txt">
+						<pre>
+							[테니스코리아= 박준용 기자]정현(한국체대, 삼성증권 후원, 58위)이 다음 주 뉴질랜드 오클랜드에서 열리는 ATP투어 250시리즈 ASB클래식 본선 1회전에서 카일 에드먼드(영국, 50위)와 또 만난다.
+ 
+							정현은 지난 1월 4일 브리즈번인터내셔널 2회전에서 에드먼드에게 6-7(3) 7-5 4-6으로 패했다. 이 경기에서 정현은 에드먼드의 강력한 서브와 포핸드 스트로크에 당하며 풀세트 접전 끝에 아쉽게 졌다. 에드먼드는 8강에서 톱시드 그리고르 디미트로프(불가리아, 3위)에게 무릎을 꿇었다.
+							 
+							정현과 에드먼드가 맞대결을 펼치는 것은 이번이 네 번째로 상대전적은 2승 1패로 에드먼드가 앞서 있다.
+							 
+							첫 만남이었던 2015년 버니챌린저 8강에서는 정현이 6-3 6-2로 승리했고 두 번째 대결인 지난해 시티오픈 1회전에서는 에드먼드가 6-3 6-1로 이겼다.
+							 
+							올해 22세 에드먼드는 2012년 프로에 데뷔했고 챌린저와 퓨처스에서 각각 5차례 정상에 올랐다. 투어에서 우승한 적은 없다.
+							 
+							그랜드슬램 최고 성적은 2016년 US오픈에서 기록한 16강이다. 당시 세계 84위였던 에드먼드는 리샤르 가스켓(프랑스, 당시 15위), 존 이스너(미국, 당시 21위) 등을 제압하는 이변을 연출했다.
+						</pre>
+					</div>
+				</div>
+				<!-- s: view 끝 -->
+
+      </div>
+      <!-- E: main -->
+
+
+      <!-- S: main_footer -->
+      <!-- #include file = '../include/main_footer.asp' -->
+      <!-- E: main_footer -->
+
+    </div>
+    <!-- E: container_body -->
+
+    <!-- S: bot_config -->
+    <!-- #include file = "../include/bot_config.asp" -->
+    <!-- E: bot_config -->
+  </body>
+</html>

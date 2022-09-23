@@ -1,0 +1,24 @@
+/* match diary 대회일지 */
+.match {padding:0 0 50px; background:#edf0f4;}
+.tourney-list .match {padding-bottom: 20px;}
+.match .top-icon-menu > ul {width:85%;margin: 0 auto;}
+.match .calendar-header {border-bottom:1px solid #ddd;padding-bottom: 10px;}
+.navyline-top-list li .list-info .cut-off {margin: 8px 0;display: inline-block;background-color: #6a7780;color: #fff;font-weight: normal;border-radius: 20px;text-align: center;width: 22%;margin-right: 2px;}
+.navyline-top-list li .list-info .cut-off img {width: 13px;margin-top: -5px;margin-left: 4px;}
+.navyline-top-list li .list-info span {position: relative;padding-right: 5px;/*margin-right: 5px;*/font-size: 0.95em;font-family: 'nanumGothicB';}
+.navyline-top-list li .list-info .subs.last-of-type:after {}
+.navyline-top-list li .list-info span:after {position: absolute; top: 5px; right: 0px; content: ''; width: 1px; height: 60%; background-color: #ccc;}
+.navyline-top-list li .list-info span:last-of-type:after {background:none;}
+.navyline-top-list li .list-info .cut-off:after,
+.navyline-top-list li .list-info span span:after,
+.navyline-top-list li .list-info span:nth-child(5):after {width:0;}
+.navyline-top-list li .btn-or.match {display:inline-block;float:right;margin:5px 0 0 0;background:#ff7200;font-size: 0.75em;padding: 0 5px;height: 30px;line-height: 2.4em;}
+.match .navy-top-table {margin-bottom:0px;}
+/*.sub.match .container {padding-bottom:50px;}*/
+
+.navyline-top-list .show-film {display: inline-block; background-color: #ff7200;border: 1px solid #ff7200; /* padding-left: .5em; *//* padding-right: .5em; *//* padding-top: .32em; */ padding-bottom: .32em;text-align: center;width: 40px; float: right; margin-top:4px;}
+.navyline-top-list .show-film img { width: 43%;}
+
+
+
+

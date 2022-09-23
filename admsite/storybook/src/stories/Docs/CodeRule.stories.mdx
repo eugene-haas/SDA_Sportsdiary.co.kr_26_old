@@ -1,0 +1,228 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/CodeRule" />
+
+import '@/stories/assets/mdx_style.css';
+
+# CodeRule of 위드라인
+
+위드라인의 기본적인 코드규칙 입니다.
+
+## 시작하기에 앞서...
+
+본 규칙는 직원들의 협의를 통해 언제든 변경 가능합니다.<br/>
+본 규칙을 통해 프로젝트의 **코드 품질**과 **유지보수 난이도**를 조절합니다.<br/><br/>
+
+성능 향상 및 가독성 증가를 위해서 **본 규칙은 위배** 될 수 있습니다.<br/>
+(단. 확고한 근거가 존재해야한다. - 주석으로 설명 필수)<br/><br/>
+
+**기존 프로젝트의 코드 규칙을 따르는 것을 우선시**합니다.<br/>
+(본 규칙은 앞으로의 프로젝트에 해당 / 2021-01-19 이후 프로젝트에 유효합니다.)<br/>
+
+### 목차
+#### 1. [명명규칙](#1-명명규칙-1)
+##### 1-1. 사용 권장 단어
+##### 1-2. 함수명은 camelCase(lower) 사용
+##### 1-3. define 변수명은 모두 대문자로
+##### 1-4. 지정된 약어 이외의 약어 사용 x
+#### 2. [금지요소](#2-금지요소-1)
+##### 2-1. JavaScript
+##### 2-2. JavaScript(Vue)
+##### 2-3. HTML, CSS
+#### 3. [기타규칙](#3-기타규칙-1)
+##### 3-1. 함수(메소드) 위에는 무조건 주석 달기
+##### 3-2. 다른 개발자의 코드 수정할 때는 주석 달기(유지보수)
+
+
+## 1. 명명규칙
+### 1-1. 사용 권장 단어
+| 긍정 | 긍정 설명 | 부정 | 부정설명 | 비고 |
+|:---:|:---|:---:|:---|:---|
+| Create | 생성 |  Destroy | 파괴 |  |
+| Open | 열다 |  Close | 닫다 |  |
+| Init | 초기화 | Final | 마지막 |  |
+| Play | 시작 | Stop | 정지 |  |
+| Get | 얻음 | Set | 넣음 |  |
+| Add | 추가 | Remove | 삭제 |  |
+| Insert | (중간에) 삽입 | Delete | 삭제 |  |
+| Suspend | 일시 정지 | Resume | 재시작 |  |
+| Begin | 시작 | End | 끝 |  |
+| First | 처음 | Last | 끝 |  |
+| Next | 이전 | Previous | 다음 |  |
+| Increment | 증가 | Decrement | 감소 |  |
+| Old | 이전 | New | 새로 |  |
+| Up | 상 | Down | 하 |  |
+| Min | 최소 | Max | 최대 |  |
+| Show | 보여줌 | Hide | 가림 | display |
+| FadeIn | 보여줌 | FadeOut | 가림 | opacity |
+
+### 1-2. 함수명은 camelCase(lower) 사용
+여러 단어가 합쳐 졌을때는 각 단어의 시작은 모두 대문자 (첫글자는 소문자)
+~~~js
+connectToTheServer();
+sendToMetaData();
+~~~
+
+### 1-3. define 변수명은 모두 대문자로
+~~~js
+//대문자와 단어 사이에 '_' 를 붙인다.
+const       G_START_YEAR         = 2020;        // 측정 검색 범위(2020 ~ currentYear)
+const       G_PAGE_PER_CNT       = 30;          // 전역 리스트 개수 변수
+const       G_PAGE_PER_CNT_MIN   = 7;           // 전역 리스트 개수 변수 - 화면 맞춤
+const       G_MODAL_DURATION     = 300;         // 전역 모달 duration 0.3초
+~~~
+### 1-4. 지정된 약어 이외의 약어 사용 x
+<details>
+<summary>약어 보기</summary>
+<div markdown="1">
+
+| 단어 | 약어 |
+|:---:|:---|
+| string | str |
+| number | num |
+| object | obj |
+| array | ary |
+| count | cnt |
+| legnth | len |
+| contents | con |
+| value | val |
+| current | cur |
+| request | req |
+| previous | prev |
+| table | tbl |
+| button | btn |
+| arrow | arr |
+
+</div>
+</details>
+
+## 2. 금지요소
+### 2-1. JavaScript
+#### 1) 특정 es6이상 문법 금지
+~~~js
+//화살표함수 금지
+setTimeout(()=>{
+   console.log('hi');
+}, 300);
+// async await 금지 등등
+~~~
+#### 2) var 금지
+* let, const 사용하세요.
+#### 3) map, reduce 금지(filter, find 가능)
+ * find쓸때 default 값 지정하세요.(filter는 없을 경우 [])
+~~~js
+let val = list.find(function(obj){
+   return obj.seq === arr[i].seq
+}) || 0; // 없을경우 0
+~~~
+
+#### 4) 세미콜론(;) 생략 금지
+예외상황
+~~~js
+//함수선언
+let function1 = function awesome (){
+
+}
+~~~
+
+#### 5) 최대한 엄격한 비교 연산자 사용
+~~~js
+//x
+if(x==y){
+
+}
+
+//o
+if(x===y){
+
+}
+~~~
+
+
+### 2-2. JavaScript(Vue)
+#### 1) v-bind, v-on 금지
+ * :, @ 약어 사용하세요.
+ * [Vue.js 약어 공식문서 참고](https://kr.vuejs.org/v2/guide/syntax.html#%EC%95%BD%EC%96%B4)
+#### 2) v-text 금지
+ * {{}} 쓰세요.
+#### 3) 모듈(컴포넌트) 사용 금지
+#### 4) methods를 사용할 때 @ event 안에서 ()생략 금지
+ * computed와 구분하기 위해서
+#### 5) Jquery 사용 금지
+ * DOM 접근은 vue의 ref를 이용하세요. [Vue.js ref 공식문서 참고](https://kr.vuejs.org/v2/guide/components-edge-cases.html#%EC%9E%90%EC%8B%9D-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%B0%8F-%EC%9A%94%EC%86%8C%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0)
+#### 6) vue 속성 순서
+1. 반복문 관련
+ - v-for="" / :key=""
+2. 디스플레이 관련
+ - v-if="" / v-else / v-show=""
+3. 이벤트 관련
+ - @click="" ...
+4. 콘텐츠 관련
+ - v-model="" / v-html=""
+5. 상태(이름) 관련
+ - :id="" / :class="" / class="" / :name=""
+6. 나머지
+ - src, href 등
+~~~html
+<div v-for="" :key="" v-if="" v-else v-show="" @click="" v-model="" v-html="" :id="" :class="" class="" :name="" ...rest>
+</div>
+~~~
+
+### 2-3. HTML, CSS
+#### 1) inline style 금지
+~~~html
+<div style="width: 100px ...">
+</div>
+~~~
+#### 2) 자손 선택자 금지
+* [효율적인 CSS 작성 방법](https://webclub.tistory.com/361) 참고
+* [StyleGuide](/?path=/story/docs-styleguide--page) 참고
+~~~css
+/* 사용 x */
+.class div{}
+
+/* 사용 o */
+.class__con{}
+~~~
+
+## 3. 기타규칙
+### 3-1. 함수(메소드) 위에는 무조건 주석 달기
+~~~js
+/* -----------------------------------------------------------------------------------
+      ajax call 데이터 요청
+   ---------------------------------------------------------------------------------- */
+reqData: function() {
+   ...
+},
+~~~
+
+### 3-2. 다른 개발자의 코드 수정할 때는 주석 달기(유지보수)
+~~~js
+//페이지 맨 위에
+/* -----------------------------------------------------------------------------------
+      수정 이력
+	· 2021-01-06 : M1(수정 코드)
+		: 개최국 표시형식 변경 by chansoo
+		: 삭제함수 : 없음
+		: 수정함수 : getStrRegionInfo
+   ----------------------------------------------------------------------------------- */
+
+//해당 코드 수정할 때 마다 밑에 주석 달기
+// M1 개최국 표시형식 변경 by chansoo
+// else strInfo = utx.sprintf("{0} / {1}", strInfo, info.sido);
+// [국내·국외]/나라명("{0} / {1}") -> [국내·국외]나라명("{0}{1}")
+~~~
+
+### 3-3. tab 크기는 각 프로젝트의 정해진 값으로
+### 3-4. asp include
+ * include는 공통으로 사용할때만 사용(예외: content include)
+ * 지정된 include 폴더에 작성(루트가 다를경우 include파일에 자신이 사용되는 소스위치 적어두기)
+
+
+## 본 문서 작성자
+
+* **chansoo** - *Initial work* - 2021-01-19
+
+## Acknowledgments
+
+*

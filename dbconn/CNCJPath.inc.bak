@@ -1,0 +1,3 @@
+<% 
+strOraConnect = "DSN=dragoncon;UID=withlf;PWD=withlf123;"
+%>

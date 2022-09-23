@@ -1,0 +1,3517 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, Chrome=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <title>스포츠 다이어리</title>
+    <meta name="apple-mobile-web-app-title" content="스포츠 다이어리">
+    <!-- font-awesome -->
+    <link rel="stylesheet" type="text/css" href="css/library/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/library/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery.oLoader.min.js"></script><!--로딩바-->
+    <script type='application/javascript' src='js/fastclick.js'></script><!--클릭반응속도up-->
+    <script src="js/bootstrap.js"></script>
+
+    <script src="js/global.js"></script>
+    <script>
+    /*script 시작부 로 검색*/
+
+      if ('addEventListener' in document) {
+          document.addEventListener('DOMContentLoaded', function() {
+              FastClick.attach(document.body);
+          }, false);
+      }
+
+      /*--------------------$(document).ready(function()--------------------*/
+      $(document).ready(function()
+      {
+        //해당라운드 스코어 조회해야할 정보 가져오기 (localStorage 정보)
+        var varGameTitleIDX = localStorage.getItem("GameTitleIDX");
+        var varTeamGb = localStorage.getItem("TeamGb");
+        var varSex = localStorage.getItem("Sex");
+        var varLevel = localStorage.getItem("Level");
+        var varGroupGameGb = localStorage.getItem("GroupGameGb");
+        var varPlayerGameNum = localStorage.getItem("PlayerGameNum");
+        var varPlayRound = parseInt(localStorage.getItem("PlayRound"));
+        var varGroupRound = parseInt(localStorage.getItem("GroupRound"));
+
+
+
+        //페이지 진입시 선택된 값 리셋
+        localStorage.setItem("LJGubun","");
+        localStorage.setItem("LJJumsu","");
+        localStorage.setItem("SkillLeftRight","");
+
+        if(!localStorage.getItem("UserId") && !localStorage.getItem("HostCode")){
+
+          $("#DP_Logout").css("display","none");
+
+        }
+        else{
+
+          $("#DP_Logout").css("display","");
+        }
+
+        //중고연맹
+        if(localStorage.getItem("HostCode") == "sd053002"){
+          $("#DP_UserLogo").attr("src","images/tournerment/intro/logo_kjhs.png");
+          $("#DP_UserLogo").css("display","");
+        }
+        //대학연맹
+        else if(localStorage.getItem("HostCode") == "sd053003"){
+          $("#DP_UserLogo").attr("src","images/tournerment/intro/logo_kujf.png");
+          $("#DP_UserLogo").css("display","");
+        }
+        //서울특별시유도
+        else if(localStorage.getItem("HostCode") == "sd053006"){
+          $("#DP_UserLogo").attr("src","images/tournerment/intro/logo_sja.png");
+          $("#DP_UserLogo").css("display","");
+        }
+        else if(localStorage.getItem("UserId") == "sportsdiary" || localStorage.getItem("HostCode") == "sd053001"){
+          $("#DP_UserLogo").attr("src","images/tournerment/intro/logo_kja.png");
+          $("#DP_UserLogo").css("display","");
+        }
+        
+
+        //개인전은 GroupGameNum = 0
+        if(localStorage.getItem("GroupGameGb") == "sd040001"){
+          localStorage.setItem("GroupGameNum","0");
+        }
+
+
+        //개인전일때 양선수 불참버튼, 단체전일때 무승부 버튼으로 바뀜
+        if(localStorage.getItem("GroupGameGb") == "sd040001"){
+          $("#DP_DualResult_Text").html("불참");
+          $("#LRResult_Draw").attr("class", "tgClass no-attend");
+          
+        }
+        else{
+          $("#DP_DualResult_Text").html("무승부");   
+          $("#LRResult_Draw").attr("class", "tgClass draw");          
+        }
+
+        //S:해당경기 정보가져오기
+        function loadgametitle(){
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+          obj.TeamGb = localStorage.getItem("TeamGb");
+          obj.Sex = localStorage.getItem("Sex");
+          obj.Level = localStorage.getItem("Level");
+          obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.SportsGb = localStorage.getItem("SportsGb");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+
+          if(localStorage.getItem("GroupGameGb") == "sd040001"){
+            obj.PlayRound = localStorage.getItem("PlayRound");
+          }
+          else{
+            obj.PlayRound = "0";
+          }
+
+          var jsonData = JSON.stringify(obj);
+
+          
+
+          var events = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/GGameTitle.ashx',
+            type: 'post',
+            data: jsonData,
+            async:false,
+            success: function (sdata) {
+
+              var myArr = JSON.parse(sdata);
+
+              if (myArr.length > 0){
+
+                //타이틀
+                $("#DP_play-title").html("<span>"+ myArr[0].GameTitleName + "</span>");                               
+            
+
+                //개인전
+                $("#DP_play-division").html(myArr[0].GroupGameGbName);
+                //고등학교
+                //$("#DP_play-belong").html(myArr[0].TeamGbName);
+
+
+                $("#DP_play-belong").html("<span>" + myArr[0].TeamGbName + "</span>");            
+                
+
+                //남자
+                //$("#DP_play-type").html(myArr[0].SexName + " " + myArr[0].LevelName );
+                $("#DP_play-type").html( myArr[0].LevelName );
+                //16강
+                if(myArr[0].TotRoundName == "2"){
+                  $("#DP_play-round").html("결승");
+                }
+                else if(myArr[0].TotRoundName == "4"){
+                  $("#DP_play-round").html("준결승");
+                }
+                else if(myArr[0].TotRoundName == ""){
+                  $("#DP_play-round").html("- 강");
+                }
+                else
+                {
+                  $("#DP_play-round").html(myArr[0].TotRoundName + "강");
+                }
+                //라운드
+                $("#DP_play-num").html(varPlayerGameNum + "경기");
+
+                //alert(myArr[0].StadiumNumber);
+
+                //경기장 번호 체크
+                /*
+                if (myArr[0].StadiumNumber != "")
+                {
+                  //$("#LB_GYM" + myArr[0].StadiumNumber).attr("class","on");
+                  $.each($("label[name='LB_GYM']"), function() {
+                    if ($(this).attr("data-id") == myArr[0].StadiumNumber)
+                    {
+                      $(this).attr("class","on");
+                    }
+                    else{
+                      $(this).attr("class","");
+                    }
+                  });
+                }
+                */
+
+                localStorage.setItem("RGameLevelidx",myArr[0].RGameLevelidx);
+                localStorage.setItem("GameType",myArr[0].GameType);
+                localStorage.setItem("AreaNameUseYN",myArr[0].AreaNameUseYN);
+              }
+              else{
+                alert('진행 중인 경기 정보가 없습니다.');
+              }
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();           
+        }
+        //E:해당대회 날짜 가져오기
+
+        //S:해당경기 정보가져오기
+        var loadscore=function(){
+
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+            obj.GameType = localStorage.getItem("GameType");
+            obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+
+            var jsonData = JSON.stringify(obj);
+
+            console.log(jsonData);
+
+            var events = "";
+
+            var arrayWinplayer = winplayer_select();  //승리한 선수 가져오기
+
+            $.ajax({
+                url: '/ajax/judo_os/GGameScoreDetail.ashx',
+                type: 'post',
+                data: jsonData,
+                async:false,
+                success: function (sdata) {
+
+                console.log("선수:" + sdata);
+                  
+                  var myArr = JSON.parse(sdata);
+
+                  console.log("1s:" + sdata);
+
+                  //양선수 무승부 및 부전패 일때는 불참자로 처리한다.
+                  var varNojoin1_PlayerIDX = "";
+                  var varNojoin2_PlayerIDX = "";
+                  var varNojoin1_PlayerNum = 0;
+                  var varNojoin2_PlayerNum = 0;
+                  var varNojoin1_Team = "22369";
+                  var varNojoin1_TeamDtl = "22369";
+                  var varNojoin2_Team = "22369";
+                  var varNojoin2_TeamDtl = "22369";
+                  var varNojoin1_UserName = "불참자";
+                  var varNojoin2_UserName = "불참자";
+
+                  if(localStorage.getItem("Sex") == "Man"){
+                    //남자불참자 IDX
+                    varNojoin1_PlayerIDX = "1496";
+                    varNojoin2_PlayerIDX = "1499";
+                  }
+                  else{
+                    //여자불참자 IDX
+                    varNojoin1_PlayerIDX = "1497";                      
+                    varNojoin2_PlayerIDX = "1500";
+                  }
+
+                  if (myArr.length > 0){
+
+                    //이전 경기가 양선수불참, 양선수무승부일때 선수목록이 myArr.length 1로 나옴 
+                    if (myArr.length == 1)
+                    {
+                      //도복색 결정
+                      if (myArr[0].PlayerLeftRight == "Left")
+                      {
+                        teamcolor = "white";
+                      }
+                      else{
+                        teamcolor = "blue";
+                      }
+
+                      var strSchoolName_0 = myArr[0].SchoolName;
+
+                      //조(A조,B조) 로 등록 되어있을경우 소속 뒤에 조이름 추가
+                      if (myArr[0].TeamDtl != "0")
+                      {
+                        strSchoolName_0 = strSchoolName_0 + myArr[0].TeamDtl;
+                      }
+
+                      if(localStorage.getItem("AreaNameUseYN") == "Y")
+                      {
+                        strSchoolName_0 = myArr[0].TeamSidoNm;
+                      }
+
+
+                      if(teamcolor == "white"){
+
+                        $("#DP_player-name_Up").html(myArr[0].UserName + "<span>(" + strSchoolName_0 + ")</span>");
+                        $("#DP_player-name_Down").html(varNojoin1_UserName);
+
+                        localStorage.setItem("LPlayerIDX",myArr[0].PlayerIDX);
+                        localStorage.setItem("LPlayerNum",myArr[0].PlayerNum);
+                        localStorage.setItem("LTeam",myArr[0].Team);
+                        localStorage.setItem("LTeamDtl",myArr[0].TeamDtl);
+                        localStorage.setItem("LPlayerName",myArr[0].UserName);
+
+                        localStorage.setItem("RPlayerIDX",varNojoin1_PlayerIDX);
+                        localStorage.setItem("RPlayerNum",varNojoin1_PlayerNum);
+                        localStorage.setItem("RTeam",varNojoin1_Team);
+                        localStorage.setItem("RTeamDtl",varNojoin1_TeamDtl);
+                        localStorage.setItem("RPlayerName",varNojoin1_UserName);
+
+                      }
+                      else{
+
+                        $("#DP_player-name_Up").html(varNojoin1_UserName);
+                        $("#DP_player-name_Down").html(myArr[0].UserName + "<span>(" + strSchoolName_0 + ")</span>");
+
+                        localStorage.setItem("LPlayerIDX",varNojoin1_PlayerIDX);
+                        localStorage.setItem("LPlayerNum",varNojoin1_PlayerNum);
+                        localStorage.setItem("LTeam",varNojoin1_Team);
+                        localStorage.setItem("LTeamDtl",varNojoin1_TeamDtl);
+                        localStorage.setItem("LPlayerName",varNojoin1_UserName);
+
+                        localStorage.setItem("RPlayerIDX",myArr[0].PlayerIDX);
+                        localStorage.setItem("RPlayerNum",myArr[0].PlayerNum);
+                        localStorage.setItem("RTeam",myArr[0].Team);
+                        localStorage.setItem("RTeamDtl",myArr[0].TeamDtl);
+                        localStorage.setItem("RPlayerName",myArr[0].UserName);                      
+                      }
+
+
+                    }
+                    //정상경기 myArr.length 2
+                    else
+                    {
+
+                      var strSchoolName_0 = myArr[0].SchoolName;
+                      var strSchoolName_1 = myArr[1].SchoolName;
+
+                      //조(A조,B조) 로 등록 되어있을경우 소속 뒤에 조이름 추가
+                      if (myArr[0].TeamDtl != "0")
+                      {
+                        strSchoolName_0 = strSchoolName_0 + myArr[0].TeamDtl;
+                      }
+                      if (myArr[1].TeamDtl != "0")
+                      {
+                        strSchoolName_1 = strSchoolName_1 + myArr[1].TeamDtl;
+                      }
+
+                      if(localStorage.getItem("AreaNameUseYN") == "Y")
+                      {
+                        strSchoolName_0 = myArr[0].TeamSidoNm;
+                        strSchoolName_1 = myArr[1].TeamSidoNm;
+                      }
+
+
+                      //선수명
+                      $("#DP_player-name_Up").html(myArr[0].UserName + "<span>(" + strSchoolName_0 + ")</span>");
+                      $("#DP_player-name_Down").html(myArr[1].UserName + "<span>(" + strSchoolName_1 + ")</span>");
+                      //스코어보드 선수명
+                      $("#DP_ScorePname_Up").html(myArr[0].UserName);
+                      $("#DP_ScorePname_Down").html(myArr[1].UserName);
+                      
+                      //승리한 선수가 있다면..
+                      if(arrayWinplayer[0] != ""){
+                        $("#WinPlayer").append("<option value='"+ arrayWinplayer[0] +"'>"+ arrayWinplayer[1] +"</option>");
+                      }
+                      else{
+                        $("#WinPlayer").append("<option value='' selected>승자 선수 선택</option>");
+                        $("#WinPlayer").append("<option value='"+ myArr[0].PlayerIDX +"'>"+ myArr[0].UserName +"</option>");
+                        $("#WinPlayer").append("<option value='"+ myArr[1].PlayerIDX +"'>"+ myArr[1].UserName +"</option>");                      
+                      }
+                      
+                      //양선수의 IDX 및 출전번호
+                      localStorage.setItem("LPlayerIDX",myArr[0].PlayerIDX);
+                      localStorage.setItem("LPlayerNum",myArr[0].PlayerNum);
+                      localStorage.setItem("RPlayerIDX",myArr[1].PlayerIDX);
+                      localStorage.setItem("RPlayerNum",myArr[1].PlayerNum);
+                      localStorage.setItem("LTeam",myArr[0].Team);
+                      localStorage.setItem("LTeamDtl",myArr[0].TeamDtl);
+                      localStorage.setItem("RTeam",myArr[1].Team);
+                      localStorage.setItem("RTeamDtl",myArr[1].TeamDtl);
+                      localStorage.setItem("LPlayerName",myArr[0].UserName);
+                      localStorage.setItem("RPlayerName",myArr[1].UserName);
+
+                    }
+
+                    nowscore();       //현재점수 불러오기
+                    nowdualresult(); //양선수 부전패,무승부인지 불러오기
+            
+                    //loadplaylog(); //유도 로그가져오기                    
+
+                  } 
+                  
+                  //부전패로 올라와서 아무도 조회가 안될때
+                  else {
+
+
+
+                    $("#DP_player-name_Up").html(varNojoin1_UserName);
+                    $("#DP_player-name_Down").html(varNojoin2_UserName);
+
+                    localStorage.setItem("LPlayerIDX",varNojoin1_PlayerIDX);
+                    localStorage.setItem("LPlayerNum",varNojoin1_PlayerNum);
+                    localStorage.setItem("LTeam",varNojoin1_Team);
+                    localStorage.setItem("LTeamDtl",varNojoin1_TeamDtl);
+                    localStorage.setItem("LPlayerName",varNojoin1_UserName);
+
+                    localStorage.setItem("RPlayerIDX",varNojoin2_PlayerIDX);
+                    localStorage.setItem("RPlayerNum",varNojoin2_PlayerNum);
+                    localStorage.setItem("RTeam",varNojoin2_Team);
+                    localStorage.setItem("RTeamDtl",varNojoin2_TeamDtl);
+                    localStorage.setItem("RPlayerName",varNojoin2_UserName);
+                  }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();
+        }
+        //E:해당 라운드의 스코어 가져오기
+
+        //S:해당대회 날짜 가져오기
+        function playercntcheck(){
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+          obj.GameNum = localStorage.getItem("PlayerGameNum");
+
+          var jsonData = JSON.stringify(obj);
+
+
+          var events = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/GGamePlayerCntCheck.ashx',
+            type: 'post',
+            data: jsonData,
+            async:false,
+            success: function (sdata1) {
+
+
+              var myArr1 = JSON.parse(sdata1);
+            
+              defer.resolve(sdata1);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();           
+        }
+        //E:해당대회 날짜 가져오기
+
+
+        //S:유도 경기결과 (승리종류) 가져오기
+        var loadwin=function(){
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.SportsGb = localStorage.getItem("SportsGb");
+            obj.PPubCode = "sd023";
+            obj.PubCode = "sd023005,sd023006,sd023007,sd023008";
+
+            var jsonData = JSON.stringify(obj);
+
+            var events = "";
+
+            var arrayWinplayer = winplayer_select();  //승리한 선수 가져오기
+
+            $.ajax({
+                url: '/Ajax/judo_os/management/DirPPubCodeList_Search.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+                  
+                  var myArr = JSON.parse(sdata);
+
+                  if (myArr.length > 0){
+                    
+                    //승리한 선수가 있다면
+
+                    $("#L_gameresult").append("<option value='' selected>선택</option>");
+                    $("#R_gameresult").append("<option value='' selected>선택</option>");
+                    for (var i = 0; i < myArr.length; i++)
+                    {
+                      var varPubCode = myArr[i].PubCode;
+                      var varPubName = myArr[i].PubName;
+                      var varPPubCode = myArr[i].PPubCode;
+                      var varPPubName = myArr[i].PPubName;
+                      var varOrderBy = myArr[i].OrderBy;
+
+                      $("#L_gameresult").append("<option value='"+ varPubCode +"'>"+ varPubName +"</option>");
+                      $("#R_gameresult").append("<option value='"+ varPubCode +"'>"+ varPubName +"</option>");
+                    }       
+                    // selectBox 선택시 배경 변경
+                    $('.point-display').selectBox('.select-box');
+          
+                  } else {
+                    
+                    var varMessage="<span style='font-size:12px;'>해당기간에 맞는 승률이 없습니다.</span>";
+                  }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+
+            });
+            return defer.promise();
+        }
+        //E:유도 경기결과 (승리종류) 가져오기
+
+        //S:현재 경기상태 조회
+        function load_gamestatus(){
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.GameNum = localStorage.getItem("PlayerGameNum");
+
+            var jsonData = JSON.stringify(obj);
+
+            $.ajax({
+                url: '/ajax/judo_os/GGameNowGameStatus.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+
+                  var myArr = JSON.parse(sdata);
+
+                  if (myArr.length > 0){
+                    
+                    //$("#btn_gamestart").css("display","none");
+                    //$("#btn_gameend").css("display","block");
+
+
+
+                    //경기장 번호 체크
+                    
+                    if (myArr[0].StadiumNumber != "")
+                    {
+                      //$("#LB_GYM" + myArr[0].StadiumNumber).attr("class","on");
+                      $.each($("label[name='LB_GYM']"), function() {
+                        if ($(this).attr("data-id") == myArr[0].StadiumNumber)
+                        {
+                          $(this).attr("class","on");
+                        }
+                        else{
+                          $(this).attr("class","");
+                        }
+                      });
+                    }
+                    
+
+                    localStorage.setItem("GameProgress",myArr[0].GameStatus);
+                  } 
+                  
+                  else {
+                    
+
+                    $("#start-modal").modal({backdrop: 'static', keyboard: false});
+                    //$("#btn_gamestart").css("display","block");
+                    //$("#btn_gameend").css("display","none");
+
+                    //경기 진행중이지 않음
+                    localStorage.setItem("GameProgress","");
+                  }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();       
+        }
+        //E:현재 경기상태 조회
+
+        //S:유도 기술정보가져오기
+        function load_skill(strSkillnm,strSkillCd,objnm){
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.SportsGb = localStorage.getItem("SportsGb");
+            obj.PPubCode = strSkillCd; //손기술
+
+            var jsonData = JSON.stringify(obj);
+
+            var events = "";
+
+
+            $.ajax({
+                url: '/ajax/judo_os/management/DirPubCodeList_spec.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+
+                  var myArr = JSON.parse(sdata);
+
+                  var strhandskill = "<dt>" + strSkillnm + "</dt>"
+
+                  if (myArr.length > 0){
+                    
+                    for (var i = 0; i < myArr.length; i++){
+                      strhandskill += strhandskill = "<dd><label name='label_skill_list'>";
+                      strhandskill += strhandskill = "<input type='checkbox' name='skill_list' value='" + myArr[i].PubCode + "'>";
+                      strhandskill += strhandskill = myArr[i].PubName;
+                      strhandskill += strhandskill = "</label></dd>";
+
+                    }
+    
+                    $(objnm).html(strhandskill);
+                    
+                    $('.skill-group').radioInput('.skill-group input');
+
+                    //체크박스
+                    //$('.skill-group').radioInput();
+
+                  } else {
+                    
+                    var varMessage="<dd><label>등록된 기술이 없습니다.</label></dd>";
+                  }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();       
+        }
+        //E:유도 기술정보가져오기
+
+        //S:심판싸인 저장(modal팝업의 승인완료버튼)
+        function sign_insert(strimage, strsigngubun){
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+            obj.SignData = strimage;
+            obj.Signgubun = strsigngubun;
+
+            var jsonData = JSON.stringify(obj);
+
+            var events = "";
+
+
+            $.ajax({
+                url: '/ajax/judo_os/GGameSignUpdate.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+    
+                  console.log(sdata);
+
+                  /*
+                  var myArr = JSON.parse(sdata);
+
+
+                  
+                  if (myArr.length > 0){
+                    
+                    
+
+                  } else {
+                    
+                    var varMessage="<dd><label>등록된 기술이 없습니다.</label></dd>";
+                  }
+                  */
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();           
+        }
+        //E:심판싸인 저장(modal팝업의 승인완료버튼)
+
+
+        //S:심판 싸인가져오기
+        function loadsign(){
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+
+            var jsonData = JSON.stringify(obj);
+
+            var events = "";
+
+
+            $.ajax({
+                url: '/ajax/judo_os/GGameSignSelect.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+
+                  var myArr = JSON.parse(sdata);
+
+                  if (myArr.length > 0){
+
+                    //주심1 싸인
+                    if (myArr[0].ChiefSign != "")
+                    {
+                      
+                      /*
+                      $("<img>", {
+                       src: myArr[0].ChiefSign,
+                       width:188,
+                       height:69,
+                       onload: function(){console.log("img loaded..");
+                      }
+                      }).appendTo("#chiefSign_copy");
+                      */
+                      
+                      $("#chiefSign_copy").html("");
+                      $("#chiefSign_copy").html("<img src='" + myArr[0].ChiefSign + "' width='188' height='69'>");
+
+                      $("#btn_chiefSign").css("display","none");
+                      $("#result_chiefSign").css("display","block");
+                    }
+                    else{
+
+                      $("#btn_chiefSign").css("display","block");
+                      $("#result_chiefSign").css("display","none");                   
+                    }
+
+
+                    //부심1 싸인
+                    if (myArr[0].AssChiefSign1 != "")
+                    {
+                      /*
+                      $("<img>", {
+                       src: myArr[0].AssChiefSign1,
+                       width:188,
+                       height:69,
+                       onload: function(){console.log("img loaded..");
+                      }
+                      }).appendTo("#asschiefSign1_copy");
+                      */
+
+                      $("#asschiefSign1_copy").html("");
+                      $("#asschiefSign1_copy").html("<img src='" + myArr[0].AssChiefSign1 + "' width='188' height='69'>");
+
+                      $("#btn_asschiefSign1").css("display","none");
+                      $("#result_asschiefSign1").css("display","block");
+                    }
+                    else{
+
+                      $("#btn_asschiefSign1").css("display","block");
+                      $("#result_asschiefSign1").css("display","none");                   
+                    }
+
+
+
+                    //부심2 싸인
+                    if (myArr[0].AssChiefSign2 != "")
+                    {
+                      /*
+                      $("<img>", {
+                       src: myArr[0].AssChiefSign2,
+                       width:188,
+                       height:69,
+                       onload: function(){console.log("img loaded..");
+                      }
+                      }).appendTo("#asschiefSign2_copy");
+                      */
+
+                      $("#asschiefSign2_copy").html("");
+                      $("#asschiefSign2_copy").html("<img src='" + myArr[0].AssChiefSign2 + "' width='188' height='69'>");
+
+                      $("#btn_asschiefSign2").css("display","none");
+                      $("#result_asschiefSign2").css("display","block");
+                    }
+                    else{
+
+                      $("#btn_asschiefSign2").css("display","block");
+                      $("#result_asschiefSign2").css("display","none");                   
+                    }
+                  } 
+                  
+                  else {
+                    
+                  }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();       
+        }
+        //E:심판 싸인가져오기
+
+        
+        /*script 시작부*/
+
+        //skillleftright_info('sd030001'); //페이지 첫진입시 좌측기술로 default
+        
+        //$("#btn_rightskill").trigger("click");
+
+
+        loadgametitle(); //해당 경기정보
+        loadscore();  //해당 라운드 스코어가져오기
+        
+        loadwin(); //승패
+
+        loadwinresult(); //해당 판정 불러오기
+        
+        loadplaylog(); //유도 로그
+
+        //각 기술 가져오기
+        load_skill("손기술","sp001","#DP_hand-skill");       
+        load_skill("발기술","sp003","#DP_foot-skill");       
+        load_skill("허리기술","sp002","#DP_waist-skill");       
+        load_skill("누우며 메치기","sp004","#DP_lie-skill");        
+        //load_skill("되치기","sp006","#DP_counterattack-skill");
+        load_skill("굳히기/기타","sp005","#DP_hold-skill");
+        
+        loadsign(); //심판싸인 불러오기
+
+        load_gamestatus(); //현재경기 진행상태 조회
+
+        /*script 시작부*/
+
+    
+        /*--------------------싸인관련--------------------*/
+         var canvas = document.getElementById('game_signature');
+         //canvas.width = screen.width;
+         var context = canvas.getContext('2d');
+         context.lineWidth=10;
+         context.lineCap="round";
+
+         $(canvas).bind({"touchstart mousedown": function(event){
+          
+          event.preventDefault();
+          
+          if(event.type == 'touchstart'){
+           event = event.originalEvent.targetTouches[0];
+          }
+          
+          $(this).data("flag", "1");
+          var position = $(this).offset();
+          var x = event.pageX - position.left;
+          var y = event.pageY - position.top;
+          console.log("start x: " + x + ", y: " + y);
+          context.beginPath();
+          context.moveTo(x,y);
+
+         }, "mousemove touchmove" : function(event) {
+          
+          event.preventDefault();
+          
+          if(event.type == 'touchmove'){
+           event = event.originalEvent.targetTouches[0];
+          }  
+
+          var flag = $(this).data("flag");
+          if(flag == 1){
+           var position = $(this).offset();
+           var x = event.pageX - position.left;
+           var y = event.pageY - position.top; 
+           
+           //console.log("move x: " + x + ", y: " + y);
+          }
+          context.lineTo(x, y);
+          context.stroke();
+         }, "mouseup touchend mouseleave" : function(event) {
+          
+          event.preventDefault();
+
+          console.log("type: " + event.type);
+          if(event.type == 'touchend'){
+           event = event.originalEvent.changedTouches[0];   
+          }   
+
+          $(this).data("flag", "0");
+          var position = $(this).offset();
+          
+          var x = event.pageX - position.left;
+          var y = event.pageY - position.top; 
+          
+          console.log("end: " + x + ", y: " + y);
+
+         //  context.lineTo(x, y);
+         //  context.stroke();
+         }
+         
+         }); 
+
+         $("#id_clear").click(function(){
+          canvas.width = canvas.width;
+          context.lineWidth=10;
+          context.lineCap="round";
+         });
+
+         //싸인 승인완료
+         $("#signature_copy").click(function(){
+
+          //var imageData = context.getImageData(0,0,canvas.width, canvas.height);
+          //var data = imageData.data;
+
+          //console.log(canvas.width + ": " + canvas.height);
+
+          /*
+          var canvasCopy = document.createElement("canvas");
+          var copyContext = canvasCopy.getContext("2d");
+          
+          var w = 80;
+          var h = 50;
+          canvasCopy.width = w;
+          canvasCopy.height = h;
+
+          copyContext.drawImage(canvas, 0, 0, w, h);
+
+          */
+          var pngUrl = canvas.toDataURL();
+          //var copyPngUrl = canvasCopy.toDataURL();
+
+          /*
+          console.log("원본이미지 사이즈: " + pngUrl.length);
+          console.log("스몰이미지 사이즈: " + copyPngUrl.length);
+
+          console.log("url type: " + typeof(copyPngUrl));
+          console.log("스몰이미지 url: " + copyPngUrl);
+          console.log("스몰이미지 url: " + copyPngUrl.replace("data:image/png;base64,", ""));
+          */
+
+          //해당 싸인 DB Insert
+          sign_insert(pngUrl, $("#game_signature").attr("data-id") );
+
+          if($("#game_signature").attr("data-id") == "chiefSign"){
+            id_signcopy = "#chiefSign_copy";
+
+            $("#btn_chiefSign").css("display","none");
+            $("#result_chiefSign").css("display","block");
+          }
+          else if($("#game_signature").attr("data-id") == "asschiefSign1"){
+            id_signcopy = "#asschiefSign1_copy";
+
+            $("#btn_asschiefSign1").css("display","none");
+            $("#result_asschiefSign1").css("display","block");
+          }
+          else if($("#game_signature").attr("data-id") == "asschiefSign2"){
+            id_signcopy = "#asschiefSign2_copy";
+
+            $("#btn_asschiefSign2").css("display","none");
+            $("#result_asschiefSign2").css("display","block");
+          }
+
+          $(id_signcopy).html("");
+          $(id_signcopy).html("<img src='"+pngUrl+"' width='188' height='69'>");
+
+
+          /*
+          $("<img>", {
+
+           src: pngUrl,
+           width:188,
+           height:69,
+           onload: function(){console.log("img loaded..");}
+
+          }).appendTo(id_signcopy);
+          */
+
+          $('#sign-modal').modal('hide');
+
+          //캔버스삭제
+          canvas.width = canvas.width;
+          context.lineWidth=10;
+          context.lineCap="round";
+
+        
+
+          //delete canvasCopy;
+         });
+        /*--------------------싸인관련--------------------*/
+
+        /*--------------------싸인모달 띄울때--------------------*/
+        $('#sign-modal').on('show.bs.modal', function (event) {
+
+          /*
+          var arrayWinplayer = winplayer_select();
+
+          if(arrayWinplayer[0] == ""){
+            alert('해당 라운드 승패 결정 후, 승인 가능합니다.');
+            $('#sign-modal').modal('hide');
+            return false;
+          }
+          */
+
+
+         var canvas = document.getElementById('game_signature');
+         //canvas.width = screen.width;
+         var context = canvas.getContext('2d');
+
+				 context.clearRect(0, 0, 570, 250);
+
+				 context.beginPath();
+
+         //클릭 이벤트된 버튼 obj
+         var button = $(event.relatedTarget); 
+
+         //클릭 이벤트된 버튼 data-whatever의 value
+         var strbutton_data = button.data('whatever');
+          
+         //캔버스의 data-id에 값 입력
+         $("#game_signature").attr("data-id", strbutton_data);
+
+        });
+        
+
+      });
+      /*--------------------$(document).ready(function()--------------------*/
+
+        //S:기술 입력
+        function insert_gamedtl(){
+
+          var defer = $.Deferred();
+
+          var varskilllist = "";
+
+          
+          //                  $('.injury-mark').tgClass('.injury-mark label');
+          //                  $('.score-enter-main').tgClass('.tgClass a');
+          //                   var a = $('#OverTime').is(':checked');
+           //console.log("test:"+ $("#OverTime").typeOf(":checked"));
+          // console.log("test-" + $(a).typeof());
+
+
+          //게임 승패 가져오기
+          var arrayWinplayer = winplayer_select();
+
+          if (localStorage.getItem("GameProgress") == "")
+          {
+            alert("점수 입력은 경기 시작 후, 입력 가능합니다.");
+            return;
+          }
+
+
+          var chk_stadium = "";
+
+          //선택된 경기장
+          $.each($("label[name='LB_GYM']"), function() {
+            if ($(this).attr("class") == "on")
+            {
+              chk_stadium = $(this).attr("data-id");
+            }
+          });
+
+
+          if(chk_stadium == ""){
+            alert("해당경기의 경기장을 선택하세요.");
+            return;
+          }
+
+          /*경기테스트로 인한 임시 권한해제
+          if(arrayWinplayer[0] != ""){
+            alert("승패가 확정된 게임은 스코어입력을 하실 수 없습니다.");
+            return;
+          }
+          */
+
+          //현재 한판1 OR 지도4회 일 경우, 스코어 입력이 안되게..
+          if(
+            parseInt($("#LJumsuGb1").html()) >= 1 ||
+            parseInt($("#RJumsuGb1").html()) >= 1 ||
+            parseInt($("#LJumsuGb4").html()) >= 3 ||
+            parseInt($("#RJumsuGb4").html()) >= 3 )
+          {
+            alert('한판 1회,지도3회 판정이 있을 경우, 점수 입력을 하실 수 없습니다.');
+            return;
+          }
+
+          if(localStorage.getItem("LJJumsu") == ""){
+            alert('본인,상대 또는 해당 판정을 선택 바랍니다.');
+            return;
+          }
+
+          //백팀이 점수판의 지도,실격승,반칙승,기권승을 제외한 점수 선택시, 기술체크 필요
+          if(
+              localStorage.getItem("LJJumsu") != "sd023004" &&
+              localStorage.getItem("LJJumsu") != "sd023005" &&
+              localStorage.getItem("LJJumsu") != "sd023006" &&
+              localStorage.getItem("LJJumsu") != "sd023007" &&
+              localStorage.getItem("LJJumsu") != "sd023008" 
+             )
+          {
+            $.each($("input[name='skill_list']:checked"), function() {
+                varskilllist += $(this).val()+",";
+            });
+
+            
+            //선택한 기술 코드
+            varskilllist = varskilllist.replace(",","");    
+
+            if(varskilllist != "sp005001" && varskilllist != "sp005002" && varskilllist != "sp005003" && varskilllist != "sp005004"){
+              if (localStorage.getItem("SkillLeftRight") == ""){
+                alert('좌측기술 또는 우측기술을 체크하세요.');
+                return;           
+              }
+            }
+
+            if (varskilllist =="")
+            {
+              alert('기술을 선택하세요.');
+              return;
+            }           
+          }
+
+
+
+          //기술이 조르기거나 꺽기라면 한판만 입력 가능 sp005002 - 조르기, sp005003 - 꺽기
+          if (varskilllist == "sp005002" || varskilllist == "sp005003")
+          {
+            //sd023001 - 한판
+            if (localStorage.getItem("LJJumsu") != "sd023001")
+            {
+              alert("조르기, 꺽기 기술은 한판으로만 입력 가능합니다.");
+              return;
+            }
+          }
+
+          var strtimecheck= "Y";
+          var strchecktime="";
+
+          //경기시간 3자리 입력했는지 체크
+          $.each($("li[name='gameTime']"), function() {
+              if($(this).html() == ""){
+                strtimecheck = "N";
+                return false;
+              }
+              else{
+                strchecktime += $(this).html();
+              }
+          }); 
+
+          if (strtimecheck == "N")
+          {
+            alert('경기시간 3자리를 입력하시기 바랍니다.');
+            return;
+          }
+
+          // 0 + 1 + : + 23 (01분23초)
+          strchecktime = "0" + strchecktime.substring(0,1) + ":" + strchecktime.substring(1,3);
+
+          var obj = {};
+
+          obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+          obj.TeamGb = localStorage.getItem("TeamGb");
+          obj.Sex = localStorage.getItem("Sex");
+          obj.Level = localStorage.getItem("Level");
+          obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.SportsGb = localStorage.getItem("SportsGb");
+
+          obj.LPlayerIDX = localStorage.getItem("LPlayerIDX");
+          obj.LPlayerNum = localStorage.getItem("LPlayerNum");
+          obj.RPlayerIDX = localStorage.getItem("RPlayerIDX");
+          obj.RPlayerNum = localStorage.getItem("RPlayerNum");
+
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+
+          obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+
+          
+          
+          if (localStorage.getItem("LJGubun") == "L")
+          {
+            //기술만 들어갔을경우.. 점수없음(윗선수)
+            if(localStorage.getItem("LJJumsu") == "sd021001"){
+              obj.LJumsuGb = "";
+            }
+            else{
+              obj.LJumsuGb = localStorage.getItem("LJJumsu");
+            }
+
+            obj.LLeftRight = localStorage.getItem("SkillLeftRight");
+            obj.LSpecialtyGb = varskilllist.substring(0,5); //윗선수 기술구분
+            obj.LSpecialtyDtl = varskilllist; //윗선수 기술상세
+
+            obj.RJumsuGb = "";      //아래선수 점수
+            obj.RSpecialtyGb = "";  //아래선수 기술구분
+
+          }
+          else
+          {
+            //기술만 들어갔을경우.. 점수없음(아래선수)
+
+            obj.LJumsuGb = "";
+            obj.LSpecialtyGb = "";
+            obj.LSpecialtyDtl = "";
+
+            if(localStorage.getItem("LJJumsu") == "sd021002"){
+              obj.RJumsuGb = "";
+            }
+            else{
+              obj.RJumsuGb = localStorage.getItem("LJJumsu");
+            }
+            
+            obj.RLeftRight = localStorage.getItem("SkillLeftRight");
+            obj.RSpecialtyGb = varskilllist.substring(0,5);
+            obj.RSpecialtyDtl = varskilllist; 
+            
+          }
+
+          obj.CheckTime = strchecktime; //경기시간
+        
+          //연장전 구분값
+          if($("#DP_OverTime").attr("class") == "on"){
+            obj.OverTime = "1"; 
+          }
+          else{
+            obj.OverTime = "0"; 
+          }         
+
+          var jsonData = JSON.stringify(obj);
+
+          var events = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/tblRGameResultDtlInsert.ashx',
+            type: 'post',
+            data: jsonData,
+            success: function (sdata) {
+              
+              nowscore();
+              nowdualresult(); //양선수 부전패,무승부인지 불러오기
+              loadplaylog();
+
+              //시간삭제
+              display_inputTime('Delete');
+
+              //선택된 기술, 점수, 기술좌우 리셋
+              localStorage.setItem("LJGubun","");
+              localStorage.setItem("LJJumsu","");
+              localStorage.setItem("SkillLeftRight","");
+
+              //기술 체크박스 전체해제
+              $.each($("input[name='skill_list']:checked"), function() {
+                  
+                  $(this).attr('checked', false);
+              });    
+              
+              //기술 체크박스 체크스타일 리셋
+              $.each($("label[name='label_skill_list']"), function() {
+                  $(this).removeAttr('class');
+              });              
+
+              //점수판 체크스타일 리셋
+              $.each($("a[name='a_jumsugb']"), function() {
+                  $(this).removeAttr('class');
+              });   
+              
+              //연장전 체크박스 해제
+              $("#DP_OverTime").attr("class","");
+
+              //연장전 체크박스 해제
+              $("#btn_leftskill").attr("class","btn left-skill");   
+              $("#btn_rightskill").attr("class","btn left-skill");
+
+              $("#img_leftskill").attr("src","images/tournerment/enter/radio-off.png");   
+              $("#img_rightskill").attr("src","images/tournerment/enter/radio-off.png");    
+
+              localStorage.setItem("SkillLeftRight","");
+              
+
+              /*
+              var myArr = JSON.parse(sdata);
+              
+              if (myArr.length > 0){
+
+              } 
+              else {
+                    
+                alert("DB오류");
+                return;
+                
+              }
+              */
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();     
+
+        }
+        //E:기술 입력
+
+        //S:게임로그 삭제
+        function delete_gamedtl(stridx, strchecktime, strrgameresultdtlidx){
+
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+          obj.TeamGb = localStorage.getItem("TeamGb");
+          obj.Sex = localStorage.getItem("Sex");
+          obj.Level = localStorage.getItem("Level");
+          obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.SportsGb = localStorage.getItem("SportsGb");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+
+          obj.Idx = stridx;
+          obj.CheckTime = strchecktime;
+          obj.RGameResultDtlIDX = strrgameresultdtlidx;
+          
+          var jsonData = JSON.stringify(obj);
+
+          $.ajax({
+            url: '/ajax/judo_os/tblRGameResultDtlDelete.ashx',
+            type: 'post',
+            data: jsonData,
+            success: function (sdata) {   
+
+              nowscore();
+              loadwinresult(); //현재판정 불러오기
+              nowdualresult(); //양선수 부전패,무승부인지 불러오기
+              loadplaylog();
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();               
+        }
+        //E:게임로그 삭제
+
+        //S:유도 경기로그 가져오기
+        function loadplaylog(){
+            var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+            obj.OrderbyType = "ScoreBoard";
+
+            var jsonData = JSON.stringify(obj);
+
+            console.log(jsonData);
+
+            var events = "";
+
+            //승리한 선수가 있다면..
+            var arrayWinplayer = winplayer_select();  //승리한 선수 가져오기
+
+            $.ajax({
+                url: '/ajax/judo_os/tblGameResultDtlSelect.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {             
+
+                  var myArr = JSON.parse(sdata);
+
+                  if (myArr.length > 0){
+                    
+                    var strplaylog = "";
+
+                    console.log(sdata);
+
+                    for (var i = 0; i < myArr.length; i++)
+                    {
+
+
+                      if(myArr[i].PlayerPosition == "LPlayer"){
+                        if (myArr[i].JumsuGb == "")
+                        {
+                          strplaylog += "<li class='mine-2'>";                        
+                        }
+                        else
+                        {
+                          strplaylog += "<li class='mine'>";                        
+                        }
+
+                      }
+                      else{
+                        if (myArr[i].JumsuGb == "")
+                        {
+                          strplaylog += "<li class='opponent-2'>";                        
+                        }
+                        else
+                        {
+                          strplaylog += "<li class='opponent'>";
+                        }
+                      }
+                      
+                      strplaylog += "<p>";
+
+                      if(myArr[i].OverTime == "1"){
+                        strplaylog +="(연)"
+                      }
+
+                      strplaylog += "[<span class='score-time'>";
+
+                      strplaylog += myArr[i].CheckTime + "</span>]<span class='player-name'>" + myArr[i].PlayerName + "</span>";
+                      strplaylog += "";
+
+                      if (myArr[i].JumsuGb == "지도")
+                      {
+                        strplaylog += ": <span class=''>" + myArr[i].JumsuGb +  "</span>";
+                      }
+                      else{
+                        strplaylog += ": <span class=''>" + myArr[i].JumsuGb +  " " + myArr[i].SpecialtyGb + "</span>(<span class='skill'>" + myArr[i].SpecialtyDtl + "</span>)";
+                      }
+                      
+                      /*경기테스트로 인한 임시 권한해제                     
+                      if(arrayWinplayer[0] == ""){
+                        strplaylog += " <button class='btn btn-del' type='button' onclick=delete_gamedtl('" + myArr[i].Idx + "','" + myArr[i].CheckTime + "') ><i class='fa fa-times' aria-hidden='true'></i>";
+                        strplaylog += " <span class='sr-only'>닫기</span></button>";
+                      }
+                      */
+                        strplaylog += " <button class='btn btn-del' type='button' onclick=delete_gamedtl('" + myArr[i].Idx + "','" + myArr[i].CheckTime + "','" + myArr[i].RGameResultDtlIDX + "') ><i class='fa fa-times' aria-hidden='true'></i>";
+                        strplaylog += " <span class='sr-only'>닫기</span></button>";
+                      
+                      strplaylog += "</p>";
+                      strplaylog += "</li>";
+
+                    }                   
+                    
+
+                    $("#DP_result-list").html(strplaylog);
+
+                    $('.btn-del').delList();
+
+                  } else {
+                    
+                  
+                  }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();
+        }
+
+        //E:유도 경기로그 가져오기
+
+
+        //S:현재점수 가져오기
+        function nowscore(){
+
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum"); 
+
+          var jsonData = JSON.stringify(obj);
+
+          var events = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/GGameNowScore.ashx',
+            type: 'post',
+            data: jsonData,
+            success: function (sdata) {
+  
+              var myArr = JSON.parse(sdata);
+
+              if (myArr.length > 0){
+
+                  if (myArr[0].Left01 != "")
+                  {
+
+                    //백팀점수판
+                    $("#LJumsuGb1").html(myArr[0].Left01);
+                    $("#LJumsuGb2").html(myArr[0].Left02);
+                    $("#LJumsuGb3").html(myArr[0].Left03);
+                    $("#LJumsuGb4").html(myArr[0].Left04);
+
+                    /*
+                    //백팀 실격승,반칙승,부전승 체크
+                    if( parseInt(myArr[0].Left05) > 0 ){
+                      //$("#DP_L_sd019013").attr("class","on");
+                      $("#L_gameresult").val("sd023005");
+                    }
+
+                    if( parseInt(myArr[0].Left06) > 0 || Number(myArr[0].Right04) >= 4){
+                      //$("#DP_L_sd019005").attr("class","on");
+                      $("#L_gameresult").val("sd023006");
+                    }
+
+                    if( parseInt(myArr[0].Left07) > 0 ){
+                      //$("#DP_L_sd019006").attr("class","on");
+                      $("#L_gameresult").val("sd023007");
+                    }
+                    */
+
+
+
+
+
+                    //청팀점수판
+                    $("#RJumsuGb1").html(myArr[0].Right01);
+                    $("#RJumsuGb2").html(myArr[0].Right02);
+                    $("#RJumsuGb3").html(myArr[0].Right03);
+                    $("#RJumsuGb4").html(myArr[0].Right04);
+
+                    /*
+                    //백팀 실격승,반칙승,부전승 체크
+                    if( parseInt(myArr[0].Right05) > 0 ){
+                      //$("#DP_R_sd019013").attr("class","on");
+                      $("#R_gameresult").val("sd023005");
+                    }
+
+                    if( parseInt(myArr[0].Right06) > 0 ||  Number(myArr[0].Left04) >= 4){
+                      //$("#DP_R_sd019005").attr("class","on");
+                      $("#R_gameresult").val("sd023006");
+                    }
+
+                    if( parseInt(myArr[0].Right07) > 0 ){
+                      //$("#DP_R_sd019006").attr("class","on");
+                      $("#R_gameresult").val("sd023007");
+                    }
+                    */
+
+                    
+                  }
+                  else{
+                    //백팀점수판
+                    $("#LJumsuGb1").html("0");
+                    $("#LJumsuGb2").html("0");
+                    $("#LJumsuGb3").html("0");
+                    $("#LJumsuGb4").html("0");
+                    //$("#DP_L_sd019013").attr("class","");
+                    //$("#DP_L_sd019005").attr("class","");
+                    //$("#DP_L_sd019006").attr("class","");
+                    $("#L_gameresult").val("");
+
+                    //청팀점수판
+                    $("#RJumsuGb1").html("0");
+                    $("#RJumsuGb2").html("0");
+                    $("#RJumsuGb3").html("0");
+                    $("#RJumsuGb4").html("0");  
+                    //$("#DP_R_sd019013").attr("class","");
+                    //$("#DP_R_sd019005").attr("class","");
+                    //$("#DP_R_sd019006").attr("class","");
+                    $("#R_gameresult").val("");
+                  }
+
+              } 
+              else {
+                    
+                //백팀점수판
+                $("#LJumsuGb1").html("0");
+                $("#LJumsuGb2").html("0");
+                $("#LJumsuGb3").html("0");
+                $("#LJumsuGb4").html("0");
+
+                //청팀점수판
+                $("#RJumsuGb1").html("0");
+                $("#RJumsuGb2").html("0");
+                $("#RJumsuGb3").html("0");
+                $("#RJumsuGb4").html("0");
+                
+              }
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();     
+
+        }
+        //E:현재점수 가져오기
+
+        //S:양선수 부전패, 무승부 판정 가져오기
+        function nowdualresult(){
+
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+
+          var jsonData = JSON.stringify(obj);
+
+          var events = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/GGameDualResultList.ashx',
+            type: 'post',
+            data: jsonData,
+            success: function (sdata) {
+  
+              var myArr = JSON.parse(sdata);
+
+              if (myArr.length > 0){
+
+                //양선수 부전패라면..
+                if (myArr[0].LPlayerResult == "sd019012")
+                {
+                  $("#LRResult_Lose").attr("class", "tgClass default on");
+
+                  if(localStorage.getItem("GroupGameGb") == "sd040001")
+                  {
+                    $("#LRResult_Draw").attr("class", "tgClass no-attend");
+                  }
+                  else
+                  {
+                    $("#LRResult_Draw").attr("class", "tgClass draw");
+                  }
+                }
+                //무승부(단체전)라면..
+                else if (myArr[0].LPlayerResult == "sd019024")
+                {
+                  $("#LRResult_Lose").attr("class", "tgClass default");
+                  $("#LRResult_Draw").attr("class", "tgClass draw on");           
+                }
+                //불참(단체전)라면..
+                else if (myArr[0].LPlayerResult == "sd019021")
+                {
+                  $("#LRResult_Lose").attr("class", "tgClass default");
+                  $("#LRResult_Draw").attr("class", "tgClass no-attend on");            
+                }
+
+              } 
+              else {
+                    
+              
+                
+              }
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();     
+
+        }
+        //E:현재점수 가져오기
+
+
+        //S:경기결과저장(저장버튼 Click)
+        function result_save(){
+          var defer = $.Deferred();
+
+          //점수 새로 불러오기
+          nowscore();
+          //판정 불러오기
+          loadwinresult();
+          //양선수 부전패,무승부인지 불러오기
+          nowdualresult();
+
+          var obj = {};
+
+          obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+          obj.TeamGb = localStorage.getItem("TeamGb");
+          obj.Sex = localStorage.getItem("Sex");
+          obj.Level = localStorage.getItem("Level");
+          obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.SportsGb = localStorage.getItem("SportsGb");
+          obj.PlayRound = localStorage.getItem("PlayRound");
+          obj.GroupRound = localStorage.getItem("GroupRound")
+
+          obj.LPlayerIDX = localStorage.getItem("LPlayerIDX");
+          obj.LPlayerNum = localStorage.getItem("LPlayerNum");
+          obj.RPlayerIDX = localStorage.getItem("RPlayerIDX");
+          obj.RPlayerNum = localStorage.getItem("RPlayerNum");
+
+          
+
+          obj.LTeam = localStorage.getItem("LTeam");
+          obj.LTeamDtl = localStorage.getItem("LTeamDtl");
+          obj.RTeam = localStorage.getItem("RTeam");
+          obj.RTeamDtl = localStorage.getItem("RTeamDtl");
+
+          obj.LPlayerName = localStorage.getItem("LPlayerName");
+          obj.RPlayerName = localStorage.getItem("RPlayerName");
+
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+
+          obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+
+          obj.GameType = localStorage.getItem("GameType");
+
+					obj.ManagerID = localStorage.getItem("UserId");
+
+          //선택된 경기장
+          $.each($("label[name='LB_GYM']"), function() {
+            if ($(this).attr("class") == "on")
+            {
+              obj.StadiumNumber = $(this).attr("data-id");
+            }
+          });
+
+
+          if(!obj.StadiumNumber){
+            alert("해당경기의 경기장을 선택하세요.");
+            return;
+          }
+
+
+
+          var strmsg = "";
+
+          //각선수 점수
+          var str_LJumsuGb1 = $("#LJumsuGb1").html();
+          var str_LJumsuGb2 = $("#LJumsuGb2").html();
+          var str_LJumsuGb3 = $("#LJumsuGb3").html();
+          var str_LJumsuGb4 = $("#LJumsuGb4").html();
+          var str_RJumsuGb1 = $("#RJumsuGb1").html();
+          var str_RJumsuGb2 = $("#RJumsuGb2").html();
+          var str_RJumsuGb3 = $("#RJumsuGb3").html();
+          var str_RJumsuGb4 = $("#RJumsuGb4").html();
+
+          
+          //각가의 해당판정이 동점이거나, 부전판정이 체크되어있지 않을 시, 경기완료 못시킴;
+          if(
+            (parseInt($("#LJumsuGb1").html()) == parseInt($("#RJumsuGb1").html()) ) &&
+            (parseInt($("#LJumsuGb2").html()) == parseInt($("#RJumsuGb2").html()) ) &&
+            //(parseInt($("#LJumsuGb3").html()) == parseInt($("#RJumsuGb3").html()) ) &&
+            (parseInt($("#LJumsuGb4").html()) == parseInt($("#RJumsuGb4").html()) ) &&
+
+            ($("#L_gameresult").val() == "" && $("#R_gameresult").val() == "" ) &&
+
+            ($("#LRResult_Lose").attr("class") == "tgClass default" && ( $("#LRResult_Draw").attr("class") == "tgClass draw" || $("#LRResult_Draw").attr("class") == "tgClass no-attend" ))
+          ){
+            alert('경기기록을 완료할 수 없습니다. 점수를 확인해 주시기 바랍니다.');
+            //alert($("#DP_L_sd019005").attr("class"));
+            return;
+          }
+          else{
+        
+                      
+          }
+
+          var strResultYN = "";
+
+          //L선수 실격승
+          if( strResultYN == "" ){
+            //if($("#DP_L_sd019013").attr("class") == "on"){
+            if($("#L_gameresult").val() == "sd023005"){
+              obj.LPlayerResult = "sd019013";
+              obj.RPlayerResult = "";
+              strmsg = localStorage.getItem("LPlayerName") + " 선수를 실격(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+
+          //R선수 실격승
+          if( strResultYN == "" ){
+            //if($("#DP_R_sd019013").attr("class") == "on"){
+            if($("#R_gameresult").val() == "sd023005"){
+              obj.LPlayerResult = "";
+              obj.RPlayerResult = "sd019013";
+              strmsg = localStorage.getItem("RPlayerName") + " 선수를 실격(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+          //L선수 반칙승
+          if( strResultYN == "" ){
+            //if($("#DP_L_sd019005").attr("class") == "on"){
+            if($("#L_gameresult").val() == "sd023006"){
+              obj.LPlayerResult = "sd019005";
+              obj.RPlayerResult = "";
+              strmsg = localStorage.getItem("LPlayerName") + " 선수를 반칙(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+          //R선수 반칙승
+          if( strResultYN == "" ){
+            //if($("#DP_R_sd019005").attr("class") == "on"){
+            if($("#R_gameresult").val() == "sd023006"){
+              obj.LPlayerResult = "";
+              obj.RPlayerResult = "sd019005";
+              strmsg = localStorage.getItem("RPlayerName") + " 선수를 반칙(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+          //L선수 부전승
+          if( strResultYN == "" ){
+            //if($("#DP_L_sd019006").attr("class") == "on"){
+            if($("#L_gameresult").val() == "sd023007"){
+              obj.LPlayerResult = "sd019006";
+              obj.RPlayerResult = "";
+              strmsg = localStorage.getItem("LPlayerName") + " 선수를 부전(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+          //R선수 부전승
+          if( strResultYN == "" ){
+            //if($("#DP_R_sd019006").attr("class") == "on"){
+            if($("#R_gameresult").val() == "sd023007"){
+              obj.LPlayerResult = "";
+              obj.RPlayerResult = "sd019006";
+              strmsg = localStorage.getItem("RPlayerName") + " 선수를 부전(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+          //L선수 기권승
+          if( strResultYN == "" ){
+            //if($("#DP_L_sd019006").attr("class") == "on"){
+            if($("#L_gameresult").val() == "sd023008"){
+              obj.LPlayerResult = "sd019022";
+              obj.RPlayerResult = "";
+              strmsg = localStorage.getItem("LPlayerName") + " 선수를 기권(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+          //R선수 기권승
+          if( strResultYN == "" ){
+            //if($("#DP_R_sd019006").attr("class") == "on"){
+            if($("#R_gameresult").val() == "sd023008"){
+              obj.LPlayerResult = "";
+              obj.RPlayerResult = "sd019022";
+              strmsg = localStorage.getItem("RPlayerName") + " 선수를 기권(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";      
+            }
+          }
+
+
+          var varLRResult = "";
+
+          if( strResultYN == "" ){
+            
+            //양선수 부전패,무승부 체크
+            if ($("#LRResult_Lose").attr("class") == "tgClass default on")
+            {
+              obj.LPlayerResult = "sd019012";
+              obj.RPlayerResult = "sd019012";
+              strmsg = "양선수를 부전(패)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+              strResultYN = "Y";
+            }
+
+            if ($("#LRResult_Draw").attr("class") == "tgClass no-attend on" || $("#LRResult_Draw").attr("class") == "tgClass draw on")
+            {
+              if(localStorage.getItem("GroupGameGb") == "sd040001"){
+                obj.LPlayerResult = "sd019021";
+                obj.RPlayerResult = "sd019021";
+                strmsg = "양선수를 불참으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";
+              }
+              else{
+                obj.LPlayerResult = "sd019024";
+                obj.RPlayerResult = "sd019024";
+                strmsg = "양선수를 무승부로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";              
+              }
+            }
+          }
+
+          //지도 3회 이상 시..
+          if( strResultYN == "" ){
+
+          console.log("testlog"+ str_LJumsuGb4 + "," + str_RJumsuGb4);
+
+            if( Number(str_LJumsuGb4) > Number(str_RJumsuGb4) ){  
+
+                    
+              if( Number(str_LJumsuGb4) > 2)
+              {
+                obj.RPlayerResult = "sd019004"; 
+                obj.LPlayerResult = "";
+                    
+                strmsg = localStorage.getItem("RPlayerName") + " 선수를 지도(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";                
+              }
+            }
+            else if( Number(str_LJumsuGb4) < Number(str_RJumsuGb4) ){
+
+                    
+              if ( Number(str_RJumsuGb4) > 2){
+
+                obj.LPlayerResult = "sd019004";
+                obj.RPlayerResult = ""; 
+                    
+                strmsg = localStorage.getItem("LPlayerName") + " 선수를 지도(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";                
+              }
+            }
+          }
+
+          if (strResultYN == "")
+          {
+
+            var strReturn = "";
+            var strTitle = "";
+
+            //각선수 한판,절반,유효 점수
+            //str_LJumsu = $("#LJumsuGb1").html() + $("#LJumsuGb2").html() +  $("#LJumsuGb3").html() +  $("#RJumsuGb4").html();
+            //str_RJumsu = $("#RJumsuGb1").html() + $("#RJumsuGb2").html() +  $("#RJumsuGb3").html() +  $("#LJumsuGb4").html();
+
+            str_LJumsu = $("#LJumsuGb1").html() + $("#LJumsuGb2").html() +  $("#RJumsuGb4").html();
+            str_RJumsu = $("#RJumsuGb1").html() + $("#RJumsuGb2").html() +  $("#LJumsuGb4").html();
+
+          
+
+            //한판승
+            if( strReturn == "" ){
+              if( Number(str_LJumsuGb1) > 0 || Number(str_RJumsuGb1) > 0){
+                strReturn = "sd019001";
+                strTitle = "한판(승)"
+              }
+            }
+
+            //절반승
+            if( strReturn == "" ){
+              if( Number(str_LJumsuGb2) > 0 || Number(str_RJumsuGb2) > 0){
+                strReturn = "sd019002";
+                strTitle = "절반(승)"
+              }
+            }
+
+            //유효승
+            /*
+            if( strReturn == "" ){
+              if( Number(str_LJumsuGb3) > 0 || Number(str_RJumsuGb3) > 0){
+                strReturn = "sd019003";
+                strTitle = "유효(승)"
+              }
+            }
+            */
+            
+            if (strReturn != ""){
+              if(Number(str_LJumsu) > Number(str_RJumsu)){
+                obj.LPlayerResult = strReturn;
+                obj.RPlayerResult = "";
+                strmsg = localStorage.getItem("LPlayerName") + " 선수를 " + strTitle + "으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";      
+              }
+              else{
+                obj.LPlayerResult = "";
+                obj.RPlayerResult = strReturn;            
+                strmsg = localStorage.getItem("RPlayerName") + " 선수를 " + strTitle + "으로 기록합니다. 동의하시면 확인버튼을 눌러주세요2.";
+                strResultYN = "Y";      
+              }
+            }
+          }
+
+          //각각의 선수 지도가 3개 이상이면 반칙(승), 3개미만이면 우세(승)
+  
+          
+          if( strResultYN == "" ){
+
+
+            if( Number(str_LJumsuGb4) > Number(str_RJumsuGb4) ){  
+
+                    
+              if( Number(str_LJumsuGb4) < 3 && Number(str_LJumsuGb4) > 0)
+              {
+
+
+                if(Number(str_LJumsuGb4) == 1){
+                  obj.RPlayerResult = "sd019015";   
+                }
+                else if(Number(str_LJumsuGb4) == 2){
+                  obj.RPlayerResult = "sd019017";   
+                }
+                /*
+                else if(Number(str_LJumsuGb4) == 3){
+                  obj.RPlayerResult = "sd019019";   
+                }
+                */
+                else{
+                  obj.RPlayerResult = "sd019015"; 
+                }
+                    
+                obj.LPlayerResult = "";
+                    
+                strmsg = localStorage.getItem("RPlayerName") + " 선수를 우세(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";  
+              }
+
+              else{
+                obj.RPlayerResult = "sd019004"; 
+                obj.LPlayerResult = "";
+                    
+                strmsg = localStorage.getItem("RPlayerName") + " 선수를 지도(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";                
+              }
+            }
+            else if( Number(str_LJumsuGb4) < Number(str_RJumsuGb4) ){
+
+                    
+              if ( Number(str_RJumsuGb4) < 3 && Number(str_RJumsuGb4) > 0 )
+              {
+
+
+                if(Number(str_RJumsuGb4) == 1){
+                  obj.LPlayerResult = "sd019015";   
+                }
+                else if(Number(str_RJumsuGb4) == 2){
+                  obj.LPlayerResult = "sd019017";   
+                }
+                /*
+                else if(Number(str_RJumsuGb4) == 3){
+                  obj.LPlayerResult = "sd019019";   
+                }
+                */
+                else{
+                  obj.LPlayerResult = "sd019015"; 
+                }                 
+
+                obj.RPlayerResult = "";         
+                strmsg = localStorage.getItem("LPlayerName") + " 선수를 우세(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";    
+                strResultYN = "Y";  
+              }
+
+              else{
+                obj.LPlayerResult = "sd019004";
+                obj.RPlayerResult = ""; 
+                    
+                strmsg = localStorage.getItem("RPlayerName") + " 선수를 지도(승)으로 기록합니다. 동의하시면 확인버튼을 눌러주세요.";
+                strResultYN = "Y";                
+              }
+            }
+          }
+
+          var jsonData = JSON.stringify(obj);
+
+          console.log("결과:" + strmsg);
+
+          var events = "";
+
+          //승리한 선수가 있다면..
+          /*
+          var arrayWinplayer = winplayer_select();  //승리한 선수 가져오기
+
+          if(arrayWinplayer[0] != ""){
+            alert("승패가 확정된 라운드는 다시 저장 하실 수 없습니다.");
+            return;
+          }
+          */
+
+          //승패 확인창
+          if(!confirm(strmsg)){
+            return;
+          }
+
+
+          $.ajax({
+            url: '/ajax/judo_os/tblRGameResultInsert.ashx',
+            type: 'post',
+            data: jsonData,
+            success: function (sdata) {
+
+              console.log("result:" + sdata);
+
+              if(sdata == "Insert_Success" || sdata == "Update_Success"){
+                alert('경기결과 등록이 완료되었습니다.');
+
+                //진행 중 해제
+                localStorage.setItem("GameProgress", "");
+
+                clickBackbtn();
+              }
+              else{
+                alert('경기결과 등록에 실패했습니다.' + sdata);
+              }
+
+              //승리한 선수가 있다면..
+              var arrayWinplayer = winplayer_select();  //승리한 선수 가져오기
+
+              if(arrayWinplayer[0] != ""){
+                $("#WinPlayer").html("");
+                $("#WinPlayer").append("<option value='"+ arrayWinplayer[0] +"'>"+ arrayWinplayer[1] +"</option>");
+              }
+
+              /*
+              if(arrayWinplayer[0] != ""){
+                $("#gameresult").html("");
+                $("#gameresult").append("<option value='"+ arrayWinplayer[2] +"'>"+ arrayWinplayer[3] +"</option>");
+              }
+              */
+
+              loadplaylog();
+              
+              
+              /*
+              var myArr = JSON.parse(sdata);
+
+              if (myArr.length > 0){
+
+                  if (myArr[0].Left01 != "")
+                  {
+                    $("#LJumsuGb1").html(addzero(myArr[0].Left01));
+                    $("#LJumsuGb2").html(addzero(myArr[0].Left02));
+                    $("#LJumsuGb3").html(addzero(myArr[0].Left03));
+                    $("#LJumsuGb4").html(addzero(myArr[0].Left04));
+                    $("#RJumsuGb1").html(addzero(myArr[0].Right01));
+                    $("#RJumsuGb2").html(addzero(myArr[0].Right02));
+                    $("#RJumsuGb3").html(addzero(myArr[0].Right03));
+                    $("#RJumsuGb4").html(addzero(myArr[0].Right04));
+                  }
+                  else{
+                    $("#LJumsuGb1").html("00");
+                    $("#LJumsuGb2").html("00");
+                    $("#LJumsuGb3").html("00");
+                    $("#LJumsuGb4").html("00");
+                    $("#RJumsuGb1").html("00");
+                    $("#RJumsuGb2").html("00");
+                    $("#RJumsuGb3").html("00");
+                    $("#RJumsuGb4").html("00");               
+                  }
+
+
+              } 
+              else {
+                    
+                $("#LJumsuGb1").html("00");
+                $("#LJumsuGb2").html("00");
+                $("#LJumsuGb3").html("00");
+                $("#LJumsuGb4").html("00");
+                $("#RJumsuGb1").html("00");
+                $("#RJumsuGb2").html("00");
+                $("#RJumsuGb3").html("00");
+                $("#RJumsuGb4").html("00");
+                
+              }
+              */
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+            return defer.promise();         
+        }
+        //E:경기결과저장(저장버튼 Click)
+
+        //S:현재 라운드의 승리자 가져오기
+        function winplayer_select(){
+
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+          obj.TeamGb = localStorage.getItem("TeamGb");
+          obj.Sex = localStorage.getItem("Sex");
+          obj.Level = localStorage.getItem("Level");
+          obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.SportsGb = localStorage.getItem("SportsGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+
+          var jsonData = JSON.stringify(obj);
+
+          var strResult = "";
+
+          var strPlayerIDX = "";
+          var strPlayerName = "";
+          var strPlayerResult = "";
+          var strPubName = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/GGameWinPlayerSelect.ashx',
+            type: 'post',
+            async:false,
+            data: jsonData,
+            success: function (sdata) {
+
+              var myArr = JSON.parse(sdata);
+
+              if (myArr.length > 0){
+
+                strPlayerIDX = myArr[0].PlayerIDX;
+                strPlayerName = myArr[0].PlayerName;
+                strPlayerResult = myArr[0].PlayerResult;
+                strPubName = myArr[0].PubName;
+                
+              } 
+              else {
+                
+              }
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+          
+          //return defer.promise();     
+
+          return [strPlayerIDX, strPlayerName, strPlayerResult, strPubName];
+        }
+        //E:현재 라운드의 승리자 가져오기  
+
+        //S: 로그아웃버튼
+        function logout(){
+
+          if (localStorage.getItem("GameProgress") == "sd050001")
+          {
+            if(confirm("경기가 진행 중 입니다. 로그아웃 시, 해당 경기가 리셋되고 메인으로 이동합니다. 동의 하시면 확인버튼을 눌러주세요."))
+            {
+              //경기리셋;
+              resetgame();
+
+              localStorage.clear();
+
+              location.href='index.html';
+            }
+            else
+            {
+              return;
+            }
+          }
+          else
+          {
+            if(confirm("로그아웃 후, 메인으로 이동합니다.  동의하시면 확인버튼을 눌러주세요."))
+            {
+              localStorage.clear();
+
+              location.href='index.html';
+            }         
+            else
+            {
+              return;
+            }
+          }
+
+        }
+        //E: 로그아웃버튼
+
+
+        //S:현재 라운드의 실격승, 반칙승 Log가 있는지 없는지의 Count..
+        function nowfoul(){
+
+          var defer = $.Deferred();
+
+          var obj = {};
+
+          obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+          obj.TeamGb = localStorage.getItem("TeamGb");
+          obj.Sex = localStorage.getItem("Sex");
+          obj.Level = localStorage.getItem("Level");
+          obj.GroupGameGb = localStorage.getItem("GroupGameGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.SportsGb = localStorage.getItem("SportsGb");
+          obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+          obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+
+          var jsonData = JSON.stringify(obj);
+
+          var strFoulCnt = "";
+
+          $.ajax({
+            url: '/ajax/judo_os/GGameFoulSelect.ashx',
+            type: 'post',
+            async:false,
+            data: jsonData,
+            success: function (sdata) {
+
+              var myArr = JSON.parse(sdata);
+
+              if (myArr.length > 0){
+
+                strFoulCnt = myArr[0].FoulCnt;
+                
+              } 
+              else {
+                strFoulCnt = "0";
+              }
+
+              defer.resolve(sdata);
+            },
+            error: function (errorText) {
+              defer.reject(errorText);
+            }
+          });
+          
+          //return defer.promise();     
+
+          return strFoulCnt;
+        }
+        //E:현재 라운드의 승리자 가져오기  
+        
+
+        //S:스코어보드 점수선택
+        function jumsu_info(btnobj, strLRgubun, strJumsu){
+
+          
+          //Number(nowfoul()) > 0 일때는 실격승,반칙승,부전승 체크가 풀리거나, 체크된 상태가 되지 않아야함
+          if(parseInt(Number(nowfoul())) > 0){
+            $('.tgClass').addClass('fixed');
+            alert('실격승, 반칙승, 부전승 판정이 있는경우, 점수를 더 입력하실 수 없습니다.');
+            return;
+          }
+          //Number(nowfoul()) < 1 일때는 실격승,반칙승,부전승 체크를 자유롭게 할 수 있어야 함
+          else{
+
+            $('.tgClass').removeClass('fixed');
+          }
+
+          if( Number($("#LJumsuGb4").html()) >= 4 || Number($("#RJumsuGb4").html()) >= 4){
+            $('.tgClass').addClass('fixed');
+            alert('지도 4회 시, 점수를 더 입력하실 수 없습니다.');
+            return;
+          }
+
+          if( Number($("#LJumsuGb1").html()) >= 1 || Number($("#RJumsuGb1").html()) >= 1){
+            $('.tgClass').addClass('fixed');
+            alert('한판 1회 시, 점수를 더 입력하실 수 없습니다.');
+            return;
+          }
+
+          //해당조건의 반대상황으로 볼것
+          if($(btnobj).attr("class") == "on"){
+            localStorage.setItem("LJGubun",""); 
+            localStorage.setItem("LJJumsu","");                   
+          }
+
+          else{
+            localStorage.setItem("LJGubun",strLRgubun); 
+            localStorage.setItem("LJJumsu",strJumsu);         
+          }
+                  
+        }
+        //E:스코어보드 점수선택
+
+        //S:좌,우기술 선택
+        function skillleftright_info(strskillleftright){
+  
+          localStorage.setItem("SkillLeftRight",strskillleftright);
+                  
+        }
+        //E:좌,우기술 선택
+
+        //S:백버튼 Click
+        function clickBackbtn(){
+
+          localStorage.setItem("BackPage","enter-score");
+
+          //진행중 코드:sd050001 이면
+          if (localStorage.getItem("GameProgress") == "sd050001")
+          {
+            if(confirm("경기가 진행 중 입니다. 화면이동 시, 해당 경기가 리셋됩니다. 동의 하시면 확인버튼을 눌러주세요."))
+            {
+              //경기리셋;
+              resetgame();
+            }
+            else{
+              return;
+            }
+          }
+        
+          if (localStorage.getItem("GroupGameGb") == "sd040001")
+          {
+            location.href='RGameList.html';
+          }
+          else{
+            location.href='enter-group.html';         
+          }
+        }
+        //E:백버튼 Click
+
+        //S:홈버튼 Click
+        function clickHomebtn(){
+
+          //진행중 코드:sd050001 이면
+          if (localStorage.getItem("GameProgress") == "sd050001")
+          {
+            if(confirm("경기가 진행 중 입니다. 화면이동 시, 해당 경기가 리셋됩니다. 동의 하시면 확인버튼을 눌러주세요."))
+            {
+              //경기리셋;
+              resetgame();
+            }
+            else{
+              return;
+            }
+          }
+
+          location.href='index.html';     
+        
+        }
+        //S:홈버튼 Click
+
+        //S:시간입력
+        function display_inputTime(str){
+          if (str == "Delete")
+          {
+            jQuery.fn.reverse = [].reverse;
+
+            //each문 거꾸로..
+            $($("li[name='gameTime']").get().reverse()).each(function() { 
+                //if($(this).html() != ""){
+                //  $(this).html("");
+                //  return false;
+                $(this).html("");
+                //}
+            }); 
+                      
+          }
+          else{
+            $.each($("li[name='gameTime']"), function() {
+                if($(this).html() == ""){
+
+                  if($(this).attr("data-id") == "3"){
+                    if(Number(str) > 9){
+                      return false;
+                    }
+                  }
+
+                  if($(this).attr("data-id") == "2"){
+                    if(Number(str) > 5){
+                      return false;
+                    }
+                  }
+
+                  $(this).html(str);
+                  return false;
+                }
+            }); 
+          }
+        }
+        //E:시간입력
+
+
+        //S:판정선택 - 반칙,실격,부전,기권
+        function select_gameresult(str){
+
+          //부전승 일때 숫자 넣어주기 0분00초
+          if($("#L_gameresult").val() == "sd023007" || $("#R_gameresult").val() == "sd023007"){
+
+            $.each($("li[name='gameTime']"), function() {
+              $(this).html("0")
+            }); 
+          }
+          else{
+            $.each($("li[name='gameTime']"), function() {
+              $(this).html("")
+            });           
+          }
+
+          if(str == "L"){
+            $("#R_gameresult").val("");
+
+            localStorage.setItem("LJGubun",str); 
+            localStorage.setItem("LJJumsu",$("#L_gameresult").val()); 
+          }
+          else{
+            $("#L_gameresult").val("");
+            localStorage.setItem("LJGubun",str); 
+            localStorage.setItem("LJJumsu",$("#R_gameresult").val()); 
+          }
+        }
+        //E:판정선택 - 반칙,실격,부전,기권
+
+        //S:경기시작
+        function game_start(){
+            var defer = $.Deferred();
+
+              
+            if($("#StartTime1").val() == ""){
+              alert("시간을 입력하세요.");
+              return;
+            }
+						/*
+            if($("#StartTime2").val() == ""){
+              alert("시간을 입력하세요.");
+              return;
+            }
+						*/
+
+            if($("#StartTime3").val() == ""){
+              alert("분을 입력하세요.");
+              return;
+            }
+						/*
+            if($("#StartTime4").val() == ""){
+              alert("분을 입력하세요.");
+              return;
+            }
+						*/
+
+            var obj = {};
+
+            obj.SportsGb = localStorage.getItem("SportsGb");
+            obj.GameTitleIDX = localStorage.getItem("GameTitleIDX");
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.GameNum = localStorage.getItem("PlayerGameNum");
+
+            obj.LPlayerIDX = localStorage.getItem("LPlayerIDX");
+            obj.LTeam = localStorage.getItem("LTeam");
+            obj.LTeamDtl = localStorage.getItem("LTeamDtl");
+            obj.LPlayerName = localStorage.getItem("LPlayerName");
+
+            obj.RPlayerIDX = localStorage.getItem("RPlayerIDX");
+            obj.RTeam = localStorage.getItem("RTeam");
+            obj.RTeamDtl = localStorage.getItem("RTeamDtl");
+            obj.RPlayerName = localStorage.getItem("RPlayerName");
+
+            //obj.StartHour = $("#StartTime1").val() + $("#StartTime2").val();
+            //obj.StartMinute = $("#StartTime3").val() + $("#StartTime4").val();
+						obj.StartHour = $("#StartTime1").val();
+						obj.StartMinute = $("#StartTime3").val();
+
+
+
+            //선택된 경기장
+            $.each($("label[name='LB_GYM']"), function() {
+              if ($(this).attr("class") == "on")
+              {
+                obj.StadiumNumber = $(this).attr("data-id");
+              }
+            });
+      
+
+            var jsonData = JSON.stringify(obj);
+
+						console.log(jsonData);
+            
+            $.ajax({
+                url: '/ajax/judo_os/GGameNowGameStatus_Insert.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+
+
+                if(sdata == "Insert_False2"){
+
+                  alert("경기시작에 실패했습니다.");
+
+                  //$("#btn_gamestart").css("display","none");
+                  //$("#btn_gameend").css("display","block");
+                }
+                else{
+
+                  $("#start-modal").modal({backdrop: 'static', keyboard: false});
+                  $("#start-modal").modal("hide");
+                  //$("#btn_gamestart").css("display","none");
+                  //$("#btn_gameend").css("display","block");
+
+                  localStorage.setItem("GameProgress","sd050001");
+                }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();         
+        }
+        //E:경기시작
+
+        //S:경기리셋
+        function resetgame(){
+
+           var defer = $.Deferred();
+
+            var obj = {};
+
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+
+            var jsonData = JSON.stringify(obj);
+
+            
+            $.ajax({
+                url: '/ajax/judo_os/GGameResultDtlReset.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+
+                if(sdata == "DELETE_Success"){
+
+                  alert("경기리셋을 완료하였습니다.");
+
+                }
+                else{
+
+                  alert("해당경기를 리셋 할 수 없습니다. 관리자에게 문의 바랍니다.");
+                  return;
+                }
+
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise(); 
+        
+        } 
+        //E:경기리셋
+
+        //S:경기시간체크
+        function chk_StartTime(obj, ornum){
+
+          if($(obj).val() == "" || $.isNumeric($(obj).val()) == false){
+
+            alert("시간은 숫자만 입력하세요.");
+            $(obj).val("");
+            return;
+            
+          }
+
+          if (ornum == 1)
+          {
+            if(Number($(obj).val()) < 0 || Number($(obj).val()) > 2){
+              alert("시간은 0~2 숫자로 입력하세요.");
+              $(obj).val("");
+              return;
+            }
+          }
+
+          if (ornum == 2)
+          {
+            if(Number($(obj).val()) < 0 || Number($(obj).val()) > 9){
+              alert("시간은 0~9 숫자로 입력하세요.");
+              $(obj).val("");
+              return;
+            }
+          }
+
+          if (ornum == 3)
+          {
+            if(Number($(obj).val()) < 0 || Number($(obj).val()) > 5){
+              alert("분은 01~59 숫자로 입력하세요.");
+              $(obj).val("");
+              return;
+            }
+          }
+
+          if (ornum == 4)
+          {
+            if(Number($(obj).val()) < 0 || Number($(obj).val()) > 9){
+              alert("분은 01~59 숫자로 입력하세요.");
+              $(obj).val("");
+              return;
+            }
+          }
+
+
+          if(ornum != 4){
+            $("#StartTime" + String(ornum + 1)).focus();
+          }
+        }
+        //E:경기시간체크
+
+        //S:대전선수명 및 승자 가져오기
+        var loadwinresult=function(strPlayerGameNum){
+            var defer = $.Deferred();
+        
+            var obj = {};
+        
+            obj.RGameLevelidx = localStorage.getItem("RGameLevelidx");
+            obj.GroupGameNum = localStorage.getItem("GroupGameNum");
+            obj.PlayerGameNum = localStorage.getItem("PlayerGameNum");
+        
+            var jsonData = JSON.stringify(obj);
+
+            console.log("1_s:" + jsonData);
+        
+            var events = "";
+        
+            $.ajax({
+                url: '/ajax/judo_os/GGameWinResult.ashx',
+                type: 'post',
+                data: jsonData,
+                success: function (sdata) {
+                  
+                  console.log("1:" + sdata);
+
+                  var myArr = JSON.parse(sdata);
+        
+                  if (myArr.length > 0){
+
+                    if(myArr[0].LResult != ""){
+
+                      //좌측선수 반칙,실격,부전/기권 승 selected
+                      if(myArr[0].LSkillResult == "sd023005" || myArr[0].LSkillResult == "sd023006" || myArr[0].LSkillResult == "sd023007" || myArr[0].LSkillResult == "sd023008"){
+
+                        $("#L_gameresult").val(myArr[0].LSkillResult);
+                      }
+                      else{
+                        $("#L_gameresult").val("");
+                      }
+                    }
+                    else{
+                      $("#L_gameresult").val("");
+                    }
+
+                    if(myArr[0].RResult != ""){
+
+                      //우측선수 반칙,실격,부전/기권 승 selected
+                      if(myArr[0].RSkillResult == "sd023005" || myArr[0].RSkillResult == "sd023006" || myArr[0].RSkillResult == "sd023007" || myArr[0].RSkillResult == "sd023008"){
+                        $("#R_gameresult").val(myArr[0].RSkillResult);
+                      }
+                      else{
+                        $("#R_gameresult").val("");
+                      }
+
+                    }
+                    else{
+                      $("#R_gameresult").val("");
+                    }
+
+
+                  } 
+                  
+                  else {
+                    
+                    var varMessage="<span style='font-size:12px;'>해당 경기결과가 없습니다.</span>";
+                  }
+        
+                  defer.resolve(sdata);
+                },
+                error: function (errorText) {
+                  defer.reject(errorText);
+                }
+            });
+            return defer.promise();
+        }
+        //E:대전선수명 및 승자 가져오기
+
+        $(document).ajaxStart(function() {
+
+          
+          apploading("AppBody", "조회 중 입니다.");
+
+
+        });
+        $(document).ajaxStop(function() {
+
+              
+          $('#AppBody').oLoader('hide');
+
+        });
+                
+
+    </script>
+  </head>
+  <body id="AppBody">
+    <!-- S: header -->
+    <div class="header container-fluid">
+      <div class="row">
+        <div class="pull-left">
+          <a onclick="clickBackbtn();" role="button" class="prev-btn">
+            <span class="icon-prev">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </span>
+    <span class="prev-txt">경기스코어 입력</span>
+      </a>
+        </div>
+        <div>
+         <h1 class="logo">
+          <img id="DP_UserLogo" src="images/tournerment/intro/logo_kja.png" alt="대한유도회" height="35">
+          <!-- <img src="images/tournerment/intro/logo_sja.png" alt="서울특별시유도회" height="35">
+          <img src="images/tournerment/intro/logo_kujf.png" alt="한국대학유도연맹" height="35">
+          <img src="images/tournerment/intro/logo_kjhs.png" alt="한국 중고등학교 유도연맹" height="35"> -->
+        </h1>
+        </div>
+        <div class="pull-right">
+          <span class="sd-logo"><img src="images/tournerment/header/logo@3x.png" alt="스포츠 다이어리" width="100"></span>
+
+          <a onclick="clickHomebtn()" role="button" class="home-link"><span class="icon-home"><i class="fa fa-home" aria-hidden="true"></i></span></a>
+
+          <a href="javascript:logout();" id="DP_Logout" role="button" class="log-out">
+            <span class="icon-logout"><i class="fa fa-power-off" aria-hidden="true"></i></span>
+            <span class="logout-txt">로그아웃</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- E: header -->
+    
+    <!-- S: main -->
+    <div class="main container-fluid">
+      <!-- S: score-enter -->
+      <div class="score-enter row">
+          <!-- S: dl 1경기 / 64강 -->
+          <dl class="selected-list">
+            <dt>
+              <p><label for="gym1" id="LB_GYM1" name="LB_GYM" data-id="1"><input type="checkbox" id="gym1" name="StadiumNumber" value="1"/> <span>1경기장</span></label></p>
+              <p><label for="gym2" id="LB_GYM2" name="LB_GYM" data-id="2"><input type="checkbox" id="gym2" name="StadiumNumber" value="2"/> <span>2경기장</span></label></p>
+              <p><label for="gym3" id="LB_GYM3" name="LB_GYM" data-id="3"><input type="checkbox" id="gym3" name="StadiumNumber" value="3"/> <span>3경기장</span></label></p>
+              <p><label for="gym4" id="LB_GYM4" name="LB_GYM" data-id="4"><input type="checkbox" id="gym4" name="StadiumNumber" value="4"/> <span>4경기장</span></label></p>
+              <p><label for="gym5" id="LB_GYM5" name="LB_GYM" data-id="5"><input type="checkbox" id="gym5" name="StadiumNumber" value="5"/> <span>5경기장</span></label></p>
+              <p><label for="gym6" id="LB_GYM6" name="LB_GYM" data-id="6"><input type="checkbox" id="gym6" name="StadiumNumber" value="6"/> <span>6경기장</span></label></p>
+            </dt>
+            <dd><span id="DP_play-num"><!--1경기--></span> / <span id="DP_play-round"><!--64강--></span></dd>
+            <dd class="play-division arrange" id="DP_play-division"><!--개인전--> </dd>
+            <dd class="play-belong arrange long-word" id="DP_play-belong"><!--고등학교--> </dd>
+            <dd class="play-type arrange" id="DP_play-type"><!--남자--> </dd>
+            <!-- <dd class="play-weight arrange" id="DP_play-weight">-66kg </dd> -->
+            <dd class="play-title long-word" id="DP_play-title"><!--제9회 청풍기 전국유도대회--></dd>
+          </dl>
+          <!-- E: dl 날짜/대회명/대회구분 -->
+          
+          <!-- S: score-enter-main -->
+          <div class="score-enter-main clearfix">
+            <!-- S: skill-btn -->
+            <div class="skill-btn">
+              <!-- S: direction -->
+              <ul class="direction tab-list clearfix">
+                <li>
+                  <a onclick="skillleftright_info('sd030001');" role="button" class="btn left-skill" id="btn_leftskill"><span class="tab-img"><img src="images/tournerment/enter/radio-off.png" alt width="21" height="21" id="img_leftskill"></span>좌측기술</a>
+                </li>
+                <li>
+                  <a onclick="skillleftright_info('sd030002');" role="butotn" class="btn right-skill" id="btn_rightskill"><span class="tab-img"><img src="images/tournerment/enter/radio-off.png" alt width="21" height="21" id="img_rightskill"></span>우측기술</a>
+                </li>
+              </ul>
+              <!-- E: direction -->
+
+              <!-- S: skill-group -->
+              <div class="skill-group">
+                <!-- S: hand skill -->
+                <dl class="hand-skill clearfix" id="DP_hand-skill">
+                  <!--
+                  <dt>손기술</dt>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      업어치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      양소매 업어치기
+                      </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      한소매 업어치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      외깃 업어치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      한팔 업어치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      한팔 빗당겨치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      빗당겨치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      어깨로 매치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      기타 손기술
+                    </label>
+                  </dd>
+                -->
+                </dl>
+                
+                <!-- E: hand skill -->
+                <!-- S: foot skill -->
+                <dl class="foot-skill clearfix" id="DP_foot-skill">
+                  <!--
+                  <dt>발기술</dt>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      밭다리
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      안다리
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      발뒤축 걸기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      안뒤축 걸기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      안뒤축 후리기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      발목 받치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      허벅다리 걸기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                     기타 발기술
+                    </label>
+                  </dd>
+                  -->
+                </dl>
+                <!-- E: foot skill -->
+                <!-- S: waist skill -->
+                <dl class="waist-skill clearfix" id="DP_waist-skill">
+                  <!--
+                  <dt>허리기술</dt>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      허리띄기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      허리후리기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      허리채기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      뒤안아 매치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      기타 허리기술
+                    </label>
+                  </dd>
+                  -->
+                </dl>
+                <!-- E: waist skill -->
+
+                <!-- S: lie skill -->
+                <dl class="lie-skill clearfix" id="DP_lie-skill">
+                  <!--
+                  <dt>누우며 메치기</dt>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      배대뒤치기
+                    </label>
+                  </dd>
+                  <dd>
+                     <label>
+                      <input type="checkbox">
+                      안오금띄기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      기타누으며 메치기
+                    </label>
+                  </dd>
+                  -->
+                </dl>
+                <!-- E: lie skill -->
+
+                <!-- S: counterattack-skill -->
+                <dl class="counterattack-skill clearfix"  id="DP_counterattack-skill">
+                  <!--
+                  <dt>되치기</dt>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      손기술 되치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      허리 되치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      발기술 되치기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      기타 되치기
+                    </label>
+                  </dd>
+                  -->
+                </dl>
+                <!-- E: counterattack-skill -->
+
+                <!-- S: hod-skill -->
+                <dl class="hold-skill clearfix" id="DP_hold-skill">
+                  <!--
+                  <dt>굳히기</dt>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      누르기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      조르기
+                    </label>
+                  </dd>
+                  <dd>
+                    <label>
+                      <input type="checkbox">
+                      꺽기
+                    </label>
+                  </dd>
+                  -->
+                </dl>
+                <!-- E: hod-skill -->
+              </div>
+              <!-- E: skill-group -->
+
+              <!-- S: save-result -->
+              <ul class="save-result">
+                <li>
+                 <a href="#" class="btn btn-save" id="scoresave" onclick="insert_gamedtl();">점수 입력</a>
+                </li>
+                <li>
+                  <!--<a href="#" class="btn btn-save-finish" id="btn_gamestart" onclick="game_start();" style="display:block">경기 시작</a>-->
+                  <a href="#" class="btn btn-save-finish" id="btn_gameend" onclick="result_save();" style="display:block">경기 종료</a>
+                </li>
+              </ul>
+              <!-- E: save-result -->
+
+            </div>
+            <!-- E: skill-btn -->
+
+            <!-- S: display-board -->
+            <div class="display-board">
+              <ul class="player-display clearfix">
+                <li class="player-1" id="DP_player-name_Up">김재범<span>(비봉고등학교)</span></li>
+                <li class="player-2" id="DP_player-name_Down">최보라<span>(중앙여자고등학교)</span></li>
+                <li class="v-s">VS</li>
+              </ul>
+              
+              <!-- S: score-board -->
+              <div class="score-board">
+                <!-- S: point-display -->
+              <div class="point-display clearfix">
+                <ul class="point-title clearfix">
+                  <!-- <li>선수</li> -->
+                  <li>한판</li>
+                  <li>절반</li>
+                  <!-- <li>유효</li> -->
+                  <li>지도</li>
+                  <li class="no-yuhyo">반칙/실격/<br />부전/기권 승</li>
+                  <li class="no-yuhyo-end">양선수</li>
+                </ul>
+                <ul class="player-1-point player-point clearfix">
+                  <!-- <li>
+                    <a onclick="jumsu_info('L','sd021001')"><span class="score player-name" id="DP_ScorePname_Up">김영석</span></a>
+                  </li> -->
+                  <li class="tgClass">
+                   <a class="" onclick="jumsu_info(this,'L','sd023001')" name="a_jumsugb"><span class="score" id="LJumsuGb1" >0</span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'L','sd023002')" name="a_jumsugb"><span class="score" id="LJumsuGb2" >0</span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'L','sd023004')" name="a_jumsugb"><span class="score" id="LJumsuGb4" >0</span></a>
+                  </li>
+                  <!-- <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'L','sd023003')" name="a_jumsugb"><span class="score txt-orange" id="LJumsuGb3" >0</span></a>
+                  </li> -->
+                  <li class="select-box-li no-yuhyo">
+                    <select class="select-win select-box" id="L_gameresult" onchange="select_gameresult('L');">
+                    </select>
+                  </li>
+                  <!--//
+                  <li class="tgClass">
+                    <a class="" id="DP_L_sd019013" onclick="jumsu_info(this,'L','sd023005')"><span class="score win-type" ></span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" id="DP_L_sd019005" onclick="jumsu_info(this,'L','sd023006')"><span class="score win-type" ></span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" id="DP_L_sd019006" onclick="jumsu_info(this,'L','sd023007')"><span class="score win-type" ></span></a>
+                  </li>
+                  -->
+                </ul>
+                <ul class="player-2-point player-point clearfix">
+                  <!-- <li>
+                    <a onclick="jumsu_info('R','sd021002')"><span class="score player-name" id="DP_ScorePname_Down">최보라</span></a>
+                  </li> -->
+                  <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'R','sd023001')" name="a_jumsugb"><span class="score" id="RJumsuGb1">0</span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'R','sd023002')" name="a_jumsugb"><span class="score" id="RJumsuGb2">0</span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'R','sd023004')" name="a_jumsugb"><span class="score" id="RJumsuGb4">0</span></a>
+                  </li>
+                  <!-- <li class="tgClass">
+                    <a class="" onclick="jumsu_info(this,'R','sd023003')" name="a_jumsugb"><span class="score txt-orange" id="RJumsuGb3">0</span></a>
+                  </li> -->
+                  <li class="select-box-li no-yuhyo">
+                    <select class="select-win select-box" id="R_gameresult" onchange="select_gameresult('R');">
+                    </select>
+                  </li>
+                  <!--//
+                  <li class="tgClass">
+                    <a class="" id="DP_R_sd019013" onclick="jumsu_info(this,'R','sd023005')"><span class="score win-type"></span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" id="DP_R_sd019005" onclick="jumsu_info(this,'R','sd023006')"><span class="score win-type"></span></a>
+                  </li>
+                  <li class="tgClass">
+                    <a class="" id="DP_R_sd019006" onclick="jumsu_info(this,'R','sd023007')"><span class="score win-type"></span></a>
+                  </li>
+                  -->
+                </ul>
+                <div class="player-match-option player-point">
+                  <label for="player-match-option-01" class="tgClass default" id="LRResult_Lose"><input type="checkbox" /><span>부전패</span></label>
+
+                  <label for="player-match-option-02" class="tgClass draw" id="LRResult_Draw"><input type="checkbox" /><span id="DP_DualResult_Text">무승부</span></label>
+
+                  <!--<label for="player-match-option-03" class="tgClass no-attend" id="LRResult_Draw"><input type="checkbox" id="player-match-option-03" /><span>불참</span></label>-->
+
+                </div>
+              </div>
+              <!-- E: point-display -->
+
+              <!-- S: match-result -->
+              <div class="match-result">
+                <!-- <h2>득실기록</h2> -->
+                <!-- S: result-list 경기결과 리스트 -->
+                <ul class="result-list" id="DP_result-list">
+                  <!--<li class="match-title">득실기록</li>
+                  
+                  <li class="mine">
+                    <p>
+                    [<span class="score-time">3:00</span>]<span class="player-name">김영석</span>
+                       : <span class="">누우며 메치기</span>(<span class="skill">기타누으며 메치기</span>) <button class="btn btn-del" type="button"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">닫기</span></button>
+                    </p>
+                  </li>
+                  <li class="opponent">
+                    <p>
+                    [<span class="score-time">3:00</span>]<span class="player-name">최보라</span>
+                       : <span class="">누우며 메치기</span>(<span class="skill">기타누으며 메치기</span>) <button class="btn btn-del" type="button"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">닫기</span></button>
+                    </p>
+                  </li>
+                  -->
+                </ul>
+              <!-- E: result-list 경기결과 리스트 -->
+              </div>
+              <!-- E: match-result -->
+              </div>
+              <!-- E: score-board -->
+              <!-- S: time-table -->
+              <div class="time-table">
+                <!-- S: 연장, time 아이콘 -->
+                <ul class="clearfix">
+                  <li class="time-mark">
+                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                    <span>TIME</span>
+                  </li>
+                  <li class="injury-mark">
+                    <label id="DP_OverTime"><input id="OverTime" name="OverTime" type="checkbox" value="1"><span>연장</span></label>
+                  </li>
+                </ul>
+                <!-- E: 연장, time 아이콘 -->
+                <!-- S: set-time -->
+                <ul class="set-time clearfix">
+                  <li name="gameTime" data-id="3"></li>
+                  <li class="divider">:</li>
+                  <li name="gameTime" data-id="2"></li>
+                  <li name="gameTime" data-id="1"></li>
+                </ul>
+                <!-- E: set-time -->
+                <!-- S: time-btn -->
+                <ul class="times clearfix">
+                  <li><a onclick="display_inputTime('1')" class="btn time-btn">1</a></li>
+                  <li><a onclick="display_inputTime('2')" class="btn time-btn">2</a></li>
+                  <li><a onclick="display_inputTime('3')" class="btn time-btn">3</a></li>
+                  <li><a onclick="display_inputTime('4')" class="btn time-btn">4</a></li>
+                  <li><a onclick="display_inputTime('5')" class="btn time-btn">5</a></li>
+                  <li><a onclick="display_inputTime('6')" class="btn time-btn">6</a></li>
+                  <li><a onclick="display_inputTime('7')" class="btn time-btn">7</a></li>
+                  <li><a onclick="display_inputTime('8')" class="btn time-btn">8</a></li>
+                  <li><a onclick="display_inputTime('9')" class="btn time-btn">9</a></li>
+                  <li><a onclick="display_inputTime('0')" class="btn time-btn">0</a></li>
+                  <li><a onclick="display_inputTime('Delete')" class="btn time-btn del-time">< 시각삭제</a></li>
+                </ul>
+                <!-- E: time-btn -->
+              </div>
+              <!-- E: time-table -->
+
+              <!-- S: time-table old -->
+              <!-- <div class="time-table"> -->
+                <!-- S: time-list -->
+                <!-- <dl class="time-list">
+                  <dt>경기시간</dt>
+                  <dd class="on"><a onclick="insert_gamedtl('05:00');" class="btn time-btn">05:00 ~ 04:01</a></dd>
+                  <dd><a onclick="insert_gamedtl('02:00');" class="btn time-btn">02:00 ~ 01:01</a></dd>
+                  <dd><a onclick="insert_gamedtl('04:00');" class="btn time-btn">04:00 ~ 03:01</a></dd>
+                  <dd><a onclick="insert_gamedtl('01:00');" class="btn time-btn">01:00 ~ 00:00</a></dd>
+                  <dd><a onclick="insert_gamedtl('03:00');" class="btn time-btn">03:00 ~ 02:01</a></dd>
+                  <dd><a onclick="insert_gamedtl('00:00');" class="btn time-btn">골든스코어</a></dd>
+                </dl> -->
+                <!-- E: time-list -->
+              <!-- </div> -->
+              <!-- E: time-table old -->
+            </div>
+            <!-- E: display-board -->
+
+            <!-- S: time-table -->
+            <!-- <div class="time-table"> -->
+              <!-- S: result-select -->
+              <!-- <ul class="result-select">
+                <li>
+                  <select id="WinPlayer"> -->
+                    <!--
+                    <option value="">김영석</option>
+                    <option value="">최보라</option>
+                    -->
+                  <!-- </select>
+                </li>
+                <li>
+                  <select id="gameresult">
+                    
+                  </select>
+                </li>
+              </ul> -->
+              <!-- E: result-select -->
+             <!--  <div class="save-result">
+                <button class="btn btn-save" id="resultsave" onclick="result_save();">점수 입력</button>
+                <button class="btn btn-save btn-save-finish" id="resultsave" onclick="result_save();">기록 완료</button>
+              </div>
+            </div>
+            <!-- E: time-table -->
+
+            <!-- S: sign-list -->
+            <ul class="sign-list clearfix">
+              <li class="chief">
+                <span class="judge">주심</span>
+                <span class="sign-mark" id="chiefSign_copy"></span>
+
+                <button type="button" class="btn btn-accept" data-toggle="modal" data-target="#sign-modal" data-whatever="chiefSign" id="btn_chiefSign" style="display:block">승인하기 <span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                <span class="accept-end" id="result_chiefSign" style="display:none"><span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                <a data-toggle="modal" data-target="#sign-modal" data-whatever="chiefSign">승인완료</a></span>
+              </li>
+              <li class="assistant">
+                <span class="judge">부심</span>
+                <span class="sign-mark" id="asschiefSign1_copy"></span>
+                
+                <button type="button" class="btn btn-accept" data-toggle="modal" data-target="#sign-modal" data-whatever="asschiefSign1" id="btn_asschiefSign1" style="display:block">승인하기 <span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                <span class="accept-end" id="result_asschiefSign1" style="display:none"><span class="icon"><i class="fa fa-check" aria-hidden="true" ></i></span>
+                <a data-toggle="modal" data-target="#sign-modal" data-whatever="asschiefSign1">승인완료</a></span>
+              </li>
+              <li class="assistant">
+                <span class="judge">부심</span>
+                <span class="sign-mark second" id="asschiefSign2_copy"></span>
+                
+                <button type="button" class="btn btn-accept" data-toggle="modal" data-target="#sign-modal" data-whatever="asschiefSign2" id="btn_asschiefSign2" style="display:block">승인하기 <span class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>                
+                <span class="accept-end" id="result_asschiefSign2" style="display:none"><span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                <a data-toggle="modal" data-target="#sign-modal" data-whatever="asschiefSign2">승인완료</a>
+                </span>
+              </li>
+            </ul>
+            <!-- E: sign-list -->
+          </div>
+          <!-- E: score-enter-main -->
+      </div>
+      <!-- E: score-enter -->
+
+      <!-- S: 사인 모달 modal -->
+      <div class="modal fade" id="sign-modal" tabindex="-1" role="dialog" aria-labelledby="sign-modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header sign-modal-header">
+              <h3 class="modal-title" id="sign-modal-title">승인하기</h3>
+            </div>
+            <div class="modal-body sign-modal-body">
+              
+
+              <!-- 여기에 입력해 주세요. -->
+              <div>
+               <canvas id="game_signature" width="570" height="250" data-id="">
+               </canvas>
+              </div>
+              <!-- 여기에 입력해 주세요. -->
+
+
+            </div>
+            <div class="modal-footer sign-modal-footer">
+              <a role="button" class="btn btn-save" id="signature_copy">승인완료</a>
+              <a href="#" role="button" class="btn btn-close" data-dismiss="modal">닫기</a>
+            </div>
+
+          </div> <!-- ./ modal-content -->
+        </div> <!-- ./modal-dialog -->
+      </div>
+      <!-- E: 사인 모달 modal -->
+
+
+      <!-- S: 사인 모달 modal -->
+      <div class="modal fade start-modal in" id="start-modal" tabindex="-1" role="dialog" aria-labelledby="start-modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header sign-modal-header">
+              <h3 class="modal-title" id="start-modal-title">경기시작</h3>
+            </div>
+            <div class="modal-body sign-modal-body">
+              <!-- 여기에 입력해 주세요. -->
+              <div align="center">
+               <!-- 경기를 시작하시려면 [경기시작] 버튼을 눌러주세요 -->
+               <ul class="clearfix">
+                 <li class="ipt-number">
+                   <!--<input id="StartTime1" type="number" onkeyup="chk_StartTime(this,1);" maxlength="1">-->
+                   <select name="StartTime1" id="StartTime1">
+                     <option value="00">00</option>
+                     <option value="01">01</option>
+                     <option value="02">02</option>
+                     <option value="03">03</option>
+                     <option value="04">04</option>
+                     <option value="05">05</option>
+                     <option value="06">06</option>
+                     <option value="07">07</option>
+                     <option value="08">08</option>
+                     <option value="09">09</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                     <option value="13">13</option>
+                     <option value="14">14</option>
+                     <option value="15">15</option>
+                     <option value="16">16</option>
+                     <option value="17">17</option>
+                     <option value="18">18</option>
+                     <option value="19">19</option>
+                     <option value="20">20</option>
+                     <option value="21">21</option>
+                     <option value="22">22</option>
+                     <option value="23">23</option>
+                   </select>
+                 </li>
+								 <!--
+                 <li class="ipt-number">
+                   <input id="StartTime2" type="number" onkeyup="chk_StartTime(this,2);" maxlength="1">
+                 </li>
+								 -->
+                 <li class="divn-dot">
+                   <!--<span>:</span>-->
+                   <span>시</span> 
+                 </li>
+                 <li class="ipt-number">
+                   <!--<input id="StartTime3" type="number" onkeyup="chk_StartTime(this,3);" maxlength="1">-->
+                    <select name="StartTime3" id="StartTime3">
+                     <option value="00">00</option>
+                     <option value="01">01</option>
+                     <option value="02">02</option>
+                     <option value="03">03</option>
+                     <option value="04">04</option>
+                     <option value="05">05</option>
+                     <option value="06">06</option>
+                     <option value="07">07</option>
+                     <option value="08">08</option>
+                     <option value="09">09</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                     <option value="13">13</option>
+                     <option value="14">14</option>
+                     <option value="15">15</option>
+                     <option value="16">16</option>
+                     <option value="17">17</option>
+                     <option value="18">18</option>
+                     <option value="19">19</option>
+                     <option value="20">20</option>
+                     <option value="21">21</option>
+                     <option value="22">22</option>
+                     <option value="23">23</option>
+                     <option value="24">24</option>
+                     <option value="25">25</option>
+                     <option value="26">26</option>
+                     <option value="27">27</option>
+                     <option value="28">28</option>
+                     <option value="29">29</option>
+                     <option value="30">30</option>
+                     <option value="31">31</option>
+                     <option value="32">32</option>
+                     <option value="33">33</option>
+                     <option value="34">34</option>
+                     <option value="35">35</option>
+                     <option value="36">36</option>
+                     <option value="37">37</option>
+                     <option value="38">38</option>
+                     <option value="39">39</option>
+                     <option value="40">40</option>
+                     <option value="41">41</option>
+                     <option value="42">42</option>
+                     <option value="43">43</option>
+                     <option value="44">44</option>
+                     <option value="45">45</option>
+                     <option value="46">46</option>
+                     <option value="47">47</option>
+                     <option value="48">48</option>
+                     <option value="49">49</option>
+                     <option value="50">50</option>
+                     <option value="51">51</option>
+                     <option value="52">52</option>
+                     <option value="53">53</option>
+                     <option value="54">54</option>
+                     <option value="55">55</option>
+                     <option value="56">56</option>
+                     <option value="57">57</option>
+                     <option value="58">58</option>
+                     <option value="59">59</option>
+                   </select>
+                 </li>
+								 <!--
+                 <li class="ipt-number">
+                   <input id="StartTime4" type="number" onkeyup="chk_StartTime(this,4);" maxlength="1">
+                 </li>
+								 -->
+                 <li class="divn-dot">
+                   <span>분</span>
+                 </li>
+               </ul>
+               <p class="guide-txt">경기 시작 시간을 입력해주세요.</p>
+              </div>
+              <!-- 여기에 입력해 주세요. -->
+
+
+            </div>
+            <div class="modal-footer sign-modal-footer">
+              <a role="button" class="btn btn-save" onclick="game_start();">경기시작</a>
+              <a role="button" class="btn btn-close"  onclick="clickBackbtn()">대진표 바로가기</a>
+            </div>
+
+          </div> <!-- ./ modal-content -->
+        </div> <!-- ./modal-dialog -->
+      </div>
+      <!-- E: 사인 모달 modal -->
+      
+    </div>
+    <!-- E: main -->
+    <!-- custom.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

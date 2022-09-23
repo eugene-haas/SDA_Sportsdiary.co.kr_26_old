@@ -1,0 +1,437 @@
+﻿<!--#include file="../Library/ajax_config.asp"-->
+<%
+	'==============================================================================================
+	'생활체육 회원가입 페이지
+	'EnterType = A		
+	'선수 PlayerReln = R, 지도자 PlayerReln = T
+	'==============================================================================================
+	dim UserID 			: UserID 			= fInject(trim(Request("UserID")))
+	dim UserPass 		: UserPass 			= fInject(trim(Request("UserPass")))		
+	dim UserName 		: UserName 			= fInject(trim(Request("UserName")))
+	dim UserBirth 		: UserBirth 		= fInject(trim(Request("UserBirth")))
+	dim UserEnName 		: UserEnName   		= fInject(trim(Request("UserEnName")))
+	dim UserPhone 		: UserPhone 		= fInject(trim(Request("UserPhone")))
+	dim UserEmail 		: UserEmail 		= ReplaceTagText(fInject(trim(Request("UserEmail"))))
+	dim UserAddr 		: UserAddr 			= ReplaceTagText(fInject(trim(Request("UserAddr"))))
+	dim UserAddrDtl 	: UserAddrDtl 		= ReplaceTagText(fInject(trim(Request("UserAddrDtl"))))
+	dim SEX 			: SEX 				= fInject(Request("SEX"))	
+	dim BloodType 		: BloodType 		= fInject(Request("BloodType"))
+	dim ZipCode 		: ZipCode 			= fInject(Request("ZipCode"))	
+	dim PlayerStartYear : PlayerStartYear 	= fInject(Request("PlayerStartYear"))
+	dim PlayerTall	 	: PlayerTall 		= fInject(Request("PlayerTall"))
+	dim PlayerWeight 	: PlayerWeight 		= fInject(Request("PlayerWeight"))
+	dim PlayerReln 		: PlayerReln 		= fInject(Request("PlayerReln"))		'회원구분[A,B,Z:선수보호자 | T:팀매니저 | D:일반회원 | R:선수]	
+	dim PlayerLevel 	: PlayerLevel 		= fInject(Request("PlayerLevel"))		'체급
+	dim ViewManage 		: ViewManage 		= fInject(Request("ViewManage"))		'팀매니저 비등록선수 관리여부[Y:관리 | N:비관리]	
+	dim TeamCode 		: TeamCode			= fInject(Request("TeamCode"))			'소속팀
+	dim SmsYn 			: SmsYn 			= fInject(Request("SmsYn"))				'휴대폰 수신동의
+	dim EmailYn 		: EmailYn 			= fInject(Request("EmailYn"))			'이메일 수신동의	
+	dim SportsType	 	: SportsType 		= fInject(Request("SportsType"))		'종목구분
+	dim EnterType	 	: EnterType 		= fInject(Request("EnterType"))			'회원구분[E:엘리트 | A:아마추어]
+	dim LeaderType	 	: LeaderType 		= fInject(Request("LeaderType"))		'지도자구분[5:관장 | 6:사범 | 7:지도자(기타)]
+	
+	
+	dim CSQL, JSQL
+	dim PersonCode, PersonNum		
+	dim PlyaerIDX, LeaderIDX	'각 지도자|선수 IDX
+	dim LeaderTypeNm			'지도자 타입명
+	dim Birthday				'tblLeader 입력타입 형식 변경하기 위한 변수 ex)2017-01-01 
+	dim i, bufNum
+	'===========================================================================================
+	'미성년자 여부 체크
+	'===========================================================================================
+	IF UserBirth<>"" Then
+		IF 19 > (Year(Date()) - left(UserBirth, 4)) Then
+			UserMinorYn = "Y"
+		Else
+			UserMinorYn = "N"
+		End IF			
+	End IF
+	'===========================================================================================
+	IF UserID = "" OR UserPass = "" OR PlayerReln = "" Then 	
+		Response.Write "FALSE|200"
+		Response.End
+	Else 
+		
+		'tblMember 가입내역 조회		
+		CSQL =  	  " SELECT userID "
+		CSQL = CSQL & " FROM [Sportsdiary].[dbo].[tblMember] "
+		CSQL = CSQL & " WHERE DelYN = 'N' "
+		CSQL = CSQL & "		AND SportsType = '"&SportsType&"' "
+		CSQL = CSQL & "		AND EnterType = '"&EnterType&"' " 
+		CSQL = CSQL & "		AND Team = '"&TeamCode&"' "  
+		CSQL = CSQL & "		AND UserName = '"&UserName&"' "  	
+		CSQL = CSQL & "		AND Birthday = '"&UserBirth&"' " 
+		CSQL = CSQL & " 	AND PlayerReln = '"&PlayerReln&"' " 
+		
+'		response.Write "CSQL="&CSQL&"<br>"
+						
+		SET CRs = DBCon.Execute(CSQL)	
+		IF Not(CRs.eof or CRs.bof) Then
+			Response.Write "FALSE|99"
+		Else
+			On Error Resume Next
+			
+			Dbcon.BeginTrans()
+			
+				SELECT CASE PlayerReln
+
+					'선수테이블[tblPlayer] 등록
+					CASE "R"
+													
+						'===============================================================================================
+						'선수 테이블[tblPlayer] PersonCode 값 조회
+						'===============================================================================================
+						LSQL = "		SELECT ISNULL(MAX(PersonCode), '') PersonCode "
+						LSQL = LSQL & " FROM [SportsDiary].[dbo].[tblPlayer]"						
+						LSQL = LSQL & " WHERE PersonCode like 'A%'"						
+						
+'						response.Write "LSQL="&LSQL&"<br>"
+						
+						SET LRs = DBCon.Execute(LSQL)	
+						IF LRs(0) = "" Then
+							'선수 체육인번호
+							PersonCode = "A" & Right(Year(Date()),2) & "000000001"							
+						Else
+							
+							'ex) A17000000012
+							'A17을 제외한 나머지 숫자에 1을 더한 숫자의 자리수와 A17의 자리수(3)를 뺀 자릿수 만큼 0을 붙인다
+							For i = 1 to Len(LRs(0)) - len(Mid(LRs(0), 4, Len(LRs(0))) + 1) - 3
+								bufNum = bufNum & "0"
+							Next
+							
+							'A17 이후의 숫자에 1을 더한 수를 구한 후 만든 0의 자리수를 붙인다
+							bufNum = bufNum&Mid(LRs(0), 4, Len(LRs(0))) + 1
+							
+							'A + 년도(2자리) + bufNum
+							PersonCode =  "A" & Right(Year(Date()),2) & bufNum
+							
+						End IF	
+							LRs.Close
+						SET LRs = Nothing
+						
+'						response.Write "PersonCode="&PersonCode&"<br>"
+						
+						'===============================================================================================	
+						'선수테이블[tblPlayer] 등록
+						'===============================================================================================
+						JSQL =  "INSERT INTO [SportsDiary].[dbo].[tblPlayer] (" 
+						JSQL = JSQL & "[SportsGb]" 
+						JSQL = JSQL & ",[PlayerGb]" 
+						JSQL = JSQL & ",[UserName]" 
+						JSQL = JSQL & ",[UserPhone]" 
+						JSQL = JSQL & ",[Birthday]" 
+						JSQL = JSQL & ",[Sex]" 
+						JSQL = JSQL & ",[WriteDate]" 
+						JSQL = JSQL & ",[PersonCode]" 
+						JSQL = JSQL & ",[PlayerType]" 
+						JSQL = JSQL & ",[EnterType]" 
+						JSQL = JSQL & ",[Team]" 
+						JSQL = JSQL & ",[Member_YN]" 
+						JSQL = JSQL & ",[Auth_YN]" 									
+						JSQL = JSQL & ",[DelYN]" 
+						JSQL = JSQL & ",[RegTp]" 
+						JSQL = JSQL & ",[NowRegYN]" 
+						JSQL = JSQL & ") VALUES( '"&SportsType&"'" 
+						JSQL = JSQL & ",'sd039001'" 
+						JSQL = JSQL & ",'"&UserName&"'" 
+						JSQL = JSQL & ",'"&replace(UserPhone, "-","")&"'" 
+						JSQL = JSQL & ",'"&UserBirth&"'" 
+						JSQL = JSQL & ",'"&Sex&"'" 
+						JSQL = JSQL & ",GETDATE()" 
+						JSQL = JSQL & ",'"&PersonCode&"'" 
+						JSQL = JSQL & ",'sd045001'" 
+						JSQL = JSQL & ",'"&EnterType&"'" 
+						JSQL = JSQL & ",'"&TeamCode&"'" 
+						JSQL = JSQL & ",'N'" 
+						JSQL = JSQL & ",'N'" 									
+						JSQL = JSQL & ",'N'" 
+						JSQL = JSQL & ",'A'" 
+						JSQL = JSQL & ",'Y')" 
+						
+'						response.Write "JSQL="&JSQL&"<br>"
+							
+						DBCon.Execute(JSQL)	
+						ErrorNum = ErrorNum + Dbcon.Errors.Count	
+						
+'						response.Write "ErrorNum="&ErrorNum&"<br>"
+						
+						'===============================================================================================
+						'선수테이블 최종 PlayerIDX 값 조회
+						'===============================================================================================
+						LSQL = "		SELECT MAX(PlayerIDX) "
+						LSQL = LSQL & " FROM [SportsDiary].[dbo].[tblPlayer]"
+						
+'						response.Write "LSQL="&LSQL&"<br>"
+												
+						SET LRs = DBCon.Execute(LSQL)	
+							PlayerIDX = LRs(0)
+						'===============================================================================================
+
+					'지도자테이블[tblLeader] 등록
+					CASE "T"	
+						
+						'=====================================================================================================
+						'소속팀 서비스 시작일 세팅
+						'가입회원[팀매니저] 카운트 조회
+						'=====================================================================================================			
+						LSQL = " 		SELECT COUNT(*) "
+						LSQL = LSQL & " FROM [Sportsdiary].[dbo].[tblMember] "
+						LSQL = LSQL & " WHERE DelYN = 'N' "
+						LSQL = LSQL & " 	AND SportsType = '"&SportsType&"' "
+						LSQL = LSQL & "		AND Team = '"&TeamCode&"' "
+						LSQL = LSQL & "		AND PlayerReln = 'T' "
+						
+						SET LRs = DBCon.Execute(LSQL)	
+						IF LRs(0) > 0 Then
+						Else
+							'팀매니저 최초가입시 소속팀 서비스 시작일 세팅
+							TSQL = "		UPDATE [Sportsdiary].[dbo].[tblTeamInfo]"
+							TSQL = TSQL & " SET SvcStartDt = '"& replace(left(now(),10),"-","") &"' "
+							TSQL = TSQL & " WHERE DelYN = 'N' "
+							TSQL = TSQL & "		AND SportsGb = '"&SportsType&"' " 
+							TSQL = TSQL & "		AND Team = '"&TeamCode&"' " 
+							TSQL = TSQL & "		AND EnterType = '"&EnterType&"' " 					
+							
+							DBCon.Execute(TSQL)	
+							
+						End IF
+							LRs.Close
+							
+							
+						'===============================================================================================
+						'지도자 테이블[tblLeader] PersonNum 값 조회
+						'===============================================================================================
+						LSQL = "		SELECT ISNULL(MAX(PersonNum), '') PersonNum "
+						LSQL = LSQL & " FROM [SportsDiary].[dbo].[tblLeader]"						
+						LSQL = LSQL & " WHERE PersonNum like 'A%'"						
+						
+'						response.Write "LSQL="&LSQL&"<br>"
+						
+						SET LRs = DBCon.Execute(LSQL)	
+						IF LRs(0) = "" Then
+							'지도자 체육인번호 
+							PersonNum = "A" & Right(Year(Date()),2) & "T" & "00000001"							
+						Else
+							'ex) A17T00000012
+							'A17T을 제외한 나머지 숫자에 1을 더한 숫자의 자리수와 A17T의 자리수(4)를 뺀 자릿수 만큼 0을 붙인다
+							For i = 1 to Len(LRs(0)) - len(Mid(LRs(0), 5, Len(LRs(0))) + 1) - 4
+								bufNum = bufNum & "0"
+							Next
+							
+							'A17T 이후의 숫자에 1을 더한 수를 구한 후 만든 0의 자리수를 붙인다
+							bufNum = bufNum&Mid(LRs(0), 5, Len(LRs(0))) + 1
+							
+							'A + 년도(2자리) + T + bufNum
+							PersonNum =  "A" & Right(Year(Date()),2) & "T" & bufNum
+							
+						End IF	
+							LRs.Close
+						SET LRs = Nothing
+						
+'						response.Write "PersonNum="&PersonNum&"<br>"
+						
+						'===============================================================================================	
+						'지도자 타입
+						'SELECT *
+						'FROM tblPubCode
+						'WHERE SportsGb = 'judo' AND DelYN = 'N' AND PubCode LIKE 'sd039%' AND EnterType = 'A'
+						'===============================================================================================	
+						IF LeaderType <> "" Then
+							SELECT CASE LeaderType
+								CASE 5 : LeaderTypeNm = "관장"
+								CASE 6 : LeaderTypeNm = "사범"
+								CASE 7 : LeaderTypeNm = "지도자(기타)"
+							END SELECT	
+						End IF
+						
+						'Birthday 입력형식 변환 ex)2012-01-01
+						IF UserBirth<>"" Then
+							Birthday = DateSerial(left(UserBirth, 4), mid(UserBirth, 5, 2), right(UserBirth, 2))							
+						End IF
+						'===============================================================================================	
+						'지도자테이블[tblLeader] 등록
+						'===============================================================================================
+						JSQL =  "INSERT INTO [SportsDiary].[dbo].[tblLeader] (" 
+						JSQL = JSQL & "[SportsGb]" 
+						JSQL = JSQL & ",[PersonNum]" 
+						JSQL = JSQL & ",[UserName]" 
+						JSQL = JSQL & ",[UserEnName]" 
+						JSQL = JSQL & ",[UserPhone]" 
+						JSQL = JSQL & ",[Email]" 
+						JSQL = JSQL & ",[Sex]" 
+						JSQL = JSQL & ",[Birthday]" 
+						JSQL = JSQL & ",[LeaderRegistDt]" 
+						JSQL = JSQL & ",[Team]" 
+						JSQL = JSQL & ",[ZipCode]" 
+						JSQL = JSQL & ",[Address]" 
+						JSQL = JSQL & ",[AddressDtl]" 
+						JSQL = JSQL & ",[LeaderType]" 
+						JSQL = JSQL & ",[LeaderTypeNm]" 
+						JSQL = JSQL & ",[WriteDate]" 
+						JSQL = JSQL & ",[RegistYear]" 
+						JSQL = JSQL & ",[PKindCode]" 	
+						JSQL = JSQL & ",[DelYN]" 									
+						JSQL = JSQL & ",[NowRegYN]" 
+						JSQL = JSQL & ") VALUES( '"&SportsType&"'" 
+						JSQL = JSQL & ",'"&PersonNum&"'" 
+						JSQL = JSQL & ",'"&UserName&"'" 
+						JSQL = JSQL & ",'"&UserEnName&"'" 
+						JSQL = JSQL & ",'"&UserPhone&"'" 
+						JSQL = JSQL & ",'"&UserEmail&"'" 
+						JSQL = JSQL & ",'"&Sex&"'" 
+						JSQL = JSQL & ",'"&Birthday&"'" 									
+						JSQL = JSQL & ",GETDATE()" 
+						JSQL = JSQL & ",'"&TeamCode&"'" 
+						JSQL = JSQL & ",'"&ZipCode&"'" 
+						JSQL = JSQL & ",'"&UserAddr&"'" 
+						JSQL = JSQL & ",'"&UserAddrDtl&"'" 	
+						JSQL = JSQL & ",'"&LeaderType&"'" 	
+						JSQL = JSQL & ",'"&LeaderTypeNm&"'" 	
+						JSQL = JSQL & ",GETDATE()" 
+						JSQL = JSQL & ","&Year(Date())&"" 
+						JSQL = JSQL & ",'89'" 					'생활체육 TeamGb
+						JSQL = JSQL & ",'N'" 									
+						JSQL = JSQL & ",'Y')" 
+						
+'						response.Write "JSQL="&JSQL&"<br>"
+							
+						DBCon.Execute(JSQL)	
+						ErrorNum = ErrorNum + Dbcon.Errors.Count
+						
+'						response.Write "ErrorNum="&ErrorNum&"<br>"	
+						'===============================================================================================
+						'지도자 테이블 최종 LeaderIDX 값 조회
+						'===============================================================================================
+						LSQL = "		SELECT MAX(LeaderIDX) "
+						LSQL = LSQL & " FROM [SportsDiary].[dbo].[tblLeader]"	
+						
+'						response.Write "LSQL="&LSQL&"<br>"	
+											
+						SET LRs = DBCon.Execute(LSQL)	
+							LeaderIDX = LRs(0)
+						'===============================================================================================
+	
+				END SELECT
+				
+				
+				'회원테이블[tblMember] 등록
+				JSQL =  "INSERT INTO [SportsDiary].[dbo].[tblMember] (" 
+				JSQL = JSQL & "	SportsType "
+				JSQL = JSQL & "	,UserID "  
+				JSQL = JSQL & "	,UserPass " 
+				JSQL = JSQL & "	,UserName " 										
+				JSQL = JSQL & "	,UserEnName " 
+				JSQL = JSQL & "	,UserPhone " 
+				JSQL = JSQL & "	,Birthday "  
+				JSQL = JSQL & "	,Email " 
+				JSQL = JSQL & "	,Address " 
+				JSQL = JSQL & "	,AddressDtl " 
+				JSQL = JSQL & "	,Sex " 
+				JSQL = JSQL & "	,BloodType " 
+				JSQL = JSQL & "	,ZipCode " 
+
+				SELECT CASE PlayerReln
+					CASE "R" : JSQL = JSQL & "	,PlayerIDX " 							
+					CASE "T" 
+						JSQL = JSQL & "	,LeaderIDX " 	
+						JSQL = JSQL & "	,LeaderType " 	
+						JSQL = JSQL & "	,SrtSvcDate "  
+				END SELECT
+				
+				JSQL = JSQL & "	,PlayerLevel " 
+				JSQL = JSQL & "	,PlayerType " 						
+				JSQL = JSQL & "	,PlayerStartYear " 
+				JSQL = JSQL & "	,PlayerReln " 
+				JSQL = JSQL & "	,ViewManage " 
+				JSQL = JSQL & "	,EnterType "  					
+				JSQL = JSQL & "	,Tall " 
+				JSQL = JSQL & "	,Weight " 
+				JSQL = JSQL & "	,Team "  
+				JSQL = JSQL & "	,UserMinorYn " 
+				JSQL = JSQL & "	,SrtDate "  
+				JSQL = JSQL & "	,WriteDate "  					
+				JSQL = JSQL & "	,ViewManageDate "  					
+				JSQL = JSQL & "	,Auth_YN "  
+				JSQL = JSQL & "	,InfoYN "  					
+				JSQL = JSQL & "	,EmailYn "  					
+				JSQL = JSQL & "	,EmailYnDt "  					
+				JSQL = JSQL & "	,SmsYn "  					
+				JSQL = JSQL & "	,SmsYnDt "  					
+				JSQL = JSQL & "	,DelYN "  					
+				JSQL = JSQL & "	,EdSvcReqTp "  					
+				JSQL = JSQL & ") VALUES( " 
+				JSQL = JSQL & "'"&SportsType&"', " 
+				JSQL = JSQL & "'"&UserID&"', " 
+				JSQL = JSQL & "'"&UserPass&"', " 
+				JSQL = JSQL & "'"&UserName&"', " 
+				JSQL = JSQL & "'"&UserEnName&"', " 
+				JSQL = JSQL & "'"&UserPhone&"', " 
+				JSQL = JSQL & "'"&UserBirth&"', " 
+				JSQL = JSQL & "'"&UserEmail&"', " 
+				JSQL = JSQL & "'"&UserAddr&"', " 
+				JSQL = JSQL & "'"&UserAddrDtl&"', " 
+				JSQL = JSQL & "'"&SEX&"', " 
+				JSQL = JSQL & "'"&BloodType&"', " 
+				JSQL = JSQL & "'"&ZipCode&"', " 
+				
+				SELECT CASE PlayerReln
+					CASE "R" : JSQL = JSQL & "'"&PlayerIDX&"', " 						
+					CASE "T" 
+						JSQL = JSQL & "'"&LeaderIDX&"', " 
+						JSQL = JSQL & "'"&LeaderType&"', " 
+						JSQL = JSQL & "'"&replace(left(now(),10),"-","")&"', " 
+				END SELECT
+				
+				JSQL = JSQL & "'"&PlayerLevel&"', " 
+				JSQL = JSQL & "'sd045001', " 
+				JSQL = JSQL & "'"&PlayerStartYear&"', " 
+				JSQL = JSQL & "'"&PlayerReln&"', " 
+				JSQL = JSQL & "'"&ViewManage&"', " 
+				JSQL = JSQL & "'"&EnterType&"', " 
+				JSQL = JSQL & "'"&PlayerTall&"', " 
+				JSQL = JSQL & "'"&PlayerWeight&"', " 
+				JSQL = JSQL & "'"&TeamCode&"', " 
+				JSQL = JSQL & "'"&UserMinorYn&"', " 
+				JSQL = JSQL & "'"&replace(left(now(),10),"-","")&"', " 
+				JSQL = JSQL & "GETDATE(), " 
+				JSQL = JSQL & "GETDATE(), " 
+				JSQL = JSQL & "'Y', " 
+				JSQL = JSQL & "'Y', " 
+				JSQL = JSQL & "'"&EmailYn&"', " 
+				JSQL = JSQL & "'"&replace(left(now(),10),"-","")&"', " 
+				JSQL = JSQL & "'"&SmsYn&"', " 
+				JSQL = JSQL & "'"&replace(left(now(),10),"-","")&"', " 
+				JSQL = JSQL & "'N',"
+				JSQL = JSQL & "'A')"	
+			
+'			response.Write "JSQL="&JSQL&"<br>"	
+			
+			DBCon.Execute(JSQL)	
+			ErrorNum = ErrorNum + Dbcon.Errors.Count	
+			
+'			response.Write "ErrorNum="&ErrorNum&"<br>"
+			
+			If ErrorNum > 0 Then
+				Dbcon.RollbackTrans()
+				
+				Response.Write "FALSE|66"
+				
+			Else	
+				
+				Dbcon.CommitTrans()
+				
+				Response.Write "TRUE|"
+			End IF
+			
+			
+
+		End IF
+			CRs.Close
+		SET CRs = Nothing
+		
+		DBClose()
+		
+	End If 
+
+%>

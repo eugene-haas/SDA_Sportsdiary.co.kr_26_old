@@ -1,0 +1,26 @@
+.basic-view table{width:100%;border-top:1px solid #ddd;border-right:1px solid #ddd;}
+.basic-view table tr th{width:13%;padding:15px 10px;background:#f2f2f2;border-bottom:1px solid #ddd;border-left:1px solid #ddd;font-size:0.9em;font-family:'NotoKR-md';font-weight:400;}
+.basic-view table tr td{padding:10px 10px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;width:37%;color:#888;font-size:0.9em;}
+.basic-view table tr td .in-style-1{width:400px;}
+.basic-view table tr td input, .basic-view table tr td select, .basic-view table tr td a{margin-right:10px;float:left;}
+.basic-view table tr td a.view-btn{padding:0 15px;height:40px;line-height:40px;}
+.basic-view table tr td a.icon-btn{font-size:28px;line-height:40px;}
+.basic-view table tr td a.icon-btn i{color:#7a858e;}
+.basic-view table tr td iframe{width:300px;}
+.basic-view table tr td .in-file{width:auto;border:0;line-height:40px;}
+.basic-view table tr td .lable-img{position:relative;width:250px;margin-bottom:0;}
+.basic-view table tr td .lable-img .list-thumbnail{width:100%;}
+.basic-view table tr td .lable-img .in-check{position:absolute;right:0;bottom:0;margin-right:0;}
+.basic-view .delet-btn{margin-top:15px;text-align:right;}
+.basic-view .delet-btn a{width:80px;height:35px;line-height:35px;font-size:13px;}
+.basic-view .address-modified ul li{margin-bottom:10px;display:table;width:100%;}
+.basic-view .address-modified ul li:last-child{margin-bottom:0;}
+.basic-view .address-modified ul li input{width:100%;}
+.basic-view .address-modified ul li.line-one input{width: calc(100% - 90px);margin-right:10px;}
+.basic-view .address-modified ul li.line-one a{width:80px;height:40px;line-height:38px;margin-right:0;    font-family: 'NotoKR-md';}
+.basic-view .phone-modified select{width:30%;margin-right:1%;}
+.basic-view .phone-modified input{width:34%;margin-right:1%;}
+.basic-view .phone-modified input:last-child{margin-right:0;}
+.basic-view .email-modified select{width:32%;margin-right:0;}
+.basic-view .email-modified input{width:31%;margin-right:1%;}
+.basic-view .email-modified span.txt{width:3%;margin-right:1%;float:left;line-height:38px;text-align:center;}

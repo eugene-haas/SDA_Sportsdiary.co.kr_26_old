@@ -1,0 +1,12 @@
+.registration_box .sel-ctr {width: 120px;margin-left: 5px;margin-right: 5px;}
+.registration_box .sel-ctr:first-child {margin-left: 0;}
+
+.table-list.level-dtl {margin-top: 30px;}
+.table-list.level-dtl .btn {width: auto;padding: 2px 6px;}
+.table-list.level-dtl tbody .btn {width: 90px;}
+
+/* 테이블 길이 조절 */
+.table-list.level-dtl td:nth-child(7) {width: 200px;}
+.table-list.level-dtl td:nth-child(8) {width: 140px;}
+
+.Non-pagination {text-align: center;width: 100%;height: 50px;line-height: 50px;background-color: #f2f2f2;border: 1px solid #ced5e3;}

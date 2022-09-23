@@ -1,0 +1,63 @@
+/* 메뉴 버튼 */
+.record-menu .btn {color: #fff; text-align: center; font-size: 0.95em; letter-spacing: -.02em; border-radius: 0; padding-top: .55em; padding-bottom: .55em;}
+.record-menu.run-off .mid-cat {display: block;}
+.record-menu .btn:hover, .record-menu .btn:focus, .record-menu .btn:active {color: #fff;}
+.record-menu .btn:last-child {border-right: none;}
+.record-menu .menu-list:empty {display: none;}
+.record-menu .btn.on {position: relative; color: #6dbcff;}
+.record-menu .big-cat {width: 100%; overflow-x: scroll;}
+.record-menu .big-cat li {text-align: center; float: left;}
+.record-menu .big-cat .btn.on:after {position: absolute; bottom: -1px; left: 43%; content: ''; border-bottom: 5px solid #fff; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.record-menu .big-cat .btn.no-bd:after {border:none;}
+.record-menu .mid-cat {background-color: #fff; border-bottom: 1px solid #ddd; width: 100%; overflow-x: scroll;}
+.record-menu .mid-cat li {padding-top: 0.4em; padding-bottom: 0.4em; margin-right: 0.25em; float: left;}
+.record-menu .mid-cat li:first-child {margin-left: 10px;}
+.record-menu .mid-cat li:last-child {margin-right: 0;}
+.record-menu .mid-cat a {position: relative; font-size: .84em; color: #264862; padding-top: 0.2em; padding-bottom: 0.2em; padding-left: 0.61em; padding-right: 0.61em;}
+.record-menu .mid-cat a.on {background-color: #264862; color: #fff;}
+.record-menu .mid-cat a .ic-new {top: 2px; right: -6px; z-index: 100; width: 15px; height: 15px; line-height: 15px; font-size: 0.76em;}
+.record-menu .mid-cat .icon-on-favorite {font-size: 20px; color:#ffd200; vertical-align: middle; margin-left: 5px; margin-top: -2px;}
+
+/* intro bg */
+.record-bg {background-repeat: no-repeat; -webkit-background-size: cover; background-size: cover;margin-top: 30px; padding:0 0 20px 0;}
+.record-bg.board-bg {top: 260px;}
+.record-intro h2 {font-family: 'NotoKR'; font-size: 1.1em; font-weight: normal; text-align: center; line-height: 150%; color: #000; padding-top: 3em; /* padding-top: 1.5em;  */}
+.record-intro h2 strong {font-family: 'NotoKR-md'; font-weight:normal;}
+.record-bg .bottom-logo {text-align: center; padding-top: 50px; /* padding-top: 20px; */ padding-bottom: 50px;}
+.record-bg .logo-img {display: inline-block; width: 40%; max-width: 140px;}
+
+.bg-ipt {position: relative; z-index: 10;}
+.bg-inst {position: fixed; top: 180px; z-index: 1; width: 100%;}
+.bg-inst.up-2 {top: 100px;}
+.bg-inst.up-2.closed {top: 160px;}
+.bg-inst.up-2 .record-intro h2 {padding-top: 3.75em;}
+.bg-inst .bottom-logo {padding-top: 40px;}
+.bg-inst.up-2 .bottom-logo {padding-top: 60px;}
+.bg-inst.up-2.closed .bottom-logo {padding-top: 40px;}
+.bg-inst.up-4 .bottom-logo {padding-top: 60px;}
+.bg-inst.up-5 .bottom-logo {padding-top: 100px;}
+/* .bg-inst.closed .bottom-logo {padding-top: 50px;} */
+.bg-tail {position: relative; z-index: 8;}
+.bg-inst.closed .record-intro h2 {padding-top: 1em;}
+/*.bg-inst.closed .bottom-logo {padding-top: 80px;} */
+
+/* tail */
+.tail {background-color: #edf0f4;}
+.tail a { border-radius: 50px; width: 50px; margin: 0 auto;}
+.tail img {margin-top: -3px;}
+
+/* 서비스 준비중 */
+.not-ready {padding-top:110px; text-align:center;}
+.not-ready .icon {width:49px; margin:0 auto; padding-bottom:15px;}
+.not-ready h2 {font-size:22px; font-family: 'NanumGothic'; color:#333; padding:0 0 20px;}
+.not-ready h2 strong {font-family: 'NanumGothicB';}
+.not-ready .txt {font-size:14px; color:#666666; padding:0 20px;}
+
+
+/**
+ * S: 테니스 11월 15일 오픈베타 대응 임시 코드 
+ */
+/*.record-menu .big-cate .menu-list li {width: 100% !important;float: none;}
+.record-menu .mid-cat .rank-mid {width: 100%!important;}
+.record-menu .mid-cat ul li {float: none;width: 83px;margin: 0 auto;}*/
+/* E: 테니스 11월 15일 오픈베타 대응 임시 코드 */

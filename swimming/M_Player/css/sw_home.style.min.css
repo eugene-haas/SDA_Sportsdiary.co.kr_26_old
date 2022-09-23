@@ -1,0 +1,564 @@
+@charset "utf-8";
+/* html{font-size:32px;}
+@media screen and (max-width:480px){html{font-size:17.4px;}}
+@media screen and (max-width:830px) and (max-height:480px){html.landscape{font-size:17.4px;}}
+
+@media screen and (max-width:375px){html{font-size:16px;}}
+@media screen and (max-width:820px) and (max-height:375px){html.landscape{font-size:16px;}}
+
+@media screen and (max-width:360px){html{font-size:15.2px;}}
+@media screen and (max-width:640px) and (max-height:360px){html.landscape{font-size:15.2px;}}
+
+@media screen and (max-width:320px){html{font-size:14.2px;}}
+@media screen and (max-width:570px) and (max-height:320px){html.landscape{font-size:14.2px;}} */
+
+*{font-family:"NotoKR";font-weight:400;}
+a,button,label{-webkit-tap-highlight-color:transparent;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a,button,label,input,select,textarea,span{outline:none;}
+button{background-color:transparent;border:none;padding:0;margin:0;cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+legend{position:fixed;left:-700rem;}
+
+[v-cloak]{display:none;}
+
+.m_img{font-size:0;line-height:0;}
+.m_img>img, button>img{width:100%;}
+.m_ibarea{font-size:0;}
+.m_ibarea>*{display:inline-block;vertical-align:top;}
+
+.m_dataEmpty{padding-top:32vh;margin:auto;width:12rem;background-color:#f2f2f2;
+  display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;
+  -webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;
+  -webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;
+}
+.m_dflex{
+  display:-webkit-flex!important;display:-moz-flex!important;display:-ms-flex!important;display:-o-flex!important;display:flex!important;
+  -webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;
+  -webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;
+}
+.m_loading{text-align:center;}
+
+.m_horizontal_scroll{overflow-x:auto;}
+.m_horizontal_scroll::-webkit-scrollbar{appearance:none;-webkit-appearance:none;}
+.m_horizontal_scroll::-webkit-scrollbar:horizontal{height:1px;}
+.m_horizontal_scroll::-webkit-scrollbar-thumb{border:1px solid rgba(0,0,0,0.1);background-color:rgba(0,0,0,0.1);}
+
+.l.s_xdata, .l_content.s_xdata{background-color:#f2f2f2;}
+
+
+/* 로그인 */
+.m_userJoin__guide{line-height:1.1;}
+.m_userJoin__guideTxt{font-weight:500;}
+.m_userJoin__btns *{
+  -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;
+}
+
+
+/* 출전선수표, 현장스케치, 경기영상 */
+.m_searchTags{margin-top:-1px;background-color:#fff;border-top:1px solid #fff;}
+.m_searchTags__infoBox{padding-left:0.36rem;padding-top:0.1rem;padding-bottom:0.42rem;padding-right:2.8rem;position:relative;font-size:0;border-bottom:1px solid #f2f2f2;}
+.m_searchTags__infoTxt{margin-top:0.29rem;padding-right:0.4rem;/* margin:0.29rem 0.36rem 0;padding:0 0.8rem; */display:inline-block;max-width:11.8rem;height:1.83rem;line-height:1.9rem;font-size:1.05rem;font-weight:300;text-align:center;vertical-align:top;border-radius:0.98rem;color:#aaa;/* background-color:#f9f9f9;box-shadow:0 0.07rem 0.14rem #e0e3e5; */letter-spacing:-0.07rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.m_searchTags__infoTxt:first-child{margin-left:0.36rem;}
+.m_searchTags__infoTxt:only-of-type{max-width:17rem;text-align:left;}
+.m_searchTags__infoTxt~.l_search__infoTxt{margin-left:0.3rem;}
+.m_searchTags__btn{padding:0.43rem 0.45rem;position:absolute;top:0.25rem;right:0.7rem;line-height:0;z-index:9;border-radius:0.28rem;background-color:#3f505d;}
+.m_searchTags__btn:only-child{margin-left:0.15rem;margin-bottom:0.14rem;position:relative;top:0.14rem;left:100%;}
+.m_searchTags__btn .m_img{width:1.05rem;}
+
+
+/* 대회요강, 출전선수표, 현장스케치 상세, 경기영상 상세 */
+.m_matchTit{padding:0 0.5rem;position:relative;min-height:2.57rem;border-bottom:1px solid #f2f2f2;line-height:1.5;font-size:1.07rem;color:#aaa;background-color:#fff;text-align:center;z-index:4;
+  -webkit-display:flex;-moz-display:flex;-ms-display:flex;-o-display:flex;display:flex;
+  -webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;
+  -webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;
+}
+.m_matchTit__refresh{position:absolute;width:1rem;height:0.86rem;right:0.71rem;top:0;bottom:0;margin:auto;font-size:0;background:url('http://img.sportsdiary.co.kr/images/SD/icon/settings_backup_restore_@3x.png') no-repeat center/100%;}
+
+
+/* 메인 */
+.l.riding{background-color:#ebebeb;}
+.m_board{margin:0;}
+.m_board__tit{padding-bottom:1.15rem;margin-top:0.45rem;height:auto;border-color:#ccc;}
+.m_board~.m_board{margin-top:0.8rem;}
+.m_board~.m_board .m_board__tit{margin-top:0.8rem;}
+.m_board__moreBtn{bottom:0.6rem;background-image: url(http://img.sportsdiary.co.kr/images/SD/icon/plus_circle_@3x.png);}
+
+.m_links__wrap{padding:0.75rem 0 0.3rem;font-size:0;}
+.m_links__wrap>*{display:inline-block;vertical-align:top;}
+.m_links__wrap .m_ibarea{display:block;}
+.m_links__wrap a{width:48%;}
+.m_links__wrap a~a{margin-left:4%;}
+.m_links__wrap .m_img{width:100%;height:5.65rem;background-color:#E2E2E2;overflow:hidden;}
+.m_links__txt{padding:0.4rem 0.3rem;font-size:0.99rem;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+.m_board.s_sketch{}
+.m_board.s_sketch .m_links__wrap{padding-bottom:0.8rem;}
+.m_board.s_sketch .m_links__wrap .m_img{height:6.6rem;}
+
+
+/* 메인, 대회일정/결과(연도별) */
+.m_schedule__wrap{}
+.m_schedule__wrap.nodata{padding-bottom:1.05rem;}
+  .m_schedule__pop{position:relative;height:3.24rem;}
+    .m_schedule__info{position:absolute;left:0;top:0.7rem;width:4.1rem;height:1.74rem;line-height:1.8rem;font-size:0.99rem;text-align:center;border:1px solid #437FA8;}
+    .m_schedule__info em{font-style:normal;}
+    .m_schedule__info.s_apply{color:#437FA8;border-color:#437FA8;}
+    .m_schedule__info.s_dday{color:#fff;border-color:#437FA8;background-color:#437FA8;}
+    .m_schedule__info.s_ing{color:#fff;border-color:#AC7373;background-color:#AC7373;}
+    .m_schedule__info.s_end{color:#fff;border-color:#999;background-color:#999;}
+
+    .m_schedule__txt{margin-left:4.9rem;width:calc(100vw - 6.32rem);line-height:3.4rem;font-size:1.03rem;color:#666;text-align:left;letter-spacing:-0.02rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .m_schedule__pop~.m_schedule__pop{border-top:1px solid #eee;}
+
+
+
+/* main */
+.l_content{overflow:hidden;}
+.l_content.indexpage{background-color:#f2f2f2;}
+.m_mainTab ul{margin:auto;width:97%;font-size:0;
+  display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;
+  -webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;-o-justify-content:space-between;justify-content:space-between;
+}
+.m_mainTab .m_mainTab__item{display:inline-block;width:auto;vertical-align:top;float:none;}
+  .m_mainTab__rink{padding:0.9rem 0.7rem 0.7rem;font-size:1.1rem;}
+
+.mainbanner__swiper.swiper-container{margin:0.7rem 0;height:14.09rem;background-color:#e2e2e2;overflow:hidden;}
+.mainbanner__swiper._bannerViewer__swiper .sd_photoViewer__slide{min-height:unset;height:14.1rem;overflow:hidden;}
+
+
+
+/* 대회요강 */
+.contestInfo .contestFile{overflow:hidden;}
+.contestInfo .contestFile__inner{position:relative;border-bottom:1px solid #f2f2f2;background-color:#fff;z-index:3;}
+.contestInfo .contestFile__filebtn{padding:0.7rem;width:11rem;font-size:0.99rem;color:#ccc;text-align:left;}
+.contestInfo .contestFile__filebtn p{}
+.contestInfo .contestFile__filebtn .m_img{margin-left:0.3rem;margin-top:0.5rem;width:0.71rem;
+  -webkit-transform:rotateZ(0deg);
+  -moz-transform:rotateZ(0deg);
+  -ms-transform:rotateZ(0deg);
+  -o-transform:rotateZ(0deg);
+  transform:rotateZ(0deg);
+}
+.contestInfo .contestFile__inner.s_on .contestFile__filebtn .m_img{
+  -webkit-transform:rotateZ(180deg);
+  -moz-transform:rotateZ(180deg);
+  -ms-transform:rotateZ(180deg);
+  -o-transform:rotateZ(180deg);
+  transform:rotateZ(180deg);
+}
+.contestInfo .contestFile__filebtn span{margin-left:1rem;color:#999;}
+.contestInfo .contestFile__allsave{padding:0.7rem;position:absolute;right:0;top:0;font-size:0.99rem;color:#ccc;}
+.contestInfo .contestFile__allsave p{margin-right:0.3rem;}
+.contestInfo .contestFile__allsave .m_img{margin-top:0.15rem;width:0.99rem;}
+.contestInfo .contestFile__allsave span{}
+
+.contestInfo .contestFile__inner.s_nofile, .contestFile__inner.s_on{background-color:#f9f9f9;}
+.contestInfo .contestFile__notxt{position:absolute;left:0;top:0;width:100%;height:100%;line-height:2.8rem;font-size:0.99rem;color:#999;text-align:center;}
+.contestInfo .contestFile__list{position:absolute;width:100%;opacity:0;background-color:#fff;z-index:2;}
+.contestInfo .contestFile__list.s_on{opacity:1;}
+.contestInfo .contestFile__down{position:relative;display:block;height:2.45rem;font-size:0.99rem;color:#999;border-bottom:1px solid #f2f2f2;}
+.contestInfo .contestFile__down p{padding-left:1.4rem;line-height:2.4rem;}
+.contestInfo .contestFile__down .m_img{position:absolute;top:0.7rem;right:1.4rem;width:0.99rem;}
+
+.contest__info{padding-bottom:4rem;padding-left:1rem;padding-right:1rem;}
+.contest__info img{margin:auto;display:block;max-width:100%;}
+.contestFile a{padding:0.2rem 1rem;}
+.contestFile a+br{display:none;}
+.contestFile a:first-child{margin-top:0.7rem;}
+.contestFile a+br+.contest__info{margin-top:0.7rem;}
+.contestInfo .contest_loadinfo{}
+.contestInfo .contest_loadinfo strong{font-weight:bold;}
+.contestInfo .contest_loadinfo strong span{font-weight:inherit;}
+.contestInfo .contest_loadinfo>:first-child{margin-top:0.8rem;}
+.contestInfo .contest_loadinfo p{margin:0.3rem 2%;font-size:0.99rem;color:#999;}
+.contestInfo .contest_loadinfo table{margin:0.3rem 2%;width:96%;}
+.contestInfo .contest_loadinfo table+p, .contestInfo .contest_loadinfo p+p{margin-top:0.7rem;}
+.contestInfo .contest_loadinfo th, .contestInfo .contest_loadinfo td{padding:0.2rem;font-size:0.99rem;color:#999;border:1px solid #e2e2e2;word-break:keep-all;white-space:initial!important;}
+.contestInfo .contest_loadinfo th, .contestInfo .contest_loadinfo thead td{background-color:#eee}
+/* .contestInfo .contest_loadinfo td{text-align:center;} */
+
+
+
+/* 경기영상(리스트) */
+.gameVideo .gamemovie{padding-bottom:1rem;min-height:80vh;}
+.gameVideo .gamemovie.s_noVideo{background-color:#f2f2f2;}
+.gameVideo .gamemovie.s_noVideo .m_dataEmpty img{width:100%;}
+.gameVideo .gamemovie a{}
+.gameVideo .gamemovie a~a{margin-top:1.1rem;}
+.gameVideo .gamemovie__img{min-height:11.2rem;background-color:#E2E2E2;overflow:hidden;}
+.gameVideo .gamemovie__info{padding:0.72rem 0.7rem 0.3rem;}
+.gameVideo .gamemovie__title{font-size:0.99rem;color:#666;letter-spacing:-0.02rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gameVideo .gamemovie__sno{margin-top:0.45rem;font-size:0.85rem;color:#aaa;font-weight:300;letter-spacing:-0.02rem;}
+
+
+/* 경기영상(상세) */
+.gameVideoDetail .gamemovie__movie{height:12.6rem;background-color:#e2e2e2;}
+.gameVideoDetail .gamemovie__txt{padding:0.83rem 0.7rem 0;font-size:0.99rem;color:#666;letter-spacing:-0.022rem;}
+.gameVideoDetail .gamemovie__sno{margin-top:0.4rem;margin-left:0.7rem;font-size:0.85rem;color:#aaa;font-weight:300;letter-spacing:-0.02rem;}
+
+
+/* 대회일정/결과(월별), 대회일정/결과(연도별) */
+.m_calendarHeader{position:relative;height:2.57rem;padding:0 0.71rem;background-color:#fff;}
+.m_calendarHeader__link{display:inline-block;position:absolute;height:2rem;box-sizing:border-box;padding:0.43rem;top:0;bottom:0;right:0.71rem;margin:auto;border-radius:0.36rem;font-size:1rem;font-weight:400;letter-spacing:-0.02em;line-height:1.29rem;background-color:#3F505D;color:#fff;}
+.m_calendarCtrl{display:flex;margin:0 auto;justify-content:center;}
+.m_calendarCtrl__btn{width:1.71rem;font-size:0;}
+.m_calendarCtrl__btn.s_prev{background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_left_gray_@3x.png') no-repeat center top 0.96rem/0.45rem 0.85rem;}
+.m_calendarCtrl__btn.s_next{background:url('http://img.sportsdiary.co.kr/images/SD/icon/arrow_right_gray_@3x.png') no-repeat center top 0.96rem/0.45rem 0.85rem;}
+.m_calendarCtrl__inputDate{position:absolute;padding:0;top:0;left:0;right:0;margin:auto;width:6rem;height:100%;opacity:0;background-color:transparent;border:none;}
+.m_calendarCtrl__date{display:inline-block;padding:0.71rem 0.71rem 0.57rem 0.71rem;font-size:1.14rem;color:#999;letter-spacing:-0.02em;line-height:1.29rem;font-weight:400;}
+
+
+/* 대회일정/결과(월별) */
+.instituteSearch .calendarBody{background-color:#fff;}
+/* fullcalendar custom */
+.instituteSearch #calendar .fc-today{background-color:#edffdf;}
+.instituteSearch .calendarBody .fc-content, .calendarBody .fc-divider, .calendarBody .fc-popover, .calendarBody .fc-row, .calendarBody tbody, .calendarBody td, .calendarBody th, .calendarBody thead{border-color:#f2f2f2;}
+.instituteSearch .calendarBody .fc-head th{height:2rem;line-height:1.29rem;font-size:1rem;letter-spacing:-0.02em;font-weight:400;vertical-align:middle;color:#999;}
+.instituteSearch .calendarBody .fc-head th:first-child{color:#E22525;border-left:0;}
+.instituteSearch .calendarBody .fc-head th:last-child{color:#30668F;border-right:0;}
+.instituteSearch .calendarBody .fc-body td:first-child{border-left:0;}
+.instituteSearch .calendarBody .fc-body td:last-child{border-right:0;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton{padding-bottom:0.64rem;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-day-top{}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-day-number{display:inline-block;margin:0.43rem;font-size:0.86rem;font-weight:300;color:#999;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-sun .fc-day-number{color:#E22525;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-sat .fc-day-number{color:#30668F;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-other-month .fc-day-number{opacity:0.3;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-event{margin:0 0 0.21rem 0;padding:0 0.36rem 0 0.71rem;border-radius:0.21rem;border-color:#91BFE6;line-height:1.07rem;font-size:0.71rem;letter-spacing:-0.02em;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-event.fc-not-start{border-radius:0 0.21rem 0.21rem 0;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-event.fc-not-end{border-radius:0.21rem 0 0 0.21rem;}
+.instituteSearch .calendarBody .fc-body .fc-content-skeleton .fc-event .fc-content{text-overflow:ellipsis;}
+
+.instituteSearch .calendarFooter{position:relative;text-align:center;}
+.calendarFooter__btn{padding:0.43rem;margin:auto;position:absolute;bottom:0;left:0.71rem;top:0;display:inline-block;height:2rem;box-sizing:border-box;border-radius:0.36rem;line-height:1.29rem;font-size:1rem;font-weight:400;letter-spacing:-0.02em;background-color:#B3C0CB;color:#fff;}
+/* // fullcalendar custom */
+
+
+/* 대회일정/결과(연도별)  */
+.instituteSchedule{}
+.instituteSchedule .preMonthSchedule{width:calc(100% - 1.43rem);height:2.14rem;margin:0.71rem 0.71rem 0rem 0.71rem;border-radius:0.36rem;background-color:#E0E0E0;text-align:center;}
+.instituteSchedule .preMonthSchedule__txt{padding-right:0.6rem;line-height:1.29rem;font-size:1rem;color:#666;}
+.instituteSchedule .preMonthSchedule{font-size:0;}
+.instituteSchedule .preMonthSchedule>*{display:inline-block;vertical-align:top;}
+.instituteSchedule .preMonthSchedule .m_img{margin-top:0.5rem;width:0.6rem;
+  -webkit-transform:rotateZ(0deg);
+  -moz-transform:rotateZ(0deg);
+  -ms-transform:rotateZ(0deg);
+  -o-transform:rotateZ(0deg);
+  transform:rotateZ(0deg);
+}
+.instituteSchedule .preMonthSchedule.s_on .m_img{
+  -webkit-transform:rotateZ(180deg);
+  -moz-transform:rotateZ(180deg);
+  -ms-transform:rotateZ(180deg);
+  -o-transform:rotateZ(180deg);
+  transform:rotateZ(180deg);
+}
+.instituteSchedule .m_schedule__wrap{margin:0 0.71rem;}
+
+.instituteSchedule .scheduleBoard{margin-top:0.8rem;padding:0;border:none;border-radius:0.71rem 0.71rem 0 0;background-color:#fff;overflow:hidden;}
+.instituteSchedule .scheduleBoard.s_disabled{display:none;}
+.instituteSchedule .scheduleBoard__tit{height:2.43rem;box-sizing:border-box;padding-top:0.5rem;line-height:1.29rem;font-size:1.29rem;letter-spacing:-0.02em;text-align:center;color:#999999;border-bottom:1px solid #eee;}
+.instituteSchedule .scheduleBoard__tit.s_current{background-color:#6D8091;color:#fff;}
+.instituteSchedule .s_on~.scheduleBoard.s_disabled{display:block;}
+
+
+
+/* stadium sketch */
+.sd_photoList{padding:0;overflow:hidden;}
+#List{margin:0.65rem 10px 0;min-height:80vh;}
+.sd_photoList__item{background-color:#f2f2f2;}
+.sd_photoList img{width:100%;}
+.sd_photoList__more{display:block;}
+.sd_photoList__itemInner{pointer-events:none;}
+/* // stadium sketch */
+
+/* stadium sketch detail */
+.sd_photoViewer__swiper.swiper-container{margin-top:0.9rem;width:calc(100% - 20px);background-color:#f2f2f2;overflow:hidden;}
+.sd_photoViewer__download{margin-top:0.75rem;height:2.1rem;font-size:1.13rem;line-height:2.1rem;border-radius:0;}
+.sd_photoViewer__info{padding-left:1.3rem;margin:0.9rem 0 0;width:calc(100% - 2.3rem);font-size:0.85rem;color:#aaa;text-indent:-0.5rem;letter-spacing:0;}
+.sd_photoViewer__info~.sd_photoViewer__info{margin-top:0.4rem;}
+.sd_photoViewer__slide{padding:0;min-height:14rem}
+/* // stadium sketch detail */
+
+
+
+._overLayer2{ position:fixed; z-index:5000; width:100vw; height:100vh; left:0; top:100%; overflow:hidden; }
+._overLayer2._s_on{ top:0; }
+._overLayer2__backdrop{ width:100%; height:100%; opacity:0; }
+._overLayer2__backdrop._s_on{ opacity:1; background-color:rgba(0,0,0,0.2); }
+._overLayer2__box{ position:absolute; width:100%; opacity:1; top:100%; overflow-y:scroll; }
+._overLayer2__box._s_on{ top:0%; }
+._overLayer2__wrap{ height:auto; overflow-y:scroll; -webkit-overflow-scrolling:touch; overscroll-behavior:none; } 
+
+
+/* popup / _overLayer */
+._overLayer__backdrop._s_on{background-color:rgba(0,0,0,0.7);}
+.m_searchPopup__header{position:relative;height:3.5rem;}
+  .m_searchPopup__close{padding-left:0.7rem;padding-right:0.7rem;padding-top:0.5rem;position:absolute;width:2.5rem;height:2.6rem;top:0.65rem;bottom:0;right:0.7rem;margin:auto;line-height:0;}
+  .m_searchPopup__close img, .m_searchPopup__submit img{pointer-events:none;}
+.m_searchPopup__cont{position:relative;height:calc(100vh - 2.5rem);overflow:hidden;}
+  .m_searchPopup__control{position:relative;display:table;width:100%;height:4.6rem;font-size:0;border-radius:0.92rem 0.92rem 0 0;overflow:hidden;background-color:#f2f2f2;}
+  .m_searchPopup__control>*{display:inline-block;vertical-align:top;}
+    .m_searchPopup__fliter{margin-left:1.4rem;margin-top:1.44rem;position:relative;background-color:#fff;width:3.5rem;height:2.4rem;margin-left:0.85rem;padding:0.6rem 0;border-radius:0.29rem 0 0 0.29rem;font-size:0;border:1px solid #d7d5d5;border-right:none;background-position:center;box-shadow:0 0 0.7rem #ccc;}
+    .m_searchPopup__fliter:before{content:"";position:absolute;left:0;top:0;width:100%;height:100%;background-color:#fff;border-radius:0.29rem 0 0 0.29rem;}
+    .m_searchPopup__fliter:after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;background:url(http://img.sportsdiary.co.kr/images/SD/icon/filter_on_@3x.png) left .6rem center/auto 70% no-repeat;background-position:center;background-size:1.35rem;}
+    .m_searchPopup__fliter.s_on{width:2rem;box-shadow:0 0 0rem transparent;}
+    .m_searchPopup__fliter.s_on:before{background-color:#ecebeb;}
+    .m_searchPopup__fliter.s_on:after{background-image:url(http://img.sportsdiary.co.kr/images/SD/icon/filter_off_@3x.png);}
+
+    .m_searchPopup__input.s_ignore{margin-right:0.7rem;margin-top:1.41rem;padding:0 0.6rem;width:calc(100% - 10.7rem);height:2.3rem;line-height:2.5rem;font-size:1.13rem;color:#7d868e;border:1px solid #d2dce3;letter-spacing:-0.07rem;text-decoration:none;border-radius:0 0.29rem 0.29rem 0;box-shadow:0 0 0rem transparent;background-color:#ecebeb;}
+    .m_searchPopup__input.s_ignore.s_on{width:calc(100% - 9.2rem);background-color:#fff;box-shadow:0 0 0.7rem #ccc;}
+    .m_searchPopup__input.s_only{margin-right:0.7rem;margin-top:1.41rem;padding:0 0.6rem;width:calc(100% - 9.2rem);height:2.3rem;line-height:2.5rem;font-size:1.13rem;color:#7d868e;border:1px solid #d2dce3;letter-spacing:-0.07rem;text-decoration:none;border-radius:0.29rem;box-shadow:0 0 0rem transparent;background-color:#ecebeb;}
+    .m_searchPopup__input.s_only.s_on, .m_searchPopup__input.s_only:focus{border-color:#f2f2f2;background-color:#fff;}
+
+    .m_searchPopup__submit{padding:0.6rem;position:absolute;right:1.4rem;top:1.44rem;width:2.3rem;line-height:0;border-radius:0.3rem;background-color:#3f505d;}
+  .m_searchPopup__control.no_search{}
+  .m_searchPopup__control.no_search .m_searchPopup__fliter{border:none;background-color:transparent;box-shadow:none;}
+  .m_searchPopup__control.no_search .m_searchPopup__fliter:before{background-color:transparent;}
+  .m_searchPopup__control.no_search .m_searchPopup__fliter:after{}
+
+.m_searchPopup__panelWrap{position:relative;display:flex;height:calc(100% - 7.45rem);width:100%;transform:translateX(0%);background-color:#fff;
+  -webkit-transition:transform 0.23s cubic-bezier(.08,.51,.54,1);
+  -moz-transition:transform 0.23s cubic-bezier(.08,.51,.54,1);
+  -ms-transition:transform 0.23s cubic-bezier(.08,.51,.54,1);
+  transition:transform 0.23s cubic-bezier(.08,.51,.54,1);
+}
+.m_searchPopup__panelWrap.s_filtering{transform:translateX(0%);}
+.m_searchPopup__panelWrap.s_searching{transform: translateX(-100%);}
+  .m_searchPopup__panel{padding: 1rem 0 0.85rem;width:100%;height:100%;flex-shrink:0;overflow-y:scroll;overscroll-behavior:none;background-color:#fff;}
+    .m_searchPopup__cehckTit{margin:0 1.41rem;font-size:1rem;color:#7d868e;letter-spacing:-0.04rem;font-weight:500;}
+    .m_searchPopup__cehckTit~.m_searchPopup__cehckTit{margin-top:0.8rem;}
+    .m_searchPopup__checkWrap{margin-top:0.8rem;margin-left:1.41rem;margin-right:1.41rem;font-size:0;line-height:0;white-space:nowrap;overflow-x:scroll;}
+    .m_searchPopup__checkWrap::-webkit-scrollbar{appearance:none;-webkit-appearance:none;}
+    .m_searchPopup__checkWrap::-webkit-scrollbar:horizontal{height:1px;}
+    .m_searchPopup__checkWrap::-webkit-scrollbar-thumb{border:1px solid rgba(0,0,0,0.1);background-color:rgba(0,0,0,0.1);}
+      .m_searchPopup__checkGroup{padding-bottom:0.35rem;margin-bottom:0.3rem;}
+      .m_searchPopup__checkGroup:last-child{margin-bottom:0;}
+      .m_searchPopup__checkGroup label{padding:0 0.8rem;height:1.83rem;display:inline-block;line-height:1.84rem;font-size:1.06rem;color:#7d868e;vertical-align:top;letter-spacing:-0.03rem;background-color:#f9f9f9;box-shadow:0 1px 2px #e0e3e5;border-radius:0.92rem;}
+      .m_searchPopup__checkGroup input:checked+label{color:#fff;background-color:#3f505d;}
+      .m_searchPopup__checkGroup>span{display:inline-block;}
+      .m_searchPopup__checkGroup>span~span{margin-left:0.5rem;}
+
+    .m_searchPopup__listname{padding:0 6rem 0 2.9rem;position:relative;width:100%;height:2.44rem;line-height:2.5rem;font-size:1.13rem;color:#7d868e;letter-spacing:-0.07rem;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .m_searchPopup__listname .icon__search_add{position:absolute;right:5rem;top:-0.15rem;display:inline-block;width:0.7rem;pointer-events:none;}
+    .m_searchPopup__listname .icon__search_add img{width:100%;vertical-align:middle;}
+/* // popup / _overLayer */
+
+
+/* popup / index */
+.l_upLayer__close{background-image:url(http://img.sportsdiary.co.kr/images/SD/icon/popup_x_@3x.png);}
+.l_riding__pop .l_upLayer__wrapTit{margin:0.8rem auto 0;position:relative;width:94vw;height:2.82rem;background-color:#005895;}
+.l_riding__pop .l_upLayer__tit{font-size:1.12rem;letter-spacing:0.04rem;}
+.l_riding__pop .l_upLayer__close{width:2.5rem;height:2.82rem;background-size:0.99rem;}
+.l_riding__pop .l_upLayer__wrapCont{margin:0 auto 0.8rem;width:94vw;height:calc(100vh - 4.42rem);/* height:calc(100vh - 8.3rem); */background-color:#fff;}
+/* .webview .l_riding__pop .l_upLayer__wrapCont{height:calc(100vh - 4.42rem);} */
+.l_popinfo__top{padding:0.8rem 0;background-color:#E2E6EA;overflow:hidden;}
+  .l_popinfo__title{margin:auto;width:92%;line-height:1.3;font-size:1.13rem;color:#333;text-align:center;font-weight:500;letter-spacing:-0.025rem;word-break:keep-all;}
+  .l_popinfo__titlecmt{margin-top:0.1rem;font-size:0.99rem;color:#666;text-align:center;letter-spacing:-0.025rem;}
+.l_popinfo__content{padding:1.4rem 1.45rem 5.4rem;}
+  .l_popinfo__wrap{}
+  .l_popinfo__wrap~.l_popinfo__wrap{margin-top:0.65rem;}
+    .l_popinfo__txt{font-weight:500;letter-spacing:-0.02rem;}
+    .l_popinfo__txt.icon_loca{}
+    .l_popinfo__txt.icon_loca .m_img{width:0.7rem;}
+    .l_popinfo__txt.icon_peri{}
+    .l_popinfo__txt.icon_appl{}
+    .l_popinfo__txt.icon_hss .m_img{width:0.8rem;}
+    .l_popinfo__txt .m_img{margin-right:0.1rem;margin-top:0.1rem;display:inline-block;width:0.92rem;vertical-align:top;}
+    .l_popinfo__txts{}
+    .l_popinfo__txts~.l_popinfo__txts{margin-top:0.3rem;}
+      .l_popinfo__cmt{margin-top:0.2rem;line-height:1.5;font-size:0.99rem;color:#aaa;letter-spacing:-0.02rem;}
+      .l_popinfo__ymd{font-size:0.99rem;color:#aaa;letter-spacing:-0.02rem;}
+  .l_popinfo__links{margin-top:1.5rem;}
+    .l_popinfo__link{height:2.5rem;line-height:2.6rem;font-size:1.13rem;color:#fff;text-align:center;background-color:#3a87ad;border-radius:1.25rem;}
+    .l_popinfo__link~.l_popinfo__link{margin-top:0.4rem;}
+/* // popup / index */
+
+
+
+/* 출전선수표 */
+.m_cube{margin:0.71rem;position:relative;
+  -webkit-perspective:30rem;perspective:30rem;
+  -webkit-perspective-origin:center;perspective-origin:center;
+}
+.m_cube__inner{position:relative;height:3.9rem;/* height:5.4rem; */
+  -webkit-transition:0.2s linear;transition:0.2s linear;
+  -webkit-transform-style:preserve-3d;transform-style:preserve-3d;
+  -webkit-transform:rotateX(0deg) translateZ(-1.95rem);transform:rotateX(0deg) translateZ(-1.95rem);
+}
+.m_cube__inner .m_roundBoard{margin:0;position:absolute;left:0;top:0;width:100%;
+  -webkit-transition:0.2s linear;transition:0.2s linear;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+}
+.m_cube__inner .m_roundBoard:nth-child(1){
+  -webkit-transform:rotateX(90deg) translateZ(1.95rem);transform:rotateX(90deg) translateZ(1.95rem);
+}
+.m_cube__inner .m_roundBoard:nth-child(2){
+  -webkit-transform:rotateX(0deg) translateZ(1.95rem);transform:rotateX(0deg) translateZ(1.95rem);
+}
+.m_cube__inner.s_on{
+  -webkit-transform:rotateX(-90deg) translateY(1.95rem);transform:rotateX(-90deg) translateY(1.95rem);
+}
+.m_cube__inner.s_on .m_roundBoard:nth-child(1){
+  -webkit-transform:rotateX(90deg) translateZ(1.95rem);transform:rotateX(90deg) translateZ(1.95rem);
+}
+.m_cube__inner.s_on .m_roundBoard:nth-child(2){
+  -webkit-transform:rotateX(0deg) translateZ(1.95rem);transform:rotateX(0deg) translateZ(1.95rem);
+}
+.m_cube__inner.s_notran{
+  -webkit-transition:unset;transition:unset;
+}
+
+
+/* 출전선수표 */
+.m_roundBoard{margin:0.71rem;border-radius:0.36rem;background-color:#fff;overflow:hidden;}
+.m_roundLayer__header{position:relative;height:3.5rem;}
+.m_roundLayer__close{padding-left:0.7rem;padding-right:0.7rem;padding-top:0.5rem;position:absolute;width:2.5rem;height:2.6rem;top:0.65rem;bottom:0;right:0.7rem;margin:auto;line-height:0;}
+.m_roundLayer__close img{pointer-events:none;}
+.m_roundLayer__content{display:flex;flex-direction:column;position:relative;height:calc(100vh - 2.5rem);overflow:hidden;}
+
+
+/* 출전선수표 */
+.matchSch .currentMatch{padding:0.71rem;position:relative;min-height:2.55rem;color:#999;line-height:1.29rem;font-size:0;
+  display:-webkit-flex;
+  display:-moz-flex;
+  display:-ms-flex;
+  display:-o-flex;
+  display:flex;
+  -webkit-justify-content:space-between;
+  -moz-justify-content:space-between;
+  -ms-justify-content:space-between;
+  -o-justify-content:space-between;
+  justify-content:space-between;
+  -webkit-align-items:center;
+  -moz-align-items:center;
+  -ms-align-items:center;
+  -o-align-items:center;
+  align-items:center;
+}
+.matchSch .currentMatch>*{display:inline-block;vertical-align:middle;}
+.matchSch .currentMatch__status{padding:0.31rem 0 0.11rem;margin:auto;width:4.3rem;height:1.86rem;box-sizing:border-box;font-size:1rem;letter-spacing:-0.02rem;color:#fff;/* background-color:#ac7373; */background-color:#138517;text-align:center;}
+.matchSch .currentMatch__name{padding-left:0.7rem;width:calc(100% - 5rem);height:2.54rem;font-size:1rem;overflow:hidden;}
+.matchSch .matchDays{padding:0.36rem 0.71rem;background-color:#fff;}
+.matchSch .matchDays__list{box-sizing:border-box;white-space:nowrap;overflow-x:auto;
+  -webkit-overflow-scrolling-x:touch;
+}
+.matchSch .matchDays__day{width:3.43rem;height:1.71rem;border-radius:0.93rem;color:#afb5b8;font-size:1rem;line-height:1.29rem;letter-spacing:-0.02rem;background-color:#fff;border:1px solid #afb5b8;;}
+.matchSch .matchDays__day + .matchDays__day{margin-left:0.43rem;}
+.matchSch .matchDays__day.s_active{background-color:#3e4448;color:#fff;border-color:#3e4448;}
+
+.matchSch .scheduleItem{width:100%;box-sizing:border-box;padding:0.71rem;text-align:left;color:#818487;}
+.matchSch .scheduleItem.s_notice{background-color:#A4ADB7;color:#fff;}
+.matchSch .scheduleItem__index{position:relative;}
+.matchSch .scheduleItem__indexTit{line-height:1.43rem;font-size:1rem;letter-spacing:-0.02rem;}
+.matchSch .scheduleItem__indexTime{position:absolute;right:0px;top:0;bottom:0;margin:auto;font-size:1.07rem;line-height:1.43rem;letter-spacing:-0.02rem;}
+.matchSch .scheduleItem__name{margin-top:0.21rem;line-height:1.29rem;font-size:1rem;letter-spacing:-0.02rem;font-weight:300;}
+.matchSch .l_search__wrap{margin-top:0;}
+
+
+/* 출전선수표 - 상세 팝업 */
+.gameDetailPopup .gameHeader{position:relative;width:100%;border-radius:0.92rem 0.92rem 0 0;background-color:#fff;box-sizing:border-box;padding-top:0.93rem;text-align:left;color:#818487;}
+.gameDetailPopup .gameHeader__txts{min-height:2.6rem;}
+.gameDetailPopup .gameHeader__header{padding:0 1.43rem;position:relative;}
+.gameDetailPopup .gameHeader__order{line-height:1.43rem;font-size:1rem;letter-spacing:-0.02rem;}
+.gameDetailPopup .gameHeader__time{position:absolute;right:1.43rem;top:0;bottom:0;margin:auto;font-size:1.07rem;line-height:1.43rem;letter-spacing:-0.02rem;}
+.gameDetailPopup .gameHeader__title{margin:0.21rem 1.43rem 0;line-height:1.29rem;font-size:1rem;letter-spacing:-0.02rem;font-weight:300;}
+
+.gameHeader__btnwrap{margin-top:0.7rem;position:relative;width:100%;font-size:0;background-color:#f2f2f2;}
+.gameHeader__btnwrap .matchbtn{display:inline-block;width:50%;height:2.2rem;line-height:2.4rem;font-size:0.98rem;text-align:center;color:#aaa;}
+.matchbtn.on{color:#fff;background-color:#40464A;}
+.matchbtn .m_img{margin-left:0.4rem;display:none;width:0.9rem;}
+.matchbtn.on .m_img{display:inline-block;}
+
+
+.gameDetailPopup .gameBoard__wrap{padding-top:0.71rem;position:relative;height:100%;background-color:#40464A;}
+.gameDetailPopup .gameBoard{/* padding-bottom:0.71rem; */padding-bottom:4rem;/* height:calc(100vh - 10.8rem); */height:calc(100vh - 14.8rem);overflow-y:scroll;-webkit-overflow-scrolling:touch;}
+.gameDetailPopup .gameBoard__item{background-color:#fff;border-radius:0.36rem;overflow:hidden;margin-left:0.71rem;margin-right:0.71rem;padding-bottom:0.29rem;}
+.gameDetailPopup .gameBoard__item + .gameBoard__item{margin-top:0.36rem;}
+.gameDetailPopup .gameBoard__item.s_notice{padding:0.1rem 0;background-color:#A4ADB7;}
+.gameDetailPopup .gameBoard__item.s_notice .gameBoard__header{color:#fff;}
+.gameDetailPopup .gameBoard__item.s_gubun{padding:0 0 0 0.7rem;background-color:#0079FF;}
+.gameDetailPopup .gameBoard__item.s_gubun .gameBoard__header{display:none;}
+.gameDetailPopup .gameBoard__item.s_gubun .gameBoard__subTxt{padding:0;height:1.9rem;line-height:2rem;font-size:0.99rem;color:#fff;}
+.gameDetailPopup .gameBoard__item .s_searching{background-color:#ff0;}
+.s_gubun.rank{display:none!important;}
+.s_gubun.rank.all{display:block!important;}
+.s_gubun.rank.allregame{display:none!important;}
+
+.gameDetailPopup .gameBoard__header{display:flex;color:#818487;font-size:1.07rem;letter-spacing:-0rem;}
+.gameDetailPopup .gameBoard__index{flex-shrink:0;flex-grow:0;display:inline-block;width:1.86rem;height:1.86rem;background-color:#ccd3db;text-align:center;line-height:1.86rem;font-size:1rem;letter-spacing:-0.02rem;color:#fff;}
+.gameDetailPopup .gameBoard__time{display:inline-block;margin-right:0.36rem;}
+.gameDetailPopup .gameBoard__txt{display:inline-block;width:100%;padding-left:10px;display:inline-block;line-height:27px;}
+.gameDetailPopup .gameBoard__status{flex-shrink:0;flex-grow:0;display:inline-block;width:4.29rem;height:1.86rem;background-color:#ac7373;color:#fff;text-align:center;line-height:1.86rem;font-size:1rem;}
+.gameDetailPopup .gameBoard__status.s_giveup{background-color:#0077C8;}
+.gameDetailPopup .gameBoard__status.s_giveup_e{background-color:#F99734;}
+.gameDetailPopup .gameBoard__status.s_giveup_rw{background-color:#666;}
+.gameDetailPopup .gameBoard__status.s_giveup_d{background-color:#D62525;}
+.gameDetailPopup .gameBoard__status.s_ing{background-color:#138517;}
+.gameDetailPopup .gameBoard__status.s_schedule{color:#0077C8;background-color:#fff;border:1px solid #0077C8;border-radius:0 0.36rem 0 0;}
+.gameDetailPopup .gameBoard__subTxt{padding-left:2.57rem;font-size:1rem;line-height:1.64rem;color:#9ea5ac;}
+
+.gameDetailPopup .recordTable__wrap{display:none;}
+.gameDetailPopup .recordTable__wrap.on{display:block;}
+.gameDetailPopup .recordTable{border-radius:0.36rem;overflow:hidden;margin:0.29rem 0.71rem;box-shadow:0rem 0.07rem 0.21rem rgba(0,0,0,0.16);}
+.gameDetailPopup .recordTable table{width:100%;background:#eee;}
+.gameDetailPopup .recordTable th{background-color:#aaa;color:#fff;font-size:1rem;line-height:1.14rem;letter-spacing:-0.02rem;text-align:center;}
+.gameDetailPopup .recordTable td{height:1.21rem;background-color:#fff;color:#aaa;text-align:center;width:33.3333%;}
+.gameDetailPopup .recordTable td.s_white{background-color:#fff;}
+.gameDetailPopup .recordTable td.s_gray1{background-color:#ccc;color:#fff;}
+.gameDetailPopup .recordTable td.s_gray1.bd{border-bottom:1px solid #fff;}
+.gameDetailPopup .recordTable td.s_gray2{background-color:#eee;color:#aaa;}
+.gameDetailPopup .recordTable td.s_gray3{background-color:#f9f9f9;color:#aaa;}
+.gameDetailPopup .recordTable td.s_border{border-bottom:1px solid #ffff;}
+.gameDetailPopup .recordTable .td4 td{width:25vw;}
+
+.gameDetailPopup .gameBoard__btn{position:relative;width:calc(100% - 1.43rem);height:1.71rem;margin:0.14rem 0.71rem 0rem 0.71rem;border-radius:0.36rem;background-color:#3F505D;color:#fff;overflow:hidden;}
+.gameDetailPopup .gameBoard__btn.on{background-color:#eee;color:#aaa;}
+.gameDetailPopup .gameBoard__btn.on .gameBoard__btnIcon{
+  -webkit-transform:rotateZ(180deg);
+  -moz-transform:rotateZ(180deg);
+  -ms-transform:rotateZ(180deg);
+  -o-transform:rotateZ(180deg);
+  transform:rotateZ(180deg);
+}
+.gameDetailPopup .gameBoard__btnTxt{font-size:0.86rem;line-height:1.14rem;letter-spacing:-0.02rem;text-align:center;}
+.gameDetailPopup .gameBoard__btnIcon{margin-top:-0.1rem;width:0.57rem;height:0.29rem;vertical-align:middle;margin-left:0.43rem;}
+.gameDetailPopup .gameBoard__btnRank{padding:0 0.6rem;position:absolute;left:0;top:0;height:100%;line-height:1.7rem;font-size:0.78rem;color:#fff;background-color:#607B8F;}
+.no_gameinfo{margin:auto;width:12.96rem;}
+
+/* 출전선수표 일정 팝업 새로고침 */
+.gameDetailPopup .gameBoard.s_refresh{}
+.gameDetailPopup .gameBoard.s_refresh li{background-color:#fff;}
+.gameDetailPopup .gameBoard.s_refresh li>*{opacity:0;}
+.m_loadingbar{position:absolute;top:0;left:0;width:100%;height:100%;}
+.m_loadingbar .m_img{width:3.5rem;}
+
+/* 출전선수표 - 기권 팝업 */
+.giveupPopup .giveupInfo{color:#333;font-size:1rem;line-height:1.29rem;letter-spacing:-0.02em;}
+.giveupPopup .popupHeader{margin-top:2.14rem;}
+.giveupPopup .popupContent{box-sizing:border-box;height:100%;min-height:22.07rem;}
+
+/* 츨전선수표 - giveup popup */
+.m_layerBtns{display:flex;justify-content:space-between;margin-top:1.43rem;}
+.m_layerBtn{width:49%;height:2.5rem;border-radius:0.36rem;color:#333;background-color:#ddd;}
+.m_layerBtn.s_confirm{color:#fff;background-color:#005895;}
+
+/* 출전선수표 - 검색 팝업  */
+.searchPopup .m_searchPopup__control{text-align:center;}
+.searchPopup .m_searchPopup__listname{padding:0 4.1rem;}
+.searchPopup .m_searchPopup__listname .icon__search_add{right:4.6rem;}
+/* // 출전선수표 */
+
+
+a>*, button>*{pointer-events:none;}
+.m_searchPopup__input.s_ignore, .m_searchPopup__fliter, .m_searchPopup__fliter:before,
+.contestFile__filebtn .m_img, .contestFile__list, .contestFile__inner,
+.preMonthSchedule .m_img, .matchSch .matchDays__day,
+.m_searchPopup__input.s_only,
+.gameDetailPopup .gameBoard li/* , .gameDetailPopup .gameBoard li>* */{
+  -webkit-transition:0.23s cubic-bezier(.08,.51,.54,1);
+  -moz-transition:0.23s cubic-bezier(.08,.51,.54,1);
+  -ms-transition:0.23s cubic-bezier(.08,.51,.54,1);
+  transition:0.23s cubic-bezier(.08,.51,.54,1);
+}

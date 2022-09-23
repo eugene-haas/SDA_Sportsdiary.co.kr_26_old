@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>디자인 스케치</title>
+    <link rel="stylesheet" href="css/lib/bootstrap.css"/>
+    <link rel="stylesheet" href="css/lib/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/lib/jquery-1.10.2.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <script>var cateIdx = 1;</script>
+  </head>
+  <body>
+    <div class="container" id="header">
+      <div id="logo">
+        <h1> <a href="#">SD 디자인</a></h1>
+        <div id="menu">
+          <ul>
+            <li><a href="./index.html" accesskey="1" title="SD 디자인 홈">HOME</a></li>
+            <li><a href="./sketch.html" accesskey="2" title="Sketch">Sketch</a></li>
+            <li><a href="./component.html" accesskey="2" title="Component">Component</a></li>
+            <li><a href="./module.html" accesskey="2" title="Module">Module</a></li>
+            <li><a href="./template.html" accesskey="2" title="Template">Template</a></li>
+            <li><a href="./Page.html" accesskey="2" title="Page">Page</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <section class="typography clearfix">
+        <p class="divn"><span class="number">01</span>TYPOGRAPHY
+          <div class="column-1">
+            <p class="title">Titles &amp; Headings</p>
+            <h1>h1. 스포츠다이어리 입니다. Medium 28px</h1>
+            <h2>h2. 스포츠다이어리 입니다. Medium 20px</h2>
+            <h3>h3. 스포츠다이어리 입니다. Medium 18px</h3>
+            <h4>h4. 스포츠다이어리 입니다. Medium 16px</h4>
+            <h5>h5. 스포츠다이어리 입니다. Medium 15px</h5>
+            <h6>h6. 스포츠다이어리 입니다. Medium 14px</h6>
+          </div>
+          <div class="column-1">
+            <p class="title">Body Text</p>
+            <p>스포츠다이어리 입니다. 기본 Body Text는 14px 입니다.</p>
+            <p>line-height는 150% 입니다.</p>
+            <p>기본 폰트 칼라는 #333 입니다.</p>
+            <div class="basic_style">
+              <p class="boldy">Bold</p>
+              <p class="italicy">Italic</p>
+              <p class="hypery">Hyperlink </p>
+            </div>
+            <p>p 스포츠다이어리 입니다. Regular 14px</p>
+            <p class="minimum">p 최소사이즈입니다. DemLight 13px</p>
+            <p><em>em 스포츠다이어리 입니다. Regular 14px</em></p>
+            <p><a>a 스포츠다이어리 입니다. Regular 14px</a></p>
+          </div>
+        </p>
+      </section>
+      <section class="buttons clearfix">
+        <p class="divn"><span class="number">02</span>BUTTONS</p>
+        <div class="flex">
+          <div class="column-1">
+            <div class="btn_group on_group"><a class="btn_normal on">NORMAL</a><a class="btn_normal on ex_hover">HOVER</a><a class="btn_normal on ex_active">ACTIVE</a><a class="btn_disabled on">DISABLED</a></div>
+            <div class="btn_group"><a class="btn_normal">NORMAL</a><a class="btn_normal ex_hover">HOVER</a><a class="btn_normal ex_active">ACTIVE</a><a class="btn_disabled">DISABLED</a></div>
+          </div>
+          <div class="column-1">
+            <div class="btn_group">
+              <div class="btn_list">
+                <div class="btn_normal btn_lg"><span>Large</span><span>280 x 50px</span></div>
+                <p>Medium 16px</p>
+              </div>
+              <div class="btn_list">
+                <div class="btn_normal btn_md"><span>Medium</span><span>220 x 40px</span></div>
+                <p>Medium 15px</p>
+              </div>
+              <div class="btn_list">
+                <div class="btn_normal btn_sm"><span>Small</span><span>140 x 40px</span></div>
+                <p>Medium 15px</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="list clearfix">
+        <p class="divn"><span class="number">03</span>LIST</p>
+        <p class="title">Basic Style</p>
+        <ul>
+          <li>unordered list</li>
+          <li>unordered list</li>
+        </ul>
+        <ol>
+          <li>ordered list</li>
+          <li>ordered list</li>
+        </ol>
+        <div class="divn">
+          <p class="title">Line Style</p>
+          <div class="list_guide flex">
+            <div class="column">
+              <ul class="list">
+                <li>unordered list</li>
+                <li>unordered list</li>
+                <li>unordered list</li>
+              </ul>
+            </div>
+            <div class="column">
+              <ol class="list">
+                <li>ordered list</li>
+                <li>ordered list</li>
+                <li>ordered list</li>
+              </ol>
+            </div>
+            <div class="column">
+              <dl class="list">
+                <dt>dt 제목</dt>
+                <dd>dd 내용을 입력해주세요</dd>
+                <dd>dd 내용을 입력해주세요</dd>
+                <dd>dd 내용을 입력해주세요</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="form clearfix">
+        <p class="divn"><span class="number">04</span>FORM</p>
+
+        <!-- S: form_box -->
+        <div class="form_box">
+          <label>TITLE</label>
+          <input type="text" placeholder="Text Field"/>
+          <div class="srch_box"><a class="ic_deco"><i class="fa fa-search"></i></a>
+            <input class="search_box" type="text" placeholder="Search"/><a class="del" href="#"><i class="fa fa-times-circle"></i></a>
+          </div>
+          <select>
+            <option value="">Select Box</option>
+            <option value="">Select Box</option>
+          </select>
+          <textarea placeholder="textarea"></textarea>
+          <pre>&lt;pre&gt;이용약관&lt;/pre&gt;</pre>
+        </div>
+        <!-- E: form_box -->
+
+        <!-- S: form_box -->
+        <div class="form_box">
+          <label>Disabled</label>
+          <input type="text" placeholder="disabled" class="disabled" disabled="disabled">
+        </div>
+        <!-- E: form_box -->
+
+      </section>
+      <section class="table_area clearfix">
+        <p class="divn"><span class="number">05</span>TABLE</p>
+        <div class="flex">
+          <div class="column-1">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>제목</th>
+                  <th>날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="column-1">
+            <table class="table sd_table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>제목</th>
+                  <th>날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>제목을 입력해주세요.</td>
+                  <td>2017.09.19</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="colors clearfix">
+        <p class="divn"><span class="number">06</span>COLORS
+          <div class="color_list dark_gray clearfix">
+            <div class="color_box"></div>
+            <div class="color_box"></div>
+            <div class="color_txt"><span class="color_name">Dark Gray</span><span class="color_val">#333, #666</span></div>
+          </div>
+          <div class="color_list light_gray clearfix">
+            <div class="color_box"></div>
+            <div class="color_box"></div>
+            <div class="color_txt"><span class="color_name">Light Gray</span><span class="color_val">#f99f9, #ddd</span></div>
+          </div>
+          <div class="color_list blue clearfix">
+            <div class="color_box"></div>
+            <div class="color_box"></div>
+            <div class="color_txt"><span class="color_name">Blue</span><span class="color_val">#039be5, #4fc3f7</span></div>
+          </div>
+          <div class="color_list blue_gray clearfix">
+            <div class="color_box"></div>
+            <div class="color_box"></div>
+            <div class="color_txt"><span class="color_name">Blue Gray</span><span class="color_val">#455a64, #78909c</span></div>
+          </div>
+        </p>
+      </section>
+      <section class="icon clearfix">
+        <p class="divn"><span class="number">07</span>ICON</p>
+        <div class="column-1">
+          <div class="icon_list">
+            <p class="title">Title Bar</p><a class="left_arrow" href="#"><span class="ic_deco"><i class="fa fa-angle-left"></i></span></a><a class="menu" href="#"><span class="ic_deco nav"></span></a><a class="logout" href="#"><span class="ic_deco"><i class="fa fa-power-off"></i></span><span class="txt">로그아웃</span></a>
+          </div>
+          <div class="icon_list">
+            <p class="title">Search Bar</p>
+            <div class="ic_deco srch"><i class="fa fa-search"></i></div>
+            <div class="ic_deco ic_del"><i class="fa fa-times-circle"></i></div>
+          </div>
+          <div class="icon_list">
+            <p class="title">Share Sheet</p>
+            <div class="ic_deco ic_star"><span class="glyphicon glyphicon-star"></span></div>
+            <div class="ic_deco ic_star on"><span class="glyphicon glyphicon-star"></span></div>
+          </div>
+        </div>
+        <div class="column-1">
+          <p class="title">Slide Button</p>
+          <div class="carousel">
+            <ul>
+              <li><img src="https://via.placeholder.com/350x150" alt="alt"/></li>
+            </ul>
+            <div class="carousel_btn"><a class="prev" href="#"><span class="ic_deco"><i class="fa fa-angle-left"></i></span></a><a class="next" href="#"><span class="ic_deco"><i class="fa fa-angle-right"></i></span></a></div>
+            <div class="indicator">
+              <ul class="clearfix">
+                <li class="bullet_list"><a href="#"><span class="circle"></span></a></li>
+                <li class="bullet_list on"><a href="#"><span class="circle"></span></a></li>
+                <li class="bullet_list"><a href="#"><span class="circle"></span></a></li>
+                <li class="bullet_list"><a href="#"><span class="circle"></span></a></li>
+                <li class="bullet_list"><a href="#"><span class="circle"></span></a></li>
+                <li class="bullet_list"><a href="#"><span class="circle"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

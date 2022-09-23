@@ -1,0 +1,35 @@
+.tip-cont {background-color: #fff; padding-top: 20px; padding-bottom: 20px; border: 1px solid #ddd; border-top-left-radius: 20px; border-top-right-radius: 20px; margin-bottom: 20px;}
+.tip-cont .tip-txt {font-size: 0.85em;color: #666;line-height: 1.4em;font-family: 'nanumGothicB';}
+.tip-cont h4 {font-size: 0.93em;font-weight: bold; padding-right: 10px;margin-top: 1em;mar;margin-bottom: 1em;}
+.tip-cont .user-guide {margin-bottom: 15px;}
+.tip-cont .user-guide .number-list {display: inline-block;font-size: .75em;text-align: center;border: 1px solid #333;border-radius: 50%;width: 15px;height: 15px;line-height: 13px;vertical-align: middle;margin-right: 5px;}
+.tip-cont .user-guide li {font-size: .75em;border: none;padding: 0;padding-bottom: 5px;line-height: 1.6em;}
+.tip-cont .user-guide.heart li {padding-bottom: 0;}
+.tip-cont .user-guide.heart li:last-child {color:#ff7200;}
+.tip-cont .user-guide.heart li:last-child span.number-list {border:1px solid #ff7200;}
+.muscle-sub-title {display: inline-block; width: 53%; padding: 0px; float:left; margin:20px 0  0 0;}
+.muscle-sub-title2 {display: inline-block; width: 63%; padding: 0px; float:left; padding:35px 0  0 0;}
+.muscle-sub-title img {max-width: 200px}
+.muscle-way {text-align: center;margin-bottom: 20px;}
+.muscle-way img {max-width: 360px;width: 95%;}
+.muscle-way .way-list {-webkit-flex: 2; flex: 2;}
+.muscle-way .way-list li {border-bottom: none;}
+
+/*
+ 이미지 빼고 코드로 대체할 경우...
+ */
+/*.muscle-way .way-list li:first-child {margin-bottom: 40px;}
+.muscle-way .way-list li:nth-child(2) {margin-bottom: 40px;}
+.muscle-way .way-list li:nth-child(3) {}
+.muscle-way .way-list li:last-child {}
+.muscle-way .way-list h5 {display: inline-block; font-size: 1.96em; font-weight: bold; color: #c6c6c6; width: 10%; margin-right: 0.36em;vertical-align: top;}
+.muscle-way .way-list p {display: inline-block; font-size: 0.71em; color: #666; width: 80%; line-height: 150%; padding-top: 10px;}
+.muscle-way .way-list p .orangy {font-weight: normal; color: #ff7200;}
+.muscle-way .way-list span {font-size: 0.71em; font-weight: bold; color: #ff7200;}*/
+
+.tip-cont .tip-footer {margin-top: 15px;}
+.tip-cont .tip-footer .tip-info {clear:both;font-size:0.78em;line-height:1.6em;padding-top: 3px;}
+.tip-cont .tip-footer h4 {margin: 0; margin-top: 5px; float: left; }
+.tip-cont .tip-footer ul { float: left; }
+.tip-cont .tip-footer ul li { border: none; width: 100px; padding-left: 0; float: left;}
+.strength .know-detail h4 .deco-icon {display: inline-block;width: 17px;margin-right: 5px; margin-left:10px;}

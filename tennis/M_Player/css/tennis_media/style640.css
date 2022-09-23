@@ -1,0 +1,5 @@
+@media (min-width: 640px) {
+  /* 종목 메인 ㅋㅋ몰 */
+  .kk_mall .mall_list li {margin-right: 20px;}
+  .kk_mall .mall_list .img_box {min-height: 205px;}
+}

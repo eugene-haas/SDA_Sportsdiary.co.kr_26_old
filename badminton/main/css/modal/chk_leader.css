@@ -1,0 +1,6 @@
+.chk_leader .modal-body {text-align: center;}
+.chk_leader .modal-body h3 {font-family: 'NanumGothicB';font-size: 16px;color: #333;padding-top: 40px;}
+.chk_leader .modal-body .guide_text {font-size: 13px;color: #333;padding-top: 20px;}
+.chk_leader .btn_list {padding-top: 30px;padding-bottom: 30px;}
+.chk_leader .btn_list .btn {font-family: 'NanumGothicB';font-size: 16px;text-align: center;width: 150px;height: 43px;line-height: 43px;padding: 0;}
+.chk_leader .yes_no_list .btn:last-child {margin-left: 3px;}

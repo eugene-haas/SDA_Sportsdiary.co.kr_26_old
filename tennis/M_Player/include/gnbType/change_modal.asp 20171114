@@ -1,0 +1,95 @@
+<!-- S: change_account -->
+<div class="modal fade change_account">
+  <!-- S: modal-dialog -->
+  <div class="modal-dialog">
+    <!-- S: modal-content -->
+    <div class="modal-content">
+      <!-- S: modal-header -->
+      <div class="modal-header">
+        <h2>
+          <span class="ic_deco">
+            <i class="fa fa-refresh"></i>
+          </span>
+          <span class="txt">계정전환</span>
+        </h2>
+        <p>
+          <span class="now">현재 계정</span>
+          <span class="belong"><%=txt_Name%></span>
+        </p>
+      </div>
+      <!-- E: modal-header -->
+      <!-- S: modal-body -->
+      <div class="modal-body">
+        <ul class="count_list">
+          <li class="tg on">
+            <div class="cont">
+              <p>테니스 생활체육(동호회) 선수 (경험없음)</p>
+              <span class="join_date">가입일자:2017.11.15</span>
+            </div>
+            <div class="ctr_btn">
+              <label>
+                <input type="checkbox">
+                <span class="sw_box"></span>
+              </label>
+            </div>
+          </li>
+          <li class="tg">
+            <div class="cont">
+              <p>테니스 생활체육(동호회) 선수 (경험없음)</p>
+              <span class="join_date">가입일자:2017.11.15</span>
+            </div>
+            <div class="ctr_btn">
+              <label>
+                <input type="checkbox">
+                <span class="sw_box"></span>
+              </label>
+            </div>
+          </li>
+          <li class="tg">
+            <div class="cont">
+              <p>테니스 생활체육(동호회) 선수 (경험없음)</p>
+              <span class="join_date">가입일자:2017.11.15</span>
+            </div>
+            <div class="ctr_btn">
+              <label>
+                <input type="checkbox">
+                <span class="sw_box"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+
+        <!-- S: make_sub -->
+        <div class="make_sub">
+          <a href="#">
+            <span class="ic_deco">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span class="txt">서브계정 생성</span>
+            <span class="img_deco">
+              <img src="../images/public/r_arr@3x.png" alt="">
+            </span>
+          </a>
+        </div>
+        <!-- E: make_sub -->
+
+      </div>
+      <!-- E: modal-body -->
+      <!-- S: modal-footer -->
+      <div class="modal-footer">
+        <ul class="modal-btn clearfix">
+          <li>
+            <a href="#" class="btn btn-cancel" data-dismiss="modal">취소</a>
+          </li>
+          <li>
+            <a href="#" class="btn btn-ok">계정전환 적용</a>
+          </li>
+        </ul>
+      </div>
+      <!-- E: modal-footer -->
+    </div>
+    <!-- E: modal-content -->
+  </div>
+  <!-- E: modal-dialog -->
+</div>
+<!-- E: change_account -->

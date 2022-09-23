@@ -1,0 +1,86 @@
+ @charset "UTF-8";
+
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  /*src: url(http://fonts.gstatic.com/s/roboto/v16/5YB-ifwqHP20Yn46l_BDhA.eot);*/
+}
+
+/* =========================
++ font 로딩 +
+========================= */
+@font-face {
+  font-family: 'NanumGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Regular.eot);
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Regular.woff2) format('woff2'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Regular.woff) format('woff'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Regular.ttf) format('truetype');
+  src: local(※), url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicB';
+  font-style: normal;
+  font-weight: 700;
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Bold.eot);
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Bold.woff2) format('woff2'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Bold.woff) format('woff'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Bold.ttf) format('truetype');
+  src: local(※), url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NanumGothicEB';
+  font-style: normal;
+  font-weight: 800;
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-ExtraBold.eot);
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-ExtraBold.woff2) format('woff2'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-ExtraBold.ttf) format('truetype');
+  src: local(※), url(http://badmintonadmin.sportsdiary.co.kr/fonts/NanumGothic/NanumGothic-ExtraBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'NotoKR-md';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Noto KR Medium'), local('Noto KR Medium'), local('Noto KR Medium');
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Medium/notokr-medium.eot);
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Medium/notokr-medium.eot?#iefix) format('embedded-opentype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Medium/Notokr-medium.woff) format('woff'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Medium/Notokr-medium.otf) format('truetype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Medium/Notokr-medium.woff2) format('woff2'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Medium/notokr-medium.svg#svgFontName) format('svg');
+  src: local('※'), url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/notoKR-Medium/Notokr-medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bd';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Noto KR Bold'), local('Noto KR Bold'), local('Noto KR Bold');
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.eot);
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.eot?#iefix) format('embedded-opentype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.otf) format('truetype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.woff2) format('woff2'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.svg#svgFontName) format('svg');
+  src: local('※'), url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bl';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto KR Black'), local('Noto KR Black'), local('Noto KR Black');
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.eot);
+  src: url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.eot?#iefix) format('embedded-opentype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.otf) format('truetype'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.woff2) format('woff2'),
+    url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.svg#svgFontName) format('svg');
+  src: local('※'), url(http://badmintonadmin.sportsdiary.co.kr/fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff');
+}

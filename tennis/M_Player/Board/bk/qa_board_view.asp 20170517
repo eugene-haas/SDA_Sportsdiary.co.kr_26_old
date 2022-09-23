@@ -1,0 +1,214 @@
+<!-- #include file="../include/config.asp" -->
+<%
+  dim CIDX    : CIDX      = fInject(request("CIDX"))
+  dim currPage  : currPage    = fInject(request("currPage"))
+  dim fnd_user  : fnd_user    = fInject(request("fnd_user"))
+  dim search_date : search_date   = fInject(request("search_date")) 
+  dim SDate     : SDate     = fInject(request("SDate"))
+  dim EDate     : EDate     = fInject(request("EDate"))
+  
+  IF CIDX = "" Then
+    response.Write "<script>alert('잘못된 접근입니다\n확인 후 이용하세요'); history.back();</script>" 
+    response.End()
+  End IF
+
+  CSQL =  "     SELECT Title " 
+  CSQL = CSQL & "   ,Contents "
+  CSQL = CSQL & "   ,CONVERT(CHAR(10), WriteDate, 102) WriteDate "
+  CSQL = CSQL & "   ,UserName "
+  CSQL = CSQL & "   ,ViewCnt "
+  CSQL = CSQL & "   ,MemberIDX "
+  CSQL = CSQL & "   ,QnAIDX "
+  CSQL = CSQL & "   ,ReQnAIDX "
+  CSQL = CSQL & " FROM [SportsDiary].[dbo].[tblSvcQnA] " 
+  CSQL = CSQL & " WHERE DelYN = 'N' "
+  CSQL = CSQL & "   And SportsGb = '"&SportsGb&"'"
+  CSQL = CSQL & "   And QnAIDX = "&CIDX 
+  
+  SET CRs = server.CreateObject ("ADODB.Recordset")
+    CRs.Open CSQL, Dbcon, 1 ,3
+    
+    CRs("ViewCnt") = CRs("ViewCnt") + 1
+    CRs.Update    
+    
+    WriterID  = CRs("MemberIDX")
+    Title     = ReplaceTagReText(CRs("Title"))
+    Contents  = replace(ReplaceTagReText(CRs("Contents")), chr(10),"<br>")
+    WriteDate   = CRs("WriteDate")
+    UserName  = CRs("UserName")
+    ViewCnt   = CRs("ViewCnt")
+    QnAIDX    = CRs("QnAIDX")
+    ReQnAIDX  = CRs("ReQnAIDX")
+
+    CRs.Close
+  SET CRs = Nothing
+  
+  
+%>
+<!-- E: detail INFO -->
+<script>
+  //버튼액션
+  function chk_URL(type){
+    if(type!=""){
+      
+      switch(type) {
+         case "LIST" :
+            $('form[name=s_frm]').attr('action',"./qa_board.asp");
+          $('form[name=s_frm]').submit(); 
+          break;
+         //수정
+         case "MOD" :   
+            $('#strType').val('MOD');
+            $('form[name=s_frm]').attr('action',"./qa_board_write.asp");
+          $('form[name=s_frm]').submit(); 
+          break;
+        /*
+        //답변  
+         case "REPLY" :      
+            var strType = $("#strType").val(type);
+          
+            $('form[name=s_frm]').attr('action',"./qa_board_write.asp");          
+          $('form[name=s_frm]').submit(); 
+          break;  
+      */          
+         //삭제
+         case "DEL" :
+            if(confirm("선택한 정보를 삭제하시겠습니까?")){
+        
+            var strAjaxUrl = "../Ajax/qa_board_del.asp"; 
+            var CIDX = $("#CIDX").val();
+            
+            $.ajax({
+              url: strAjaxUrl,
+              type: "POST",
+              dataType: "html",     
+              data: { 
+                 CIDX       : CIDX      
+              },    
+              success: function(retDATA) {
+                if(retDATA=="TRUE"){
+                  $('form[name=s_frm]').attr('action',"./qa_board.asp");
+                  $('form[name=s_frm]').submit();
+                  
+                }else{
+                  alert ("삭제를 하지 못하였습니다.\n다시 확인해 주세요.");        
+                }     
+              }, error: function(xhr, status, error){           
+                alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+              }
+            }); 
+            break;  
+          }
+          else{
+            return; 
+          }
+         default: 
+            break;
+      }
+    }
+  }
+  
+  function info_Button(){
+    var strAjaxUrl = "../Ajax/qa_board_view_btn.asp";    
+    var QnAIDX = $("#QnAIDX").val();
+    var ReQnAIDX = $("#ReQnAIDX").val();
+    var WriterID = $("#WriterID").val();
+    
+    $.ajax({
+      url: strAjaxUrl,
+      type: "POST",
+      dataType: "html",     
+      data: { 
+        QnAIDX    : QnAIDX 
+        ,ReQnAIDX   : ReQnAIDX 
+        ,WriterID : WriterID        
+      },    
+      success: function(retDATA) {
+        
+        $("#board-btn").html(retDATA);
+                
+      }, error: function(xhr, status, error){           
+        alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+      }
+    });   
+  }
+  
+  
+  $(document).ready(function(){
+    info_Button();
+  }); 
+</script>
+<body>
+
+<form name="s_frm" method="post"> 
+  <input type="hidden" name="CIDX" id="CIDX" value="<%=CIDX%>" />
+    <input type="hidden" name="QnAIDX" id="QnAIDX" value="<%=QnAIDX%>" />
+    <input type="hidden" name="ReQnAIDX" id="ReQnAIDX" value="<%=ReQnAIDX%>" />
+    <input type="hidden" name="WriterID" id="WriterID" value="<%=WriterID%>" />
+    <input type="hidden" name="strType" id="strType" />
+    <input type="hidden" name="currPage" id="currPage" value="<%=currPage%>" />
+    <input type="hidden" name="fnd_user" id="fnd_user" value="<%=fnd_user%>" />
+    <input type="hidden" name="search_date" id="search_date" value="<%=search_date%>" />
+    <input type="hidden" name="SDate" id="SDate" value="<%=SDate%>" />
+    <input type="hidden" name="EDate" id="EDate" value="<%=EDate%>" />
+    <input type="hidden"  class="on_val" id="on_val" name="on_val" />
+  <input type="hidden"  class="active_val"  id="active_val" name="active_val"  />
+
+  <!-- S: sub-header -->
+  <div class="sub-header flex">
+    <!-- S: sub_header_arrow -->
+    <!-- #include file="../include/sub_header_arrow.asp" -->
+    <!-- E: sub_header_arrow -->
+    <h1>Q&amp;A 게시판</h1>
+    <!-- S: sub_header_gnb -->
+    <!-- #include file="../include/sub_header_gnb.asp" -->
+    <!-- E: sub_header_gnb -->
+  </div>
+  <!-- E: sub-header -->
+
+  <!-- S: top-counsel -->
+ <div class="top-counsel write qa-top">
+    <div class="view-title">
+      <!--<h3>제목</h3>-->
+      <p class="write-title clearfix">
+        <span><%=Title%></span>
+       </p>
+       <p class="write-info clearfix">
+        <span><%=UserName%></span>
+        <span><%=replace(left(WriteDate, 10), "-", ".")%></span>
+        <span class="seen">조회수</span>
+        <span><%IF ViewCnt<>"" Then response.Write formatnumber(ViewCnt, 0) Else response.Write "0" End IF%></span>
+      </p>
+    </div>
+  </div>
+  <!-- E: top-counsel -->
+  <!-- S: sub sub-main -->
+  <div id="board-contents" class="sub sub-main board qa-board qa-write panel-group">
+    <div class="view-word container">
+      <!--<textarea placeholder="내용을 입력해 주세요." readonly="readonly"><%=Contents%></textarea>-->
+      
+      <!-- S: 게시판 작성 내용 -->
+     <p>
+      <%=Contents%>
+     </p>
+      <!-- E: 게시판 작성 내용 -->
+    
+    </div>
+  </div>
+  <!-- E: sub sub-main board -->
+
+  <!-- S: btn-list -->
+  
+  <div id="board-btn" class="btn-list qa-board-cta qa-view container flex">
+  <!--
+    <a href="./qa_board.asp" class="btn btn-cancel">목록</a>
+    <a href="./qa_board_write.asp" class="btn btn-save">답변</a>
+    -->
+  </div>
+  <!-- E: btn-list -->
+
+  <!-- S: bot-config -->
+  <!-- #include file= "../include/bot_config.asp" -->
+  <!-- E: bot-config -->
+  </form>
+</body>

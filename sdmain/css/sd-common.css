@@ -1,0 +1,871 @@
+/* reset */
+li { list-style:none; }
+a { display:block; text-decoration:none; color:inherit; }
+select{ -webkit-appearance:none;  }
+textarea, button, select, input{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    outline:none;
+}
+
+textarea, button, select, input{
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -o-border-radius:0;
+    border-radius:0;
+}
+/* reset */
+
+.sd-body{ line-height:100%; background-color:#edf0f4; }
+.sd-main{ line-height:100%; font-size:16px; background:#f2f2f2; }
+.sd-index{ line-height:100%; font-size:16px; background:#f2f2f2; }
+.sd-body .tail img{ margin:0; }
+
+/* .sd-main{position:fixed; width:100%; overflow:hidden; -webkit-overflow-scrolling:auto; } */
+/* .sd-scroll{ overflow-y:scroll; height:85%; height:85vh; -webkit-overflow-scrolling:touch; overscroll-behavior:none; } */
+.sd-scroll{ overflow-y:scroll; height:85%; height:85vh; -webkit-overflow-scrolling:touch; }
+
+/* 유도: 훈련일지, 대회일지, 대회일정/결정표, 현장스케치, sd뉴스 */
+.sd-main-A{ background-color:#fff; position:relative; }
+
+/* 유도 : 나의 훈련 일정(캘린더), 나의 훈련일정(리스트) */
+/* 테니스 : 나의 훈련 일정(캘린더), */
+.sd-main-E{ background-color:#f5f5f5; }
+
+/* 유도 : 내 정보 관리, 나의 통계, 메모리, 나의 메모장, 지도자상담, 단체정보조회, sd칼럼, ooo의 칼럼, ooo칼럼(보기), 대회일지, 경기진행현황, 선수분석, 경기기록실*/
+/* 테니스 : 내 정보 관리*/
+.sd-main-F{ background-color:#edf0f4; }
+
+/* 유도 : 나의메모장(쓰기), 나의 메모장(보기), QnA(쓰기), QnA(보기), 지도자상담(쓰기), 지도자상담(보기) */
+/* 테니스 : QnA(쓰기), QnA(보기), */
+.sd-main-G{ background-color:#f2f2f2; }
+
+/* 유도 : 대진표 */
+/* 테니스 : 대진표 */
+.sd_finder{ text-align:center; padding:10px 0 10px 0; border-top:1px solid #ddd; font-size:14px; }
+.sd_finder__label{ display:inline-block; margin-bottom:5px; font-weight:700; max-width:100%; vertical-align:middle; }
+.sd_finder__keyword{ margin:0 10px; width:50% !important; box-sizing:border-box; padding:0 5px; height:33px; line-height:33px; border:1px solid #b4b4b4; border-radius:3px; font-size:13px; color:#888; -webkit-appearance:none; vertical-align:middle; }
+
+/* 유도 : 대진표 */
+/* 테니스 : 대진표 */
+.sd-matched{}
+.sd-highlighted{ background-color:#fff34d; }
+
+/* sd-header */
+div.sd-header{padding:0; position:relative; height:44px; height:48px !important; background-color:#fff;}
+div.sd-header.sd-header-sub{border-bottom:1px solid #ddd;}
+div.sd-header .logo{position:relative; left:0; right:0; margin:auto; width:60%; top:10px; text-align:center; }
+div.sd-header .logo a{display:inline-block;}
+div.sd-header .logo img{width:92px;}
+div.sd-header a.left_arrow{
+  position:absolute; line-height:100%; height:100%; width:34px; top:0; margin-top:0 !important; font-size:0px; letter-spacing:initial; text-align:initial;
+  background:url('http://img.sportsdiary.co.kr/sdapp/header/bt_ancle_left@3x.png') no-repeat left 10px center/14px 23.14px;
+}
+div.sd-header a.left_arrow .ic_deco{height:auto; line-height:100%; font-size:0;}
+
+div.sd-header div.hamBtn{position:absolute; right:10px; top:14px !important; height:19px; width:25px;}
+div.sd-header div.hamBtn a{background-color:initial; border-radius:0px; background:url('http://img.sportsdiary.co.kr/sdapp/header/bt_ham@3x.png') no-repeat left top/25px 18.47px; font-size:0; width:100%; height:100%;}
+
+div.sd-header .btn{text-indent:inherit;height:auto;width:auto;top:0px;line-height:100%; position: absolute; display: inline-block;}
+div.sd-header .btn img{width:25px;}
+
+div.sd-header .left_arrow .ic_deco{margin-top:0; line-height:100%;}
+div.sd-header .left_arrow .ic_deco img{position:absolute; top:0; width:14px;}
+
+div.sd-header div.homeBtn{position:absolute; right:10px; top:11px !important; height:auto;width:25px; line-height:100%;}
+div.sd-header div.homeBtn span{font-size:28px;}
+div.sd-header div.homeBtn span i{color:#444;}
+
+div.sd-header h1{
+  position:relative; display:block;
+  width:70%; top:15px; margin:auto;
+  font-size:20px; text-align:center; font-family:'NotoKR', sans-serif; font-weight:500;
+  letter-spacing:-0.02em; line-height:110%; height:1.1em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+div.sd-header .left_arrow.blue{background:url('http://img.sportsdiary.co.kr/sdapp/header/bt_ancle_left_blue@3x.png') no-repeat left 10px center/14px 23.14px;}
+div.sd-header .left_arrow.next-blue + h1{color:#005895;}/* for tennis, bike */
+div.sd-header .left_arrow.next-blue ~ .hamBtn a{background:url('http://img.sportsdiary.co.kr/sdapp/header/bt_ham_blue@3x.png') no-repeat left top/25px 18.47px;}
+div.sd-header .left_arrow.next-blue ~ .homeBtn span i{color:#005895;}
+
+
+/* sd-main-tab */
+/* div.sd-main-tab{display:table;width:100%;padding-top:10px;background:#fff;}
+div.sd-main-tab ul{margin:0; padding:0;}
+div.sd-main-tab ul li{float:left;width:33%;text-align:center; list-style:none;}
+div.sd-main-tab ul li:last-child{float:left;width:34%;}
+div.sd-main-tab ul li a{padding:10px 0;display:block;color:#444;line-height:100%;font-size:16px;letter-spacing:0.02em;}
+div.sd-main-tab ul li a.active{border-bottom:2px solid #0288d1;font-family:'NotoKR', sans-serif; font-weight:500; color:#005895;} */
+
+
+div.sd-main-tab{ display:table; width:100%; padding-top:10px; background:#fff; border-bottom:1px solid #ddd; font-family:'NotoKR', sans-serif; }
+div.sd-main-tab ul{ margin:0; padding:0; }
+div.sd-main-tab ul li{ float:left; width:25%; text-align:center; list-style:none; }
+div.sd-main-tab ul li:last-child{ float:left; width:25%; }
+
+div.sd-main-tab ul li:nth-of-type(1){ width:29%; }
+div.sd-main-tab ul li:nth-of-type(2){ width:21%; }
+div.sd-main-tab ul li:nth-of-type(3){ width:25%; }
+div.sd-main-tab ul li:nth-of-type(4){ width:25%; }
+
+div.sd-main-tab ul li a{ padding:10px 0; display:block; color:#444; line-height:100%; font-size:16px; letter-spacing:0.02em; }
+div.sd-main-tab ul li a.active{ border-bottom:2px solid #0288d1; font-family:'NotoKR', sans-serif; font-weight:500; color:#005895; }
+
+
+
+/* 마이페이지 */
+/* 유도 : 마이페이지 */
+/* 테니스 : 마이페이지 */
+.sd-userInfo{ padding:17px 15px 20px; font-size:18px; color:#222; background:#eaf0f5; overflow:hidden; border-bottom:1px solid #bfd0df;}
+.sd-userInfo__imgWrap{ float:left; position:relative; text-align:center; width:61px; height:61px; line-height:61px; border:1px solid #035a96; border-radius:50%; }
+.sd-userInfo__img{ min-width:59px; min-height:59px; vertical-align:top; border-radius:50%; }
+.sd-userInfo__img-icon{ position:absolute; bottom:-5px; right:0px; width:25px; height:25px; }
+.sd-userInfo__txtWrap{ float:left; margin-left:7px; margin-top:10px; line-height:21px; }
+.sd-userInfo__txt-name{ font-size:17px; }
+.sd-userInfo__txt-belong{ font-size:15px; color:#005895; text-indent:2px; }
+.sd-userInfo__txtWrap::after{ content:''; display:block; clear:both; }
+
+.sd-userMenuL{ background:#eaf0f5; padding-top:15px; padding-bottom:15px; padding-left:20px; padding-right:20px; overflow:hidden; text-align:center; }
+.sd-userMenuL__anchor{ position:relative; float:left; height:58px; width:50%; background-size:auto 32px; background-repeat:no-repeat; background-position:center 0px; }
+.sd-userMenuL__anchor.t-info{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage01@3x.png'); }
+.sd-userMenuL__anchor.t-pass{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage02@3x.png'); }
+.sd-userMenuL__txt{ display:inline-block; position:absolute; width:100%; left:0; right:0; bottom:0px; margin:auto; font-size:14px; font-weight:500; }
+.sd-userMenuL::after{ content:''; display:block; clear:both; }
+
+.sd-userMenuS{ margin:0 10px; }
+.sd-userMenuS__item{ height:43px; border-bottom:1px dotted #ddd; }
+.sd-userMenuS__anchor{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'); background-repeat:no-repeat, no-repeat; background-size:auto 12px, auto 17px; background-position:right 10px top 17px, left 10px center; }
+.sd-userMenuS__anchor.t-apptest{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage05@3x.png'); background-size:auto 12px, auto 21px; background-position:right 10px top 17px, left 9px center; }
+.sd-userMenuS__anchor.t-train{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage05@3x.png'); background-size:auto 12px, auto 21px; background-position:right 10px top 17px, left 9px center; }
+.sd-userMenuS__anchor.t-card{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-player-card@3x.png'); background-position:right 10px top 17px, left 9px center; }
+.sd-userMenuS__anchor.t-school{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage03@3x.png'); background-position:right 10px top 17px, left 10px center; }
+.sd-userMenuS__anchor.t-otherPlayer{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage04@3x.png'); background-position:right 10px top 17px, left 7px center; }
+.sd-userMenuS__anchor.t-pay{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage06@3x.png'); background-position:right 10px top 17px, left 11px center; }
+.sd-userMenuS__anchor.t-changeAccount{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_refresh@3x.png'); background-size:auto 12px, auto 18px; background-position:right 10px top 17px, left 8px center; }
+.sd-userMenuS__anchor.t-addAccount{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_plus@3x.png'); background-size:auto 12px, auto 17px; background-position:right 10px top 17px, left 11px center; }
+.sd-userMenuS__anchor.t-set{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_check@3x.png'); background-size:auto 12px, auto 16px; background-position:right 10px top 17px, left 10px center; }
+.sd-userMenuS__anchor.t-push{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_push@3x.png'); background-size:auto 12px, auto 16px; background-position:right 10px top 17px, left 10px center; }
+.sd-userMenuS__txt{ display:inline-block; font-size:15px; line-height:100%; padding:15px 0; text-indent:33px; }
+
+.sd-userMenuS.t-more{ border-top:1px solid #bbb; }
+.sd-userMenuS__anchor-out{ position:relative; }
+.sd-userMenuS__ic{ display:block; position:absolute; top:0; bottom:0; height:25px; left:11px; margin:auto; }
+
+/* _------------- replace*/
+
+.sd_userInfo{ padding:17px 15px 20px; font-size:18px; color:#222; background:#eaf0f5; overflow:hidden; border-bottom:1px solid #bfd0df;}
+.sd_userInfo__imgWrap{ float:left; position:relative; text-align:center; width:61px; height:61px; line-height:61px; border:1px solid #035a96; border-radius:50%; }
+.sd_userInfo__img{ min-width:59px; min-height:59px; vertical-align:top; border-radius:50%; }
+.sd_userInfo__imgIcon{ position:absolute; bottom:-5px; right:0px; width:25px; height:25px; }
+.sd_userInfo__txtWrap{ float:left; margin-left:7px; margin-top:10px; line-height:21px; }
+.sd_userInfo__txtName{ font-size:17px; }
+.sd_userInfo__txtBelong{ font-size:15px; color:#005895; text-indent:2px; }
+.sd_userInfo__txtWrap::after{ content:''; display:block; clear:both; }
+
+.sd_userMenuL{ background:#eaf0f5; padding-top:15px; padding-bottom:15px; padding-left:20px; padding-right:20px; overflow:hidden; text-align:center; }
+.sd_userMenuL__anchor{ position:relative; float:left; height:58px; width:50%; background-size:auto 32px; background-repeat:no-repeat; background-position:center 0px; }
+.sd_userMenuL__anchor.s_info{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage01@3x.png'); }
+.sd_userMenuL__anchor.s_pass{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage02@3x.png'); }
+.sd_userMenuL__txt{ display:inline-block; position:absolute; width:100%; left:0; right:0; bottom:0px; margin:auto; font-size:14px; font-weight:500; }
+.sd_userMenuL::after{ content:''; display:block; clear:both; }
+
+.sd_userMenuS{ margin:0 10px; }
+.sd_userMenuS__item{ height:43px; border-bottom:1px dotted #ddd; }
+.sd_userMenuS__item:last-child{border-bottom:0;}
+.sd_userMenuS__anchor{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'); background-repeat:no-repeat, no-repeat; background-size:auto 12px, auto 17px; background-position:right 10px top 17px, left 10px center; }
+.sd_userMenuS__anchor.s_apptest{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage05@3x.png'); background-size:auto 12px, auto 21px; background-position:right 10px top 17px, left 9px center; }
+.sd_userMenuS__anchor.s_train{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage05@3x.png'); background-size:auto 12px, auto 21px; background-position:right 10px top 17px, left 9px center; }
+.sd_userMenuS__anchor.s_card{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-player-card@3x.png'); background-position:right 10px top 17px, left 9px center; }
+.sd_userMenuS__anchor.s_school{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage03@3x.png'); background-position:right 10px top 17px, left 10px center; }
+.sd_userMenuS__anchor.s_otherPlayer{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage04@3x.png'); background-position:right 10px top 17px, left 7px center; }
+.sd_userMenuS__anchor.s_pay{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-mypage06@3x.png'); background-position:right 10px top 17px, left 11px center; }
+.sd_userMenuS__anchor.s_changeAccount{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_refresh@3x.png'); background-size:auto 12px, auto 18px; background-position:right 10px top 17px, left 8px center; }
+.sd_userMenuS__anchor.s_addAccount{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_plus@3x.png'); background-size:auto 12px, auto 17px; background-position:right 10px top 17px, left 11px center; }
+.sd_userMenuS__anchor.s_set{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_check@3x.png'); background-size:auto 12px, auto 16px; background-position:right 10px top 17px, left 10px center; }
+.sd_userMenuS__anchor.s_push{ background-image:url('http://img.sportsdiary.co.kr/sdapp/mypage/icon-more@3x.png'), url('http://img.sportsdiary.co.kr/sdapp/mypage/icon_push@3x.png'); background-size:auto 12px, auto 16px; background-position:right 10px top 17px, left 10px center; }
+.sd_userMenuS__txt{ display:inline-block; font-size:15px; line-height:100%; padding:15px 0; text-indent:33px; }
+
+.sd_userMenuS.s_more{ border-top:1px solid #bbb; }
+.sd_userMenuS__anchorOut{ position:relative; }
+.sd_userMenuS__ic{ display:block; position:absolute; top:0; bottom:0; height:25px; left:11px; margin:auto; }
+
+
+
+
+/* board-list */
+/* 유도 : 메인 */
+/* 테니스 : 메인 */
+
+/* as-is  업데이트 이후 이상 없을 시 삭제*/
+.sd-board-list {padding: 0 15px; margin-top:10px; background:#fff; border-bottom:1px solid #ddd;}
+.sd-board-list .list-title{color:#333; font-family:'NotoKR', sans-serif; font-weight:500; padding:15px 0 10px 0; border-bottom:1px solid #aaa; display:table; width:100%;}
+.sd-board-list .list-title h2{float:left;margin-top:3px;color:#333;font-size:16px;letter-spacing:1;}
+.sd-board-list .list-title a{float:right;}
+.sd-board-list .list-title a img{width:22px;}
+
+.sd-board-list ul:nth-of-type(1) li{position:relative; border-bottom:1px solid #eee; width:100%; font-size:15px; line-height:100%; }
+.sd-board-list ul:nth-of-type(1) li:last-child{border-bottom:0;}
+.sd-board-list ul:nth-of-type(1) li a{float:none; display:block; padding:15px 25px 11px 0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.sd-board-list ul:nth-of-type(1) li .list-txt{ width:100%; padding:1px 30px 1px 0px; line-height:100%; }
+
+/* .sd-board-list ul:nth-of-type(1) li .l-date{position:relative; display:inline-block; width:42px; top:-1px; padding:4px 0 2px 0; margin-right:8px; font-size:13px; line-height:100%; text-align:center; background:#005895; color:#fff;} */
+.sd-board-list ul:nth-of-type(1) li .l-date{position:relative; display:inline-block; width:55px; top:-1px; padding:4px 0 2px 0; margin-right:8px; font-size:13px; line-height:100%; text-align:center; background:#005895; color:#fff;}
+
+.sd-board-list ul:nth-of-type(1) li .l-date.result{ background-color:#9f1010; }
+.sd-board-list ul:nth-of-type(1) li .l-date.ing{ background-color:#741870; }
+
+.sd-board-list ul:nth-of-type(1) ul li .l-name{margin-right:1px; color:#089bce; line-height:100%;}
+.sd-board-list ul:nth-of-type(1) li .r-txt{line-height:100%;}
+
+.sd-board-list ul:nth-of-type(1) li .ic-new{position:absolute; right:6px; line-height:100%; top:15px; width:initial; height:initial; border-radius:0; color:#fff; text-align:center; background-color:initial; font-size:14px;}
+.sd-board-list ul:nth-of-type(1) li .ic-new-bg{position:absolute; right:1px; line-height:100%; top:11px; border-radius:50%; width:20px; height:20px; background-color:#f00;}
+
+.sd-board-list ul:nth-of-type(2){margin-top:0; padding-top:10px; padding-bottom:10px; border-top:1px solid #eee; border-bottom:0;}
+.sd-board-list ul:nth-of-type(2){border:none; border-top:1px solid #eee;  position: relative;}
+.sd-board-list ul:nth-of-type(2) li{ float:left; width:48%; margin-right: 4%; }
+.sd-board-list ul:nth-of-type(2) li:last-child { margin-right: 0; }
+
+.sd-board-list ul:nth-of-type(2) .youtube_link {width:100%; height:100%; display:block; font-size:15px; color:#333; letter-spacing:-0.02em; line-height:100%; z-index:10; overflow:hidden;}
+.sd-board-list ul:nth-of-type(2) .figure .mv_box{position:relative; background-color: #000; padding:0 4px; }
+.sd-board-list ul:nth-of-type(2) .mv_box>img{width:100%; vertical-align:top; }
+.sd-board-list ul:nth-of-type(2) .mv_box>img.mv_icon {position: absolute; width: 20px; height: auto; top:5px; right:8px; left:initial; bottom:initial; z-index: 100; background-color:rgba(0,0,0,0.1);}
+
+.sd-board-list ul:nth-of-type(2) .figcaption{display:block; margin-top:4px;}
+.sd-board-list ul:nth-of-type(2) .figcaption>strong{display:inline-block; width:100%; padding:0 5px; font-size:13px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;font-weight:normal; letter-spacing: -0.03em;}
+
+
+/* to-be */
+.l_board{margin:10px 0;padding:0 10px;border-bottom:1px solid #ddd;background-color:#fff;overflow:hidden;}
+.l_board.s_last{border-bottom:0;margin-bottom:0;}
+.l_board__tit{position:relative;margin-top:2px;height:38px;padding-top:13px;border-bottom:1px solid #ddd;font-size:16px;font-weight:500;line-height:100%;box-sizing:border-box;}
+.l_board__moreBtn{position:absolute;width:34px;height:34px;right:0;bottom:0;background-color:#dedede;background:url('http://img.sportsdiary.co.kr/sdapp/public/btn_more@3x.png') no-repeat right bottom 5px/22px;font-size:0;border:0;}
+
+.m_list{}
+.m_list__item{position:relative;border-bottom:1px solid #eee;width:100%;font-size:15px;line-height:100%;}
+.m_list__item:last-child{border-bottom:0;}
+.m_list__link{float:none;display:block;padding:15px 25px 11px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:inherit;}
+.m_list__badgeNewBg{position:absolute;right:1px;top:11px;border-radius:50%;width:20px;height:20px;background-color:#f00;line-height:100%;}
+.m_list__badgeNew{position:absolute;right:6px;top:15px;color:#fff;font-size:14px;line-height:100%;}
+.m_list__status{position:relative;display:inline-block;width:55px;top:-1px;padding:4px 0 2px 0;margin-right:8px;font-size:13px;line-height:100%;text-align:center;background:#005895;color:#fff;}
+.m_list__status.s_ing{background-color:#741870;}
+.m_list__status.s_result{background-color:#9f1010;}
+
+.m_movieList{margin-top:0;padding-top:10px;padding-bottom:10px;border-top:1px solid #eee;border-bottom:0;border:none;border-top:1px solid #eee;position:relative;}
+.m_movieList::after{clear:both;}
+.m_movieList__item{float:left;width:48%;margin-right:4%;}
+.m_movieList__item:last-child{margin-right:0;}
+.m_movieList__link{width:100%;height:100%;display:block;font-size:15px;color:#333;letter-spacing:-.02em;line-height:100%;z-index:10;overflow:hidden;}
+.m_movieList__photoWrap{position:relative;background-color:#000;padding:0 4px;}
+.m_movieList__photoWrap::after{content:'';position:absolute;width:20px;height:20px;top:5px;right:8px;z-index:100;background:rgba(0,0,0,.1) url('http://img.sportsdiary.co.kr/sdapp/main/icon_mv.png') no-repeat center/20px;}
+.m_movieList__photo{width:100%;vertical-align:top;}
+.m_movieList__cap{display:block;margin-top:4px;line-height:100%;padding-bottom:10px;}
+.m_movieList__capTxt{display:inline-block;width:100%;padding:0 5px;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:normal;letter-spacing:-.03em;line-height:100%;}
+
+
+
+/* header bottom line */
+/* 유도   : 공지사항, 공지사항(보기), 팀 공지사항, 팀 공지사항(보기), QnA, QnA(쓰기), QnA(보기), 나의메모장, 나의메모장(쓰기), 나의메모장(보기), 지도자상담(쓰기), 지도자상담(보기), */
+/* 테니스 : 공지사항, 공지사항(보기), QnA, QnA(쓰기), QnA(보기), */
+.sd-line-horizontal-A{ border-top:2px solid #123651; }
+
+
+/* searching-box A */
+/* 유도   : 공지사항, 팀 공지사항, qna 게시판, 나의메모장 */
+/* 테니스 : 공지사항, 팀 공지사항, qna 게시판, 나의메모장 */
+.sd-searching-box-A{padding:0 10px 0px 10px; overflow:hidden; background-color:#123651; color:#fff; ;}
+.sd-searching-box-A .srh-elem-wrap{position:relative; width:100%; margin:9px 0; font-size:16px; line-height:100%; padding-left:77px; }
+.sd-searching-box-A .srh-elem-wrap>label{ position:absolute; margin-bottom:0px; left:0; top:9px; font-weight:700; font-size:13px; line-height:100%; color:#fff; letter-spacing:-0.02em;}
+.sd-searching-box-A .srh-elem-wrap input,
+.sd-searching-box-A .srh-elem-wrap select{
+  border-radius:2px; border:none; padding-left:10px; box-sizing:border-box;
+  font-size:14px; line-height:initial; color:#000; font-weight:300; background:#fff;
+  box-sizing:border-box; padding-top:2px; line-height:100%;
+}
+.sd-searching-box-A .srh-elem-wrap>input,
+.sd-searching-box-A .srh-elem-wrap>select{ width:100%; height:30px; }
+.sd-searching-box-A .srh-elem-wrap .srh-date-pack{ position:relative; display:flex; justify-content:space-between; }
+.sd-searching-box-A .srh-elem-wrap .srh-date-pack>input{ width:46%; height:30px; line-height:100%; }
+.sd-searching-box-A .srh-elem-wrap .srh-date-pack .tilde{ position:absolute; width:10px; top:7px; line-height:100%; left:0; right:0; margin:auto; }
+.sd-searching-box-A .srh-btn-wrap{ padding:9px 0 12px 0; text-align:center; border-top:1px solid rgba(39, 63, 101, 0.71); border-top:1px solid rgb(45, 72, 108); }
+.sd-searching-box-A .srh-btn-wrap button{ display:initial; width:94px; height:30px; margin-top:0; margin-right:10px; padding-top:2px; border-radius:3px; border-style:none; font-size:14px; line-height:100%; font-weight:700; vertical-align:top; font-family:'NotoKR md',sans-serif;}
+.sd-searching-box-A .srh-btn-wrap button:last-child{margin-right:0;}
+.sd-searching-box-A .srh-btn-wrap .btn-white{ border:1px solid rgb(63,95,138); background:#133954;  color:#edf0f4; }
+.sd-searching-box-A .srh-btn-wrap .btn-gray{ background:#248fdb; color:#e4e4e4; color:#edf0f4; }
+
+/* board top A (인포 + 글쓰기 버튼) */
+/* 유도 : 나의메모장, QnA, 지도자상담 */
+/* 테니스 : QnA  */
+.sd-board-top-A{margin-top:30px; position:relative;}
+.sd-board-top-A>.write_guide{ font-size:14px; padding:8px 4px 7px 0; line-height:100%; text-align:center; letter-spacing:-0.05em;}
+.sd-board-top-A>.btn-or{
+  position:absolute; width:78px; height:28px; right:10px; bottom:0; font-size:14px;
+  box-sizing:border-box; border:none; border-radius:3px; color:#fff; letter-spacing:-0.02em;
+  text-align:center; line-height:100%; padding:8px 0 5px 0; font-weight:500; font-family:inherit;
+  /* background: #ff7200; */
+  background:#ee7f2b;
+}
+.sd-board-top-A>.btn-or .fa{color:#fff;}
+.sd-board-top-A+.sd-board-box-A{margin-top:5px;}
+
+/* board A */
+/* 유도 : 공지사항, 팀 공지사항, QnA, 나의메모장 */
+/* 테니스 : 공지사항, */
+.sd-board-box-A{margin-top:30px;}
+.sd-board-box-A>h4,
+.sd-board-box-A>ul{background:#fff; padding-left:9px;}
+.sd-board-box-A>h4{
+  padding:24px 0 22px 0; border-top:1px solid #ddd; border-bottom:1px solid #ddd;
+  text-align:center; font-size:18px; line-height:100%; font-family:inherit; letter-spacing:0.02em;
+}
+.sd-board-box-A ul li{ border-bottom:1px solid #edf0f4; padding:12px 10px 8px 1px; font-size:0; line-height:100%; letter-spacing:-0.02em; }
+.sd-board-box-A ul li:last-child{border-bottom:0; }
+.sd-board-box-A ul li h4 { position: relative; margin-top: 0px; padding-right: 20px; line-height:115%; font-size: 16px; text-align: left; }
+.sd-board-box-A li.require h4 { color: #123651; }
+.sd-board-box-A ul li h4 .ic-re-bg { position:absolute; width:20px; height:20px; right:1px; top:-2px; border-radius:50%; line-height:100%; background-color:#ffd200; }
+.sd-board-box-A ul li h4 .ic-re {
+  position:absolute; width:initial; height:initial; top:3px; right:5px; border-radius:0;
+  font-size:11px; text-align:center; line-height:100%; color: #333; background-color:initial;
+  font-family:'NanumGothic', sans-serif; font-weight:700;
+}
+.sd-board-box-A ul li h4 .ic-new-bg {
+  position:absolute; width:20px; height:20px; right:1px; top:-2px;
+  border-radius:50%; line-height:100%; background-color:#f00;
+}
+.sd-board-box-A ul li h4 .ic-new {
+  position:absolute; height:initial; width:initial; top:2px; right:6px; border-radius:0;
+  font-size:14px; text-align:center; line-height:100%; color:#fff; background-color:initial;
+  font-family:'NanumGothic', sans-serif; font-weight:700;
+}
+.sd-board-box-A ul li h4>span:nth-of-type(3){top:21px;}
+.sd-board-box-A ul li h4>span:nth-of-type(4){top:25px;}
+.sd-board-box-A li p {font-size: 12px; color: #999; text-align: left; line-height:100%; margin-top:2px;}
+
+.sd-board-box-A .write-info span:after {position: relative; display:inline-block; top:2px; content: ''; margin:0 5px 0 7px; background-color: #ddd; width: 1px; height: 12px;}
+.sd-board-box-A .write-info span:last-child:after { width: 0; margin: 0; }
+.sd-board-box-A .write-info span.seen:after { width: 0; margin:0 3px 0 0; }
+
+/* 지도자 상담 */
+.sd-board-box-B{}
+.sd-board-box-B .icon-favorite{ color:#d4d4d4; font-size:22px; position:absolute; left:6px; top:24px; }
+.sd-board-box-B .icon-favorite.on{ color:#ffd200;}
+.sd-board-box-B .icon-gray{ position:absolute; display:block; height:auto; line-height:100%; font-size:11px; letter-spacing:-1px; padding:3px 4px; color:#fff; border-radius:3px; background:#999; }
+.sd-board-box-B li{ position:relative; border-top:1px solid #edf0f4; padding:12px 10px 8px 1px; font-size:0; line-height:100%; letter-spacing:-0.02em; }
+.sd-board-box-B li.reply{ margin-left:30px; border-top:1px solid #edf0f4;}
+.sd-board-box-B li h4{ position:relative; margin-top:0px; padding-right:20px; padding-left:32px; line-height:115%; font-size:16px; text-align:left; }
+.sd-board-box-B li p{ padding-left:30px; font-size:12px; color: #999; text-align:left; line-height:100%; margin-top:2px; }
+.sd-board-box-B>h4{ padding:24px 0 22px 0; border-top:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center; font-size:18px; line-height:100%; font-family:inherit; letter-spacing:0.02em; }
+.sd-board-box-B>h4, .sd-board-box-B>ul { background: #fff; }
+.sd-board-top-A+.sd-board-box-B { margin-top:5px; }
+
+/* 유도 : sd뉴스 */
+/* 테니스 : sd뉴스 */
+.sd-searching-box-B{ position:relative; height:50px; padding:10px 10px 0 9px; background-color:#f2f2f2; font-size:0px; color:#666666; }
+.sd-searching-box-B .selectWrap{ display:inline-block; position:relative; margin-right:5px; }
+.sd-searching-box-B .category,
+.sd-searching-box-B .ordering{ width:70px; height:30px; border:1px solid #b4b4b4; padding-left:5px; padding-top:3px; border-radius:5px; color:#666666; vertical-align:top; font-size:14px; line-height:18px; -webkit-appearance:none; appearance:none; }
+.sd-searching-box-B .category+.indicator,
+.sd-searching-box-B .ordering+.indicator{
+  position:absolute; display:inline-block; width:15px; height:28px; top:1px; right:1px; border-radius:5px; background:#fff url('http://img.sportsdiary.co.kr/sdapp/arrow/ic-select-indicate-2.png') no-repeat right 7px center/6px 4px;}
+.sd-searching-box-B .keyword{ width:calc(100% - 195px); height:30px; margin-right:5px; border-radius:5px; border:1px solid #b4b4b4; color:#666666;  font-size:14px; vertical-align:top; }
+.sd-searching-box-B .searching{ display:inline-block; width:40px; height:30px; border-radius:5px; font-size:14px; line-height:31px; background-color:#999; color:#fff; vertical-align:top; text-align:center; }
+
+/* 유도 : sd뉴스 */
+/* 테니스 : sd뉴스 */
+.sd-board-box-C{ margin:0 15px; }
+.sd-board-box-C li{ position:relative; padding:20px 0; border-bottom:1px solid #eeeeee; }
+.sd-board-box-C li>a{ display:block; font-size:0; }
+.sd-board-box-C li>a>.img{ display:inline-block; width:120px; height:77px; vertical-align:top; }
+.sd-board-box-C li>a>.img>.mv_box{ position:relative; width:100%; height:100%; overflow:hidden; border:1px solid #f2f2f2;  }
+.sd-board-box-C li>a>.img>.mv_box>.photo{ position:absolute; top:0; bottom:0; width:100%; height:100%; margin:auto; }
+.sd-board-box-C li>a>.img>.mv_box>.mv_icon{ position:absolute; bottom:5px; left:5px; max-width:16px; }
+.sd-board-box-C li>a>.r_con{ display:inline-block; width:calc(100% - 120px); padding-left:10px; font-size:16px; }
+.sd-board-box-C li>a>.r_con>.list_name{ position:relative; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; font-size:16px; line-height:140%; overflow:hidden; }
+.sd-board-box-C li>a>.r_con>.bt_con{ margin-top:7px; font-size:13px; color:#999; line-height:initial; }
+.sd-board-box-C li>a>.r_con>.bt_con>.date{ display:inline-block; margin-right:10px; color:#999; }
+.sd-board-box-C li>a>.r_con>.bt_con>.views_number{ display:inline-block; margin-right:10px; color:#333; }
+.sd-board-box-C li>a>.r_con>.bt_con>.companny_name{ display:inline-block; color:#005895; }
+
+/* 유도 : sd뉴스, SD칼럼(보기) */
+/* 테니스 : sd뉴스 */
+.sd-board-view-box-C{ background:#fff;  padding:0 20px; font-size:14px; padding-bottom:30px; }
+.sd-board-view-box-C>.title{ font-size:18px; padding-top:30px; line-height:24px;}
+.sd-board-view-box-C>.additional{ margin-top:12px; margin-left:1px; color:#999; }
+.sd-board-view-box-C .additional-item{ font-size:0; height:20px; color:inherit; letter-spacing:inherit; line-height:inherit; }
+
+.sd-board-view-box-C .additional-label-dateCreated,
+.sd-board-view-box-C .additional-label-writer,
+.sd-board-view-box-C .additional-label-source,
+.sd-board-view-box-C .additional-label-viewCount{ display:inline-block; width:57px; text-overflow:clip; white-space:nowrap; font-size:12px; }
+.sd-board-view-box-C .additional-label-dateCreated{ letter-spacing:0.1em; }
+.sd-board-view-box-C .additional-label-writer,
+.sd-board-view-box-C .additional-label-viewCount{ letter-spacing:1.1em; }
+.sd-board-view-box-C .additional-label-source{ letter-spacing:3.1em; }
+.sd-board-view-box-C .additional-dateCreated,
+.sd-board-view-box-C .additional-writer,
+.sd-board-view-box-C .additional-source,
+.sd-board-view-box-C .additional-viewCount{ display:inline-block; font-size:12px; }
+.sd-board-view-box-C .additional-dateCreated::before,
+.sd-board-view-box-C .additional-writer::before,
+.sd-board-view-box-C .additional-source::before,
+.sd-board-view-box-C .additional-viewCount::before{ content:''; display:inline-block; position:relative; width:1px; height:12px; top:2px; margin:0 8px 0 10px; background-color:#e9e9e9; }
+.sd-board-view-box-C .img{ margin-top:25px; }
+.sd-board-view-box-C .con_txt{ margin-top:20px; margin-bottom:30px; }
+.sd-board-view-box-C .con_txt pre{
+  font-family:'NotoKR', sans-serif !important;; width:100% !important; height:auto !important; background:#fff !important; border:0 !important; border-radius:0 !important; padding:0 !important; margin:0 !important;
+  /* white-space:initial; */
+  /*white-space:pre-line;*/
+  /*line-height:22px;*/
+  /*word-break:break-all;*/
+}
+.sd-board-view-box-C .con_txt>p,
+.sd-board-view-box-C .con_txt pre>p,
+.sd-board-view-box-C .con_txt pre>div{ font-size:15px !important; word-break:break-all !important; word-wrap:break-word !important; white-space:initial !important; line-height:170% !important; }
+.sd-board-view-box-C .con_txt pre img{ width:100%; height:100%; }
+.sd-board-view-box-C .list_btn{ width:100%; height:45px; line-height:45px; color:#fff; text-align:center; background:#005895; font-weight:500; }
+
+/* 유도 : SD칼럼*/
+.sd-board-box-D{}
+.sd-board-box-D{ display:table; float:none; width:100%; }
+.sd-board-box-D ul li{ padding:25px 20px; position:relative; border-bottom:1px solid #bbb; background-color:#fff; }
+.sd-board-box-D ul li .img{ position:absolute; left:20px; top:25px; text-align:center; width:102px; height:58px; overflow:hidden; }
+.sd-board-box-D ul li .img img{ width:auto; height:100%; }
+.sd-board-box-D ul li .r_con{ margin-left:112px; min-height:58px; font-size:15px; letter-spacing:0; }
+.sd-board-box-D ul li .r_con .txt{ font-size:.92em; margin-top:8px; position: relative; }
+.sd-board-box-D ul li .r_con .txt .title{ font-size:0.92em; color:#999; }
+.sd-board-box-D ul li .r_con .fa-angle-right{ font-size:30px; position:absolute; right:20px; top:50%; margin-top:-15px; color:#ccc; }
+
+/* 유도 : SD칼럼(oo의 칼럼 list)*/
+.sd-board-box-E{}
+.sd-board-box-E{ display:table; float:none; width:100%; padding-top:20px; background:#edf0f4; }
+.sd-board-box-E .img{ display:none; height:100px; overflow:hidden; }
+.sd-board-box-E ul li{ margin:0 20px 10px; padding:17px 10px; box-shadow:2px 2px 2px #ddd; background:#fff; }
+.sd-board-box-E ul li .bt_con{ position:relative; letter-spacing:0; padding:0 5px; }
+.sd-board-box-E ul li .bt_con .name{ font-size:16px; line-height:22px; padding-right:18px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; text-overflow:ellipsis; }
+
+.sd-board-box-E ul li .bt_con .date_con{ font-size:12px; margin-top:5px; }
+.sd-board-box-E ul li .bt_con .date_con span{ display:inline-block; }
+.sd-board-box-E ul li .bt_con .date_con .date{ color:#999; }
+.sd-board-box-E ul li .bt_con .date_con .views_number{ color:#005895; }
+.sd-board-box-E ul li .bt_con .date_con .view_arrow{ float:right; font-size:15px; }
+.sd-board-box-E ul li .bt_con .date_con .view_arrow .fa{ color:#999; }
+.sd-board-box-E .list_btn{ width: calc(100% - 40px); height:45px; margin:auto; line-height:45px; color:#fff; text-align:center; background:#005895; font-weight:500; }
+
+/* 유도 : sd뉴스, SD칼럼 */
+/* 테니스 : sd뉴스 */
+.sd-more-wrap-A{}
+.sd-more-wrap-A>.more-btn{ display:block; padding:20px 0; text-align:center; }
+.sd-more-wrap-A>.more-btn .txt{ display:inline-block; vertical-align:3px; font-size:14px; }
+.sd-more-wrap-A>.more-btn .icon_more{ display:inline-block; width:18px; height:18px; border:2px solid #487ba5; border-radius:100%; }
+.sd-more-wrap-A>.more-btn .icon_more i{ position:relative; top:1px; font-size:15px; color:#487ba5; vertical-align:3px; font-weight:600; }
+/* 유도 : sd뉴스 */
+/* 테니스 : sd뉴스 */
+.sd-empty-wrap-C{
+  display:none; position:absolute; top:0; height:100%; width:100%; box-sizing:border-box;
+  text-align:center; font-size:14px; line-height:20px; color:#434343; letter-spacing:-0.02em;
+  padding-top:76px; background:#fff url('http://img.sportsdiary.co.kr/sdapp/empty/ic-empty-searching.png') no-repeat center top 30px/36px;
+}
+.sd-empty-wrap-C .keyword{ display:inline-block; }
+
+/* pagination A */
+div.board-bullet { margin:16px auto 40px auto; height:30px; text-align:center; }
+div.board-bullet a {
+  position:relative; display:inline-block; margin:0; padding:0; width:30px; height:30px;
+  border:1px solid #9fa2a8; border-radius:3px;
+  text-align:center; line-height:100%; font-size:12px;
+}
+div.board-bullet a>span{ position:absolute; display:block; height:1em; top:0; bottom:0; left:0; right:0; margin:auto; padding-top:2px; line-height:100%; }
+div.board-bullet a.on { border-color: #3899e4; color: #3899e4; }
+div.board-bullet a>img { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; padding-top:1px; line-height:100%; width:7px; height:auto; }
+
+/* board view */
+/* 유도 : QnA(보기), 나의메모장(보기), 지도자상담(보기), */
+/* 테니스 : QnA(보기),  */
+.sd-board-view-box-A{ background-color:#fff; }
+.sd-board-view-box-A .header-wrap{ padding:14px 20px; border-bottom:1px solid #ccc; background-color:#f2f2f2; }
+.sd-board-view-box-A .header-wrap>.title{ margin-top:1px; font-size:14px; letter-spacing:-0.02em; color:#333; line-height:100%; font-family:'NotoKR'; font-weight:500; }
+.sd-board-view-box-A .header-wrap>.additional{ margin-top:6px; margin-bottom:1px; font-size:11px; letter-spacing:-0.02em; color:#999; line-height:100%;  }
+.sd-board-view-box-A .header-wrap>.additional>.seen{ margin-left:2px; }
+.sd-board-view-box-A .header-wrap>.title>.ic-deco{ display:inline-block; width:12px; }
+.sd-board-view-box-A .header-wrap>.title>.ic-reply{ background-color:#123651; color:#fff; border-radius:3px; padding:0 2px; }
+.sd-board-view-box-A .content-wrap+.header-wrap{ border-bottom:0; }
+.sd-board-view-box-A .content-wrap{ margin-top:10px; padding:9px 10px; border-top:1px solid #ccc; background-color:#f2f2f2; }
+.sd-board-view-box-A .content-wrap>.contents{ min-height:199px; padding:10px 11px; background-color:#fff; font-size:14px; letter-spacing:-0.02em; color:#333; line-height:115%; }
+.sd-board-view-box-A .content-wrap2{ padding:9px 10px; background-color:#f2f2f2; }
+.sd-board-view-box-A .content-wrap2>.contents{ padding:0 11px 10px 11px; font-size:14px; letter-spacing:-0.02em; color:#333; line-height:100%; }
+/* .sd-board-view-box-A .skyblue{color:#3899e4;} */
+
+/* 유도 : 공지사항(보기), 팀공지사항(보기), */
+/* 테니스 : 공지사항(보기), */
+.sd-board-view-box-B{}
+.sd-board-view-box-B .header-wrap{ padding:20px; border-bottom: 1px solid #ddd; background-color: #edf0f4; }
+.sd-board-view-box-B .header-wrap>.title{ font:16px/100% 'NanumGothic'; font-weight:700; letter-spacing:-0.02em; }
+.sd-board-view-box-B .header-wrap>.additional{ margin-top:8px; font:13px 'NanumGothic'; letter-spacing:-0.02em; color:#999; }
+.sd-board-view-box-B .header-wrap>.additional>span{ display:inline-block; }
+.sd-board-view-box-B .content-wrap{ padding:20px; background-color:#fff; }
+.sd-board-view-box-B .content-wrap>.contents{ font:14px/140% 'NanumGothic'; color:#666; letter-spacing:-0.02em; word-break:keep-all; }
+
+/* 유도 : QnA(쓰기), 나의메모장(쓰기), 지도자상담(쓰기), */
+/* 테니스 : QnA(쓰기),  */
+.sd-board-write-box-A{ background-color:#fff; }
+.sd-board-write-box-A .header-wrap{ padding:14px 20px; border-bottom:1px solid #ccc; background-color:#f2f2f2;  }
+.sd-board-write-box-A .header-wrap>label{ display:inline-block; font-size:14px; letter-spacing:-0.02em; line-height:100%; color:#333; font-weight:normal; vertical-align:initial; }
+.sd-board-write-box-A .header-wrap>input{ display:inline-block; margin-left:11px; width:calc(100% - 40px); height:33px; box-sizing:border-box; border:1px solid #b4b4b4; }
+.sd-board-write-box-A .content-wrap{ margin-top:10px; padding:9px 10px; border-top:1px solid #ccc; background-color:#f2f2f2; }
+.sd-board-write-box-A .content-wrap>textarea.contents{ width:100%; min-height:199px; padding:10px 11px; border:1px solid #dddddd; background-color:#fff; font-size:14px; letter-spacing:-0.02em; color:#333; line-height:115%; }
+
+/* 유도 : QnA(보기), QnA(쓰기), 나의메모장(보기), 나의메모장(쓰기), 지도자상담(보기), 지도자상담(쓰기) */
+/* 테니스 : QnA(보기), QnA(쓰기), */
+.sd-board-btn-list-A{ padding:0 10px; }
+.sd-board-btn-list-A::before{ content:''; display:block; border-top:1px solid #ccc; }
+.sd-board-btn-list-A .btn{ box-sizing:border-box; background-color:#123651; margin-top:10px; }
+
+.sd-board-btn-list-A .show-list,
+.sd-board-btn-list-A .btn-cancel{ float:left; border:2px solid #123651; background-color:#123651; color:#fff; margin-right:5px; }
+
+.sd-board-btn-list-A .delete,
+.sd-board-btn-list-A .btn-delete{ float:right; border:2px solid #999; background-color:#999; color:#fff; margin-left:5px; }
+.sd-board-btn-list-A .btn-save{ float:right; border:2px solid #123651; background-color:#fff; color:#123651; margin-left:5px; }
+
+.sd-board-btn-list-A .btn-reply,
+.sd-board-btn-list-A .btn-modify{ float:right; border:2px solid #3f505d; background-color:#fff; color:#3f505d; margin-left:5px; }
+
+/* 달력 --------------------------------------------------------------------- */
+/* .sd-calendar-container{padding-bottom:60px;} */
+.sd-calendar-container{background:#fff;}
+.sd-calendar-container img{width:100%;}
+.sd-calendar-header{padding:10px 10px 0 10px;}
+.sd-calendar-header .line-1{position:relative; margin:0 auto 6px auto; padding-right:54px;}
+@media all and (orientation: landscape){
+  .sd-calendar-header .line-1{max-width:320px;}
+}
+.sd-calendar-header .line-1 .select-list { position:relative; padding-top:7px; text-align:center; font-size:0;}
+.sd-calendar-header .line-1 .date { display:inline-block; text-align:center; }
+.sd-calendar-header .line-1 .date>select{ width:auto; height:auto; border:none; -webkit-appearance:none; appearance:none; padding:0; overflow:visible; }
+.sd-calendar-header .line-1 .date>select:nth-of-type(1){margin-right:5px; padding-left:5px; }
+.sd-calendar-header .line-1 .date .caret { margin-left:-25px; margin-right:10px; }
+.sd-calendar-header .line-1 .year,
+.sd-calendar-header .line-1 .month { display:inline-block; font-size:17px; font-family:'NotoKR', sans-serif; font-weight:500; line-height:110%; }
+
+.sd-calendar-header .line-1 .prev-btn,
+.sd-calendar-header .line-1 .next-btn {
+  position: absolute; width:39px; height:30px; top:0; padding:0; border:1px solid #d4d4d4;
+  font-family:'NanumGothic'; font-size:11px; font-weight:700;
+  /* Permalink - use to edit and share this gradient:http://colorzilla.com/gradient-editor/#ffffff+10,eaeaea+100 */
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 10%, #eaeaea 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 10%, #eaeaea 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 10%, #eaeaea 100%);
+  /* W3C,IE10+,FF16+,Chrome26+,Opera12+,Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea', GradientType=0);
+}
+.sd-calendar-header .line-1 .prev-btn { left:0px; }
+.sd-calendar-header .line-1 .next-btn { right:0px; }
+.sd-calendar-header .line-1 .today-btn {
+  position:absolute; display:block; width:45px; height:30px; top:0; right:0; border:none; border-radius:2px; padding:0;
+  background-color:#428bca; color:#fff; font-family:'NanumGothic', sans-serif; font-weight:700; font-size:13px;
+}
+.sd-calendar-header .line-2 select{ width: 100%; padding-left: 10px; box-sizing: border-box; }
+.sd-calendar-header .line-2+.line-3{margin-top:5px;}
+
+.sd-calendar-header .line-3{min-height:21px; margin-top:20px; padding-bottom:5px;}
+.sd-calendar-header .line-3 .enter-type { float:left; font-size:0; }
+.sd-calendar-header .line-3 .enter-type>label{
+  width:60px; height:21px; padding-top:4px; margin-left:4px; margin-bottom:0; box-sizing:border-box;
+  border:1px solid #428bca; border-radius:3px; background:#fff;
+  font-family:'NanumGothic', sans-serif; font-weight:700; color:#428bca; line-height:100%; font-size:11px; letter-spacing:-0.08em; text-align:center;
+}
+.sd-calendar-header .line-3 .enter-type>input[type="radio"]:first-child+label{ margin-left:0;}
+.sd-calendar-header .line-3 .enter-type>input[type="radio"]:checked + label{ background-color:#428bca; color:#fff; }
+.sd-calendar-header .line-3 ul { position:relative; float:right; top:1px;}
+.sd-calendar-header .line-3 li { padding-right:10px; margin-right:10px; float:left; }
+.sd-calendar-header .line-3 li:last-child { border-right:none; padding-right:0; margin-right:0; padding-top:1px;}
+.sd-calendar-header .line-3 li a { width:20px; font-size:0; }
+.sd-calendar-header .line-3 li:after { content: ''; position:absolute; top:0px; right:29px; height:19px; border-right:2px solid #dddddd; }
+.sd-calendar-footer{padding:0 10px; margin-top:15px; }
+
+/* fullcalendar 편집 */
+.sd-calendar-body .fc-toolbar{ margin-bottom: 0px !important; height: 0px; }
+.sd-calendar-body .fc-head-container{font-size:0;}
+.sd-calendar-body .fc-head-container th{ padding:9px 0 0px 0; font-size:0; border:0 !important; text-align:left; text-indent:4px; background-color: #e7e7e7; }
+.sd-calendar-body .fc-head-container th>span{ font-size:12px; line-height:100%; background-color: #e7e7e7; font-weight:400;}
+.sd-calendar-body .fc-basic-view .fc-body .fc-row{border-bottom:1px solid #eeeeee;}
+.sd-calendar-body .fc-basic-view .fc-body .fc-row:last-child{border-bottom:0;}
+.sd-calendar-body .fc-basic-view .fc-body .fc-row td,
+.sd-calendar-body .fc-basic-view .fc-body .fc-row th{ border-right:1px solid #fbfbfb !important; border-left:1px solid #fbfbfb !important; border-top:0 !important; border-bottom:0 !important;}
+.sd-calendar-body .fc-basic-view .fc-day-number {display:inline-block; font-size:14px; line-height:100%; padding-top:5px;}
+/* 일요일 */
+.sd-calendar-body th:first-child { color: #e82727; }
+/* 토요일 */
+.sd-calendar-body th:last-child { color: #1462c2; }
+/* 이벤트 표시 영역 */
+.sd-calendar-body .fc-day-grid-event .fc-content{font-size:0; line-height:100%; vertical-align:initial; position:relative;  padding-top:4px; padding-bottom:1px;}
+.sd-calendar-body .fc-day-grid-event .fc-content>span {display:inline; font-size:12px; line-height:100%;}
+.sd-calendar-body .fc-day-grid-event{margin-bottom:1px !important;}
+
+/* ??높이 관련 */
+.sd-calendar-body .fc-toolbar{ height:0; margin:0; }
+.sd-calendar-body .fc-scroller{ height:100% !important; }
+
+
+
+/* overLayer  */
+/* 유도 : SD뉴스, 현장스케치 */
+/* 테니스 : SD뉴스, 현장스케치 */
+.l_upLayer{transition:top 0s 0.6s;}
+.l_upLayer._s_on{transition:top 0s 0s;}
+.l_upLayer__backdrop{background-color:rgba(156,156,156,1);opacity:0;transition:opacity 0.1s 0.2s;}
+.l_upLayer__backdrop._s_on{opacity:0.1;transition:opacity 0.2s;}
+.l_upLayer__contBox{opacity:0;transition:top 0.4s, opacity 0.1s 0.2s;will-change:top, opacity;}
+.l_upLayer__contBox._s_on{opacity:1;transition:top 0.4s, opacity 0s 0s;}
+.l_upLayer__wrapTit{height:40px;background-color:#164369;color:#fff;}
+.l_upLayer__tit{position:relative;display:block;width:70%;top:11px;margin:auto;font-size:16px;text-align:center;font-family:'NotoKR';font-weight:500;letter-spacing:-0.02em;line-height:120%;height:1.1em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.l_upLayer__close{position:absolute;height:40px;width:30px;right:0;top:0px;border:0;background:url('http://img.sportsdiary.co.kr/sdapp/close/ic-close-s.png') no-repeat right 10px center/10px;font-size:0;}
+.l_uplayer__wrapCont{background-color:#fff;height:calc(100vh - 40px);}
+
+.sd_photoViewer__download{ display:inline-block; width:calc(100% - 20px); height:30px; margin:0 10px; border-radius:2px; background-color:#005895; color:#fff; font-size:16px; line-height:30px; letter-spacing:-0.02em; font-weight:500; text-align:center; }
+.sd_photoViewer__info{ width:290px; margin:15px auto 0 auto; font-size:12px; letter-spacing:-0.02em; color:#999; line-height:110%; text-align:left; }
+.sd_photoViewer__contWrap{ background-color:#edf0f4; text-align:center; }
+.sd_photoViewer__swiper{}
+.sd_photoViewer__slide{ overflow:hidden; min-height:248px; padding:10px; }
+.sd_photoViewer__img{ position:relative; width:100%; height:auto; vertical-align:top; }
+
+.sd_photoList{ padding:0 10px; }
+.sd_photoList__item{ position:relative; display:inline-block; width:calc(50% - 3.3333px); vertical-align:top; margin-left:6.6666px; margin-bottom:6.6666px; font-size:0; line-height:0; }
+.sd_photoList__more{ display:none; font-size:14px; width:100%; height:33.3333px; background-color:#005995; color:#fff; border:0; margin-top:3.3333px; }
+@media all and (orientation: portrait){
+  .sd_photoList__item:nth-of-type(2n-1){ margin-left:0; }
+}
+@media all and (orientation: landscape){
+  .sd_photoList__item{ width:calc(25% - 4.9999px);}
+  .sd_photoList__item:nth-of-type(4n-3){ margin-left:0; }
+}
+
+/* .sd-over-layer{ transition:top 0s 0.6s; }
+.sd-over-layer._s-on{ transition:top 0s 0s; }
+.sd-over-layer>.backdrop{ background-color:rgba(156,156,156,1); opacity:0; transition:opacity 0.1s 0.2s; }
+.sd-over-layer>.backdrop._s-on{ opacity:0.1; transition:opacity 0.2s; }
+.sd-over-layer>.content-box{ opacity:0; transition:top 0.4s, opacity 0.1s 0.2s; will-change:top, opacity; }
+.sd-over-layer>.content-box._s-on{ opacity:1; transition:top 0.4s, opacity 0s 0s; }
+
+.sd-over-layer>.content-box>.content-wrap{ background-color:#fff; height:calc(100vh - 40px); }
+.sd-over-layer>.content-box>.title-wrap{ height:40px; background-color:#164369; color:#fff; }
+.sd-over-layer>.content-box>.title-wrap>.title{
+  position:relative; display:block; width:70%; top:11px; margin:auto;
+  font-size:16px; text-align:center; font-family:'NotoKR'; font-weight:500; letter-spacing:-0.02em; line-height:120%; height:1.1em;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.sd-over-layer>.content-box>.title-wrap>.btn-close{
+  position:absolute; height:40px; width:30px; right:0; top:0px; border:0; background:url('http://img.sportsdiary.co.kr/sdapp/close/ic-close-s.png') no-repeat right 10px center/10px; font-size:0;
+} */
+
+
+/* 이미지 슬라이드 & photoviewer over-layer */
+/* 유도 : 현장스케치 */
+/* 테니스 : 현장스케치 */
+.sd-swiper-container-list{ background-color:#edf0f4; width:100%; min-height:57.4vw;  }
+.sd-swiper-container-list .swiper-wrapper{ font-size:0; line-height:0; }
+.sd-swiper-container-list .slide-list-img{ position:relative; display:inline-block; width:24.4%; padding-top:13.7%; margin:0.3%; overflow:hidden; }
+.sd-swiper-container-list .slide-list-img>img{ position:absolute; top:0; bottom:0; margin:auto; width:100%; height:auto; vertical-align:top; }
+.sd-swiper-container-list .swiper-slide{ padding:0.2%; }
+
+.sd-swiper-contianer-viewer{ min-height:220px; }
+.sd-swiper-contianer-viewer .slide-list-img{ overflow:hidden; min-height:248px; background-color:#ccc; }
+.sd-swiper-contianer-viewer .slide-list-img>img{ position:absolute; top:0; bottom:0; margin:auto; width:100%; left:0; right:0; height:auto; vertical-align:top; background-color:#ddd; }
+
+.sd-swiper-contianer-viewer .swiper-prev,
+.sd-swiper-contianer-viewer .swiper-next{ position:absolute; top:50%; width:35px; height:35px; margin-top:-26px; z-index:10; cursor:pointer; font-size:0; border:0; }
+
+.sd-swiper-contianer-viewer .swiper-prev{ left:10px; background:url('http://img.sportsdiary.co.kr/sdapp/arrow/ic-swipe-left.png') no-repeat center/22px 35px; }
+.sd-swiper-contianer-viewer .swiper-next{ right:10px; background:url('http://img.sportsdiary.co.kr/sdapp/arrow/ic-swipe-right.png') no-repeat center/22px 35px; }
+
+@media all and (orientation:landscape){
+  .sd-swiper-container-list{ min-height:initial; }
+  .sd-swiper-container-list .slide-list-img{ width:12.3%; padding-top:8%; margin:0.1%; }
+  .sd-swiper-container-list .swiper-slide{ padding:0.1%; }
+
+  .sd-swiper-contianer-viewer{ height:200px; }
+  .sd-swiper-contianer-viewer .slide-list-img{ height:100%; }
+  .sd-swiper-contianer-viewer .slide-list-img>img{ width:initial; height:100%; }
+}
+
+.sd-photo-viewer .download{ display:inline-block; width:290px; height:30px; margin-top:14px; border-radius:2px; background-color:#005895; color:#fff; font-size:16px; line-height:30px; letter-spacing:-0.02em; font-weight:500; text-align:center; }
+.sd-photo-viewer .info{ width:290px; margin:15px auto 0 auto; font-size:12px; letter-spacing:-0.02em; color:#999; line-height:110%; text-align:left; }
+.sd-photo-viewer .content-wrap{ background-color:#edf0f4; text-align:center; }
+
+/* pagination  */
+/* 유도: 현장스케치 */
+/* 테니스: 현장스케치 */
+/* .sd-pagination-B{ margin-top:30px; font-size:0; }
+.sd-pagination-B__btn-prev{ width:26px; height:26px; border-radius:5px; background:#999 url('http://img.sportsdiary.co.kr/sdapp/arrow/ic-paging-left.png') no-repeat center/26px; border:1px solid #999; font-size:0; }
+.sd-pagination-B__btn-next{ width:26px; height:26px; border-radius:5px; background:#999 url('http://img.sportsdiary.co.kr/sdapp/arrow/ic-paging-right.png') no-repeat center/26px; border:1px solid #999; font-size:0; }
+
+.sd-pagination-B__pagerWrap{ width:170px; height:32px; margin:0 8px; }
+.sd-pagination-B__btn-pager{ width:26px; height:26px; margin:0 4px; font-size:13px; padding:1px 0 0; border-radius:5px; border:1px solid #999; background-color:initial; }
+.sd-pagination-B__btn-pager:active,
+.sd-pagination-B__btn-pager:focus,
+.sd-pagination-B__btn-pager:hover{ border:1px solid #999; }
+.sd-pagination-B__btn-pager._s-on{ border:1px solid #005895; color:#005895; } */
+
+/* sd 광고 배너 - 슬라이드 */
+.banner { width:100%; margin-top:10px; margin-bottom:10px; text-align:center;}
+.banner a { max-width:320px; margin: 0 auto; }
+.banner a { margin:0 auto; }
+.banner img{ width:100%; max-width:320px; margin:auto;}
+
+/* ### */
+.banner.no_mg { margin-top:0; margin-bottom:0; }
+.banner.carousel { width:auto; height:auto; }
+.banner.banner_lg, .banner.banner_md, .banner.banner_sm { overflow:hidden; background-color:#eee; }
+/* .banner.banner_lg { background-color: #eee; height:auto; max-height:200px; }
+.banner.banner_md { background-color: #eee; height:auto; max-height:120px; } */
+/* .banner.banner_sm { background-color: #eee; height:auto; max-height:80px; } */
+/* .banner.banner_sm { background-color: #eee; height:auto; } */
+/* .banner.banner_sm a>img{margin:15px 0;} */
+/* .banner.banner_sm a>img{border-top:1px solid #ddd; border-bottom:1px solid #ddd;} */
+
+.banner.banner_lg.carousel { background-color:#ddd; height:auto; }
+.banner_lg.carousel .bxslider>div { max-width:100%; text-align:center; }
+.banner_lg.carousel .bxslider>div>a { height:200px; }
+.banner_lg.carousel .bxslider>div>a>img { display:inline-block; width:auto; height:100%; }
+.banner_lg.carousel .bx-wrapper { background:inherit; }
+
+.carousel .bx-wrapper .bx-prev { background-image:url('http://img.sportsdiary.co.kr/sdapp/public/carousel_prev_btn@3x.png'); z-index:1000; }
+.carousel .bx-wrapper .bx-next { background-image:url('http://img.sportsdiary.co.kr/sdapp/public/carousel_next_btn@3x.png'); z-index:1000; }
+.carousel .bx-wrapper { border:0; margin:0; }
+.carousel .bx-wrapper .bx-prev, .carousel .bx-wrapper .bx-next { background-repeat:no-repeat; -webkit-background-size:contain; background-size:contain; }
+.carousel .bx-wrapper .bx-next:hover { background-position:center right; }
+.carousel .bx-wrapper .bx-prev { background-position:center left; left:0; }
+.carousel .bx-wrapper .bx-next { background-position:center right; right:0; }
+.carousel .bx-wrapper .bx-pager { top:25px; height:25px; padding:0; }
+.carousel .bx-wrapper .bx-pager.bx-default-pager a { background:#fff; transition:all .3s ease; }
+.carousel .bx-wrapper .bx-pager.bx-default-pager a.active { background:#0288d1; width:20px; }
+  /* 메인 배너 커스텀 */
+.sd-main .banner{ margin-bottom:0; }
+  /* gnb 배너 영역 상하 여백 조절 */
+.banner_wrap{ padding-top:25px; background-color:#eee; }
+.major_banner .banner.banner_md { margin-top:0; margin-bottom:0; }
+
+
+
+/* as-is */
+/* 배너 -팝업 */
+/* .sd-banner-popup-box{ position:relative; background-color:#f8f8f8; width:300px; margin:10px auto; top:50%; transform:translateY(-50%); }
+.sd-banner-popup-wrap .banner_ctrl{ position:relative; line-height:0; font-size:0; padding:11px 0 11px 0; }
+
+.sd-banner-popup-wrap input[type="checkbox"]+.check{
+  position:absolute; display:inline-block; width:20px; height:20px; left:15px; top:6.5px; margin:auto;
+  background:#fff url('http://img.sportsdiary.co.kr/sdapp/check/ip_check_gray_off_20dp@3x.png') no-repeat center/100%;
+}
+.sd-banner-popup-wrap input[type="checkbox"]:checked+.check{ background:#fff url('http://img.sportsdiary.co.kr/sdapp/check/ip_check_gray_on_20dp@3x.png') no-repeat center/100%; }
+
+.sd-banner-popup-wrap input[type="checkbox"]+label .check{
+  position:absolute; display:inline-block; width:20px; height:20px; left:15px; top:6.5px; margin:auto;
+  background:#fff url('http://img.sportsdiary.co.kr/sdapp/check/ip_check_gray_off_20dp@3x.png') no-repeat center/100%;
+}
+.sd-banner-popup-wrap input[type="checkbox"]:checked+label .check{ background:#fff url('http://img.sportsdiary.co.kr/sdapp/check/ip_check_gray_on_20dp@3x.png') no-repeat center/100%; }
+.sd-banner-popup-wrap label{ vertical-align: initial; display:inline-block; text-indent:40px; color:#848484; font-size:12px; line-height:110%; height:1em; letter-spacing:-0.025em; font-family:'NotoKR', 'NotoKR-dl', sans-serif; font-weight:200; margin-bottom:0;}
+.sd-banner-popup-wrap button{ float:right; -webkit-appearance:none; background:none; border:0; color:#848484; font-size:12px; line-height:110%; letter-spacing:-0.025em; }
+@media all and (max-height:370px){
+  .sd-banner-popup-box{ top:initial; transform:none; }
+} */
+
+
+/* to-be */
+.m_popupLayer{position:relative;height:100vh;background-color:#111;}
+.m_popupLayer__wrap{overflow-y:scroll;height:calc(100vh - 40px);display:block;}
+.m_popupLayer__img{width:100%;}
+.m_popupLayer__ctrl{font-family: 'NanumGothic', sans-serif; position:absolute; bottom:0; left:0; width:100%; letter-spacing:-0.05em; text-align:center; font-size:0; line-height:0; vertical-align:top;}
+.m_popupLayer__btn{display:inline-block;background-color:#fff;height:40px; border:0; padding:13px 0; color:#3d3d3d;font-size:14px; line-height:100%;}
+
+.m_popupLayer__btn.s_today{ width:calc(100% - 140px);  border-right:1px solid #cdcdcd;}
+.m_popupLayer__btn.s_close{width:140px;}
+
+
+
+/* 유도 : 현장스케치 */
+/* 테니스 : 현장스케치 */
+.sd_subTit{ background-color:#132D43; }
+.sd_subTit.s_blue01{ background-color:#164369; }
+.sd_subTit.s_blue02{ background-color:#264862; }
+.sd_subTit__tit{padding:10px; height:36px; font-size:15px; line-height:120%; font-family:'NotoKR', sans-serif; font-weight:500; color:#fff; text-align:center; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+
+.sd-select-wrap-A{ margin:14px 10px; }
+
+
+/* 유도 : 내 정보 관리 */
+/* 테니스 : 내 정보 관리 */
+.sd_guideTxt{margin:10px;font-size:15px;background-color:#edf0f4;color:#164369;font-weight:500;line-height:100%;}
+
+
+.sd_myInfo{width:100%;letter-spacing:-1px;background:#fff;overflow:hidden;}
+.sd_myInfo__wrapImg{text-align:center;float:left;margin:6px 5%;width:80px;height:80px;line-height:80px;border:1px solid #c3c3c3;border-radius:50%;overflow:hidden;}
+.sd_myInfo__btnImg{display:block;text-decoration:none;color:inherit;background-color:transparent;}
+.sd_myInfo__thumb{min-width:80px;min-height:80px;line-height:78px;margin-top:calc(-50% + 35px);width:100%;}
+.sd_myInfo__wrapTxt{width:60%;float:left;font-size:15px;margin-bottom:10px;line-height:22px;margin-top:9px;}
+.sd_myInfo__wrapBtn{margin-top:10px;}
+.sd_myInfo__btnDel{display:inline-block;font-size:13px;padding:0 14px;height:33px;vertical-align:top;font-family:'NanumGothic', sans-serif;font-weight:700;color:#fff;text-align:center;background:#999;border-radius:3px;border-style:none;vertical-align:top;line-height:33px;}
+.sd_myInfo__btnUpload{display:inline-block;padding:0 11px;height:33px;font-size:13px;line-height:33px;font-family:'NanumGothic', sans-serif;font-weight:700;color:#fff;text-align:center;background:#3899e4;border-radius:3px;border-style:none;vertical-align:top;}
+
+
+.sd_form{margin:10px 0;}
+.sd_form:last-child{margin-bottom:0;}
+.sd_form{position:relative;background-color:#fff;}
+.sd_form__item{overflow:hidden;padding:0 10px;border-top:1px solid #d4d4d4;line-height:38px;color:#333;font-weight:bold;font-size:14px;}
+.sd_form__labelWrap{float:left;width:32%;padding:5px 0;line-height:inherit;}
+.sd_form__inputWrap{position:relative;float:left;width:68%;padding:5px 0;font-size:0;line-height:0;}
+.sd_form__txt{display:block;width:100%;height:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:38px;}
+.sd_form__btn{display:block;border-radius:4px;background-color:#999;color:#fff;font-weight:700;text-align:center;-ms-touch-action:manipulation;touch-action:manipulation;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+.sd_form__input{width:100%;height:33px;box-sizing:border-box;padding:1px 5px 0 5px !important;margin:2px 0;color:#888;border:1px solid #b4b4b4;border-radius:3px;font-size:13px;line-height:initial !important; vertical-align:top !important;}
+.sd_form__select{height:33px;box-sizing:border-box;padding:1px 5px 0 5px !important;margin:2px 0;border:1px solid #b4b4b4;border-radius:3px;color:#333;background:#fff;font-size:13px;vertical-align:top !important; line-height:initial !important;}
+.sd_form__checkWrap{position:relative;background-repeat:no-repeat;-webkit-background-size:18px 18px;background-size:18px 18px;background-position:left top;padding-left:25px;background-image:url('http://img.sportsdiary.co.kr/sdapp/public/label-off@3x.png');vertical-align:middle;max-width:100%;font-weight:700;display:inline-block;font-size:14px;line-height:19px;}
+.sd_form__checkWrap.on{background-image:url('http://img.sportsdiary.co.kr/sdapp/public/label-on@3x.png');}
+.sd_form__check{position:absolute;top:0;width:0 !important;height:0 !important;clip:rect(0, 0, 0, 0);border:none;margin-left:21px;overflow:hidden;vertical-align:middle;line-height:normal;}
+.sd_form__txtInfo{position:relative;padding:7px 10px 7px 24px;background-color:#e2e2e2;border:1px solid #f1f1f1;clear:both;display:block;margin-top:3px;font-size:13px;line-height:120%;font-weight:400;}
+.sd_form__txtInfo>span{position:absolute;text-indent:-13px;}
+.sd_form__compulsory{color:#ee0000;}
+.sd_form__unit{position:absolute;top:34%;right:10px;color:#888;font-size:12px;line-height:100%;}
+
+.sd_form__txt.s_belong{float:left;display:block;width:calc(100% - 44px);}
+.sd_form__btn.s_belong{float:right;height:25px;margin-top:7px;padding:0 12px;line-height:25px;font-size:11px;}
+
+.sd_form__label.s_playerNo{background-color:#ff7200;color:#fff;padding:8px;}
+.sd_form__txt.s_playerNo{color:#ff7200;}
+.sd_form__btn.s_playerNo{float:left;height:35px;margin-top:2px;padding:0 15px;font-size:14px;line-height:35px;}
+
+.sd_form__btn.s_NAAuth{float:left;height:35px;margin-top:2px;padding:0 15px;font-size:14px;line-height:35px;}
+
+.sd_form__item.s_phone{border-top:0;}
+.sd_form__input.s_phone{width:calc(33% - 7px); text-align:center; }
+.sd_form__select.s_phone{width:calc(33% - 7px); text-align:center; }
+.sd_form__txt.s_phone{display:inline-block;width:5px;line-height:33px;font-size:13px;margin:0 3px;text-align:center;}
+.sd_form__btn.s_phone{display:inline-block;width:100%;height:33px;margin:2px 0;padding:0 15px;font-size:14px;line-height:33px;vertical-align:top; }
+
+.sd_form__item.s_phoneAuth{border-top:0;}
+.sd_form__labelWrap.s_phoneAuth{font-size:0;}
+.sd_form__input.s_phoneAuth{float:left;display:block;width:46%;}
+.sd_form__btn.s_phoneAuth{display:inline-block;height:33px;margin:2px 0 2px 10px;padding:0 15px;font-size:14px;line-height:33px;vertical-align:top;}
+
+.sd_form__item.s_phoneAgree{border-top:0;}
+.sd_form__labelWrap.s_phoneAgree{font-size:0;}
+
+.sd_form__input.s_email{width:44%;}
+.sd_form__txt.s_email{display:inline-block;width:auto;margin:0 3px;line-height:33px;}
+.sd_form__item.s_emailAgree{border-top:0;}
+.sd_form__labelWrap.s_emailAgree{font-size:0;}
+
+.sd_form__input.s_addr{width:40%;}
+.sd_form__btn.s_addr{display:inline-block;height:33px;margin:2px 0 2px 10px;padding:0 15px;font-size:14px;line-height:33px;vertical-align:top;}
+
+.sd_form__inputWrap.s_level>select{height:33px;box-sizing:border-box;padding:1px 5px 0 5px !important;margin:2px 0;border:1px solid #b4b4b4;border-radius:3px;color:#333;background:#fff;font-size:13px;vertical-align:top !important; line-height:initial !important;}
+
+
+.sd_myInfoBtnWrap{margin-top:10px; padding:10px; background-color:#fff;overflow:hidden; display:flex;}
+.sd_myInfoBtnWrap__btn{ height: 50px; border-radius: 2px; line-height: 50px; width: 50%; font-size: 16px; text-align: center; margin-right: 10px; }
+.sd_myInfoBtnWrap__btn:last-child{margin-right:0;}
+.sd_myInfoBtnWrap__btn.s_cancel{ background-color: #eeeeee; color: #333; font-family: 'NotoKR', sans-serif; font-weight: 500;}
+.sd_myInfoBtnWrap__btn.s_modify{ background-color: #005895; color: #fff;}
+.sd_myInfoBtnWrap__btn.s_modify2{ background-color: #3f505d; color: #fff;}

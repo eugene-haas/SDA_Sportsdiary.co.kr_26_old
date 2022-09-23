@@ -1,0 +1,29 @@
+.srch-inpt dd {position: relative; z-index: 10;}
+.srch-inpt span.srch-img, .winner-state .icon-img {display: inline-block; background-color: #d1d1d1; border-radius: 50%; border: 1px solid #c3c3c3; vertical-align: middle; overflow: hidden; width: 30px; height: 30px;}
+.srch-inpt ul {background-color: #fff; border: 1px solid #b4b4b4; border-radius: 5px; font-size:0.95em; max-height: 144px; margin-top: 2px; overflow-y: scroll; box-shadow: 0px 1px 2px #999;}
+.srch-inpt ul:empty {border: none; padding: 0;}
+.srch-inpt li {border-bottom: 1px solid #ddd; padding-top: 0.25em; padding-bottom: 0.25em; padding-left: 10px;}
+.srch-inpt li:last-child {border-bottom: none;}
+.srch-inpt.dropdown-menu {width: 100%;}
+.srch-inpt.dropdown-menu li a {padding-left: 0px;}
+.srch-inpt li img {margin-top: -10px;}
+.srch-inpt li .srch-img img {margin-top: 0; height:100%;}
+
+/* 입상자(단체) 조회 결과 */
+.winner-state h2:before { top: calc(100% - 68%); }
+.winner-state h2 span {margin-left: 5px;margin-right: 5px;}
+.winner-state .icon-img {display: inline-block; width: 35px; height: 35px; margin-top:-4px;}
+.winner-state .match-list {padding-bottom: 40px;}
+.winner-state .match-list h3 {height:36px; background-color: #d3d8dc; font-size: 0.82em;}
+.winner-state .match-list h3 span {display: inline-block; vertical-align: middle;}
+.winner-state .match-list h3 span:last-child.long {vertical-align: middle;}
+.winner-state .match-list h3 span.long + span {}
+.winner-state .match-list h3 span:last-child {width:67%;}
+.winner-state .match-list h3 span:first-child {position: relative; font-size:13px; background-color: #267dcd; color: #fff; width: 27%; padding-top:11px; padding-bottom:11px; padding-left: 5px; padding-right: 2px; margin-right: 15px;}
+.winner-state .match-list h3 span:first-child:after {position: absolute;top: 0px;right: -10px;content: '';border-left: 10px solid #267dcd;border-top: 18px solid transparent;border-bottom: 18px solid transparent;}
+.winner-state .match-res {border-bottom: 1px solid #ddd; padding-left: 5px; padding-right: 5px; background: #fff;}
+.winner-state .match-res dt {padding:0 10px; background-repeat: no-repeat;-webkit-background-size: 12px;background-size: 15px;background-position: 8px 0;background-color: #6a7780;color: #fff;border-radius: 20px;padding-top: 5px;padding-bottom: 5px;padding-left: 25px; padding-right: 10px;margin-top: 5px;margin-bottom: 5px;margin-right: 5px;font-size: 0.75em;}
+.winner-state .match-res dt, .winner-state .match-res dd {display: inline-block; vertical-align: middle;}
+.winner-state .match-res dd {width:70%; margin:7px 0; font-size:0.78em;  font-family: 'nanumGothicB';}
+.winner-state .match-res dd span {border-right: 1px solid #ddd; padding-right:5px; margin-right: 0.36em; line-height:19px;}
+.winner-state .match-res dd span:last-child {border-right: none;margin-right: 0;}

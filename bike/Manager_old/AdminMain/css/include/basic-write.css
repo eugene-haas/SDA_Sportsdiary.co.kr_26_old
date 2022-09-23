@@ -1,0 +1,10 @@
+.basic-write table{width:100%;border-top:1px solid #ddd;border-right:1px solid #ddd;}
+.basic-write table tr th{width:150px;padding:15px 10px;background:#f2f2f2;border-bottom:1px solid #ddd;border-left:1px solid #ddd;font-family:'NotoKR-md';font-weight:400;text-align:center;}
+.basic-write table tr td{padding:10px 10px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
+.basic-write table tr td .in-style-1{width:500px;}
+.basic-write table tr td input, .basic-write table tr td select, .basic-write table tr td a{margin-right:10px;float:left;}
+.basic-write table tr td a.view-btn{padding:0 15px;height:40px;line-height:40px;}
+.basic-write table tr td a.icon-btn{font-size:28px;line-height:40px;}
+.basic-write table tr td a.icon-btn i{color:#7a858e;}
+.basic-write table tr td iframe{width:300px;}
+.basic-write table tr td .in-file{width:auto;border:0;line-height:40px;}

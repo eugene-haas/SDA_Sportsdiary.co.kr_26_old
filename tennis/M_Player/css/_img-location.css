@@ -1,0 +1,143 @@
+/* gnb */
+.gnb .cate-list dl dd a {background-image: url(../images/include/gnb/btn_arrow@3x.png);}
+.cate-list dl:first-child dt {background-image: url(../images/include/gnb/icon_myinfo@3x.png);}
+.cate-list dl:nth-child(2) dt {background-image: url(../images/include/gnb/icon_contest@3x.png);}
+.cate-list dl:nth-child(3) dt {background-image: url(../images/include/gnb/icon_community@3x.png);}
+.cate-list dl:nth-child(4) dt {background-image: url(../images/include/gnb/icon_community@3x.png);}
+
+.bg-insert {background-repeat: no-repeat;}
+.main-bg {background-image: url(../images/main/main-bg@3x.jpg); -webkit-background-size: cover; background-size: cover; background-position: 50% 0;}
+
+.join-end {background-image:url(../images/main/sub-menu/join-end.png);}
+
+/* 회원가입 */
+.player-school li p.number {background-image: url(../images/main/join/down-arr@3x.png);}
+
+/* 회원가입 > 회원정보 */
+.join-order li:first-child,
+.join-school li:first-child {background-image: url(../images/sub/icon-bar.png);}
+.sub.join-2 .team-code li:first-child {background-image: url(../images/sub/icon-bar.png);}
+
+/* 체력측정 > 메인 */
+.strength-index .main-bg {background-image: url(../images/strength/bg-icon@3x.png);}
+
+/* input 태그 체크 이미지 변경 */
+label.img-replace.on {background-image: url(../images/public/label-on@3x.png);}
+label.img-replace {background-image: url(../images/public/label-off@3x.png);}
+#now-ready .modal-footer label.img-replace {background-image: none;}
+#now-ready .modal-footer label.img-replace.on {background-image: url(../images/public/label-on@3x.png);}
+
+/* 대회일정/결과 */
+.schedule-item .place .icon {background-image: url(../images/institute/schedule/icon-place@3x.png);}
+.schedule-item .term .icon {background-image: url(../images/institute/schedule/icon-term@3x.png);}
+.schedule-item .request .icon {background-image: url(../images/institute/schedule/icon-pen@3x.png);}
+
+/* 경기기록실 - intro */
+.record-bg {background-image: url(../images/record/bg.png);}
+/* - 경기기록실 > 입상현황 > 조회 결과,
+    - 경기기록실 > 성적조회 > 입상자(단체)조회 > 조회 결과
+ */
+.medal-list dt.golden, .winner-state .match-res.golden dt {background-image: url(../images/record/golden-medal@3x.png);}
+.medal-list dt.silver, .winner-state .match-res.silver dt {background-image: url(../images/record/silver-medal@3x.png);}
+.medal-list dt.bronze, .winner-state .match-res.bronze dt {background-image: url(../images/record/bronze-medal@3x.png);}
+
+/* 메모리 > 잘된점 모아보기 > 훈련일지 버튼, 대회일지 버튼 */
+.memory-txt .btn-list a.training-diary {background-image: url(../images/memory/icon-training@3x.png);}
+.memory-txt .btn-list a.match-diary {background-image: url(../images/memory/icon-match@3x.png);}
+
+/* 나의 통계 > 연습경기 > 시간대별 득실점 (상세보기 팝업) */
+.display-board .player-point .disp-win {background-image: url(../images/stats/win@3x.png);}
+
+/* 나의 통계 > 선수기록 > 전적 */
+.user_info .record dt,
+.stat-record .record dt {background-image: url(../images/public/line-divide.png); }
+
+/* 나의통계 > 선수기록 > 입상현황 */
+.stat-record .detail-win .result .img-deco.golden {
+  background-image: url(../images/record/golden-medal@3x.png);}
+  .stat-record .detail-win .result .img-deco.silver {
+  background-image: url(../images/record/silver-medal@3x.png);}
+.stat-record .detail-win .result .img-deco.bronze {background-image: url(../images/record/bronze-medal@3x.png);}
+
+/* 연습경기 */
+.top-icon-menu {background-image: url(../images/sub/bg-rehearsal@3x.png); background-position: 50% 175%; background-color:#cadcf5; background-repeat: no-repeat;}
+.list-bu-navy li {background-image: url(../images/sub/icon-square-navy@3x.png); background-position:0 9px; background-size: 5px 5px; background-repeat: no-repeat;}
+.plactice-txt li {background-image: url(../images/sub/icon-square-navy@3x.png); background-position:0 10px; background-size: 5px 5px;background-repeat: no-repeat;}
+.round-res .display-board .disp-win {background-image: url('../images/tournerment/tourney/win_bak.svg'); background-repeat: no-repeat; -webkit-background-size: 43px 12px;background-size: 45px 12px; background-position: center 5px;background-repeat: no-repeat;}
+
+/* 대회일지 금은동 메달*/
+.gold-medal {background-image: url(../images/record/golden-medal@3x.png); -webkit-background-size: contain; background-size: contain; background-repeat: no-repeat;}
+.silver-medal {background-image: url(../images/record/silver-medal@3x.png); -webkit-background-size: contain; background-size: contain; background-repeat: no-repeat;}
+.bronze-medal {background-image: url(../images/record/bronze-medal@3x.png); -webkit-background-size: contain; background-size: contain; background-repeat: no-repeat;}
+
+/* 마이페이지 > 소속변경 */
+.my-school-list li:last-child a {background-image:url('../images/mypage/icon-more-white@3x.png'); background-color:#ff7200; background-repeat:no-repeat; background-position:85% 50%; background-size: 8px 10px; }
+
+/* 마이페이지 > 내정보관리 > 선수훈련 데이터 열람 동의 */
+.parent-data h3 {background-image: url('../images/sub/icon-square-navy@3x.png'); background-repeat:no-repeat; background-size:5px 5px; background-position:0 5px;}
+
+/* 사이드메뉴 > 사업자 정보 */
+.box-list .tit-widline {background-image:url(../images/sub/icon-widline@3x.png); background-repeat:no-repeat; background-position:15px 20px; padding:25px 0 10px 41px; background-size:20px 24px;}
+.box-list .tit-sd {background-image:url(../images/sub/icon-sd@3x.png); background-repeat:no-repeat; background-position:15px 20px; padding:25px 0 10px 41px; background-size:22px 19px;}
+.box-list ul.widline li {background-image:url(../images/sub/icon-square-sm_gray@3x.png); background-repeat:no-repeat; background-position:0 7px; background-size:3px 3px;}
+.info-handle .box-list ul.widline li:last-child {background:url(../images/sub/icon-square-pink@3x.png);}
+.box-list ul.sd li {background-image:url(../images/sub/icon-square-sm_gray@3x.png); background-repeat:no-repeat; background-position:0 7px; background-size:3px 3px;}
+/* .btn-map-widline {background-image:url(../images/sub/icon-loc-off@3x.png); background-repeat:no-repeat; background-position: 50% 50%; background-size: 22px 24px;} */
+/* .address.on .btn-map-widline {background-image: url(../images/sub/icon-loc-on@3x.png);} */
+
+/* 나의 일정 > 대회일지 */
+.match-info dl dt.golden .medal {background-image: url(../images/record/golden-medal@3x.png);}
+.match-info dl dt.silver .medal {background-image: url(../images/record/silver-medal@3x.png);}
+.match-info dl dt.bronze .medal {background-image: url(../images/record/bronze-medal@3x.png);}
+
+/* 나의 훈련 일정*/
+.tit-line-through, .mk-though {background-image: url(../images/schedule/img-line-though.png);}
+dl.modal-strength-list dt {background-image: url(../images/sub/icon-square-gray@3x.png);}
+
+/* faq */
+.top-list.top-faq {/*background:#3f505d url(../images/sub/bg-faq@3x.png); */background-repeat:no-repeat; background-position:95% 100%; background-color:#f2f2f2;}
+
+/* 선수분석 > 전적 > 입상현황 팝업 */
+#ana-medal-list .medal li.golden .medal-icon {background-image: url(../images/record/golden-medal@3x.png);}
+#ana-medal-list .medal li.silver .medal-icon {background-image: url(../images/record/silver-medal@3x.png);}
+#ana-medal-list .medal li.bronze .medal-icon {background-image: url(../images/record/bronze-medal@3x.png);}
+
+/* 대진표 > 대진표 보기 */
+.sub.tourney .medal-list .golden .medal {background-image: url(../images/record/golden-medal@3x.png); background-size:22px;}
+.sub.tourney .medal-list .silver .medal {background-image: url(../images/record/silver-medal@3x.png);}
+.sub.tourney .medal-list .bronze .medal {background-image: url(../images/record/bronze-medal@3x.png);}
+
+/* 결제하기 > 결제방법 > 버튼 */
+.sub.pay .pay-way span.icon-card {background-image: url(../images/main/pay/icon-card@3x.png);}
+.sub.pay .pay-way span.icon-phone {background-image: url(../images/main/pay/icon-phone@3x.png);}
+.pay .agree label.on,
+.pay-comp .agree label.on {background-image: url(../images/public/label-on@3x.png);}
+
+/* 결제하기 > 부모용 > 일반 아이콘 */
+.sub.pay .pay-info h4 span.type {background-image: url(../images/main/pay/normal-frame@3x.png);}
+
+/* 연습 상대선수 신규등록 */
+.rival-modal label.img-replace {background-image: url(../images/mypage/label-off-frame@3x.png);}
+.rival-modal label.img-replace.on {background-image: url(../images/public/label-on@3x.png);}
+
+/* 참가신청 */
+.btn-schedule {background-image: url(../images/sub/icon-schedule@3x.png);}
+
+/* 영상보기 모달 */
+.film-modal .modal-body h4 span:before {background-image: url(../images/modal/win-title-deco-left@3x.png); background-position:4px 0;}
+.film-modal .modal-body h4 span:after {background-image: url(../images/modal/win-title-deco-right@3x.png); background-position:4px 0;}
+
+/* 단체전 모달 - 승자표시 */
+.groups-res .group-modal .display-board .win {background-image: url('../../WebTournament/www/images/tournerment/tourney/win@3x.png');}
+
+/* gnb 부모, 일반에 따른 메뉴 bar */
+.parents-type .sub-menu ul:first-child,
+.mono-type .sub-menu ul:first-child {background-image: url(../images/main/sub-menu/sub_menu_bar@3x.png);}
+
+/* carousel 버튼 수정 */
+.carousel .bx-wrapper .bx-prev {background: url(../images/public/carousel_prev_btn@3x.png);}
+.carousel .bx-wrapper .bx-next {background: url(../images/public/carousel_next_btn@3x.png);}
+
+/* 테니스 모달 */
+.tn_modal .modal-content,
+.live-score .bg_court {background-image: url(../images/modal/modal_bg.png);}

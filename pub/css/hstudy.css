@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+/* Reset */
+html,body{width:100%;height:100%}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button,input{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button,select{font-family:'돋움',Dotum,Helvetica,sans-serif;font-size:12px;color:#c6c6c6}
+body{text-align:center;*word-break:break-all;-ms-word-break:break-all}
+
+
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:middle}
+em,address{font-style:normal}
+label,button{cursor:pointer}
+button{margin:0;padding:0}
+option{padding-right:6px}
+hr{display:none}
+legend{*width:0}
+a{text-decoration:none}
+
+/* 공통 Class */
+.fcolor1{color:#fee316!important}/*yellow*/
+.fcolor2{color:#c6c6c6!important;}/*gray*/
+.fcolor3{color:#fff!important}/*white*/
+.fcolor4{color:#1ce154!important}/*green*/
+.fcolor5{color:#ff9900!important}/*orange*/
+.fcolor6{color:#1C8339!important}
+.bb{font-weight:bold}
+.mb20{margin-bottom:20px!important}
+.mb35{margin-bottom:35px!important}
+.ml10{margin-left:10px}
+.mr5{margin-right:5px}
+.mr10{margin-right:10px}
+.mr40{margin-right:40px}
+.fleft{float:left}
+.fright{float:right}
+
+html, body (overflow:hidden;)
+
+.clear {clear: both;}
+.disc {list-style-type: disc;}
+/*모달#################################*/
+.modal {
+    display: none; 
+    position: fixed;
+	padding-top: 3px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+	z-index:999;
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+	margin: auto;
+	border-top:0px;
+	border-left:2px solid #2C2C2B;
+	border-right:2px solid #2C2C2B;
+	border-bottom:2px solid #2C2C2B;
+	-webkit-border-radius: 5px;
+    border-radius: 5px;
+	background:#ffffff;
+	box-shadow:  5px 5px 10px rgba(0,0,0,0.5);
+	-moz-box-shadow:   5px 5px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow:   5px 5px 10px rgba(0,0,0,0.5);
+    -o-box-shadow:   5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.modal_titlebar{
+color:#FFFFFF;font-weight:bold;
+background:url("http://img.tygem.com/images/event/20161005/img/modaltitlebg.gif") repeat-x;  
+border:0px;
+height:30px;
+-moz-border-radius:3px 3px 0 0; -webkit-border-radius:3px 3px 0 0;  border-radius:3px 3px 0 0;
+}
+
+.close {
+	width:16px;height:16px;background:url('http://img.tygem.com/images/event/20161005/img/commonsys0.png');background-position:0px 0px;
+	border:1px;
+}
+
+.close:hover
+{
+	width:16px;height:16px;background:url('http://img.tygem.com/images/event/20161005/img/commonsys0.png');background-position:-16px 0px;
+	color: #000;
+	border:1px;
+	text-decoration: none;
+    cursor: pointer;
+	background-color:#2C2C2B;
+	-moz-border-radius:2px;-webkit-border-radius:2px;  border-radius:2px;
+}
+.close:focus{
+	width:16px;height:16px;background:url('http://img.tygem.com/images/event/20161005/img/commonsys0.png');background-position:-32px 0px;
+	border:0px solid #2C2C2B;
+	background-color:#2C2C2B;
+	outline: none;
+}
+
+
+/* 미션 */
+.alert_box{padding:20px;text-align:center;background:url(http://img.tygem.com/images/event/20161005/img/event/tb_ptn2.gif) repeat left top;border:1px solid #000;color:#fff;font-size:14px;font-weight:bold;line-height:1.6em}
+.ev1{position:relative;width:980px;height:603px;margin:0px auto 0 auto;background:url(http://img.tygem.com/images/event/20161005/img/event/m1_bg.png) no-repeat left bottom}
+.ev2{position:relative;width:980px;height:603px;margin:0px auto 0 auto;background:url(http://img.tygem.com/images/event/20161005/img/event/m2_bg.png) no-repeat left bottom}
+.ev_menu li{width:490px;height:98px;float:left}
+.ev_menu li a.m_off{display:inline-block;margin-top:29px}
+.gage{clear:left;position:relative;width:933px;height:119px;margin:0 auto 10px auto;background:url(http://img.tygem.com/images/event/20161005/img/event/gage_bg.png) no-repeat left bottom}
+.gbar{border-collapse:collapse;width:900px;position:absolute;top:90px;left:11px}
+.gbar tr td{height:24px;margin:0;padding:0}
+.gift{position:absolute;top:32px;left:173px}
+.gift li{float:left;margin-left:145px;}
+.gift > li:first-child{margin-left:0px}
+.gift1{position:absolute;top:-63px;left:138px;display:none;}
+.gift2{position:absolute;top:-63px;left:318px;display:none;}
+.gift3{position:absolute;top:-63px;left:498px;display:none;}
+.gift4{position:absolute;top:-63px;left:678px;display:none;}
+.gift5{position:absolute;top:-63px;left:773px;display:none;}
+.ginfo{text-align:right;color:#fff;font-size:11px;letter-spacing:-1px;line-height:1em;margin-right:40px;margin-bottom:16px}
+.mcard{position:relative;width:925px;margin:0 auto}
+.mcard li{float:left;position:relative;width:177px;height:192px;background:url(http://img.tygem.com/images/event/20161005/img/event/m1_boxbg1.png) no-repeat left top;margin-left:10px;text-align:center;margin-bottom:26px}
+.mcard li.wtype{background:url(http://img.tygem.com/images/event/20161005/img/event/m1_boxbg2.png) no-repeat left top}
+.mcard > li:first-child{margin-left:0px}
+.mcard li .m1box{display:block;margin:18px 0 10px 0}
+.mcard li .m1text{color:#343434;font-weight:bold}
+.mcard li .fred{color:#b71c1c;font-size:14px}
+.mcard li .mclear{position:absolute;top:0;left:0}
+.m1info{clear:left;width:929px;height:102px;margin:0 auto;background:url(http://img.tygem.com/images/event/20161005/img/event/info_bg1.png) no-repeat left top}
+.m1info .info_tt{display:block;font-weight:bold;padding-top:15px;color:#343434;margin-left:31px;font-size:14px;margin-bottom:10px;}
+.m1info ul{margin-left:31px}
+.m1info ul li{background:url(http://img.tygem.com/images/event/20161005/img/event/bullet01.gif) no-repeat left 5px;color:#343434;padding-left:10px;line-height:1em;margin-bottom:6px}
+
+.my{clear:left;position:relative;width:155px;height:41px;float:right;background:url(http://img.tygem.com/images/event/20161005/img/event/m2_mybg.png) no-repeat left bottom;margin-right:47px;margin-bottom:2px;line-height:1em}
+.my .my_tt{position:absolute;top:22px;left:14px;font-weight:bold;color:#fff;letter-spacing:-1px}
+.my .cnum{color:#343434;padding-left:15px;letter-spacing:0px}
+.m2box{clear:right;position:relative;width:887px;margin:0 auto}
+.m2box ul li{float:left;width:161px;height:347px;margin-left:81px;background:url(http://img.tygem.com/images/event/20161005/img/event/m2_box_bg.png) no-repeat left top;text-align:center;margin-bottom:14px}
+.m2box ul li.combo_on{background:url(http://img.tygem.com/images/event/20161005/img/event/m2_box_bg_on1.png) no-repeat left top}
+.m2box ul > li:first-child{margin-left:0px}
+.m2box ul li .combo_tt{display:block;margin:43px 0 11px 0}
+.m2box ul li .combo_btn{display:block;margin-bottom:54px}
+.gostop1{width:67px;height:98px;position:absolute;top:51px;left:168px;text-align:center}
+.gostop2{width:67px;height:98px;position:absolute;top:51px;left:411px;text-align:center}
+.gostop3{width:67px;height:98px;position:absolute;top:51px;left:652px;text-align:center}
+.go_btn{display:block;margin-bottom:5px}
+.m2info{clear:left;width:929px;height:102px;margin:0 auto;background:url(http://img.tygem.com/images/event/20161005/img/event/info_bg2.png) no-repeat left top}
+.m2info .info_tt{display:block;float:left;font-weight:bold;padding-top:13px;color:#343434;margin-left:23px;font-size:14px;margin-bottom:10px;}
+.m2info ul{margin-left:121px;padding-top:13px}
+.m2info ul li{background:url(http://img.tygem.com/images/event/20161005/img/event/bullet01.gif) no-repeat left 5px;color:#343434;padding-left:10px;line-height:1.4em;margin-bottom:5px}
+
+
+
+
+
+
+/* ############################ sidebar ######################### */
+
+
+
+table a:link {
+	font-weight: bold;
+	text-decoration:none;
+}
+table a:visited {
+	font-weight:bold;
+	text-decoration:none;
+}
+
+table a:active,
+table {
+	font-size:12px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border:#ccc 0px solid;
+
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:0px;
+}
+table th {
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+
+
+#table {display: table; width: 100%;}
+.row {display: table-row;}
+.cell {display: table-cell; padding: 3px; border-bottom: 1px solid #DDD;}
+.col1 { width: 20%;}
+.col2 {width: 20%;}
+.col3 {width: 40%;}
+.col4 {width: 20%;}

@@ -1,0 +1,16 @@
+.basic-view table{width:100%;border-top:1px solid #ddd;border-right:1px solid #ddd;}
+.basic-view table tr th{width:150px;padding:15px 10px;background:#f2f2f2;border-bottom:1px solid #ddd;border-left:1px solid #ddd;font-family:'NotoKR-md';font-weight:400;text-align:center;}
+.basic-view table tr td{padding:10px 10px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;}
+.basic-view table tr td .in-style-1{width:500px;}
+.basic-view table tr td input, .basic-view table tr td select, .basic-view table tr td a{margin-right:10px;float:left;}
+.basic-view table tr td a.view-btn{padding:0 15px;height:40px;line-height:40px;}
+.basic-view table tr td a.icon-btn{font-size:28px;line-height:40px;}
+.basic-view table tr td a.icon-btn i{color:#7a858e;}
+.basic-view table tr td iframe{width:300px;}
+.basic-view table tr td .in-file{width:auto;border:0;line-height:40px;}
+.basic-view table tr td span{line-height:40px;color:#666;}
+.basic-view table tr td .lable-img{position:relative;width:250px;margin-bottom:0;}
+.basic-view table tr td .lable-img .list-thumbnail{width:100%;}
+.basic-view table tr td .lable-img .in-check{position:absolute;right:0;bottom:0;margin-right:0;}
+.basic-view .delet-btn{margin-top:15px;text-align:right;}
+.basic-view .delet-btn a{width:80px;height:35px;line-height:35px;font-size:13px;}

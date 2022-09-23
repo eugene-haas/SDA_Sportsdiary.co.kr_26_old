@@ -1,0 +1,42 @@
+/*.tourney.left_side td:nth-child(3) span,
+.tourney.left_side td:nth-child(4) span,
+.tourney.left_side td:nth-child(5) span,
+.tourney.left_side td:nth-child(6) span,
+.tourney.left_side td:nth-child(7) span {margin-left: -4px;}*/
+
+/*.tourney.right_side td:nth-child(3) span,
+.tourney.right_side td:nth-child(4) span,
+.tourney.right_side td:nth-child(5) span,
+.tourney.right_side td:nth-child(6) span,
+.tourney.right_side td:nth-child(7) span {margin-right: -4px;}*/
+
+
+@media print {
+  .tourney_table {transform: scale(0.65) translateY(-560px); height: 600px; overflow: hidden;} /* 프린트시 사이즈 조절 */
+
+  /**
+   * 좌측
+   */
+  .tourney tr.arr_41 td:nth-child(4) span {position: relative; top: 10px}
+  .tourney tr.arr_41 td:nth-child(5) span,
+  .tourney.right_side tr.arr_41 td:nth-child(1) span {position: relative; top: 124px;}
+  .tourney tr.arr_45 td:nth-child(3) span,
+  .tourney.right_side tr.arr_45 td:nth-child(2) span {position: relative; top: 24px; }
+  .tourney tr.arr_45 td:nth-child(4) span,
+  .tourney.right_side tr.arr_45 td:nth-child(1) span {position: relative; top: 56px;}
+  .tourney tr.arr_47 td:nth-child(3) span,
+  .tourney.right_side tr.arr_45 td:nth-child(2) span {position: relative; top: 8px;}
+
+  .tourney_table .left_32_bot span,
+  .tourney_table .right_32_bot span {margin-top: 0!important;}
+  .tourney_table .left_64_bot span,
+  .tourney_table .right_64_bot span {margin-top: 6px!important;}
+  /* 좌측 */
+
+  /**
+   * 우측
+   */
+  .tourney.right_side tr.arr_41 td:nth-child(4) span {position: relative; top: -10px;}
+  .tourney.right_side tr.arr_45 td:nth-child(3) span {position: relative; top: 4px;}
+  /* 우측 */
+}

@@ -1,0 +1,13 @@
+/* 회원정보 입력 join1_type3_search_child : 자녀 선수 정보 */
+.join-body .user_divn.parents .child_info {margin-top: 25px;margin-bottom: 0;}
+.join-body .user_divn.parents .child_info h2 {font-family: "NotoKR";font-size: 1em;font-weight: normal;letter-spacing: -0.05em;color: #005895;}
+.join-body .user_divn.parents .child_info .info_list {border: 1px solid #005895;margin-top: 10px;}
+.join-body .user_divn .input-list .phone_line {border-bottom: none;padding-top: 0;padding-bottom: 0;}
+.join-body .phone_line > div {display: inline-block;vertical-align: middle;}
+.join-body .phone_line .num.sel_box {width: 26%;}
+.join-body .phone_line .num {width: 30%;}
+.join-body .phone_line .divn {width: 12px;text-align: center;margin-bottom: 0;padding-bottom: 0;border: none;}
+.user_divn.parents .child_info .info_list .sel_box {padding-bottom: 0;}
+.join-body .user_divn.parents .child_info .info_list .phone_line select {border-radius: 0;color: #333;height: 40px;line-height: 40px;border-top: none;border-bottom: none;border-left: none;}
+.join-body .user_divn.parents .check_agree {text-align: center;width: 100%;margin-top: 20px;margin-bottom: 5px;}
+.join-body .user_divn.parents .check_agree .txt {font-size: .92em; font-weight:normal; letter-spacing: -0.075em;color: #666;margin-right: 7px;}

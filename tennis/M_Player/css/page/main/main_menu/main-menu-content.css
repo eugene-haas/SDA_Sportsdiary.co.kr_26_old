@@ -1,0 +1,8 @@
+.index-main {background-color: #e5e5e5; padding-bottom: 20px;}
+.main-menu {padding-top: 120px; padding-bottom: 18.5%;}
+.main-menu ul {width: 80%; margin: 100px auto 0 auto;}
+.main-menu li {flex-grow: 1; flex-basis: 23%; margin-right: 5px; }
+.main-menu li:last-child {margin-right: 0;}
+.main-menu li a {position: relative;}
+.main-menu li a .ic-new {top: 1px; right: 4px; width: 18px; height: 18px; line-height: 18px; font-size: 0.84em;}
+.main-menu li img {width: 100%;}

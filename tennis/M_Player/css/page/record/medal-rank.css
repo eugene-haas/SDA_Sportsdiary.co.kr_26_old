@@ -1,0 +1,22 @@
+.medal-rank .rank-tb th:nth-child(3n),
+.medal-rank .rank-tb th:nth-child(4n),
+.medal-rank .rank-tb th:nth-child(5n),
+.medal-total .rank-tb th:nth-child(3n),
+.medal-total .rank-tb th:nth-child(4n),
+.medal-total .rank-tb th:nth-child(5n) {width: 7%;}
+.medal-rank .rank-tb th img,
+.medal-total .rank-tb th img {width: 48%; margin-top:-8px;}
+
+.modal-record-rank .modal-body {padding:0;}
+.modal-record-rank .player-profile {overflow:hidden; margin-bottom:20px; border-bottom:1px solid #ddd; padding:5px 0px; background:#f2f2f2;}
+.modal-record-rank .player-profile .profile-img {display: inline-block; width:40px; border-radius:50%;}
+.modal-record-rank .player-profile .profile-img img {width:40px; border-radius:50%; border:2px solid #c6c6c6;}
+.modal-record-rank .player-profile h3 {display: inline-block; padding-left:16px; line-height:40px; font-size: 1.1em;}
+.modal-record-rank .player-profile h3 span {color:#666; font-size: 0.85em;}
+
+.modal-content {padding:0;}
+
+.modal-player-profile .stat-record .prof-list h3 {text-align: left;}
+.modal-player-profile .stat-record .prof {border-top: none;padding-bottom: 15px;}
+.modal-player-profile .stat-record .record {padding-left: 10px;padding-right: 10px;margin-top: 15px;}
+.modal-player-profile .stat-record .record h3 {height: 100%;}

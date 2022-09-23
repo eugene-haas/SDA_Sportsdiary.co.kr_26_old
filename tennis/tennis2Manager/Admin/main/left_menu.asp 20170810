@@ -1,0 +1,37 @@
+<!-- S : navi left-navi 네비게이션 -->
+        <nav>
+          <div id="left-navi">
+            <div class="depth">
+              <h2><a href="javascript:;">어드민 관리</a></h2>
+              <ul>
+                <li class="depth-2"><a href="javascript:;" onclick="javascript:fn_Link('./Admin_List.asp')" target="fPage">어드민 관리</a></li>
+              </ul>
+            </div>
+            <div class="depth">
+              <h2><a href="javascript:;">회원 관리</a></h2>
+                <ul>
+                  <li class="depth-2"><a href="javascript:;" onclick="javascript:fn_Link('./User_List.asp')" target="fPage">회원 관리</a></li>  
+                </ul>
+            </div>
+            <div class="depth">
+              <h2><a href="javascript:;">커뮤니티</a></h2>
+              <ul class="depth-2">
+                <li class="depth-2">
+                  <a href="javascript:;">갤러리</a>
+                  <ul class="depth-3">
+                    <li>
+                      <a href="javascript:;" onclick="javascript:fn_Link('./Community_Photo_List.asp')">포토갤러리</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" onclick="javascript:fn_Link('./Community_Motion_List.asp')">동영상갤러리</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="depth-2"><a href="javascript:;" onclick="javascript:fn_NewTabLink('/Community/Qa/list.asp')">질문과 답변(링크)</a></li>
+                <li class="depth-2"><a href="javascript:;" onclick="javascript:fn_NewTabLink('/Community/Free/list.asp')">자유게시판(링크)</a></li>
+                <li class="depth-2"><a href="javascript:;" onclick="javascript:fn_NewTabLink('/Community/Talk/list.asp')">관장님 대화방(링크)</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- E : navi -->

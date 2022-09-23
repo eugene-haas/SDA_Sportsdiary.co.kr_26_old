@@ -1,0 +1,94 @@
+/**
+ * S: 프로필 요약 
+ */
+.user_info .prof {font-family: 'NotoKR';padding-top: 20px;padding-bottom: 20px;border-bottom: 1px solid #d0d0d0;}
+.user_info .prof .profile-img {flex: 1; padding: 0 10px;}
+.user_info .prof .prof-list {flex: 2;}
+.user_info .prof .prof-list h3 {font-size: 1.1em;font-weight: bold;background-color: transparent;color: #164369;padding-left: 0;padding-bottom: 10px;}
+.user_info .prof .prof-list .en-name {font-size: 0.93em;color: #666;margin-left: 2px;}
+.user_info .prof-list dl {padding-bottom: 6px;border-bottom: none;}
+.user_info .prof-list dt,
+.user_info .prof-list dd {float: left;}
+.user_info .prof-list dt {color: #999;padding-right: 10px;}
+.user_info .prof-list dd {color: #333;font-weight: bold;}
+.user_info .prof-list .multi_dd dd {display: block;float: none}
+.user_info .prof-list .multi_dd dd:not(:first-child) {margin-left: 80px;}
+/* E: 프로필 요약 */
+
+/**
+ * S: 전적 
+ */
+.user_info h3 {font-size: 1em;font-weight: bold;background-color: #edf0f4;color: #164369;height: 2.14em;line-height: 2.14em;padding-left: 10px;padding-right: 10px;}
+.user_info h3 .orangy {font-size: 0.86em;font-weight: 600;color: #ff7200;letter-spacing: -0.020em;}
+.user_info .record {border-bottom: 1px solid #e2e5e8;padding-bottom: 10px;}
+.user_info .record dl {border-bottom: none;padding-top: 0.5em;padding-left: 10px;padding-right: 10px;letter-spacing: -0.07em;}
+.user_info .record dt {display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: center right;font-size: 1em;font-weight: normal;padding-right: 8px;margin-right: 8px;}
+.user_info .record dd {display: inline-block;vertical-align: middle;font-size: 0.93em;font-weight: bold;letter-spacing: -0.025em;color: #164369;}
+/* E: 전적 */
+
+/**
+ * S: 최근 입상이력 
+ */
+.user_info .recent_result .no_data{font-weight: bold; padding-top: 8px;padding-left: 10px; padding-right: 10px;}
+.user_info .recent_result dt {font-size: 1.025em;font-weight: bold;text-align: center;letter-spacing: -0.02em;background: none;background-color: #164369;color: #fff;border-radius: 20px;width: 67px;height: 22px;line-height: 22px;padding: 0;margin-bottom: 10px;margin-top: 10px;}
+.user_info .recent_result dd {display: block;font-size: 1.025em;font-weight: normal;letter-spacing: -0.0715em;color: #333;}
+.user_info .recent_result .win {letter-spacing: -0.02em;color: #ff7200;padding-bottom: 6px;}
+/* E: 최근 입상이력 */
+
+/**
+ * S: 최근 경기기록/영상 
+ */
+.user_info .stat-film-title h3 {font-size: 1.025em;line-height: 150%;letter-spacing: -0.02em;background-color: #164369;color: #fff;height: auto;}
+.user_info .stat-film-title h3 span {font-size: 0.91em;color: #9cb6cc;padding-top: 4px;}
+.user_info .stat-film-title .list-info {font-family: 'NotoKR-bd';font-size: 1.025em;border-left: 4px solid #123651;width: 95%;padding-left: 6px;padding-right: 10px;margin-top: 8px;margin-bottom: 4px;margin-left: 10px;height: 18px;line-height: 1.2em;}
+.user_info .stat-film-title .list-info span {position: relative;color: #123651;padding-right: 5px;margin-right: 5px;}
+.user_info .stat-film-title .list-info span:after {position: absolute;top: 5px; right: 0; content: ''; width: 2px; height: 60%; background-color: #ccc;}
+
+/* 최근 기록 리스트 */
+.user_info .recent_film_record .stat-list dt {display: block;background: none;background-color: #636e7c;height: 32px;padding-left: 10px; padding-right: 10px;margin: 0;}
+.user_info .recent_film_record .stat-list dt span {display: inline-block;font-family: 'NotoKR-md';font-size: 1.07em;color: #fff;margin-top: 6px;}
+.user_info .recent_film_record .stat-list .show-film {position: relative;display: inline-block;text-align: center;background-color: #ff7200;border: 1px solid #e06400;padding-left: 0.4em;padding-right: 0.3em;padding-bottom: 0.1em;width: 40px;height: 26px;margin-top: 4px;float: right;}
+.user_info .recent_film_record .stat-list .show-film img {position: absolute; top: 2px; left: 10px; width: 50%;}
+
+.user_info .recent_film_record .stat-list dd {display: block;font-size: 0.8em;width: 100%;padding-left: 10px;padding-right: 10px;}
+.user_info .recent_film_record .stat-list li {position: relative;padding-top: 10px;padding-bottom: 10px;}
+.user_info .recent_film_record .stat-list .me,
+.user_info .recent_film_record .stat-list .you {display: table;font-size: 1.25em;color: #333;}
+.user_info .recent_film_record .stat-list .me {float: left;}
+.user_info .recent_film_record .stat-list .you {text-align: right;float: right;}
+.user_info .recent_film_record .stat-list .belong {font-family: 'NotoKR-md';font-size: 0.93em;font-weight: normal;color: #999;}
+.user_info .recent_film_record .stat-list .vs {display: inline-block;position: absolute;top: 24px;left: calc(50% - 11px);background-color: #ddd;color: #666;font-size: 13px;text-align: center;width: 23px;height: 23px;line-height: 23px;}
+
+/* E: 최근 경기기록/영상 */
+
+
+/**
+ * S: 대회기록, 기술별 득실점 
+ */
+.best-win h3 {border-bottom: 1px solid #e2e5e8;}
+.best-win h4 {text-align: center;margin-top: 28px;}
+.between-chart ul.chart-title {margin-bottom: 5px;}
+.between-chart .chart-title li {height: 16px;line-height: 16px;}
+/* E: 대회기록, 기술별 득실점 */
+
+/**
+ * S: 스코어별 전체 득실점 
+ */
+.btn_list.pt_req .btn-full {font-family: 'NotoKR-md';font-size: 1em;letter-spacing: -0.025em;}
+.btn_list.pt_req .btn-full .fa {font-size: 20px;color: #fff;margin-right: 10px;}
+
+.score_total_chart .set_list {text-align: center;margin-top: 10px;margin-bottom: 30px;}
+.set_list li {display: inline-block;width: 40px; height: 20px;margin-left: 10px;}
+.set_list li:first-child {margin-left: 0;}
+.set_list li .btn {display: inline-block;font-size: 0.86em;border-radius: 0;width: 100%;height: auto;padding: 0;}
+.set_list li .btn-dark-blue {background-color: #636e7c;color: #fff;}
+/* E: 스코어별 전체 득실점 */
+
+/**
+ * S: btn_full 
+ */
+.user_info .pt_req {padding-bottom: 20px;}
+.user_info .pt_req .btn-full:hover,
+.user_info .pt_req .btn-full:focus,
+.user_info .pt_req .btn-full:active {color: #fff;}
+/* E: btn_full */

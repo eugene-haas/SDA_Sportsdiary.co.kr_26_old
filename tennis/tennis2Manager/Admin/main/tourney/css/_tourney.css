@@ -1,0 +1,756 @@
+@charset "utf-8";
+
+.clearfix:after {content: '';clear: both;display: table;}
+/* 모달 세팅 */
+.modal.modal_tourney {margin-left: 0;width: auto;height: auto;}
+.modal.modal_tourney .modal-header {position: relative;background-color: #354354;}
+.modal .modal-header h1 {font-size: 22px;text-align: center;color: #fff;}
+.modal .modal-header .btn_close {position: absolute; top: 10px; right: 10px;}
+
+.modal.modal_tourney .modal-dialog {width: 1280px;}
+.modal.modal_tourney .modal-content {background-color: #354354;padding-left: 5px;padding-right: 5px;padding-bottom: 5px;border-radius: 0;}
+.modal.modal_tourney .modal-header {border-bottom: none;}
+.modal.modal_tourney .modal-body {background-color: #fff;border-top: none;}
+.modal.modal_tourney .modal-footer {border-top: none;}
+a.btn_a {text-align: center;}
+
+/* 메달 탭 */
+.result-content {background-color: #edeff5; padding-bottom: 17px;}
+.result-content .playing-now {display: inline-block; position: relative; top: 20px; font-size: 20px; font-weight: bold; vertical-align: middle;}
+.medal-tab {/*display: none;*/ text-align: center; padding: 0; margin-bottom: 0;}
+.medal-tab.tourney-result li {display: inline-block; text-align: center; width: 230px; float: none;}
+.medal-img {display: inline-block; width:39px;}
+.medal-img img {width:100%;}
+.medal-img + p {display: inline-block; vertical-align: middle; width: auto; padding-top: 10px; margin: 0 auto; }
+.medal-img + p .player-name {display: block;font-size: 22px; text-align: center; padding-bottom: 6px;}
+.medal-img + p .player-school {display: block;font-size: 15px; font-weight: bold; color: #000;}
+
+/**
+ * --------------------------------
+ * 입력하기 > 대진표 > 색상 안내
+ * --------------------------------
+ */
+.color-guide {/*position: absolute; top:0; left: calc(50% - 175px);*/ font-family: 'Noto KR Bold'; width: 397px; margin: 0 auto;}
+.color-guide h2 {background-color: #747b82; font-size: 16px; text-align: center; color: #fff; border-top: 1px solid #ccc; height: 28px; line-height: 28px; margin-bottom: 0;}
+.color-guide .guide-cont,
+.color-guide .guide-group-cont { background-color: #f3f3f3; text-align: center; padding-top: 22px; padding-bottom: 14px; }
+.color-guide li {display: inline-block; margin-right: 19px; margin-left: -4px;}
+.color-guide li:last-child {margin-right: 0;}
+.color-guide a {vertical-align: top; margin-top: 0px;}
+.color-guide a.btn:hover, .color-guide a.btn:focus, .color-guide a.btn:active {background-position: center center; color: inherit;}
+.color-guide a.btn-look:hover, .color-guide a.btn-look:focus, .color-guide a.btn-look:active {background-image: url('../imgs/tournerment/btn-L-look.svg'); -webkit-box-shadow: none; box-shadow: none; }
+.color-guide a.btn-look.half:hover, .color-guide a.btn-look.half:focus, .color-guide a.btn-look.half:active {background-image: url('../imgs/tournerment/btn-L-look-half.svg'); color: #fff; }
+.color-guide a.btn-look.full:hover, .color-guide a.btn-look.full:focus, .color-guide a.btn-look.full:active {background-image: url('../imgs/tournerment/btn-L-look-full.svg'); color: #fff;}
+.color-guide a.btn-look.regist:hover, .color-guide a.btn-look.regist:focus, .color-guide a.btn-look.regist:active {background-image: url('../imgs/tournerment/btn-L-look-regist.svg'); color: #00991d;}
+.color-guide p { display: inline-block; font-size: 16px; font-weight: bold; color: inherit; padding-top: 4px;}
+
+.tourney .srch_intro {background-color: #f2f2f2;width: 1240px;height: 580px;line-height: 580px;}
+.tourney .srch_intro p {font-weight:bold; font-size:17px; color: #666;}
+.tourney-img.tab-panel {top: auto;}
+.tourney-mode {display: inline-block; text-align: center; margin: 0 auto; margin-top: 10px; margin-bottom: 40px; /* padding-top: 30px; */ color:#333;}
+.tourney {text-align: center; padding: 0;}
+.sub.sub-main.tourney {border: 4px solid #ccc;}
+.tourney h1 {font-family: 'NanumGothicB'; font-size: 24px; background-color: #354354; color: #fff; width: 100%; padding-top: 10px; padding-bottom: 10px;}
+.tourney .stage-title {/*background-color: #008eb2;*/ font-family: 'NanumBarunGothicB'; color: #333; font-size: 24px; text-align: center; height: 40px; line-height: 40px;margin-top: 50px;}
+.modal .date {font-family: 'NanumBarunGothicB';font-size: 18px;color: #666;margin-top: 10px;}
+.modal .date .d-day {display: inline-block;font-family: 'NanumGothic';font-size: 14px;width: 65px;height: 25px;line-height: 25px;vertical-align: middle;background-color: #de3737;color: #fff;margin-right: 10px;}
+.modal .date .d-day.before {background-color: #cf3434;}
+.modal .date .d-day.playing {background-color: #dd790e;}
+.modal .date .d-day.day_count {background-color: #dd790e;}
+.modal .date .d-day.end {background-color: #888;}
+.modal .date .date_txt {display: inline-block; vertical-align: middle; font-size:17px;}
+
+.tourney .input-select {background-color: #ffffff;}
+.tourney .enter-type {background-color: #f2f2f2; border: 1px solid #ddd; width: 670px; margin: 20px auto 10px; padding-top: 10px; padding-bottom: 10px;}
+.tourney .enter-type li {display: inline-block; vertical-align: middle; margin-left: -4px;}
+.tourney .enter-type li:first-child {margin-left: 0px;}
+.tourney .enter-type label {vertical-align: middle; margin-bottom: 0;}
+.tourney .enter-type label input {vertical-align: middle; margin-top: 0;}
+.tourney .enter-type .game-type {width: 145px; margin-right: 10px;}
+.tourney .enter-type .type-sel {width: 210px; margin-right: 10px;}
+.tourney .enter-type li:nth-child(3) {width: 145px;}
+.tourney .enter-type li select {font-family: 'NanumGothicB'; color: #666; width: 100%; height: 35px; padding: 0;}
+.tourney .user_guide {font-size: 15px;margin: 10px 0 30px;}
+.tourney .type-sel .btn {border-color: #bbb; text-align: left;}
+.tourney .btn-srch {background-color: #0085d3; color: #fff; font-family: 'NanumGothicB'; font-size: 14px; border-radius: 0; height: 35px; line-height: 35px; padding-top: 0; padding-bottom: 0;}
+
+.tourney .show-btn {width: 260px; margin: 15px auto;}
+.tourney .show-btn a {background-color: #fff; border: 3px solid #ddd; border-radius: 20px; font-size: 15px; text-align: center; padding-top: 10px; height: 34px; line-height: 30px; padding-top: 0; margin-right: 10px;}
+.tourney .show-btn a.on {background-color: #008eb2; color: #fff; border: none; line-height: 34px;}
+.tourney .show-btn li:last-child a {margin-right: 0;}
+
+.tourney .btn-list .btn {font-size:14px;  background-color: #354354; border: none; color: #fff; height: 34px; line-height: 34px; padding-left: 20px; padding-right: 20px;}
+
+
+/* webtournament/www/css/style.css 에서 첨부 */
+
+/**
+ * S: medal-tab 
+ */
+.tourney .medal-tab {background-color: #edeff5; text-align: center; padding: 0; padding-bottom: 10px;}
+.tourney .medal-tab .result-content .playing-now {display: inline-block; margin-top: 10px;}
+.tourney .medal-tab.tourney-result li {display: inline-block; text-align: center; width: 200px; float: none;}
+/*.tourney .medal-img {display: inline-block; width: 39px;}*/
+.tourney .medal-img + p {display: inline-block; vertical-align: middle; width: auto; padding-top: 10px; margin: 0 auto; }
+.tourney .medal-img + p .player-name {display: block;font-size: 20px; text-align: center; color:#333;}
+.tourney .medal-img + p .player-school {display: block;font-size: 14px; font-weight: bold; color: #666; width: 145px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* E: medal-tab */
+
+/**
+ * 대진표 - 좌측
+ * --------------------------------
+ */
+/*.tourney-main {overflow: scroll;}*/
+.tourney-main {position:relative;}
+.tourney-main.check-tourney {border-top: none;}
+/* tourney의 width, height 동적으로 변경해줘야 함 */
+.sub.tourney .tourney {text-align: center; overflow: hidden; width: auto; display: inline-block; /*height: 4600px; padding-top: 150px;*/ }
+.sub.tourney .tourney:not(.game-five) {margin-top: 40px;}
+.sub.tourney .tourney .tourney_tit {margin-bottom: 10px;}
+.sub.tourney .tourney.league {margin-top: 0;}
+
+.zoomed {transform : translate3d(-270px, -640px, 0) scale(0.725);}
+.left-side, .right-side {width: auto; height: 100%; float: left;}
+.left-side {position: relative;}
+.right-side {margin-left: -4px;}
+/* .left-side .final-div {width: 153px;} */
+.tourney .match-list, .round-1, .round-2, .round-3, .round-4, .round-5, .round-6, .round-7, .round-8, .winner-1, .winner-2, .winner-3, .winner-4, .winner-5, .winner-6, .winner-7, .winner-8, .final-match {
+  float: left;
+}
+.winner-1, .winner-2 ,.winner-3, .winner-4, .winner-5, .winner-6, .winner-7, .winner-8 {position: relative; z-index: 50;}
+.line-div {position: relative;}
+.no-match { padding-top: 33px; padding-bottom: 33px; }
+.tourney .match {height: 140px;}
+/*.tourney .no-match {height: 77px;}*/
+.group .tourney .match {height: 150px;}
+.group .tourney .no-match {height: 78px;}
+.tourney .player-info {font-family: 'Noto KR Bold'; text-align: right; width: 180px; /*height: 43px;*/ padding-top: 14px; padding-bottom: 14px; padding-right: 10px;}
+.tourney .player-info span {line-height: 125%;}
+.tourney .left-side .player-name {padding-left: 20px;}
+.tourney-mode.group .right-side .player-name,
+.tourney-mode.group .left-side .player-name {display: inline-block; margin-top: 5px; padding-left: 0; line-height: 125%;}
+.tourney-mode.group .right-side .player-name {margin-top: 2px;}
+.tourney .right-side .player-id {padding-right: 30px;}
+.player-name.winner-golden, .player-name.winner-silver, .player-name.winner-bronze { background-repeat: no-repeat; background-position: 5px -5px; -webkit-background-size: 20px 30px; background-size: 20px 30px; }
+.player-name {font-size: 20px;font-weight: bold;}
+.player-name.small-name {font-size: 15px;}
+.player-name.small-name.winner-golden,
+.player-name.small-name.winner-silver,
+.player-name.small-name.winner-bronze {padding-top: 2px; padding-bottom: 2px;}
+.player-id {font-size: 19px; font-weight: bold; color: #2e6da7;}
+.player-school {display: block; font-size: 15px; color: #f26822;}
+
+.fa-plus {background-color: #da5e22; color: #fff; border-radius: 2px; padding: 5px; margin-left: 2px;}
+
+/* 1라운드 승자 */
+.winner-1 {margin-top: 40px;}
+.winner  {display: block; font-size: 13px; color: #333333; margin-left: -48px;}
+.winner-1 .winner {margin-bottom: 117px;}
+.winner.empty {height: 23px; width: 91px;}
+[class*='winner'] span.skill {display: inline-block; width: 70px;}
+
+/* round 좌측으로 당겨줌 */
+/* 이미지 바꾸고 삭제 */
+/*.round-2, .round-3, .round-4, .round-5, .round-6, .round-7, .round-8, .final-match {margin-left: -50px;}*/
+/* 이미지 바꾸고 삭제 */
+
+[class*='winner'] .winner { width: 92px; }
+/* 2라운드 승자 */
+.winner-2 {margin-top: 110px;} /* 70+  */
+.winner-2 .winner {margin-bottom: 257px;} /* 140+ */
+
+/* 3라운드 승자 */
+.winner-3 {margin-top: 250px;} /* 140+ */
+.winner-3 .winner {margin-bottom: 537px;} /* 280+ */
+
+/* 4라운드 승자 */
+.winner-4 {margin-top: 530px;} /* 280+ */
+.winner-4 .winner {margin-bottom: 1097px;} /* 560+ */
+
+/* 5라운드 승자 */
+.winner-5 {margin-top: 1090px;} /* 560+ */
+.winner-5 .winner {margin-bottom: 2217px;} /* 1120+ */
+
+/* 6라운드 승자 */
+.winner-6 {margin-top: 2210px;} /* 1120+ */
+/*.winner-6 .winner {margin-bottom: 4457px;} /* 2240+ */
+
+/* 경기 입력 조회 버튼 */
+/* 버튼 공통 부분 */
+.btn-look {color: #337ab7; position: relative; -webkit-background-size: contain; background-size: contain; background-repeat: no-repeat; background-position: center center; width: 26px; height: 21px; line-height: 21px; padding: 0; padding-right: 4px; border: none; border-radius: 0px; background-color: transparent; text-shadow: none; box-shadow: none;}
+.left-side a.btn-look:hover, .left-side a.btn-look:focus, .left-side a.btn-look:active {background-image: url(../../dist/imgs/tournerment/btn-L-look.svg);background-color: transparent; background-position: center center; color: #337ab7;}
+.left-side a.btn-look.half:hover, .left-side a.btn-look.half:focus, .left-side a.btn-look.half:active {color: #fff;}
+.left-side a.btn-look.full:hover, .left-side a.btn-look.full:focus, .left-side a.btn-look.full:active { color: #fff;}
+.left-side a.btn-look.regist:hover, .left-side a.btn-look.regist:focus, .left-side a.btn-look.regist:active { color: #00991d;}
+
+/* 1라운드 경기 조회 버튼 - 좌측 */
+.left-side .btn-look {position: absolute; left: 13px; z-index: 100;}
+.left-side .round-1 .btn-look {top: 60px; left: 16px;}
+.left-side .btn-look.full {background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; border: none; border-radius: 0px;}
+a.btn-look:active, a.btn-look:hover, a.btn-look:focus {background-color: transparent; color: #337ab7;}
+
+
+/* 2라운드 경기 조회 버튼 - 좌측 */
+.left-side .round-2 .btn-look, .right-side .round-2 .btn-look {top: 128px; } /* 70+ */
+
+/* 3라운드 경기 조회 버튼 - 좌측 */
+.left-side .round-3 .btn-look, .right-side .round-3 .btn-look {top: 268px;} /* 140+ */
+
+/* 4라운드 경기 조회 버튼 - 좌측 */
+.left-side .round-4 .btn-look, .right-side .round-4 .btn-look {top: 548px;} /* 280+ */
+
+/* 5라운드, 최종 경기 조회 버튼 */
+.left-side .round-5 .btn-look, .right-side .round-5 .btn-look {top: 1108px;} /* 560+ */
+
+/* 6라운드, 최종 경기 조회 버튼 */
+.left-side .round-6 .btn-look, .right-side .round-6 .btn-look {top: 2228px;} /* 1120+ */
+
+
+/* 1라운드 경기 조회 버튼 - 우측 */
+.right-side .btn-look {position: absolute; top: 58px; left: 10px;background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-color: transparent; background-position: center center; color: #337ab7; border: none; border-radius: 0px; width: 26px; height: 21px; line-height: 21px; padding-left: 2px; padding-right: 2px;}
+.right-side .btn-look:hover, .right-side .btn-look:focus, .right-side .btn-look:active {color: #000;}
+.right-side .round-1 .btn-look {position: absolute; top: 58px; }
+
+
+.btn-look.full { color: #fff;}
+.right-side .btn-look.full {color: #fff; padding-left: 1px;}
+
+.btn-look.half {background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0px; color: #fff;}
+.right-side .btn-look.half {color: #fff; padding-top: 2px; padding-left: 4px;}
+
+.btn-look.regist { background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 4px; border: none; color: #00991d;} 
+.right-side .btn-look.regist {color: #00991d; padding-left: 4px;}
+
+a.btn-look.handy, a.btn-look.handy:hover, a.btn-look.handy:focus, a.btn-look.handy:active { background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+
+
+/* 선수등록 버튼 */
+a.btn-look.enroll, a.btn-look.enroll:hover, a.btn-look.enroll:focus, a.btn-look.enroll:active { background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+
+/* 경기중 버튼 */
+a.btn-look.time-in, a.btn-look.time-in:hover, a.btn-look.time-in:focus, a.btn-look.time-in:active {background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+
+/* 경기종료 버튼 */
+a.btn-look.time-out, a.btn-look.time-out:hover, a.btn-look.time-out:focus, a.btn-look.time-out:active {background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+/* 영상 미등록 버튼 */
+a.btn.btn-look.no-movie-clip, a.btn.btn-look.no-movie-clip:hover, a.btn.btn-look.no-movie-clip:focus, a.btn.btn-look.no-movie-clip:active { background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 25px; line-height: 25px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+.right-side a.btn.btn-look.no-movie-clip, .right-side a.btn.btn-look.no-movie-clip:hover, .right-side a.btn.btn-look.no-movie-clip:focus, .right-side a.btn.btn-look.no-movie-clip:active {padding-right: 0;}
+.final-div .line-div a.btn-look.no-movie-clip, .final-div .line-div a.btn-look.no-movie-clip:hover, .final-div .line-div a.btn-look .no-movie-clip:focus, .final-div .line-div a.btn-look.no-movie-clip:active {/* background-image: url('../../dist/imgs/tournerment/no-movie-clip-t.svg'); */ padding-right: 0;}
+/* .btn-guide .btn.btn-look.no-movie-clip {background-image: url('../../dist/imgs/tournerment/no-movie-clip.svg'); padding-right: 0;} */
+
+.final-div {position: relative;}
+.final-div .line-div {width: 150px; height: auto;}
+.final-match-box {position: absolute; top: 50%; /*left: 22px;*/ z-index: 200; text-align: center; width: 100%; line-height: 1; margin: 0 auto; margin-top: -80px; margin-bottom: 5px;}
+.final-match-box .golden-img {display: inline-block; float: left;}
+.final-match-box p {font-size: 21px; font-weight: bold; /*text-align: left;*/ /*padding-left: 30px;*/ padding-top: 12px; margin-bottom: 5px; /*margin-left: 5px; *//*float: left;*/ width: 100%; text-align: center;}
+/*.final-match-box p:first-child {margin-bottom: 5px;}*/
+.final-div .line-div .btn-look {top: calc(50% + 6px); left: 61px;}
+.final-div .line-div .btn-look:hover, .final-div .line-div .btn-look:focus, .final-div .line-div .btn-look:active {background-position: center center; color: inherit;  text-shadow: none;-webkit-box-shadow: none; box-shadow: none;}
+.final-div .line-div .btn-look { width: 25px; height: 26px; padding-right: 0; padding-top: 4px;}
+
+
+/**
+ * --------------------------------
+ * 대진표 - 우측
+ * --------------------------------
+ */
+.right-side div:last-child {margin-left: 0px;}
+.tourney .right-side .match-list, .right-side .round-1, .right-side .round-2, .right-side .round-3, .right-side .round-4, .right-side .round-5, .right-side .round-6, .right-side .round-7, .right-side .round-8, .right-side .winner-1, .right-side .winner-2, .right-side .winner-3, .right-side .winner-4, .right-side .winner-5, .right-side .winner-6, .right-side .winner-7, .right-side .winner-8 {
+  float: right;
+}
+/*.right-side .round-1 {margin-left: -50px;}*/
+/* 이미지 바꾸고 삭제 */
+/*.right-side .round-2, .right-side .round-3, .right-side .round-4, .right-side .round-5, .right-side .round-6, .right-side .round-7, .right-side .round-8 {margin-left: -50px;}*/
+/* 이미지 바꾸고 삭제 */
+.right-side .winner-1, .right-side .winner-2, .right-side .winner-3, .right-side .winner-4, .right-side .winner-5, .right-side .winner-6, .right-side .winner-7, .right-side .winner-8 {
+  margin-left: 2px;
+  margin-right: 8px;
+}
+
+.right-side .player-info { text-align: left; padding-left: 10px; padding-right: 0; }
+
+.right-side .winner-1 {margin-right: -45px;}
+
+.right-side .player-name.winner-golden,
+.right-side .player-name.winner-silver,
+.right-side .player-name.winner-bronze {padding-right: 25px; background-position: right -5px;}
+
+/**
+ * S: 결과보기 모달 
+ */
+/**
+ * --------------------------------
+ * 대진결과 - 모달
+ * --------------------------------
+ */
+/* 스코어 보드 */
+.display-board .score-board {width: 515px; margin-right:15px; float: right;}
+.display-board ul.player-display {padding-left: 15px; padding-right: 15px;}
+/*.display-board ul[class^="player-"] {border-top: 1px solid #1e2836;}*/
+.player-display {position: relative;}
+.player-display .player-1, .player-display .player-2 {font-family: 'Noto KR Bold'; width: 50%; height: 42px; line-height: 42px; 
+/*padding-left: 15px; padding-right: 15px;*/}
+.player-display .player-1 {background-color: #fff; color: #333;}
+.player-display .player-2 {background-color: #004ed0; color: #ffffff;}
+.player-display .v-s {font-family: 'Noto KR Bold';background-color: #04101f; position: absolute; top: 13%; left: calc(50% - 22px); border-radius: 20px; width: 44px; height: 26px; line-height: 26px;}
+.display-board .point-title li {padding-top:14px;}
+.display-board .point-title li:nth-child(5) { padding-top:0; line-height:1.2;}
+.display-board ul:not(.point-title) li {margin-top: 10px; margin-bottom: 10px;}
+.display-board ul.player-point li {margin-top: 8px; margin-bottom: 8px;}
+#round-res .display-board ul.player-point li {margin-top: 13px; margin-bottom: 6px;}
+.display-board ul.player-1-point li {margin-top: 8px; margin-bottom: 8px;}
+.display-board ul.player-point li:last-child {margin-right: 0;}
+
+.point-display .select-win {position: relative; color:#fff; font-size:22px; width:125px; padding:0 10px; height:69px; line-height: 69px; text-align:center; border-radius:5px; border:none; background: #222e43; /* Old browsers */
+background: -moz-linear-gradient(top, #222e43 0%, #000206 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #222e43 0%,#000206 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #222e43 0%,#000206 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e43', endColorstr='#000206',GradientType=0 ); /* IE6-9 */ -webkit-appearance: none;
+appearance: none;}
+.display-board ul.player-point li.select-box-li {position: relative;}
+.display-board ul.player-point li.select-box-li:after {position: absolute; top: 35px; right: 10px; content: ''; border-top: 4px solid #fff; border-right: 6px solid transparent; border-left: 6px solid transparent;}
+.point-display .select-win.on { background: #ff6e00;
+background: -moz-linear-gradient(top,  #ff6e00 0%, #ff2b00 100%); background: -webkit-linear-gradient(top,  #ff6e00 0%,#ff2b00 100%); background: linear-gradient(to bottom,  #ff6e00 0%,#ff2b00 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6e00', endColorstr='#ff2b00',GradientType=0 ); border-radius: 5px; border: 2px solid #ffa668; outline: none}
+.point-display .select-win option {color: #000;}
+
+.display-board .score {font-size: 50px; width: 59px;} /* merge */
+.display-board .on .score,
+.round-res .point-display .on .score { background: #007fec; background: -moz-linear-gradient(top, #007fec 0%, #000526 100%); background: -webkit-linear-gradient(top, #007fec 0%,#000526 100%); background: linear-gradient(to bottom, #007fec 0%,#000526 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007fec', endColorstr='#000526',GradientType=0 ); border: 2px solid #b2ccee;} /* merge */
+.display-board .match-result {width: 515px; height: auto; 
+/*padding-left: 0px; padding-right: 30px; margin-left: 15px; margin-right: 15px;*/} /* merge */
+.sign-list .chief .judge {color: #333;} /* merge */
+.display-board .result-list .mine {color: #666666;}
+.display-board .result-list .opponent {color: #004ed0;}
+.display-board .result-list .match-title {font-family: 'Noto KR Bold'; font-size: 20px; color: #333; margin-top: 0;}
+.display-board .result-list {width:100%; height: 215px; padding-right: 15px; margin-top: 15px; margin-bottom: 15px; }
+.display-board .result-list li {font-family: 'Noto KR Bold'; font-size: 16px; width: 100%; text-align: left;}
+.display-board .result-list li:not(.match-title) {margin-top: 0;margin-bottom: 10px;}
+.display-board .result-list p {margin-bottom: 0;}
+.display-board .win-type.score {position: relative; width: 58px; height: 75px;}
+.display-board .win-type.score:after {position: absolute; top: 35%; left: 0; content: '-'; height: 0px;}
+.display-board .on .win-type.score {background-repeat: no-repeat; -webkit-background-size: 58px 75px; background-size: 58px 75px; border: none; border-radius: 0}
+.display-board .on .win-type.score:after {content: '';}
+.display-board .score.txt-orange {color: #ff4c00; width: 58px;}
+.display-board .point-title { margin-left:16px;}
+.display-board .point-title li {display: table-cell; width:59px; margin-right:10px; font-size: 18px; text-align:center; /*width: auto;*/}
+.display-board .point-title li:last-child {margin-right: 0;}
+.display-board .point-title li:nth-child(4) {/*margin-right: 35px;*/}
+.display-board .point-title li:nth-child(5) { width:120px; margin-right: 30px; text-align:center;}
+.display-board .point-title li:nth-child(6) {/*margin-right: 25px;*/}
+.display-board .player-point li {/*width: 58px; */margin-right: 10px;}
+.display-board .player-point li:first-child {width: auto;}
+.display-board .player-point li {width: auto;}
+.display-board .player-1-point, .display-board .player-2-point {padding-left: 16px; padding-right: 15px;}
+.display-board .player-1-point {background-color: #ffffff;}
+.display-board .player-2-point {background-color: #004ed0;}
+.display-board .time-table {float: left; width: 246px; margin-left:15px; margin-top: 0;}
+.display-board .time-table ul {margin: 0; padding: 0;}
+.display-board .time-table li {width: 70px;}
+.display-board .injury-mark {float: right;}
+.display-board .time-mark {float: left;}
+.display-board .injury-mark input {vertical-align: middle; width: 21px; height: 21px;}
+
+/* 메인 - 스코어보드 */
+.display-board {background-color: #04101f; color: #c6d3e6;}
+.display-board ul {font-size: 20px; font-weight: 900; padding: 0; /*padding-left: 25px; padding-right: 25px;*/ margin-bottom: 0;}
+.display-board ul li {text-align: center; float: left;}
+/*.display-board ul[class^="player-"] {border-top: 1px solid #1e2836;}*/
+.display-board ul:not(.point-title) li {margin-top: 15px; margin-bottom: 15px;}
+.display-board ul span {display: inline-block;}
+ul[class^="player-"] .player-name {display: table-cell;font-size: 16px; letter-spacing: -0.05em; border-radius: 10px; line-height: 150%; vertical-align: middle; width: 77px; height: 75px; padding: 0px;}
+.display-board .score {position: relative; font-family: 'Noto KR Bold';background: #222e42; background: -moz-linear-gradient(top,  #222e42 0%, #000206 100%);background: -webkit-linear-gradient(top,  #222e42 0%,#000206 100%);background: linear-gradient(to bottom,  #222e42 0%,#000206 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e42', endColorstr='#000206',GradientType=0 );font-size: 50px; color: #c6d3e6; border: 2px solid #2d3847; border-radius: 10px; padding: 32px 5px 16px;}
+.display-board .player-point .btn {background: -moz-linear-gradient(top,  #222e42 0%, #000206 100%);background: -webkit-linear-gradient(top,  #222e42 0%,#000206 100%);background: linear-gradient(to bottom,  #222e42 0%,#000206 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222e42', endColorstr='#000206',GradientType=0 );font-size: 22px; color: #c6d3e6; border: 2px solid #2d3847; border-radius: 6px; width: 130px; height: 54px; padding-left: 10px; padding-right: 10px;}
+.display-board .score:not(.player-name):after {position: absolute; top: 50%; left: 0; content: ''; background-color: #242d3c; width: 100%; height: 2px;}
+.display-board .on .score { background: #001150; background: -moz-linear-gradient(top, #001150 0%, #004d8f 100%); background: -webkit-linear-gradient(top, #001150 0%,#004d8f 100%); background: linear-gradient(to bottom, #001150 0%,#004d8f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001150', endColorstr='#004d8f',GradientType=0 ); border: 2px solid #b2ccee;}
+.display-board .score.player-name {background: #1d2c3d; border: 2px solid transparent;}
+.display-board .on .score.player-name {background: #001150; background: -moz-linear-gradient(top, #001150 0%, #004d8f 100%); background: -webkit-linear-gradient(top, #001150 0%,#004d8f 100%); background: linear-gradient(to bottom, #001150 0%,#004d8f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001150', endColorstr='#004d8f',GradientType=0 ); border: 2px solid #b2ccee;}
+.point-display { position:relative;}
+.point-display a {display: inline-block;}
+/*.player-2-point {border-bottom: 1px solid #1e2836;}*/
+.point-display .player-match-option { position:absolute; top:51px; right:0; width:88px; /*height:192px;*/ text-align:center; background:#a4abb3;}
+.point-display .player-match-option label.default { margin-top:9px; margin-bottom: 18px; background-repeat: no-repeat;background-position: 0 center; -webkit-background-size: 59px 679px; background-size: 59px 67px; width:59px; height:69px;}
+
+.point-display .player-match-option label.draw { background-repeat: no-repeat;background-position: 0 center; -webkit-background-size: 59px 69px; background-size: 59px 69px; width:59px; height:69px;}
+.point-display .player-match-option label.no-attend { background-repeat: no-repeat;background-position: 0 center; -webkit-background-size: 59px 69px; background-size: 59px 69px; width:59px; height:69px;}
+.point-display .player-match-option label[for*="option-02"] {margin-bottom: 9px;}
+.point-display .player-match-option input { width:0; height:0; margin-right: 21px; clip: rect(0,0,0,0);}
+.point-display .player-match-option span { position:absolute; top:-9999px; left:-9999px; width:0; height:0;}
+.modal.round-res {font-family: 'Noto KR Black';}
+.modal-header {background-color: #455160;}
+.modal-header.chk-score {background-color: #0f1b29; font-size: 24px; font-weight: 900; border-bottom: none;}
+.modal-header .close {font-size: 36px; text-shadow: none; opacity: 1; color: #fff; margin-top: -6px;}
+.modal-header.chk-score .modal-title {font-size: 24px; letter-spacing: -0.02em;}
+.round-res .modal-body,
+.round-res .modal-footer {background-color: #455160;}
+.round-res .modal-body {padding-top: 10px; padding-bottom: 0;}
+.round-res .modal-body h2 {font-family: 'Noto KR Bold'; font-size: 28px; font-weight: 900; text-align: center; color: #fff000; margin-top: 0px; margin-bottom: 15px;}
+.round-res .modal-body h2 .left-arrow,
+.round-res .modal-body h2 .right-arrow {display: inline-block; width: 38px; height: 20px; position: relative; top: -3px}
+.round-res .modal-body h2 .left-arrow {margin-right: 12px;}
+.round-res .modal-body h2 .right-arrow {margin-left: 12px;}
+.round-res .modal-body h2 .left-arrow img,
+.round-res .modal-body h2 .right-arrow img {width: 100%;}
+.round-res .modal-footer {border-top: 0px;}
+.round-res .modal-footer .btn-film {background-color: #f26822;}
+.modal-title, .repair-title {color: #fff; font-size: 21px; font-weight: 900; text-align: center;}
+
+.table.result-table {width: auto; margin-bottom: 0;}
+.table.result-table thead {border-bottom: 1px solid #ccc;}
+.table.result-table thead th {color: #000;}
+/*.result-table {border: 1px solid #000; border-radius: 10px;}*/
+.result-table th {background-color: #b2b9c1; color: #333; font-weight: 600; text-align: center;}
+.result-table th:first-child, .result-table th:last-child {font-size: 22px;}
+.result-table > thead > tr > th {background-color: #d3d7dc; border-bottom: none;}
+.result-table > thead > tr > th:nth-child(2) {background-color: #b2b9c1;border-right: 1px solid #ccc; border-left: 1px solid #ccc;}
+.result-table tbody td:first-child {width: 200px;}
+.result-table tbody td:nth-child(2) {width: 55px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+.result-table tbody td:nth-child(3) {width: 64px;}
+.result-table tbody td:nth-child(4) {width: 55px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+.result-table tbody td:last-child {width: 200px;}
+.table.result-table tbody tr td, .table tbody tr th {border-bottom: 1px solid #ddd;}
+.table.result-table tbody td {font-size: 18px; font-weight: 600; text-align: center; }
+.tourney a.btn-save, a.btn-repair, .a.btn-close {color: #fff; font-size: 17px; font-weight: 900; width: 276px; height: 48px; line-height: 48px; padding-top: 0;}
+/*.tourney a.btn:active, .tourney a.btn:focus, .tourney a.btn:hover {color: #fff;}*/
+#show-tourney-pop a.btn-repair.btn-ins, #show-tourney-pop a.btn-close.btn-ins {width: 130px; margin-right: 10px;}
+.tourney a.btn-save,
+.tourney a.btn-repair {background-color: #ef5e20; margin-right: 10px;}
+#show-tourney-pop a.btn-close {width: 276px; height: 48px; line-height: 48px; background-color: #0f1b29; color: #fff; padding-top: 0px; }
+#show-tourney-pop .modal-footer a.btn-check {background-color: #ef5e20; color: #fff; width: 276px; height: 48px; line-height: 48px; margin-top: 0; margin-right: 10px; padding-top: 0;}
+#show-tourney-pop a.btn-check:hover, #show-tourney-pop a.btn-check:focus, #show-tourney-pop a.btn-check:active {color: #fff;}
+.round-res .display-board {width: 100%; height: auto; margin-left: 0; margin-bottom: 14px;}
+.round-res .display-board .disp-win {background-repeat: no-repeat; -webkit-background-size: 100% 15px;background-size: 100% 15px; background-position: center 5px; color: #15dbff; font-size: 24px; font-family: 'Noto KR Bold';}
+.player-point p.player-school {font-size: 12px; margin-top: -5px; margin-bottom: 0px;}
+.player-1-point p.player-school {color: #000; margin-bottom: 5px;}
+#round-res p.player-school {width: 75px; overflow: hidden; text-overflow: clip; white-space: nowrap;}
+#round-res .player-1-point p.player-school {color: #888}
+#round-res .player-2-point p.player-school {color: #84b2ff}
+.player-2-point p.player-school {color: #fff;}
+.round-res .player-list,
+.round-res .player-point-disp,
+.round-res .point-display .disp-title,
+.round-res .win-type {float: left;}
+.round-res .player-list {border-top: none; width: 128px; padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0;}
+.round-res ul.player-list li {width: 100%; text-align: center; margin-top: 5px; margin-bottom: 0; float: none;}
+.round-res ul.player-list li:last-child {margin-top: 0;}
+.round-res .player-list li:first-child,
+.round-res .disp-title dt,
+.round-res .win-type dt {border-bottom: 1px solid #1f2938; height: 38px; line-height: 38px; margin: 0;}
+.round-res .point-display .disp-title { width: 65px; }
+.round-res .point-display .disp-title:first-child {border-left: 1px solid #363f4b; }
+.round-res .point-display .player-name {font-family: 'Noto KR Bold'; font-size: 24px; width: auto; height: auto; padding-top: 0px; margin-top: 2px;}
+.round-res .point-display .player-name.disp-win {padding-top: 15px;}
+#round-res .point-display .player-name {padding-top: 17px;}
+#round-res .player-2-point .player-name {margin-top: 0px;}
+.round-res .disp-title dt, 
+.round-res .disp-title dd,
+.round-res .win-type dt, 
+.round-res .win-type dd {display: block; text-align: center;} 
+.round-res .disp-title dt { font-size: 16px; height: 39px;}
+.round-res .win-type dt { height: 37px; line-height: 33px; }
+.round-res .disp-title dd,
+.round-res .win-type dd { border-bottom: 1px solid #1f2938; padding-top: 10px; padding-bottom: 10px; }
+.round-res .disp-title dd:last-child,
+.round-res .win-type dd:last-child {border-bottom: 0px;}
+.player-point-disp dt,
+.player-point-disp dd,
+.round-res .win-type dt,
+.round-res .win-type dd { padding-left: 10px; padding-bottom: 3px; }
+.player-point-disp dl:last-child dt,
+.player-point-disp dl:last-child dd { padding-left: 0; }
+.round-res .disp-title .score,
+.round-res .win-type .score {display: inline-block; height: 55px; padding: 0;}
+.round-res .disp-title .score {font-family: 'Noto KR Black'; font-size: 34px; letter-spacing: -.05em; width: 55px; padding-top: 6px; }
+.round-res .disp-title:last-child .score,
+.round-res .win-type .score {width: 45px;}
+.round-res .win-type {box-sizing: border-box; border: 2px solid #8e9daf;}
+.win-type dl:last-child dt, 
+.win-type dl:last-child dd {padding-right: 10px;}
+.round-res .win-type dl {float: left;}
+.round-res .win-type .on .score { background-repeat: no-repeat; -webkit-background-size: 45px 55px; background-size: 45px 55px; border: none; border-radius: 0}
+.round-res .win-type .on .score:after {width: 0;}
+
+.round-res .vs-text {font-family: 'Noto KR Bold'; font-size: 24px; font-weight: 900; padding-top: 5px;}
+.modal-footer .btn + .btn {margin-left: 0px;}
+
+.record {background-color: #e1e1e1; font-family: 'NanumGothic'; font-size: 15px; font-weight: bold; width: 568px; height: 230px; padding-top: 14px; overflow-y: scroll; -webkit-box-shadow: inset 0px -10px 20px 2px rgba(0,0,0,0.3); -moz-box-shadow: inset 0px -10px 20px 2px rgba(0,0,0,0.3); box-shadow: inset 0px -10px 20px 2px rgba(0,0,0,0.3);}
+/* video 시청 */
+#DP_GameVideo {height: 315px; padding-top: 0; padding-bottom: 0; -webkit-box-shadow: none; box-shadow: none;}
+
+.record > h3 {font-family: 'Noto KR Bold'; font-size: 20px; font-weight: 900; letter-spacing: -.02em; border-bottom: 2px solid #d1d1d1; color: #333333; padding-top: 0; padding-bottom: 13px; margin-left: 18px; margin-right: 18px; margin-top: 0;}
+.record ul { margin-left: 20px; margin-right: 20px;}
+.record ul li {padding-bottom: 12px;}
+.record ul .mine {color: #004ed0;}
+.record ul .opponent {color: #666666;}
+.record ul .recent {font-weight: bold;}
+.modal-footer {background-color: #455160; text-align: center; padding-left: 0; padding-right: 0;}
+.round-res .modal-footer .btn-repair {font-family: 'NanumGothic'; width: 277px;}
+.modal-footer a.btn-repair.btn-ins, .modal-footer a.btn-close.btn-ins {width: 130px; }
+/* 대진결과 그룹 */
+.round-res-group .display-board li {text-align: center; width: 250px; padding-top: 48px; float: left;}
+.round-res-group .display-board .avengers {position: relative; color: #15dbff;}
+.round-res-group .display-board .avengers:after {position: absolute; top: 26px; left: calc(50% - 28px); content: ''; background-repeat: no-repeat; width: 56px; height: 14px;}
+.round-res-group .display-board .vers {font-family: 'Noto KR Bold'; font-size: 44px; font-weight: bold; width: 60px;}
+.round-res-group .display-board .vers span {display: inline-block; margin-top: 20px;}
+.round-res-group .display-board .groups {font-size: 26px; padding-bottom: 11px;}
+.round-res-group .display-board .total-point {font-size: 42px; padding-bottom: 25px;}
+.round-res-group .team-name,
+.round-res-group .record-title {font-family: 'Noto KR Bold'; font-weight: bold;}
+.round-res-group .team-name {font-size: 18px;}
+.round-res-group .record-title {font-size: 16px;}
+.round-res-group .record .team-list ul {height: 35px; line-height: 34px; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; border-bottom: 1px solid #cccccc;}
+.round-res-group .record {padding-top: 25px; padding-bottom: 25px;}
+.round-res-group .record li {float: left;}
+.round-res-group .record li {background-color: #fff;text-align: center; width: 84px; border-right: 1px solid #ededed; padding-bottom: 0;}
+.round-res-group .record li:last-child {border-right: 0;}
+.round-res-group .team-name {margin-left: 19px; margin-right: 19px;}
+.round-res-group .team-name li {background-color: #a6a6a6; text-align: center; width: 50%; height: 34px; line-height: 34px; padding-bottom: 0; border-right: 1px solid #ccc;}
+.round-res-group .record-title li {background-color: #e2e2e2; border-right: 1px solid #d2d2d2;}
+.round-res-group .record ul:not(.team-name) li:nth-child(3) {width: 87px;}
+.round-res-group .record ul:not(.team-name) li:last-child {width: 86px;}
+
+/* 협회코드 */
+.modal-footer .ins_group {display: none;}
+.modal-footer label {font-size: 19px; font-weight: normal; color: #fff; margin-right: 10px;}
+.modal-footer input.ins_code {border: 2px solid #ef5e20; width: 186px; height: 48px; padding-left: 10px; margin-right: 10px;}
+.modal-footer .wrong-pass {text-align: center; font-size: 16px; font-weight: 600; color: #ff6c00;}
+
+/* 2016-12-08 수정 */
+.pop-point-display { position:relative;}
+.pop-point-display .display-board .point-title {display: table;margin-left:0;}
+.pop-point-display .display-board .point-title li {width:50px; margin-right:10px; float: left; }
+.pop-point-display .display-board .point-title li:nth-child(1) { width:107px;}
+.pop-point-display .display-board .point-title li:nth-child(5) {width:50px;padding-top:17px; margin-right:10px; vertical-align:top; line-height:100%;}
+.pop-point-display .display-board .point-title li:nth-child(6) {width:128px; padding-top:5px; line-height:1.2;}
+.pop-point-display .display-board .point-title li:nth-child(7) {width:70px; margin:0;}
+
+.pop-point-display .vs { position:absolute; top:128px; left:33px; width:43px; height:26px; line-height:22px; text-align:center; color:#fff; font-size:20px; font-weight:bold; border-radius:20px; background:#04101f;}
+.pop-point-display .player-1-point li:first-child .player-name {display: block; color:#222; font-size:18px;}
+.pop-point-display .player-2-point li:first-child .player-name {display: block; color:#fff; font-size: 18px;}
+.pop-point-display .player-1-point li:first-child a {margin-top: -10px;}
+.pop-point-display .display-board .player-point li:first-child { display:block; width:107px;}
+.pop-point-display .player-1-point, 
+.pop-point-display .display-board .player-2-point { padding-left:0;}
+.pop-point-display .display-board .score {width:50px; height:55px; padding-top: 15px;}
+
+.pop-point-display .point-display .select-win { width:128px; height:55px;}
+#round-res .select-win {line-height: 55px;}
+.pop-point-display .point-display .player-match-option {width:72px; height: 173px;}
+#round-res .player-match-option {height: 171px;}
+.pop-point-display .point-display .player-match-option label { width:51px; height: 52px; background-size: contain; margin-top: 18px;}
+#round-res .player-match-option label {height: 58px; -webkit-background-size: 51px 58px; background-size: 51px 58px; margin-bottom: 25px; margin-top: 12px;}
+.pop-point-display .point-display .player-match-option label:nth-child(2) {height: 52px; margin-top: 16px;}
+#round-res .player-match-option label:nth-child(2) {margin-top: 0;}
+/* E: 결과보기 모달 */
+
+.tourney .btn-guide {margin-bottom: 20px;}
+.tourney .btn-guide,
+.tourney-img .btn-guide {margin-top: 40px;}
+.tourney .btn-guide p:first-child,
+.tourney-img .btn-guide p:first-child {text-align: center; padding: 5px 0; background-color: #f3f3f3; width: 260px; margin: 0 auto;}
+.tourney .btn-guide p:nth-child(2),
+.tourney-img .btn-guide p:nth-child(2) {margin-top: 10px;}
+
+/**
+ * S: 5개 대진표 
+ */
+/**
+ * S: 5개 대진표 
+ */
+.tourney.t-2,
+.tourney.t-3,
+.tourney.t-4,
+.tourney.t-5 {margin-top: 30px;}
+.sub.tourney .tourney.t-3,
+.sub.tourney .tourney.t-4,
+.sub.tourney .tourney.t-5 {width: 55%;}
+.sub.tourney .tourney.t-3 .tourney_tit,
+.sub.tourney .tourney.t-4 .tourney_tit,
+.sub.tourney .tourney.t-5 .tourney_tit {margin-bottom: 10px;}
+.sub.tourney .tourney.t-3 .left-side,
+.sub.tourney .tourney.t-4 .left-side,
+.sub.tourney .tourney.t-5 .left-side {margin-left: 60px;}
+
+.tourney.t-1 .tourney_tit,
+.tourney.t-2 .tourney_tit,
+.tourney.t-3 .tourney_tit,
+.tourney.t-4 .tourney_tit,
+.tourney.t-5 .tourney_tit { display: block; }
+.tourney.t-1 .tourney_tit .txt,
+.tourney.t-2 .tourney_tit .txt,
+.tourney.t-3 .tourney_tit .txt,
+.tourney.t-4 .tourney_tit .txt,
+.tourney.t-5 .tourney_tit .txt {display: inline-block; border: 1px solid #333; background-color: #445263; color: #fff; font-family: 'Noto KR Bold'; font-size: 24px; border-radius: 20px; padding: 5px 20px;}
+.IJF_tourney .tourney_tit .txt {display: inline-block;font-size: 16px;background-color: #445263;color: #fff;border-radius: 40px;padding: 10px 40px;}
+/* E: 5개 대진표 */
+/* E: 5개 대진표 */
+
+/**
+ * S: 영상 제공 불가 안내 텍스트
+ */
+.sub.tourney .guide-txt.show-film-guide {background-color: #8b97a0; color: #fff; font-size: 16px; width: 620px; line-height: 150%; padding: 5px; margin: 0 auto; margin-top: 15px;}
+/* E: 영상 제공 불가 안내 텍스트 */
+
+
+/**
+ * S: 대진표, 토너먼트 
+ */
+.player-name.winner-golden {background-image: url('../../dist/imgs/tournerment/golden-medal.png');}
+.player-name.winner-silver {background-image: url('../../dist/imgs/tournerment/silver-medal.png');}
+.player-name.winner-bronze {background-image: url('../../dist/imgs/tournerment/bronze-medal.png');}
+
+.final-div .line-div .btn-look.half,
+.final-div .line-div .btn-look.half:hover,
+.final-div .line-div .btn-look.half:focus,
+.final-div .line-div .btn-look.half:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-half.svg');}
+.final-div .line-div .btn-look.full,
+.final-div .line-div .btn-look.full:hover,
+.final-div .line-div .btn-look.full:focus,
+.final-div .line-div .btn-look.full:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-full.svg');}
+.final-div .line-div .btn-look.regist,
+.final-div .line-div .btn-look.regist:hover,
+.final-div .line-div .btn-look.regist:focus,
+.final-div .line-div .btn-look.regist:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-regist.svg');}
+.final-div .line-div .btn-look.handy,
+.final-div .line-div .btn-look.handy:hover,
+.final-div .line-div .btn-look.handy:focus,
+.final-div .line-div .btn-look.handy:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-handy.svg');}
+
+.final-div .line-div .btn-look.enroll,
+.final-div .line-div .btn-look.enroll:hover,
+.final-div .line-div .btn-look.enroll:focus,
+.final-div .line-div .btn-look.enroll:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-enroll.svg');}
+
+.final-div .line-div .btn-look.time-in,
+.final-div .line-div .btn-look.time-in:hover,
+.final-div .line-div .btn-look.time-in:focus,
+.final-div .line-div .btn-look.time-in:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-time-in.svg');}
+
+.final-div .line-div .btn-look.time-out,
+.final-div .line-div .btn-look.time-out:hover,
+.final-div .line-div .btn-look.time-out:focus,
+.final-div .line-div .btn-look.time-out:active {background-image: url('../../dist/imgs/tournerment/btn-F-look-time-out.svg');}
+.final-div .line-div .btn-look:hover, .final-div .line-div .btn-look:focus, .final-div .line-div .btn-look:active { background-image: url('../../dist/imgs/tournerment/btn-F-look.svg');}
+.final-div .line-div .btn-look {background-image: url('../../dist/imgs/tournerment/btn-F-look.svg');}
+
+/* 영상 미등록 버튼 */
+a.btn.btn-look.no-movie-clip, a.btn.btn-look.no-movie-clip:hover, a.btn.btn-look.no-movie-clip:focus, a.btn.btn-look.no-movie-clip:active {background-image: url('../../dist/imgs/tournerment/no-movie-clip-r.svg'); background-repeat: no-repeat; -webkit-background-size: contain; background-size: contain; background-position: center center; background-color: transparent; width: 26px; height: 21px; line-height: 21px; padding-right: 3px; border: none; border-radius: 0; color: #fff;}
+.right-side a.btn.btn-look.no-movie-clip, .right-side a.btn.btn-look.no-movie-clip:hover, .right-side a.btn.btn-look.no-movie-clip:focus, .right-side a.btn.btn-look.no-movie-clip:active {background-image: url('../../dist/imgs/tournerment/no-movie-clip-l.svg'); padding-right: 0;}
+.final-div .line-div a.btn-look.no-movie-clip, .final-div .line-div a.btn-look.no-movie-clip:hover, .final-div .line-div a.btn-look .no-movie-clip:focus, .final-div .line-div a.btn-look.no-movie-clip:active {background-image: url('../../dist/imgs/tournerment/no-movie-clip-t.svg'); padding-right: 0;}
+/* .btn-guide .btn.btn-look.no-movie-clip {background-image: url('../../dist/imgs/tournerment/no-movie-clip.svg'); padding-right: 0;} */
+
+.btn-look {/*color: #fff;*/ position: relative; background-image: url('../../dist/imgs/tournerment/btn-L-look.svg');}
+a.btn-look.enroll, a.btn-look.enroll:hover, a.btn-look.enroll:focus, a.btn-look.enroll:active {background-image: url(../../dist/imgs/tournerment/btn-L-look-enroll.svg)};
+.right-side a.btn-look.enroll, .right-side a.btn-look.enroll:hover, .right-side a.btn-look.enroll:focus, .right-side a.btn-look.enroll:active {background-image: url(../../dist/imgs/tournerment/btn-R-look-enroll.svg);}
+.right-side a.btn-look.handy, .right-side a.btn-look.handy:hover, .right-side a.btn-look.handy:focus, .right-side a.btn-look.handy:active {background-image: url(../../dist/imgs/tournerment/btn-R-handy.svg);}
+a.btn-look.handy, a.btn-look.handy:hover, a.btn-look.handy:focus, a.btn-look.handy:active {background-image: url(../../dist/imgs/tournerment/btn-L-handy.svg);}
+/* E: 대진표, 토너먼트 
+
+/**
+ * S: 대진표, 토너먼트 결과보기 모달 
+ */
+.left-side a.btn-look.half:hover, .left-side a.btn-look.half:focus, .left-side a.btn-look.half:active {background-image: url('../../dist/imgs/tournerment/btn-L-look-half.svg');}
+.left-side a.btn-look.full:hover, .left-side a.btn-look.full:focus, .left-side a.btn-look.full:active {background-image: url('../../dist/imgs/tournerment/btn-L-look-full.svg');}
+.left-side a.btn-look.regist:hover, .left-side a.btn-look.regist:focus, .left-side a.btn-look.regist:active {background-image: url('../../dist/imgs/tournerment/btn-L-look-regist.svg');}
+.color-guide .btn-look.full {background-image: url('../../dist/imgs/tournerment/btn-L-look-full.svg');}
+.left-side .btn-look.full {background-image: url('../../dist/imgs/tournerment/btn-L-look-full.svg'); }
+.right-side .btn-look {background-image: url('../../dist/imgs/tournerment/btn-R-look.svg');}
+.right-side .btn-look.full {background-image: url('../../dist/imgs/tournerment/btn-R-look-full.svg'); }
+.btn-look.half {background-image: url('../../dist/imgs/tournerment/btn-L-look-half.svg'); }
+.right-side .btn-look.half {background-image: url('../../dist/imgs/tournerment/btn-R-look-half.svg');}
+.btn-look.regist {background-image: url('../../dist/imgs/tournerment/btn-L-look-regist.svg'); }\
+.right-side .btn-look.regist {background-image: url('../../dist/imgs/tournerment/btn-R-look-regist.svg'); }
+a.btn-look.time-in, a.btn-look.time-in:hover, a.btn-look.time-in:focus, a.btn-look.time-in:active {background-image: url(../../dist/imgs/tournerment/btn-L-look-time-in.svg);}
+.right-side a.btn-look.time-in, .right-side a.btn-look.time-in:hover, .right-side a.btn-look.time-in:focus, .right-side a.btn-look.time-in:active {background-image: url(../../dist/imgs/tournerment/btn-R-look-time-in.svg);}
+a.btn-look.time-out, a.btn-look.time-out:hover, a.btn-look.time-out:focus, a.btn-look.time-out:active {background-image: url(../../dist/imgs/tournerment/btn-L-look-time-out.svg); }
+.right-side a.btn-look.time-out, .right-side a.btn-look.time-out:hover, .right-side a.btn-look.time-out:focus, .right-side a.btn-look.time-out:active {background-image: url(../../dist/imgs/tournerment/btn-R-look-time-out.svg);}
+
+/**
+ * modal 로 변경
+ */
+.tourney_modal .modal-dialog {width: 1280px;}
+.tourney_modal .modal-content {background-color: #354354;padding-left: 5px; padding-right: 5px; padding-bottom: 5px;border: none;border-radius: 0; margin-bottom:40px;}
+.sub.sub-main.tourney {border: none;}
+.tourney_modal .modal-header {font-family: 'NanumBarunGothic';font-size: 24px;font-weight: bold;text-align: center;background-color: #354354;color: #fff;}
+.tourney_modal .modal-header h1 {font-size:22px;}
+.tourney_modal .modal-header .btn_close {position: absolute; top: 8px; right: 10px;}
+.tourney_modal .modal-body {background-color: #fff;padding: 0;}
+
+/**
+ * S: 리그전 
+ */
+.list_league { font-family: 'Noto KR Bold'; padding-top:30px; padding-bottom:40px; text-align:center; /*background:#eeeff4;*/}
+/*.list_league .top-league { margin-bottom:30px;}
+.list_league .top-league input { height:23px; border:1px solid #aaa;}*/
+.list_league .league-tab { display:inline-block; overflow:hidden; margin:0; padding:0; background:#f0f0f0; border:1px solid #d5d5d5; border-radius:3px;}
+.list_league .league-tab li { float:left; width:99px; text-align:center; background: url('images/tournerment/score/bar.png') no-repeat 0 50%; background-size:2px 21px;}
+.list_league .league-tab li:first-child { font-weight:bold; background:none;}
+.list_league .league-tab li a { display:block; width:100%; padding:6px 0; color:#777; font-size:16px;}
+.list_league .league-tab li.on a,
+.list_league .league-tab li a:hover,
+.list_league .league-tab li a:active,
+.list_league .league-tab li a:focus { color:#2e6fa9;}
+.list_league .league .color-guide .guide-cont { margin-bottom:20px; border:1px solid #747b82;}
+
+.list_league table td .player-name { font-size:16px;}
+.list_league table td .player-name span { vertical-align:top; line-height:20px;}
+.list_league p { margin:0;}
+.list_league h3 { display:inline-block; text-align:left; margin:0; padding: 0 0 15px 13px; font-size: 22px; font-weight: bold; color: #333; background: url(images/tournerment/stat/icon_tit.png) no-repeat 0 3px;}
+
+.list_league table { margin:0 auto 30px; border:1px solid #aaa;  background:#eeeff4;}
+.list_league table td { width:123px; padding:10px 0; line-height:1.2; text-align:center; font-size:16px !important; font-weight:bold; background:#fff;}
+.list_league table tr:first-child td { height:58px; font-size:20px; background:#e2e2e2;}
+.list_league table tr:first-child td .player-name { margin:0; color:#333; font-size:20px;}
+.list_league table tr:first-child td .player-school { margin:0; color:#fd5500; font-size:16px; font-weight:normal;}
+.list_league table tr:first-child td:first-child { color:#fff; font-size:20px !important; background:#2e6fa9;}
+.list_league table td:first-child { font-size:20px; background:#d3e0eb; }
+.list_league table td:first-child .player-name { font-size:20px;}
+.list_league table td:first-child .player-school { margin:0; color:#fd5500; font-size:16px; font-weight:normal;}
+.list_league table td .win { color:#2e6da7;}
+.list_league table td .lose { color:#fd5500;}
+
+.list_league table td.no { color:#fff; background:#616971;}
+.list_league table td.write { background:#eeeff4 !important;}
+.list_league table td.disabled { color:#888;}
+
+.list_league table td.score { border-left:3px solid #aaa;}
+.list_league table td.rank { border-right:3px solid #aaa;}
+
+.list_league table tr:first-child td.score,
+.list_league table tr:first-child td.rank { border-top:3px solid #aaa;}
+.list_league table tr:last-child td.score,
+.list_league table tr:last-child td.rank { border-bottom:3px solid #aaa;}
+/* E: 리그전 */
+
+/**
+ * S: 5명 토너먼트& 리그전 
+ */
+.tourney.game-five {padding-top: 120px; font-family:"Noto KR Bold";}
+.tourney.game-five tr {border-bottom:1px solid #666;}
+.tourney.game-five tr:last-child {border-bottom:none;}
+.tourney.game-five td {border-right:1px solid #666;}
+.tourney.game-five td:last-child {border-right:none;} 
+.tourney.game-five tr:nth-child(1) td:nth-child(1),
+.tourney.game-five tr:nth-child(1) td:nth-child(2),
+.tourney.game-five tr:nth-child(1) td:nth-child(3),
+.tourney.game-five tr:nth-child(1) td:nth-child(4)
+{background:#eeeff4;}
+.tourney.game-five tr:nth-child(2) td:nth-child(1),
+.tourney.game-five tr:nth-child(3) td:nth-child(1),
+.tourney.game-five tr:nth-child(4) td:nth-child(1)
+{background:#eeeff4;}
+.tourney.game-five tr:nth-child(1) td:nth-child(5),
+.tourney.game-five tr:nth-child(1) td:nth-child(6)
+ {background:#9396a0; color:#fff;}
+ .tourney.game-five tr:nth-child(1) td:nth-child(6) {width: 60px;}
+.tourney.game-five .right-side {vertical-align: middle; margin-top: -46px;}
+.tourney.game-five .league-tourney .no {background-color: #333;}
+.tourney.game-five .right-side .league-tourney.group {width: 680px;}
+.tourney.game-five .right-side {border:4px solid #666;}
+.IJF_tourney .tourney.game-five .right-side table {width: 620px;}
+.tourney.game-five .right-side .player-name {font-size:14px; margin-top:7px; margin-bottom:5px;}
+.tourney.game-five .right-side .player-school {font-size:13px;}
+.tourney.game-five .btn-write {margin-top:-3px; font-size:12px;}
+.tourney-bronze {padding-bottom:60px;}
+.tourney-bronze h4 {background:#747b82; text-align:center; width:140px; border-radius:30px; padding:10px 0; margin:28px auto 45px auto; font-size:19px; font-family:"Noto KR Bold"; color:#fff;}
+
+/* E: 5명 토너먼트& 리그전 */

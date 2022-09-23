@@ -1,0 +1,169 @@
+table{border-collapse:inherit;}
+/* snb 메뉴 화살표 */
+#snb .panel-title.on a {background-image: url(../../dist/imgs/main/bg_snb_sub.png)} 
+
+/* 시도지부 산하연맹 배경 */
+.subdivision_list h5.federation {background:url(../../dist/imgs/info/info_bg_1.png);width:101px;height:101px;}
+
+/* 시도지부 시도지부 배경 */
+.subdivision_list h5 {background:url(../../dist/imgs/info/info_bg_2.png);width:101px;height:101px;}
+
+/* 경영공시 아이콘 배경 */
+.management .btn_file{background:url(../../dist/imgs/sub/icon_file_blue.png) no-repeat 0 0;}
+
+/* 인사말 배경 */
+.introduce { background:url(../../dist/imgs/sub/img_introduce.jpg) no-repeat 613px 165px;}
+.introduce h4 {background:url(../../dist/imgs/sub/logo_judo_skyblue.png) no-repeat 0 0;}
+
+/* 대회일정 날자 배경 */
+.dh_schedule .panel-title .left_text span{background:url(../../dist/imgs/match/schedule_btn_bg.png) no-repeat;}
+
+/* 대회일정 기간, 장소, 주최 배경 */
+/*.dh_schedule .panel-body .top_line .title{background:url(../../dist/imgs/match/schedule_title_bg.png) no-repeat;}*/
+
+/* 대회일정 리스트넴 아이콘 */
+.dh_schedule .panel-body .btm_list ul li .left_name{background:url(../../dist/imgs/match/schedule_icon_1.png) no-repeat 0px 3px;}
+
+
+/*페이징 아이콘*/
+.pagination > li.prev_page a{ background:url(../../dist/imgs/sub/btn_prev_page.png) no-repeat 50% 50%;}
+.pagination > li.prev_page a:hover,
+.pagination > li.prev_page a:focus {background:url(../../dist/imgs/sub/btn_prev_page_on.png) no-repeat 50% 50%;}
+.pagination > li.prev a {background:url(../../dist/imgs/sub/btn_board_prev.png) no-repeat 50% 50%;}
+.pagination > li.prev a:hover,
+.pagination > li.prev a:focus {background:url(../../dist/imgs/sub/btn_board_prev_on.png) no-repeat 50% 50%;}
+.pagination > li.next a {background:url(../../dist/imgs/sub/btn_board_next.png) no-repeat 50% 50%;}
+.pagination > li.next a:hover,
+.pagination > li.next a:focus {background:url(../../dist/imgs/sub/btn_board_next_on.png) no-repeat 50% 50%;}
+.pagination > li.next_page a{ background:url(../../dist/imgs/sub/btn_next_page.png) no-repeat 50% 50%;}
+.pagination > li.next_page a:hover,
+.pagination > li.next_page a:hover {background: url(../../dist/imgs/sub/btn_next_page_on.png) no-repeat 50% 50%;}
+
+
+/*대회일정표 팝업 타이틀 배경*/
+/*.result_popup .top_con ul li .title{background:url(../../dist/imgs/match/pop_btn_bg.png) no-repeat;}*/
+
+/*대회일정표 팝업 개인전 배경*/
+.result_popup .pou_table .text_center .btn_1{background:url(../../dist/imgs/match/schedule_division1.png) no-repeat;}
+.result_popup .pou_table .text_center .btn_2{background:url(../../dist/imgs/match/schedule_division2.png) no-repeat;}
+
+/*국내대회 대진표 리스트 아이콘*/
+.tournament_intro ul li a{background:url(../../dist/imgs/sub/icon_list_off.png) no-repeat 99% 50%;}
+.tournament_intro ul li a:hover,
+.tournament_intro ul li a:active,
+.tournament_intro ul li a:focus {background:url(../../dist/imgs/sub/icon_list_on.png) no-repeat 99% 50% #f3f5f7;}
+
+/*국제대회 대회일정 리스트 아이콘*/
+.dh_schedule .panel-body .btm_list ul li .right_text a{background:url(../../dist/imgs/match/schedule_icon_2.png) no-repeat;}
+
+
+/* 대회참가신청 로그인 */
+.req_login .req_login_box .login_box .in_box ul li .in_id{background: url(../../dist/imgs/match/login_icon_01.png) no-repeat 13px 13px;}
+.req_login .req_login_box .login_box .in_box ul li .in_password{background: url(../../dist/imgs/match/login_icon_02.png) no-repeat 13px 13px;}
+
+/* 대회참가신청 팀코드찾기 */
+.req_find .req_find_box .find_box .box_title{background: url(../../dist/imgs/match/match_icon_1.png) no-repeat 0px 0px;}
+
+/* 팀선수정보 국가대표팀 아이콘 */
+.country_team .photo_title{background:url(../../dist/imgs/player/player_icon_1.png) no-repeat 0 3px;}
+
+/* MANAGEMENT 협회정보 > 협회소개 > 임원현황 */
+.staff_list .staff_img { background: url('../../dist/imgs/info/staff_photo_bg.png'); }
+
+/* HISTORY 협회정보 > 연혁 */
+.history_inner {overflow:hidden; width:100%; margin:44px 0 0 0; background:url(../../dist/imgs/sub/bg_history.png) repeat-y 10px 0;}
+
+/* MAP 협회정보 > 오시는 길 */
+.way01 {float:left; width:378px; padding:0 0 0 120px; height:115px; background:url(../../dist/imgs/sub/icon_subway.png) no-repeat 0 14px;}
+.way01 {background:url(../../dist/imgs/sub/icon_subway.png) no-repeat;}
+.way02 {background:url(../../dist/imgs/sub/icon_car.png) no-repeat;}
+
+/* HISTORY 협회정보 > 연혁 */
+.history_inner {background:url(../../dist/imgs/sub/bg_history.png) repeat-y 10px 0;}
+.history table th {background-image:url(../../dist/imgs/sub/line_history.png), url(../../dist/imgs/sub/icon_history.png); background-repeat:no-repeat;}
+
+
+/* SUBDIVISION 협회정보 > 협회소개 > 시도지부 */
+.subdivision_list ul li {background:url(../../dist/imgs/sub/icon_sqaure.png) no-repeat 0 9px;}
+
+
+
+
+/* MEMBER 로그인 배경 */
+.sub_top_banner.member_bg{background:url(../../dist/imgs/member/member_bg.jpg) no-repeat 0 0;}
+/* MEMBER 아이디 아이콘 */
+.login_page .login_box .login_inbox .in_box .id{background:url(../../dist/imgs/member/login_icon_01.png) no-repeat 13px 15px;}
+/* MEMBER 패스워드 아이콘 */
+.login_page .login_box .login_inbox .in_box .pass{background:url(../../dist/imgs/member/login_icon_02.png) no-repeat 13px 15px;}
+
+
+/* 휴패폰 안심 본인인증 아이콘 */
+.find_id .left_phone .phone{background:url(../../dist/imgs/member/login_icon_03.png) no-repeat;width:40px;height:60px;}
+
+/* 아이핀 본인인증 아이콘 */
+.find_id .right_ipin .ipin{background:url(../../dist/imgs/member/login_icon_04.png) no-repeat;width:46px;height:60px;}
+
+
+/* 유도장정보 아이콘 */
+.gym_result .gym_list li.address {background:url(../../dist/imgs/sub/icon_address.png) no-repeat 0 7px;}
+.gym_result .gym_list li.tel {background:url(../../dist/imgs/sub/icon_tel.png) no-repeat 0 8px;}
+.gym_result .gym_list li.director {background:url(../../dist/imgs/sub/icon_director.png) no-repeat 0 6px;}
+
+
+
+
+.community_list .btn_list.right .btn_skyblue .icon_pen{background:url(../../dist/imgs/sub/icon_pen.png) no-repeat 100% 50%;}
+.community_view .file_name{background:url(../../dist/imgs/sub/icon_file.png) no-repeat 0 0;}
+.reply_list .btn_reply a {background:url(../../dist/imgs/sub/bar_reply.png) no-repeat 100% 50%;}
+
+
+.community_view .btn_file_del{background:url(../../dist/imgs/community/file_delete.png) no-repeat 0 0;}
+.community_view .btn_file_del_2{background:url(../../dist/imgs/community/file_delete_2.png) no-repeat 0 0;}
+.community_view .btn_file_plus{background:url(../../dist/imgs/community/file_plus.png) no-repeat 0 0;}
+
+/* 회원가입 아이콘 */
+.login_page .terms .t_title{background:url(../../dist/imgs/member/member_icon_1.png) no-repeat 0 2px;}
+.login_page .information_input .t_title{background:url(../../dist/imgs/member/member_icon_1.png) no-repeat 0 2px;}
+.login_page .join_division ul li .left_title{background:url(../../dist/imgs/member/left_line.png) no-repeat 0 13px;}
+
+/* 증명서 발급아낸 아이콘 */
+.cert_info .table_box tr td p.con_title{background:url(../../dist/imgs/online/online_icon_1.png) no-repeat 0 4px;}
+
+/* 증명서 발급 박스 아이콘 */
+.cert_game .con_box .top_icon_box .icon{background:url(../../dist/imgs/online/Online_icon1.png) no-repeat;}
+.cert_game .con_box .bottom_box_list ul li .title{background:url(../../dist/imgs/online/Online_icon2.png) no-repeat;}
+/* 증명서게시판 리스트 타이틀 아이콘 */
+.cert_game .Cert_re_list_box .list_title h1{background:url(../../dist/imgs/online/Online_icon2.png) no-repeat 0 2px;}
+
+.cert_game .Cert_re_write_box ul li .r_con .date_icon{background:url(../../dist/imgs/online/Online_icon3.png) no-repeat;}
+url(../../dist/imgs/main/main_popup_icon3.png) no-repeat -0px 0px
+.cert_game .search_box .search_con_box .date_icon{background:url(../../dist/imgs/online/Online_icon3.png) no-repeat;}
+
+.cert_game .Cert_re_view_box .view_list_box ul li .r_con .proof_box{background:url(../../dist/imgs/online/proof.png) no-repeat;}
+.cert_game .Cert_re_write_box ul li .r_con .proof_box{background:url(../../dist/imgs/online/proof.png) no-repeat;}
+
+
+
+
+.main_ranking .l_banner .logo{background:url(../../dist/imgs/main/banner_logo.png) no-repeat;}
+.main_ranking .l_banner .icon{background:url(../../dist/imgs/main/main_icon1.png) no-repeat;}
+.main_ranking .r_ranking ul li table tr td .gold_icon{background:url(../../dist/imgs/main/gold.png) no-repeat;}
+.main_ranking .r_ranking ul li table tr td .silver_icon{background:url(../../dist/imgs/main/silver.png) no-repeat;}
+.main_ranking .r_ranking ul li table tr td .bronze_icon{background:url(../../dist/imgs/main/bronze.png) no-repeat;}
+
+/* 비밀번호 찾기 인풋 아이콘 */
+.login_page .id_input input{background:url(../../dist/imgs/member/login_icon_01.png) no-repeat 10px 13px;}
+
+/* 회원정보 */
+.mypage .information_input .t_title{background:url(../../dist/imgs/mypage/mypage_icon_1.png) no-repeat 0 2px;}
+.mypage .join_division ul li .left_title{background:url(../../dist/imgs/member/left_line.png) no-repeat 0 13px;}
+
+
+
+.modal-dialog .main_ranking_popup .top_link .link_icon{background:url(../../dist/imgs/main/main_popup_icon1.png) no-repeat 0 0px;}
+.modal-dialog .main_ranking_popup .top_link .close_icon{background:url(../../dist/imgs/main/main_popup_icon2.png) no-repeat 0 0px;}
+.modal-dialog .main_ranking_popup .board_list ul .on_icon{background:url(../../dist/imgs/main/main_popup_icon3.png) no-repeat 0 0px;}
+
+.mypage .out_member_box_top_con h1{background: url(../../dist/imgs/sub/icon_title.png) no-repeat 0 0px;}
+
+

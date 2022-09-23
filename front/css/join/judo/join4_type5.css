@@ -1,0 +1,4 @@
+.join.join-4 .manager-divn .manager-sel label {width: 30%;}
+.join.join-4 .manager-divn .manager-sel label:last-child {width: 100%;}
+.join.join-4 .manager-divn .manager-sel label input {-webkit-appearance: radio;-moz-appearance: radio;appearance: radio;}
+.join.join-4 .manager-divn .manager-sel label:last-child #LeaderType {margin-left: 0;}

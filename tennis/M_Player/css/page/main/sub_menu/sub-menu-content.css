@@ -1,0 +1,12 @@
+.sub-menu-bg {background-color: #e5e5e5; height: 105px;}
+.sub-menu-bg .container {position: relative; top: -44%;}
+.sub-menu-bg .container .flex:last-child {-webkit-box-shadow:0px 2px 4px #ccc; box-shadow:0px 2px 4px #ccc;}
+
+.sub-menu ul {background-color: #fff; text-align: center;}
+.sub-menu .flex:last-child {border-top: 1px solid #ddd;}
+.sub-menu .flex li:nth-child(even) {border-left: 1px solid #ddd; border-right: 1px solid #ddd;}
+.sub-menu .link-deco {width: 1.9em; height: 2em; margin-top: 12px;}
+.sub-menu .link-deco img {height: 100%;}
+.sub-menu span:last-child {display: block; margin-bottom: 0px; padding-top: 0px; padding-bottom: 1px;}
+.sub-menu .container li a .menu-txt {display: inline-block; position: relative;}
+.sub-menu .container li a .ic-new {top: 3px; right: -20px; width: 18px; height: 18px; font-size: 0.84em;}

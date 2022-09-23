@@ -1,0 +1,319 @@
+<!-- #include file="../include/config.asp" -->
+<!-- E: config -->
+<%
+  '로그인하지 않았다면 login.asp로 이동
+' Check_Login()
+  
+  dim SportsType  : SportsType = fInject(trim(request("SportsType")))
+
+  dim cnt_JoinUs  : cnt_JoinUs = 0 '가입계정 카운트
+  
+  
+  IF SportsType = "" Then
+    Response.Write "<script>alert('잘못된 경로로 접근하셨거나 누락된 항목이 있습니다.'); history.back();</script>"
+    Response.End
+  End IF
+  
+  dim txt_JoinUs
+  
+  SELECT CASE SportsType
+
+    CASE "judo"
+  
+      '유도
+      txt_JoinUs = "<h3>유도</h3>"
+          txt_JoinUs = txt_JoinUs & "<ul class='clearfix'>"
+        
+      LSQL =  "     SELECT MemberIDX"
+      LSQL = LSQL & "   ,SD_GameIDSET"
+      LSQL = LSQL & "   ,CASE M.EnterType  "
+      LSQL = LSQL & "     WHEN 'E' THEN "
+      LSQL = LSQL & "       CASE PlayerReln  "
+      LSQL = LSQL & "         WHEN 'A' THEN '엘리트-보호자<br>(부-'+P.UserName+')'"
+      LSQL = LSQL & "         WHEN 'B' THEN '엘리트-보호자<br>(모-'+P.UserName+')'"
+      LSQL = LSQL & "         WHEN 'Z' THEN '엘리트-보호자<br>('+PlayerRelnMemo+'-'+P.UserName+')'"
+      LSQL = LSQL & "         WHEN 'R' THEN '엘리트-선수<br>('+SportsDiary.dbo.FN_TeamNm('"&SportsType&"','', M.Team)+')' "
+      LSQL = LSQL & "         WHEN 'K' THEN '엘리트-비등록선수' "
+      LSQL = LSQL & "         WHEN 'S' THEN '엘리트-예비후보' "
+      LSQL = LSQL & "         WHEN 'T' THEN '엘리트-지도자<br>('+ISNULL(SportsDiary.dbo.FN_PubName('sd03900' + LeaderType),'')+'-'+ISNULL(SportsDiary.dbo.FN_TeamNm2('"&SportsType&"', M.Team),'')+')'"
+      LSQL = LSQL & "         WHEN 'D' THEN '일반' "
+      LSQL = LSQL & "       END "
+      LSQL = LSQL & "     WHEN 'A' THEN "
+      LSQL = LSQL & "       CASE PlayerReln "
+      LSQL = LSQL & "         WHEN 'A' THEN '생활체육-보호자<br>(부-'+P.UserName+')'"
+      LSQL = LSQL & "         WHEN 'B' THEN '생활체육-보호자<br>(모-'+P.UserName+')'"
+      LSQL = LSQL & "         WHEN 'Z' THEN '생활체육-보호자<br>('+PlayerRelnMemo+'-'+P.UserName+')'"
+      LSQL = LSQL & "         WHEN 'R' THEN '생활체육-선수<br>('+ISNULL(SportsDiary.dbo.FN_TeamNm2('"&SportsType&"', M.Team),'')+')'"
+      LSQL = LSQL & "         WHEN 'T' THEN '생활체육-지도자<br>('+ISNULL(SportsDiary.dbo.FN_PubName('sd03900' + LeaderType),'')+'-'+ISNULL(SportsDiary.dbo.FN_TeamNm2('"&SportsType&"', M.Team),'')+')'"  
+      LSQL = LSQL & "         WHEN 'D' THEN '일반' "  
+      LSQL = LSQL & "       END "
+      LSQL = LSQL & "   ELSE '국가대표' "
+      LSQL = LSQL & "   END PlayerRelnNm "
+      LSQL = LSQL & " FROM [SportsDiary].[dbo].[tblMember] M"
+      LSQL = LSQL & "   left join [SportsDiary].[dbo].[tblPlayer] P on M.PlayerIDX = P.PlayerIDX"
+      LSQL = LSQL & "     AND P.SportsGb = '"&SportsType&"' "
+      LSQL = LSQL & "     AND P.DelYN = 'N' "
+      LSQL = LSQL & " WHERE M.DelYN = 'N' "
+      LSQL = LSQL & "   AND M.SportsType = '"&SportsType&"' "
+      LSQL = LSQL & "   AND M.SD_UserID = '"&request.Cookies("SD")("UserID")&"' " 
+      LSQL = LSQL & " ORDER BY M.EnterType "
+      LSQL = LSQL & "   ,M.PlayerReln " 
+      
+'       response.Write LSQL&"<br><br>"
+      
+      SET LRs = DBCon.Execute(LSQL)
+      IF Not(LRs.Eof or LRs.bof) Then
+        Do Until LRs.Eof
+          cnt_JoinUs = cnt_JoinUs + 1
+          txt_JoinUs = txt_JoinUs & "<li><a href=""#"""
+          
+          IF LRs("SD_GameIDSET") = "Y" Then 
+            txt_JoinUs = txt_JoinUs & " class='btn btn-default on' data-id='"&LRs("MemberIDX")&"' "
+          Else
+            txt_JoinUs = txt_JoinUs & " class='btn btn-default' data-id='"&LRs("MemberIDX")&"'"
+          End IF  
+          
+          txt_JoinUs = txt_JoinUs & "'>"&LRs("PlayerRelnNm")&"</a></li>"
+          
+          LRs.movenext
+        Loop
+      ELSE  
+        txt_JoinUs = "<li>가입된 회원계정이 없습니다.</li>"
+      END IF
+    
+        LRs.Close
+      SET LRs = Nothing
+    
+      txt_JoinUs = txt_JoinUs & "</ul>"
+            
+    CASE "tennis" 
+      
+      '테니스
+      	txt_JoinUs = "<h3>테니스</h3>"
+        txt_JoinUs = txt_JoinUs & "<ul class='clearfix'>"
+        
+		LSQL =  "     SELECT M.MemberIDX"
+		LSQL = LSQL & "   ,M.SD_GameIDSET"
+		LSQL = LSQL & "   ,CASE M.PlayerReln "
+		LSQL = LSQL & "     WHEN 'A' THEN '생활체육-보호자<br>(부-'+P.UserName+')'"
+		LSQL = LSQL & "     WHEN 'B' THEN '생활체육-보호자<br>(모-'+P.UserName+')'"
+		LSQL = LSQL & "     WHEN 'Z' THEN '생활체육-보호자<br>('+PlayerRelnMemo+'-'+P.UserName+')'"
+		LSQL = LSQL & "     WHEN 'T' THEN '생활체육-지도자('+ISNULL(SD_Tennis.dbo.FN_PubName('sd03900'+LeaderType),'')+')<br>('+ISNULL(SD_tennis.dbo.FN_TeamNm2('"&SportsType&"', M.Team),'')+')'"
+		LSQL = LSQL & "    	WHEN 'R' THEN " 
+		LSQL = LSQL & "       	CASE "
+		LSQL = LSQL & "        		WHEN SD_Tennis.dbo.FN_TeamNm2('"&SportsType&"', M.Team2) IS NULL THEN '생활체육-선수<br>('+ISNULL(SD_tennis.dbo.FN_TeamNm2('"&SportsType&"', M.Team),'')+')'"
+		LSQL = LSQL & "       	ELSE '생활체육-선수<br>('+ISNULL(SD_tennis.dbo.FN_TeamNm2('"&SportsType&"', M.Team),'')+'/'+ISNULL(SD_Tennis.dbo.FN_TeamNm2('"&SportsType&"', M.Team2),'')+')'"
+		LSQL = LSQL & "    		END"  
+		LSQL = LSQL & "     WHEN 'D' THEN '일반' "  
+		LSQL = LSQL & "   END PlayerRelnNm "
+		LSQL = LSQL & " FROM [SD_Tennis].[dbo].[tblMember] M"
+		LSQL = LSQL & "   left join [SD_Tennis].[dbo].[tblPlayer] P on M.PlayerIDX = P.PlayerIDX"
+		LSQL = LSQL & "     AND P.SportsGb = '"&SportsType&"' "
+		LSQL = LSQL & "     AND P.DelYN = 'N' "
+		LSQL = LSQL & " WHERE M.DelYN = 'N' "
+		LSQL = LSQL & "   AND M.SportsType = '"&SportsType&"' "
+		LSQL = LSQL & "   AND M.EnterType = 'A' "
+		LSQL = LSQL & "   AND M.SD_UserID = '"&request.Cookies("SD")("UserID")&"' " 
+		LSQL = LSQL & " ORDER BY M.EnterType "
+		LSQL = LSQL & "   ,M.PlayerReln "
+      
+  '   response.Write LSQL
+      
+      SET LRs = DBCon3.Execute(LSQL)
+      IF Not(LRs.Eof or LRs.bof) Then
+        Do Until LRs.Eof
+          cnt_JoinUs = cnt_JoinUs + 1
+          txt_JoinUs = txt_JoinUs & "<li><a href=""#"""
+          
+          IF LRs("SD_GameIDSET") = "Y" Then 
+            txt_JoinUs = txt_JoinUs & " class='btn btn-default on' data-id='"&LRs("MemberIDX")&"' "
+          Else
+            txt_JoinUs = txt_JoinUs & " class='btn btn-default' data-id='"&LRs("MemberIDX")&"'"
+          End IF
+            
+          txt_JoinUs = txt_JoinUs & "'>"&LRs("PlayerRelnNm")&"</a></li>"
+          
+          LRs.movenext
+        Loop
+      Else
+        txt_JoinUs = "<li>가입된 회원계정이 없습니다.</li>" 
+      END IF
+    
+        LRs.Close
+      SET LRs = Nothing
+
+      txt_JoinUs = txt_JoinUs & "</ul>"
+      
+  END SELECT
+
+  
+%>
+<script>
+/*
+  //종목메인 계정 선택유무 체크
+  function chk_Submit(valIDX){
+    
+    //alert($("li").hasClass("on"));
+    if(!$('li').find('a').hasClass('on')) {
+      $('#join_IDX').val('');
+    }
+    else{
+      $('#join_IDX').val(valIDX);     
+    }
+  }
+  */
+  
+	//종목메인 계정설정
+	function SET_JoinUserID(){
+//		console.log($('#join_IDX').val());
+		
+		if(!$('#join_IDX').val()){
+			alert("사용할 종목메인 계정을 선택해 주세요.");    
+			return;
+		}   
+		
+		
+		var strAjaxUrl = "../ajax/user_account_type.asp";
+		var join_IDX = $('#join_IDX').val();  
+		var SportsType = $('#SportsType').val();  
+		
+		$.ajax({
+			url: strAjaxUrl,
+			type: 'POST',
+			dataType: 'html',     
+			data: { 
+				SportsType  : SportsType  
+				,join_IDX   : join_IDX  
+			},    
+			success: function(retDATA) {
+			
+				console.log(retDATA);
+				
+				if(retDATA){
+				
+					var strcut = retDATA.split("|");
+					
+					if(strcut[0] == "TRUE") {   
+						alert("사용하실 종목메인 계정설정이 완료되었습니다.");
+						$(location).attr('href', './user_account.asp');   
+					}
+					else{ //FALSE
+						if(strcut[1] == 200) {
+							msg_log = "잘못된 접근입니다.\n확인 후 다시 이용하세요.";             
+						}
+						else{ //99
+							msg_log = "종목메인 계정설정을 완료하지 못하였습니다.\n확인 후 다시 이용하세요.";
+						}
+						
+						alert(msg_log);           
+						return;
+					}
+				}
+			}, 
+			error: function(xhr, status, error){           
+				if(error!=""){
+					alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+					return;
+				}
+			}
+		});
+	}
+</script>
+<body>
+  <input type="hidden" id="join_IDX" name="join_IDX" />
+    <input type="hidden" id="SportsType" name="SportsType" value="<%=SportsType%>" />    
+    
+  <!-- S: sub-header -->
+  <div class="sub-header flex">
+    <!-- S: sub_header_arrow -->
+    <!-- #include file="../include/sub_header_arrow.asp" -->
+    <!-- E: sub_header_arrow -->
+    <h1>종목 계정 관리</h1>
+    <!-- S: sub_header_gnb -->   
+    <!-- #include file="../include/sub_header_gnb.asp" -->
+    
+    <!-- E: sub_header_gnb -->
+  </div>
+  <!-- E: sub-header -->
+  <!-- S: sub sel_user_type -->
+  <div class="sub sel_user_type">
+    <section>
+      <%=txt_JoinUs%>
+      <!--
+      <h3>유도</h3>
+      <ul class="clearfix">
+        <li><a href="#" class="btn btn-default">체육회등록<br>엘리트 선수</a></li>
+        <li><a href="#" class="btn btn-default">생활체육<br>지도자</a></li>
+        <li><a href="#" class="btn btn-default">보호자</a></li>
+        <li><a href="#" class="btn btn-default">일반</a></li>
+        <li><a href="#" class="btn btn-default">체육회비등록<br>엘리트 선수</a></li>
+        <li><a href="#" class="btn btn-default">국가대표</a></li>
+        <li><a href="#" class="btn btn-default">일반</a></li>
+        <li><a href="#" class="btn btn-default">엘리트<br>지도자</a></li>
+      </ul>
+      -->
+    </section>
+
+    <!-- S: cta -->
+    <div class="cta">
+      <%IF cnt_JoinUs > 0 Then%>
+      <a href="javascript:SET_JoinUserID();" class="btn btn-ok">저장</a>
+      <%Else%>
+      <a href="javascript:history.back()" class="btn btn-ok">돌아가기</a>
+      <%End IF%>
+    </div>
+    <!-- E: cta -->
+  </div>
+  <!-- E : sub sel_user_type -->
+
+  <!-- S: footer -->
+  <div class="footer">
+    <!-- S: bottom-menu -->
+    <!-- #include file="../include/bottom_menu.asp" -->
+    <!-- E: bottom-menu -->
+  </div>
+  <!-- E: footer -->
+<script>
+
+  function tabSelType(){
+    var $selBtn = $('.sel_user_type section ul .btn');
+    var $selected = null;
+    
+    
+    $selBtn.each(function(){
+      if ($(this).hasClass('on')) {
+        $('#join_IDX').val($(this).attr('data-id'));
+        //console.log($('#join_IDX').val());
+        return;
+      }     
+    })
+    
+    $selBtn.click(function() {
+      
+      if($(this).hasClass('on')) {
+        $(this).removeClass('on');
+        $('#join_IDX').val('');
+        return;
+      }
+      
+      $selBtn.filter('.on').removeClass('on');
+      
+      if ($selected) {
+        $selected.removeClass('on');
+      }
+      
+      $selected = $(this);
+      $selected.addClass('on');
+      $('#join_IDX').val($(this).attr('data-id'));
+    });
+  }
+  
+  tabSelType();
+
+
+</script>
+
+  <!-- S: bot-config -->
+  <!-- #include file= "../include/bot_config.asp" -->
+  <!-- E: bot-config -->
+</body>

@@ -1,0 +1,118 @@
+﻿/* 회원정보 */
+.mypage h1{font-size:24px;font-weight:600;color:#666;margin-top:85px;margin-bottom:10px;float:left;width:100%;}
+.mypage .information_input {text-align:left;}
+.mypage .information_input .t_title{font-size:20px;padding-left:25px;margin-top:50px;}
+.mypage .information_input .t_title span{font-size:14px;color:#db2626}
+.mypage .information_input .at_information{width:100%;border:3px solid #ddd;}
+.mypage .information_input .at_information th{width:145px;padding:30px 0;background:#f5f7fa;font-size:16px;font-weight:600;}
+.mypage .information_input .at_information td{width:265px;padding-left:30px;font-size:15px;font-family:"NanumBarunGothicB";color:#666;}
+.mypage .basic_information{width:100%;margin-top:30px;border-top:2px solid #018fca;}
+.mypage .basic_information .phone_line .in_9 {width: 115px;}
+.mypage .basic_information .bdt {border-top: 1px solid #bbb;}
+.mypage .basic_information tr th{width:120px;padding:20px 0;padding-left:30px;text-align:left;background:#f5f7fa;font-size:15px;font-weight:600;border-bottom:1px solid #ddd;}
+.mypage .basic_information tr td{width:1060px;padding:20px 0;padding-left:30px;border-bottom:1px solid #ddd;}
+.mypage .basic_information tr td p{margin-top:10px;}
+.mypage .basic_information tr td .check{margin-left:10px;margin-top:0;}
+.mypage .basic_information tr td .line_one .bg_color{background:#eee;color:#999}
+.mypage .basic_information tr td .line_one .right_text{margin-left:10px;color:#999;}
+.mypage .basic_information tr td p{color:#999;}
+.mypage .basic_information tr td p span{color:#db2626;}
+.mypage .basic_information tr td label{font-size:13px;cursor:pointer;font-weight:100;margin-top:4px;}
+.mypage .join_division{border:3px solid #ddd;margin-top:30px;padding:0 15px;background:#f5f7fa;float:left;width:925px;margin-bottom:60px;}
+.mypage .join_division ul li{padding:10px;/*border-bottom:1px solid #bbb;*/float:left;width:900px;}
+.mypage .join_division ul li:nth-child(3n){border-top:0;}
+.mypage .join_division ul li:nth-child(4n){}
+.mypage .join_division ul li:last-child{border-bottom:0;}
+
+.mypage .join_division ul li .left_title{font-weight:600;font-size:15px;padding-left:15px;float:left;width:180px;height:38px;line-height:38px;}
+.mypage .join_division ul li .left_title .add_txt {font-size: 14px;font-weight: normal;color: #d61d13;}
+.mypage .join_division ul li .right_con{float:left;height:38px;line-height:38px;}
+.mypage .join_division .btn_text {float: left;}
+.mypage .join_division .show_btn {float: left;}
+.mypage .join_division .explanation{font-size: 14px;color: #d61d13;float: left;line-height: 150%;margin-top: 8px;}
+.mypage .join_division ul li .right_con span{color:#666}
+.mypage .join_division ul li .right_con input{float:left;margin-right:5px;height:38px;line-height:38px;}
+.mypage .join_division ul li .right_con .check_txet{float:left;margin-right:30px;font-size:15px;margin-top:3px;font-weight:100;cursor:pointer;}
+.mypage .join_division ul li .right_con .btn_text{cursor:pointer;background:#7098b0;width:160px;font-size:15px;font-weight:600;color:#fff;height:38px;line-height:38px;display:inline-block;text-align:center;border-radius:50px;margin-right:10px;}
+.mypage .join_division ul li .show_table{display:none;}
+.mypage .join_division ul li .show_table .explanation{float:left;width:100%;margin-top:20px;font-weight:600;color:#666;}
+.mypage .join_division ul li .show_table .information_box {border:1px solid #bbb;background:#fff;float:left;width:100%;margin-top:20px;}
+.mypage .join_division ul li .show_table .information_box ul li{border-bottom: 1px solid #bbb;width:820px;margin:0 20px;}
+.mypage .join_division ul li .show_table .information_box ul li:last-child{border-bottom:1px solid #bbb;}
+.mypage .join_division ul li .show_table .information_box ul li{padding:20px;}
+.mypage .join_division ul li .show_table .information_box ul li .s_left{background:none;padding-left:0;width:auto;margin-right:20px;}
+.mypage .join_division ul li .show_table .information_box ul li .right_con select{margin-right: 25px;}
+.mypage .join_division ul li .show_table .information_box ul li .right_con_text{font-size:15px;padding-left:15px;float:left;height:38px;line-height:38px;color:#999;}
+.mypage .join_division ul li .show_table .information_box ul li.top_radio label{float:left;margin-top:4px;font-weight:600;font-size:15px;margin-right:5px;cursor:pointer;}
+.mypage .join_division ul li .show_table .information_box ul li.top_radio input{float:left;margin-right:20px;}
+.mypage .join_division ul li .show_table .information_box .c_btn{float:left;width:100%;padding:25px 0;text-align:center;}
+.mypage .join_division ul li .show_table .information_box .c_btn a{width:205px;height:50px;line-height:50px;font-size:18px;font-weight:600;color:#fff;background:#018fca;display:inline-block;}
+.mypage .join_division ul li .show_table .code{float:left;width:938px;;margin-top:30px;border:3px solid #9fa3a8;background:#fff;margin-bottom:15px;}
+.mypage .join_division ul li .show_table .code .title{padding:7px 0;text-align:center;color:#fff;font-size:16px;font-weight:600;background:#9fa3a8;}
+.mypage .join_division ul li .show_table .code .number{padding:30px 0;text-align:center;color:#3a99d8;font-size:18px;font-weight:600;}
+.mypage .join_division ul li .show_table .code table{width:100%;font-size:16px;font-weight:600;}
+.mypage .join_division ul li .show_table .code table tr td{padding:30px 0;width:25%;text-align:left;padding-left:20px;color:#666;}
+.mypage .join_division ul li .show_table .code table tr td.blue{color:#018fca;}
+.mypage .join_division ul li .show_table .code table tr th{width:12%;background:#eee;}
+.mypage .join_division ul li .show_table .information_box .red_color{font-size:14px;font-weight:600;color:#d8261c;margin-top:15px;margin-left:30px;float:left;width:100%;}
+.mypage .join_division ul li .show_table .information_box .in_4{width:175px;}
+.mypage .join_division ul li .show_table .ment{margin:15px 0;color:#d8261c;float:left;width:100%;}
+#div_AtleteNum {border-top: 1px solid #bbb;}
+
+
+/* 비밀번호 변경 */
+.mypage .pw_modify_box{width:520px;margin:auto;margin-top:60px;}
+.mypage .pw_modify_box ul{float:left;width:450px;padding:53px 35px;background:#f6f6f6;}
+.mypage .pw_modify_box ul li{float:left;width:100%;margin-bottom:15px;}
+.mypage .pw_modify_box ul li:last-child{margin-bottom:0;}
+.mypage .pw_modify_box ul li .l_text{float:left;width:108px;text-align:right;font-size:16px;margin-top:20px;color:#666;}
+.mypage .pw_modify_box ul li .r_in{float:left;margin-left:20px;}
+.mypage .pw_modify_box ul li .r_in input{border:3px solid #ddd;height:44px;line-height:44px;padding:0 10px;width:296px;}
+.mypage .pw_modify_box .gt_btn_box{margin-top:60px;}
+.mypage .pw_modify_box .gt_btn_box a{width:185px;}
+
+
+/*게시글 관리*/
+.mypage .board_admin_box .top_search{float:right;margin-top:30px;}
+.mypage .board_admin_box .top_search select{width: 97px;height: 32px;margin: 0 5px 0 0;color: #666;font-size: 14px;border: 1px solid #ccc;vertical-align: top;line-height: 100%;}
+.mypage .board_admin_box .top_search .sel_long {width: 140px;}
+.mypage .board_admin_box .top_search input{width: 214px;height: 32px;margin: 0;color: #666;font-size: 14px;border: 1px solid #ccc;vertical-align: top;line-height: 100%;}
+.mypage .board_admin_box .top_search a{margin-left:5px;display: inline-block;height: 34px;line-height: 34px;color: #fff;font-size: 15px;text-align: center;background: #777;width:80px;}
+.mypage .board_admin_box .board_box{float:left;width:100%;margin-top:20px;border-top:1px solid #0a5e94;text-align:center;}
+.mypage .board_admin_box .board_box .bg_color td{background:#f2f2f2;font-size:16px;}
+.mypage .board_admin_box .board_box tr td{height:44px;line-height:44px;border-bottom:1px solid #ddd;padding:0 5px;color:#666;}
+.mypage .board_admin_box .board_box tr td.name{text-align:left;}
+.mypage .board_admin_box .board_box tr td.name a{color:#666;}
+.mypage .board_admin_box .board_box tr td.name span{color:#999;margin-left:5px;}
+
+
+/* 회원탈퇴 */
+.mypage .out_member_box{width:520px;margin:auto;margin-top:80px;}
+.mypage .out_member_box ul{float:left;width:450px;padding:53px 35px;background:#f6f6f6;}
+.mypage .out_member_box ul li{float:left;width:100%;margin-bottom:15px;}
+.mypage .out_member_box ul li:last-child{margin-bottom:0;}
+.mypage .out_member_box ul li .l_text{float:left;width:108px;text-align:right;font-size:16px;margin-top:20px;color:#666;}
+.mypage .out_member_box ul li .r_in{float:left;margin-left:20px;}
+.mypage .out_member_box ul li .r_in input{border:3px solid #ddd;height:44px;line-height:44px;padding:0 10px;width:296px;color:#999}
+.mypage .out_member_box ul li .r_in input.bg_color{background:#eee;}
+.mypage .out_member_box .gt_btn_box{margin-top:60px;}
+.mypage .out_member_box .gt_btn_box a{width:185px;}
+.mypage .out_member_box_top_con{padding:30px;border:3px solid #ddd;margin-top:30px;}
+.mypage .out_member_box_top_con h1{padding-left:25px;font-size:20px;font-weight:100;margin-bottom:30px;margin-top:0;color:#333;}
+.mypage .out_member_box_top_con p{font-size:15px;margin-bottom:10px;color:#666;}
+.mypage .out_member_box_top_con p:last-child{margin-bottom:0;}
+.mypage .out_member_box_top_con p span{margin-left:12px;}
+
+
+
+/*증명서 신청내역*/
+.mypage .cert_req_box .top_search{float:right;margin-top:30px;}
+.mypage .cert_req_box .top_search select{width: 97px;height: 32px;margin: 0 5px 0 0;color: #666;font-size: 14px;border: 1px solid #ccc;vertical-align: top;line-height: 100%;}
+.mypage .cert_req_box .top_search .cert_sel {width: 190px;}
+.mypage .cert_req_box .top_search a{display: inline-block;height: 34px;line-height: 34px;color: #fff;font-size: 15px;text-align: center;background: #777;width:80px;}
+.mypage .cert_req_box .list_box{float:left;width:100%;margin-top:20px;text-align:center;border-top:1px solid #0a5e94;/*border-right:1px solid #bbb;*/}
+.mypage .cert_req_box .list_box tr td{/*border-left:1px solid #bbb;*/height:44px;border-bottom:1px solid #bbb;font-size:14px;}
+.mypage .cert_req_box .list_box .no_data td {border-bottom: 1px solid #ddd;color: #666;}
+.mypage .cert_req_box .list_box .title_bg_color td{background:#f2f2f2;color:#666;height: 44px;line-height: 44px;border: none;border-bottom: 1px solid #ddd;}
+/*.mypage .cert_req_box .list_box .bg_color td{background:#f3f5f7;}*/
+.mypage .cert_req_box .list_box .bg_color td .blue_font{color:#0085d3;}

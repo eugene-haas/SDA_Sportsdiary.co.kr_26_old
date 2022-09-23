@@ -1,0 +1,12 @@
+.sub.strength .input-group.date {width:62%; margin-right: 0;}
+.sub.strength .input-group.date input,
+.sub.strength .input-group.date .input-group-addon {float: left;}
+.sub.strength .input-group.date input {-webkit-appearance: none; appearance: none; width: 74%; height: 34px; line-height: 34px; padding-top: 0; padding-bottom: 0;}
+.sub.strength .input-group.date .input-group-addon {width: 22%; height: 34px; line-height: 34px; padding-top: 0; padding-bottom: 0; margin-left: 0; }
+.sub.strength .input-group.date + .btn-navy {font-size:12px; height: 34px; line-height: 34px;}
+.strength-index {background-color: #edf0f4; padding-top: 30px; /*padding-bottom: 60px;*/ padding-left: 10px; padding-right: 10px;}
+.strength-index .main-bg {-webkit-background-size: cover; background-size: cover; text-align: center;}
+.strength-index .main-bg .ic-deco {display: inline-block; width: 150px; margin: 0 auto;}
+.strength-index .main-tit {text-align: center; padding-top: 20px; padding-bottom:60px;}
+.strength-index .main-tit h3 {color: #222; line-height: 135%;}
+.strength-index .main-tit p {color: #999;}

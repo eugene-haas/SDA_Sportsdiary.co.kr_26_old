@@ -1,0 +1,59 @@
+/* 프로필 */
+.stat-record .prof {padding-top: 20px; padding-bottom: 20px; border-bottom: 1px solid #d0d0d0; background:#fff;}
+.profile-img {-webkit-flex: 1; flex: 1; padding:0 10px;}
+.profile-img img {border:1px solid #ddd;}
+.stat-record .prof .prof-list {-webkit-flex: 2; flex: 2;}
+.stat-record .prof-list h3 {font-family:'NotoKR-md'; font-size: 1em; color: #164369;padding-bottom: 10px; margin-top:3px;}
+.stat-record .prof-list .en-name {font-size: 0.93em; color: #666;}
+.stat-record .prof-list dl {font-size: 0.8em;padding-bottom: 4px;}
+.stat-record .prof-list dt, .stat-record .prof-list dd {float: left; font-weight:normal;}
+.stat-record .prof-list dt {color: #aaa; padding-right: 10px;}
+.stat-record .prof-list dd {color: #333;}
+
+/* 전적 */
+.stat-record .record h3 {background-color: #f2f2f2; font-size: 0.85em; /*height: 1.5em;*/height: 2em; line-height: 2em; padding-left: 10px; padding-right: 10px; margin-bottom:5px;}
+.stat-record .record dl {text-align: left;padding-top: 0.5em; padding-left: 10px; padding-right:10px; letter-spacing:-0.07em; font-size:0.95em;}
+.stat-record .record dt {background-repeat: no-repeat; -webkit-background-size: 2px 14px; background-size: 1px 12px; background-position: right center; padding-right: 8px; margin-right: 8px;}
+.stat-record .record dt, .stat-record .record dd {float: left; font-weight:normal; font-size:0.85em;}
+.main .record {margin-bottom: 10px; background:#fff; padding-bottom:15px; margin-bottom:0;}
+.record h3 .record-info {font-size: 0.85em; color: #ff7200; letter-spacing: -0.075em;}
+.record dt, .record dd {font-size: .85em;}
+.stat-record .record dd {color: #164369;}
+
+/* 최고 입상이력 */
+.stat-record .no-apply-txt {/* font-family: 'NanumGothicB'; */ font-size: 12px; color: #ff7200; padding-top: 15px; line-height: 125%; letter-spacing: -0.05em; text-indent: -10px; padding-left: 20px;}
+.stat-record .best-win dt {display: inline-block; background-color: #005895; background-image: none; color: #fff; border-radius: 20px; padding-left: 15px; padding-right: 15px; padding-top: 2px; padding-bottom: 2px;}
+.stat-record .best-win dt, .stat-record .best-win dd {float: none;}
+.stat-record .best-win dd {color: #333; margin-top: .45em;}
+
+/* 대회기록 */
+.stat-record .best-win h4 {font-family:'NotoKR-md'; color:#666; text-align: center; padding-top: 25px; font-size: 0.95em;}
+.between-chart ul.chart-title { text-align: center; margin-top: 20px; margin-bottom: 10px; }
+.between-chart .chart-title li:first-child {background-color: #eee; border-right:3px solid #fff;}
+.between-chart .chart-title li:nth-child(2) {background-color: #edf0f4;}
+.between-chart .chart-title li:last-child {background-color: #eee;}
+.between-chart .chart-title li {font-size: .84em; height: 30px; line-height: 30px;}
+.between-chart .skill-list {text-align: center; }
+.between-chart .skill-list li {position: relative; margin-bottom: 5px;}
+.between-chart .skill-list li:nth-child(2) {font-size: 0.84em;}
+.between-chart.skill_succ .skill-list li:first-child {font-size: 0.88em;}
+.between-chart.skill_succ .chart-title li:last-child {flex: 2}
+.between-chart.skill_succ .skill-list li:nth-child(2) {font-size: 1em;flex: 2}
+.between-chart .skill-list li:first-child span:first-child {font-size: 0.78em; margin-right: 10px; float: right; position:relative; z-index:2;}
+.between-chart .skill-list li:last-child span:first-child {font-size: 0.78em; margin-left: 10px; float: left; position: absolute; z-index:2; left:0;}
+.between-chart .skill-list .fill {position: absolute; top: 2px; left: 0; z-index: -1; display: inline-block; width: 100%; height: 20px; background-color: #009cdd; opacity: .8;}
+.modal-player-profile .between-chart .skill-list li:first-child span:first-child,
+.modal-player-profile .between-chart .skill-list li:last-child span:first-child {position: relative; z-index: 10; }
+.modal-player-profile .between-chart .skill-list .fill {z-index: 9;}
+.modal-player-profile .between-chart .skill-list .mask {background-color: #fff; z-index: 8;}
+.between-chart .skill-list li:first-child .fill {left: auto; right: 0; position:absolute; z-index:1;}
+.modal-player-profile .between-chart .skill-list li:first-child .fill {z-index: 9;}
+.between-chart .skill-list li:last-child .fill {left: 0; z-index: 1;}
+.modal-player-profile .between-chart .skill-list li:last-child .fill {z-index: 9;}
+.between-chart .skill-list .fill.y {background-color: #ffdd00;}
+.between-chart .skill-list .fill.b {background-color: #009cdd;}
+.between-chart .skill-list .mask {position: absolute; top: 2px; left: 0; z-index: 0; background-color: #f2f2f2; width: 100%; height: 20px;}
+
+/* 시간대별 득실점 */
+.record .time-record-chart {margin-top: 30px;padding-bottom: 30px;}
+.record .time-record-chart h3 {background-color: #fff; text-align: center; margin-bottom: 10px;}

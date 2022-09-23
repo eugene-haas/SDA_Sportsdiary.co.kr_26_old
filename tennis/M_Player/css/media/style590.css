@@ -1,0 +1,11 @@
+@media (min-width: 590px) {
+  /* 나의 통계 > 부상정보 */
+/*  .dist-cont .table_01 .body-img {top: -1px;}
+  .dist-cont .table_02 .body-img {top: -1px;}*/
+  /* 훈련일지 > 부상정보 */
+  .ipt-injury .dist-cont .table_01 .body-img {top: -1px;}
+
+	/* 대진표 > 대진표 보기 > select-list */
+	.tourney-mode {width: 590px; height:auto;}
+
+}

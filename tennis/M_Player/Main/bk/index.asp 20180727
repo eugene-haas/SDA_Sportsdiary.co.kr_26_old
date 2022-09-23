@@ -1,0 +1,790 @@
+<!-- #include file="../include/config.asp" -->
+<%
+' dim MemberIDX   : MemberIDX   = decode(request.Cookies("SD")("MemberIDX"),0)
+' dim PlayerReln  : PlayerReln  = decode(request.Cookies(SportsGb)("PlayerReln"),0)
+' dim EnterType   : EnterType   = request.Cookies(SportsGb)("EnterType")
+' dim ProductKEY  : ProductKEY  = "276387"
+' dim strKey      : strKey      = "MemberIDX="&encode(MemberIDX,0)&"&SportsGb="&encode(SportsGb,0)&"&PlayerReln="&encode(PlayerReln,0)&"&ProductKEY="&encode(ProductKEY,0)&"&EnterType="&encode(EnterType,0)
+  
+  
+  'dim valSDMAIN : valSDMAIN = encode("sd027150424",0)   '정식 오픈시 삭제처리합니다.
+  
+'response.Write "strKey="&strKey&"<br>"
+'response.Write "SportsGb="&SportsGb&"<br>"
+														  
+  '  response.Write "EnterType="&EnterType&"<br>"
+  '  response.Write "PlayerReln="&PlayerReln&"<br>"
+  '  response.Write "ProductKEY="&ProductKEY&"<br>"
+  '  response.Write strKey&"<br>"
+  ' response.End()
+
+  iMS = encode("79",0)
+%>
+<script type="text/javascript">
+  var cateIdx = 5;
+	//상단 종목 메인메뉴 URL
+    function chk_TOPMenu_URL(obj){
+		switch(obj) {
+			case 'judo'   		: $(location).attr('href', 'http://judo.sportsdiary.co.kr/M_Player/Main/index.asp'); break;
+			case 'tennis' 		: $(location).attr('href', 'http://tennis.sportsdiary.co.kr/tennis/M_Player/main/index.asp'); break;
+			case 'bike' 		: $(location).attr('href', 'http://bike.sportsdiary.co.kr/bike/M_Player/main/index.asp'); break;
+			//case 'badminton' 	: $(location).attr('href', 'http://badminton.sportsdiary.co.kr/badminton/m_player/calendar.asp'); break;
+			default 			: $(location).attr('href', 'http://sdmain.sportsdiary.co.kr/sdmain/index.asp'); 
+		}
+	}
+
+  //경기일정 데이터
+  function view_match(){
+    var strAjaxUrl="../ajax/Main_Match_List.asp";
+    //var list   = document.getElementById("match_list");
+    
+    $.ajax({
+      url: strAjaxUrl,
+      type: 'POST',
+      dataType: 'html',
+      
+      data: {
+      },
+      success: function(retDATA) {
+        if(retDATA) $('#match_list').html(retDATA);
+      }, 
+      error: function(xhr, status, error){
+        if(error!=""){
+          alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+          return;
+        }
+      }
+    });
+  }
+
+  function MainViewLink() {
+
+    var i1 = "<%=iMS%>";
+    var i2 = "1";
+    var selSearchValue1 = "";
+    var selSearchValue2 = "";
+    var selSearchValue = "T";
+    var txtSearchValue = "";
+
+    var selSearchValue3 = "1"; // iDivision -  1 : 전체 - 일반뉴스+영상뉴스
+    var selSearchValue4 = "S2Y";
+
+    var selSearchValue5 = "";
+
+    post_to_url('../Media/view.asp', { 'i1': i1, 'i2': i2, 'iType': '2', 'iSubType': selSearchValue1, 'iNoticeYN': selSearchValue2, 'iDivision': selSearchValue3, 'iSearchCol1': selSearchValue4, 'iSearchCol2': selSearchValue5, 'iSearchCol': selSearchValue, 'iSearchText': txtSearchValue });
+
+  }
+  
+  
+  //공지사항 데이터
+  function view_notice(){
+  
+    var strAjaxUrl="../ajax/Main_Notice_List.asp";
+    //var list   = document.getElementById("notice_list");
+    
+    $.ajax({
+      url: strAjaxUrl,
+      type: 'POST',
+      dataType: 'html',     
+      data: { },
+      success: function(retDATA) {
+        if(retDATA) $('#notice_list').html(retDATA);
+      }, 
+      error: function(xhr, status, error){
+        if(error!=""){
+          alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+          return;
+        }
+      }
+    });
+  }
+
+      //현장스케치
+  function btnLink(BtnId) {
+      
+      switch (BtnId) {
+
+          case "sketch":
+
+              localStorage.setItem("GameTitleIDX","6");
+
+              if (localStorage.getItem("GameTitleIDX") == "4" || localStorage.getItem("GameTitleIDX") == "6")
+              {
+                url = "../result/stadium_sketch.asp";
+                $(location).attr('href', url);
+                break;
+              }
+              else
+              {
+                url = "javascript:alert('*2018년 2월 공식런칭*\n보다 완성된 서비스로 찾아뵙겠습니다.\n새해 복 많이 받으세요.')";
+                $(location).attr('href', url);
+                break;
+              }
+
+          default:
+              
+              break;
+      }
+  }
+  //일반뉴스 
+  function fn_LoadNews_Default(){
+    var strAjaxUrl = '../Ajax/index_news_default.asp';
+    
+    $.ajax({
+      url: strAjaxUrl,
+      type: 'POST',
+      dataType: 'html',
+      data: { },
+      success: function (retDATA) {
+        console.log(retDATA);
+
+        if (retDATA) {
+          $('#News_Default').html(retDATA);
+        } else {
+          $('#News_Default').html('');
+        }
+      }, 
+      error: function (xhr, status, error) {
+        if (error!='') { 
+          alert('조회중 에러발생 - 시스템관리자에게 문의하십시오!'); 
+          return; 
+        }
+      }
+    });
+  } 
+
+  //영상뉴스 
+  function fn_LoadNews_Media(){
+    var strAjaxUrl = '../Ajax/index_news_media.asp';
+    
+    $.ajax({
+      url: strAjaxUrl,
+      type: 'POST',
+      dataType: 'html',
+      data: { },
+      success: function (retDATA) {
+        console.log(retDATA);
+
+        if (retDATA) {
+          $('#News_Media').html(retDATA);
+        } else {
+          $('#News_Media').html('');
+        }
+      }, 
+      error: function (xhr, status, error) {
+        if (error!='') { 
+          alert('조회중 에러발생 - 시스템관리자에게 문의하십시오!'); 
+          return; 
+        }
+      }
+    });
+  } 
+
+  //칼럼리스트
+  function fn_LoadColumnist(){
+
+    var strAjaxUrl="../ajax/index_Columnist.asp";
+
+    $.ajax({
+      url: strAjaxUrl,
+      type: 'POST',
+      dataType: 'html',     
+      data: { },
+      success: function(retDATA) {
+
+        console.log(retDATA);
+
+        if(retDATA) $('#column_list').html(retDATA);
+      }, 
+      error: function(xhr, status, error){
+        if(error!=""){
+          alert ("오류발생! - 시스템관리자에게 문의하십시오!");     
+          return;
+        }
+      }
+    });
+  }
+
+  
+  $(document).on('click','.logo', function(){
+    $(location).attr('href', "../../../sdmain/index.asp");
+  });
+  
+  $(document).on('click','.ready', function(){
+    alert('해당 종목은 서비스 준비중입니다.');                          
+    return;
+  });
+
+  //메인 대회정보 대진표 페이지 바로가기 설정
+//tournament/Totaltourney.asp
+function info_GameTitle(valIDX, valName, valEnterType) {
+  localStorage.setItem("GameTitleIDX", valIDX);
+  localStorage.setItem("GameTitleName", valName);
+  localStorage.setItem("EnterType", valEnterType);
+
+  $(location).attr('href','../tournament/Totaltourney.asp');
+}
+
+	
+														  
+  $(document).ready(function () { 
+
+    view_match();         //대회리스트 조회
+    view_notice();          //공지사항
+    //fn_LoadColumnist();   //컬럼리스트
+    fn_LoadNews_Default();  //일반뉴스
+    fn_LoadNews_Media();    //영상뉴스
+  });
+
+      
+</script>
+<link rel="stylesheet" href="../css/jquery.bxslider.min.css">
+<script src="../js/library/jquery.bxslider.min.js"></script>
+<body>
+<!-- S: container_body -->
+<div class="part_main tennis_part"> 
+  <!-- S: header --> 
+  <!-- #include file = '../include/header_part.asp' --> 
+  <!-- E: header --> 
+  
+  <!-- S: main -->
+  <div class="main gray_bg"> 
+    <!-- S: include gnb --> 
+    <!--
+        <span class="srch_box">
+        <input type="text" class="search_box" placeholder="검색어를 입력해 주세요">
+        </span>
+        --> 
+    <!-- #include file = "../include/gnbType/player_gnb.asp" --> 
+    <!-- E: include gnb --> 
+    <!-- S: main_menu -->
+    <div class="main_menu">
+      <ul class="clearfix">
+        <li><a href="javascript:chk_TOPMenu_URL('judo');"><span>유도</span></a></li>
+        <li><a href="javascript:chk_TOPMenu_URL('tennis');" class="on"><span>테니스</span></a></li>
+        <li><a href="javascript:chk_TOPMenu_URL('bike');"><span>자전거</span></a></li>
+        <!--<li class="ready"><a href="#"><span>레슬링</span></a></li>--> 
+        <!--<li class="ready"><a href="#"><span>배드민턴</span></a></li>--> 
+        <!--<li class="ready"><a href="#"><span>검도</span></a></li>-->
+      </ul>
+    </div>
+    <!-- E: main_menu --> 
+    
+    <!-- S: carousel --> 
+    <!-- <div class="carousel main_carousel pack">
+          <ul class=""> bxslider
+            <li>
+              <a href="#">
+                <img src="/ad_banner/temp/carousel_1.png" alt>
+              </a>
+            </li>
+           <li>
+              <a href="#">
+                <img src="/ad_banner/temp/carousel_2.png" alt>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="/ad_banner/temp/carousel_1.png" alt>
+              </a>
+            </li>
+          </ul>
+        </div> --> 
+    <!-- E: carousel --> 
+    
+    <!-- S: main major_banner -->
+    <div class="major_banner"> 
+      <!-- S: banner banner_md -->
+      <div class="banner banner_lg" style="background: #000"> 
+        <!-- S: banner_area -->
+        <div class="banner_area"> 
+          <!-- 
+              <a href="http://www.kkmall.co.kr/mobile/gate.asp?key=<%=encode(MemberIDX,0)%>&PlayerReln=<%=encode(PlayerReln,0)%>&EnterType=<%=encode(EnterType,0)%>&SportsGb=<%=encode(SportsGb,0)%>&ProductKEY=<%=encode(ProductKEY,0)%>">
+                <img src="/ad_banner/temp/banner_md5@2x.png" alt>
+              </a> 
+              --> 
+          <!--<a href="../Result/stadium_sketch.asp">--> 
+          <!-- <a href="javascript:alert('현장스케치는 준비 중 입니다.');">
+                <img src="/ad_banner/temp/banner_md5@2x.png" alt>
+              </a> --> 
+          <!--<a href="javascript:btnLink('sketch');">--> 
+          <!--<img src="/ad_banner/temp/banner_md5@2x.png" alt>--> 
+          <!-- <div style="background-color: #000"> --> 
+          <a href="javascript:;" onclick="javascript:MainViewLink();"><img src="/ad_banner/temp/banner_md6@2x.png" alt=""></a> 
+          <!-- </div> --> 
+          
+          <!--</a>--> 
+        </div>
+        <!-- E: banner_area --> 
+      </div>
+      <!-- E: banner banner_md --> 
+    </div>
+    <!-- E: main major_banner --> 
+    
+    <!-- S: margin_pack -->
+    <div class="margin_pack"> 
+      <!-- S: main_list match_list list -->
+      <div class="list main_list match_list"> <a href="../Result/institute-search.asp" class="btn_more"> <span class="img_deco"> <img src="../images/public/btn_more@3x.png" alt="더보기"> </span> </a>
+        <ul id="match_list">
+          <!--
+            <li class="list_tit">대회일정/결과</li>
+              <li>
+                <a href="#">
+                  <span class="d_day">D-5</span>
+                  <span>추계 초,중,고 연맹전(강원/동해) 추계 초,중,고 연맹전(강원/동해)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="d_day">D-21</span>
+                  <span>추계 초,중,고 연맹전(강원/동해)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="d_day">D-100</span>
+                  <span>추계 초,중,고 연맹전(강원/동해)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="d_day">D-100</span>
+                  <span>추계 초,중,고 연맹전(강원/동해)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="d_day">D-100</span>
+                  <span>추계 초,중,고 연맹전(강원/동해)</span>
+                </a>
+              </li>
+        -->
+        </ul>
+      </div>
+      <!--E: main_list match_list list--> 
+    </div>
+    <!-- E: margin_pack --> 
+    
+    <!-- S: main_list news_list list -->
+    <div class="main_list news_list list"> <a href="javascript:CHK_JOIN('../Media/list.asp');" class="btn_more"> <span class="img_deco"> <img src="../images/public/btn_more@3x.png" alt="더보기"> </span> </a> 
+      
+      <!-- S: media_news -->
+      <ul class="media_news" id="News_Default">
+        <!--
+            <li class="list_tit">SD 뉴스</li>
+
+            <li>
+              <a href="../Media/list.asp"><span>2017 고창고인돌배 전국생활체육 유도대회 성공적 개최</span></a>
+            </li>
+            <li>
+              <a href="../Media/list.asp"><span>“우리동네 예체능”의 영향으로 생활체육인의 인구 측정 결과 250% 증가</span></a>
+            </li>
+            <li>
+              <a href="../Media/list.asp"><span>2017 추계 초중고 연맹전에서 최우수 지도자상을 수상한 히딩크 감독</span></a>
+            </li>
+      -->
+      </ul>
+      <!-- E: media_news --> 
+      
+      <!-- S: film_list -->
+      <ul class="film_list news_film clearfix" id="News_Media">
+        <!--<li>
+              <a href="#">
+                <span class="figure">
+                  <iframe src="https://www.youtube.com/embed/ZteeWAb8uXc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </span>
+                <span class="figcaption">
+                  <strong><b>테니스</b>[짤막뉴스]한국, 데이비스컵 첫 날 단식서 우즈베키스탄에서 온 둘리에게 완패</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="figure">
+                  <iframe src="https://www.youtube.com/embed/0vVQUECW2_U?rel=0" frameborder="0" allowfullscreen></iframe>
+                </span>
+                <span class="figcaption">
+                  <strong><b>유도</b>고창군 "2017 고창 고인돌배 생활체육 전국 체전"</strong>
+                </span>
+              </a>
+            </li>-->
+      </ul>
+      <!-- E: film_list --> 
+    </div>
+    <!-- E: main_list news_list list --> 
+    
+    <!-- S: notice_list -->
+    <div class="notice_list list">
+      <h3 class='list_tit'>공지사항</h3>
+      <a href="../Board/notice-list.asp" class="btn_more"> <span class="img_deco"> <img src="../images/public/btn_more@3x.png" alt="더보기"> </span> </a>
+      <ul id="notice_list">
+        <!--
+              <li class="list_tit">공지사항</li>
+              <li>
+                <a href="#"><b>[KATA]</b>KATA 유소년기금 현황</a>
+              </li>
+              <li>
+                <a href="#"><b>[KATA]</b>선수등급표(2016년 기준)</a>
+              </li>
+              <li>
+                <a href="#"><b>[스포츠다이어리]</b>2017.07.12 상임운영위원회 및 뭔가 개최 됨
+                </a>
+              </li>
+              <li>
+                <a href="#"><b>[KATA]</b>KATA 유소년기금 현황</a>
+              </li>
+              <li>
+                <a href="#"><b>[KATA]</b>선수등급표(2016년 기준)</a>
+              </li> 
+              -->
+      </ul>
+    </div>
+    <!-- E: notice_list --> 
+    
+    <!-- S: column_list --> 
+    <!--
+        <div class="column_list list">
+        
+          <a href="../Column/list.asp" class="btn_more">
+            <span class="img_deco">
+              <img src="../images/public/btn_more@3x.png" alt="더보기">
+            </span>
+          </a>
+        
+          <ul id="column_list">
+          <li class="list_tit">SD 칼럼</li>
+            <li>
+              <a href="../Column/view.asp">
+                <span><b>[전기영 칼럼]</b></span>
+                <span>유도 국내 최강자를 찾아라!유도 국내 최강자를 찾아라!</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><b>[전기영 칼럼]</b></span>
+                <span>명사가 알려주는 스포츠 노하우</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><b>[전기영 칼럼]</b></span>
+                <span>랭킹 1위 비법 공개!</span>
+              </a>
+            </li> 
+          </ul>
+        </div>
+    --> 
+    <!-- E: column_list --> 
+    
+    <!-- S: banner banner_md --> 
+    <!-- <div class="banner banner_md" style="background: #0f0504">
+          <a href="#">
+            <img src="../images/public/banner_md2@3x.png" alt>
+          </a>
+        </div> --> 
+    <!-- E: banner banner_md --> 
+    
+    <!-- S: player_stat --> 
+    <!-- <div class="player_stat">
+          <h3>선수분석</h3>
+          <a href="#" class="btn_more">
+            <span class="img_deco">
+              <img src="../images/public/btn_more@3x.png" alt="더보기">
+            </span>
+          </a>
+        
+          <ul class="sel_list">
+            <li class="sel_2 flex">
+              <span class="sel_box">
+                <select>
+                  <option>:: 년도 선택 ::</option>
+                  <option>2016</option>
+                  <option>2017</option>
+                </select>
+              </span>
+              <span class="sel_box">
+                <select>
+                  <option>:: 구분 선택 ::</option>
+                  <option>:: 구분 선택 ::</option>
+                </select>
+              </span>
+            </li>
+            <li>
+              <span class="sel_box">
+                <select>
+                  <option>:: 대회명 선택 ::</option>
+                  <option>:: 대회명 선택 ::</option>
+                </select>
+              </span>
+            </li>
+            <li class="srch_player">
+              <span class="srch_ipt">
+                <input type="text" placeholder="선수명 검색">
+                <a href="#" class="del">
+                  <i class="fa fa-times-circle"></i>
+                </a>
+              </span>
+              <a href="#" class="btn btn_srch">조회</a>
+            </li>
+          </ul>
+        
+        </div> --> 
+    <!-- E: player_stat --> 
+    
+    <!-- S: ana_list --> 
+    <!-- <div class="ana_list list">
+          <a href="#" class="btn_more">
+            <span class="img_deco">
+              <img src="../images/public/btn_more@3x.png" alt="더보기">
+            </span>
+          </a> --> 
+    
+    <!-- S: film_list --> 
+    <!-- <ul class="film_list clearfix">
+            <li class="list_tit">애널리스트</li>
+            <li>
+              <a href="#">
+                <span class="figure">
+                  <iframe width="102" height="58" src="https://www.youtube.com/embed/dgSfrMsc7WM?rel=0" frameborder="0" allowfullscreen></iframe>
+                </span>
+                <span class="figcaption">
+                  <span class="list_tit">[경기분석]</span>
+                  <strong>이형택과 함께하는 표핸드/백핸드 분석</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="figure">
+                  <iframe width="102" height="58" src="https://www.youtube.com/embed/dgSfrMsc7WM?rel=0" frameborder="0" allowfullscreen></iframe>
+                </span>
+                <span class="figcaption">
+                  <span class="list_tit">[레슨]</span>
+                  <strong>전미라의 쉽게 익히는 기 술의 흐름을 알아볼까요?</strong>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="figure">
+                  <iframe width="102" height="58" src="https://www.youtube.com/embed/ePIlgh_IaIg?rel=0" frameborder="0" allowfullscreen></iframe>
+                </span>
+                <span class="figcaption">
+                  <span class="list_tit">[경기분석]</span>
+                  <strong>조은성의 리턴 기술의 집중 탐구</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+          E: film_list
+                  
+                  </div> --> 
+    <!-- E: ana_list -->
+    
+    <%If "2월오픈예정" < "2월오픈예정" Then%>
+    <!-- S: tap_list --> 
+    <!-- <div class="tap_list">
+          S: match_record
+          <div class="match_record">
+            <a href="../Result/institute-search.asp?ver=1.1" class="btn_not_yet">
+        
+              <h3 class="clearfix">대회일정/결과 <span class="img_deco"><img src="../images/main/btn_more.png" alt=""></span></h3>
+              <p>일정, 대진표,결과,<br>라이브스코어, 현장스케치</p>
+              <span class="img_deco ic_chart">
+                <img src="../images/main/icon_calendar.png" alt="">
+              </span>
+            </a>
+          </div>
+          E: match_record
+        </div> --> 
+    <!-- E: tap_list --> 
+    
+    <!-- S: tap_list --> 
+    <!-- <div class="tap_list">
+          S: match_record
+          <div class="match_record">
+            <a href="../Record/record-srch-win.asp" class="btn_not_yet">
+              <h3 class="clearfix">경기기록실 <span class="img_deco"><img src="../images/main/btn_more.png" alt></span></h3>
+              <p>궁금했던 경기 정보를<br>알기 힘들었다면?</p>
+              <span class="img_deco ic_chart">
+                <img src="../images/main/icon_graph.png" alt>
+              </span>
+            </a>
+          </div>
+          E: match_record
+        </div> --> 
+    <!-- E: tap_list -->
+    <%End If%>
+    
+    <!-- S: ban_md kk_mall -->
+    <div class="kk_mall mall"> 
+      <!--<h3 class="clearfix">스포츠용품 전문 ㅋㅋ몰</h3>--> 
+      <!-- <a href="http://www.kkmall.co.kr/mobile/index.asp?key=<%=encode(MemberIDX,0)%>&PlayerReln=<%=encode(PlayerReln,0)%>&EnterType=<%=encode(EnterType,0)%>&SportsGb=<%=encode(SportsGb,0)%>&ProductKEY=" class="btn_more"> --> 
+      <!--<a href="#" class="btn_more btn_not_yet">
+            <span class="img_box">
+              <img src="../images/public/btn_more@3x.png" alt="더보기">
+            </span>
+          </a>--> 
+      <!-- S: banner banner_md -->
+      <div class="banner banner_md" style="background-color: #000"> 
+        <!-- S: banner_area -->
+        <div class="banner_area"> <a href="#" > <img src="/ad_banner/kkmall/kkmall_banner.jpg" alt> </a> </div>
+        <!-- E: banner_area --> 
+      </div>
+      <!-- E: banner banner_md --> 
+      
+      <!-- S: mall_list --> 
+      <!-- <ul class="mall_list">
+            <li>
+              <a href="#">
+                <span class="img_box">
+                  <img src="../images/kkmall/product@3x.png" alt="ㅋㅋ몰 상품">
+                </span>
+                <span class="txt">입문자를 위한 라켓 추천!</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="img_box">
+                  <img src="../images/kkmall/product@3x.png" alt="ㅋㅋ몰 상품">
+                </span>
+                <span class="txt">윌슨트레이닝 신상입고 즉시할인 받아서 재산을 탕진하고 대출로 빚쟁이가 되자!</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="img_box">
+                  <img src="../images/kkmall/product@3x.png" alt="ㅋㅋ몰 상품">
+                </span>
+                <span class="txt">입문자를 위한 라켓 추천!</span>
+              </a>
+            </li>
+          </ul> --> 
+      <!-- E: mall_list --> 
+      
+    </div>
+    <!-- E: ban_md kk_mall --> 
+    
+    <!-- S: tennis_taps --> 
+    <!-- <div class="tennis_taps">
+          <h2>
+            <span class="ic_deco"><i class="fa fa-twitch"></i></span>
+            <span class="txt">커뮤니티</span>
+          </h2>
+        
+          <a href="#" class="btn_more">
+            <span class="img_box">
+              <img src="../images/public/btn_more_darken@3x.png" alt="더보기">
+            </span>
+          </a>
+        
+          S: tap_list
+          <div class="tap_list">
+            S: partner_tap
+            <div class="partner_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="../images/main/ic_people@3x.png" alt width="16" height="16"></span>
+                  <span>파트너(pair)찾기</span>
+                </h3>
+                <p>대회 나갈 때 파트너가 없으세요?</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            E: partner_tap
+          </div>
+          E: tap_list
+            
+          S: tap_list
+          <div class="tap_list">
+            S: lesson_tap
+            <div class="lesson_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="../images/main/ic_ball@3x.png" alt width="17" height="18"></span>
+                  <span>내 주변 레슨코트 찾기</span>
+                </h3>
+                <p>우리동네 코치 선생님을 찾고 싶어요.</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            E: lesson_tap
+          </div>
+          E: tap_list
+        
+          S: tap_list
+          <div class="tap_list">
+            S: rally_tap
+            <div class="rally_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="../images/main/ic_note@3x.png" alt width="17" height="18"></span>
+                  <span>난타(Rally) 모집</span>
+                </h3>
+                <p>함께 난타 치실 분을 찾습니다.</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            E: rally_tap
+          </div>
+          E: tap_list
+        
+          S: tap_list
+          <div class="tap_list">
+            S: club_tap
+            <div class="club_tap tap">
+              <a href="#">
+                <h3>
+                  <span class="img_deco"><img src="../images/main/ic_thumb@3x.png" alt width="17" height="18"></span>
+                  <span>동호회 소개</span>
+                </h3>
+                <p>우리 클럽 소개도 하고 친선 교류도 하세요.</p>
+                <span class="ic_deco">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+            E: club_tap
+          </div>
+          E: tap_list
+        </div> --> 
+    <!-- E: tennis_taps --> 
+    
+    <!-- S: banner banner_md --> 
+    <!-- <div class="banner banner_md mb0" style="background: #d1d5d8">
+          <a href="#">
+            <img src="../images/public/sample_banner_2.png" alt>
+          </a>
+        </div> --> 
+    <!-- E: banner banner_md --> 
+    
+  </div>
+  <!-- E: main --> 
+  
+  <!-- S: main_footer --> 
+  <!-- #include file = '../include/main_footer.asp' --> 
+  <!-- E: main_footer --> 
+  
+</div>
+<!-- E: container_body --> 
+
+<!-- S: bot_config --> 
+<!-- #include file = "../include/bot_config.asp" --> 
+<!-- E: bot_config --> 
+<!-- #include file="../../../sdmain/include/modal_JoinUs.asp"--> 
+<script>
+      $('.bxslider').bxSlider({
+        pager: true,
+        auto: true,
+        pause: 3000,
+        autoHover: true,
+      })
+    </script>
+</body>
+</html>

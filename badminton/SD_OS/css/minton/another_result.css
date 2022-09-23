@@ -1,0 +1,4 @@
+/* 그외 판정결과 */
+.enter_score .sel_another_result li {float: left;width: 50%;border-radius: 0;}
+.enter_score .sel_another_result li:first-child {border-right: 1px solid #bbb;}
+.enter_score .sel_another_result select {font-family: 'NotoKR-md';font-size: 14px;background: #8b8e92;color: #fff;border: none;border-radius: 0;height: 30px;padding-left: 10px;}

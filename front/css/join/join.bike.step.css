@@ -1,0 +1,10 @@
+.sdmain-header {background-color: #005895;padding:10px 15px;}
+.sdmain-header span{color:#fff;}
+.sdmain-header i{color:#fff;font-size:0.8em;margin:0 5px;}
+.sdmain-header ul {position: relative;padding: 10px 20px;}
+/* .sdmain-header ul:before {content: "";position: absolute;top: 10px;left: 10px;width: 2px;height: 55%;background-color: #fff;} */
+.sdmain-header ul:after {content: "";clear: both;display: table;}
+.sdmain-header ul li {position: relative;color: #fff;float: left;padding-right: 5px;margin-right: 10px;}
+.sdmain-header ul li:after {content: "\f054";font-family: "FontAwesome";font-weight: normal;position: absolute;top: 1px;right: -6px; font-size:10px;}
+.sdmain-header ul li:last-child {padding-right: 0;margin-right: 0;}
+.sdmain-header ul li:last-child:after {content: "";}

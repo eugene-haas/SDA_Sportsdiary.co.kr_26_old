@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sportsdiary tablet ver</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+    <style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <script src="js/library/jquery-1.12.2.min.js"></script>
+		<script src="js/jquery.oLoader.min.js"></script><!--로딩바-->
+		<script type='application/javascript' src='js/fastclick.js'></script><!--클릭반응속도up-->
+    <script src="js/bootstrap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/library/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+    <script src="cordova.js" id="xdkJScordova_"></script>
+
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+
+		<script src="js/global.js"></script>
+  
+    <script>
+			if ('addEventListener' in document) {
+					document.addEventListener('DOMContentLoaded', function() {
+							FastClick.attach(document.body);
+					}, false);
+			}
+
+			$(function(){
+				$("#FirstLink").click(function(){
+						
+					//로딩바
+					apploading("AppBody", "경기스코어입력 화면으로 이동 중 입니다.");
+
+					localStorage.setItem("IntroIndex","1");
+					location.href = "Calendar.html";
+					
+				});
+			});	
+			
+			$(function(){
+				$("#SecondLink").click(function(){
+						
+					//로딩바
+					apploading("AppBody", "대회결과보기 화면으로 이동 중 입니다.");
+
+					localStorage.setItem("IntroIndex","2");
+					location.href = "Calendar.html";
+					
+				});
+			});			
+
+			$(function(){
+				$("#ThirdLink").click(function(){
+						
+					//로딩바
+					apploading("AppBody", "경기운영본부 화면으로 이동 중 입니다.");
+
+					localStorage.setItem("IntroIndex","3");
+					location.href = "Calendar.html";
+					
+				});
+			});
+
+			$(function(){
+				$("#FourthLink").click(function(){
+						
+					//로딩바
+					apploading("AppBody", "대회통계 화면으로 이동 중 입니다.");
+
+					localStorage.setItem("IntroIndex","4");
+					location.href = "stat-winner-state.html";
+					
+				});
+			});			
+      
+
+
+			$(function(){
+				$("#FifthLink").click(function(){
+						
+					//로딩바
+					apploading("AppBody", "대회진행 화면으로 이동 중 입니다.");
+
+					localStorage.setItem("IntroIndex","5");
+					location.href = "Calendar.html";
+					
+				});
+			});			
+
+      var onLoad=function(){
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+        localStorage.setItem("SportsGb","judo");
+      }
+      
+      function onDeviceReady() {
+        document.addEventListener("backbutton", onBackKey, false);
+      }
+
+      function onBackKey() {
+        navigator.notification.confirm('종료하시겠습니까?', onBackKeyResult, '스포츠다이어리', '예, 아니오');
+      }
+      
+      function onBackKeyResult(index) {
+        navigator.app.exitApp(); 
+      }
+
+      
+    </script>
+  
+</head>
+
+
+<body onload="onLoad()" id="AppBody">
+
+    <!-- S: main -->
+    <div class="main">
+      <!-- S: intro-bg -->
+      <div class="intro-bg">
+        <h1><img src="images/tournerment/intro/logo-judo@3x.png" alt="대한유도회" width="177" height="49"></h1>
+        <!-- S: login-form -->
+        <form action="/" method="post">
+          <fieldset class="clrFix">
+            <legend class="sr-only">로그인 영역</legend>
+            <ul class="login-input">
+              <li>
+                <span><i class="fa fa-user" aria-hidden="true"></i></span><input type="text" placeholder="아이디" maxlength="20" aria-required="true" aria-invalid="false">
+                <!-- <svg class="frame frame-madoka" width="230" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                  <path d="m0,0l404,0l0,77l-404,0l0,-77z"></path>
+                </svg> -->
+              </li>
+              <li>
+                <span><i class="fa fa-lock" aria-hidden="true"></i></span><input type="password" placeholder="패스워드" maxlength="20" aria-required="true" aria-invalid="false">
+                <!-- <svg class="frame frame-madoka" width="230" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                  <path d="m0,0l404,0l0,77l-404,0l0,-77z"></path>
+                </svg> -->
+              </li>
+            </ul>
+            <!-- <a href="#" class="btn login-btn" role="button" data-target="#advise-modal" data-toggle="modal">로그인</a> -->
+            <!-- test-css 페이지 연동 -->
+            <a href="http://sportsdiary.co.kr/WebTournament/www/enter-score__wrestling.html#" class="btn login-btn" role="button">로그인</a>
+            <!-- <a href="#" class="btn login-btn" role="button" data-target="#id-ask" data-toggle="modal">로그인</a> -->
+            <p class="login-guide"><!-- <a href="stadium-state_20170117.html">아이디, 비밀번호 분실시 해당 경기 위원장에게 문의하세요.</a> -->
+              <a href="../../M_Teamcoach/gate.html">아이디, 비밀번호 분실시 해당 경기 위원장에게 문의하세요.</a>
+            </p>
+          </fieldset>
+        </form>
+        <!-- E: login-form -->
+        <ul class="menu-intro clearfix">
+          <li>
+            <a id="FirstLink" class="menu-btn">
+              <span class="icon">
+                <img src="images/tournerment/intro/btn-intro1-3x.png" alt>
+              </span>
+              <span>경기스코어 입력 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </span>
+            </a>
+          </li>
+          <li>
+            <a id="SecondLink" class="menu-btn">
+              <span class="icon">
+                <img src="images/tournerment/intro/btn-intro2-3x.png" alt>
+              </span>
+              <span>대회별 결과 보기 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </span>
+            </a>
+          </li>
+          <li>
+            <a id="ThirdLink" class="menu-btn">
+              <span class="icon">
+                <img src="images/tournerment/intro/btn-intro3-3x.png" alt>
+              </span>
+              <span>경기운영본부 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </span>
+            </a>
+          </li>
+          <li>
+            <a id="FourthLink" class="menu-btn">
+            <span class="icon">
+              <img src="images/tournerment/intro/btn-intro4-3x.png" alt>
+            </span>
+            <span>경기 기록실 <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </span>
+            </a>
+          </li>
+        </ul>
+        <h2>
+          <img src="images/tournerment/intro/logo@3x.png" alt="스포츠 다이어리" width="173" height="70">
+        </h2>
+      </div>
+      <!-- E: intro-bg -->
+    </div>
+    <!-- E: main -->
+
+    <!-- S: 로그인 권고 modal -->
+    <div class="modal fade advise-modal" id="advise-modal" tabindex="-1" role="dialog" aria-labelledby="save-modal-title" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content modal-small">
+          <div class="modal-body">
+          <!-- 텍스트와 하단 버튼 -->
+            <div class="modal-txt-wrap">
+              <p class="modal-txt login-guide">로그인 후 이용하시기 바랍니다.</p>
+              <a href="#" role="button" class="btn btn-modal-yes" data-dismiss="modal">닫기</a>
+            </div>
+          </div>
+          <!-- 텍스트와 하단 버튼 -->
+        </div> <!-- ./ modal-content -->
+      </div> <!-- ./modal-dialog -->
+    </div>
+    <!-- E: 로그인 권고 modal -->
+
+    <!-- S: 아이디 문의 modal -->
+    <div class="modal fade id-ask" id="id-ask" tabindex="-1" role="dialog" aria-labelledby="save-modal-title" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="modal-txt-wrap">
+          <!-- 텍스트와 하단 버튼 -->
+              <p class="modal-txt id-guide">권한이 없는 아이디입니다.</p>
+              <p class="modal-txt id-guide">해당관리자에게 문의하시기 바랍니다.</p>
+              <a href="#" role="button" class="btn btn-modal-yes" data-dismiss="modal">닫기</a>
+            </div>
+          </div>
+          <!-- 텍스트와 하단 버튼 -->
+        </div> <!-- ./ modal-content -->
+      </div> <!-- ./modal-dialog -->
+    </div>
+    <!-- E: 아이디 문의 modal -->
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

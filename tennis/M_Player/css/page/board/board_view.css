@@ -1,0 +1,15 @@
+.sub.board .view-title {background-color: #edf0f4;/* border-top: 1px solid #123651;*/ border-bottom: 1px solid #ddd; padding-top: 20px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;}
+.sub.board .view-title h4 {font-family: 'NanumGothicB'; font-size: 1em; padding-bottom: 5px;}
+.sub.board .view-title p {font-size: 0.8em; color: #999;}
+.sub.board .view-cont {width:100%;}
+.sub.board .view-cont p {font-family: 'NanumGothic'; font-size: 0.85em; background-color: #fff; border-bottom: 1px solid #ddd; width: 100%; padding: 20px 10px; line-height:22px; word-break: break-word;}
+.sub.board .btn-list {padding-left: 10px; padding-right: 10px; margin-top: 10px;}
+.sub.board .btn-list a {font-family: 'NanumGothicB'; font-size: 0.85em; border-radius: 4px; padding:5px 12px;}
+.sub.board .btn-list a.show-list {background-color: #123651; color: #fff; border:none; margin-bottom: 20px;}
+.sub.board .btn-list a.show-list:hover,
+.sub.board .btn-list a.show-list:focus,
+.sub.board .btn-list a.show-list:active {background-color: #123651;color: #fff;}
+
+
+.sub.board .btn-list.qa_btn {padding-left:0; padding-right:0; margin-top:0;}
+.sub.board .btn-list.qa_btn a {padding:6px 0; font-size:12px;}

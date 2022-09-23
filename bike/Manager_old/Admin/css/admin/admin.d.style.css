@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/**
+ * S: 공통 부분 
+ */
+/* font 로딩 */
+@import url('./common/font.css');
+/* reset */
+@import url('./common/reset.css');
+/* 공통 사용 */
+@import url('./common/public.css');
+/* swicth */
+@import url('./common/swicth.css');
+/* 버튼 */
+@import url('./component/button.css');
+/* list 전체 갯수 표시 */
+@import url('./component/total-count.css');
+/* sub_search */
+@import url('./component/sub-search.css');
+/* btn-list top-menu */
+@import url('./component/top-menu-btn.css');
+/* pagenation 페이지 네이션 */
+@import url('./component/pagination.css');
+/* 페이지 타이틀 */
+@import url('./component/page-title.css');
+
+/* table - 기본 */
+@import url('./component/table/basic-table.css');
+/* 왼쪽 제목 형태 */
+@import url('./component/table/left-head-table.css');
+/* 프로필 테이블 */
+@import url('./component/table/profile-table.css');
+/* 답변 영역 */
+@import url('./component/table/reply.css');
+/* 상단 검색 */
+@import url('./component/top-srch.css');
+/* 조회 선수목록 보기 */
+@import url('./component/table/srch_player.css');
+/* background-replace */
+@import url('./_img-location.css');
+/* E: 공통 부분 */
+
+
+
+/**
+ * S: layout 
+ */
+/* header */
+@import url('./include/header.css');
+/* left-menu 왼쪽 메뉴 */
+@import url('./leftMenu/left_menu.css');
+/* 대회 등록 */
+@import url('./page/match/regist-match.css');
+/* 대회 종별 관리 */
+@import url('./page/match/game-menu-level.css');
+/* E: layout */
+
+
+/**
+ * S: 대회 설정 관련 table
+ */
+/* 기본 스타일 */
+@import url('./setup/setup-basic.css');
+/* 경기 진행순서 설정 */
+@import url('./setup/game-number.css');
+/* 경기운영관리, 토너먼트 table */
+@import url('./setup/tourn-table.css');
+/* E: 대회 설정 관련 table */
+
+/**
+ * S: 모달 
+ */
+/* 모달 공통 */
+@import url('./modal/basic_modal.css');
+/* 단체전 출전선수 오더 */
+@import url('./modal/set_order.css');
+/* live-score, 승패 결과 */
+@import url('./modal/live_score.css');
+/* 그 외 판정 결과 */
+@import url('./modal/etc_judge.css');
+/* 승자 서명 */
+@import url('./modal/winner_sign.css');
+/* E: 모달 */
+
+
+/**
+ * S: 각 페이지
+ */
+@import url('./page/login/login.css');
+/* 팝업 관리 */
+@import url('./page/main/popup-ctr.css');
+/* 후원사 관리 */
+@import url('./page/main/sponsor-list.css');
+/* 협회정보 > 임원현황 */
+@import url('./page/info/asso-member.css');
+/* 협회정보 > 임원현황 > 역대타이틀정보 > 역대타이틀정보 등록/수정 */
+@import url('./page/info/succ-write.css');
+/* 협회정보 > 임원현황 > 임원직책 정보 > 임원직책 정보 등록/수정 */
+@import url('./page/info/officers-write.css');
+/* 팀/선수/클럽/심판 */
+@import url('./page/player/coach-referee.css');
+/* 대회정보 > 대회운영 > 대회 > 대회종별관리 > 대진표 */
+@import url('./page/match/level-dtl.css');
+/* 온라인서비스 > 증명서발급신청 */
+@import url('./page/online/cert-regist.css');
+/* 대회운영 > 대회 */
+@import url('./page/match/match-index.css');
+/* 대회운영 > 대회종별 등록 > 대회 신청팀(개인전) */
+@import url('./page/match/participate.css');
+/* 대회운영 > 대회종별 등록 > 대회 신청팀(단체전) */
+@import url('./page/match/participate_team.css');
+/* 대회운영 > 대회종별 등록 > 대회 신청팀(단체전) > 출전선수 등록 */
+@import url('./page/match/participate_team_member.css');
+/* 대회운영 > 대회종별 등록 > 조별 대진표 */
+@import url('./page/match/plevel.css');
+/* 대회운영 > 대회 > 대회종목 > 대진표 > 참가팀 분류 */
+@import url('./page/match/dtl-participate.css');
+
+/* 대회정보 > 대회관리 > 경기진행순서 조회 */
+@import url('./page/match/operate-list.css');
+/* 대회정보 > 대회관리 > 경기운영관리 */
+@import url('./page/match/Game_operation.css');
+/* 대회정보 > 대회관리 > 경기운영관리 > 대진표 */
+@import url('./page/match/operate.css');
+/* 대회정보 > 대회관리 > 경기운영관리 > 상품수령 관리 */
+@import url('./page/match/GameGift.css');
+/* 대회정보 > 대회관리 > 경기운영관리 설정*/
+@import url('./page/match/setgameorder.css');
+/* 대회정보 > 대회관리 > 경기추첨 */
+@import url('./page/match/lottery.css');
+/* 대회정보 > 대회관리 > 참가신청관리 > 참가신청 조회 > 참가신청 상세보기 */
+@import url('./page/match/request-receive-detail.css');
+/*  대회정보 대회정보관리 대회생성 */
+@import url('./page/match/GameTitleMenu_write.css');
+/*  대회정보 대회정보관리 종별관리 */
+@import url('./page/match/GameTitleMenu_management.css');
+/*  대회정보 대회정보관리 대진표 모달 */
+@import url('./page/match/ranking_result_popup.css');
+/* 회원관리 > 회원관리 > 지도자관리(엘리트) */
+@import url('./page/member/leader.css');
+/* 홈페이지관리 > 국제대회 리스트 */
+@import url('./page/player/GameTitleIntl_List.css');
+/* 홈페이지관리 > 국제대회 글쓰기 */
+@import url('./page/player/GameTitlelntl_Write.css');
+/* 홈페이지관리 > 주요국제대회정보 글쓰기 */
+@import url('./page/match/proof_pre.css');
+/* 증명서발급신청(기존) */
+@import url('./page/player/MajorGame_Write.css');
+/* 경기운영관리 > 승패결과수정(단체전)_모달*/
+@import url('./modal/group_modal.css');
+/* 경기운영관리 > 승패결과수정_모달 */
+@import url('./modal/play_detail_modal.css');
+/* 경기운영관리 > 승패결과수정_점수판_모달 */
+@import url('./modal/play_detail_modified.css');
+
+/* setting_game_order */
+@import url('./page/match/setting_game_order.css');
+/* autogameschedule */
+@import url('./page/match/autogameschedule.css');
+
+/* E: 각 페이지 */
+
+
+

@@ -1,0 +1,75 @@
+/**
+ * 관리자 - 태블릿에만 보임 
+ */
+/* 예선 대진표 관리 table */
+.btn.back_btn {position: absolute;top: 0;width: 100%;height: 36px;margin: 0;}
+.nav {position: relative;padding-top: 36px;}
+.modal-header.game-ctr {font-family: 'NotoKR-bd';text-align: center;background-color: #1d3046;color: #fff; padding-top: 10px; padding-bottom: 10px;}
+.modal-header.game-ctr h3 {font-size: 21px;color: #fff;letter-spacing: -0.025em;}
+.modal-header.game-ctr h3 .txt {font-size: 15px; color: #fff000;}
+.modal-header.game-ctr .close {font-size: 36px;opacity: 1;text-shadow: none;color: #fff;}
+.modal-body.game-ctr  {font-family: 'NotoKR-md';padding-top: 0;padding-bottom: 30px;}
+.modal-body.game-ctr .top_control {text-align: center; background-color: #455160;margin-left: -15px;margin-right: -15px;}
+.modal-body.game-ctr .inner_sub_ctrl {font-size: 17px; font-weight: bold; color: #fff; padding-top: 10px; padding-bottom: 10px;}
+.modal-body.game-ctr .inner_sub_ctrl select {width: 60px;}
+
+.modal-body.game-ctr .btn {font-family: 'NanumGothicB';font-size: 14px; text-shadow: none; height: 40px; line-height: 36px; border-radius: 5px; padding-top: 0;padding-bottom: 0;}
+.modal-body.game-ctr .btn.btn_tab,
+.modal-body.game-ctr .btn.btn_tab:hover,
+.modal-body.game-ctr .btn.btn_tab:focus,
+.modal-body.game-ctr .btn.btn_tab:active {font-size: 16px;background-color: #fff; color: #333; border: 2px solid #bbb; border-radius: 5px; width: 300px; height: 40px; line-height: 36px; padding-top: 0; padding-bottom: 0; -webkit-box-shadow: none; box-shadow: none; transition: all .3s ease;}
+.modal-body.game-ctr .btn.btn_tab:hover,
+.modal-body.game-ctr .btn.btn_tab:focus,
+.modal-body.game-ctr .btn.btn_tab:active {
+  background-color: #6EAD2E; color: #fff;border: 2px solid transparent;}
+.modal-body.game-ctr .btn.btn_tab.on {background-color: #3e7c00;color: #fff;border: 2px solid transparent;}
+
+.modal-body.game-ctr .top_control .league_tab {padding-top: 15px;padding-bottom: 15px;}
+.modal-body.game-ctr .top_control .inner_sub_ctrl {font-size: 16px;background-color: #FFFAE0;color: #000;}
+.modal-body.game-ctr .top_control .ctr_table {display: inline-block; vertical-align: middle; font-family: 'NanumGothicB'; font-size: 16px; border-bottom: 1px solid #ddd; padding-bottom: 10px;}
+.modal-body.game-ctr .top_control .ctr_table .txt {display: inline-block;vertical-align: middle;}
+.modal-body.game-ctr .btn_enter {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c8863f+0,893f1e+100 */
+background: #c8863f; /* Old browsers */
+background: -moz-linear-gradient(top,  #c8863f 0%, #893f1e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c8863f 0%,#893f1e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c8863f 0%,#893f1e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8863f', endColorstr='#893f1e',GradientType=0 ); /* IE6-9 */ border: 1px solid #a86c3f; color: #fff;}
+.modal-body.game-ctr .btn_enter {width: 60px; min-width: 60px; height: 28px; line-height: 24px; margin-right: 15px;}
+.modal-body.game-ctr .btn_func,
+.modal-body.game-ctr .btn_func:hover,
+.modal-body.game-ctr .btn_func:focus,
+.modal-body.game-ctr .btn_func:active {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2f9b9c+1,257a7b+100 */
+background: #2f9b9c; /* Old browsers */
+background: -moz-linear-gradient(top,  #2f9b9c 1%, #257a7b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #2f9b9c 1%,#257a7b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #2f9b9c 1%,#257a7b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f9b9c', endColorstr='#257a7b',GradientType=0 ); /* IE6-9 */ border: 1px solid #2b9091; color: #fff;}
+.table-list.game-ctr {font-family: 'NotoKR-bd'; margin-top: 40px;}
+.game-ctr thead tr {border-bottom: 3px solid #ff4c00;color: #fff;}
+.game-ctr thead tr th {font-size: 16px;background-color: #3f4953; height: 50px; line-height: 50px;}
+.game-ctr thead tr th .btn_a {font-size: 14px; color: #fff; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefefe+0,c8c8c8+100 */
+background: #fefefe; /* Old browsers */
+background: -moz-linear-gradient(top, #fefefe 0%, #c8c8c8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #fefefe 0%,#c8c8c8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #fefefe 0%,#c8c8c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#c8c8c8',GradientType=0 ); /* IE6-9 */ border: 1px solid #a2a2a2; color: #333; height: 30px; line-height: 30px; padding-top: 0; padding-bottom: 0; box-shadow: none;}
+.game-ctr tbody tr td {vertical-align: middle;}
+.game-ctr tbody tr td input {font-size: 15px;text-align: center;margin-bottom: 0;}
+.game-ctr .make_comp {background-color: #ddd;}
+.game-ctr .chk_col .btn_a {height: 30px; line-height: 26px; border: 1px solid #ddd; padding-top: 0; padding-bottom: 0;}
+.game-ctr .chk_state {line-height: 1;padding-top: 10px; padding-bottom: 10px;}
+.game-ctr td .sel_court {width: 100px;}
+.game-ctr .chk_col .btn_updateMember {font-size: 15px;padding-left: 10px; padding-right: 10px;}
+.game-ctr tbody td:last-child .btn_a {font-size: 15px; padding-left: 10px; padding-right: 10px;}
+
+/* table 간격 조절 */
+.game-ctr tbody td:first-child {width: 50px;}
+.game-ctr tbody td:nth-child(2),
+.game-ctr tbody td:nth-child(3),
+.game-ctr tbody td:nth-child(4) {width: 100px;}
+.game-ctr tbody td:nth-child(5),
+.game-ctr tbody td:nth-child(6),
+.game-ctr tbody td:nth-child(7) {width: 422px;}
+.game-ctr tbody td:last-child {width: 160px;}
+
+/* 관리자 - 태블릿에서만 보임 */

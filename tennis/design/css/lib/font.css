@@ -1,0 +1,58 @@
+/* =========================
++ font 로딩 +
+========================= */
+@font-face {
+  font-family: 'NotoKR-dl';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../fonts/NotoSans/NotoKR-DemiLight/notokr-demilight.eot);
+  src: url(../../fonts/NotoSans/NotoKR-DemiLight/notokr-demilight.eot?#iefix) format('embedded-opentype'),
+    url(../../fonts/NotoSans/NotoKR-DemiLight/notokr-demilight.woff2) format('woff2'),
+    url(../../fonts/NotoSans/NotoKR-DemiLight/notokr-demilight.woff) format('woff'),
+    url(../../fonts/NotoSans/NotoKR-DemiLight/notokr-demilight.ttf) format('truetype');
+  src: local(※), url(../../fonts/NotoSans/NotoKR-DemiLight/notokr-demilight.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-md';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot);
+  src: url(../../fonts/NotoSans/NotoKR-Medium/notokr-medium.eot?#iefix) format('embedded-opentype'),
+    url(../../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff2) format('woff2'),
+    url(../../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff) format('woff'),
+    url(../../fonts/NotoSans/NotoKR-Medium/notokr-medium.ttf) format('truetype');
+  src: local(※), url(../../fonts/NotoSans/NotoKR-Medium/notokr-medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../fonts/NotoSans/NotoKR-Regular/notokr-regular.eot);
+  src: url(../../fonts/NotoSans/NotoKR-Regular/notokr-regular.eot?#iefix) format('embedded-opentype'),
+    url(../../fonts/NotoSans/NotoKR-Regular/notokr-regular.woff2) format('woff2'),
+    url(../../fonts/NotoSans/NotoKR-Regular/notokr-regular.woff) format('woff'),
+    url(../../fonts/NotoSans/NotoKR-Regular/notokr-regular.ttf) format('truetype');
+  src: local(※), url(../../fonts/NotoSans/NotoKR-Regular/notokr-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bd';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot);
+  src: url(../../fonts/NotoSans/NotoKR-Bold/notokr-bold.eot?#iefix) format('embedded-opentype'),
+    url(../../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff2) format('woff2'),
+    url(../../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff'),
+    url(../../fonts/NotoSans/NotoKR-Bold/notokr-bold.ttf) format('truetype');
+  src: local(※), url(../../fonts/NotoSans/NotoKR-Bold/notokr-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoKR-bk';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../fonts/NotoSans/NotoKR-Black/notokr-black.eot);
+  src: url(../../fonts/NotoSans/NotoKR-Black/notokr-black.eot?#iefix) format('embedded-opentype'),
+    url(../../fonts/NotoSans/NotoKR-Black/notokr-black.woff2) format('woff2'),
+    url(../../fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff'),
+    url(../../fonts/NotoSans/NotoKR-Black/notokr-black.ttf) format('truetype');
+  src: local(※), url(../../fonts/NotoSans/NotoKR-Black/notokr-black.woff) format('woff');
+}

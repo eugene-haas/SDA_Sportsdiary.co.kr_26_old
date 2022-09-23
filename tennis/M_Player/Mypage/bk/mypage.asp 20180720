@@ -1,0 +1,239 @@
+<!-- #include file="../include/config.asp" -->
+<link rel="stylesheet" href="/front/css/mypage/mypage.css">
+<%
+  '=================================================================================
+  '마이페이지
+  '=================================================================================
+  '로그인하지 않았다면 login.asp로 이동
+  ' Check_Login()
+  
+  dim UserID      : UserID        = request.Cookies("SD")("UserID")
+  dim UserName    : UserName      = request.Cookies("SD")("UserName")
+  dim PlayerReln  : PlayerReln    = decode(request.Cookies(SportsGb)("PlayerReln"), 0)
+  dim EnterType   : EnterType     = request.Cookies(SportsGb)("EnterType")
+%>
+<script>
+  //메뉴 링크 
+  function chk_onSubmitMenu(valType){
+    var txt_URL = '';
+
+    switch(valType){
+      case 'DROP'   : txt_URL = 'http://sdmain.sportsdiary.co.kr/sdmain/user_out.asp'; break;     //회원탈퇴
+      case 'ADD'    : txt_URL = 'http://sdmain.sportsdiary.co.kr/sdmain/join_MemberTypeGb.asp'; break;  //계정추가
+      case 'SET'    : txt_URL = './user_account.asp'; break;                      //종목메인설정
+      case 'PASS'   : txt_URL = 'http://sdmain.sportsdiary.co.kr/sdmain/pwd_change.asp'; break;     //비밀번호변경
+      case 'INFO'   : txt_URL = './myinfo.asp'; break;                          //MY INFO
+      case 'TEAM'   : txt_URL = './school-modify-list.asp'; break;                    //소속변경
+      case 'TRAIN'  : txt_URL = './training.asp'; break;                        //훈련종류항목관리
+      case 'CARD'   : txt_URL = './player_card.asp'; break;                       //선수증관리
+    }                                                    
+    $(location).attr('href', txt_URL);
+  } 
+                 
+  $(document).ready(function(){
+    /*
+    1. 종목별 회원가입 계정카운트 조회, 1개일 경우는 계정전환아이콘 메뉴 출력하지 않음
+      - 20171124 update 출력으로 변경                                               
+      - 함수위치 include/gnb_Type/player_gnb.asp
+    */
+    //chk_JoinUser_COUNT('<%=request.Cookies(SportsGb)("SportsGb")%>');
+  });
+</script>
+<!-- E: config -->
+<body>
+<!-- S: sub-header -->
+<div class="sub-header flex">
+  <!-- S: sub_header_arrow -->
+  <!-- #include file="../include/sub_header_arrow.asp" -->
+  <!-- E: sub_header_arrow -->
+  <h1>마이페이지</h1>
+  <!-- S: sub_header_gnb -->
+  <!-- #include file="../include/sub_header_gnb.asp" -->
+  <!-- E: sub_header_gnb -->
+</div>
+<!-- E: sub-header -->
+<!-- S: sub -->
+<div class="sub mypage">
+  <div class="user-img-wrap">
+    <!-- S: prof_img -->
+    <div class="prof_img">
+      <div class="user-img">
+        <img id="imgMypage" src="<%=Img_IDType%>" alt="" /> 
+      </div>
+      <span class="img_deco">
+        <img src="../images/mypage/icon_camera.png" alt="">
+      </span>
+    </div>
+    <!-- E: prof_img -->
+    <p>
+      <span><%=UserName%>(<%=UserID%>) 님</span>
+      <span class="player_belong"><%=txt_Name%></span>
+    </p>
+  </div>
+  <ul class="mypage-menu clearfix">
+    <li>
+      <a href="javascript:chk_onSubmitMenu('INFO');">
+        <p><img src="../images/mypage/icon-mypage01@3x.png" alt="" /></p>
+        <p><strong>정보관리</strong></p>
+      </a>
+    </li>
+    <li>
+     <a href="javascript:chk_onSubmitMenu('PASS');">
+      <p><img src="../images/mypage/icon-mypage02@3x.png" alt="" /></p>
+      <p> <strong>비밀번호 변경</strong> </p>
+      </a>
+    </li>
+    <!-- <li> <a href="javascript:alert('준비중입니다.');"><a href="javascript:alert('sportsdiary://goPushMsg');" >
+      <p><img src="../images/mypage/ic_push@3x.png" alt></p>
+      <p> <strong>푸쉬알림</strong></p>
+      </a> </li> -->
+    <%
+    '20170721 테스트진행중
+    ' IF decode(request.Cookies("UserID"),0) = "player12" Then
+    %>
+    <!--
+    <li> <a href="javascript:chk_onSubmitMenu('CARD');">
+      <p><img src="../images/mypage/icon-player-card@3x.png" alt=""></p>
+      <p> <strong>내 선수증 관리</strong> <span>나의 선수증을 간편하게 관리하세요.</span> </p>
+      <p> <img src="../images/mypage/icon-more@3x.png" alt="내 선수증 관리"> </p>
+      </a> </li>
+      -->
+    <%
+    ' End IF
+    %>
+    <!--
+      <li>
+        <a href="javascript:chk_onSubmitMenu('TEAM');">
+          <p><img src="../images/mypage/icon-mypage03@3x.png" alt="" /></p>
+          <p>
+            <strong>소속변경</strong>
+            <span>소속변경은 주로 진학 또는 전학이 해당됩니다.</span>
+          </p>
+          <p><img src="../images/mypage/icon-more@3x.png" alt="소속변경 더보기" /></p>
+        </a>
+      </li>
+      
+      <li>
+        <a href="#">
+          <p><img src="../images/mypage/icon-mypage04@3x.png" alt="" /></p>
+          <p>
+            <strong>연습 상대선수 관리</strong>
+            <span>연습경기에서 상대선수의 특징을 기록합니다.</span>
+          </p>
+          <p><img src="../images/mypage/icon-more@3x.png" alt="연습 상대선수 관리 더보기" /></p>
+        </a>
+      </li>
+    -->
+    <!-- 2016-12-28 추가 -->
+    <%
+    '훈련항목 관리는 선수의 경우만 출력
+  
+    SELECT CASE PlayerReln
+      CASE "R", "K", "S"
+    %>
+    <!-- <li> <a href="javascript:chk_onSubmitMenu('TRAIN');">
+      <p><img src="../images/mypage/icon-mypage05@3x.png" alt="" /></p>
+      <p> <strong>훈련 종류 항목관리</strong> <span>체력훈련, 도복훈련의 항목을 변경합니다.</span> </p>
+      <p><img src="../images/mypage/icon-more@3x.png" alt="훈련 종류 항목관리 더보기" /></p>
+      </a> </li> -->
+    <%
+    CASE ELSE
+  END SELECT  
+    %>
+    
+    <!--
+      <li>
+        <a href="../Mypage/pay-policy.asp">
+          <p><img src="../images/mypage/icon-mypage06@3x.png" alt="" /></p>
+          <p>
+            <strong>결제관리</strong>
+            <span>나의 스포츠다이어리 결제현황입니다.</span>
+          </p>
+          <p><img src="../images/mypage/icon-more@3x.png" alt="결제관리 더보기" /></p>
+        </a>
+      </li>
+      -->
+    <!--// 2016-12-28 추가 -->
+  </ul>
+
+  <!-- S: my_list -->
+  <div class="my_list">
+    <ul>
+      <li id="div_change">
+        <a href="#" class="id_change" data-toggle="modal" data-target=".change_account">
+          <span class="img_deco">
+            <img src="../images/mypage/icon_refresh@3x.png" alt>
+          </span>
+          <span class="txt">계정전환</span>
+          <span class="ic_more">
+            <img src="../images/mypage/icon-more@3x.png" alt>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:chk_onSubmitMenu('ADD');">
+          <span class="img_deco">
+            <img src="../images/mypage/icon_plus@3x.png" alt>
+          </span>
+          <span class="txt">계정추가</span>
+          <span class="ic_more">
+            <img src="../images/mypage/icon-more@3x.png" alt>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:chk_onSubmitMenu('SET');">
+          <span class="img_deco">
+            <img src="../images/mypage/icon_check@3x.png" alt>
+          </span>
+          <span class="txt">종목메인설정</span>
+          <span class="ic_more">
+            <img src="../images/mypage/icon-more@3x.png" alt>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- E: my_list -->
+
+  <!-- S: out_list -->
+  <div class="out_list">
+    <ul>
+      <li>
+        <a href="javascript:chk_logout();">
+          <span class="ic_deco">
+            <i class="fa fa-power-off"></i>
+          </span>
+          <span class="txt">
+            로그아웃
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:chk_onSubmitMenu('DROP');">
+          <span class="ic_deco">
+            <i class="fa fa-sign-out"></i>
+          </span>
+          <span class="txt">
+            회원탈퇴
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- E: out_list -->
+
+
+</div>
+<!-- E : sub -->
+<!-- S: footer -->
+<div class="footer">
+  <!-- S: bottom-menu -->
+  <!-- #include file="../include/bottom_menu.asp" -->
+  <!-- E: bottom-menu -->
+</div>
+<!-- E: footer -->
+<!-- S: bot-config -->
+<!-- #include file= "../include/bot_config.asp" -->
+<!-- E: bot-config -->
+</body>

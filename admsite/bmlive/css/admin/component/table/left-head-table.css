@@ -1,0 +1,131 @@
+.view-table {width: 100%;margin-top: 30px;border:1px solid #bbb;}
+.view-table .text-bold {font-family: 'NanumGothicB';}
+.view-table .no-control {color: #3e4e68;}
+.view-table .regist_date {font-family: 'NanumGothicB';color: #3e4e68;}
+.view-table td input,
+.view-table td select {height: 35px;padding-left: 10px;border: 1px solid #ced5e3;}
+
+.view-table td input.input-wd20 {width: 20%;}
+.view-table td input.input-wd25 {width: 25%;}
+.view-table td input.input-wd50 {width: 50%;}
+.view-table td input.input-wd60 {width: 60%;}
+.view-table td input.input-wd80 {width: 80%;}
+.view-table td select.select-line {width: 20%;}
+.view-table td select.select-wd25 {width: 25%;}
+.view-table td select.select-wd30 {width: 30%;}
+.view-table td div.abs {position:absolute;}
+.view-table td div div.delbtn {position:relative; width:4%; top:-27px;left:233px;font-size:18px;font-style:inherit;text-align: center; font-weight: bold;}
+
+.view-table input[disabled] {cursor: not-allowed;}
+.view-table label {font-family: 'MalgunGothic';font-size: 14px;font-weight: normal;margin-right: 20px;margin-bottom: 0;}
+.view-table label input {display: inline-block;vertical-align: middle;width: 20px;height: 20px;margin: 0;}
+.view-table input[type="file"] {width: auto;border: none;}
+.view-table .file-line td > input[type="file"] {padding-left: 0;}
+.view-table .file-line .added-list input {vertical-align: middle;width: 20px;height: 20px;margin: 0 10px;}
+.view-table .file-line .csfile {padding-left: 0;}
+.view-table .file-line .added-list .btn {background-color: #3e4e68;border: 1px solid #374660;width: 20px;height: 20px;line-height: 18px;padding: 0;margin-right: 6px;}
+.view-table .file-line .added-list .btn .fas {font-size: 12px;}
+
+/* 파일 추가시 */
+.view-table .file-line table {margin-bottom: 10px;}
+.view-table .file-line table td {height: auto;border: none;padding: 4px;padding-left: 0;}
+.view-table .file-line table a {border-bottom: 1px solid #bbb;padding: 4px 8px;padding-left: 0;}
+.view-table .file-line table .btn {font-size: 13px;width: 30px;height: 22px;line-height: 22px;padding: 0;}
+
+
+.left-head .con {display: inline-block;vertical-align: middle; width:100%; font-size: 17px;}
+.left-head .tiny-line .con {width: 10%;}
+.left-head .short-line .con {width: 30%;}
+.left-head .half-line .con {width: 50%;}
+.left-head .long-line .con {width: 70%;}
+.left-head .wide-line .con {width: 80%;}
+.left-head .full-line .con {width: 100%;}
+
+.left-head th {font-family: 'NanumGothicB'; font-size: 13px; font-weight: normal; text-align: center; background-color:#f2f3f7; color: #3e4e68; width: 140px; border-right:1px solid #bbb; border-bottom:1px solid #bbb; }
+.left-head td{height: 62px; padding: 8px;border-bottom:1px solid #bbb; border-right:1px solid #bbb;}
+.left-head td .input-warp{position:relative;}
+.left-head td .input-warp .delbtn{position:absolute;right:10px;top:-2px;font-weight:bold;}
+.left-head.new-table td select{width:200px;}
+.left-head.new-table td input{width:200px;}
+.left-head.new-table td textarea{width:100%;border:1px solid #ced5e3;height:150px;resize:none;padding:10px;}
+.left-head td .guide-txt {display: inline-block;vertical-align: middle;}
+
+/* 권한 선택 리스트 */
+.view-table .rights-list label {font-size: 14px;font-weight: normal;width: 200px;margin-bottom: 10px;margin-left: 20px; vertical-align: top}
+.view-table .rights-list input {vertical-align: middle;width: 20px;height: 20px;margin-top: 0;margin-right: 5px;padding-left: 0;}
+.view-table .rights-list label:nth-child(6n+1) {margin-left: 0;}
+
+/* 전화번호, 연락처 */
+.view-table .phone_line select,
+.view-table .phone_line input {width: 140px;}
+.view-table .phone_line .divn {margin-left: 4px;margin-right: 4px;}
+
+/* 요청내용 */
+.view-table .req_cont td > div {margin-bottom: 10px;}
+.view-table .req_cont td > div:last-child {margin-bottom: 0;}
+.view-table .req_cont input {width: 160px;margin-right: 6px;}
+.view-table .req_cont .divn {margin-right: 5px;}
+.view-table .divn_td .fa {font-size: 18px;color: #666;margin-right: 2px;}
+
+/* 주소 입력 */
+.view-table .addr_line .srch_post_num {margin-bottom: 10px;}
+.view-table .addr_line .srch_post_num input {width: 160px;}
+.view-table .addr_line .srch_post_num .btn {height: 35px;margin-left: 6px;}
+.view-table .addr_line .detail_post input {width: 520px;}
+.view-table .addr_line .detail_post input:first-child {width: 360px;}
+
+.left-head.view-table .phone-line select,
+.left-head.view-table .phone-line input {width: 160px;}
+.left-head.view-table .mail-line select,
+.left-head.view-table .mail-line input {width: 160px;}
+
+.left-head.view-table .ipt-txt input {display: inline-block;vertical-align: middle;margin: 0;margin-right: 5px;}
+.left-head.view-table .name-line input {display: inline-block;vertical-align: middle;width: 50%;}
+
+.left-head.view-table .addr-line td input {width: 160px;}
+.left-head.view-table .addr-line td .stair {display: block;}
+.left-head.view-table .addr-line td .stair .btn-gray {text-align: center;color: #fff;width: 90px;height: 35px;line-height: 35px;padding: 0;}
+.left-head.view-table .addr-line td .stair .btn-gray:hover,
+.left-head.view-table .addr-line td .stair .btn-gray:focus,
+.left-head.view-table .addr-line td .stair .btn-gray:active {color: #fff;}
+.left-head.view-table .addr-line td .stair.under-line {margin-top: 7px;}
+.left-head.view-table .addr-line td .stair.under-line input {width: 300px;}
+
+.game_title{margin-top:12px;margin-bottom:8px;font-family: 'NanumGothicB';font-size:14px;text-indent:2px;}
+
+.new-table-box table{border: 1px solid #ced5e3;margin-top:30px;width:100%;}
+.new-table-box tr th{border-left:1px solid #ced5e3;text-align: center;font-family: 'NanumGothicB';    color: #3e4e68;
+background-color: #f2f3f7;
+border-right: 1px solid #ced5e3;
+border-bottom: 1px solid #ced5e3;
+width: 140px;
+padding: 8px}
+.new-table-box tr td{
+border-bottom: 1px solid #ced5e3;
+padding: 8px;}
+.new-table-box tr td input{height: 35px;
+float:left;margin-right:5px;
+width:150px;
+padding:0 10px;
+border: 1px solid #ced5e3;}
+.new-table-box tr td select{height: 35px;
+float:left;margin-right:5px;
+width:150px;
+padding:0 10px;
+border: 1px solid #ced5e3;}
+.new-table-box tr td span{float:left;margin:0 5px;margin-top:7px;}
+.new-table-box tr td label{margin-right:20px;}
+.new-table-box tr td .stair{display:table;width:100%;}
+.new-table-box tr td .under-line{margin-top:10px;}
+.new-table-box tr td .under-line input{width:200px;}
+.new-table-box tr td input.file-in{border:0;width:auto;height:auto;}
+.new-table-box tr td .btn-gray{height:35px;width:110px;line-height:35px;float:left;text-align:center;color:#fff;font-size:13px;border-radius:4px;}
+.new-table-box tr td input.in-all-width{width:100%;}
+.new-table-box tr td label input.radio-in{width:20px;height:20px;margin-top:8px;margin-right:0px;}
+.new-table-box tr td input[type="radio"], .new-table-box tr td input[type="checkbox"]{width:20px;height:20px;margin-top:8px;}
+.new-table-box .display-table-box{display:table;width:100%;}
+.new-table-box .display-table-box input{padding:0;}
+.new-table-box .display-table-box span{margin:0;}
+.new-table-box .display-table-box span .check-in{margin-top:0;}
+.new-table-box .display-table-box .photo-box{margin-right:10px;}
+.new-table-box .margin-top-10{margin-top:10px;}

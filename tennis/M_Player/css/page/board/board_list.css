@@ -1,0 +1,46 @@
+/* 상단 검색바 */
+.sub.board {border-top:2px solid #123651; height: auto; padding-top: 0; margin-bottom: 0; -webkit-box-shadow: none; box-shadow: none;}
+.sub.board .search {background-color: #123651; color: #fff;}
+.sub.board .search label {font-family: 'NanumGothicB'; width: 100%; padding-top: 10px; padding-bottom: 10px; margin-bottom: 0;}
+.sub.board .search label > * {float: left;}
+.sub.board .search .label-title {font-size: 1em; line-height: 200%; margin-left: 10px; margin-right: 5px;}
+.sub.board .search label select {width: 50%; margin-right: 5px;}
+.sub.board .search label input {background-color: #999; color: #fff; border: none; border-radius: 4px; width: 16%; height: 33px;}
+
+/* 상단 검색바 modify 2017-02-21 */
+.board-search-input {padding:5px 0; /*margin-top:-5px;*/ color:#fff; background-color:#123651;}
+.board-search-input .sel-list dl {border-bottom:0; text-align:left;}
+/*.board-search-input .sel-list .term-user dd:last-child select {float:left; width:82%; margin-top:5px;}*/
+.board-search-input .sel-list .term-user {overflow:hidden; width:100%;}
+.board-search-input .sel-list .term-user dd#search_user {position: relative; float:left; width:50%; margin-top:-3px;}
+.board-search-input .sel-list .term-user dd#search_user:after {position: absolute; top: 50%; right: 10px; content: ''; border-top: 5px solid #000;border-left: 5px solid transparent;border-right: 5px solid transparent;border-bottom: none;}
+.board-search-input .sel-list .term-user dd select#fnd_user {/*float:left; width:72%;*/}
+.board-search-input .sel-list .term-user dd:last-child {float:right; width:22%; height: 33px;}
+.board-search-input .sel-list .term-user dd:last-child .btn-gray {width:100%; padding:0; height:30px; line-height:30px;/* margin-top:6px; */background-color: #999; color: #fff; border: none; border-radius: 4px;}
+.board-search-input .sel-list .term-user dd.enter-btn-srch:before {border-top: none;}
+.board-list .tail a {padding:0;}
+
+/* list */
+.sub.board .board-list li {border-bottom: 1px solid #ddd; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;}
+/*.sub.board .board-list li:first-child {margin-top:-20px;}*/
+.sub.board .board-list li.require {background-color: #edf0f4; border-bottom:1px solid #ddd;}
+.sub.board li h4 {position: relative; font-size: 0.84em; text-align: left; margin-top:8px; padding-right: 20px;}
+.sub.board li h4.no-list {font-family:'notokr-dl'; font-size: 0.86em; text-align: center; letter-spacing: -0.05em; padding: 0; margin-bottom: 8px;}
+.sub.board li.require h4 {color: #123651; line-height:130%;}
+.sub.board li p {font-size: 0.76em; color: #999; text-align: left;}
+.sub.board .write-info span {position: relative; margin-right: 8px; margin-left:3px;}
+.sub.board .write-info span:after {position: absolute; top: 3px; right: -6px; content: ''; background-color: #ddd; width: 1px; height: 12px;}
+.sub.board .write-info span:first-child {margin-left:0;}
+.sub.board .write-info span:last-child:after {width: 0; margin-left:0;}
+.sub.board .write-info span.seen {margin-right: 2px;}
+.sub.board .write-info span.seen:after {width: 0;}
+
+/* 게시판 이동 bullet */
+.sub.board .board-bullet {margin-top: 10px;}
+.sub.board .board-bullet {margin: 0 auto;text-align: center;height: 30px; margin-bottom: 40px;}
+.sub.board .board-bullet a {display: inline-block;}
+.sub.board .board-bullet a {border: 1px solid #9fa2a8; border-radius: 4px; text-align: center; width: 30px; height: 30px; line-height: 24px; margin: 0;}
+.sub.board .board-bullet a.on {border-color: #3899e4; color: #3899e4; border-radius: 4px;}
+.sub.board .board-bullet a.prev img,
+.sub.board .board-bullet a.next img {width: 70%;}
+.sel-list .term-srch dd {width:34.5%;}
