@@ -48,7 +48,9 @@ Else
 	summary = "./hanabank_202210_summary.asp"
 End If
 
-
+'팝업 종료일(팝업이 유지되는 최종 날짜)
+popDate = "2022-11-12"
+isClosePopup = DateDiff("d", today, popDate)
 
 %>
 <html>
@@ -343,6 +345,10 @@ End If
 		</div>
 	</section>
 </article>
+<%
+	'팝업 제어(지정일과 같거나 작으면, 팝어 출력)
+	If isClosePopup < 1 Then
+%>
 <div class="container__popup">
 	<div class="popup">
 		<button class="popup__close" type="button" name="close"></button>
@@ -355,7 +361,9 @@ End If
 		</div>
 	</div>
 </div>
-
+<%
+	End If
+%>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/pub/js/tennis_Request.js?ver=10" type="text/javascript"></script>
 <script type="text/javascript">
@@ -371,6 +379,7 @@ End If
 		return 'click';
 	}
 	})();
+	console.log('to:<%=DateDiff("d", today, popDate)%>')
 	//touch event
 	const target = document.querySelectorAll('[type="button"]');
 	target.forEach((el) => { 
