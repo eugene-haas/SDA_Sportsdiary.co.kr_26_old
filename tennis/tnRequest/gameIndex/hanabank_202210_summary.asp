@@ -112,6 +112,7 @@ today = Date()
 		border-collapse: collapse;
 		outline: 2px solid #158575;
 		table-layout: fixed;
+		margin: 15px 0;
 	}
 	table.summary th, table.summary td {
 		padding: var(--cell_padding);
@@ -424,7 +425,6 @@ today = Date()
 			(3)  베테랑부 : 11/12(토) 09:00 육사<br />
 			(4)  오픈부(A) : 11/12(토) 09:00 송도<br />
 			(5)  신인부(A) : 11/13(일) 09:00 육사/송도<br />
-			<br />
 			<span class="color-blue fsmall">
 			*  각부 4강-결승<br />
 			- 국화 / 개나리 / 베테랑 / 오픈 : 11/12(일) 육사<br />
