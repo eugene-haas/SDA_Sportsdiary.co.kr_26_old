@@ -347,7 +347,7 @@ isClosePopup = DateDiff("d", today, popDate)
 </article>
 <%
 	'팝업 제어(지정일과 같거나 작으면, 팝어 출력)
-	If isClosePopup < 1 Then
+	If isClosePopup >= 1 Then
 %>
 <div class="container__popup">
 	<div class="popup">

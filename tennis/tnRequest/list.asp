@@ -19,8 +19,11 @@ If Months = "" Then
 End if
 
 today = Date()
-%>
 
+'팝업 종료일(팝업이 유지되는 최종 날짜)
+popDate = "2022-11-12"
+isClosePopup = DateDiff("d", today, popDate)
+%>
 <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
 <script src="/ckeditor/ckeditor.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -342,5 +345,118 @@ today = Date()
         </div>
     </div>
 </div>
+<%
+	'팝업 제어(지정일보다 크거나 같으면, 팝업 출력)
+	If isClosePopup >= 0 Then
+%>
+<style>
+	.container__popup {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.popup {
+		position: relative;
+		width: 80%;
+        max-width: 500px;
+		min-width: 224px;
+		height: auto;
+		background-color: #ffffff;
+	}
+	.popup__close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 2rem;
+		height: 2rem;
+		border: 0;
+		outline: 0;
+		background-color: transparent;
+		cursor: pointer;
+		color: #ffffff;
+	}
+	.popup__close:after {
+		display: inline-block;
+		content: "\00d7";
+		font-size: 3rem;
+		font-family: 'times new roman';
+		line-height: 0;
+	}
+	.popup__head {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: calc(100% - 0rem);
+		height: auto;
+		background-color: #008a8b;
+		word-break: keep-all;
+		padding: 1.4rem 3rem;
+		line-height: 2.2rem;
+	}
+	.popup__title {
+		display: block;
+		width: 100%;
+		height: auto;
+		font-family: 'HanaCM';
+		font-size: 2rem;
+		font-weight: 100;
+		text-align: center;
+		color: #ffffff;
+		margin: 0;
+	}
+	.popup__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: calc(100% - 2rem);
+		height: auto;
+		font-family: 'Noto Sans KR';
+		font-size: 1.1rem;
+		padding: 1rem;
+	}
+	.button__detail {
+		width: auto;
+		height: auto;
+		font-family: 'Noto Sans KR';
+		padding: 0.5rem 2.5rem;
+		background-color: #f39800;
+		outline: 1px solid #000000;
+		margin: 1rem;
+		text-decoration: none;
+		color: #000000;
+		word-break: keep-all;
+		text-align: center;
+	}
+</style>
+<div class="container__popup">
+	<div class="popup">
+		<button class="popup__close" type="button" name="close"></button>
+		<div class="popup__head">
+			<p class="popup__title">2022 하나은행컵 접수요령</p>
+		</div>
+		<div class="popup__content">
+			<p>2022 하나은행컵은 타 대회와는 다른 방식으로 참가접수가 진행됩니다.<br />세부사항을 반드시 확인하셔서 참가접수에 혼란없으시기 바랍니다.</p>
+			<a href="http://www.ikata.org/board/bbs/board.php?bo_table=free&wr_id=13577" target="_blank" class="button__detail">세부사항 확인하기</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	//popup close
+	$('.popup__close').on('click', function() {
+		$('.container__popup').hide();
+	});
+</script>
+<%
+	End If
+%>
 <!-- E: main -->
 <!--#include file = "./include/foot.asp" -->
