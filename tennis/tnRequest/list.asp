@@ -49,6 +49,12 @@ isClosePopup = DateDiff("d", today, popDate)
             obja.Years = $("#Years").val();
             obja.Months = $("#Months").val();
 
+            //하나은행 대회일 경우 별도 화면으로 이동
+            if (Number(obja.tidx) === 238) {
+                location.href = "https://mbp.hanabank.com/oneqplus.jsp?MENUS/cont/customer/news/1486061_147712.jsp"
+                return false
+            }
+
             if (val == 1) {
                 sf.action = "./write.asp" + ver;
                 $("#ChekMode").val(0);
