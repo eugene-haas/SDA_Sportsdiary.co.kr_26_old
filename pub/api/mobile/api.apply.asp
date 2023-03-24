@@ -662,7 +662,7 @@
 						toNumber = phoneP2
 					End if
 
-					Call sendPhoneMessage(db, "7", SMS_Subject, SMS_Msg, sitecode,fromNumber,  toNumber)
+					'Call sendPhoneMessage(db, "7", SMS_Subject, SMS_Msg, sitecode,fromNumber,  toNumber)
 				End If
 			Next 
 			End if
