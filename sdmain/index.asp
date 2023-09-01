@@ -58,8 +58,8 @@
          </h1>
          <div role="banner" class="m_banner_wrap" :class="{s_setting:isSetting}">
             <div class="m_banner">
-               <a href="/sdmain/preview/sda_net.asp">
-               <img src="http://img.sportsdiary.co.kr/images/SD/banner/sd_index_sdaNet.png?ver=0.0.1" alt="LIVE 스포츠 최적화 영상중계솔루션 SDA Net">
+               <a href="https://m.smartstore.naver.com/amt0801" target="_blank">
+               <img src="http://img.sportsdiary.co.kr/images/SD/banner/damgum_1440.jpg" alt="담금_1440">>
                </a>
             </div>
             <!--
@@ -116,9 +116,9 @@
                </div>
             </section>
             <div class="l_banner">
-               <a target="_blank" href="https://lifearchive.co.kr/">
-                  <img src="http://img.sportsdiary.co.kr/images/SD/banner/life_banner.png?ver=0.0.2" alt="라이프 : LIFE Archive Korea">
-               </a>
+               <a href="/sdmain/preview/sda_net.asp">
+                <img src="http://img.sportsdiary.co.kr/images/SD/banner/sd_index_sdaNet.png?ver=0.0.1" alt="LIVE 스포츠 최적화 영상중계솔루션 SDA Net">
+                </a>
             </div>
          </div>
 
@@ -198,56 +198,63 @@ const vm = new Vue({
          duration: 400,
          col_len: 2,
          row_len: 4, // css의 row_len도 같이 변경해주세요. calc(100% / 4),calc(100% / 4 - 15px)
-         template:
-         '<li>'+
-            '<a href="{linkSrc}" class="{class}">'+
-               '<span class="logo_wrap">'+
-                  '<img src="{imgSrc}" class="logo" alt="">'+
-               '</span>'+
-               '<span class="txt">{title}</span>'+
-            '</a>'+
-         '</li>'
-      },
-      sel_obj: {}, // 주종목으로 선택된 menu
-      selected_idx: null, // 기존 설정했던 id 저장
-      menu_list: [
-         {
-            title: '유도',
-            imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_judo.png?ver=0.0.2',
-            linkSrc: 'http://judo.sportsdiary.co.kr/M_Player/Main/index.asp',
-            id:0,
-            class:'link_medium'
-         },{
-            title: '테니스',
-            imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_tennis.svg?ver=0.0.2',
-            linkSrc: 'http://tennis.sportsdiary.co.kr/tennis/M_Player/main/index.asp',
-            id:1,
-            class:'link_medium'
-         },{
-            title: '수영',
-            imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_swimming.svg?ver=0.0.3',
-            linkSrc: 'http://sw.sportsdiary.co.kr/main/index.asp', //http://sw.sportsdiary.co.kr/main/index.asp//'javascript:alert(\'준비중입니다.\')'
-            id:2,
-            class:'link_medium'
-         },{
-            title: '승마',
-            imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_riding.svg?ver=0.0.3',
-            linkSrc: 'http://riding.sportsdiary.co.kr/M_player/main/index.asp',
-            id:3,
-            class:'link_medium t_riding'
-         },{
-            title: '레슬링',
-            imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_wrestling.svg?ver=0.0.2',
-            linkSrc: '/sdmain/preview/wrestling.asp',
-            id:4,
-            class:'link_medium'
-         },{
-            title: '배드민턴',
-            imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_badminton.svg?ver=0.0.3',
-            linkSrc: 'http://bmapp.sportsdiary.co.kr/badminton/M_player/page/institute-schedule.asp',
-            id:5,
-            class:'link_medium'
-         },
+          template:
+          '<li>'+
+             '<a href="{linkSrc}" class="{class}">'+
+                '<div style="float: left;margin-left: 10px;margin-top: 10px;"><span>{title2}</span></div>'+
+                '<span class="logo_wrap">'+
+                   '<img src="{imgSrc}" class="logo" alt="">'+
+                '</span>'+
+                '<span class="txt">{title}</span>'+
+             '</a>'+
+          '</li>'
+       },
+       sel_obj: {}, // 주종목으로 선택된 menu
+       selected_idx: null, // 기존 설정했던 id 저장
+       menu_list: [
+          {
+             title: '유도',
+             title2:'',
+             imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_judo.png?ver=0.0.2',
+             linkSrc: 'http://judo.sportsdiary.co.kr/M_Player/Main/index.asp',
+             id:0,
+             class:'link_medium'
+          },{
+             title: '테니스',
+             title2:'',
+             imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_tennis.svg?ver=0.0.2',
+             linkSrc: 'http://tennis.sportsdiary.co.kr/tennis/M_Player/main/index.asp',
+             id:1,
+             class:'link_medium'
+          },{
+             title: '수영',
+             title2:'',
+             imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_swimming.svg?ver=0.0.3',
+             linkSrc: 'http://sw.sportsdiary.co.kr/main/index.asp', //http://sw.sportsdiary.co.kr/main/index.asp//'javascript:alert(\'준비중입니다.\')'
+             id:2,
+             class:'link_medium'
+          },{
+             title: '승마',
+             title2:'',
+             imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_riding.svg?ver=0.0.3',
+             linkSrc: 'http://riding.sportsdiary.co.kr/M_player/main/index.asp',
+             id:3,
+             class:'link_medium t_riding'
+          },{
+             title: '',
+             title2: 'AD',
+             imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/gramicci_official_logo1.png',
+             linkSrc: 'https://www.gramicci.kr/',
+             id:4,
+             class:'link_medium'
+          },{
+             title: '배드민턴',
+             title2:'',
+             imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_badminton.svg?ver=0.0.3',
+             linkSrc: 'http://bmapp.sportsdiary.co.kr/badminton/M_player/page/institute-schedule.asp',
+             id:5,
+             class:'link_medium'
+          },
          // {
          //    title: '스포츠다이어리',
          //    imgSrc: 'http://img.sportsdiary.co.kr/images/SD/logo/sd_index/logo_sdTV.svg?ver=0.0.2',
