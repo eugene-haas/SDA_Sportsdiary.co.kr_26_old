@@ -414,3 +414,16 @@ body{position:relative;box-sizing:border-box;-webkit-box-sizing:border-box;max-w
 .competitionInfo .pointRankingTbl2 tbody th:first-child{border-left:1px solid #bbb;font-weight:500;}
 .competitionInfo .pointRankingTbl2 tbody tr:last-child th{border-bottom:1px solid #bbb;font-weight:500;}
 .competitionInfo .pointRankingTbl2 tbody tr:last-child th:last-child{border-right:1px solid #bbb;}
+
+
+/* tennis main banner */
+.container__tennis-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.container__tennis-banner > a {
+  width: 50%;
+}

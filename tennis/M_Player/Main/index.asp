@@ -339,18 +339,28 @@
     <!-- e: board-list -->
 
     <!-- s: 경기기록실 -->
-    <div class="m_recordBoard" style="margin:0;padding:0;">
+  <!--  <div class="m_recordBoard" style="margin:0;padding:0;">
       <a href="../Record/record_kata.asp" class="m_recordBoard__link">
-			<!--
+			&lt;!&ndash;
         <h3 class="m_recordBoard__tit">경기기록실 <span class="m_recordBoard__more"> 더보기 </span> </h3>
         <p class="m_recordBoard__txt">
           궁금했던 경기 정보를<br>
           알기 힘들었다면?
         </p>
-			-->
+			&ndash;&gt;
 				<img src="http://img.sportsdiary.co.kr/sdapp/main/tennis_stats.jpg" alt="경기기록실"/>
       </a>
     </div>
+    -->
+
+     <div class="m_recordBoard container__tennis-banner" style="margin:0;padding:0;">
+          <a href="../Record/record_kata.asp" class="m_recordBoard__link">
+    				<img src="http://img.sportsdiary.co.kr/sdapp/main/tennis_stats.jpg" alt="경기기록실"/>
+          </a>
+          <a href="https://moryeohan.co.kr/index.html" class="m_recordBoard__link" target="_blank">
+            <img src="http://img.sportsdiary.co.kr/sdapp/main/damgum.png" alt="담금"/>
+          </a>
+        </div>
     <!-- e: 경기기록실 -->
 
     <!-- s: board-list 뉴스 -->
