@@ -19,7 +19,7 @@
     dim GLOBAL_Name1        : GLOBAL_Name1       = "최보라"                                   '담당1
     dim GLOBAL_Name2        : GLOBAL_Name2       = "스포츠다이어리"                            '담당2	
 	dim GLOBAL_Fax          : GLOBAL_Fax         = "02-3483-8113"                             '팩스번호	
-    dim GLOBAL_Email1       : GLOBAL_Email1      = "sd1@sportsdiary.co.kr"                   '담당자메일1					
+    dim GLOBAL_Email1       : GLOBAL_Email1      = "sd@sdah.co.kr"	                         '담당자메일1
     dim GLOBAL_Companycode  : GLOBAL_Companycode = "108-81-66493"                            '사업자번호
     dim GLOBAL_Address      : GLOBAL_Address     = "서울 마포구 삼개로16 근신빌딩 본관5층"	
     dim GLOBAL_Site         : GLOBAL_Site        = "www.sportsdiary.co.kr"	   

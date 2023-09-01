@@ -63,7 +63,7 @@
 	global_name1  		= "최보라"				'담당1
 	global_name2  		= "스포츠다이어리" 		'담당2
 	global_fax   		= "02-3483-8113"			'팩스번호
-	global_email1 		= "sd1@sportsdiary.co.kr"	'담당자메일1
+	global_email1 		= "sd@sdah.co.kr"	    '담당자메일1
 	global_companycode 	= "108-81-66493"		'사업자번호
 	global_address     	= "서울 마포구 삼개로16 근신빌딩 본관5층"
 	global_site 		= "www.sportsdiary.co.kr"
